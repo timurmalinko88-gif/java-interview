@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="ru" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Interview Trainer & Simulator</title>
+    
+    <!-- External Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Highlight.js for Java code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css" id="hljs-dark-theme">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css" id="hljs-light-theme" disabled>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/java.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fff1f2',
+                            100: '#ffe4e6',
+                            200: '#fecdd3',
+                            300: '#fda4af',
+                            400: '#fb7185',
+                            500: '#f43f5e', // Hot coral accent
+                            600: '#e11d48',
+                            700: '#be123c',
+                            800: '#9f1239',
+                            900: '#881337',
+                        },
+                        darkBg: '#0f172a', // Deep obsidian slate
+                        darkCard: '#1e293b', // Rich slate
+                        lightBg: '#f8fafc',
+                        lightCard: '#ffffff'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'Segoe UI', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'Fira Code', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Smooth transitions */
+        .transition-all-300 {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* Custom scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        /* Sparkle/Pulsate animation for badges */
+        @keyframes subtle-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+        .pulse-hover:hover {
+            animation: subtle-pulse 1.5s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-lightBg dark:bg-darkBg text-slate-800 dark:text-slate-200 min-h-screen flex flex-col font-sans transition-colors duration-300">
+
+    <!-- Top Modern Navigation Bar -->
+    <header class="border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-darkCard/80 backdrop-blur-md sticky top-0 z-50 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-500 to-amber-500 flex items-center justify-center text-white shadow-lg shadow-brand-500/20">
+                    <i class="fa-solid fa-mug-hot text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg leading-none tracking-tight text-slate-900 dark:text-white">Java Interview</h1>
+                    <span class="text-xs text-brand-500 font-semibold tracking-wider uppercase">Trainer & Simulator</span>
+                </div>
+            </div>
+
+            <!-- Stats Bar (Hidden on Mobile) -->
+            <div class="hidden md:flex items-center space-x-6 text-sm">
+                <div class="flex items-center space-x-2">
+                    <span class="text-slate-400">Изучено:</span>
+                    <span id="stats-mastered" class="font-bold text-emerald-500 bg-emerald-500/10 px-2 py-0.5 rounded-full text-xs">0 / 0</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span class="text-slate-400">В закладках:</span>
+                    <span id="stats-flagged" class="font-bold text-amber-500 bg-amber-500/10 px-2 py-0.5 rounded-full text-xs">0</span>
+                </div>
+            </div>
+
+            <!-- System Utilities -->
+            <div class="flex items-center space-x-3">
+                <!-- Spaced Repetition Mode / Blitz -->
+                <button id="blitz-btn" class="flex items-center space-x-1 bg-brand-500 hover:bg-brand-600 text-white px-3 py-1.5 rounded-lg text-sm font-semibold shadow-md shadow-brand-500/10 transition-all-300 hover:scale-[1.03]">
+                    <i class="fa-solid fa-bolt"></i>
+                    <span class="hidden sm:inline">Блиц-опрос</span>
+                </button>
+
+                <!-- Dark Mode Toggle Button -->
+                <button id="theme-toggle" class="w-10 h-10 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/80 flex items-center justify-center transition-all-300">
+                    <i class="fa-solid fa-sun hidden dark:block text-amber-400"></i>
+                    <i class="fa-solid fa-moon dark:hidden text-slate-700"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Global Progress Bar -->
+        <div class="w-full bg-slate-100 dark:bg-slate-800/50 h-1">
+            <div id="global-progress" class="bg-gradient-to-r from-brand-500 to-amber-500 h-full w-0 transition-all duration-500"></div>
+        </div>
+    </header>
+
+    <!-- Content Wrapper -->
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col lg:flex-row gap-6 relative">
+        
+        <!-- Sidebar: Navigation & Filters -->
+        <aside class="w-full lg:w-80 flex-shrink-0 flex flex-col space-y-4">
+            
+            <!-- Filters Card -->
+            <div class="bg-white dark:bg-darkCard p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-4 transition-colors duration-300">
+                <div class="flex items-center justify-between">
+                    <h3 class="font-bold text-slate-900 dark:text-white flex items-center space-x-2">
+                        <i class="fa-solid fa-sliders text-brand-500"></i>
+                        <span>Фильтры</span>
+                    </h3>
+                    <button id="clear-filters" class="text-xs text-brand-500 hover:underline hidden">Сбросить</button>
+                </div>
+                
+                <!-- Search Input -->
+                <div class="relative">
+                    <input type="text" id="search-input" placeholder="Поиск по вопросу..." 
+                        class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 pl-10 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400 text-sm"></i>
+                </div>
+
+                <!-- Topic Selector -->
+                <div class="space-y-1.5">
+                    <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Раздел</label>
+                    <select id="topic-filter" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all">
+                        <option value="all">Все темы</option>
+                        <option value="JVM & Memory Management">JVM & Сборка мусора</option>
+                        <option value="Multithreading">Многопоточность (Concurrency)</option>
+                        <option value="OOP">ООП & Паттерны</option>
+                        <option value="General">Общие вопросы Java</option>
+                        <option value="System Design">System Design</option>
+                    </select>
+                </div>
+
+                <!-- Difficulty Selectors -->
+                <div class="space-y-1.5">
+                    <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Грейд (Сложность)</label>
+                    <div class="flex flex-wrap gap-2">
+                        <button data-diff="Junior" class="diff-chip flex-1 px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 hover:bg-emerald-500/20 transition-all duration-200">
+                            Junior
+                        </button>
+                        <button data-diff="Middle" class="diff-chip flex-1 px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20 hover:bg-blue-500/20 transition-all duration-200">
+                            Middle
+                        </button>
+                        <button data-diff="Senior" class="diff-chip flex-1 px-3 py-1.5 rounded-lg text-xs font-semibold bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20 hover:bg-purple-500/20 transition-all duration-200">
+                            Senior
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Format Filter -->
+                <div class="space-y-1.5">
+                    <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Формат вопроса</label>
+                    <div class="grid grid-cols-2 gap-2 text-xs">
+                        <label class="flex items-center space-x-2 bg-slate-50 dark:bg-slate-900 p-2 rounded-lg border border-slate-200 dark:border-slate-800 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800">
+                            <input type="checkbox" value="Open Answer" class="format-checkbox rounded text-brand-500 focus:ring-brand-500 bg-transparent border-slate-300 dark:border-slate-700">
+                            <span>Теория</span>
+                        </label>
+                        <label class="flex items-center space-x-2 bg-slate-50 dark:bg-slate-900 p-2 rounded-lg border border-slate-200 dark:border-slate-800 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800">
+                            <input type="checkbox" value="Code Review" class="format-checkbox rounded text-brand-500 focus:ring-brand-500 bg-transparent border-slate-300 dark:border-slate-700">
+                            <span>Ревью Кода</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- List Panel -->
+            <div class="bg-white dark:bg-darkCard rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col flex-1 overflow-hidden transition-colors duration-300 max-h-[480px] lg:max-h-[calc(100vh-420px)]">
+                <div class="p-4 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center bg-slate-50/50 dark:bg-slate-900/50">
+                    <span class="font-bold text-sm text-slate-700 dark:text-slate-300">Список вопросов</span>
+                    <span id="question-list-count" class="text-xs bg-slate-200 dark:bg-slate-800 px-2 py-0.5 rounded-full font-semibold text-slate-500">0</span>
+                </div>
+                
+                <!-- Scrollable Container -->
+                <div id="questions-container" class="overflow-y-auto divide-y divide-slate-100 dark:divide-slate-800/60 flex-1">
+                    <!-- Dynamic rendering of question buttons goes here -->
+                    <div class="p-6 text-center text-slate-400 text-sm">
+                        <i class="fa-solid fa-spinner fa-spin text-brand-500 text-lg mb-2 block"></i>
+                        Загрузка вопросов...
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Panel: Active Question Renderer -->
+        <section class="flex-1 flex flex-col space-y-4">
+            
+            <!-- Question Content Card -->
+            <div id="main-content-card" class="bg-white dark:bg-darkCard rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm p-6 sm:p-8 flex flex-col space-y-6 transition-all-300 relative overflow-hidden min-h-[500px]">
+                
+                <!-- Card Background Subtle Design Details -->
+                <div class="absolute -top-12 -right-12 w-48 h-48 bg-gradient-to-br from-brand-500/10 to-transparent rounded-full blur-2xl pointer-events-none"></div>
+
+                <!-- Active Question Header Metadata -->
+                <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-100 dark:border-slate-800/80">
+                    <div class="flex flex-wrap items-center gap-2">
+                        <!-- Difficulty Badge -->
+                        <span id="active-difficulty" class="px-2.5 py-1 rounded-lg text-xs font-bold uppercase tracking-wider">
+                            Junior
+                        </span>
+                        <!-- Topic Badge -->
+                        <span id="active-topic" class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700/50">
+                            JVM & Memory
+                        </span>
+                        <!-- Format Badge -->
+                        <span id="active-format" class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700/50">
+                            Open Answer
+                        </span>
+                    </div>
+
+                    <!-- Bookmark & Mastery Toggle Controls -->
+                    <div class="flex items-center space-x-2">
+                        <!-- Bookmark flag -->
+                        <button id="flag-btn" title="Добавить в закладки" class="w-9 h-9 rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-center text-slate-400 hover:text-amber-500 dark:hover:text-amber-400 transition-all-300">
+                            <i class="fa-solid fa-bookmark text-sm"></i>
+                        </button>
+                        <!-- Mastered checkbox indicator -->
+                        <button id="mastered-btn" title="Отметить как выученный" class="h-9 px-3 rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center space-x-2 text-slate-400 hover:text-emerald-500 transition-all-300">
+                            <i class="fa-solid fa-circle-check text-sm"></i>
+                            <span class="text-xs font-semibold">Изучено</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Main Content Renderers -->
+                <div class="flex-1 space-y-6">
+                    <!-- Question Prompt Section -->
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2">
+                            <span class="w-1.5 h-4 bg-brand-500 rounded-full"></span>
+                            <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400">Вопрос</h2>
+                        </div>
+                        <div id="question-text" class="prose prose-slate dark:prose-invert max-w-none text-slate-800 dark:text-slate-100 text-base font-medium leading-relaxed">
+                            <!-- Injected by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Code Block Section with Syntax Highlighting -->
+                    <div id="code-section" class="space-y-3 hidden">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <span class="w-1.5 h-4 bg-amber-500 rounded-full"></span>
+                                <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Проблемный Код (Java)</h3>
+                            </div>
+                            <button id="copy-code-btn" class="text-xs text-slate-400 hover:text-white bg-slate-100 dark:bg-slate-800 hover:bg-brand-500 dark:hover:bg-brand-500 px-2.5 py-1 rounded-md flex items-center space-x-1.5 transition-all-300">
+                                <i class="fa-solid fa-copy"></i>
+                                <span>Копировать</span>
+                            </button>
+                        </div>
+                        <div class="relative rounded-xl overflow-hidden shadow-inner group">
+                            <pre class="!my-0 !p-4 !bg-slate-900 overflow-x-auto"><code id="code-content" class="language-java font-mono text-sm"></code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Answer Block Section -->
+                    <div id="answer-section" class="space-y-4 pt-4 border-t border-slate-100 dark:border-slate-800/80 hidden">
+                        <!-- Heading of Answer -->
+                        <div class="flex items-center space-x-2">
+                            <span class="w-1.5 h-4 bg-emerald-500 rounded-full"></span>
+                            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Правильный ответ</h3>
+                        </div>
+                        <!-- Inner Card with Emerald Accents -->
+                        <div class="bg-emerald-50/40 dark:bg-emerald-950/20 border border-emerald-500/20 rounded-2xl p-5 sm:p-6 shadow-sm">
+                            <div id="answer-content" class="prose prose-emerald dark:prose-invert max-w-none text-slate-700 dark:text-slate-200 leading-relaxed text-base">
+                                <!-- Injected by JS -->
+                            </div>
+                        </div>
+
+                        <!-- Analogy Content Sub-Section -->
+                        <div id="analogy-subsection" class="space-y-2 pt-2 hidden">
+                            <div class="flex items-center space-x-2">
+                                <i class="fa-solid fa-lightbulb text-amber-500 text-sm"></i>
+                                <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Интуитивная аналогия</span>
+                            </div>
+                            <div class="bg-amber-50/40 dark:bg-amber-950/10 border border-amber-500/20 rounded-2xl p-5 text-slate-600 dark:text-slate-300 italic text-sm leading-relaxed">
+                                <p id="analogy-content"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Bottom Controls and Actions -->
+                <div class="pt-6 border-t border-slate-100 dark:border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    
+                    <!-- Prev / Next & Counter Info -->
+                    <div class="flex items-center space-x-4 w-full sm:w-auto justify-between sm:justify-start">
+                        <div class="flex space-x-2">
+                            <button id="btn-prev" class="w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-center transition-all-300 text-slate-500 dark:text-slate-400 hover:scale-95 disabled:opacity-40 disabled:pointer-events-none" title="Предыдущий вопрос">
+                                <i class="fa-solid fa-arrow-left"></i>
+                            </button>
+                            <button id="btn-next" class="w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-center transition-all-300 text-slate-500 dark:text-slate-400 hover:scale-95 disabled:opacity-40 disabled:pointer-events-none" title="Следующий вопрос">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                        <span id="counter" class="text-xs font-semibold tracking-wider text-slate-400 bg-slate-100 dark:bg-slate-800/60 px-3 py-1.5 rounded-lg">
+                            0 / 0
+                        </span>
+                    </div>
+
+                    <!-- Toggle Answer / Learn State -->
+                    <div class="flex items-center space-x-3 w-full sm:w-auto">
+                        <button id="btn-answer" class="flex-1 sm:flex-initial flex items-center justify-center space-x-2 bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 text-white font-bold px-6 py-3 rounded-xl shadow-lg shadow-brand-500/20 hover:shadow-brand-500/35 transition-all-300 active:scale-95 text-base">
+                            <i id="btn-answer-icon" class="fa-solid fa-eye"></i>
+                            <span id="btn-answer-text">Показать ответ</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quick Tips Panel -->
+            <div class="bg-gradient-to-r from-amber-500/10 via-brand-500/5 to-transparent rounded-2xl border border-amber-500/10 p-4 flex items-start space-x-3">
+                <i class="fa-solid fa-graduation-cap text-amber-500 mt-0.5 text-lg"></i>
+                <div class="text-xs leading-relaxed text-slate-600 dark:text-slate-400">
+                    <strong class="text-slate-800 dark:text-slate-200 font-bold">Совет по изучению:</strong> Прочитайте вопрос и уделите не менее 1-й минуты на самостоятельное мысленное формулирование ответа или решение кода перед просмотром готового ответа. Пользуйтесь яркими ассоциациями в разделе «Аналогии» для легкого запоминания.
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Toasts feedback notifications dynamically injected -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-slate-900 text-white border border-slate-800 rounded-xl px-4 py-3 shadow-2xl flex items-center space-x-3 pointer-events-none opacity-0 transform translate-y-2 transition-all duration-300">
+        <i id="toast-icon" class="fa-solid fa-check text-emerald-500"></i>
+        <span id="toast-message" class="text-sm font-semibold"></span>
+    </div>
+
+    <!-- Embedded high fidelity backup database in Russian to assure 100% execution instantly inside iframe sandboxes -->
+    <script>
+        const fallbackDatabase = [
+            {
+                "id": "jvm-001",
+                "topic": "JVM & Memory Management",
+                "difficulty": "Junior",
+                "format": "Open Answer",
+                "question": "Что такое Garbage Collector (GC) в Java и как он работает в общих чертах?",
+                "code": "",
+                "answer": "**Garbage Collector (GC)** — это компонент виртуальной машины Java (JVM), предназначенный для автоматического управления памятью (Heap).\n\n**Ключевые этапы работы сборщика мусора:**\n1. **Mark (Пометка):** GC сканирует память, начиная с корневых ссылок (GC Roots: стек потоков, статические переменные, системные классы). Все достижимые объекты помечаются как живые.\n2. **Sweep (Удаление):** Все непомеченные объекты в куче считаются мусором и удаляются. Освободившаяся память регистрируется как доступная.\n3. **Compact (Уплотнение):** Чтобы избежать фрагментации памяти, выжившие объекты сдвигаются ближе друг к другу. Это обеспечивает непрерывные блоки для будущих крупных объектов.",
+                "analogy": "Сборщик мусора похож на уборщика в роскошном отеле. Гости (объекты) заселяются в номера (выделение памяти в куче). Когда гости уезжают навсегда (все ссылки на объект стерты), уборщик замечает, что в номере никого нет, выносит старые вещи и заправляет постель заново, подготавливая номер для новых жильцов."
+            },
+            {
+                "id": "jvm-002",
+                "topic": "JVM & Memory Management",
+                "difficulty": "Junior",
+                "format": "Code Review",
+                "question": "Где будут распределены переменные из следующего Java фрагмента в памяти (Stack vs Heap)? Вызовет ли данный бесконечный цикл критическую ошибку OutOfMemoryError?",
+                "code": "public class MemoryDemo {\n    public static void main(String[] args) {\n        int localVal = 42;\n        String text = \"Hello JVM\";\n        \n        while (true) {\n            List<Integer> list = new ArrayList<>();\n            list.add(localVal);\n        }\n    }\n}",
+                "answer": "### Распределение в памяти:\n- `localVal` является локальным примитивом типа `int` и сохраняется непосредственно в **Stack Frame** (стек-кадре) метода `main` текущего потока.\n- `text` — локальная ссылка. Сама ссылка лежит в **Stack**, а текстовый литерал `\"Hello JVM\"` хранится в специальном пуле строк (String Pool), расположенном внутри **Heap** (кучи).\n- `list` — ссылка на список, хранится в **Stack**, в то время как объект `new ArrayList<>()` и все добавляемые обертки `Integer` размещаются в **Heap**.\n\n### Поведение бесконечного цикла:\nЭтот код **НЕ вызовет OutOfMemoryError**.\nНа каждой итерации цикла создается локальный объект списка `list`. В конце каждой итерации область видимости текущей переменной `list` завершается. На следующей итерации ссылка переопределяется. Ссылка на предыдущий объект списка теряется, делая его недостижимым из GC Roots. Сборщик мусора будет беспрепятственно очищать кучу на фоне работы цикла, предотвращая переполнение памяти. Тем не менее, такой цикл создаст высокую нагрузку на CPU из-за постоянного выделения и очистки короткоживущих объектов.",
+                "analogy": "Представьте себе конвейерную ленту, на которой вы берете пластиковый стаканчик (ArrayList), наливаете туда воду, а затем выбрасываете его в мусорный бак перед тем, как взять следующий. Бак никогда не переполнится, если мусорщик вовремя его освобождает, хотя вы и совершаете массу лишних действий."
+            },
+            {
+                "id": "jvm-003",
+                "topic": "JVM & Memory Management",
+                "difficulty": "Middle",
+                "format": "Open Answer",
+                "question": "В чем ключевые отличия между Strong, Weak, Soft и Phantom ссылками в Java?",
+                "code": "",
+                "answer": "В Java существуют разные уровни силы ссылок, помогающие GC гибко управлять памятью:\n\n1. **Strong Reference (Сильные):** \n   Обычные ссылки по умолчанию (например, `Object obj = new Object()`). GC **никогда** не удалит объект, на который ведет хотя бы одна сильная ссылка, даже если памяти критически не хватает.\n\n2. **Soft Reference (Мягкие):**\n   Обертка `SoftReference<T>`. Объект удаляется GC **только при нехватке памяти** на куче (перед выбросом OOM). Идеально для построения простых кешей изображений или тяжелых данных.\n\n3. **Weak Reference (Слабые):**\n   Обертка `WeakReference<T>`. Объект удаляется GC при **ближайшей сборке мусора**, независимо от того, сколько свободной памяти есть вокруг. Полезно для ассоциативных маппингов (например, `WeakHashMap`).\n\n4. **Phantom Reference (Фантомные):**\n   Обертка `PhantomReference<T>`. Получить объект через метод `.get()` всегда возвращает `null`. Используется исключительно для отслеживания момента физического уничтожения объекта и тонкой очистки ресурсов вне кучи (вместо устаревшего `finalize()`).",
+                "analogy": "Strong — железобетонный канат (держит намертво). Soft — прочная резиновая лента (держит, но растягивается и рвется, если тянуть слишком сильно из-за нехватки ресурсов). Weak — тонкая паутинка (рвется от легкого ветерка сборщика мусора). Phantom — тень покойного (объекта уже нет, но запись о том, что он ушел, осталась в системе регистрации)."
+            },
+            {
+                "id": "multithreading-001",
+                "topic": "Multithreading",
+                "difficulty": "Junior",
+                "format": "Open Answer",
+                "question": "Зачем нужно ключевое слово volatile в Java и какие проблемы конкурентного доступа оно решает?",
+                "code": "",
+                "answer": "Ключевое слово `volatile` применяется к переменным и гарантирует:\n1. **Видимость (Visibility):** Чтение и запись переменной происходят непосредственно в основную оперативную память (RAM), минуя локальные кэши ядер процессоров (L1/L2/L3 cache). Изменение переменной одним потоком мгновенно отражается во всех остальных потоках.\n2. **Запрет переупорядочивания инструкций (Instruction Reordering Prevention):** Предотвращает оптимизационное перестроение инструкций компилятором JIT и процессором за счет расстановки специальных барьеров памяти (Memory Barriers).\n\n**Важное ограничение:**\n`volatile` **не гарантирует атомарность** сложных операций. Например, неатомарный инкремент `count++` (состоящий из 3-х шагов: чтение, модификация, запись) при многопоточном использовании приведет к состоянию гонки (Race Condition). Для атомарных операций используйте блокировки `synchronized` или классы семейства `Atomic*` (например, `AtomicInteger`).",
+                "analogy": "volatile — это прозрачная маркерная доска в центре офиса. Любое изменение информации на ней мгновенно видят все сотрудники. Без нее каждый сотрудник записывает инструкции в личный бумажный блокнот (кэш процессора), который обновляется со значительной и непредсказуемой задержкой."
+            },
+            {
+                "id": "multithreading-004",
+                "topic": "Multithreading",
+                "difficulty": "Middle",
+                "format": "Code Review",
+                "question": "Найдите уязвимость в данном синглтоне с двойной проверкой блокировки (Double-Checked Locking) и устраните её.",
+                "code": "public class DatabaseConnection {\n    private static DatabaseConnection instance;\n\n    private DatabaseConnection() {}\n\n    public static DatabaseConnection getInstance() {\n        if (instance == null) { // Первая проверка\n            synchronized (DatabaseConnection.class) {\n                if (instance == null) { // Вторая проверка\n                    instance = new DatabaseConnection();\n                }\n            }\n        }\n        return instance;\n    }\n}",
+                "answer": "### Ошибка в коде:\nПеременная `instance` не объявлена с ключевым словом **`volatile`**.\n\n### В чем опасность?\nОперация создания объекта `new DatabaseConnection()` не является атомарной. На низком уровне она компилируется в следующие три шага:\n1. Выделение памяти под объект.\n2. Вызов конструктора для инициализации полей.\n3. Присвоение адреса выделенной памяти в переменную `instance`.\n\nИз-за оптимизационного переупорядочивания инструкций процессор может поменять шаги 2 и 3 местами. В таком случае переменной `instance` присвоится адрес памяти до того, как завершится инициализация конструктором.\n\nЕсли в этот критический микросекундный момент другой поток вызовет `getInstance()`, первая проверка `if (instance == null)` вернет `false` (так как ссылка уже не null), и поток получит **частично инициализированный объект**, что приведет к непредсказуемым ошибкам в приложении (например, NullPointerException при вызовах методов).\n\n### Правильное решение:\nНеобходимо добавить модификатор `volatile` к объявлению переменной:\n```java\nprivate static volatile DatabaseConnection instance;\n```\nЭто запретит переупорядочивание инструкций инициализации объекта и гарантирует корректную работу в многопоточной среде.",
+                "analogy": "Это как разрешить зайти покупателю в недостроенный магазин, в котором еще не повесили полки и не подключили электричество, только потому, что строители повесили красивую вывеску на входе."
+            },
+            {
+                "id": "oop-001",
+                "topic": "OOP",
+                "difficulty": "Junior",
+                "format": "Open Answer",
+                "question": "Каковы ключевые различия между абстрактными классами и интерфейсами в современных версиях Java (Java 8+ и 17+)?",
+                "code": "",
+                "answer": "С развитием Java (особенно после добавления default-методов в Java 8 и sealed-классов в Java 17) границы размылись, но фундаментальные отличия остались:\n\n1. **Множественное наследование:** \n   Класс может наследоваться только от одного класса (включая абстрактные), но может имплементировать неограниченное количество интерфейсов.\n\n2. **Управление состоянием:** \n   Абстрактные классы могут иметь переменные состояния (instance fields), конструкторы и нестатические блоки инициализации. \n   Интерфейсы **не могут хранить состояние**; любые переменные в интерфейсе автоматически трактуются как `public static final` (константы).\n\n3. **Методы:**\n   - Абстрактные классы могут содержать методы с любыми модификаторами доступа (`private`, `protected`, `package-private`, `public`).\n   - В интерфейсах методы по умолчанию публичные (`public`). Начиная с Java 8 разрешены `default` и `static` методы с телом, с Java 9 — `private` методы для переиспользования кода внутри интерфейса.\n\n4. **Идеология применения:**\n   - **Абстрактный класс** используется при проектировании жесткой иерархии родственных сущностей, отвечающей на вопрос **«Кто я?» (IS-A)**.\n   - **Интерфейс** используется для декларирования независимых поведенческих контрактов, отвечающих на вопрос **«Что я умею делать?» (CAN-DO)**.",
+                "analogy": "Абстрактный класс — это чертеж 'Смартфона'. Смартфон имеет физические компоненты: батарею, экран (переменные состояния). Интерфейс — это стандарт порта USB-C. Смартфон, плеер и лампа умеют заряжаться через этот порт, хотя они вообще не родственники по иерархии классов."
+            },
+            {
+                "id": "oop-034",
+                "topic": "OOP",
+                "difficulty": "Middle",
+                "format": "Code Review",
+                "question": "Какие правила (контракты) будут нарушены, если переопределить метод equals(), но проигнорировать метод hashCode()?",
+                "code": "public class Developer {\n    private String name;\n    private int age;\n\n    public Developer(String name, int age) {\n        this.name = name; \n        this.age = age;\n    }\n\n    @Override\n    public boolean equals(Object o) {\n        if (this == o) return true;\n        if (!(o instanceof Developer)) return false;\n        Developer dev = (Developer) o;\n        return age == dev.age && Objects.equals(name, dev.name);\n    }\n    // hashCode() НЕ переопределен!\n}",
+                "answer": "### Последствия нарушения контракта:\nЕсли два объекта равны согласно методу `equals()`, у них **обязательно должны быть одинаковые значения `hashCode()`**.\n\nЕсли не переопределить `hashCode()`, будет использоваться стандартная реализация из класса `Object`, которая возвращает уникальный хэш-код, завязанный на внутренний адрес объекта в памяти.\n\n### К каким багам это приведет?\nТакой класс сломает работу всех хэш-коллекций (`HashMap`, `HashSet`, `Hashtable`):\n1. При добавлении дубликата в `HashSet<Developer>` будут сохранены оба объекта, так как хэш-коллекция сначала сравнивает хэш-коды объектов. У разных физических экземпляров хэш-коды будут разными, поэтому они попадут в разные бакеты.\n2. При поиске объекта в `HashMap` методом `.get(key)` вы получите `null`, даже если в мапе лежит абсолютно эквивалентный по значению `equals()` ключ.\n\n### Корректное решение:\nНеобходимо добавить генерацию согласованного хэш-кода:\n```java\n@Override\npublic int hashCode() {\n    return Objects.hash(name, age);\n}\n```",
+                "analogy": "Вы расставили в архиве книги по жанрам (хэш-кодам), но две абсолютно одинаковые книги положили на разные полки (в разные бакеты). Читатель, пытаясь найти дубликат книги по ее содержанию (equals), заглянет на полку 'Фантастика' и уйдет ни с чем, потому что вторая книга по ошибке оказалась на полке 'Кулинария'."
+            }
+        ];
+
+        // Global State variables
+        let questionsList = [];
+        let filteredQuestions = [];
+        let currentIndex = 0;
+        let isAnswerVisible = false;
+        let masteredIds = [];
+        let flaggedIds = [];
+        let selectedDiffFilters = [];
+
+        // Loading states from LocalStorage for persistence
+        function loadPersistence() {
+            try {
+                const storedMastered = localStorage.getItem('java_trainer_mastered');
+                const storedFlagged = localStorage.getItem('java_trainer_flagged');
+                
+                masteredIds = storedMastered ? JSON.parse(storedMastered) : [];
+                flaggedIds = storedFlagged ? JSON.parse(storedFlagged) : [];
+                
+                updateStatsUI();
+            } catch (err) {
+                console.error("Failed to read localStorage persistence states", err);
+            }
+        }
+
+        function savePersistence() {
+            try {
+                localStorage.setItem('java_trainer_mastered', JSON.stringify(masteredIds));
+                localStorage.setItem('java_trainer_flagged', JSON.stringify(flaggedIds));
+                updateStatsUI();
+            } catch (err) {
+                console.error("Failed to write to localStorage", err);
+            }
+        }
+
+        // Initialize and load dynamic questions indexes
+        async function fetchQuestions() {
+            try {
+                // Try fetching index.json dynamically.
+                const response = await fetch('index.json');
+                if (!response.ok) throw new Error("Index file not found");
+                const data = await response.json();
+                
+                if (data && data.questions && data.questions.length > 0) {
+                    questionsList = data.questions;
+                } else {
+                    questionsList = [...fallbackDatabase];
+                }
+            } catch (err) {
+                console.log("Using rich embedded fallback database.");
+                questionsList = [...fallbackDatabase];
+            }
+
+            filteredQuestions = [...questionsList];
+            loadPersistence();
+            buildSidebarList();
+            await loadQuestion(0);
+        }
+
+        // Build the left sidebar navigation items
+        function buildSidebarList() {
+            const container = document.getElementById('questions-container');
+            const countLabel = document.getElementById('question-list-count');
+            
+            container.innerHTML = '';
+            countLabel.textContent = filteredQuestions.length;
+
+            if (filteredQuestions.length === 0) {
+                container.innerHTML = `
+                    <div class="p-8 text-center text-slate-400">
+                        <i class="fa-solid fa-face-frown text-2xl mb-2 text-slate-300 dark:text-slate-600"></i>
+                        <p class="text-xs font-semibold">Вопросы не найдены</p>
+                        <p class="text-[10px] text-slate-400 mt-1">Попробуйте изменить параметры поиска или фильтров</p>
+                    </div>
+                `;
+                return;
+            }
+
+            filteredQuestions.forEach((q, idx) => {
+                const isMastered = masteredIds.includes(q.id);
+                const isFlagged = flaggedIds.includes(q.id);
+                const isActive = idx === currentIndex;
+
+                // Color configuration for difficulties
+                let diffStyle = 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400';
+                if (q.difficulty === 'Middle') diffStyle = 'bg-blue-500/10 text-blue-600 dark:text-blue-400';
+                if (q.difficulty === 'Senior') diffStyle = 'bg-purple-500/10 text-purple-600 dark:text-purple-400';
+
+                const button = document.createElement('button');
+                button.className = `w-full text-left p-4 transition-all duration-200 border-l-4 flex flex-col space-y-2 ${
+                    isActive 
+                    ? 'bg-slate-100 dark:bg-slate-800/80 border-brand-500' 
+                    : 'border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/30'
+                }`;
+
+                // Extract short question label
+                const shortQuestionText = q.title || q.question || q.id;
+
+                button.innerHTML = `
+                    <div class="flex items-center justify-between w-full">
+                        <div class="flex items-center space-x-1.5">
+                            <span class="text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wider ${diffStyle}">
+                                ${q.difficulty}
+                            </span>
+                            <span class="text-[10px] font-semibold text-slate-400 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded">
+                                ${q.topic.split(' ')[0]}
+                            </span>
+                        </div>
+                        <div class="flex items-center space-x-1">
+                            ${isMastered ? '<i class="fa-solid fa-circle-check text-emerald-500 text-xs"></i>' : ''}
+                            ${isFlagged ? '<i class="fa-solid fa-bookmark text-amber-500 text-xs"></i>' : ''}
+                        </div>
+                    </div>
+                    <h4 class="text-xs font-bold leading-snug line-clamp-2 ${isActive ? 'text-brand-500' : 'text-slate-700 dark:text-slate-300'}">
+                        ${shortQuestionText}
+                    </h4>
+                `;
+
+                button.onclick = async () => {
+                    currentIndex = idx;
+                    isAnswerVisible = false;
+                    await loadQuestion(idx);
+                    buildSidebarList();
+                };
+
+                container.appendChild(button);
+            });
+        }
+
+        // Filter actions triggered on inputs change
+        function triggerFilterAction() {
+            const searchValue = document.getElementById('search-input').value.toLowerCase().trim();
+            const topicValue = document.getElementById('topic-filter').value;
+            
+            // Checkboxes for format
+            const checkedFormats = Array.from(document.querySelectorAll('.format-checkbox:checked')).map(el => el.value);
+
+            filteredQuestions = questionsList.filter(q => {
+                // Search Matches
+                const searchMatches = (q.question && q.question.toLowerCase().includes(searchValue)) || 
+                                      (q.id && q.id.toLowerCase().includes(searchValue)) ||
+                                      (q.loadedQuestion && q.loadedQuestion.toLowerCase().includes(searchValue)) ||
+                                      (q.loadedAnswer && q.loadedAnswer.toLowerCase().includes(searchValue));
+                
+                // Topic Matches
+                const topicMatches = topicValue === 'all' || q.topic === topicValue;
+
+                // Difficulty Matches
+                const diffMatches = selectedDiffFilters.length === 0 || selectedDiffFilters.includes(q.difficulty);
+
+                // Format Matches
+                const formatMatches = checkedFormats.length === 0 || checkedFormats.includes(q.format);
+
+                return searchMatches && topicMatches && diffMatches && formatMatches;
+            });
+
+            // Reset cursor if out of bounds
+            if (currentIndex >= filteredQuestions.length) {
+                currentIndex = 0;
+            }
+
+            // Toggle "Clear" filters indicator link
+            const hasActiveFilters = searchValue !== '' || topicValue !== 'all' || selectedDiffFilters.length > 0 || checkedFormats.length > 0;
+            document.getElementById('clear-filters').style.display = hasActiveFilters ? 'inline' : 'none';
+
+            buildSidebarList();
+            loadQuestion(currentIndex);
+        }
+
+        // Reset global filter selections
+        function clearAllFilters() {
+            document.getElementById('search-input').value = '';
+            document.getElementById('topic-filter').value = 'all';
+            
+            selectedDiffFilters = [];
+            document.querySelectorAll('.diff-chip').forEach(el => {
+                el.classList.remove('bg-brand-500', 'text-white');
+                el.classList.add('bg-slate-100', 'dark:bg-slate-800', 'text-slate-600');
+            });
+
+            document.querySelectorAll('.format-checkbox').forEach(el => el.checked = false);
+            
+            triggerFilterAction();
+        }
+
+        // Sync UI global stats metrics
+        function updateStatsUI() {
+            const total = questionsList.length;
+            if (total === 0) return;
+
+            const masteredCount = masteredIds.length;
+            const flaggedCount = flaggedIds.length;
+
+            document.getElementById('stats-mastered').textContent = `${masteredCount} / ${total}`;
+            document.getElementById('stats-flagged').textContent = flaggedCount;
+
+            // Calculate percentage progress for globally tracked completion progress bar
+            const percent = Math.min(100, Math.round((masteredCount / total) * 100));
+            document.getElementById('global-progress').style.width = `${percent}%`;
+        }
+
+        // Parse both the canonical Markdown format and older hand-written files
+        function parseMarkdown(text) {
+            const result = { question: '', answer: '', code: '', analogy: '' };
+            const cleanText = text.replace(/^---[\s\S]*?---\s*/m, '').trim();
+            const sectionPattern = /(?:^|\n)\s*(?:#{1,3}\s*)?(Question|Answer|Analogy|Answer Structure|Structured Answer|Good Answer Structure|What a Good Answer Covers|Key Points[^\n]*|Example Solution|\u0412\u043e\u043f\u0440\u043e\u0441|\u041e\u0442\u0432\u0435\u0442|\u0420\u0430\u0437\u0431\u043e\u0440|\u0410\u043d\u0430\u043b\u043e\u0433\u0438\u044f)\s*\n/gi;
+            const sections = [];
+            let match;
+
+            while ((match = sectionPattern.exec(cleanText)) !== null) {
+                sections.push({ name: match[1].toLowerCase(), start: match.index + match[0].length });
+            }
+
+            sections.forEach((section, index) => {
+                const content = cleanText.slice(section.start, sections[index + 1]?.start || cleanText.length).trim();
+                if (section.name === 'question' || section.name === '\u0432\u043e\u043f\u0440\u043e\u0441') result.question = content;
+                if (section.name === 'answer' || section.name === '\u043e\u0442\u0432\u0435\u0442' || section.name === '\u0440\u0430\u0437\u0431\u043e\u0440' || section.name.includes('answer structure') || section.name.includes('structured answer') || section.name.includes('good answer') || section.name.includes('key points') || section.name.includes('example solution') || section.name.includes('what a good answer')) result.answer = content;
+                if (section.name === 'analogy' || section.name === '\u0430\u043d\u0430\u043b\u043e\u0433\u0438\u044f') result.analogy = content;
+            });
+
+            if (!result.question) {
+                const answerStart = cleanText.search(/(?:^|\n)\s*(?:#{1,3}\s*)?(Answer|Answer Structure|Structured Answer|Good Answer Structure|What a Good Answer Covers|Key Points[^\n]*|Example Solution|\u041e\u0442\u0432\u0435\u0442|\u0420\u0430\u0437\u0431\u043e\u0440)\s*\n/i);
+                result.question = (answerStart >= 0 ? cleanText.slice(0, answerStart) : cleanText).replace(/```java[\s\S]*?```/g, '').trim();
+            }
+
+            const codeMatch = text.match(/```java\s*\n([\s\S]*?)\n```/i);
+            if (codeMatch) result.code = codeMatch[1];
+            return result;
+        }
+        // Handle dynamically loading file content or pulling from fallbacks
+        async function loadQuestion(index) {
+            if (filteredQuestions.length === 0) {
+                renderNoQuestionsFoundState();
+                return;
+            }
+
+            const q = filteredQuestions[index];
+
+            // Update Header Meta Immediately for maximum responsiveness
+            const diffEl = document.getElementById('active-difficulty');
+            diffEl.textContent = q.difficulty;
+            diffEl.className = 'px-2.5 py-1 rounded-lg text-xs font-bold uppercase tracking-wider ';
+            if (q.difficulty === 'Junior') {
+                diffEl.classList.add('bg-emerald-500/10', 'text-emerald-600', 'dark:text-emerald-400');
+            } else if (q.difficulty === 'Middle') {
+                diffEl.classList.add('bg-blue-500/10', 'text-blue-600', 'dark:text-blue-400');
+            } else {
+                diffEl.classList.add('bg-purple-500/10', 'text-purple-600', 'dark:text-purple-400');
+            }
+
+            document.getElementById('active-topic').textContent = q.topic;
+            document.getElementById('active-format').textContent = q.format;
+            document.getElementById('counter').textContent = `${index + 1} / ${filteredQuestions.length}`;
+
+            // Reset action bookmark/completed status indicators
+            syncActionButtons(q.id);
+
+            // Hide the answer sections
+            const answerSection = document.getElementById('answer-section');
+            answerSection.classList.add('hidden');
+            const ansBtnText = document.getElementById('btn-answer-text');
+            const ansBtnIcon = document.getElementById('btn-answer-icon');
+            ansBtnText.textContent = "Показать ответ";
+            ansBtnIcon.className = "fa-solid fa-eye";
+            isAnswerVisible = false;
+
+            // Display loading indicators
+            const questionTextEl = document.getElementById('question-text');
+            questionTextEl.innerHTML = `
+                <div class="flex items-center space-x-2 text-slate-400 py-4 animate-pulse">
+                    <i class="fa-solid fa-spinner fa-spin text-brand-500"></i>
+                    <span>Загрузка содержимого вопроса...</span>
+                </div>
+            `;
+            document.getElementById('code-section').classList.add('hidden');
+
+            // If question has not been loaded before, fetch it dynamically
+            if (!q.loadedQuestion) {
+                let parsedContent = null;
+                
+                if (q.path) {
+                    try {
+                        const response = await fetch(q.path);
+                        if (!response.ok) throw new Error("File fetch failed");
+                        const markdownText = await response.text();
+                        parsedContent = parseMarkdown(markdownText);
+                    } catch (err) {
+                        console.warn(`Dynamic fetch failed for ${q.path}, loading fallback item.`, err);
+                    }
+                }
+
+                // Match with embedded static database
+                if (!parsedContent) {
+                    const fallbackObj = fallbackDatabase.find(f => f.id === q.id) || fallbackDatabase.find(f => f.id === "jvm-001");
+                    parsedContent = {
+                        question: fallbackObj.question,
+                        answer: fallbackObj.answer,
+                        code: fallbackObj.code,
+                        analogy: fallbackObj.analogy
+                    };
+                }
+
+                // Cache the loaded fields onto the active question object to optimize toggles and navigation
+                q.loadedQuestion = parsedContent.question;
+                q.loadedAnswer = parsedContent.answer;
+                q.loadedCode = parsedContent.code;
+                q.loadedAnalogy = parsedContent.analogy;
+                
+                // If question title in original list was empty, enrich it dynamically
+                if (!q.question) {
+                    q.question = parsedContent.question.split('\n')[0].replace(/[#*`]/g, '').trim();
+                    buildSidebarList();
+                }
+            }
+
+            // Render Markdown Question Content
+            questionTextEl.innerHTML = marked.parse(q.loadedQuestion || "Содержимое вопроса отсутствует.");
+
+            // Display code section if Java source is present
+            const codeSec = document.getElementById('code-section');
+            if (q.loadedCode && q.loadedCode.trim() !== '') {
+                codeSec.classList.remove('hidden');
+                const codeContent = document.getElementById('code-content');
+                codeContent.textContent = q.loadedCode;
+                codeContent.removeAttribute('data-highlighted');
+                hljs.highlightElement(codeContent);
+            } else {
+                codeSec.classList.add('hidden');
+            }
+
+            // Manage navigation boundaries
+            document.getElementById('btn-prev').disabled = currentIndex === 0;
+            document.getElementById('btn-next').disabled = currentIndex === filteredQuestions.length - 1;
+        }
+
+        // Synch flag/mastered active buttons styling state
+        function syncActionButtons(activeId) {
+            const isFlagged = flaggedIds.includes(activeId);
+            const flagBtn = document.getElementById('flag-btn');
+            if (isFlagged) {
+                flagBtn.classList.add('bg-amber-500/10', 'text-amber-500', 'border-amber-500/30');
+                flagBtn.classList.remove('text-slate-400');
+            } else {
+                flagBtn.classList.remove('bg-amber-500/10', 'text-amber-500', 'border-amber-500/30');
+                flagBtn.classList.add('text-slate-400');
+            }
+
+            const isMastered = masteredIds.includes(activeId);
+            const masteredBtn = document.getElementById('mastered-btn');
+            if (isMastered) {
+                masteredBtn.classList.add('bg-emerald-500/10', 'text-emerald-500', 'border-emerald-500/30');
+                masteredBtn.classList.remove('text-slate-400');
+            } else {
+                masteredBtn.classList.remove('bg-emerald-500/10', 'text-emerald-500', 'border-emerald-500/30');
+                masteredBtn.classList.add('text-slate-400');
+            }
+        }
+
+        // Render empty layout inside questions wrapper
+        function renderNoQuestionsFoundState() {
+            const card = document.getElementById('main-content-card');
+            card.innerHTML = `
+                <div class="flex-1 flex flex-col items-center justify-center text-center p-8">
+                    <div class="w-16 h-16 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 mb-4 text-2xl">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Ничего не найдено</h3>
+                    <p class="text-sm text-slate-400 max-w-sm">Сбросьте фильтры, чтобы увидеть полный список вопросов для подготовки.</p>
+                    <button onclick="clearAllFilters()" class="mt-4 bg-brand-500 hover:bg-brand-600 text-white font-bold text-xs px-4 py-2 rounded-xl transition-all">
+                        Сбросить фильтры
+                    </button>
+                </div>
+            `;
+        }
+
+        // Trigger non-intrusive beautiful toast notification message
+        function showToast(message, type = 'success') {
+            const toast = document.getElementById('toast');
+            const icon = document.getElementById('toast-icon');
+            const msgSpan = document.getElementById('toast-message');
+
+            msgSpan.textContent = message;
+
+            if (type === 'success') {
+                icon.className = "fa-solid fa-circle-check text-emerald-500";
+            } else if (type === 'bookmark') {
+                icon.className = "fa-solid fa-bookmark text-amber-500";
+            } else {
+                icon.className = "fa-solid fa-info-circle text-blue-500";
+            }
+
+            toast.classList.remove('opacity-0', 'translate-y-2');
+            toast.classList.add('opacity-100', 'translate-y-0');
+
+            setTimeout(() => {
+                toast.classList.remove('opacity-100', 'translate-y-0');
+                toast.classList.add('opacity-0', 'translate-y-2');
+            }, 2500);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // Load and initialize core engine
+            fetchQuestions();
+
+            // Toggle Answer actions event triggers
+            document.getElementById('btn-answer').onclick = () => {
+                if (filteredQuestions.length === 0) return;
+                const q = filteredQuestions[currentIndex];
+                isAnswerVisible = !isAnswerVisible;
+                
+                const answerSection = document.getElementById('answer-section');
+                const ansBtnText = document.getElementById('btn-answer-text');
+                const ansBtnIcon = document.getElementById('btn-answer-icon');
+
+                if (isAnswerVisible) {
+                    answerSection.classList.remove('hidden');
+                    document.getElementById('answer-content').innerHTML = marked.parse(q.loadedAnswer || "Ответ отсутствует.");
+
+                    // Populate intuitive analogy if defined
+                    const analogySec = document.getElementById('analogy-subsection');
+                    if (q.loadedAnalogy && q.loadedAnalogy.trim() !== '') {
+                        analogySec.classList.remove('hidden');
+                        document.getElementById('analogy-content').textContent = q.loadedAnalogy;
+                    } else {
+                        analogySec.classList.add('hidden');
+                    }
+
+                    ansBtnText.textContent = "Скрыть ответ";
+                    ansBtnIcon.className = "fa-solid fa-eye-slash";
+                } else {
+                    answerSection.classList.add('hidden');
+                    ansBtnText.textContent = "Показать ответ";
+                    ansBtnIcon.className = "fa-solid fa-eye";
+                }
+            };
+
+            // Previous and Next button actions
+            document.getElementById('btn-prev').onclick = async () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    isAnswerVisible = false;
+                    await loadQuestion(currentIndex);
+                    buildSidebarList();
+                }
+            };
+
+            document.getElementById('btn-next').onclick = async () => {
+                if (currentIndex < filteredQuestions.length - 1) {
+                    currentIndex++;
+                    isAnswerVisible = false;
+                    await loadQuestion(currentIndex);
+                    buildSidebarList();
+                }
+            };
+
+            // Flag / Bookmark toggling
+            document.getElementById('flag-btn').onclick = () => {
+                if (filteredQuestions.length === 0) return;
+                const activeId = filteredQuestions[currentIndex].id;
+                const idx = flaggedIds.indexOf(activeId);
+
+                if (idx > -1) {
+                    flaggedIds.splice(idx, 1);
+                    showToast("Удалено из закладок", "info");
+                } else {
+                    flaggedIds.push(activeId);
+                    showToast("Добавлено в закладки!", "bookmark");
+                }
+                
+                savePersistence();
+                syncActionButtons(activeId);
+                buildSidebarList();
+            };
+
+            // Mastered toggle trigger
+            document.getElementById('mastered-btn').onclick = () => {
+                if (filteredQuestions.length === 0) return;
+                const activeId = filteredQuestions[currentIndex].id;
+                const idx = masteredIds.indexOf(activeId);
+
+                if (idx > -1) {
+                    masteredIds.splice(idx, 1);
+                    showToast("Вопрос возвращен к изучению", "info");
+                } else {
+                    masteredIds.push(activeId);
+                    showToast("Поздравляем! Отмечено как изучено 👍", "success");
+                }
+
+                savePersistence();
+                syncActionButtons(activeId);
+                buildSidebarList();
+            };
+
+            // Filters updates triggers
+            document.getElementById('search-input').oninput = triggerFilterAction;
+            document.getElementById('topic-filter').onchange = triggerFilterAction;
+            document.querySelectorAll('.format-checkbox').forEach(el => {
+                el.onchange = triggerFilterAction;
+            });
+
+            // Difficulty chips actions handlers
+            document.querySelectorAll('.diff-chip').forEach(el => {
+                el.onclick = () => {
+                    const difficulty = el.getAttribute('data-diff');
+                    const idx = selectedDiffFilters.indexOf(difficulty);
+
+                    if (idx > -1) {
+                        selectedDiffFilters.splice(idx, 1);
+                        // Restore visual inactive style
+                        el.classList.remove('bg-brand-500', 'text-white', 'border-brand-500');
+                        if (difficulty === 'Junior') el.classList.add('bg-emerald-500/10', 'text-emerald-600', 'dark:text-emerald-400');
+                        if (difficulty === 'Middle') el.classList.add('bg-blue-500/10', 'text-blue-600', 'dark:text-blue-400');
+                        if (difficulty === 'Senior') el.classList.add('bg-purple-500/10', 'text-purple-600', 'dark:text-purple-400');
+                    } else {
+                        selectedDiffFilters.push(difficulty);
+                        // Render active highlight styles depending on selection
+                        el.classList.remove('bg-emerald-500/10', 'bg-blue-500/10', 'bg-purple-500/10', 'text-emerald-600', 'text-blue-600', 'text-purple-600', 'dark:text-emerald-400', 'dark:text-blue-400', 'dark:text-purple-400');
+                        el.classList.add('bg-brand-500', 'text-white', 'border-brand-500');
+                    }
+                    triggerFilterAction();
+                };
+            });
+
+            // Clear filter actions Link
+            document.getElementById('clear-filters').onclick = clearAllFilters;
+
+            // Blitz random questions selection
+            document.getElementById('blitz-btn').onclick = async () => {
+                if (questionsList.length === 0) return;
+                const randomIdx = Math.floor(Math.random() * questionsList.length);
+                
+                // Clear any filters that would hide our random blitz choice
+                clearAllFilters();
+                
+                // Find matching active cursor index
+                currentIndex = filteredQuestions.findIndex(q => q.id === questionsList[randomIdx].id);
+                isAnswerVisible = false;
+                
+                await loadQuestion(currentIndex);
+                buildSidebarList();
+                showToast("Режим блиц: Выбран случайный вопрос!", "info");
+            };
+
+            // Copy source code to clipboards
+            document.getElementById('copy-code-btn').onclick = () => {
+                const codeText = document.getElementById('code-content').textContent;
+                // Workaround context boundary copy restriction fallback
+                const textarea = document.createElement('textarea');
+                textarea.value = codeText;
+                document.body.appendChild(textarea);
+                textarea.select();
+                try {
+                    document.execCommand('copy');
+                    showToast("Код успешно скопирован!", "success");
+                } catch (err) {
+                    showToast("Не удалось скопировать код", "info");
+                }
+                document.body.removeChild(textarea);
+            };
+
+            // Theme toggle triggers
+            document.getElementById('theme-toggle').onclick = () => {
+                const isDark = document.documentElement.classList.toggle('dark');
+                
+                // Toggle Highlight styles
+                document.getElementById('hljs-dark-theme').disabled = !isDark;
+                document.getElementById('hljs-light-theme').disabled = isDark;
+
+                showToast(isDark ? "Темная тема включена" : "Светлая тема включена", "info");
+            };
+        });
+    </script>
+</body>
+</html>
