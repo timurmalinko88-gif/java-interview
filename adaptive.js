@@ -8,7 +8,11 @@ window.checkAdaptiveProgression = function() {
     if (nextQ) {
         // Load next
         if(typeof loadQuestion === 'function') {
-            loadQuestion(nextQ);
+            const idx = filteredQuestions.indexOf(nextQ);
+            if (idx !== -1) {
+                currentIndex = idx;
+                loadQuestion(idx);
+            }
             if(typeof buildSidebarList === 'function') buildSidebarList();
         }
     } else {
@@ -239,7 +243,11 @@ document.addEventListener('DOMContentLoaded', () => {
                                 }, 300);
                             }
                             if (typeof loadQuestion === 'function') {
-                                loadQuestion(q);
+                                const idx = window.filteredQuestions ? window.filteredQuestions.indexOf(q) : (typeof filteredQuestions !== 'undefined' ? filteredQuestions.indexOf(q) : -1);
+                                if (idx !== -1) {
+                                    if (typeof currentIndex !== 'undefined') currentIndex = idx;
+                                    loadQuestion(idx);
+                                }
                                 if(typeof buildSidebarList === 'function') buildSidebarList();
                             }
                         };
