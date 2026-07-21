@@ -246,6 +246,11 @@
                         </span>
                     </div>
 
+                    <!-- Extra Metadata Badges (Hidden by default, shown if exists) -->
+                    <div id="extra-metadata" class="flex flex-wrap items-center gap-3 mt-2 w-full text-xs font-medium text-slate-500 dark:text-slate-400">
+                        <!-- Injected dynamically -->
+                    </div>
+
                     <!-- Bookmark & Mastery Toggle Controls -->
                     <div class="flex items-center space-x-2">
                         <!-- Bookmark flag -->
@@ -636,31 +641,16 @@
             document.getElementById('global-progress').style.width = `${percent}%`;
         }
 
-        // Parse both the canonical Markdown format and older hand-written files
+        // Parse the canonical Markdown format
         function parseMarkdown(text) {
             const result = { question: '', answer: '', code: '', analogy: '' };
             const cleanText = text.replace(/^---[\s\S]*?---\s*/m, '').trim();
-            const sectionPattern = /(?:^|\n)\s*(?:#{1,3}\s*)?(Question|Answer|Analogy|Answer Structure|Structured Answer|Good Answer Structure|What a Good Answer Covers|Key Points[^\n]*|Example Solution|\u0412\u043e\u043f\u0440\u043e\u0441|\u041e\u0442\u0432\u0435\u0442|\u0420\u0430\u0437\u0431\u043e\u0440|\u0410\u043d\u0430\u043b\u043e\u0433\u0438\u044f)\s*\n/gi;
-            const sections = [];
-            let match;
+            
+            const parts = cleanText.split('---ANSWER---');
+            result.question = parts[0] ? parts[0].trim() : '';
+            result.answer = parts[1] ? parts[1].trim() : '';
 
-            while ((match = sectionPattern.exec(cleanText)) !== null) {
-                sections.push({ name: match[1].toLowerCase(), start: match.index + match[0].length });
-            }
-
-            sections.forEach((section, index) => {
-                const content = cleanText.slice(section.start, sections[index + 1]?.start || cleanText.length).trim();
-                if (section.name === 'question' || section.name === '\u0432\u043e\u043f\u0440\u043e\u0441') result.question = content;
-                if (section.name === 'answer' || section.name === '\u043e\u0442\u0432\u0435\u0442' || section.name === '\u0440\u0430\u0437\u0431\u043e\u0440' || section.name.includes('answer structure') || section.name.includes('structured answer') || section.name.includes('good answer') || section.name.includes('key points') || section.name.includes('example solution') || section.name.includes('what a good answer')) result.answer = content;
-                if (section.name === 'analogy' || section.name === '\u0430\u043d\u0430\u043b\u043e\u0433\u0438\u044f') result.analogy = content;
-            });
-
-            if (!result.question) {
-                const answerStart = cleanText.search(/(?:^|\n)\s*(?:#{1,3}\s*)?(Answer|Answer Structure|Structured Answer|Good Answer Structure|What a Good Answer Covers|Key Points[^\n]*|Example Solution|\u041e\u0442\u0432\u0435\u0442|\u0420\u0430\u0437\u0431\u043e\u0440)\s*\n/i);
-                result.question = (answerStart >= 0 ? cleanText.slice(0, answerStart) : cleanText).replace(/```java[\s\S]*?```/g, '').trim();
-            }
-
-            const codeMatch = text.match(/```java\s*\n([\s\S]*?)\n```/i);
+            const codeMatch = cleanText.match(/```java\s*\n([\s\S]*?)\n```/i);
             if (codeMatch) result.code = codeMatch[1];
             return result;
         }
@@ -688,6 +678,19 @@
             document.getElementById('active-topic').textContent = q.topic;
             document.getElementById('active-format').textContent = q.format;
             document.getElementById('counter').textContent = `${index + 1} / ${filteredQuestions.length}`;
+
+            // Render Extra Metadata
+            const extraMetaContainer = document.getElementById('extra-metadata');
+            extraMetaContainer.innerHTML = '';
+            if (q.time) {
+                extraMetaContainer.innerHTML += `<span class="flex items-center gap-1 bg-slate-50 dark:bg-slate-800/50 px-2 py-1 rounded"><i class="fa-regular fa-clock text-amber-500"></i> ${q.time} мин</span>`;
+            }
+            if (q.frequency) {
+                extraMetaContainer.innerHTML += `<span class="flex items-center gap-1 bg-slate-50 dark:bg-slate-800/50 px-2 py-1 rounded"><i class="fa-solid fa-fire-flame-curved text-brand-500"></i> Частота: ${q.frequency}</span>`;
+            }
+            if (q.related && q.related.length > 0) {
+                extraMetaContainer.innerHTML += `<span class="flex items-center gap-1 bg-slate-50 dark:bg-slate-800/50 px-2 py-1 rounded"><i class="fa-solid fa-link text-blue-500"></i> ${Array.isArray(q.related) ? q.related.join(', ') : q.related}</span>`;
+            }
 
             // Reset action bookmark/completed status indicators
             syncActionButtons(q.id);

@@ -99,6 +99,9 @@ def build_index():
             'difficulty': metadata.get('difficulty', metadata.get('level', 'Junior')),
             'format': metadata.get('format', 'Open Answer'),
             'title': title if title else os.path.splitext(os.path.basename(filepath))[0],
+            'time': metadata.get('estimated_time_minutes', ''),
+            'frequency': metadata.get('frequency', ''),
+            'related': metadata.get('related_questions', [])
         })
 
     # Сохраняем итоговый индекс
@@ -112,7 +115,6 @@ def build_index():
         json.dump(index, f, ensure_ascii=False, indent=2)
 
     print(f"\nУспешно! Обновлен index.json. Проиндексировано файлов: {len(questions)}")
-
 
 if __name__ == '__main__':
     build_index()

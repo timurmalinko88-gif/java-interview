@@ -3,868 +3,1350 @@
   "total": 108,
   "questions": [
     {
-      "id": "jvm-001",
-      "path": "questions/jvm-001.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Junior",
-      "format": "Open Answer",
-      "title": "Unintentional Retention: Memory Leaks in Java"
-    },
-    {
-      "id": "jvm-002",
-      "path": "questions/jvm-002.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Junior",
-      "format": "Code Review",
-      "title": "Code Review: The Immortal Cache"
-    },
-    {
-      "id": "jvm-003",
-      "path": "questions/jvm-003.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Middle",
-      "format": "Open Answer",
-      "title": "ThreadLocal Leaks and the Looming Future"
-    },
-    {
-      "id": "jvm-004",
-      "path": "questions/jvm-004.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Middle",
-      "format": "Code Review",
-      "title": "Code Review: The Off-Heap Illusion"
-    },
-    {
-      "id": "jvm-005",
-      "path": "questions/jvm-005.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Senior",
-      "format": "System Design",
-      "title": "System Design: Ultra-Low Latency Order Cache"
-    },
-    {
-      "id": "jvm-006",
-      "path": "questions/jvm-006.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Junior",
-      "format": "Open Answer",
-      "title": "- Basic Java syntax"
-    },
-    {
-      "id": "jvm-007",
-      "path": "questions/jvm-007.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Junior",
-      "format": "Code Review",
-      "title": "- String Pool basics"
-    },
-    {
-      "id": "jvm-008",
-      "path": "questions/jvm-008.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Middle",
-      "format": "Open Answer",
-      "title": "- Heap regions (Young/Old/Metaspace)"
-    },
-    {
-      "id": "jvm-009",
-      "path": "questions/jvm-009.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Middle",
-      "format": "Code Review",
-      "title": "- JIT compilation concepts (interpreted vs compiled)"
-    },
-    {
-      "id": "jvm-010",
-      "path": "questions/jvm-010.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Senior",
-      "format": "System Design",
-      "title": "- Java NIO / ByteBuffer"
-    },
-    {
-      "id": "jvm-011",
-      "path": "questions/jvm-011.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Junior",
-      "format": "Code Review",
-      "title": "String Concatenation and Interning"
-    },
-    {
-      "id": "jvm-012",
-      "path": "questions/jvm-012.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Junior",
-      "format": "Open Answer",
-      "title": "GC Algorithm Trade-offs"
-    },
-    {
-      "id": "jvm-013",
-      "path": "questions/jvm-013.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Middle",
-      "format": "Code Review",
-      "title": "The Silent Web Leak"
-    },
-    {
-      "id": "jvm-014",
-      "path": "questions/jvm-014.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Middle",
-      "format": "Open Answer",
-      "title": "The Invisible Memory Limit"
-    },
-    {
-      "id": "jvm-015",
-      "path": "questions/jvm-015.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Senior",
-      "format": "System Design",
-      "title": "Zero-Latency Bidding Engine"
-    },
-    {
-      "id": "jvm-016",
-      "path": "questions/jvm-016.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Junior",
-      "format": "Open Answer",
-      "title": "The Silent Memory Eater"
-    },
-    {
-      "id": "jvm-017",
-      "path": "questions/jvm-017.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Junior",
-      "format": "Code Review",
-      "title": "The Hidden Handle Leak"
-    },
-    {
-      "id": "jvm-018",
-      "path": "questions/jvm-018.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Middle",
-      "format": "Open Answer",
-      "title": "The Tale of Two Collectors: Latency vs. Throughput"
-    },
-    {
-      "id": "jvm-019",
-      "path": "questions/jvm-019.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Middle",
-      "format": "Code Review",
-      "title": "The Ghost in the Thread Pool"
-    },
-    {
-      "id": "jvm-020",
-      "path": "questions/jvm-020.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Senior",
-      "format": "System Design",
-      "title": "Beyond the Heap: The 100GB Cache Problem"
-    },
-    {
-      "id": "jvm-021",
-      "path": "questions/jvm-021.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Junior",
-      "format": "Open Answer",
-      "title": "- Java basics"
-    },
-    {
-      "id": "jvm-022",
-      "path": "questions/jvm-022.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Junior",
-      "format": "Code Review",
-      "title": "- Java Collections"
-    },
-    {
-      "id": "jvm-023",
-      "path": "questions/jvm-023.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Middle",
-      "format": "Open Answer",
-      "title": "- JVM heap layout (Eden, Survivor, Old Gen)"
-    },
-    {
-      "id": "jvm-024",
-      "path": "questions/jvm-024.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Middle",
-      "format": "Code Review",
-      "title": "- Java generics"
-    },
-    {
-      "id": "jvm-025",
-      "path": "questions/jvm-025.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Senior",
-      "format": "System Design",
-      "title": "- G1GC internals (regions, remembered sets, mixed GC)"
-    },
-    {
-      "id": "jvm-026",
-      "path": "questions/jvm-026.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Junior",
-      "format": "Open Answer",
-      "title": "- Basic JVM architecture"
-    },
-    {
-      "id": "jvm-027",
-      "path": "questions/jvm-027.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Junior",
-      "format": "Code Review",
-      "title": "- Java ClassLoader basics"
-    },
-    {
-      "id": "jvm-028",
-      "path": "questions/jvm-028.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Middle",
-      "format": "Open Answer",
-      "title": "- Heap dump basics (what a .hprof is)"
-    },
-    {
-      "id": "jvm-029",
-      "path": "questions/jvm-029.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Middle",
-      "format": "Code Review",
-      "title": "- Basic GC mechanics"
-    },
-    {
-      "id": "jvm-030",
-      "path": "questions/jvm-030.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Senior",
-      "format": "System Design",
-      "title": "- Java Flight Recorder (JFR) basic concepts"
-    },
-    {
-      "id": "jvm-031",
-      "path": "questions/jvm-031.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Senior",
-      "format": "System Design",
-      "title": "Garbage Collection Algorithms (Generational, Concurrent Compaction)"
-    },
-    {
-      "id": "jvm-032",
-      "path": "questions/jvm-032.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Senior",
-      "format": "Open Answer",
-      "title": "HotSpot JIT C2 Compiler architecture"
-    },
-    {
-      "id": "jvm-033",
-      "path": "questions/jvm-033.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Senior",
-      "format": "Code Review",
-      "title": "Dynamic dispatch / virtual method tables (vtables)"
-    },
-    {
-      "id": "jvm-034",
-      "path": "questions/jvm-034.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Junior",
-      "format": "Open Answer",
-      "title": "Basic Memory Management"
-    },
-    {
-      "id": "jvm-035",
-      "path": "questions/jvm-035.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Middle",
-      "format": "Open Answer",
-      "title": "ClassLoader Subsystem"
-    },
-    {
-      "id": "jvm-036",
-      "path": "questions/jvm-036.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Senior",
-      "format": "Open Answer",
-      "title": "ZGC Colored Pointers & Load Barriers"
-    },
-    {
-      "id": "jvm-037",
-      "path": "questions/jvm-037.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Middle",
-      "format": "Open Answer",
-      "title": "cgroups v1 & v2 architecture"
-    },
-    {
-      "id": "jvm-038",
-      "path": "questions/jvm-038.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Senior",
-      "format": "System Design",
-      "title": "Heap dump analysis (MAT, JProfiler)"
-    },
-    {
-      "id": "jvm-039",
-      "path": "questions/jvm-039.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Middle",
-      "format": "Open Answer",
-      "title": "64-bit address space layout"
-    },
-    {
-      "id": "jvm-040",
-      "path": "questions/jvm-040.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Senior",
-      "format": "Open Answer",
-      "title": "Stop-The-World (STW) mechanics"
-    },
-    {
-      "id": "jvm-041",
-      "path": "questions/jvm-041.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Senior",
-      "format": "Open Answer",
-      "title": "ThreadPoolExecutor mechanics"
-    },
-    {
-      "id": "jvm-042",
-      "path": "questions/jvm-042.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Senior",
-      "format": "Open Answer",
-      "title": "64-bit word architecture"
-    },
-    {
-      "id": "jvm-043",
-      "path": "questions/jvm-043.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Middle",
-      "format": "Open Answer",
-      "title": "Garbage Collection cycles"
-    },
-    {
-      "id": "jvm-044",
-      "path": "questions/jvm-044.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Senior",
-      "format": "Open Answer",
-      "title": "Operating System memory management (virtual memory, page translation)"
-    },
-    {
-      "id": "jvm-045",
-      "path": "questions/jvm-045.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Middle",
-      "format": "Open Answer",
-      "title": "C1 (Client) vs C2 (Server) compiler differences"
-    },
-    {
-      "id": "jvm-046",
-      "path": "questions/jvm-046.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Middle",
-      "format": "Open Answer",
-      "title": "JVM Class Loading lifecycle"
-    },
-    {
-      "id": "jvm-047",
-      "path": "questions/jvm-047.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Senior",
-      "format": "System Design",
-      "title": "Safepoint bias and JVM pause mechanics"
-    },
-    {
-      "id": "jvm-048",
-      "path": "questions/jvm-048.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Junior",
-      "format": "Open Answer",
-      "title": "Java Object Layout (64-bit JVM)"
-    },
-    {
-      "id": "jvm-049",
-      "path": "questions/jvm-049.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Middle",
-      "format": "Code Review",
-      "title": "WeakReference mechanics"
-    },
-    {
-      "id": "jvm-050",
-      "path": "questions/jvm-050.md",
-      "topic": "JVM & Memory Management",
-      "difficulty": "Middle",
-      "format": "Open Answer",
-      "title": "String Constant Pool"
-    },
-    {
-      "id": "multithreading-001",
-      "path": "questions/multithreading-001.md",
-      "topic": "Multithreading",
-      "difficulty": "Junior",
-      "format": "Open Answer",
-      "title": "Вопрос"
-    },
-    {
-      "id": "multithreading-002",
-      "path": "questions/multithreading-002.md",
-      "topic": "Multithreading",
-      "difficulty": "Junior",
-      "format": "Open Answer",
-      "title": "Вопрос"
-    },
-    {
-      "id": "multithreading-003",
-      "path": "questions/multithreading-003.md",
-      "topic": "Multithreading",
-      "difficulty": "Middle",
-      "format": "Open Answer",
-      "title": "Вопрос"
-    },
-    {
-      "id": "multithreading-004",
-      "path": "questions/multithreading-004.md",
-      "topic": "Multithreading",
-      "difficulty": "Middle",
-      "format": "Code Review",
-      "title": "Вопрос"
-    },
-    {
-      "id": "multithreading-005",
-      "path": "questions/multithreading-005.md",
-      "topic": "Multithreading",
-      "difficulty": "Senior",
-      "format": "System Design",
-      "title": "Вопрос"
-    },
-    {
-      "id": "oop-001",
-      "path": "questions/oop-001.md",
-      "topic": "OOP",
-      "difficulty": "Junior",
-      "format": "Open Answer",
-      "title": "Вопрос"
-    },
-    {
-      "id": "oop-002",
-      "path": "questions/oop-002.md",
-      "topic": "OOP",
-      "difficulty": "Junior",
-      "format": "Open Answer",
-      "title": "Вопрос"
-    },
-    {
-      "id": "oop-003",
-      "path": "questions/oop-003.md",
-      "topic": "OOP",
-      "difficulty": "Middle",
-      "format": "Open Answer",
-      "title": "Вопрос"
-    },
-    {
-      "id": "oop-004",
-      "path": "questions/oop-004.md",
-      "topic": "OOP",
-      "difficulty": "Middle",
-      "format": "Code Review",
-      "title": "Вопрос"
-    },
-    {
-      "id": "oop-005",
-      "path": "questions/oop-005.md",
+      "id": "oop-015",
+      "path": "questions/distributed-system-oop-design/oop-015.md",
       "topic": "OOP",
       "difficulty": "Senior",
       "format": "System Design",
-      "title": "Вопрос"
-    },
-    {
-      "id": "oop-006",
-      "path": "questions/oop-006.md",
-      "topic": "OOP",
-      "difficulty": "Junior",
-      "format": "Open Answer",
-      "title": "Question: The Fragile Base Class"
-    },
-    {
-      "id": "oop-007",
-      "path": "questions/oop-007.md",
-      "topic": "OOP",
-      "difficulty": "Junior",
-      "format": "Code Review",
-      "title": "Question: The Disappearing User"
-    },
-    {
-      "id": "oop-008",
-      "path": "questions/oop-008.md",
-      "topic": "OOP",
-      "difficulty": "Middle",
-      "format": "Code Review",
-      "title": "Question: The Leaky Immutable Object"
-    },
-    {
-      "id": "oop-009",
-      "path": "questions/oop-009.md",
-      "topic": "OOP",
-      "difficulty": "Middle",
-      "format": "System Design",
-      "title": "Question: Multi-Channel Notification Router"
-    },
-    {
-      "id": "oop-010",
-      "path": "questions/oop-010.md",
-      "topic": "OOP",
-      "difficulty": "Senior",
-      "format": "System Design",
-      "title": "Question: Resilient Payment State Machine"
-    },
-    {
-      "id": "oop-011",
-      "path": "questions/oop-011.md",
-      "topic": "OOP",
-      "difficulty": "Junior",
-      "format": "Open Answer",
-      "title": "Question"
+      "title": "Design the Object-Oriented model for a **Distributed Rate Limiter** used across a microservice architecture. Focus on the core domain classes, how state is encapsulated, and the trade-offs regarding consistency vs. latency (CAP theorem).",
+      "time": "45",
+      "frequency": "Low",
+      "related": [
+        "sys-010"
+      ]
     },
     {
       "id": "oop-012",
-      "path": "questions/oop-012.md",
+      "path": "questions/encapsulation-and-mutability/oop-012.md",
       "topic": "OOP",
       "difficulty": "Junior",
       "format": "Code Review",
-      "title": "Question"
+      "title": "Review the following `UserConfiguration` class. Point out the bugs related to object-oriented design and explain how to fix them.",
+      "time": "15",
+      "frequency": "Medium",
+      "related": [
+        "oop-021"
+      ]
     },
     {
-      "id": "oop-013",
-      "path": "questions/oop-013.md",
+      "id": "oop-007",
+      "path": "questions/equality-and-overriding/oop-007.md",
+      "topic": "OOP",
+      "difficulty": "Junior",
+      "format": "Code Review",
+      "title": "Question: The Disappearing User",
+      "time": "15",
+      "frequency": "High",
+      "related": [
+        "oop-002",
+        "collections-004"
+      ]
+    },
+    {
+      "id": "oop-008",
+      "path": "questions/immutability-and-defensive-copying/oop-008.md",
       "topic": "OOP",
       "difficulty": "Middle",
       "format": "Code Review",
-      "title": "Question"
+      "title": "Question: The Leaky Immutable Object",
+      "time": "15",
+      "frequency": "Medium",
+      "related": [
+        "core-005"
+      ]
+    },
+    {
+      "id": "oop-006",
+      "path": "questions/inheritance-vs-composition/oop-006.md",
+      "topic": "OOP",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "Question: The Fragile Base Class",
+      "time": "10",
+      "frequency": "High",
+      "related": [
+        "oop-001"
+      ]
     },
     {
       "id": "oop-014",
-      "path": "questions/oop-014.md",
+      "path": "questions/interface-segregation-and-sealed-classes/oop-014.md",
       "topic": "OOP",
       "difficulty": "Middle",
       "format": "Open Answer",
-      "title": "Question"
+      "title": "In modern Java (17+), how does the combination of `sealed` interfaces and Interface Segregation Principle (ISP) change domain modeling? Discuss the trade-offs of using `default` methods in a sealed interface versus traditional abstract classes.",
+      "time": "15",
+      "frequency": "Medium",
+      "related": [
+        "oop-040"
+      ]
     },
     {
-      "id": "oop-015",
-      "path": "questions/oop-015.md",
-      "topic": "OOP",
+      "id": "jvm-001",
+      "path": "questions/jvm-memory-management/jvm-001.md",
+      "topic": "JVM & Memory Management",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "Unintentional Retention: Memory Leaks in Java",
+      "time": "10",
+      "frequency": "High",
+      "related": "jvm-002, jvm-003"
+    },
+    {
+      "id": "jvm-002",
+      "path": "questions/jvm-memory-management/jvm-002.md",
+      "topic": "JVM & Memory Management",
+      "difficulty": "Junior",
+      "format": "Code Review",
+      "title": "Code Review: The Immortal Cache",
+      "time": "15",
+      "frequency": "Medium",
+      "related": "jvm-001"
+    },
+    {
+      "id": "jvm-003",
+      "path": "questions/jvm-memory-management/jvm-003.md",
+      "topic": "JVM & Memory Management",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "ThreadLocal Leaks and the Looming Future",
+      "time": "15",
+      "frequency": "High",
+      "related": "jvm-001, jvm-002"
+    },
+    {
+      "id": "jvm-004",
+      "path": "questions/jvm-memory-management/jvm-004.md",
+      "topic": "JVM & Memory Management",
+      "difficulty": "Middle",
+      "format": "Code Review",
+      "title": "Code Review: The Off-Heap Illusion",
+      "time": "20",
+      "frequency": "Low",
+      "related": "jvm-002"
+    },
+    {
+      "id": "jvm-005",
+      "path": "questions/jvm-memory-management/jvm-005.md",
+      "topic": "JVM & Memory Management",
       "difficulty": "Senior",
       "format": "System Design",
-      "title": "Question"
+      "title": "System Design: Ultra-Low Latency Order Cache",
+      "time": "30",
+      "frequency": "Medium",
+      "related": "jvm-004"
     },
     {
-      "id": "oop-016",
-      "path": "questions/oop-016.md",
-      "topic": "OOP",
+      "id": "jvm-006",
+      "path": "questions/jvm-memory-management/jvm-006.md",
+      "topic": "JVM & Memory Management",
       "difficulty": "Junior",
       "format": "Open Answer",
-      "title": "Question: Static vs Dynamic Binding in Java"
+      "title": "Where does a String live — String Pool or Heap, and why does it matter?",
+      "time": "10",
+      "frequency": "very_high",
+      "related": ""
     },
     {
-      "id": "oop-017",
-      "path": "questions/oop-017.md",
-      "topic": "OOP",
+      "id": "jvm-007",
+      "path": "questions/jvm-memory-management/jvm-007.md",
+      "topic": "JVM & Memory Management",
       "difficulty": "Junior",
       "format": "Code Review",
-      "title": "Question: The Fragile Base Class"
+      "title": "Code Review: Cache built with String keys — spot the memory and correctness bugs",
+      "time": "15",
+      "frequency": "high",
+      "related": ""
     },
     {
-      "id": "oop-018",
-      "path": "questions/oop-018.md",
-      "topic": "OOP",
-      "difficulty": "Middle",
-      "format": "Code Review",
-      "title": "Question: The Rectangle-Square Dilemma"
-    },
-    {
-      "id": "oop-019",
-      "path": "questions/oop-019.md",
-      "topic": "OOP",
+      "id": "jvm-008",
+      "path": "questions/jvm-memory-management/jvm-008.md",
+      "topic": "JVM & Memory Management",
       "difficulty": "Middle",
       "format": "Open Answer",
-      "title": "Question: Defensive Copying and Encapsulation"
+      "title": "GC Generations: why does the JVM split the heap, and when does the split hurt you?",
+      "time": "20",
+      "frequency": "high",
+      "related": ""
     },
     {
-      "id": "oop-020",
-      "path": "questions/oop-020.md",
-      "topic": "OOP",
+      "id": "jvm-009",
+      "path": "questions/jvm-memory-management/jvm-009.md",
+      "topic": "JVM & Memory Management",
+      "difficulty": "Middle",
+      "format": "Code Review",
+      "title": "Code Review: micro-benchmark of a math utility — find the JIT-related bugs",
+      "time": "20",
+      "frequency": "high",
+      "related": ""
+    },
+    {
+      "id": "jvm-010",
+      "path": "questions/jvm-memory-management/jvm-010.md",
+      "topic": "JVM & Memory Management",
       "difficulty": "Senior",
       "format": "System Design",
-      "title": "Question: Domain Models in Distributed Systems"
+      "title": "System Design: Off-Heap Distributed Cache for a Low-Latency Trading Platform",
+      "time": "40",
+      "frequency": "medium",
+      "related": ""
     },
     {
-      "id": "oop-021",
-      "path": "questions/oop-021.md",
-      "topic": "OOP",
-      "difficulty": "Junior",
-      "format": "Open Answer",
-      "title": "Understanding Polymorphism and Method Dispatch"
-    },
-    {
-      "id": "oop-022",
-      "path": "questions/oop-022.md",
-      "topic": "OOP",
+      "id": "jvm-011",
+      "path": "questions/jvm-memory-management/jvm-011.md",
+      "topic": "JVM & Memory Management",
       "difficulty": "Junior",
       "format": "Code Review",
-      "title": "The Fragile Subclass"
+      "title": "String Concatenation and Interning",
+      "time": "15",
+      "frequency": "High",
+      "related": "jvm-012, core-004"
     },
     {
-      "id": "oop-023",
-      "path": "questions/oop-023.md",
-      "topic": "OOP",
-      "difficulty": "Middle",
+      "id": "jvm-012",
+      "path": "questions/jvm-memory-management/jvm-012.md",
+      "topic": "JVM & Memory Management",
+      "difficulty": "Junior",
       "format": "Open Answer",
-      "title": "Modernizing OOP: Inheritance vs. Composition"
+      "title": "GC Algorithm Trade-offs",
+      "time": "10",
+      "frequency": "High",
+      "related": "jvm-015"
     },
     {
-      "id": "oop-024",
-      "path": "questions/oop-024.md",
-      "topic": "OOP",
+      "id": "jvm-013",
+      "path": "questions/jvm-memory-management/jvm-013.md",
+      "topic": "JVM & Memory Management",
       "difficulty": "Middle",
       "format": "Code Review",
-      "title": "The Deceptive Processor"
+      "title": "The Silent Web Leak",
+      "time": "20",
+      "frequency": "High",
+      "related": "core-010"
     },
     {
-      "id": "oop-025",
-      "path": "questions/oop-025.md",
-      "topic": "OOP",
+      "id": "jvm-014",
+      "path": "questions/jvm-memory-management/jvm-014.md",
+      "topic": "JVM & Memory Management",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "The Invisible Memory Limit",
+      "time": "15",
+      "frequency": "Medium",
+      "related": "jvm-011"
+    },
+    {
+      "id": "jvm-015",
+      "path": "questions/jvm-memory-management/jvm-015.md",
+      "topic": "JVM & Memory Management",
       "difficulty": "Senior",
       "format": "System Design",
-      "title": "OOP at Scale: Distributed Payment Processing"
+      "title": "Zero-Latency Bidding Engine",
+      "time": "35",
+      "frequency": "Medium",
+      "related": "sys-002, jvm-012"
     },
     {
-      "id": "oop-026",
-      "path": "questions/oop-026.md",
-      "topic": "OOP",
+      "id": "jvm-016",
+      "path": "questions/jvm-memory-management/jvm-016.md",
+      "topic": "JVM & Memory Management",
       "difficulty": "Junior",
       "format": "Open Answer",
-      "title": "Java Records and the Illusion of Immutability"
+      "title": "The Silent Memory Eater",
+      "time": "10",
+      "frequency": "High",
+      "related": [
+        "jvm-017",
+        "core-005"
+      ]
     },
     {
-      "id": "oop-027",
-      "path": "questions/oop-027.md",
-      "topic": "OOP",
+      "id": "jvm-017",
+      "path": "questions/jvm-memory-management/jvm-017.md",
+      "topic": "JVM & Memory Management",
       "difficulty": "Junior",
       "format": "Code Review",
-      "title": "The Equality Trap in Inheritance"
+      "title": "The Hidden Handle Leak",
+      "time": "15",
+      "frequency": "Medium",
+      "related": [
+        "jvm-016",
+        "io-002"
+      ]
     },
     {
-      "id": "oop-028",
-      "path": "questions/oop-028.md",
-      "topic": "OOP",
+      "id": "jvm-018",
+      "path": "questions/jvm-memory-management/jvm-018.md",
+      "topic": "JVM & Memory Management",
       "difficulty": "Middle",
       "format": "Open Answer",
-      "title": "Modeling Domain States: Sealed Classes vs. Enums"
+      "title": "The Tale of Two Collectors: Latency vs. Throughput",
+      "time": "15",
+      "frequency": "High",
+      "related": [
+        "jvm-020"
+      ]
     },
     {
-      "id": "oop-029",
-      "path": "questions/oop-029.md",
-      "topic": "OOP",
+      "id": "jvm-019",
+      "path": "questions/jvm-memory-management/jvm-019.md",
+      "topic": "JVM & Memory Management",
       "difficulty": "Middle",
       "format": "Code Review",
-      "title": "The Liskov Contract Breach"
+      "title": "The Ghost in the Thread Pool",
+      "time": "20",
+      "frequency": "Medium",
+      "related": [
+        "jvm-016",
+        "conc-003"
+      ]
     },
     {
-      "id": "oop-030",
-      "path": "questions/oop-030.md",
-      "topic": "OOP",
+      "id": "jvm-020",
+      "path": "questions/jvm-memory-management/jvm-020.md",
+      "topic": "JVM & Memory Management",
       "difficulty": "Senior",
       "format": "System Design",
-      "title": "Distributed OOP: Aggregates and Event Sourcing"
+      "title": "Beyond the Heap: The 100GB Cache Problem",
+      "time": "30",
+      "frequency": "Low",
+      "related": [
+        "jvm-018",
+        "sys-011"
+      ]
     },
     {
-      "id": "oop-031",
-      "path": "questions/oop-031.md",
-      "topic": "OOP",
+      "id": "jvm-021",
+      "path": "questions/jvm-memory-management/jvm-021.md",
+      "topic": "JVM & Memory Management",
       "difficulty": "Junior",
       "format": "Open Answer",
-      "title": "Question"
+      "title": "Explain the Java ClassLoader hierarchy. What is the **parent-delegation model**, why does it exist, and what happens if you try to load `java.lang.String` with your own custom ClassLoader?",
+      "time": "10",
+      "frequency": "high",
+      "related": ""
     },
     {
-      "id": "oop-032",
-      "path": "questions/oop-032.md",
-      "topic": "OOP",
+      "id": "jvm-022",
+      "path": "questions/jvm-memory-management/jvm-022.md",
+      "topic": "JVM & Memory Management",
       "difficulty": "Junior",
       "format": "Code Review",
-      "title": "Question"
+      "title": "Review the following code. It is a simple event-driven button component with a listener registry. Identify all bugs and explain **why** each one is a problem at the JVM/memory level.",
+      "time": "15",
+      "frequency": "very high",
+      "related": ""
     },
     {
-      "id": "oop-033",
-      "path": "questions/oop-033.md",
-      "topic": "OOP",
+      "id": "jvm-023",
+      "path": "questions/jvm-memory-management/jvm-023.md",
+      "topic": "JVM & Memory Management",
       "difficulty": "Middle",
       "format": "Open Answer",
-      "title": "Question"
+      "title": "Explain **Escape Analysis** and **Thread-Local Allocation Buffers (TLAB)**. How do they cooperate to make object allocation in Java nearly free in the common case? What kinds of objects defeat these optimizations?",
+      "time": "15",
+      "frequency": "medium",
+      "related": ""
     },
     {
-      "id": "oop-034",
-      "path": "questions/oop-034.md",
-      "topic": "OOP",
+      "id": "jvm-024",
+      "path": "questions/jvm-memory-management/jvm-024.md",
+      "topic": "JVM & Memory Management",
       "difficulty": "Middle",
       "format": "Code Review",
-      "title": "Question"
+      "title": "Your team has written a simple in-process image cache for a web application. Review the code below. Find all bugs — including subtle memory issues — and explain their impact on a long-running JVM process.",
+      "time": "20",
+      "frequency": "high",
+      "related": ""
     },
     {
-      "id": "oop-035",
-      "path": "questions/oop-035.md",
-      "topic": "OOP",
+      "id": "jvm-025",
+      "path": "questions/jvm-memory-management/jvm-025.md",
+      "topic": "JVM & Memory Management",
       "difficulty": "Senior",
       "format": "System Design",
-      "title": "Question"
+      "title": "You are architecting the GC strategy for a **real-time order-matching engine** at a financial exchange. The service processes 500,000 orders/second, has a 99.9th-percentile latency SLA of **< 5 ms**, runs on a 128 GB heap, and must sustain operation for weeks without restart. A junior engineer proposes using **G1GC** because \"it's the default and well-understood.\" A platform engineer counters with **ZGC**.",
+      "time": "35",
+      "frequency": "medium",
+      "related": ""
     },
     {
-      "id": "oop-036",
-      "path": "questions/oop-036.md",
-      "topic": "OOP",
+      "id": "jvm-026",
+      "path": "questions/jvm-memory-management/jvm-026.md",
+      "topic": "JVM & Memory Management",
       "difficulty": "Junior",
       "format": "Open Answer",
-      "title": "Encapsulation vs. Abstraction in the Era of Java Records"
+      "title": "What Do `-Xms`, `-Xmx`, and `-Xss` Control, and What Happens If You Set Them Wrong?",
+      "time": "10",
+      "frequency": "High",
+      "related": ""
     },
     {
-      "id": "oop-037",
-      "path": "questions/oop-037.md",
-      "topic": "OOP",
+      "id": "jvm-027",
+      "path": "questions/jvm-memory-management/jvm-027.md",
+      "topic": "JVM & Memory Management",
       "difficulty": "Junior",
       "format": "Code Review",
-      "title": "The Pitfalls of Subclassing and Equality"
+      "title": "Code Review: Find the Metaspace Leak",
+      "time": "15",
+      "frequency": "Medium",
+      "related": ""
     },
     {
-      "id": "oop-038",
-      "path": "questions/oop-038.md",
-      "topic": "OOP",
+      "id": "jvm-028",
+      "path": "questions/jvm-memory-management/jvm-028.md",
+      "topic": "JVM & Memory Management",
       "difficulty": "Middle",
       "format": "Open Answer",
-      "title": "Default Methods vs Abstract Classes in Modern Java"
+      "title": "Walk Me Through Diagnosing an `OutOfMemoryError` Using a Heap Dump",
+      "time": "20",
+      "frequency": "High",
+      "related": ""
     },
     {
-      "id": "oop-039",
-      "path": "questions/oop-039.md",
-      "topic": "OOP",
+      "id": "jvm-029",
+      "path": "questions/jvm-memory-management/jvm-029.md",
+      "topic": "JVM & Memory Management",
       "difficulty": "Middle",
       "format": "Code Review",
-      "title": "Leaky Immutability and Liskov Substitution"
+      "title": "Code Review: What Is Causing Mysterious Latency Spikes Unrelated to GC?",
+      "time": "20",
+      "frequency": "Medium",
+      "related": ""
     },
     {
-      "id": "oop-040",
-      "path": "questions/oop-040.md",
-      "topic": "OOP",
+      "id": "jvm-030",
+      "path": "questions/jvm-memory-management/jvm-030.md",
+      "topic": "JVM & Memory Management",
       "difficulty": "Senior",
       "format": "System Design",
-      "title": "OOP at Scale: Distributed Domain Aggregates"
+      "title": "System Design: Continuous JVM Observability Platform Using JFR in a Kubernetes Microservices Fleet",
+      "time": "35",
+      "frequency": "Medium",
+      "related": ""
     },
     {
-      "id": "oop-041",
-      "path": "questions/oop-041.md",
-      "topic": "OOP",
-      "difficulty": "Junior",
-      "format": "Open Answer",
-      "title": "Inheritance vs Composition in Modern Java"
-    },
-    {
-      "id": "oop-042",
-      "path": "questions/oop-042.md",
-      "topic": "OOP",
-      "difficulty": "Junior",
-      "format": "Code Review",
-      "title": "Subclassing and Static Method Hiding"
-    },
-    {
-      "id": "oop-043",
-      "path": "questions/oop-043.md",
-      "topic": "OOP",
-      "difficulty": "Middle",
-      "format": "Code Review",
-      "title": "Immutability Leaks in Java Records"
-    },
-    {
-      "id": "oop-044",
-      "path": "questions/oop-044.md",
-      "topic": "OOP",
-      "difficulty": "Middle",
-      "format": "Open Answer",
-      "title": "Liskov Substitution Principle (LSP) in Practice"
-    },
-    {
-      "id": "oop-045",
-      "path": "questions/oop-045.md",
-      "topic": "OOP",
+      "id": "jvm-031",
+      "path": "questions/jvm-memory-management/jvm-031.md",
+      "topic": "JVM & Memory Management",
       "difficulty": "Senior",
       "format": "System Design",
-      "title": "Distributing the State Pattern: Order Fulfillment"
+      "title": "You are tasked with choosing and configuring the optimal Garbage Collector for three distinct microservices deployed on Java 21 in a Kubernetes environment.",
+      "time": "20",
+      "frequency": "high",
+      "related": ""
     },
     {
-      "id": "oop-046",
-      "path": "questions/oop-046.md",
-      "topic": "OOP",
+      "id": "jvm-032",
+      "path": "questions/jvm-memory-management/jvm-032.md",
+      "topic": "JVM & Memory Management",
+      "difficulty": "Senior",
+      "format": "Open Answer",
+      "title": "How does the Escape Analysis optimization mechanism work within the HotSpot JIT compiler? Is it true that modern JVMs allocate objects directly on the execution stack instead of the heap to avoid GC overhead? Define \"Scalar Replacement\" and explain how it relates to this process.",
+      "time": "15",
+      "frequency": "high",
+      "related": ""
+    },
+    {
+      "id": "jvm-033",
+      "path": "questions/jvm-memory-management/jvm-033.md",
+      "topic": "JVM & Memory Management",
+      "difficulty": "Senior",
+      "format": "Code Review",
+      "title": "During profiling of a low-latency execution pipeline, you observe that the virtual method call cmd.process() in the hot loop below is running significantly slower than expected. The JIT compiler's assembly log shows that it is failing to inline this call.",
+      "time": "15",
+      "frequency": "high",
+      "related": ""
+    },
+    {
+      "id": "jvm-034",
+      "path": "questions/jvm-memory-management/jvm-034.md",
+      "topic": "JVM & Memory Management",
       "difficulty": "Junior",
       "format": "Open Answer",
-      "title": "Designing a Bulletproof Immutable Class"
+      "title": "How does the Java Virtual Machine determine that an object in memory is no longer required and can safely be reclaimed? What are Garbage Collection Roots (GC Roots), and what are at least three distinct types of them?",
+      "time": "10",
+      "frequency": "high",
+      "related": [
+        "jvm-026",
+        "jvm-028"
+      ]
     },
     {
-      "id": "oop-047",
-      "path": "questions/oop-047.md",
-      "topic": "OOP",
-      "difficulty": "Junior",
-      "format": "Code Review",
-      "title": "The Identity Crisis"
-    },
-    {
-      "id": "oop-048",
-      "path": "questions/oop-048.md",
-      "topic": "OOP",
+      "id": "jvm-035",
+      "path": "questions/jvm-memory-management/jvm-035.md",
+      "topic": "JVM & Memory Management",
       "difficulty": "Middle",
       "format": "Open Answer",
-      "title": "The Fragile Base Class"
+      "title": "Describe the ClassLoader Delegation Model in Java. What is the fundamental difference between a `ClassNotFoundException` and a `NoClassDefFoundError`? Provide realistic scenarios that trigger each of them.",
+      "time": "15",
+      "frequency": "high",
+      "related": [
+        "jvm-030"
+      ]
     },
     {
-      "id": "oop-049",
-      "path": "questions/oop-049.md",
-      "topic": "OOP",
+      "id": "jvm-036",
+      "path": "questions/jvm-memory-management/jvm-036.md",
+      "topic": "JVM & Memory Management",
+      "difficulty": "Senior",
+      "format": "Open Answer",
+      "title": "Both ZGC and Shenandoah GC are ultra-low latency garbage collectors designed to reduce pause times to milliseconds on large heaps.",
+      "time": "20",
+      "frequency": "medium",
+      "related": [
+        "jvm-025",
+        "jvm-031"
+      ]
+    },
+    {
+      "id": "jvm-037",
+      "path": "questions/jvm-memory-management/jvm-037.md",
+      "topic": "JVM & Memory Management",
       "difficulty": "Middle",
-      "format": "Code Review",
-      "title": "The Deceptive Cache"
+      "format": "Open Answer",
+      "title": "Explain how modern JVMs interact with container boundaries (Docker/Kubernetes cgroups). What is the difference between a JVM-level OutOfMemoryError and an OS-level Linux Kernel OOM-Killed event? How do you prevent containerized Java apps from being killed by the OS, and what JVM flags are critical in this scenario?",
+      "time": "15",
+      "frequency": "high",
+      "related": [
+        "jvm-030",
+        "jvm-031"
+      ]
     },
     {
-      "id": "oop-050",
-      "path": "questions/oop-050.md",
-      "topic": "OOP",
+      "id": "jvm-038",
+      "path": "questions/jvm-memory-management/jvm-038.md",
+      "topic": "JVM & Memory Management",
       "difficulty": "Senior",
       "format": "System Design",
-      "title": "OOP in a Distributed E-Commerce World"
+      "title": "Specifically, explain how you would capture a heap dump without crashing the service, the architectural difference between Shallow Size and Retained Size, how to utilize a Dominator Tree and Path to GC Roots in Eclipse Memory Analyzer (MAT), and how you would prevent similar leaks using modern JVM profiling techniques.",
+      "time": "25",
+      "frequency": "high",
+      "related": [
+        "jvm-027",
+        "jvm-030"
+      ]
     },
     {
-      "id": "q1",
-      "path": "questions/q1.md",
-      "topic": "OOP",
+      "id": "jvm-039",
+      "path": "questions/jvm-memory-management/jvm-039.md",
+      "topic": "JVM & Memory Management",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "What are Compressed OOPs (Ordinary Object Pointers) in the HotSpot JVM, and how do they optimize memory utilization on 64-bit systems? Explain the significance of the 32 GB heap boundary and what happens to memory efficiency and performance when you configure a JVM heap to 32.5 GB instead of 31 GB.",
+      "time": "15",
+      "frequency": "high",
+      "related": [
+        "jvm-026"
+      ]
+    },
+    {
+      "id": "jvm-040",
+      "path": "questions/jvm-memory-management/jvm-040.md",
+      "topic": "JVM & Memory Management",
+      "difficulty": "Senior",
+      "format": "Open Answer",
+      "title": "What is a Safepoint in the JVM, and how does the HotSpot JVM coordinate application threads to enter one? How do Thread-Local Handshakes (introduced in Java 10+) improve upon global safepoints? Describe how you would diagnose a latency spike caused by long safepoint pauses.",
+      "time": "20",
+      "frequency": "medium",
+      "related": [
+        "jvm-033"
+      ]
+    },
+    {
+      "id": "jvm-041",
+      "path": "questions/jvm-memory-management/jvm-041.md",
+      "topic": "JVM & Memory Management",
+      "difficulty": "Senior",
+      "format": "Open Answer",
+      "title": "In high-throughput Spring Boot applications, developers often use InheritableThreadLocal to propagate security, tracing, or transactional contexts across threads. Explain why using InheritableThreadLocal with pooled asynchronous executors (e.g., `@Async` backed by a `ThreadPoolTaskExecutor`) is highly dangerous.",
+      "time": "20",
+      "frequency": "medium",
+      "related": [
+        "jvm-049"
+      ]
+    },
+    {
+      "id": "jvm-042",
+      "path": "questions/jvm-memory-management/jvm-042.md",
+      "topic": "JVM & Memory Management",
+      "difficulty": "Senior",
+      "format": "Open Answer",
+      "title": "Deconstruct the memory layout of a standard Java Object Header in a 64-bit HotSpot JVM (with compressed class pointers enabled). Explain the contents of the Mark Word and Klass Word.",
+      "time": "20",
+      "frequency": "medium",
+      "related": [
+        "jvm-039"
+      ]
+    },
+    {
+      "id": "jvm-043",
+      "path": "questions/jvm-memory-management/jvm-043.md",
+      "topic": "JVM & Memory Management",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "The GC overhead limit exceeded error is a protective safeguard built into the HotSpot JVM. Rather than allowing an application to hang indefinitely in a near-frozen state while performing constant garbage collections, the JVM terminates execution proactively.",
+      "time": "15",
+      "frequency": "high",
+      "related": [
+        "jvm-038"
+      ]
+    },
+    {
+      "id": "jvm-044",
+      "path": "questions/jvm-memory-management/jvm-044.md",
+      "topic": "JVM & Memory Management",
+      "difficulty": "Senior",
+      "format": "Open Answer",
+      "title": "Compare JVM Heap Buffers (e.g., `byte[]` arrays) with Off-Heap Buffers (e.g., Direct Byte Buffers allocated via `ByteBuffer.allocateDirect()`). Explain how their usage impacts Operating System I/O operations, Garbage Collection pressure, allocation latency, and lifecycle management.",
+      "time": "25",
+      "frequency": "high",
+      "related": [
+        "jvm-030"
+      ]
+    },
+    {
+      "id": "jvm-045",
+      "path": "questions/jvm-memory-management/jvm-045.md",
+      "topic": "JVM & Memory Management",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Explain the architecture of Tiered Compilation inside the HotSpot JVM. What are the five compilation tiers (Tier 0 to Tier 4), and what are the primary triggering conditions (counters) for a method to transition between these tiers?",
+      "time": "15",
+      "frequency": "medium",
+      "related": [
+        "jvm-032",
+        "jvm-033"
+      ]
+    },
+    {
+      "id": "jvm-046",
+      "path": "questions/jvm-memory-management/jvm-046.md",
+      "topic": "JVM & Memory Management",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "What is Application Class Data Sharing (AppCDS) in modern JVMs, and how does it optimize the startup time and memory footprint (RSS) of Java microservices containerized in Kubernetes? Describe the architectural steps required to generate and utilize an AppCDS archive inside a multi-stage Docker build.",
+      "time": "15",
+      "frequency": "medium",
+      "related": [
+        "jvm-030",
+        "jvm-035"
+      ]
+    },
+    {
+      "id": "jvm-047",
+      "path": "questions/jvm-memory-management/jvm-047.md",
+      "topic": "JVM & Memory Management",
+      "difficulty": "Senior",
+      "format": "System Design",
+      "title": "You are designing a continuous profiling platform for a highly distributed, high-throughput microservice architecture. Analyze the architectural trade-offs between JDK Flight Recorder (JFR) and async-profiler for CPU and allocation profiling under heavy production load.",
+      "time": "25",
+      "frequency": "high",
+      "related": [
+        "jvm-040"
+      ]
+    },
+    {
+      "id": "jvm-048",
+      "path": "questions/jvm-memory-management/jvm-048.md",
+      "topic": "JVM & Memory Management",
       "difficulty": "Junior",
       "format": "Open Answer",
-      "title": "В чем разница между абстрактным классом и интерфейсом в Java?"
+      "title": "* An `ArrayList<Integer>` (fully compacted, with no empty trailing array capacity)",
+      "time": "15",
+      "frequency": "high",
+      "related": [
+        "jvm-026"
+      ]
     },
     {
-      "id": "q2",
-      "path": "questions/q2.md",
+      "id": "jvm-049",
+      "path": "questions/jvm-memory-management/jvm-049.md",
+      "topic": "JVM & Memory Management",
+      "difficulty": "Middle",
+      "format": "Code Review",
+      "title": "During a load test of an API Gateway running on Tomcat, you observe a slow but steady increase in heap memory utilization. A heap dump analysis reveals thousands of instances of `UserContext` objects that are never reclaimed.",
+      "time": "15",
+      "frequency": "high",
+      "related": [
+        "jvm-028",
+        "jvm-041"
+      ]
+    },
+    {
+      "id": "jvm-050",
+      "path": "questions/jvm-memory-management/jvm-050.md",
+      "topic": "JVM & Memory Management",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Detail their architectural differences, where duplicate data is stored, how the optimization is scheduled (runtime thread vs. GC background thread), the associated CPU overhead, and when you would select one over the other.",
+      "time": "15",
+      "frequency": "medium",
+      "related": [
+        "jvm-029",
+        "jvm-030"
+      ]
+    },
+    {
+      "id": "oop-013",
+      "path": "questions/liskov-substitution-principle-lsp/oop-013.md",
+      "topic": "OOP",
+      "difficulty": "Middle",
+      "format": "Code Review",
+      "title": "Review this caching implementation. Does it violate any core OOP principles? Identify any bugs and propose a better design.",
+      "time": "20",
+      "frequency": "High",
+      "related": [
+        "oop-035"
+      ]
+    },
+    {
+      "id": "multithreading-001",
+      "path": "questions/multithreading/multithreading-001.md",
+      "topic": "Multithreading",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "```java",
+      "time": "5",
+      "frequency": "High",
+      "related": [
+        "Разница между volatile и synchronized",
+        "Что такое happens-before"
+      ]
+    },
+    {
+      "id": "multithreading-002",
+      "path": "questions/multithreading/multithreading-002.md",
+      "topic": "Multithreading",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "```java",
+      "time": "7",
+      "frequency": "High",
+      "related": [
+        "Как работает ThreadPoolExecutor",
+        "Жизненный цикл потока"
+      ]
+    },
+    {
+      "id": "multithreading-003",
+      "path": "questions/multithreading/multithreading-003.md",
+      "topic": "Multithreading",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Вам нужно сделать 20 независимых HTTP-запросов к стороннему метеорологическому API, собрать их результаты в список и вернуть пользователю.",
+      "time": "10",
+      "frequency": "Medium",
+      "related": [
+        "Разница между CPU-bound и IO-bound",
+        "Настройка кастомного пула потоков"
+      ]
+    },
+    {
+      "id": "multithreading-004",
+      "path": "questions/multithreading/multithreading-004.md",
       "topic": "Multithreading",
       "difficulty": "Middle",
       "format": "Code Review",
-      "title": "```java"
+      "title": "Разработчик реализовал потокобезопасный кэш пользователей на основе `ConcurrentHashMap`. Посмотрите на код ниже (Java 17). Компиляция проходит успешно. Найдите баги и уязвимости при работе в многопоточной среде и предложите, как их исправить.",
+      "time": "10",
+      "frequency": "High",
+      "related": [
+        "Разница между HashMap и ConcurrentHashMap",
+        "Метод computeIfAbsent"
+      ]
+    },
+    {
+      "id": "multithreading-005",
+      "path": "questions/multithreading/multithreading-005.md",
+      "topic": "Multithreading",
+      "difficulty": "Senior",
+      "format": "System Design",
+      "title": "Спроектируйте распределенный планировщик задач (Distributed Task Scheduler) для микросервисной архитектуры. Система должна выполнять миллионы отложенных задач (например, отправить push-уведомление ровно через 24 часа после события).",
+      "time": "25",
+      "frequency": "Medium",
+      "related": [
+        "Как работают паттерны Outbox / Saga",
+        "Deadlocks в БД"
+      ]
+    },
+    {
+      "id": "q2",
+      "path": "questions/multithreading/q2.md",
+      "topic": "Multithreading",
+      "difficulty": "Middle",
+      "format": "Code Review",
+      "title": "```java",
+      "time": "",
+      "frequency": "",
+      "related": []
+    },
+    {
+      "id": "oop-035",
+      "path": "questions/oop-distributed-system-design-strategy-polymorphism/oop-035.md",
+      "topic": "OOP",
+      "difficulty": "Senior",
+      "format": "System Design",
+      "title": "You are tasked with designing a Distributed Pricing Engine for a ride-sharing application (like Uber/Lyft).",
+      "time": "40",
+      "frequency": "Medium",
+      "related": []
+    },
+    {
+      "id": "oop-032",
+      "path": "questions/oop-encapsulation-mutability/oop-032.md",
+      "topic": "OOP",
+      "difficulty": "Junior",
+      "format": "Code Review",
+      "title": "Review the following `ShoppingCart` class. It represents a user's cart in an e-commerce application. Point out any design flaws or bugs, focusing on Object-Oriented principles.",
+      "time": "15",
+      "frequency": "High",
+      "related": []
+    },
+    {
+      "id": "oop-034",
+      "path": "questions/oop-equals-and-hashcode-contracts/oop-034.md",
+      "topic": "OOP",
+      "difficulty": "Middle",
+      "format": "Code Review",
+      "title": "Review the following Java 17 code snippet representing a `User` entity, often stored in `HashSet`s and `HashMap`s for caching. Point out the bugs and architectural flaws related to OOP and Java core contracts.",
+      "time": "20",
+      "frequency": "High",
+      "related": []
+    },
+    {
+      "id": "oop-010",
+      "path": "questions/oop-in-distributed-systems-payment-gateway/oop-010.md",
+      "topic": "OOP",
+      "difficulty": "Senior",
+      "format": "System Design",
+      "title": "Question: Resilient Payment State Machine",
+      "time": "30",
+      "frequency": "Low",
+      "related": [
+        "arch-005"
+      ]
+    },
+    {
+      "id": "oop-031",
+      "path": "questions/oop-inheritance-vs-composition/oop-031.md",
+      "topic": "OOP",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "In Java, we frequently hear the advice to \"favor composition over inheritance.\"",
+      "time": "10",
+      "frequency": "High",
+      "related": []
+    },
+    {
+      "id": "oop-033",
+      "path": "questions/oop-solid-liskov-substitution-principle/oop-033.md",
+      "topic": "OOP",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "The Liskov Substitution Principle (LSP) states that objects of a superclass should be replaceable with objects of its subclasses without breaking the application.",
+      "time": "15",
+      "frequency": "Medium",
+      "related": []
+    },
+    {
+      "id": "oop-001",
+      "path": "questions/oop/oop-001.md",
+      "topic": "OOP",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "На собеседовании вас просят спроектировать классы для игры. У вас есть базовый класс `Bird` с методом `fly()`. Вы добавляете класс `Duck` (наследует `Bird`) и `Ostrich` (Страус). Но страусы не умеют летать!",
+      "time": "5",
+      "frequency": "High",
+      "related": [
+        "Что такое SOLID?",
+        "Разница между интерфейсом и абстрактным классом"
+      ]
+    },
+    {
+      "id": "oop-002",
+      "path": "questions/oop/oop-002.md",
+      "topic": "OOP",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "Объясните разницу между перегрузкой (Overloading) и переопределением (Overriding) методов на примере. Какое из этих понятий относится к статическому полиморфизму (времени компиляции), а какое — к динамическому (времени выполнения)?",
+      "time": "5",
+      "frequency": "High",
+      "related": [
+        "Статическое и динамическое связывание",
+        "Может ли переопределенный метод выбрасывать новые Exception?"
+      ]
+    },
+    {
+      "id": "oop-003",
+      "path": "questions/oop/oop-003.md",
+      "topic": "OOP",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "С выходом Java 15+ в языке появились `sealed` классы и интерфейсы.",
+      "time": "8",
+      "frequency": "Medium",
+      "related": [
+        "Как Pattern Matching работает с Sealed Classes?",
+        "Разница между final и sealed"
+      ]
+    },
+    {
+      "id": "oop-004",
+      "path": "questions/oop/oop-004.md",
+      "topic": "OOP",
+      "difficulty": "Middle",
+      "format": "Code Review",
+      "title": "На код-ревью вам прислали реализацию неизменяемой коллекции (Immutable Collection). Разработчик решил унаследоваться от стандартного `java.util.ArrayList`, чтобы переиспользовать его логику хранения, но переопределил методы изменения, чтобы защитить коллекцию.",
+      "time": "10",
+      "frequency": "High",
+      "related": [
+        "Почему java.util.Stack считается устаревшим?",
+        "Наследование vs Композиция"
+      ]
+    },
+    {
+      "id": "oop-005",
+      "path": "questions/oop/oop-005.md",
+      "topic": "OOP",
+      "difficulty": "Senior",
+      "format": "System Design",
+      "title": "Вы проводите рефакторинг легаси-сервиса обработки платежей (`PaymentService`). Сейчас метод оплаты выглядит как один огромный метод на 500 строк с конструкцией `switch` по типу провайдера (Stripe, PayPal, ApplePay, Crypto, BankTransfer), и для каждого провайдера написана своя сложная логика маршрутизации, валидации и обработки ошибок.",
+      "time": "20",
+      "frequency": "Medium",
+      "related": [
+        "Принцип Open/Closed",
+        "Как Spring инжектит коллекции бинов?"
+      ]
+    },
+    {
+      "id": "oop-016",
+      "path": "questions/oop/oop-016.md",
+      "topic": "OOP",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "Question: Static vs Dynamic Binding in Java",
+      "time": "10",
+      "frequency": "High",
+      "related": "oop-001, core-012"
+    },
+    {
+      "id": "oop-017",
+      "path": "questions/oop/oop-017.md",
+      "topic": "OOP",
+      "difficulty": "Junior",
+      "format": "Code Review",
+      "title": "Question: The Fragile Base Class",
+      "time": "15",
+      "frequency": "Medium",
+      "related": "oop-012"
+    },
+    {
+      "id": "oop-018",
+      "path": "questions/oop/oop-018.md",
+      "topic": "OOP",
+      "difficulty": "Middle",
+      "format": "Code Review",
+      "title": "Question: The Rectangle-Square Dilemma",
+      "time": "20",
+      "frequency": "High",
+      "related": "oop-008"
+    },
+    {
+      "id": "oop-019",
+      "path": "questions/oop/oop-019.md",
+      "topic": "OOP",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Question: Defensive Copying and Encapsulation",
+      "time": "15",
+      "frequency": "Medium",
+      "related": "core-041"
+    },
+    {
+      "id": "oop-020",
+      "path": "questions/oop/oop-020.md",
+      "topic": "OOP",
+      "difficulty": "Senior",
+      "format": "System Design",
+      "title": "Question: Domain Models in Distributed Systems",
+      "time": "35",
+      "frequency": "High",
+      "related": "sys-014, arch-005"
+    },
+    {
+      "id": "oop-021",
+      "path": "questions/oop/oop-021.md",
+      "topic": "OOP",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "Understanding Polymorphism and Method Dispatch",
+      "time": "10",
+      "frequency": "High",
+      "related": "oop-022, oop-023"
+    },
+    {
+      "id": "oop-022",
+      "path": "questions/oop/oop-022.md",
+      "topic": "OOP",
+      "difficulty": "Junior",
+      "format": "Code Review",
+      "title": "The Fragile Subclass",
+      "time": "15",
+      "frequency": "High",
+      "related": "oop-021"
+    },
+    {
+      "id": "oop-023",
+      "path": "questions/oop/oop-023.md",
+      "topic": "OOP",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Modernizing OOP: Inheritance vs. Composition",
+      "time": "15",
+      "frequency": "Medium",
+      "related": "oop-021, oop-024"
+    },
+    {
+      "id": "oop-024",
+      "path": "questions/oop/oop-024.md",
+      "topic": "OOP",
+      "difficulty": "Middle",
+      "format": "Code Review",
+      "title": "The Deceptive Processor",
+      "time": "20",
+      "frequency": "High",
+      "related": "oop-022"
+    },
+    {
+      "id": "oop-025",
+      "path": "questions/oop/oop-025.md",
+      "topic": "OOP",
+      "difficulty": "Senior",
+      "format": "System Design",
+      "title": "OOP at Scale: Distributed Payment Processing",
+      "time": "30",
+      "frequency": "Medium",
+      "related": "oop-023"
+    },
+    {
+      "id": "oop-026",
+      "path": "questions/oop/oop-026.md",
+      "topic": "OOP",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "Java Records and the Illusion of Immutability",
+      "time": "10",
+      "frequency": "High",
+      "related": [
+        "oop-015"
+      ]
+    },
+    {
+      "id": "oop-027",
+      "path": "questions/oop/oop-027.md",
+      "topic": "OOP",
+      "difficulty": "Junior",
+      "format": "Code Review",
+      "title": "The Equality Trap in Inheritance",
+      "time": "15",
+      "frequency": "Medium",
+      "related": [
+        "oop-012"
+      ]
+    },
+    {
+      "id": "oop-028",
+      "path": "questions/oop/oop-028.md",
+      "topic": "OOP",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Modeling Domain States: Sealed Classes vs. Enums",
+      "time": "15",
+      "frequency": "Medium",
+      "related": [
+        "oop-045"
+      ]
+    },
+    {
+      "id": "oop-029",
+      "path": "questions/oop/oop-029.md",
+      "topic": "OOP",
+      "difficulty": "Middle",
+      "format": "Code Review",
+      "title": "The Liskov Contract Breach",
+      "time": "20",
+      "frequency": "High",
+      "related": [
+        "oop-022"
+      ]
+    },
+    {
+      "id": "oop-030",
+      "path": "questions/oop/oop-030.md",
+      "topic": "OOP",
+      "difficulty": "Senior",
+      "format": "System Design",
+      "title": "Distributed OOP: Aggregates and Event Sourcing",
+      "time": "30",
+      "frequency": "Medium",
+      "related": [
+        "sys-014"
+      ]
+    },
+    {
+      "id": "oop-036",
+      "path": "questions/oop/oop-036.md",
+      "topic": "OOP",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "Encapsulation vs. Abstraction in the Era of Java Records",
+      "time": "10",
+      "frequency": "High",
+      "related": [
+        "oop-012",
+        "core-045"
+      ]
+    },
+    {
+      "id": "oop-037",
+      "path": "questions/oop/oop-037.md",
+      "topic": "OOP",
+      "difficulty": "Junior",
+      "format": "Code Review",
+      "title": "The Pitfalls of Subclassing and Equality",
+      "time": "15",
+      "frequency": "High",
+      "related": [
+        "oop-022",
+        "collections-011"
+      ]
+    },
+    {
+      "id": "oop-038",
+      "path": "questions/oop/oop-038.md",
+      "topic": "OOP",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Default Methods vs Abstract Classes in Modern Java",
+      "time": "15",
+      "frequency": "Medium",
+      "related": [
+        "oop-015",
+        "core-088"
+      ]
+    },
+    {
+      "id": "oop-039",
+      "path": "questions/oop/oop-039.md",
+      "topic": "OOP",
+      "difficulty": "Middle",
+      "format": "Code Review",
+      "title": "Leaky Immutability and Liskov Substitution",
+      "time": "20",
+      "frequency": "High",
+      "related": [
+        "oop-029",
+        "design-004"
+      ]
+    },
+    {
+      "id": "oop-040",
+      "path": "questions/oop/oop-040.md",
+      "topic": "OOP",
+      "difficulty": "Senior",
+      "format": "System Design",
+      "title": "OOP at Scale: Distributed Domain Aggregates",
+      "time": "35",
+      "frequency": "Medium",
+      "related": [
+        "sys-014",
+        "arch-007"
+      ]
+    },
+    {
+      "id": "oop-041",
+      "path": "questions/oop/oop-041.md",
+      "topic": "OOP",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "Inheritance vs Composition in Modern Java",
+      "time": "10",
+      "frequency": "High",
+      "related": [
+        "oop-010",
+        "oop-025"
+      ]
+    },
+    {
+      "id": "oop-042",
+      "path": "questions/oop/oop-042.md",
+      "topic": "OOP",
+      "difficulty": "Junior",
+      "format": "Code Review",
+      "title": "Subclassing and Static Method Hiding",
+      "time": "15",
+      "frequency": "Medium",
+      "related": [
+        "oop-012"
+      ]
+    },
+    {
+      "id": "oop-043",
+      "path": "questions/oop/oop-043.md",
+      "topic": "OOP",
+      "difficulty": "Middle",
+      "format": "Code Review",
+      "title": "Immutability Leaks in Java Records",
+      "time": "20",
+      "frequency": "High",
+      "related": [
+        "oop-035"
+      ]
+    },
+    {
+      "id": "oop-044",
+      "path": "questions/oop/oop-044.md",
+      "topic": "OOP",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Liskov Substitution Principle (LSP) in Practice",
+      "time": "15",
+      "frequency": "Medium",
+      "related": [
+        "oop-022"
+      ]
+    },
+    {
+      "id": "oop-045",
+      "path": "questions/oop/oop-045.md",
+      "topic": "OOP",
+      "difficulty": "Senior",
+      "format": "System Design",
+      "title": "Distributing the State Pattern: Order Fulfillment",
+      "time": "35",
+      "frequency": "Low",
+      "related": [
+        "sys-015"
+      ]
+    },
+    {
+      "id": "oop-046",
+      "path": "questions/oop/oop-046.md",
+      "topic": "OOP",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "Designing a Bulletproof Immutable Class",
+      "time": "10",
+      "frequency": "High",
+      "related": [
+        "oop-023",
+        "core-012"
+      ]
+    },
+    {
+      "id": "oop-047",
+      "path": "questions/oop/oop-047.md",
+      "topic": "OOP",
+      "difficulty": "Junior",
+      "format": "Code Review",
+      "title": "The Identity Crisis",
+      "time": "15",
+      "frequency": "High",
+      "related": [
+        "oop-010",
+        "collections-005"
+      ]
+    },
+    {
+      "id": "oop-048",
+      "path": "questions/oop/oop-048.md",
+      "topic": "OOP",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "The Fragile Base Class",
+      "time": "15",
+      "frequency": "Medium",
+      "related": [
+        "design-002",
+        "oop-033"
+      ]
+    },
+    {
+      "id": "oop-049",
+      "path": "questions/oop/oop-049.md",
+      "topic": "OOP",
+      "difficulty": "Middle",
+      "format": "Code Review",
+      "title": "The Deceptive Cache",
+      "time": "20",
+      "frequency": "Medium",
+      "related": [
+        "solid-003",
+        "oop-044"
+      ]
+    },
+    {
+      "id": "oop-050",
+      "path": "questions/oop/oop-050.md",
+      "topic": "OOP",
+      "difficulty": "Senior",
+      "format": "System Design",
+      "title": "OOP in a Distributed E-Commerce World",
+      "time": "35",
+      "frequency": "Low",
+      "related": [
+        "design-015",
+        "arch-008"
+      ]
+    },
+    {
+      "id": "q1",
+      "path": "questions/oop/q1.md",
+      "topic": "OOP",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "В чем разница между абстрактным классом и интерфейсом в Java?",
+      "time": "",
+      "frequency": "",
+      "related": []
+    },
+    {
+      "id": "oop-011",
+      "path": "questions/polymorphism-and-method-hiding/oop-011.md",
+      "topic": "OOP",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "What is the difference between method overriding and method hiding in Java? How do they behave when accessed via a parent class reference? Provide an example.",
+      "time": "10",
+      "frequency": "High",
+      "related": [
+        "oop-003"
+      ]
+    },
+    {
+      "id": "oop-009",
+      "path": "questions/solid-open-closed-strategy-pattern/oop-009.md",
+      "topic": "OOP",
+      "difficulty": "Middle",
+      "format": "System Design",
+      "title": "Question: Multi-Channel Notification Router",
+      "time": "20",
+      "frequency": "Medium",
+      "related": [
+        "design-012"
+      ]
     },
     {
       "id": "q3",
-      "path": "questions/q3.md",
+      "path": "questions/system-design/q3.md",
       "topic": "System Design",
       "difficulty": "Senior",
       "format": "System Design",
-      "title": "Спроектируйте сервис сокращения URL-адресов (наподобие bit.ly)."
+      "title": "Спроектируйте сервис сокращения URL-адресов (наподобие bit.ly).",
+      "time": "",
+      "frequency": "",
+      "related": []
     }
   ]
 }
