@@ -10,6 +10,11 @@
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
     <!-- Highlight.js for Java code syntax highlighting -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css" id="hljs-dark-theme">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css" id="hljs-light-theme" disabled>
@@ -23,16 +28,16 @@
                 extend: {
                     colors: {
                         brand: {
-                            50: '#fff1f2',
-                            100: '#ffe4e6',
-                            200: '#fecdd3',
-                            300: '#fda4af',
-                            400: '#fb7185',
-                            500: '#f43f5e', // Hot coral accent
-                            600: '#e11d48',
-                            700: '#be123c',
-                            800: '#9f1239',
-                            900: '#881337',
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            200: '#c7d2fe',
+                            300: '#a5b4fc',
+                            400: '#818cf8',
+                            500: '#6366f1', // Indigo primary
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            800: '#3730a3',
+                            900: '#312e81',
                         },
                         darkBg: '#0f172a', // Deep obsidian slate
                         darkCard: '#1e293b', // Rich slate
@@ -40,8 +45,8 @@
                         lightCard: '#ffffff'
                     },
                     fontFamily: {
-                        sans: ['Inter', 'Segoe UI', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'Fira Code', 'monospace']
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
                     }
                 }
             }
@@ -81,6 +86,48 @@
         }
         .pulse-hover:hover {
             animation: subtle-pulse 1.5s infinite ease-in-out;
+        }
+
+        /* Custom macOS terminal style for code blocks */
+        pre {
+            position: relative;
+            padding-top: 2.5rem !important;
+            border-radius: 0.75rem !important;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+        }
+        .dark pre {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.2);
+        }
+        pre::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2rem;
+            background: #f1f5f9;
+            border-bottom: 1px solid #e2e8f0;
+            z-index: 10;
+        }
+        .dark pre::before {
+            background: #1e293b;
+            border-bottom: 1px solid #334155;
+        }
+        pre::after {
+            content: '';
+            position: absolute;
+            top: 0.75rem;
+            left: 1rem;
+            width: 0.6rem;
+            height: 0.6rem;
+            border-radius: 50%;
+            background: #ff5f56;
+            box-shadow: 1.2rem 0 0 #ffbd2e, 2.4rem 0 0 #27c93f;
+            z-index: 20;
         }
     </style>
 </head>
@@ -145,7 +192,7 @@
     <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col lg:flex-row gap-6 relative">
         
         <!-- Sidebar: Navigation & Filters -->
-        <aside class="w-full lg:w-80 flex-shrink-0 flex flex-col space-y-4">
+        <aside class="w-full lg:w-80 flex-shrink-0 flex flex-col space-y-4 lg:sticky lg:top-24 lg:h-[calc(100vh-8rem)] pb-6 lg:pb-0">
             
             <!-- Filters Card -->
             <div class="bg-white dark:bg-darkCard p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-4 transition-colors duration-300">
@@ -215,8 +262,8 @@
                 </div>
             </div>
 
-            <!-- List Panel -->
-            <div class="bg-white dark:bg-darkCard rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col flex-1 overflow-hidden transition-colors duration-300 max-h-[480px] lg:max-h-[calc(100vh-420px)]">
+            <!-- 2. Interactive Questions List Container -->
+            <div class="bg-white dark:bg-darkCard rounded-2xl border border-slate-200 dark:border-slate-800 shadow-md flex flex-col flex-1 overflow-hidden transition-colors duration-300 max-h-[480px] lg:max-h-none">
                 <div class="p-4 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center bg-slate-50/50 dark:bg-slate-900/50">
                     <span class="font-bold text-sm text-slate-700 dark:text-slate-300">Questions List</span>
                     <span id="question-list-count" class="text-xs bg-slate-200 dark:bg-slate-800 px-2 py-0.5 rounded-full font-semibold text-slate-500">0</span>
@@ -231,13 +278,27 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Premium Feature Teaser -->
+            <button class="w-full bg-gradient-to-r from-brand-500 to-indigo-600 text-white rounded-xl p-4 flex items-center justify-between hover:scale-[1.02] hover:shadow-lg hover:shadow-brand-500/20 transition-all-300 group">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-white/20 p-2 rounded-lg group-hover:animate-pulse">
+                        <i class="fa-solid fa-gamepad"></i>
+                    </div>
+                    <div class="text-left">
+                        <h4 class="font-bold text-sm leading-tight">Mock Interview</h4>
+                        <p class="text-[10px] text-white/80">Coming Soon</p>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-right text-white/60"></i>
+            </button>
         </aside>
 
         <!-- Main Panel: Active Question Renderer -->
         <section class="flex-1 flex flex-col space-y-4">
             
             <!-- Question Content Card -->
-            <div id="main-content-card" class="bg-white dark:bg-darkCard rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm p-6 sm:p-8 flex flex-col space-y-6 transition-all-300 relative overflow-hidden min-h-[500px]">
+            <div id="main-content-card" class="bg-white dark:bg-darkCard rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl hover:shadow-2xl hover:-translate-y-1 p-6 sm:p-10 flex flex-col space-y-6 transition-all duration-300 relative overflow-hidden min-h-[500px]">
                 
                 <!-- Card Background Subtle Design Details -->
                 <div class="absolute -top-12 -right-12 w-48 h-48 bg-gradient-to-br from-brand-500/10 to-transparent rounded-full blur-2xl pointer-events-none"></div>
