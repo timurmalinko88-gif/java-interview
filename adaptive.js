@@ -18,7 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load quiz data
     async function loadQuizData() {
         try {
-            const res = await fetch('quiz.json');
+            // Append cache buster to ensure the latest English version is loaded
+            const res = await fetch('quiz.json?t=' + new Date().getTime());
             quizData = await res.json();
             // Shuffle
             quizData.sort(() => Math.random() - 0.5);
