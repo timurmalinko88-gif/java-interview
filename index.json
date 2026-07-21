@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "total": 487,
+  "total": 495,
   "questions": [
     {
       "id": "collections-001",
@@ -3648,6 +3648,39 @@
       "related": []
     },
     {
+      "id": "patterns-018",
+      "path": "questions/patterns/patterns-018.md",
+      "topic": "Patterns",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "What is the Memento Pattern?",
+      "time": "",
+      "frequency": "40%",
+      "related": []
+    },
+    {
+      "id": "patterns-019",
+      "path": "questions/patterns/patterns-019.md",
+      "topic": "Patterns",
+      "difficulty": "Junior",
+      "format": "Code Review",
+      "title": "What is the Observer Pattern?",
+      "time": "",
+      "frequency": "90%",
+      "related": []
+    },
+    {
+      "id": "patterns-020",
+      "path": "questions/patterns/patterns-020.md",
+      "topic": "Patterns",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "State Pattern vs Strategy Pattern",
+      "time": "",
+      "frequency": "60%",
+      "related": []
+    },
+    {
       "id": "spring-001",
       "path": "questions/spring/spring-001.md",
       "topic": "Spring",
@@ -5515,6 +5548,61 @@
       "title": "CORS",
       "time": "",
       "frequency": "70%",
+      "related": []
+    },
+    {
+      "id": "testing-021",
+      "path": "questions/testing/testing-021.md",
+      "topic": "Testing",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "HTTP vs HTTPS",
+      "time": "",
+      "frequency": "85%",
+      "related": []
+    },
+    {
+      "id": "testing-022",
+      "path": "questions/testing/testing-022.md",
+      "topic": "Testing",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "Test Coverage",
+      "time": "",
+      "frequency": "70%",
+      "related": []
+    },
+    {
+      "id": "testing-023",
+      "path": "questions/testing/testing-023.md",
+      "topic": "Testing",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Mockito verify()",
+      "time": "",
+      "frequency": "70%",
+      "related": []
+    },
+    {
+      "id": "testing-024",
+      "path": "questions/testing/testing-024.md",
+      "topic": "Testing",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Mockito @Spy",
+      "time": "",
+      "frequency": "70%",
+      "related": []
+    },
+    {
+      "id": "testing-025",
+      "path": "questions/testing/testing-025.md",
+      "topic": "Testing",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "JUnit 5 Assumptions",
+      "time": "",
+      "frequency": "60%",
       "related": []
     }
   ]
