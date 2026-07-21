@@ -1,19 +1,19 @@
 [
   {
     "id": "q1",
-    "question": "Что произойдет при коллизии в HashMap (начиная с Java 8)?",
+    "question": "What happens when a collision occurs in a HashMap (starting from Java 8)?",
     "options": [
-      "Старое значение затрется",
-      "Элемент будет добавлен в связный список (или дерево, если элементов много)",
-      "Будет выброшено исключение HashCollisionException",
-      "Будет создан новый бакет"
+      "The old value is overwritten",
+      "The element is added to a linked list (or tree, if there are many elements)",
+      "A HashCollisionException is thrown",
+      "A new bucket is created"
     ],
     "correctIndex": 1,
     "testedTags": ["collections", "hashmap"]
   },
   {
     "id": "q2",
-    "question": "Какой метод нужно вызвать, чтобы поток отдал монитор и перешел в ожидание?",
+    "question": "Which method should be called for a thread to release the monitor and go into the waiting state?",
     "options": [
       "Thread.sleep()",
       "Thread.yield()",
@@ -25,7 +25,7 @@
   },
   {
     "id": "q3",
-    "question": "Какой паттерн гарантирует, что у класса есть только один экземпляр?",
+    "question": "Which design pattern ensures that a class has only one instance?",
     "options": [
       "Factory",
       "Builder",
@@ -37,7 +37,7 @@
   },
   {
     "id": "q4",
-    "question": "Какая аннотация в Spring Boot автоматически включает конфигурацию и сканирование компонентов?",
+    "question": "Which annotation in Spring Boot automatically enables configuration and component scanning?",
     "options": [
       "@EnableAutoConfiguration",
       "@SpringBootApplication",
@@ -49,7 +49,7 @@
   },
   {
     "id": "q5",
-    "question": "Что из этого является промежуточной (intermediate) операцией в Stream API?",
+    "question": "Which of the following is an intermediate operation in the Stream API?",
     "options": [
       "collect()",
       "reduce()",
@@ -61,19 +61,19 @@
   },
   {
     "id": "q6",
-    "question": "В чем главное отличие RuntimeException от Exception?",
+    "question": "What is the main difference between RuntimeException and Exception?",
     "options": [
-      "RuntimeException нужно обязательно перехватывать (checked)",
-      "RuntimeException не нужно объявлять в throws (unchecked)",
-      "RuntimeException появляется только во время компиляции",
-      "RuntimeException - это интерфейс"
+      "RuntimeException must be caught (checked)",
+      "RuntimeException does not need to be declared in throws (unchecked)",
+      "RuntimeException only appears during compilation",
+      "RuntimeException is an interface"
     ],
     "correctIndex": 1,
     "testedTags": ["exceptions", "runtimeexception"]
   },
   {
     "id": "q7",
-    "question": "Какая область памяти (в старых версиях Java) или метаданных (в новых) хранит информацию о классах?",
+    "question": "Which memory area (in older Java versions) or metadata area (in newer ones) stores class information?",
     "options": [
       "Heap",
       "Stack",
@@ -85,7 +85,7 @@
   },
   {
     "id": "q8",
-    "question": "Какое свойство транзакции (ACID) гарантирует, что транзакция выполнится либо полностью, либо никак?",
+    "question": "Which ACID property ensures that a transaction is either completed in its entirety or not at all?",
     "options": [
       "Atomicity",
       "Consistency",

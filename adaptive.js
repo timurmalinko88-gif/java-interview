@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         
         const q = quizData[currentQuizIndex];
-        document.getElementById('quiz-progress-text').innerText = `Вопрос ${currentQuizIndex + 1} из ${quizData.length}`;
+        document.getElementById('quiz-progress-text').innerText = `Question ${currentQuizIndex + 1} of ${quizData.length}`;
         document.getElementById('quiz-progress-bar').style.width = `${((currentQuizIndex) / quizData.length) * 100}%`;
         
         document.getElementById('quiz-question-text').innerText = q.question;
@@ -100,9 +100,9 @@ document.addEventListener('DOMContentLoaded', () => {
         step2.classList.add('hidden');
         step3.classList.remove('hidden');
         
-        let msg = "Отличный результат! У вас почти нет пробелов.";
+        let msg = "Excellent result! You have almost no knowledge gaps.";
         if (failedTags.size > 0) {
-            msg = `Мы обнаружили пробелы в темах: ${Array.from(failedTags).join(', ')}. План составлен!`;
+            msg = `We found knowledge gaps in the following topics: ${Array.from(failedTags).join(', ')}. Your plan is ready!`;
         }
         document.getElementById('quiz-results-text').innerText = msg;
     }
