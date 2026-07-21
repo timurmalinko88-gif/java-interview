@@ -25,6 +25,7 @@ window.checkAdaptiveProgression = function() {
         const successModal = document.getElementById('adaptive-success-modal');
         if (successModal) {
             successModal.classList.remove('hidden');
+            successModal.style.display = 'flex';
             setTimeout(() => successModal.classList.remove('opacity-0', 'scale-95'), 10);
         }
     }
@@ -89,14 +90,20 @@ document.addEventListener('DOMContentLoaded', () => {
     if (closeRoadmapBtn) {
         closeRoadmapBtn.addEventListener('click', () => {
             roadmapModal.classList.add('opacity-0');
-            setTimeout(() => roadmapModal.classList.add('hidden'), 300);
+            setTimeout(() => {
+                roadmapModal.classList.add('hidden');
+                roadmapModal.style.display = '';
+            }, 300);
         });
     }
     
     if (closeSuccessBtn) {
         closeSuccessBtn.addEventListener('click', () => {
             successModal.classList.add('opacity-0', 'scale-95');
-            setTimeout(() => successModal.classList.add('hidden'), 300);
+            setTimeout(() => {
+                successModal.classList.add('hidden');
+                successModal.style.display = '';
+            }, 300);
         });
     }
     
@@ -226,7 +233,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         studyBtn.onclick = () => {
                             if (roadmapModal) {
                                 roadmapModal.classList.add('opacity-0');
-                                setTimeout(() => roadmapModal.classList.add('hidden'), 300);
+                                setTimeout(() => {
+                                    roadmapModal.classList.add('hidden');
+                                    roadmapModal.style.display = ''; // Clear inline style
+                                }, 300);
                             }
                             if (typeof loadQuestion === 'function') {
                                 loadQuestion(q);
