@@ -100,15 +100,22 @@
                 </div>
             </div>
 
-            <!-- Stats Bar (Hidden on Mobile) -->
-            <div class="hidden md:flex items-center space-x-6 text-sm">
-                <div class="flex items-center space-x-2">
-                    <span class="text-slate-400">Mastered:</span>
-                    <span id="stats-mastered" class="font-bold text-emerald-500 bg-emerald-500/10 px-2 py-0.5 rounded-full text-xs">0 / 0</span>
+            <!-- Gamification Bar -->
+            <div class="hidden md:flex items-center space-x-4 text-sm">
+                <!-- XP -->
+                <div class="flex items-center space-x-2 bg-slate-50 dark:bg-slate-800/50 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700/50 transition-all hover:border-amber-500/50">
+                    <i class="fa-solid fa-star text-amber-500 animate-pulse"></i>
+                    <span id="stats-xp" class="font-bold text-amber-600 dark:text-amber-400">0 XP</span>
                 </div>
-                <div class="flex items-center space-x-2">
-                    <span class="text-slate-400">Bookmarked:</span>
-                    <span id="stats-flagged" class="font-bold text-amber-500 bg-amber-500/10 px-2 py-0.5 rounded-full text-xs">0</span>
+                <!-- Rank -->
+                <div class="flex items-center space-x-2 bg-slate-50 dark:bg-slate-800/50 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700/50 transition-all hover:border-brand-500/50">
+                    <i class="fa-solid fa-shield-halved text-brand-500"></i>
+                    <span id="stats-rank" class="font-bold text-brand-600 dark:text-brand-400 tracking-wide uppercase text-xs">Intern</span>
+                </div>
+                <!-- Progress -->
+                <div class="flex items-center space-x-2 px-2" title="Overall Completion">
+                    <i class="fa-solid fa-graduation-cap text-slate-400"></i>
+                    <span id="stats-progress" class="font-bold text-slate-600 dark:text-slate-300 text-xs">0%</span>
                 </div>
             </div>
 
@@ -641,13 +648,21 @@
             if (total === 0) return;
 
             const masteredCount = masteredIds.length;
-            const flaggedCount = flaggedIds.length;
+            
+            // Gamification Logic
+            const xp = masteredCount * 10;
+            let rank = "Intern";
+            if (xp >= 5000) rank = "Staff Engineer";
+            else if (xp >= 3000) rank = "Senior";
+            else if (xp >= 1500) rank = "Middle";
+            else if (xp >= 500) rank = "Junior";
 
-            document.getElementById('stats-mastered').textContent = `${masteredCount} / ${total}`;
-            document.getElementById('stats-flagged').textContent = flaggedCount;
+            document.getElementById('stats-xp').textContent = xp + ' XP';
+            document.getElementById('stats-rank').textContent = rank;
 
             // Calculate percentage progress for globally tracked completion progress bar
             const percent = Math.min(100, Math.round((masteredCount / total) * 100));
+            document.getElementById('stats-progress').textContent = `${percent}% (${masteredCount}/${total})`;
             document.getElementById('global-progress').style.width = `${percent}%`;
         }
 
