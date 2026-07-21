@@ -49,3 +49,4 @@ public class Counter {
 }
 ```
 *Alternative:* add the `synchronized` keyword to the `increment()` method, but this might run slower with a large number of threads.
+

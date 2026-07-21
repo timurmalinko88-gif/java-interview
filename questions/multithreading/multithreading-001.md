@@ -36,12 +36,12 @@ Under high load, **the counter will lose some increments**. The `views++` operat
 private volatile boolean isRunning = true;
 ```
 
+### Life Analogy
+
+Imagine a school chalkboard (this is main memory). `volatile` means that students always look at the board itself, not in their notebooks. But if two students run to the board at the same time, see the number "5", both mentally add "1", and simultaneously write "6" — one action will be lost. It should have become "7", but due to a lack of coordination (atomicity), it resulted in "6".
+
 ### Key Points
 * `volatile` solves the visibility problem, but does not solve the atomicity problem of operations.
 * The increment operation `++` is not atomic (consists of 3 steps: read-modify-write).
 * For counters in a multithreaded environment, you should use `AtomicInteger` / `AtomicLong` or `LongAdder`.
 * The correct use case for `volatile` is boolean stop/signal flags (one writer, many readers).
-
-### Life Analogy
-
-Imagine a school chalkboard (this is main memory). `volatile` means that students always look at the board itself, not in their notebooks. But if two students run to the board at the same time, see the number "5", both mentally add "1", and simultaneously write "6" — one action will be lost. It should have become "7", but due to a lack of coordination (atomicity), it resulted in "6".

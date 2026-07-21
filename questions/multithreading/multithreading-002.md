@@ -36,12 +36,12 @@ executor.submit(() -> emailService.send(user));
 
 A thread pool pre-creates a limited number of threads that are reused. Tasks are placed into an internal queue (`BlockingQueue`) and are executed by available threads as they become free. This smooths out peak loads and protects the application from crashing.
 
+### Life Analogy
+
+Creating a `new Thread()` for every task is like hiring a new courier for every package, buying them a bicycle, and after they deliver a single package, firing them and throwing away the bicycle. A thread pool (`ExecutorService`) is a staff of 10 full-time couriers: if there are more packages than couriers, the packages simply wait their turn in the warehouse.
+
 ### Key Points
 * Creating a thread is a heavy and resource-intensive operation at the OS level (prior to the introduction of Virtual Threads in Java 21).
 * Uncontrolled thread creation leads to `OutOfMemoryError` and performance degradation due to Context Switching.
 * `ExecutorService` allows you to reuse threads and control their maximum number.
 * Tasks that exceed the pool size are safely buffered in a queue.
-
-### Life Analogy
-
-Creating a `new Thread()` for every task is like hiring a new courier for every package, buying them a bicycle, and after they deliver a single package, firing them and throwing away the bicycle. A thread pool (`ExecutorService`) is a staff of 10 full-time couriers: if there are more packages than couriers, the packages simply wait their turn in the warehouse.

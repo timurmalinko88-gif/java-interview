@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "total": 113,
+  "total": 139,
   "questions": [
     {
       "id": "general-001",
@@ -96,10 +96,10 @@
       "topic": "JVM & Memory Management",
       "difficulty": "Junior",
       "format": "Open Answer",
-      "title": "Where does a String live — String Pool or Heap, and why does it matter?",
-      "time": "10",
-      "frequency": "very_high",
-      "related": ""
+      "title": "jvm-006",
+      "time": "",
+      "frequency": "",
+      "related": []
     },
     {
       "id": "jvm-007",
@@ -764,6 +764,292 @@
       "title": "Designing a Thread Pool",
       "time": "",
       "frequency": "60%",
+      "related": []
+    },
+    {
+      "id": "multithreading-011",
+      "path": "questions/multithreading/multithreading-011.md",
+      "topic": "Multithreading",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "`Thread.sleep()` vs `Object.wait()`",
+      "time": "",
+      "frequency": "80%",
+      "related": []
+    },
+    {
+      "id": "multithreading-012",
+      "path": "questions/multithreading/multithreading-012.md",
+      "topic": "Multithreading",
+      "difficulty": "Middle",
+      "format": "Code Review",
+      "title": "`volatile` Keyword Misuse",
+      "time": "",
+      "frequency": "75%",
+      "related": []
+    },
+    {
+      "id": "multithreading-013",
+      "path": "questions/multithreading/multithreading-013.md",
+      "topic": "Multithreading",
+      "difficulty": "Senior",
+      "format": "System Design",
+      "title": "In-Memory Cache with High Read/Write Ratio",
+      "time": "",
+      "frequency": "60%",
+      "related": []
+    },
+    {
+      "id": "multithreading-014",
+      "path": "questions/multithreading/multithreading-014.md",
+      "topic": "Multithreading",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "`Runnable` vs `Callable`",
+      "time": "",
+      "frequency": "85%",
+      "related": []
+    },
+    {
+      "id": "multithreading-015",
+      "path": "questions/multithreading/multithreading-015.md",
+      "topic": "Multithreading",
+      "difficulty": "Middle",
+      "format": "Code Review",
+      "title": "Deadlock Code Review",
+      "time": "",
+      "frequency": "65%",
+      "related": []
+    },
+    {
+      "id": "multithreading-016",
+      "path": "questions/multithreading/multithreading-016.md",
+      "topic": "Multithreading",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "Thread Lifecycle States",
+      "time": "",
+      "frequency": "70%",
+      "related": []
+    },
+    {
+      "id": "multithreading-017",
+      "path": "questions/multithreading/multithreading-017.md",
+      "topic": "Multithreading",
+      "difficulty": "Middle",
+      "format": "System Design",
+      "title": "ThreadPoolExecutor Tuning",
+      "time": "",
+      "frequency": "80%",
+      "related": []
+    },
+    {
+      "id": "multithreading-018",
+      "path": "questions/multithreading/multithreading-018.md",
+      "topic": "Multithreading",
+      "difficulty": "Senior",
+      "format": "Code Review",
+      "title": "Double-Checked Locking Singleton",
+      "time": "",
+      "frequency": "85%",
+      "related": []
+    },
+    {
+      "id": "multithreading-019",
+      "path": "questions/multithreading/multithreading-019.md",
+      "topic": "Multithreading",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "`CountDownLatch` vs `CyclicBarrier`",
+      "time": "",
+      "frequency": "60%",
+      "related": []
+    },
+    {
+      "id": "multithreading-020",
+      "path": "questions/multithreading/multithreading-020.md",
+      "topic": "Multithreading",
+      "difficulty": "Junior",
+      "format": "Code Review",
+      "title": "Calling `run()` Instead of `start()`",
+      "time": "",
+      "frequency": "90%",
+      "related": []
+    },
+    {
+      "id": "multithreading-021",
+      "path": "questions/multithreading/multithreading-021.md",
+      "topic": "Multithreading",
+      "difficulty": "Middle",
+      "format": "System Design",
+      "title": "`ThreadLocal` Use Cases and Risks",
+      "time": "",
+      "frequency": "75%",
+      "related": []
+    },
+    {
+      "id": "multithreading-022",
+      "path": "questions/multithreading/multithreading-022.md",
+      "topic": "Multithreading",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "Race Conditions",
+      "time": "",
+      "frequency": "85%",
+      "related": []
+    },
+    {
+      "id": "multithreading-023",
+      "path": "questions/multithreading/multithreading-023.md",
+      "topic": "Multithreading",
+      "difficulty": "Senior",
+      "format": "Code Review",
+      "title": "Livelock vs Deadlock",
+      "time": "",
+      "frequency": "50%",
+      "related": []
+    },
+    {
+      "id": "multithreading-024",
+      "path": "questions/multithreading/multithreading-024.md",
+      "topic": "Multithreading",
+      "difficulty": "Middle",
+      "format": "Code Review",
+      "title": "`IllegalMonitorStateException`",
+      "time": "",
+      "frequency": "80%",
+      "related": []
+    },
+    {
+      "id": "multithreading-025",
+      "path": "questions/multithreading/multithreading-025.md",
+      "topic": "Multithreading",
+      "difficulty": "Senior",
+      "format": "Open Answer",
+      "title": "`ForkJoinPool` vs `ThreadPoolExecutor`",
+      "time": "",
+      "frequency": "65%",
+      "related": []
+    },
+    {
+      "id": "multithreading-026",
+      "path": "questions/multithreading/multithreading-026.md",
+      "topic": "Multithreading",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "Daemon Threads",
+      "time": "",
+      "frequency": "80%",
+      "related": []
+    },
+    {
+      "id": "multithreading-027",
+      "path": "questions/multithreading/multithreading-027.md",
+      "topic": "Multithreading",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "`ReentrantLock` vs `synchronized`",
+      "time": "",
+      "frequency": "85%",
+      "related": []
+    },
+    {
+      "id": "multithreading-028",
+      "path": "questions/multithreading/multithreading-028.md",
+      "topic": "Multithreading",
+      "difficulty": "Senior",
+      "format": "System Design",
+      "title": "Designing a Concurrent Bounded Queue",
+      "time": "",
+      "frequency": "70%",
+      "related": []
+    },
+    {
+      "id": "multithreading-029",
+      "path": "questions/multithreading/multithreading-029.md",
+      "topic": "Multithreading",
+      "difficulty": "Middle",
+      "format": "Code Review",
+      "title": "`Future.get()` Blocking Main Thread",
+      "time": "",
+      "frequency": "80%",
+      "related": []
+    },
+    {
+      "id": "multithreading-030",
+      "path": "questions/multithreading/multithreading-030.md",
+      "topic": "Multithreading",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "`notify()` vs `notifyAll()`",
+      "time": "",
+      "frequency": "85%",
+      "related": []
+    },
+    {
+      "id": "multithreading-031",
+      "path": "questions/multithreading/multithreading-031.md",
+      "topic": "Multithreading",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "`Semaphore`",
+      "time": "",
+      "frequency": "70%",
+      "related": []
+    },
+    {
+      "id": "multithreading-032",
+      "path": "questions/multithreading/multithreading-032.md",
+      "topic": "Multithreading",
+      "difficulty": "Junior",
+      "format": "System Design",
+      "title": "`ExecutorService` vs Direct `Thread` Creation",
+      "time": "",
+      "frequency": "90%",
+      "related": []
+    },
+    {
+      "id": "multithreading-033",
+      "path": "questions/multithreading/multithreading-033.md",
+      "topic": "Multithreading",
+      "difficulty": "Senior",
+      "format": "Code Review",
+      "title": "Parallel Streams and Thread Safety",
+      "time": "",
+      "frequency": "75%",
+      "related": []
+    },
+    {
+      "id": "multithreading-034",
+      "path": "questions/multithreading/multithreading-034.md",
+      "topic": "Multithreading",
+      "difficulty": "Middle",
+      "format": "Code Review",
+      "title": "Stopping a Thread",
+      "time": "",
+      "frequency": "80%",
+      "related": []
+    },
+    {
+      "id": "multithreading-035",
+      "path": "questions/multithreading/multithreading-035.md",
+      "topic": "Multithreading",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "`Thread.join()`",
+      "time": "",
+      "frequency": "80%",
+      "related": []
+    },
+    {
+      "id": "multithreading-036",
+      "path": "questions/multithreading/multithreading-036.md",
+      "topic": "Multithreading",
+      "difficulty": "Middle",
+      "format": "Code Review",
+      "title": "`AtomicInteger` vs `volatile`",
+      "time": "",
+      "frequency": "80%",
       "related": []
     },
     {
