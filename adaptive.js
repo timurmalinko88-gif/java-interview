@@ -102,9 +102,21 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (myRoadmapBtn) {
         myRoadmapBtn.addEventListener('click', () => {
-            renderRoadmap();
-            roadmapModal.classList.remove('hidden');
-            setTimeout(() => roadmapModal.classList.remove('opacity-0'), 10);
+            console.log("My Roadmap button clicked!");
+            try {
+                if (typeof window.renderRoadmap === 'function') {
+                    window.renderRoadmap();
+                }
+                if (roadmapModal) {
+                    roadmapModal.classList.remove('hidden');
+                    roadmapModal.style.display = 'flex'; // Ensure it's treated as flex
+                    setTimeout(() => roadmapModal.classList.remove('opacity-0'), 10);
+                } else {
+                    console.error("roadmapModal not found!");
+                }
+            } catch (err) {
+                console.error("Error in myRoadmapBtn click:", err);
+            }
         });
     }
     
@@ -154,77 +166,92 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     window.renderRoadmap = function() {
-        roadmapContent.innerHTML = '';
-        if (!filteredQuestions || filteredQuestions.length === 0) {
-            roadmapContent.innerHTML = '<p class="text-slate-500">Your roadmap is empty.</p>';
-            return;
-        }
-        
-        // Group by topic
-        const grouped = {};
-        filteredQuestions.forEach(q => {
-            if (!grouped[q.topic]) grouped[q.topic] = [];
-            grouped[q.topic].push(q);
-        });
-        
-        for (const [topic, qList] of Object.entries(grouped)) {
-            const groupDiv = document.createElement('div');
-            groupDiv.className = 'mb-8';
+        try {
+            if (!roadmapContent) return;
+            roadmapContent.innerHTML = '';
             
-            const groupTitle = document.createElement('h3');
-            groupTitle.className = 'text-lg font-bold text-slate-800 dark:text-slate-200 mb-4 flex items-center space-x-2';
-            groupTitle.innerHTML = `<i class="fa-solid fa-folder-open text-amber-500"></i><span>${topic}</span><span class="text-sm font-normal text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded-full">${qList.length}</span>`;
-            groupDiv.appendChild(groupTitle);
+            // Check if filteredQuestions is accessible
+            const questions = typeof filteredQuestions !== 'undefined' ? filteredQuestions : [];
+            if (!questions || questions.length === 0) {
+                roadmapContent.innerHTML = '<p class="text-slate-500">Your roadmap is empty.</p>';
+                return;
+            }
             
-            const listDiv = document.createElement('div');
-            listDiv.className = 'space-y-3';
+            const mArray = (typeof masteredIds !== 'undefined' && Array.isArray(masteredIds)) ? masteredIds : [];
             
-            qList.forEach(q => {
-                const isMastered = masteredIds.includes(q.id);
-                const qDiv = document.createElement('div');
-                qDiv.className = `p-4 rounded-xl border flex justify-between items-center transition-all ${isMastered ? 'border-emerald-500/30 bg-emerald-500/5' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 hover:border-brand-500/30 hover:shadow-md'}`;
-                
-                const left = document.createElement('div');
-                left.className = 'flex items-center space-x-3';
-                if (isMastered) {
-                    left.innerHTML = `<div class="w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center shrink-0"><i class="fa-solid fa-check"></i></div>`;
-                } else {
-                    left.innerHTML = `<div class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-400 flex items-center justify-center shrink-0"><i class="fa-solid fa-book"></i></div>`;
-                }
-                
-                const title = document.createElement('div');
-                title.className = `font-semibold ${isMastered ? 'text-emerald-700 dark:text-emerald-400 line-through opacity-70' : 'text-slate-800 dark:text-slate-200'}`;
-                title.innerText = q.id + ': ' + (q.question.length > 60 ? q.question.substring(0,60)+'...' : q.question);
-                left.appendChild(title);
-                
-                const right = document.createElement('div');
-                if (!isMastered) {
-                    const studyBtn = document.createElement('button');
-                    studyBtn.className = 'px-4 py-2 bg-brand-500 hover:bg-brand-600 text-white text-sm font-bold rounded-lg shadow-sm transition-colors';
-                    studyBtn.innerText = 'Study Now';
-                    studyBtn.onclick = () => {
-                        roadmapModal.classList.add('opacity-0');
-                        setTimeout(() => roadmapModal.classList.add('hidden'), 300);
-                        if (typeof loadQuestion === 'function') {
-                            loadQuestion(q);
-                            if(typeof buildSidebarList === 'function') buildSidebarList();
-                        }
-                    };
-                    right.appendChild(studyBtn);
-                } else {
-                    const doneSpan = document.createElement('span');
-                    doneSpan.className = 'text-emerald-500 font-bold text-sm px-4 py-2';
-                    doneSpan.innerText = 'Done';
-                    right.appendChild(doneSpan);
-                }
-                
-                qDiv.appendChild(left);
-                qDiv.appendChild(right);
-                listDiv.appendChild(qDiv);
+            // Group by topic
+            const grouped = {};
+            questions.forEach(q => {
+                const topic = q.topic || 'General';
+                if (!grouped[topic]) grouped[topic] = [];
+                grouped[topic].push(q);
             });
             
-            groupDiv.appendChild(listDiv);
-            roadmapContent.appendChild(groupDiv);
+            for (const [topic, qList] of Object.entries(grouped)) {
+                const groupDiv = document.createElement('div');
+                groupDiv.className = 'mb-8';
+                
+                const groupTitle = document.createElement('h3');
+                groupTitle.className = 'text-lg font-bold text-slate-800 dark:text-slate-200 mb-4 flex items-center space-x-2';
+                groupTitle.innerHTML = `<i class="fa-solid fa-folder-open text-amber-500"></i><span>${topic}</span><span class="text-sm font-normal text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded-full">${qList.length}</span>`;
+                groupDiv.appendChild(groupTitle);
+                
+                const listDiv = document.createElement('div');
+                listDiv.className = 'space-y-3';
+                
+                qList.forEach(q => {
+                    const isMastered = mArray.includes(q.id);
+                    const qDiv = document.createElement('div');
+                    qDiv.className = `p-4 rounded-xl border flex justify-between items-center transition-all ${isMastered ? 'border-emerald-500/30 bg-emerald-500/5' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 hover:border-brand-500/30 hover:shadow-md'}`;
+                    
+                    const left = document.createElement('div');
+                    left.className = 'flex items-center space-x-3';
+                    if (isMastered) {
+                        left.innerHTML = `<div class="w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center shrink-0"><i class="fa-solid fa-check"></i></div>`;
+                    } else {
+                        left.innerHTML = `<div class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-400 flex items-center justify-center shrink-0"><i class="fa-solid fa-book"></i></div>`;
+                    }
+                    
+                    const title = document.createElement('div');
+                    title.className = `font-semibold ${isMastered ? 'text-emerald-700 dark:text-emerald-400 line-through opacity-70' : 'text-slate-800 dark:text-slate-200'}`;
+                    const qText = q.question || 'Question';
+                    title.innerText = q.id + ': ' + (qText.length > 60 ? qText.substring(0,60)+'...' : qText);
+                    left.appendChild(title);
+                    
+                    const right = document.createElement('div');
+                    if (!isMastered) {
+                        const studyBtn = document.createElement('button');
+                        studyBtn.className = 'px-4 py-2 bg-brand-500 hover:bg-brand-600 text-white text-sm font-bold rounded-lg shadow-sm transition-colors';
+                        studyBtn.innerText = 'Study Now';
+                        studyBtn.onclick = () => {
+                            if (roadmapModal) {
+                                roadmapModal.classList.add('opacity-0');
+                                setTimeout(() => roadmapModal.classList.add('hidden'), 300);
+                            }
+                            if (typeof loadQuestion === 'function') {
+                                loadQuestion(q);
+                                if(typeof buildSidebarList === 'function') buildSidebarList();
+                            }
+                        };
+                        right.appendChild(studyBtn);
+                    } else {
+                        const doneSpan = document.createElement('span');
+                        doneSpan.className = 'text-emerald-500 font-bold text-sm px-4 py-2';
+                        doneSpan.innerText = 'Done';
+                        right.appendChild(doneSpan);
+                    }
+                    
+                    qDiv.appendChild(left);
+                    qDiv.appendChild(right);
+                    listDiv.appendChild(qDiv);
+                });
+                
+                groupDiv.appendChild(listDiv);
+                roadmapContent.appendChild(groupDiv);
+            }
+        } catch (err) {
+            console.error("Roadmap Render Error:", err);
+            if (roadmapContent) roadmapContent.innerHTML = `<p class="text-rose-500 p-4">Error loading roadmap: ${err.message}</p>`;
         }
     };
     
@@ -263,9 +290,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     myRoadmapBtn.classList.add('flex');
                     
                     // Show roadmap modal
-                    renderRoadmap();
-                    roadmapModal.classList.remove('hidden');
-                    setTimeout(() => roadmapModal.classList.remove('opacity-0'), 10);
+                    if (typeof window.renderRoadmap === 'function') {
+                        window.renderRoadmap();
+                    }
+                    if (roadmapModal) {
+                        roadmapModal.classList.remove('hidden');
+                        roadmapModal.style.display = 'flex';
+                        setTimeout(() => roadmapModal.classList.remove('opacity-0'), 10);
+                    }
                     
                     if (typeof buildSidebarList === 'function') buildSidebarList();
                     document.getElementById('search-input').value = `[Adaptive Plan] Tags: ${Array.from(failedTags).join(',')}`;
