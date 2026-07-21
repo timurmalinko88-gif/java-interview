@@ -1119,9 +1119,9 @@
       "topic": "General",
       "difficulty": "Junior",
       "format": "Open Answer",
-      "title": "В чем разница между абстрактным классом и интерфейсом в Java?",
+      "title": "What is the difference between an abstract class and an interface in Java?",
       "time": "",
-      "frequency": "",
+      "frequency": "95%",
       "related": []
     },
     {
@@ -1130,9 +1130,9 @@
       "topic": "General",
       "difficulty": "Senior",
       "format": "System Design",
-      "title": "Спроектируйте сервис сокращения URL-адресов (наподобие bit.ly).",
+      "title": "Design a URL Shortening Service (like bit.ly)",
       "time": "",
-      "frequency": "",
+      "frequency": "85%",
       "related": []
     },
     {
