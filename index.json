@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "total": 143,
+  "total": 153,
   "questions": [
     {
       "id": "general-001",
@@ -1094,6 +1094,116 @@
       "title": "False Sharing",
       "time": "",
       "frequency": "30%",
+      "related": []
+    },
+    {
+      "id": "multithreading-041",
+      "path": "questions/multithreading/multithreading-041.md",
+      "topic": "Multithreading",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "`Exchanger`",
+      "time": "",
+      "frequency": "40%",
+      "related": []
+    },
+    {
+      "id": "multithreading-042",
+      "path": "questions/multithreading/multithreading-042.md",
+      "topic": "Multithreading",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "Thread Priority",
+      "time": "",
+      "frequency": "55%",
+      "related": []
+    },
+    {
+      "id": "multithreading-043",
+      "path": "questions/multithreading/multithreading-043.md",
+      "topic": "Multithreading",
+      "difficulty": "Senior",
+      "format": "System Design",
+      "title": "`Phaser` vs `CyclicBarrier` / `CountDownLatch`",
+      "time": "",
+      "frequency": "35%",
+      "related": []
+    },
+    {
+      "id": "multithreading-044",
+      "path": "questions/multithreading/multithreading-044.md",
+      "topic": "Multithreading",
+      "difficulty": "Middle",
+      "format": "Code Review",
+      "title": "`shutdown()` vs `shutdownNow()`",
+      "time": "",
+      "frequency": "85%",
+      "related": []
+    },
+    {
+      "id": "multithreading-045",
+      "path": "questions/multithreading/multithreading-045.md",
+      "topic": "Multithreading",
+      "difficulty": "Junior",
+      "format": "Code Review",
+      "title": "`Thread.yield()`",
+      "time": "",
+      "frequency": "45%",
+      "related": []
+    },
+    {
+      "id": "multithreading-046",
+      "path": "questions/multithreading/multithreading-046.md",
+      "topic": "Multithreading",
+      "difficulty": "Senior",
+      "format": "Open Answer",
+      "title": "Context Switching Overhead",
+      "time": "",
+      "frequency": "50%",
+      "related": []
+    },
+    {
+      "id": "multithreading-047",
+      "path": "questions/multithreading/multithreading-047.md",
+      "topic": "Multithreading",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "`CompletableFuture`",
+      "time": "",
+      "frequency": "85%",
+      "related": []
+    },
+    {
+      "id": "multithreading-048",
+      "path": "questions/multithreading/multithreading-048.md",
+      "topic": "Multithreading",
+      "difficulty": "Junior",
+      "format": "Code Review",
+      "title": "Uncaught Exceptions in Threads",
+      "time": "",
+      "frequency": "65%",
+      "related": []
+    },
+    {
+      "id": "multithreading-049",
+      "path": "questions/multithreading/multithreading-049.md",
+      "topic": "Multithreading",
+      "difficulty": "Middle",
+      "format": "System Design",
+      "title": "`ThreadLocalRandom` vs `Math.random()`",
+      "time": "",
+      "frequency": "60%",
+      "related": []
+    },
+    {
+      "id": "multithreading-050",
+      "path": "questions/multithreading/multithreading-050.md",
+      "topic": "Multithreading",
+      "difficulty": "Senior",
+      "format": "Code Review",
+      "title": "`lock()` Position inside `try` Block",
+      "time": "",
+      "frequency": "85%",
       "related": []
     },
     {
