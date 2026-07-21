@@ -5,7 +5,7 @@
     {
       "id": "general-001",
       "path": "questions/general/general-001.md",
-      "topic": "Multithreading",
+      "topic": "General",
       "difficulty": "Middle",
       "format": "Code Review",
       "title": "```java",
@@ -16,7 +16,7 @@
     {
       "id": "general-002",
       "path": "questions/general/general-002.md",
-      "topic": "OOP",
+      "topic": "General",
       "difficulty": "Junior",
       "format": "Open Answer",
       "title": "В чем разница между абстрактным классом и интерфейсом в Java?",
@@ -27,7 +27,7 @@
     {
       "id": "general-003",
       "path": "questions/general/general-003.md",
-      "topic": "System Design",
+      "topic": "General",
       "difficulty": "Senior",
       "format": "System Design",
       "title": "Спроектируйте сервис сокращения URL-адресов (наподобие bit.ly).",

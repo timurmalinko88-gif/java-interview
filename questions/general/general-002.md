@@ -1,6 +1,6 @@
 ---
 id: general-002
-topic: OOP
+topic: General
 format: Open Answer
 level: Junior
 ---

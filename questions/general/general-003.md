@@ -1,6 +1,6 @@
 ---
 id: general-003
-topic: System Design
+topic: General
 format: System Design
 level: Senior
 ---
