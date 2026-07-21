@@ -33,12 +33,13 @@ If you send 20 requests via `parallelStream`, you will instantly clog up the ent
 
 In the `CompletableFuture.supplyAsync(supplier, executor)` method, you can pass a custom `ExecutorService` (for example, configured for 50-100 threads specifically for I/O operations). This allows HTTP requests to run in an isolated pool without blocking the system-wide `commonPool`. In addition, `CompletableFuture` provides a rich API for combining asynchronous results (e.g., `allOf()`) and handling timeouts/errors.
 
+* Blocking threads in `commonPool` causes degradation of the entire application (Thread Starvation).
+* For network requests and database operations (I/O-bound), it is necessary to use asynchronous operations with separate, specially configured thread pools.
+* `CompletableFuture` allows you to explicitly specify an `Executor` and easily combine the results of independent calls.
+
 ### Life Analogy
 
 `commonPool` is the general checkout lines in a supermarket. If you send people there who will spend 10 minutes looking for change in their wallets (HTTP request), the entire line in the store will come to a standstill. A custom pool in `CompletableFuture` is like allocating a separate window "only for long operations" so as not to interfere with the main flow of customers (CPU operations).
 
 ### Key Points
 * `parallelStream` uses `ForkJoinPool.commonPool()`, which is optimized for computational (CPU-bound) tasks, not for waiting (I/O).
-* Blocking threads in `commonPool` causes degradation of the entire application (Thread Starvation).
-* For network requests and database operations (I/O-bound), it is necessary to use asynchronous operations with separate, specially configured thread pools.
-* `CompletableFuture` allows you to explicitly specify an `Executor` and easily combine the results of independent calls.

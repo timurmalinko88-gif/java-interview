@@ -46,10 +46,11 @@ public class Counters {
 ```
 *(Before Java 8, developers manually added unused `long` variables between fields to force memory separation).*
 
+- Updates to one variable invalidate the cache for the other, causing thrashing.
+- Mitigated by memory padding (e.g., `@Contended` annotation).
+
 ### Life Analogy
 Imagine two workers (threads) need to stamp documents. They have separate stamps (variables), but the stamps are tethered to the exact same heavy clipboard (cache line). When Worker 1 grabs the clipboard to use their stamp, Worker 2 can't use theirs. They constantly yank the clipboard back and forth, wasting time, even though they aren't stamping the same documents. Padding is like cutting the clipboard in half so they each have their own.
 
 ### Key Points
 - False sharing occurs when independent variables share a CPU cache line.
-- Updates to one variable invalidate the cache for the other, causing thrashing.
-- Mitigated by memory padding (e.g., `@Contended` annotation).

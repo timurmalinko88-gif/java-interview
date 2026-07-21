@@ -55,11 +55,13 @@ String result3 = future3.get();
 ```
 This fixed version will take approximately 2 seconds, as the tasks sleep concurrently.
 
+The fixed code is like placing orders for coffee, a sandwich, and a muffin all at once with three different cashiers, and then waiting at the pickup counter for all three to arrive.
+
+- Calling `get()` immediately after `submit()` completely negates parallelism.
+- Submit all tasks first, then retrieve results.
+
 ### Life Analogy
 The broken code is like ordering a coffee, standing at the counter refusing to move until you get it, and *only then* ordering a sandwich, waiting, and *only then* ordering a muffin.
-The fixed code is like placing orders for coffee, a sandwich, and a muffin all at once with three different cashiers, and then waiting at the pickup counter for all three to arrive.
 
 ### Key Points
 - `Future.get()` is a blocking operation.
-- Calling `get()` immediately after `submit()` completely negates parallelism.
-- Submit all tasks first, then retrieve results.

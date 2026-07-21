@@ -27,11 +27,12 @@ You can make a thread a daemon by calling `thread.setDaemon(true)` *before* call
 **Example Use Case:**
 The Garbage Collector (GC) is the most famous example of a daemon thread. It runs in the background reclaiming memory. When your main application finishes, you don't want the JVM to stay alive just because the GC is still waiting to clean up memory, so it shuts down automatically. Another example is a background thread periodically saving application state or monitoring system metrics.
 
+- JVM does not wait for Daemon threads to finish.
+- Set via `setDaemon(true)` before `start()`.
+- Used for background tasks like garbage collection or monitoring.
+
 ### Life Analogy
 User threads are the guests at a party. Daemon threads are the cleaning staff. As long as there are guests at the party, the party goes on. But once all the guests leave, the party is over, and the cleaning staff are told to go home, regardless of whether they finished sweeping the floor.
 
 ### Key Points
 - JVM shuts down when all User threads terminate.
-- JVM does not wait for Daemon threads to finish.
-- Set via `setDaemon(true)` before `start()`.
-- Used for background tasks like garbage collection or monitoring.

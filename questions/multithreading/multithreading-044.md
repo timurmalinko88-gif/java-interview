@@ -36,12 +36,14 @@ Both methods initiate the termination of an `ExecutorService`, but they do so wi
 
 Typically, applications use a two-phased approach: call `shutdown()`, wait a few seconds using `awaitTermination()`, and if tasks are still running, force it with `shutdownNow()`.
 
-### Life Analogy
-Imagine a restaurant closing.
 `shutdown()` is the manager locking the front door so no new customers can enter. However, everyone already eating, and everyone with an order already submitted to the kitchen, gets their food and finishes their meal before the staff goes home.
 `shutdownNow()` is the manager locking the door, throwing all the un-cooked order tickets in the trash (returning them to you), and turning off the lights in the dining room, politely asking the current diners to leave immediately (interrupting them).
 
-### Key Points
-- `shutdown()` is graceful: finishes running AND queued tasks.
 - `shutdownNow()` is abrupt: attempts to stop running tasks via interrupt, and discards queued tasks.
 - Both methods reject new task submissions.
+
+### Life Analogy
+Imagine a restaurant closing.
+
+### Key Points
+- `shutdown()` is graceful: finishes running AND queued tasks.

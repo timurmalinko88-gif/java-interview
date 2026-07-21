@@ -43,12 +43,14 @@ Two threads are actively changing their state in response to each other, but nei
 
 To fix a livelock, randomness is often introduced. For instance, instead of sleeping for exactly 10ms, a thread could sleep for a random duration, breaking the synchronized "dance" and allowing one thread to slip through the condition while the other sleeps.
 
-### Life Analogy
-**Deadlock**: Two stubborn people meet in a narrow hallway. Neither will step aside. Both stand completely still forever.
 **Livelock**: Two polite people meet in a hallway. Person A steps to the left. Person B steps to the right (blocking A). Person A steps to the right. Person B steps to the left. They constantly move side to side, actively trying to pass, but never succeeding.
 **Starvation**: You are waiting in line at a club, but the bouncer keeps letting VIPs in ahead of you. You aren't stuck, but you never get your turn.
 
-### Key Points
-- Livelocked threads are active and consume CPU but make no progress.
 - Deadlocked threads are blocked and do not consume CPU.
 - Often resolved by introducing random backoff times (like Ethernet collision resolution).
+
+### Life Analogy
+**Deadlock**: Two stubborn people meet in a narrow hallway. Neither will step aside. Both stand completely still forever.
+
+### Key Points
+- Livelocked threads are active and consume CPU but make no progress.

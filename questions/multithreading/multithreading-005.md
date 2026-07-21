@@ -64,12 +64,13 @@ When creating a task, we send a message to RabbitMQ with a TTL = 24 hours (or us
 
 Both options provide *at-least-once* delivery. If a node sent a push but crashed before recording the status/ack, the task will be repeated. The push notification sending method must be idempotent (e.g., a unique `Idempotency-Key` based on the `task_id` is passed to the external API).
 
+* When using a DB, the `SELECT ... FOR UPDATE SKIP LOCKED` pattern is critical for concurrent fetching without deadlocks.
+* Handling failures ("zombie tasks") is resolved through lock timeouts (`locked_at`) in the DB or acknowledgment mechanisms (`ack` / `nack`) in message queues.
+* Idempotency on the executor side is mandatory, as distributed systems guarantee at-least-once delivery.
+
 ### Life Analogy
 
 A Database with polling is a notice board. 10 workers constantly run up to the board. `SKIP LOCKED` is when a worker tears off a sticker with a task so another doesn't take it. If the worker disappears for an hour (the node crashes), the foreman (background job) notices this, prints a duplicate sticker, and hangs it back on the board.
 
 ### Key Points
 * Local schedulers do not work in a cluster. An external state store is required.
-* When using a DB, the `SELECT ... FOR UPDATE SKIP LOCKED` pattern is critical for concurrent fetching without deadlocks.
-* Handling failures ("zombie tasks") is resolved through lock timeouts (`locked_at`) in the DB or acknowledgment mechanisms (`ack` / `nack`) in message queues.
-* Idempotency on the executor side is mandatory, as distributed systems guarantee at-least-once delivery.

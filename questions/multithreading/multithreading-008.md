@@ -66,9 +66,10 @@ public class MessageQueue {
 }
 ```
 
+- Always check the wait condition inside a `while` loop to protect against spurious wakeups and state changes.
+
 ### Life Analogy
 Using `wait()` in an `if` block instead of a `while` loop is like waking up to your alarm, assuming it is morning, and immediately going to work without checking the clock. If the alarm malfunctioned (spurious wakeup) and it is 3 AM, you are going to have a bad time. Always check the clock (the `while` condition) after waking up!
 
 ### Key Points
 - `wait()`, `notify()`, and `notifyAll()` must always be called inside a `synchronized` block on the object's monitor.
-- Always check the wait condition inside a `while` loop to protect against spurious wakeups and state changes.

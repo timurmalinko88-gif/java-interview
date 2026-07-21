@@ -26,12 +26,14 @@ If Action X *happens-before* Action Y, the JMM guarantees that the results of Ac
 3. **Thread Start Rule**: A call to `Thread.start()` on a thread *happens-before* any action in the started thread.
 4. **Thread Join Rule**: All actions in a thread *happen-before* any other thread successfully returns from a `join()` on that thread.
 
-### Life Analogy
-Imagine writing a book. The author writes Chapter 1, then Chapter 2. To the author (single thread), the order is guaranteed. However, if the pages are given to a printing press (CPU), they might print them out of order for efficiency. 
 A "Happens-Before" rule is like binding the book. It strictly enforces that a reader (Thread B) will absolutely see the end of Chapter 1 *before* they can start reading Chapter 2, no matter how the printer printed the pages.
 
-### Key Points
-- Defines memory visibility and instruction ordering across threads.
 - Prevents unexpected behavior from compiler/CPU reordering.
 - Exiting a synchronized block happens-before entering the same block.
 - Writing a volatile variable happens-before reading it.
+
+### Life Analogy
+Imagine writing a book. The author writes Chapter 1, then Chapter 2. To the author (single thread), the order is guaranteed. However, if the pages are given to a printing press (CPU), they might print them out of order for efficiency.
+
+### Key Points
+- Defines memory visibility and instruction ordering across threads.

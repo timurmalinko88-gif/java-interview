@@ -24,12 +24,14 @@ Both `ReentrantLock` and `synchronized` provide mutual exclusion and thread-safe
 
 **Disadvantage:** `ReentrantLock` requires explicit locking and, most importantly, explicit unlocking in a `finally` block. Missing the unlock can cause permanent deadlocks.
 
-### Life Analogy
-`synchronized` is a basic bathroom lock. You wait outside blindly until the door opens.
 `ReentrantLock` is a smart lock. You can knock and see if it's free, and leave if it isn't (`tryLock`). You can wait for exactly 5 minutes before leaving (`timed lock`). You can establish a queue so the person waiting the longest goes next (`fairness`).
 
-### Key Points
-- `ReentrantLock` offers non-blocking attempts (`tryLock`).
 - Supports timeouts and thread interruption while waiting.
 - Supports fairness policies.
 - Must be explicitly unlocked in a `finally` block.
+
+### Life Analogy
+`synchronized` is a basic bathroom lock. You wait outside blindly until the door opens.
+
+### Key Points
+- `ReentrantLock` offers non-blocking attempts (`tryLock`).

@@ -67,11 +67,12 @@ public class BoundedQueue<T> {
 ```
 *Note: A `while` loop is crucial for `await()` to handle spurious wakeups.*
 
+- Producers wait on `notFull` and signal `notEmpty`.
+- Consumers wait on `notEmpty` and signal `notFull`.
+- Always wait inside a `while` loop to prevent spurious wakeups.
+
 ### Life Analogy
 Imagine a bakery display case (the queue). The baker (producer) has a bell (`notEmpty`) to ring when fresh bread is put out. The customer (consumer) has a bell (`notFull`) to ring when they buy bread, clearing space. If the case is full, the baker naps until the customer rings `notFull`. If the case is empty, the customer naps until the baker rings `notEmpty`. This is much better than a single bell waking up everyone for every event.
 
 ### Key Points
 - `ReentrantLock` with multiple `Condition` variables allows targeted signaling.
-- Producers wait on `notFull` and signal `notEmpty`.
-- Consumers wait on `notEmpty` and signal `notFull`.
-- Always wait inside a `while` loop to prevent spurious wakeups.

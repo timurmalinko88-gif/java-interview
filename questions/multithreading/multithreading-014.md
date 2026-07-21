@@ -28,10 +28,11 @@ Both `Runnable` and `Callable` are functional interfaces used to define tasks th
    - `Runnable` can be executed by passing it to a `Thread` constructor or submitting it to an `ExecutorService`.
    - `Callable` can only be executed by submitting it to an `ExecutorService` (which returns a `Future` object to track the result).
 
+- `Callable` can throw checked exceptions; `Runnable` cannot.
+- `Callable` is usually used with `ExecutorService` and returns a `Future`.
+
 ### Life Analogy
 `Runnable` is like asking someone to wash the dishes—they do the task, but you don't expect them to hand you anything back when they finish. `Callable` is like asking someone to go to the store to buy milk—they do the task, and you expect them to return and hand you the milk (or tell you if they crashed the car on the way, throwing an exception).
 
 ### Key Points
 - `Callable` returns a result; `Runnable` returns `void`.
-- `Callable` can throw checked exceptions; `Runnable` cannot.
-- `Callable` is usually used with `ExecutorService` and returns a `Future`.

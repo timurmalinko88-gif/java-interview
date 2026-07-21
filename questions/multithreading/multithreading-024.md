@@ -49,10 +49,11 @@ public class WaitExample {
 }
 ```
 
+- The thread must own the monitor of the object it is invoking the methods on.
+- Failing to do so results in `IllegalMonitorStateException`.
+
 ### Life Analogy
 Imagine a public speaker's podium with a microphone. The microphone is the monitor. You cannot just walk into the room and shout "I yield the floor!" (`wait()`). You must first be recognized and given the microphone (`synchronized(lock)`). Only when you possess the microphone can you officially pause your speech and invite someone else to speak.
 
 ### Key Points
 - `wait()`, `notify()`, and `notifyAll()` must be called from a synchronized context.
-- The thread must own the monitor of the object it is invoking the methods on.
-- Failing to do so results in `IllegalMonitorStateException`.

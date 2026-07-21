@@ -23,10 +23,11 @@ If Thread A calls `exchanger.exchange(objectA)`, it blocks until Thread B calls 
 It is useful in scenarios like genetic algorithms or pipeline designs, such as a producer-consumer setup where data is processed in batches (buffers).
 For example, Thread 1 fills a buffer with data. Thread 2 consumes data from a buffer. When Thread 1 fills its buffer, and Thread 2 empties its buffer, they use an `Exchanger` to swap them. Thread 1 gets Thread 2's empty buffer to start filling again, and Thread 2 gets Thread 1's full buffer to start consuming, without needing complex locking or queueing mechanisms.
 
+- Threads block until both arrive at the `exchange()` method.
+- Great for buffer-swapping between producer and consumer.
+
 ### Life Analogy
 Imagine two spies meeting on a park bench. Spy A has a briefcase of money. Spy B has a briefcase of secret documents. Spy A arrives and waits. Spy B arrives. They simultaneously slide their briefcases across the bench to each other. They both leave with the other person's briefcase. They must both be at the bench at the same time to make the swap.
 
 ### Key Points
 - Facilitates a two-way data swap between exactly two threads.
-- Threads block until both arrive at the `exchange()` method.
-- Great for buffer-swapping between producer and consumer.

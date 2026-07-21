@@ -35,11 +35,12 @@ Even though $100 total was withdrawn, the final balance is $50 instead of $0. Th
 
 Race conditions are fixed by synchronizing the critical section of code using locks (`synchronized`), atomic variables, or other concurrency control mechanisms.
 
+- The outcome depends on thread scheduling (interleaving).
+- Common patterns: Check-Then-Act and Read-Modify-Write.
+- Solved by synchronization (locks, atomics).
+
 ### Life Analogy
 Imagine you and your roommate both check the fridge and see there is no milk (Check). You both leave for the store at the same time without telling each other. You buy milk (Act), and your roommate buys milk (Act). Now you have two gallons of milk. You raced to act on the same piece of information, resulting in an incorrect state. A lock would be leaving a sticky note on the fridge saying "I am going to buy milk."
 
 ### Key Points
 - Arises from concurrent access to shared, mutable state.
-- The outcome depends on thread scheduling (interleaving).
-- Common patterns: Check-Then-Act and Read-Modify-Write.
-- Solved by synchronization (locks, atomics).

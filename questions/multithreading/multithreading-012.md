@@ -43,10 +43,11 @@ To fix this, you can use one of the following approaches:
 1. **Synchronization**: Make the `increment()` method `synchronized`.
 2. **Atomic variables**: Use `AtomicInteger` instead of `volatile int`, and call `count.incrementAndGet()`.
 
+- `count++` is a read-modify-write operation and is not atomic.
+- Use `AtomicInteger` or `synchronized` for operations requiring atomicity.
+
 ### Life Analogy
 `volatile` is like a shared whiteboard where everyone can see the latest numbers instantly. However, `count++` is like looking at a number, going back to your desk to do math, and returning to overwrite it. If two people look at the board at the same time and do the math at their desks, they might write the same result, ignoring each other's work.
 
 ### Key Points
 - `volatile` guarantees visibility but not atomicity.
-- `count++` is a read-modify-write operation and is not atomic.
-- Use `AtomicInteger` or `synchronized` for operations requiring atomicity.

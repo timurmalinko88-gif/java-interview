@@ -23,11 +23,12 @@ Imagine an application that needs to generate a final report. The data for the r
 However, the main thread cannot generate the final report until it has all the data. 
 Therefore, the main thread will call `thread1.join()`, `thread2.join()`, and `thread3.join()`. This ensures the main thread blocks and waits for all three workers to finish before proceeding to the code that combines the data and prints the report.
 
+- Used for synchronizing the end of thread execution.
+- Can accept a timeout to prevent infinite blocking.
+- Throws `InterruptedException` if the waiting thread is interrupted.
+
 ### Life Analogy
 Imagine you are cooking dinner (the main thread). You ask your partner to go to the store to buy wine (Thread A). You can continue chopping vegetables, but you cannot serve dinner until the wine arrives. So, when everything else is ready, you sit on the couch and wait for them to return. Calling `partner.join()` is you sitting on the couch doing nothing until they walk back through the front door.
 
 ### Key Points
 - `join()` blocks the calling thread until the target thread terminates.
-- Used for synchronizing the end of thread execution.
-- Can accept a timeout to prevent infinite blocking.
-- Throws `InterruptedException` if the waiting thread is interrupted.

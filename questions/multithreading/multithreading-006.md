@@ -24,11 +24,12 @@ In Java, there are two main ways to create a new thread:
 - **Separation of Concerns:** The `Runnable` interface represents the task to be executed, while the `Thread` class represents the worker that executes the task. It is a better design to separate the task from the runner.
 - **Reusability and Resource Management:** A `Runnable` instance can be passed to an `ExecutorService` (thread pools), which is the modern and scalable way to handle multithreading in Java. Thread objects are heavy, and creating them for every task is inefficient.
 
+- `Runnable` is preferred because Java lacks multiple class inheritance.
+- `Runnable` cleanly separates the task logic from the thread execution mechanism.
+- `Runnable` instances work seamlessly with modern Java `ExecutorService` thread pools.
+
 ### Life Analogy
 Imagine you are hiring a chef (the `Thread`) to cook a recipe (the `Runnable`). Extending `Thread` is like cloning a specific chef who only knows how to cook one specific recipe. Implementing `Runnable` is like writing down a recipe and handing it to any available chef to cook.
 
 ### Key Points
 - There are two ways to create threads: extend `Thread` or implement `Runnable`.
-- `Runnable` is preferred because Java lacks multiple class inheritance.
-- `Runnable` cleanly separates the task logic from the thread execution mechanism.
-- `Runnable` instances work seamlessly with modern Java `ExecutorService` thread pools.

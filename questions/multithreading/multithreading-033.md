@@ -46,11 +46,13 @@ List<Integer> evenNumbers = numbers.parallelStream()
 ```
 Alternatively, if you absolutely must mutate a shared collection, it must be thread-safe (e.g., `CopyOnWriteArrayList` or `Collections.synchronizedList`), but this will drastically reduce the performance benefits of the parallel stream due to lock contention.
 
+Using `collect()` is like giving each of the 5 people their own notepad to write names on, and then an organizer cleanly staples the 5 notepads together at the very end.
+
+- Do not mutate standard collections (like `ArrayList`) from inside a parallel stream.
+- Prefer functional reductions using `collect()` instead of side-effecting operations like `forEach` modifying external state.
+
 ### Life Analogy
 The broken code is like 5 people trying to simultaneously write names on a single small piece of paper. They bump pens, write over each other's letters, and tear the paper.
-Using `collect()` is like giving each of the 5 people their own notepad to write names on, and then an organizer cleanly staples the 5 notepads together at the very end.
 
 ### Key Points
 - `parallelStream()` processes elements concurrently on multiple threads.
-- Do not mutate standard collections (like `ArrayList`) from inside a parallel stream.
-- Prefer functional reductions using `collect()` instead of side-effecting operations like `forEach` modifying external state.

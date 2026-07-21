@@ -27,11 +27,13 @@ Instead of creating a thread for every task, it creates a fixed number of worker
 - Memory usage is strictly bounded and predictable.
 - CPU thrashing is eliminated because the active thread count is kept close to the number of physical cores.
 
+An `ExecutorService` is a restaurant. You build one kitchen with 10 chefs (threads), and they take 10,000 orders (tasks) from a ticket rail, cooking them one by one.
+
+- Unbounded thread creation leads to OutOfMemory and CPU thrashing.
+- `ExecutorService` reuses a bounded pool of threads to execute a queue of tasks.
+
 ### Life Analogy
 Creating a new thread per task is like building a brand new kitchen, hiring a new chef, cooking one meal, and then bulldozing the kitchen and firing the chef. Doing that for 10,000 meals is absurd.
-An `ExecutorService` is a restaurant. You build one kitchen with 10 chefs (threads), and they take 10,000 orders (tasks) from a ticket rail, cooking them one by one.
 
 ### Key Points
 - Thread creation is expensive and consumes memory.
-- Unbounded thread creation leads to OutOfMemory and CPU thrashing.
-- `ExecutorService` reuses a bounded pool of threads to execute a queue of tasks.

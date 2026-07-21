@@ -28,10 +28,11 @@ Both `Collections.synchronizedMap()` and `ConcurrentHashMap` provide thread-safe
 **Which is preferred?**
 `ConcurrentHashMap` is highly preferred in almost all modern concurrent Java applications due to its vastly superior performance under contention. You would rarely use `synchronizedMap` unless you absolutely need to lock the entire map to perform complex atomic multi-step operations (though `ConcurrentHashMap` provides methods like `computeIfAbsent` for most atomic needs).
 
+- `ConcurrentHashMap` uses node-level locking and CAS, allowing concurrent reads and writes.
+- `ConcurrentHashMap` is the standard choice for high-performance multithreaded code.
+
 ### Life Analogy
 `SynchronizedMap` is like a bank with only one security guard for the entire building; only one customer can do anything (deposit, withdraw, or even just check balances) at a time. `ConcurrentHashMap` is like a bank where each individual teller window has its own guard; many customers can be served simultaneously as long as they are at different windows, and people just checking their balances do not need a guard at all.
 
 ### Key Points
 - `SynchronizedMap` locks the entire collection for every operation, causing severe bottlenecks.
-- `ConcurrentHashMap` uses node-level locking and CAS, allowing concurrent reads and writes.
-- `ConcurrentHashMap` is the standard choice for high-performance multithreaded code.

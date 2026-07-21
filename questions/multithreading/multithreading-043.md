@@ -26,13 +26,15 @@ A multi-stage build system (like Maven).
 Phase 1: Download dependencies. We don't know initially how many dependencies there are, so we dynamically `register()` a worker for each one found.
 Phase 2: Compile. Once all downloads `arriveAndAwaitAdvance()`, the compile phase begins. Some compilation modules might fail and abort, so they `arriveAndDeregister()`, dynamically lowering the threshold needed to advance to Phase 3 (Testing). A `CyclicBarrier` would be deadlocked if a thread aborted without arriving.
 
-### Life Analogy
-`CountDownLatch` is buying exactly 5 tickets to a movie; once 5 people arrive, you go in. 
 `CyclicBarrier` is a group of 5 friends doing a pub crawl, waiting at the door of each pub for all 5 to finish their drinks.
 `Phaser` is a fluid tour group. You start with 10 people at the museum. At the museum, 2 people leave the tour (deregister), and 3 new people join (register). The tour guide waits for the current count (11) before moving to the next stop.
 
-### Key Points
-- `Phaser` supports dynamic registration and deregistration of parties.
 - It is reusable across multiple phases (generations).
 - Threads can arrive and wait, or arrive and proceed without waiting.
 - Replaces both CDL and CB in complex, dynamic scenarios.
+
+### Life Analogy
+`CountDownLatch` is buying exactly 5 tickets to a movie; once 5 people arrive, you go in.
+
+### Key Points
+- `Phaser` supports dynamic registration and deregistration of parties.

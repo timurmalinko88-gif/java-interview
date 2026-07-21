@@ -26,13 +26,15 @@ Using `notify()` is only safe if:
 2. Only one thread can actually proceed upon being notified (the other threads would just check the condition and go back to sleep anyway).
 If these conditions aren't perfectly met, using `notify()` can result in a "lost notification" where a thread that could have proceeded is left waiting forever, potentially causing a deadlock.
 
-### Life Analogy
-Imagine 10 people sleeping in a house waiting for their specific taxis. 
 `notify()` is the butler knocking quietly on one random bedroom door and whispering, "A taxi is here." If it's the wrong person's taxi, that person goes back to sleep, and the person whose taxi actually arrived never wakes up.
 `notifyAll()` is the butler turning on the hallway lights and yelling, "A taxi is here!" Everyone wakes up, checks out the window, and if it's not their taxi, they go back to sleep. It's slightly less efficient, but everyone gets their ride.
 
-### Key Points
-- `notify()` wakes a single random waiting thread.
 - `notifyAll()` wakes all waiting threads.
 - `notifyAll()` is generally safer and prevents lost notifications.
 - Wakened threads still must re-acquire the lock before continuing execution.
+
+### Life Analogy
+Imagine 10 people sleeping in a house waiting for their specific taxis.
+
+### Key Points
+- `notify()` wakes a single random waiting thread.

@@ -50,11 +50,13 @@ public class WebCounter {
 }
 ```
 
-### Life Analogy
-`volatile` is a real-time digital display of a bank account. Everyone sees the exact balance immediately. However, if two people look at the display showing $10, both go to deposit $5, and both independently tell the bank "change the balance to $15", the final balance is $15, not $20. 
 `AtomicInteger` is an automated teller machine. When you deposit $5, the machine locks your account for a millisecond, adds $5, and unlocks it. If someone else deposits at the same time, they are forced to wait that millisecond. The balance ends up correctly at $20.
+
+- `AtomicInteger` uses CAS (Compare-And-Swap) for lock-free atomic operations.
+- `AtomicInteger` is the standard tool for thread-safe counters.
+
+### Life Analogy
+`volatile` is a real-time digital display of a bank account. Everyone sees the exact balance immediately. However, if two people look at the display showing $10, both go to deposit $5, and both independently tell the bank "change the balance to $15", the final balance is $15, not $20.
 
 ### Key Points
 - `volatile` does not make compound operations (like `++`) atomic.
-- `AtomicInteger` uses CAS (Compare-And-Swap) for lock-free atomic operations.
-- `AtomicInteger` is the standard tool for thread-safe counters.

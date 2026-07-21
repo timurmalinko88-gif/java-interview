@@ -48,10 +48,11 @@ t.setUncaughtExceptionHandler((thread, exception) -> {
 t.start();
 ```
 
+- A `try-catch` in one thread cannot catch an exception thrown in another.
+- Use `Thread.setUncaughtExceptionHandler()` to handle exceptions that escape a thread's `run` method.
+
 ### Life Analogy
 The main thread and the background thread are like two coworkers in different rooms. The main thread says "Start working!" and then puts on noise-canceling headphones (its own try-catch). The background coworker trips and yells (throws exception). The main thread can't hear them because they are in different rooms. An `UncaughtExceptionHandler` is like giving the background worker an emergency pager that alerts the boss directly if something goes wrong.
 
 ### Key Points
 - Exceptions do not propagate across thread boundaries.
-- A `try-catch` in one thread cannot catch an exception thrown in another.
-- Use `Thread.setUncaughtExceptionHandler()` to handle exceptions that escape a thread's `run` method.

@@ -48,10 +48,11 @@ If this happens, another thread entering `getInstance()` will see that `instance
 `private static volatile Singleton instance;`
 `volatile` prevents the reordering of read and write instructions, ensuring that the object is fully initialized before the reference is made visible to other threads.
 
+- Object instantiation is not an atomic operation.
+- Instruction reordering can expose partially constructed objects.
+
 ### Life Analogy
 Imagine buying a house. Normally you (1) buy the land, (2) build the house, (3) get the keys (reference). Reordering is like getting the keys after buying the land but before the house is built. If you invite a friend over (another thread), they see you have keys (not null), go to the address, and fall into an empty pit (partially initialized object). `volatile` forces the builder to finish the house before handing over the keys.
 
 ### Key Points
 - Double-checked locking requires the `volatile` keyword.
-- Object instantiation is not an atomic operation.
-- Instruction reordering can expose partially constructed objects.

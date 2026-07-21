@@ -34,11 +34,12 @@ Implementing a custom thread pool involves managing worker threads and a task qu
 **Shutdown Mechanism:**
 To cleanly shut down, you need a way to stop the `while(true)` loops. A common approach is a `boolean isStopped` flag. The shutdown method sets the flag and calls `interrupt()` on all worker threads to break them out of `queue.take()`.
 
+- The core pattern is the Producer-Consumer pattern using a `BlockingQueue`.
+- Worker threads run an infinite loop, blocking on the queue's `take()` method until a task is available.
+- Proper lifecycle management (shutdown, interruption) is the hardest part of a custom implementation.
+
 ### Life Analogy
 A Thread Pool is like a restaurant kitchen. The **Worker Threads** are the chefs. The **Task Queue** is the order ticket rail. The waiters (client threads) place orders on the rail. The chefs do not get hired and fired for each order; they stand by the rail, take the next ticket, cook it, and then immediately return to the rail for the next ticket.
 
 ### Key Points
 - A thread pool reuses threads to avoid the heavy cost of thread creation/destruction.
-- The core pattern is the Producer-Consumer pattern using a `BlockingQueue`.
-- Worker threads run an infinite loop, blocking on the queue's `take()` method until a task is available.
-- Proper lifecycle management (shutdown, interruption) is the hardest part of a custom implementation.

@@ -28,11 +28,13 @@ Introduced in Java 7, `ThreadLocalRandom` solves this by giving every thread its
 int randomNum = ThreadLocalRandom.current().nextInt(1, 100);
 ```
 
+`ThreadLocalRandom` is buying a cheap pocket calculator for every single accountant. They can all calculate at the same time without waiting in line.
+
+- Shared random generators cause severe lock contention under heavy concurrency.
+- `ThreadLocalRandom.current()` provides lock-free, isolated random generation per thread.
+
 ### Life Analogy
 `Math.random()` is like 1,000 accountants sharing a single, giant calculator in the center of the office. Only one person can punch numbers into it at a time.
-`ThreadLocalRandom` is buying a cheap pocket calculator for every single accountant. They can all calculate at the same time without waiting in line.
 
 ### Key Points
 - `Math.random()` and `java.util.Random` use synchronization to update a shared seed.
-- Shared random generators cause severe lock contention under heavy concurrency.
-- `ThreadLocalRandom.current()` provides lock-free, isolated random generation per thread.

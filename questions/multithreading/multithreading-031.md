@@ -24,12 +24,14 @@ A `Semaphore` is a concurrency utility that maintains a set of permits. Threads 
 Semaphores are used to bound resource pools. 
 For example, if you have an application that connects to a legacy database that can only handle a maximum of 10 concurrent connections, you would initialize a `Semaphore(10)`. Before a thread can execute a database query, it must call `semaphore.acquire()`. If 10 threads are already querying the DB, the 11th thread will block until one of the first 10 calls `semaphore.release()`.
 
-### Life Analogy
-A Lock is a bathroom with one toilet. Only one person can enter.
 A Semaphore is a parking lot with 10 parking spaces and an attendant. Up to 10 cars can enter. The attendant (Semaphore) keeps track. When the lot is full, the 11th car must wait at the gate until a car leaves and frees up a space (permit).
 
-### Key Points
-- Semaphores maintain a configurable number of permits.
 - `acquire()` takes a permit; `release()` returns a permit.
 - Used to throttle traffic and manage pools of limited resources.
 - A Semaphore with 1 permit is called a binary semaphore.
+
+### Life Analogy
+A Lock is a bathroom with one toilet. Only one person can enter.
+
+### Key Points
+- Semaphores maintain a configurable number of permits.

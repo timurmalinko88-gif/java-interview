@@ -28,11 +28,12 @@ A **deadlock** occurs when two or more threads are blocked forever, waiting for 
 - **Lock Timeout:** Use `java.util.concurrent.locks.Lock.tryLock(long timeout, TimeUnit unit)`. If a thread cannot acquire all necessary locks within a given timeframe, it backs off, releases its current locks, and tries again later.
 - **Minimize Lock Scope:** Keep synchronized blocks as small as possible and avoid calling unknown/alien methods while holding a lock.
 
+- The most practical way to prevent deadlocks is strict **Lock Ordering**.
+- Alternatively, using `tryLock()` with timeouts can help threads recover from potential deadlocks.
+- Keep locked sections as short and simple as possible to minimize risk.
+
 ### Life Analogy
 Imagine a narrow bridge where two cars meet head-on. Car A will not reverse until Car B moves, and Car B will not reverse until Car A moves. Both drivers sit there forever. To prevent this, a rule (Lock Ordering) could be established: "Cars heading North always have the right of way, so Southbound cars must wait."
 
 ### Key Points
 - Deadlock happens when threads wait endlessly for locks held by each other.
-- The most practical way to prevent deadlocks is strict **Lock Ordering**.
-- Alternatively, using `tryLock()` with timeouts can help threads recover from potential deadlocks.
-- Keep locked sections as short and simple as possible to minimize risk.

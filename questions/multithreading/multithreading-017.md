@@ -30,10 +30,11 @@ For CPU-bound tasks, having more threads than available CPU cores actually hurts
 - **`corePoolSize` and `maximumPoolSize`**: Both should typically be set to the number of available CPU cores (e.g., `Runtime.getRuntime().availableProcessors() + 1`).
 - **`workQueue`**: A bounded queue (like `ArrayBlockingQueue`) is preferred to prevent OutOfMemory errors if requests spike. The queue size should be tuned based on acceptable wait times.
 
+- New threads are spawned only *after* the queue is full (up to max pool size).
+- CPU-bound thread pools should be sized close to the number of CPU cores.
+
 ### Life Analogy
 Imagine a restaurant kitchen. `corePoolSize` is your full-time chefs. `workQueue` is the ticket rail where orders are placed. `maximumPoolSize` includes temp chefs you call in. If a new order comes and full-time chefs are busy, you put it on the rail. If the rail is full, you call in temp chefs. If they are all busy and the rail is full, you turn customers away (Reject). For CPU tasks, adding more chefs than stoves just causes them to bump into each other.
 
 ### Key Points
 - Tasks queue up only *after* core pool size is reached.
-- New threads are spawned only *after* the queue is full (up to max pool size).
-- CPU-bound thread pools should be sized close to the number of CPU cores.

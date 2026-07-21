@@ -28,12 +28,14 @@ Both are implementations of the `ExecutorService` interface used to manage threa
 - Choose `ForkJoinPool` for highly parallelizable, recursive, CPU-bound computations (e.g., sorting massive arrays, image processing, tree traversals). Parallel Streams in Java 8+ use the common `ForkJoinPool` under the hood.
 - Choose `ThreadPoolExecutor` for standard asynchronous execution of independent tasks (e.g., handling incoming HTTP requests, DB queries, reading files).
 
-### Life Analogy
-`ThreadPoolExecutor` is like a factory assembly line with one central bin of parts. Workers go to the bin, grab a part, process it, and go back. 
 `ForkJoinPool` is like a team of cleaners. Each cleaner gets a room (their own deque). If Cleaner A finishes their room early, instead of sitting idle, they go to Cleaner B's room and start helping them clean from the other side of the room (work stealing).
 
-### Key Points
-- `ForkJoinPool` uses work-stealing for efficiency.
 - `ForkJoinPool` excels at recursive, divide-and-conquer tasks (`RecursiveTask`, `RecursiveAction`).
 - `ThreadPoolExecutor` uses a centralized queue.
 - `ThreadPoolExecutor` excels at independent, asynchronous tasks.
+
+### Life Analogy
+`ThreadPoolExecutor` is like a factory assembly line with one central bin of parts. Workers go to the bin, grab a part, process it, and go back.
+
+### Key Points
+- `ForkJoinPool` uses work-stealing for efficiency.

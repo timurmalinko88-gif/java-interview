@@ -24,11 +24,12 @@ Context switching is purely overhead. While the CPU is saving and loading states
 
 This is why spawning 1,000 threads on a 4-core machine to do CPU-bound work is actually slower than spawning 4 threads. The OS spends more time switching between the 1,000 threads than doing the work.
 
+- It consumes CPU cycles for kernel administrative work.
+- It causes cache misses ("cache pollution"), slowing down execution.
+- Too many active threads cause "thrashing," destroying throughput.
+
 ### Life Analogy
 Imagine a chef trying to cook 10 different recipes simultaneously by working on Recipe 1 for 30 seconds, then moving to Recipe 2. A context switch is the time it takes the chef to put away the ingredients for Recipe 1, wash their hands, pull out the recipe book for Recipe 2, find the page, and gather the new ingredients. If the chef switches too fast, they spend all their time washing hands and reading, and no actual cooking gets done.
 
 ### Key Points
 - Context switching is the OS swapping active threads on a CPU core.
-- It consumes CPU cycles for kernel administrative work.
-- It causes cache misses ("cache pollution"), slowing down execution.
-- Too many active threads cause "thrashing," destroying throughput.

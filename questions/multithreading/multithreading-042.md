@@ -26,11 +26,12 @@ The JVM maps Java thread priorities to the native OS thread priorities. Differen
 
 You should **never** rely on thread priorities for program correctness or synchronization logic. They are only for performance tuning hints.
 
+- Priority is a hint to the OS scheduler, not a strict rule.
+- Execution order is not guaranteed.
+- Application logic must not rely on thread priorities for correctness.
+
 ### Life Analogy
 Thread priority is like putting a "FRAGILE: Handle with care" sticker on a package. It's a suggestion to the postal workers (the OS scheduler) to treat it carefully and prioritize it, but there is absolutely no legal guarantee they won't toss it in the back of the truck along with the normal packages.
 
 ### Key Points
 - Priorities range from 1 to 10 (default 5).
-- Priority is a hint to the OS scheduler, not a strict rule.
-- Execution order is not guaranteed.
-- Application logic must not rely on thread priorities for correctness.

@@ -65,12 +65,13 @@ public User getUser(String userId) {
 
 *Additional nuance:* Catching `InterruptedException` and restoring the interrupt flag with `Thread.currentThread().interrupt()` is done correctly, but in the original code, we still return a fake user after this, which might be incorrect for business logic (it's better to throw an Exception or return null/Optional).
 
+* The pattern `if (map.get(key) == null) { map.put(key, val); }` is prone to a race condition (Check-Then-Act).
+* The `computeIfAbsent` method provides atomic checking and initialization of a key.
+* `computeIfAbsent` only blocks the computation for a specific key, without preventing parallel threads from working with other keys.
+
 ### Life Analogy
 
 You and your roommate (two threads) look into the fridge (ConcurrentHashMap) at the same time. There is no milk (returns null). Without agreeing, you both go to the store and buy a carton of milk each. Now you have two cartons instead of one (double load on the DB). Using `computeIfAbsent` is like leaving a note on the fridge saying "I went for milk", so the second roommate simply waits.
 
 ### Key Points
 * `ConcurrentHashMap` guarantees thread safety for single operations (put, get), but not for their combinations.
-* The pattern `if (map.get(key) == null) { map.put(key, val); }` is prone to a race condition (Check-Then-Act).
-* The `computeIfAbsent` method provides atomic checking and initialization of a key.
-* `computeIfAbsent` only blocks the computation for a specific key, without preventing parallel threads from working with other keys.

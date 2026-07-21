@@ -27,11 +27,13 @@ Both are synchronization aids that allow one or more threads to wait, but they d
 3. **Action on Trip**:
    - **`CyclicBarrier`** allows you to provide a `Runnable` task that executes exactly once when the barrier is tripped, before the waiting threads are released. `CountDownLatch` does not have this feature.
 
+`CyclicBarrier` is like friends meeting at a restaurant. Nobody orders until everyone arrives at the table (the barrier). Once everyone is there, they order together. Next week, they can reuse the same process for another dinner.
+
+- `CyclicBarrier` is for threads waiting for *each other* at a rendezvous point. It is reusable.
+- `CyclicBarrier` supports a barrier action.
+
 ### Life Analogy
 `CountDownLatch` is like a rocket launch countdown. The commander (main thread) waits for fuel, life support, and navigation to report "ready" (countdown -1). Once it hits zero, the commander fires the rocket. It can't be reused.
-`CyclicBarrier` is like friends meeting at a restaurant. Nobody orders until everyone arrives at the table (the barrier). Once everyone is there, they order together. Next week, they can reuse the same process for another dinner.
 
 ### Key Points
 - `CountDownLatch` is for waiting on *events* or *other threads* to finish. It is not reusable.
-- `CyclicBarrier` is for threads waiting for *each other* at a rendezvous point. It is reusable.
-- `CyclicBarrier` supports a barrier action.

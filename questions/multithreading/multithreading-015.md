@@ -45,10 +45,11 @@ Both threads are now waiting for each other indefinitely.
 
 **Fix**: To prevent this, locks must always be acquired in a consistent, global order. For example, comparing the unique IDs (or hash codes) of the accounts and always locking the one with the smaller ID first.
 
+- Always acquire multiple locks in a fixed, global order.
+- Thread dumps or tools like JConsole can help identify deadlocks.
+
 ### Life Analogy
 Imagine two narrow one-way bridges crossing a river in opposite directions. A deadlock is like two cars entering the bridges from opposite sides and meeting in the middle where there's only one lane. Neither can move forward, and neither will back up. They are permanently stuck.
 
 ### Key Points
 - Deadlocks occur when lock acquisition order is inconsistent.
-- Always acquire multiple locks in a fixed, global order.
-- Thread dumps or tools like JConsole can help identify deadlocks.

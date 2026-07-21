@@ -28,11 +28,12 @@ Application servers use Thread Pools. When an HTTP request finishes, the thread 
 **Prevention:**
 Always call `.remove()` on the `ThreadLocal` variable when the thread is done with its work, typically in a `finally` block or an interceptor/filter's `afterCompletion` method.
 
+- Great for implicit context passing (auth, transactions).
+- Thread pools compound the risk of data bleeding and memory leaks.
+- Always use `ThreadLocal.remove()` in a `finally` block to clean up.
+
 ### Life Analogy
 `ThreadLocal` is like having a personal locker at the gym (the thread). You can put your wallet and keys (context) in it, and nobody else can access them. However, if you leave your stuff in the locker when you go home (returning thread to pool), the next person to use that locker will find your stuff, and eventually, the gym runs out of space (memory leak) if everyone does this. You must clean out your locker (`remove()`) before you leave.
 
 ### Key Points
 - `ThreadLocal` provides thread-specific data isolation.
-- Great for implicit context passing (auth, transactions).
-- Thread pools compound the risk of data bleeding and memory leaks.
-- Always use `ThreadLocal.remove()` in a `finally` block to clean up.

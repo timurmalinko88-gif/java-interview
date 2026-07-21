@@ -60,12 +60,14 @@ public class WorkerControl {
 }
 ```
 
-### Life Analogy
-`Thread.stop()` is like stopping a moving car by detonating a bomb under the engine. The car stops immediately, but everything inside is destroyed.
 `Thread.interrupt()` is like turning on a flashing dashboard light that says "Please pull over". The driver (the thread) sees the light, finishes their current maneuver safely, steers to the shoulder, and turns off the engine properly.
 
-### Key Points
-- `Thread.stop()` is inherently unsafe and deprecated.
 - It abruptly releases locks, potentially corrupting shared state.
 - Use `Thread.interrupt()` to politely request a thread to stop.
 - The running thread is responsible for checking its interrupted status and exiting gracefully.
+
+### Life Analogy
+`Thread.stop()` is like stopping a moving car by detonating a bomb under the engine. The car stops immediately, but everything inside is destroyed.
+
+### Key Points
+- `Thread.stop()` is inherently unsafe and deprecated.

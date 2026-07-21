@@ -52,11 +52,13 @@ public void doWork() {
 }
 ```
 
-### Life Analogy
-Putting `lock()` inside the `try` is like trying to put on a parachute (lock) *while* jumping out of the plane (try block). If the parachute gets stuck in the bag, you still hit the ground (finally block) and try to pull the cord on a parachute you aren't wearing, causing a secondary error. 
 Putting `lock()` outside the `try` is putting the parachute on *before* jumping. If the zipper is stuck, you just stay safely in the plane.
+
+- If placed inside, a failed lock acquisition will trigger an `IllegalMonitorStateException` in the `finally` block.
+- Secondary exceptions in `finally` blocks mask the original, critical exception.
+
+### Life Analogy
+Putting `lock()` inside the `try` is like trying to put on a parachute (lock) *while* jumping out of the plane (try block). If the parachute gets stuck in the bag, you still hit the ground (finally block) and try to pull the cord on a parachute you aren't wearing, causing a secondary error.
 
 ### Key Points
 - Always place `lock.lock()` immediately *before* the `try` block.
-- If placed inside, a failed lock acquisition will trigger an `IllegalMonitorStateException` in the `finally` block.
-- Secondary exceptions in `finally` blocks mask the original, critical exception.

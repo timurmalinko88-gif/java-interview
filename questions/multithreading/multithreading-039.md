@@ -31,12 +31,14 @@ scheduler.scheduleAtFixedRate(apiPoller, 0, 5, TimeUnit.MINUTES);
 
 For an API poller, `scheduleWithFixedDelay` is often safer to prevent the system from being overwhelmed if the external API becomes slow, ensuring there is always a guaranteed 5-minute breather between calls.
 
-### Life Analogy
-**Fixed Rate**: Taking a pill exactly at 8:00 AM, 12:00 PM, and 4:00 PM (every 4 hours), regardless of how long it takes you to swallow it.
 **Fixed Delay**: Taking a pill, and then setting a timer for 4 hours *after* you swallow it. If it takes you an hour to swallow the pill, your next dose is at 5 hours, not 4.
 
-### Key Points
-- `ScheduledExecutorService` replaces the legacy `java.util.Timer`.
 - Fixed Rate focuses on absolute time intervals.
 - Fixed Delay focuses on resting periods between task executions.
 - Tasks scheduled by the same executor do not overlap concurrently.
+
+### Life Analogy
+**Fixed Rate**: Taking a pill exactly at 8:00 AM, 12:00 PM, and 4:00 PM (every 4 hours), regardless of how long it takes you to swallow it.
+
+### Key Points
+- `ScheduledExecutorService` replaces the legacy `java.util.Timer`.
