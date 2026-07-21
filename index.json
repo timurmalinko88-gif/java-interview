@@ -96,10 +96,10 @@
       "topic": "JVM & Memory Management",
       "difficulty": "Junior",
       "format": "Open Answer",
-      "title": "jvm-006",
-      "time": "",
-      "frequency": "",
-      "related": []
+      "title": "Where does a String live — String Pool or Heap, and why does it matter?",
+      "time": "10",
+      "frequency": "very_high",
+      "related": ""
     },
     {
       "id": "jvm-007",
