@@ -3,85 +3,6 @@
   "total": 108,
   "questions": [
     {
-      "id": "oop-015",
-      "path": "questions/distributed-system-oop-design/oop-015.md",
-      "topic": "OOP",
-      "difficulty": "Senior",
-      "format": "System Design",
-      "title": "Design the Object-Oriented model for a **Distributed Rate Limiter** used across a microservice architecture. Focus on the core domain classes, how state is encapsulated, and the trade-offs regarding consistency vs. latency (CAP theorem).",
-      "time": "45",
-      "frequency": "Low",
-      "related": [
-        "sys-010"
-      ]
-    },
-    {
-      "id": "oop-012",
-      "path": "questions/encapsulation-and-mutability/oop-012.md",
-      "topic": "OOP",
-      "difficulty": "Junior",
-      "format": "Code Review",
-      "title": "Review the following `UserConfiguration` class. Point out the bugs related to object-oriented design and explain how to fix them.",
-      "time": "15",
-      "frequency": "Medium",
-      "related": [
-        "oop-021"
-      ]
-    },
-    {
-      "id": "oop-007",
-      "path": "questions/equality-and-overriding/oop-007.md",
-      "topic": "OOP",
-      "difficulty": "Junior",
-      "format": "Code Review",
-      "title": "Question: The Disappearing User",
-      "time": "15",
-      "frequency": "High",
-      "related": [
-        "oop-002",
-        "collections-004"
-      ]
-    },
-    {
-      "id": "oop-008",
-      "path": "questions/immutability-and-defensive-copying/oop-008.md",
-      "topic": "OOP",
-      "difficulty": "Middle",
-      "format": "Code Review",
-      "title": "Question: The Leaky Immutable Object",
-      "time": "15",
-      "frequency": "Medium",
-      "related": [
-        "core-005"
-      ]
-    },
-    {
-      "id": "oop-006",
-      "path": "questions/inheritance-vs-composition/oop-006.md",
-      "topic": "OOP",
-      "difficulty": "Junior",
-      "format": "Open Answer",
-      "title": "Question: The Fragile Base Class",
-      "time": "10",
-      "frequency": "High",
-      "related": [
-        "oop-001"
-      ]
-    },
-    {
-      "id": "oop-014",
-      "path": "questions/interface-segregation-and-sealed-classes/oop-014.md",
-      "topic": "OOP",
-      "difficulty": "Middle",
-      "format": "Open Answer",
-      "title": "In modern Java (17+), how does the combination of `sealed` interfaces and Interface Segregation Principle (ISP) change domain modeling? Discuss the trade-offs of using `default` methods in a sealed interface versus traditional abstract classes.",
-      "time": "15",
-      "frequency": "Medium",
-      "related": [
-        "oop-040"
-      ]
-    },
-    {
       "id": "jvm-001",
       "path": "questions/jvm-memory-management/jvm-001.md",
       "topic": "JVM & Memory Management",
@@ -688,19 +609,6 @@
       ]
     },
     {
-      "id": "oop-013",
-      "path": "questions/liskov-substitution-principle-lsp/oop-013.md",
-      "topic": "OOP",
-      "difficulty": "Middle",
-      "format": "Code Review",
-      "title": "Review this caching implementation. Does it violate any core OOP principles? Identify any bugs and propose a better design.",
-      "time": "20",
-      "frequency": "High",
-      "related": [
-        "oop-035"
-      ]
-    },
-    {
       "id": "multithreading-001",
       "path": "questions/multithreading/multithreading-001.md",
       "topic": "Multithreading",
@@ -782,74 +690,6 @@
       "related": []
     },
     {
-      "id": "oop-035",
-      "path": "questions/oop-distributed-system-design-strategy-polymorphism/oop-035.md",
-      "topic": "OOP",
-      "difficulty": "Senior",
-      "format": "System Design",
-      "title": "You are tasked with designing a Distributed Pricing Engine for a ride-sharing application (like Uber/Lyft).",
-      "time": "40",
-      "frequency": "Medium",
-      "related": []
-    },
-    {
-      "id": "oop-032",
-      "path": "questions/oop-encapsulation-mutability/oop-032.md",
-      "topic": "OOP",
-      "difficulty": "Junior",
-      "format": "Code Review",
-      "title": "Review the following `ShoppingCart` class. It represents a user's cart in an e-commerce application. Point out any design flaws or bugs, focusing on Object-Oriented principles.",
-      "time": "15",
-      "frequency": "High",
-      "related": []
-    },
-    {
-      "id": "oop-034",
-      "path": "questions/oop-equals-and-hashcode-contracts/oop-034.md",
-      "topic": "OOP",
-      "difficulty": "Middle",
-      "format": "Code Review",
-      "title": "Review the following Java 17 code snippet representing a `User` entity, often stored in `HashSet`s and `HashMap`s for caching. Point out the bugs and architectural flaws related to OOP and Java core contracts.",
-      "time": "20",
-      "frequency": "High",
-      "related": []
-    },
-    {
-      "id": "oop-010",
-      "path": "questions/oop-in-distributed-systems-payment-gateway/oop-010.md",
-      "topic": "OOP",
-      "difficulty": "Senior",
-      "format": "System Design",
-      "title": "Question: Resilient Payment State Machine",
-      "time": "30",
-      "frequency": "Low",
-      "related": [
-        "arch-005"
-      ]
-    },
-    {
-      "id": "oop-031",
-      "path": "questions/oop-inheritance-vs-composition/oop-031.md",
-      "topic": "OOP",
-      "difficulty": "Junior",
-      "format": "Open Answer",
-      "title": "In Java, we frequently hear the advice to \"favor composition over inheritance.\"",
-      "time": "10",
-      "frequency": "High",
-      "related": []
-    },
-    {
-      "id": "oop-033",
-      "path": "questions/oop-solid-liskov-substitution-principle/oop-033.md",
-      "topic": "OOP",
-      "difficulty": "Middle",
-      "format": "Open Answer",
-      "title": "The Liskov Substitution Principle (LSP) states that objects of a superclass should be replaceable with objects of its subclasses without breaking the application.",
-      "time": "15",
-      "frequency": "Medium",
-      "related": []
-    },
-    {
       "id": "oop-001",
       "path": "questions/oop/oop-001.md",
       "topic": "OOP",
@@ -917,6 +757,137 @@
       "related": [
         "Принцип Open/Closed",
         "Как Spring инжектит коллекции бинов?"
+      ]
+    },
+    {
+      "id": "oop-006",
+      "path": "questions/oop/oop-006.md",
+      "topic": "OOP",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "Question: The Fragile Base Class",
+      "time": "10",
+      "frequency": "High",
+      "related": [
+        "oop-001"
+      ]
+    },
+    {
+      "id": "oop-007",
+      "path": "questions/oop/oop-007.md",
+      "topic": "OOP",
+      "difficulty": "Junior",
+      "format": "Code Review",
+      "title": "Question: The Disappearing User",
+      "time": "15",
+      "frequency": "High",
+      "related": [
+        "oop-002",
+        "collections-004"
+      ]
+    },
+    {
+      "id": "oop-008",
+      "path": "questions/oop/oop-008.md",
+      "topic": "OOP",
+      "difficulty": "Middle",
+      "format": "Code Review",
+      "title": "Question: The Leaky Immutable Object",
+      "time": "15",
+      "frequency": "Medium",
+      "related": [
+        "core-005"
+      ]
+    },
+    {
+      "id": "oop-009",
+      "path": "questions/oop/oop-009.md",
+      "topic": "OOP",
+      "difficulty": "Middle",
+      "format": "System Design",
+      "title": "Question: Multi-Channel Notification Router",
+      "time": "20",
+      "frequency": "Medium",
+      "related": [
+        "design-012"
+      ]
+    },
+    {
+      "id": "oop-010",
+      "path": "questions/oop/oop-010.md",
+      "topic": "OOP",
+      "difficulty": "Senior",
+      "format": "System Design",
+      "title": "Question: Resilient Payment State Machine",
+      "time": "30",
+      "frequency": "Low",
+      "related": [
+        "arch-005"
+      ]
+    },
+    {
+      "id": "oop-011",
+      "path": "questions/oop/oop-011.md",
+      "topic": "OOP",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "What is the difference between method overriding and method hiding in Java? How do they behave when accessed via a parent class reference? Provide an example.",
+      "time": "10",
+      "frequency": "High",
+      "related": [
+        "oop-003"
+      ]
+    },
+    {
+      "id": "oop-012",
+      "path": "questions/oop/oop-012.md",
+      "topic": "OOP",
+      "difficulty": "Junior",
+      "format": "Code Review",
+      "title": "Review the following `UserConfiguration` class. Point out the bugs related to object-oriented design and explain how to fix them.",
+      "time": "15",
+      "frequency": "Medium",
+      "related": [
+        "oop-021"
+      ]
+    },
+    {
+      "id": "oop-013",
+      "path": "questions/oop/oop-013.md",
+      "topic": "OOP",
+      "difficulty": "Middle",
+      "format": "Code Review",
+      "title": "Review this caching implementation. Does it violate any core OOP principles? Identify any bugs and propose a better design.",
+      "time": "20",
+      "frequency": "High",
+      "related": [
+        "oop-035"
+      ]
+    },
+    {
+      "id": "oop-014",
+      "path": "questions/oop/oop-014.md",
+      "topic": "OOP",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "In modern Java (17+), how does the combination of `sealed` interfaces and Interface Segregation Principle (ISP) change domain modeling? Discuss the trade-offs of using `default` methods in a sealed interface versus traditional abstract classes.",
+      "time": "15",
+      "frequency": "Medium",
+      "related": [
+        "oop-040"
+      ]
+    },
+    {
+      "id": "oop-015",
+      "path": "questions/oop/oop-015.md",
+      "topic": "OOP",
+      "difficulty": "Senior",
+      "format": "System Design",
+      "title": "Design the Object-Oriented model for a **Distributed Rate Limiter** used across a microservice architecture. Focus on the core domain classes, how state is encapsulated, and the trade-offs regarding consistency vs. latency (CAP theorem).",
+      "time": "45",
+      "frequency": "Low",
+      "related": [
+        "sys-010"
       ]
     },
     {
@@ -1093,6 +1064,61 @@
       "related": [
         "sys-014"
       ]
+    },
+    {
+      "id": "oop-031",
+      "path": "questions/oop/oop-031.md",
+      "topic": "OOP",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "In Java, we frequently hear the advice to \"favor composition over inheritance.\"",
+      "time": "10",
+      "frequency": "High",
+      "related": []
+    },
+    {
+      "id": "oop-032",
+      "path": "questions/oop/oop-032.md",
+      "topic": "OOP",
+      "difficulty": "Junior",
+      "format": "Code Review",
+      "title": "Review the following `ShoppingCart` class. It represents a user's cart in an e-commerce application. Point out any design flaws or bugs, focusing on Object-Oriented principles.",
+      "time": "15",
+      "frequency": "High",
+      "related": []
+    },
+    {
+      "id": "oop-033",
+      "path": "questions/oop/oop-033.md",
+      "topic": "OOP",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "The Liskov Substitution Principle (LSP) states that objects of a superclass should be replaceable with objects of its subclasses without breaking the application.",
+      "time": "15",
+      "frequency": "Medium",
+      "related": []
+    },
+    {
+      "id": "oop-034",
+      "path": "questions/oop/oop-034.md",
+      "topic": "OOP",
+      "difficulty": "Middle",
+      "format": "Code Review",
+      "title": "Review the following Java 17 code snippet representing a `User` entity, often stored in `HashSet`s and `HashMap`s for caching. Point out the bugs and architectural flaws related to OOP and Java core contracts.",
+      "time": "20",
+      "frequency": "High",
+      "related": []
+    },
+    {
+      "id": "oop-035",
+      "path": "questions/oop/oop-035.md",
+      "topic": "OOP",
+      "difficulty": "Senior",
+      "format": "System Design",
+      "title": "You are tasked with designing a Distributed Pricing Engine for a ride-sharing application (like Uber/Lyft).",
+      "time": "40",
+      "frequency": "Medium",
+      "related": []
     },
     {
       "id": "oop-036",
@@ -1310,32 +1336,6 @@
       "time": "",
       "frequency": "",
       "related": []
-    },
-    {
-      "id": "oop-011",
-      "path": "questions/polymorphism-and-method-hiding/oop-011.md",
-      "topic": "OOP",
-      "difficulty": "Junior",
-      "format": "Open Answer",
-      "title": "What is the difference between method overriding and method hiding in Java? How do they behave when accessed via a parent class reference? Provide an example.",
-      "time": "10",
-      "frequency": "High",
-      "related": [
-        "oop-003"
-      ]
-    },
-    {
-      "id": "oop-009",
-      "path": "questions/solid-open-closed-strategy-pattern/oop-009.md",
-      "topic": "OOP",
-      "difficulty": "Middle",
-      "format": "System Design",
-      "title": "Question: Multi-Channel Notification Router",
-      "time": "20",
-      "frequency": "Medium",
-      "related": [
-        "design-012"
-      ]
     },
     {
       "id": "q3",
