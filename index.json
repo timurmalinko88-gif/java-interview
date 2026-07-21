@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "total": 335,
+  "total": 360,
   "questions": [
     {
       "id": "collections-001",
@@ -548,6 +548,61 @@
       "difficulty": "Senior",
       "format": "Open Answer",
       "title": "Collections vs Streams",
+      "time": "",
+      "frequency": "85%",
+      "related": []
+    },
+    {
+      "id": "databases-001",
+      "path": "questions/databases/databases-001.md",
+      "topic": "Databases",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "What are the ACID properties in a database?",
+      "time": "",
+      "frequency": "95%",
+      "related": []
+    },
+    {
+      "id": "databases-002",
+      "path": "questions/databases/databases-002.md",
+      "topic": "Databases",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "What is the N+1 problem in Hibernate, and how do you solve it?",
+      "time": "",
+      "frequency": "85%",
+      "related": []
+    },
+    {
+      "id": "databases-003",
+      "path": "questions/databases/databases-003.md",
+      "topic": "Databases",
+      "difficulty": "Senior",
+      "format": "Open Answer",
+      "title": "Explain the different Transaction Isolation Levels and the anomalies they prevent.",
+      "time": "",
+      "frequency": "90%",
+      "related": []
+    },
+    {
+      "id": "databases-004",
+      "path": "questions/databases/databases-004.md",
+      "topic": "Databases",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "What is the difference between a Primary Key and a Unique Key?",
+      "time": "",
+      "frequency": "80%",
+      "related": []
+    },
+    {
+      "id": "databases-005",
+      "path": "questions/databases/databases-005.md",
+      "topic": "Databases",
+      "difficulty": "Senior",
+      "format": "Open Answer",
+      "title": "Explain Optimistic vs. Pessimistic Locking.",
       "time": "",
       "frequency": "85%",
       "related": []
@@ -3296,6 +3351,171 @@
       "related": []
     },
     {
+      "id": "spring-036",
+      "path": "questions/spring/spring-036.md",
+      "topic": "Spring",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "What is Spring Security? What are its core concepts?",
+      "time": "",
+      "frequency": "80%",
+      "related": []
+    },
+    {
+      "id": "spring-037",
+      "path": "questions/spring/spring-037.md",
+      "topic": "Spring",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Explain the Spring Security Authentication Architecture.",
+      "time": "",
+      "frequency": "75%",
+      "related": []
+    },
+    {
+      "id": "spring-038",
+      "path": "questions/spring/spring-038.md",
+      "topic": "Spring",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "How is the currently authenticated user stored?",
+      "time": "",
+      "frequency": "60%",
+      "related": []
+    },
+    {
+      "id": "spring-039",
+      "path": "questions/spring/spring-039.md",
+      "topic": "Spring",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "What is the SecurityFilterChain?",
+      "time": "",
+      "frequency": "85%",
+      "related": []
+    },
+    {
+      "id": "spring-040",
+      "path": "questions/spring/spring-040.md",
+      "topic": "Spring",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Explain Method-Level Security (@PreAuthorize).",
+      "time": "",
+      "frequency": "80%",
+      "related": []
+    },
+    {
+      "id": "spring-041",
+      "path": "questions/spring/spring-041.md",
+      "topic": "Spring",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "Spring Boot vs Spring Framework",
+      "time": "",
+      "frequency": "95%",
+      "related": []
+    },
+    {
+      "id": "spring-042",
+      "path": "questions/spring/spring-042.md",
+      "topic": "Spring",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "Explain the @SpringBootApplication annotation.",
+      "time": "",
+      "frequency": "85%",
+      "related": []
+    },
+    {
+      "id": "spring-043",
+      "path": "questions/spring/spring-043.md",
+      "topic": "Spring",
+      "difficulty": "Senior",
+      "format": "Open Answer",
+      "title": "How does Spring Boot Auto-configuration work under the hood?",
+      "time": "",
+      "frequency": "70%",
+      "related": []
+    },
+    {
+      "id": "spring-044",
+      "path": "questions/spring/spring-044.md",
+      "topic": "Spring",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "What are Spring Boot Starters?",
+      "time": "",
+      "frequency": "85%",
+      "related": []
+    },
+    {
+      "id": "spring-045",
+      "path": "questions/spring/spring-045.md",
+      "topic": "Spring",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "What is Spring Boot Actuator?",
+      "time": "",
+      "frequency": "70%",
+      "related": []
+    },
+    {
+      "id": "spring-046",
+      "path": "questions/spring/spring-046.md",
+      "topic": "Spring",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "How do you test a Spring Boot application? (@SpringBootTest)",
+      "time": "",
+      "frequency": "80%",
+      "related": []
+    },
+    {
+      "id": "spring-047",
+      "path": "questions/spring/spring-047.md",
+      "topic": "Spring",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "@Mock vs @MockBean",
+      "time": "",
+      "frequency": "85%",
+      "related": []
+    },
+    {
+      "id": "spring-048",
+      "path": "questions/spring/spring-048.md",
+      "topic": "Spring",
+      "difficulty": "Senior",
+      "format": "Open Answer",
+      "title": "What is Test Slicing? (@WebMvcTest, @DataJpaTest)",
+      "time": "",
+      "frequency": "70%",
+      "related": []
+    },
+    {
+      "id": "spring-049",
+      "path": "questions/spring/spring-049.md",
+      "topic": "Spring",
+      "difficulty": "Senior",
+      "format": "Code Review",
+      "title": "How to handle Circular Dependencies in Spring?",
+      "time": "",
+      "frequency": "80%",
+      "related": []
+    },
+    {
+      "id": "spring-050",
+      "path": "questions/spring/spring-050.md",
+      "topic": "Spring",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "Explain Spring Profiles and externalized configuration.",
+      "time": "",
+      "frequency": "90%",
+      "related": []
+    },
+    {
       "id": "stream-001",
       "path": "questions/stream/stream-001.md",
       "topic": "Stream API",
@@ -3843,6 +4063,61 @@
       "title": "ForkJoinPool and Parallel Streams",
       "time": "",
       "frequency": "70%",
+      "related": []
+    },
+    {
+      "id": "system-design-001",
+      "path": "questions/system-design/system-design-001.md",
+      "topic": "System Design",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Explain the CAP Theorem and its implications",
+      "time": "",
+      "frequency": "80%",
+      "related": []
+    },
+    {
+      "id": "system-design-002",
+      "path": "questions/system-design/system-design-002.md",
+      "topic": "System Design",
+      "difficulty": "Senior",
+      "format": "Open Answer",
+      "title": "Idempotency in REST APIs",
+      "time": "",
+      "frequency": "85%",
+      "related": []
+    },
+    {
+      "id": "system-design-003",
+      "path": "questions/system-design/system-design-003.md",
+      "topic": "System Design",
+      "difficulty": "Middle",
+      "format": "System Design",
+      "title": "Microservices vs Monolith",
+      "time": "",
+      "frequency": "75%",
+      "related": []
+    },
+    {
+      "id": "system-design-004",
+      "path": "questions/system-design/system-design-004.md",
+      "topic": "System Design",
+      "difficulty": "Senior",
+      "format": "Open Answer",
+      "title": "Kafka vs RabbitMQ",
+      "time": "",
+      "frequency": "80%",
+      "related": []
+    },
+    {
+      "id": "system-design-005",
+      "path": "questions/system-design/system-design-005.md",
+      "topic": "System Design",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Caching Strategies (Cache-Aside, Write-Through)",
+      "time": "",
+      "frequency": "85%",
       "related": []
     }
   ]
