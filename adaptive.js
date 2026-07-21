@@ -114,15 +114,16 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => modal.classList.add('hidden'), 300);
             
             // Apply filtering logic using global questionsList
-            if (typeof window.questionsList !== 'undefined') {
+            if (typeof questionsList !== 'undefined') {
                 const diffSelect = document.querySelector(`.diff-chip[data-diff="${selectedLevel}"]`);
-                if(diffSelect && typeof window.toggleDifficulty === 'function') {
+                if(diffSelect && typeof toggleDifficulty === 'function') {
                     // Reset all
                     document.querySelectorAll('.diff-chip').forEach(c => c.classList.remove('ring-2', 'ring-offset-2', 'ring-offset-white', 'dark:ring-offset-darkCard'));
-                    window.selectedDifficulties.clear();
+                    if (typeof selectedDifficulties !== 'undefined') {
+                        selectedDifficulties.clear();
+                        selectedDifficulties.add(selectedLevel);
+                    }
                     
-                    // Select current
-                    window.selectedDifficulties.add(selectedLevel);
                     const isJunior = selectedLevel === 'Junior';
                     const isMiddle = selectedLevel === 'Middle';
                     diffSelect.classList.add('ring-2', 'ring-offset-2', 'ring-offset-white', 'dark:ring-offset-darkCard', 
@@ -130,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 
                 // Advanced filtering based on tags
-                window.filteredQuestions = window.questionsList.filter(q => {
+                filteredQuestions = questionsList.filter(q => {
                     const matchDiff = q.difficulty === selectedLevel || (q.difficulty === 'All');
                     
                     // If no failed tags, just show all for this level
@@ -144,12 +145,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
                 
                 // Update UI
-                if (typeof window.buildSidebarList === 'function') {
-                    window.buildSidebarList();
+                if (typeof buildSidebarList === 'function') {
+                    buildSidebarList();
                     // Auto-select first
-                    if(window.filteredQuestions.length > 0) {
-                        if(typeof window.loadQuestion === 'function') {
-                            window.loadQuestion(window.filteredQuestions[0]);
+                    if(filteredQuestions.length > 0) {
+                        if(typeof loadQuestion === 'function') {
+                            loadQuestion(filteredQuestions[0]);
                         }
                     }
                 }
