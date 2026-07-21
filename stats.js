@@ -1,5 +1,5 @@
 function updateStatsDashboard() {
-    const container = document.getElementById('stats-dashboard-content');
+    const container = document.getElementById('stats-topics-container');
     if (!container) return;
     
     if (questionsList.length === 0) {
@@ -60,10 +60,10 @@ function updateStatsDashboard() {
 
     // Overall summary header
     const overallPercent = Math.round((totalMastered / questionsList.length) * 100);
-    const summary = document.getElementById('stats-dashboard-summary');
+    const summary = document.getElementById('stats-summary-cards');
     if (summary) {
         summary.innerHTML = `
-            <div class="text-center bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl mb-6">
+            <div class="text-center bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl mb-6 border border-slate-200 dark:border-slate-700 col-span-full md:col-span-1">
                 <h3 class="text-slate-500 dark:text-slate-400 text-sm font-semibold mb-1">Global Progress</h3>
                 <div class="text-3xl font-bold text-brand-500">${overallPercent}%</div>
                 <div class="text-xs text-slate-400 mt-1">${totalMastered} / ${questionsList.length} questions mastered</div>
