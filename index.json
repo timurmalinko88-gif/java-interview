@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "total": 108,
+  "total": 113,
   "questions": [
     {
       "id": "general-001",
@@ -710,6 +710,61 @@
         "How Outbox / Saga patterns work",
         "Database Deadlocks"
       ]
+    },
+    {
+      "id": "multithreading-006",
+      "path": "questions/multithreading/multithreading-006.md",
+      "topic": "Multithreading",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "Thread vs Runnable",
+      "time": "",
+      "frequency": "85%",
+      "related": []
+    },
+    {
+      "id": "multithreading-007",
+      "path": "questions/multithreading/multithreading-007.md",
+      "topic": "Multithreading",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "Understanding Deadlocks",
+      "time": "",
+      "frequency": "80%",
+      "related": []
+    },
+    {
+      "id": "multithreading-008",
+      "path": "questions/multithreading/multithreading-008.md",
+      "topic": "Multithreading",
+      "difficulty": "Middle",
+      "format": "Code Review",
+      "title": "Code Review: Wait and Notify",
+      "time": "",
+      "frequency": "70%",
+      "related": []
+    },
+    {
+      "id": "multithreading-009",
+      "path": "questions/multithreading/multithreading-009.md",
+      "topic": "Multithreading",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "ConcurrentHashMap vs SynchronizedMap",
+      "time": "",
+      "frequency": "75%",
+      "related": []
+    },
+    {
+      "id": "multithreading-010",
+      "path": "questions/multithreading/multithreading-010.md",
+      "topic": "Multithreading",
+      "difficulty": "Senior",
+      "format": "System Design",
+      "title": "Designing a Thread Pool",
+      "time": "",
+      "frequency": "60%",
+      "related": []
     },
     {
       "id": "oop-001",
