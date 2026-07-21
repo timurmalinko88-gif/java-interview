@@ -1169,10 +1169,44 @@
             document.getElementById('btn-answer').classList.remove('hidden');
         }
 
-        function revealMockAnswer() {
-            if (!isAnswerVisible) {
-                document.getElementById('btn-answer').click();
+        function renderAnswerContent() {
+            if (filteredQuestions.length === 0) return;
+            const q = filteredQuestions[currentIndex];
+            isAnswerVisible = true;
+            
+            const answerSection = document.getElementById('answer-section');
+            const ansBtnText = document.getElementById('btn-answer-text');
+            const ansBtnIcon = document.getElementById('btn-answer-icon');
+
+            answerSection.classList.remove('hidden');
+            document.getElementById('answer-content').innerHTML = marked.parse(q.loadedAnswer || "No answer content.");
+
+            // Populate intuitive analogy if defined
+            const analogySec = document.getElementById('analogy-subsection');
+            if (q.loadedAnalogy && q.loadedAnalogy.trim() !== '') {
+                analogySec.classList.remove('hidden');
+                document.getElementById('analogy-content').textContent = q.loadedAnalogy;
+            } else {
+                analogySec.classList.add('hidden');
             }
+
+            if (ansBtnText) ansBtnText.textContent = "Hide Answer";
+            if (ansBtnIcon) ansBtnIcon.className = "fa-solid fa-eye-slash";
+        }
+
+        function hideAnswerSection() {
+            isAnswerVisible = false;
+            const answerSection = document.getElementById('answer-section');
+            const ansBtnText = document.getElementById('btn-answer-text');
+            const ansBtnIcon = document.getElementById('btn-answer-icon');
+
+            answerSection.classList.add('hidden');
+            if (ansBtnText) ansBtnText.textContent = "Show Answer";
+            if (ansBtnIcon) ansBtnIcon.className = "fa-solid fa-eye";
+        }
+
+        function revealMockAnswer() {
+            renderAnswerContent();
             document.getElementById('btn-answer').classList.add('hidden');
             document.getElementById('mock-eval-bar').classList.remove('hidden');
             document.getElementById('mock-eval-bar').classList.add('flex');
@@ -1317,33 +1351,10 @@
                     revealMockAnswer();
                     return;
                 }
-                if (filteredQuestions.length === 0) return;
-                const q = filteredQuestions[currentIndex];
-                isAnswerVisible = !isAnswerVisible;
-                
-                const answerSection = document.getElementById('answer-section');
-                const ansBtnText = document.getElementById('btn-answer-text');
-                const ansBtnIcon = document.getElementById('btn-answer-icon');
-
                 if (isAnswerVisible) {
-                    answerSection.classList.remove('hidden');
-                    document.getElementById('answer-content').innerHTML = marked.parse(q.loadedAnswer || "No answer content.");
-
-                    // Populate intuitive analogy if defined
-                    const analogySec = document.getElementById('analogy-subsection');
-                    if (q.loadedAnalogy && q.loadedAnalogy.trim() !== '') {
-                        analogySec.classList.remove('hidden');
-                        document.getElementById('analogy-content').textContent = q.loadedAnalogy;
-                    } else {
-                        analogySec.classList.add('hidden');
-                    }
-
-                    ansBtnText.textContent = "Hide Answer";
-                    ansBtnIcon.className = "fa-solid fa-eye-slash";
+                    hideAnswerSection();
                 } else {
-                    answerSection.classList.add('hidden');
-                    ansBtnText.textContent = "Show Answer";
-                    ansBtnIcon.className = "fa-solid fa-eye";
+                    renderAnswerContent();
                 }
             };
             
