@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "total": 541,
+  "total": 550,
   "questions": [
     {
       "id": "collections-001",
@@ -3909,6 +3909,105 @@
       "title": "Clean Code: Comments",
       "time": "",
       "frequency": "85%",
+      "related": []
+    },
+    {
+      "id": "patterns-042",
+      "path": "questions/patterns/patterns-042.md",
+      "topic": "Patterns",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "Anti-pattern: Copy-Paste Programming",
+      "time": "",
+      "frequency": "80%",
+      "related": []
+    },
+    {
+      "id": "patterns-043",
+      "path": "questions/patterns/patterns-043.md",
+      "topic": "Patterns",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "Clean Code: Formatting and Structure",
+      "time": "",
+      "frequency": "60%",
+      "related": []
+    },
+    {
+      "id": "patterns-044",
+      "path": "questions/patterns/patterns-044.md",
+      "topic": "Patterns",
+      "difficulty": "Middle",
+      "format": "Code Review",
+      "title": "Clean Code: Functions",
+      "time": "",
+      "frequency": "85%",
+      "related": []
+    },
+    {
+      "id": "patterns-045",
+      "path": "questions/patterns/patterns-045.md",
+      "topic": "Patterns",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Anti-pattern: Singleton Abuse",
+      "time": "",
+      "frequency": "75%",
+      "related": []
+    },
+    {
+      "id": "patterns-046",
+      "path": "questions/patterns/patterns-046.md",
+      "topic": "Patterns",
+      "difficulty": "Middle",
+      "format": "Code Review",
+      "title": "Anti-pattern: Circular Dependency",
+      "time": "",
+      "frequency": "85%",
+      "related": []
+    },
+    {
+      "id": "patterns-047",
+      "path": "questions/patterns/patterns-047.md",
+      "topic": "Patterns",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Anti-pattern: Primitive Obsession",
+      "time": "",
+      "frequency": "70%",
+      "related": []
+    },
+    {
+      "id": "patterns-048",
+      "path": "questions/patterns/patterns-048.md",
+      "topic": "Patterns",
+      "difficulty": "Junior",
+      "format": "Code Review",
+      "title": "Anti-pattern: Hardcoding",
+      "time": "",
+      "frequency": "90%",
+      "related": []
+    },
+    {
+      "id": "patterns-049",
+      "path": "questions/patterns/patterns-049.md",
+      "topic": "Patterns",
+      "difficulty": "Senior",
+      "format": "Open Answer",
+      "title": "Anti-pattern: Yo-Yo Problem",
+      "time": "",
+      "frequency": "40%",
+      "related": []
+    },
+    {
+      "id": "patterns-050",
+      "path": "questions/patterns/patterns-050.md",
+      "topic": "Patterns",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "Anti-pattern: Boat Anchor",
+      "time": "",
+      "frequency": "60%",
       "related": []
     },
     {
