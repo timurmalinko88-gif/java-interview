@@ -7,6 +7,7 @@ time: 5
 frequency: 80%
 source: Custom
 prerequisites: ["Java 8 Features", "Maps"]
+tags: [oop, spring-core, databases, stream-api, memory, multithreading, collections]
 ---
 
 # Map.computeIfAbsent

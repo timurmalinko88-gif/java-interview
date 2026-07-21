@@ -7,6 +7,7 @@ time: 5
 frequency: 80%
 source: Custom
 prerequisites: ["OOP", "SOLID", "Interfaces"]
+tags: [oop, spring-core, exceptions, patterns]
 ---
 
 # Interface Segregation Principle (ISP)

@@ -7,6 +7,7 @@ time: 20
 frequency: 70%
 source: Custom
 prerequisites: ["Microservices", "Networking"]
+tags: [spring-core, memory, system-design, patterns]
 ---
 
 # Service Mesh (Istio / Linkerd)

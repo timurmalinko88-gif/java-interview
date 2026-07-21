@@ -7,6 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["Core Java", "Static", "Final"]
+tags: [oop, spring-core, memory, multithreading, collections]
 ---
 
 # What is the difference between static and final variables?

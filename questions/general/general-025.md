@@ -7,6 +7,7 @@ time: 10
 frequency: 80%
 source: Custom
 prerequisites: ["Core Java", "Exceptions"]
+tags: [oop, spring-core, system-design, patterns, memory, multithreading, exceptions]
 ---
 
 # Checked vs Unchecked Exceptions

@@ -7,6 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["OOP", "Anti-patterns"]
+tags: [oop, spring-core, system-design, patterns, databases, testing, memory, collections]
 ---
 
 # Anti-pattern: Circular Dependency

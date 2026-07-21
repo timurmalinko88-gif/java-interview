@@ -7,6 +7,7 @@ time: 7
 frequency: 80%
 source: Custom
 prerequisites: ["Concurrency", "Future", "ExecutorService"]
+tags: [oop, spring-core, memory, multithreading, exceptions]
 ---
 
 # `Future.get()` Blocking Main Thread

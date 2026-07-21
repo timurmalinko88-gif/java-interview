@@ -7,6 +7,7 @@ time: 6
 frequency: 80%
 source: Custom
 prerequisites: ["Spring Boot", "Testing"]
+tags: [oop, spring-core, testing, stream-api, spring-mvc, collections, exceptions, spring-data, spring-boot]
 ---
 
 # How do you test a Spring Boot application? (@SpringBootTest)

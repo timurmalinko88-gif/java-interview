@@ -7,6 +7,7 @@ time: 5
 frequency: 70%
 source: Custom
 prerequisites: ["Stream API"]
+tags: [spring-core, stream-api, memory, multithreading, collections]
 ---
 
 # findFirst() vs findAny()

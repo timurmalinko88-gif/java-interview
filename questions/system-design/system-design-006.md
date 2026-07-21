@@ -7,6 +7,7 @@ time: 15
 frequency: 85%
 source: Custom
 prerequisites: ["Networking", "Load Balancing"]
+tags: [spring-core, memory, system-design]
 ---
 
 # Load Balancing (Layer 4 vs Layer 7)

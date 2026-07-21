@@ -7,6 +7,7 @@ time: 5
 frequency: 60%
 source: Custom
 prerequisites: ["Stream API"]
+tags: [spring-core, oop, stream-api, collections]
 ---
 
 # partitioningBy vs groupingBy

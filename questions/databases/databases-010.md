@@ -7,6 +7,7 @@ time: 3
 frequency: 85%
 source: Custom
 prerequisites: ["Java", "Hibernate", "JPA"]
+tags: [oop, spring-core, patterns, databases, stream-api, collections, spring-data]
 ---
 
 # What is the difference between JPA and Hibernate?

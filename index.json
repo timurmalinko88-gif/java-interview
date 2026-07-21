@@ -11,7 +11,16 @@
       "title": "Difference between ArrayList and LinkedList",
       "time": "",
       "frequency": "90%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "collections-002",
@@ -22,7 +31,14 @@
       "title": "How HashMap works internally",
       "time": "",
       "frequency": "95%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "databases",
+        "stream-api",
+        "memory",
+        "collections"
+      ]
     },
     {
       "id": "collections-003",
@@ -33,7 +49,16 @@
       "title": "HashMap vs HashTable",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "jvm",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "collections-004",
@@ -44,7 +69,15 @@
       "title": "ConcurrentHashMap Internal Working",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "collections-005",
@@ -55,7 +88,14 @@
       "title": "Set vs List",
       "time": "",
       "frequency": "90%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "databases",
+        "stream-api",
+        "collections"
+      ]
     },
     {
       "id": "collections-006",
@@ -66,7 +106,13 @@
       "title": "HashSet Internal Implementation",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "oop",
+        "stream-api",
+        "collections"
+      ]
     },
     {
       "id": "collections-007",
@@ -77,7 +123,14 @@
       "title": "TreeSet vs HashSet",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "collections-008",
@@ -88,7 +141,15 @@
       "title": "PriorityQueue in Java",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "collections-009",
@@ -99,7 +160,14 @@
       "title": "Fail-Fast vs Fail-Safe Iterators",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "stream-api",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "collections-010",
@@ -110,7 +178,15 @@
       "title": "Vector vs ArrayList",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "collections-011",
@@ -121,7 +197,14 @@
       "title": "Comparable vs Comparator",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "collections",
+        "spring-data"
+      ]
     },
     {
       "id": "collections-012",
@@ -132,7 +215,14 @@
       "title": "Iterator vs ListIterator",
       "time": "",
       "frequency": "75%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "databases",
+        "stream-api",
+        "collections"
+      ]
     },
     {
       "id": "collections-013",
@@ -143,7 +233,13 @@
       "title": "LinkedHashMap Insertion Order",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "collections"
+      ]
     },
     {
       "id": "collections-014",
@@ -154,7 +250,15 @@
       "title": "Queue vs Deque",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "databases",
+        "stream-api",
+        "memory",
+        "collections"
+      ]
     },
     {
       "id": "collections-015",
@@ -165,7 +269,17 @@
       "title": "IdentityHashMap",
       "time": "",
       "frequency": "40%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "databases",
+        "stream-api",
+        "memory",
+        "collections",
+        "spring-data"
+      ]
     },
     {
       "id": "collections-016",
@@ -176,7 +290,16 @@
       "title": "WeakHashMap",
       "time": "",
       "frequency": "50%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "collections-017",
@@ -187,7 +310,15 @@
       "title": "CopyOnWriteArrayList",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "stream-api",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "collections-018",
@@ -198,7 +329,16 @@
       "title": "BlockingQueue",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "stream-api",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "collections-019",
@@ -209,7 +349,15 @@
       "title": "SynchronizedMap vs ConcurrentHashMap",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "collections-020",
@@ -220,7 +368,16 @@
       "title": "EnumSet",
       "time": "",
       "frequency": "40%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "collections-021",
@@ -231,7 +388,16 @@
       "title": "EnumMap",
       "time": "",
       "frequency": "45%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "databases",
+        "stream-api",
+        "memory",
+        "collections"
+      ]
     },
     {
       "id": "collections-022",
@@ -242,7 +408,14 @@
       "title": "TreeMap Internal Implementation",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "memory",
+        "collections"
+      ]
     },
     {
       "id": "collections-023",
@@ -253,7 +426,18 @@
       "title": "Stack vs Deque",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "databases",
+        "stream-api",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "collections-024",
@@ -264,7 +448,14 @@
       "title": "Collections.sort vs Arrays.sort",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "memory",
+        "collections"
+      ]
     },
     {
       "id": "collections-025",
@@ -275,7 +466,14 @@
       "title": "Collections.unmodifiableCollection",
       "time": "",
       "frequency": "75%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "stream-api",
+        "memory",
+        "exceptions",
+        "collections"
+      ]
     },
     {
       "id": "collections-026",
@@ -286,7 +484,17 @@
       "title": "Immutable Collections (Java 9+)",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "stream-api",
+        "memory",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "collections-027",
@@ -297,7 +505,15 @@
       "title": "Arrays.asList vs List.of",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "databases",
+        "stream-api",
+        "memory",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "collections-028",
@@ -308,7 +524,14 @@
       "title": "NavigableMap Interface",
       "time": "",
       "frequency": "40%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "testing",
+        "stream-api",
+        "collections"
+      ]
     },
     {
       "id": "collections-029",
@@ -319,7 +542,15 @@
       "title": "NavigableSet Interface",
       "time": "",
       "frequency": "30%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "testing",
+        "stream-api",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "collections-030",
@@ -330,7 +561,15 @@
       "title": "Dictionary Class",
       "time": "",
       "frequency": "10%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "jvm",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "collections-031",
@@ -341,7 +580,13 @@
       "title": "LinkedList Queue Implementation",
       "time": "",
       "frequency": "50%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "oop",
+        "stream-api",
+        "collections"
+      ]
     },
     {
       "id": "collections-032",
@@ -352,7 +597,16 @@
       "title": "PriorityBlockingQueue",
       "time": "",
       "frequency": "30%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "collections-033",
@@ -363,7 +617,15 @@
       "title": "LinkedTransferQueue vs LinkedBlockingQueue",
       "time": "",
       "frequency": "20%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "collections-034",
@@ -374,7 +636,14 @@
       "title": "SynchronousQueue",
       "time": "",
       "frequency": "40%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "collections-035",
@@ -385,7 +654,15 @@
       "title": "DelayQueue",
       "time": "",
       "frequency": "25%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "collections-036",
@@ -396,7 +673,13 @@
       "title": "HashSet vs HashMap",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "oop",
+        "stream-api",
+        "collections"
+      ]
     },
     {
       "id": "collections-037",
@@ -407,7 +690,14 @@
       "title": "Collection vs Collections",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "collections-038",
@@ -418,7 +708,15 @@
       "title": "RandomAccess Interface",
       "time": "",
       "frequency": "30%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "databases",
+        "stream-api",
+        "collections"
+      ]
     },
     {
       "id": "collections-039",
@@ -429,7 +727,14 @@
       "title": "Spliterator",
       "time": "",
       "frequency": "20%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "collections-040",
@@ -440,7 +745,13 @@
       "title": "Time Complexity of HashMap",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "oop",
+        "stream-api",
+        "collections"
+      ]
     },
     {
       "id": "collections-041",
@@ -451,7 +762,15 @@
       "title": "ConcurrentModificationException",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "collections-042",
@@ -462,7 +781,15 @@
       "title": "Avoiding ConcurrentModificationException",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "collections-043",
@@ -473,7 +800,15 @@
       "title": "Load Factor in HashMap",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "collections-044",
@@ -484,7 +819,15 @@
       "title": "Hash Collision Resolution",
       "time": "",
       "frequency": "65%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "databases",
+        "stream-api",
+        "memory",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "collections-045",
@@ -495,7 +838,14 @@
       "title": "hashCode() and equals() Contract",
       "time": "",
       "frequency": "95%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "memory",
+        "collections"
+      ]
     },
     {
       "id": "collections-046",
@@ -506,7 +856,16 @@
       "title": "Map.computeIfAbsent",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "databases",
+        "stream-api",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "collections-047",
@@ -517,7 +876,15 @@
       "title": "Arrays.copyOf vs System.arraycopy",
       "time": "",
       "frequency": "40%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "jvm",
+        "memory",
+        "collections"
+      ]
     },
     {
       "id": "collections-048",
@@ -528,7 +895,14 @@
       "title": "PriorityQueue Custom Comparator",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "memory",
+        "collections"
+      ]
     },
     {
       "id": "collections-049",
@@ -539,7 +913,16 @@
       "title": "Collections.emptyList() Thread Safety",
       "time": "",
       "frequency": "30%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "collections-050",
@@ -550,7 +933,15 @@
       "title": "Collections vs Streams",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "memory",
+        "collections"
+      ]
     },
     {
       "id": "databases-001",
@@ -561,7 +952,12 @@
       "title": "What are the ACID properties in a database?",
       "time": "",
       "frequency": "95%",
-      "related": []
+      "related": [],
+      "tags": [
+        "databases",
+        "spring-core",
+        "multithreading"
+      ]
     },
     {
       "id": "databases-002",
@@ -572,7 +968,17 @@
       "title": "What is the N+1 problem in Hibernate, and how do you solve it?",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns",
+        "databases",
+        "stream-api",
+        "multithreading",
+        "collections",
+        "spring-data"
+      ]
     },
     {
       "id": "databases-003",
@@ -583,7 +989,15 @@
       "title": "Explain the different Transaction Isolation Levels and the anomalies they prevent.",
       "time": "",
       "frequency": "90%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "databases",
+        "stream-api",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "databases-004",
@@ -594,7 +1008,12 @@
       "title": "What is the difference between a Primary Key and a Unique Key?",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "databases",
+        "spring-core",
+        "spring-data"
+      ]
     },
     {
       "id": "databases-005",
@@ -605,7 +1024,15 @@
       "title": "Explain Optimistic vs. Pessimistic Locking.",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "databases",
+        "stream-api",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "databases-006",
@@ -616,7 +1043,15 @@
       "title": "Explain the difference between DELETE, TRUNCATE, and DROP commands.",
       "time": "",
       "frequency": "90%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "databases",
+        "collections",
+        "exceptions",
+        "spring-data"
+      ]
     },
     {
       "id": "databases-007",
@@ -627,7 +1062,13 @@
       "title": "What is the difference between INNER JOIN and OUTER JOIN?",
       "time": "",
       "frequency": "95%",
-      "related": []
+      "related": [],
+      "tags": [
+        "databases",
+        "oop",
+        "spring-core",
+        "collections"
+      ]
     },
     {
       "id": "databases-008",
@@ -638,7 +1079,15 @@
       "title": "Explain WHERE vs. HAVING vs. GROUP BY.",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "databases",
+        "stream-api",
+        "memory",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "databases-009",
@@ -649,7 +1098,12 @@
       "title": "Clustered vs. Non-Clustered Indexes.",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "databases",
+        "spring-core",
+        "collections"
+      ]
     },
     {
       "id": "databases-010",
@@ -660,7 +1114,16 @@
       "title": "What is the difference between JPA and Hibernate?",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns",
+        "databases",
+        "stream-api",
+        "collections",
+        "spring-data"
+      ]
     },
     {
       "id": "databases-011",
@@ -671,7 +1134,13 @@
       "title": "What is SQL Injection and how can it be prevented?",
       "time": "",
       "frequency": "95%",
-      "related": []
+      "related": [],
+      "tags": [
+        "databases",
+        "spring-core",
+        "collections",
+        "spring-data"
+      ]
     },
     {
       "id": "databases-012",
@@ -682,7 +1151,14 @@
       "title": "Explain First Normal Form (1NF).",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "databases",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "databases-013",
@@ -693,7 +1169,13 @@
       "title": "Explain Second Normal Form (2NF).",
       "time": "",
       "frequency": "65%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "oop",
+        "stream-api",
+        "system-design"
+      ]
     },
     {
       "id": "databases-014",
@@ -704,7 +1186,13 @@
       "title": "Explain Third Normal Form (3NF).",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "databases",
+        "system-design",
+        "spring-core",
+        "collections"
+      ]
     },
     {
       "id": "databases-015",
@@ -715,7 +1203,14 @@
       "title": "B-Tree vs. Hash Indexes.",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "databases",
+        "stream-api",
+        "memory",
+        "collections"
+      ]
     },
     {
       "id": "databases-016",
@@ -726,7 +1221,13 @@
       "title": "Explain the CAP Theorem.",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "system-design",
+        "spring-core",
+        "multithreading",
+        "exceptions"
+      ]
     },
     {
       "id": "databases-017",
@@ -737,7 +1238,16 @@
       "title": "What is the difference between an Entity and a Table?",
       "time": "",
       "frequency": "90%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "databases",
+        "stream-api",
+        "memory",
+        "collections",
+        "spring-data"
+      ]
     },
     {
       "id": "databases-018",
@@ -748,7 +1258,13 @@
       "title": "What is a Foreign Key?",
       "time": "",
       "frequency": "95%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "memory",
+        "collections",
+        "databases"
+      ]
     },
     {
       "id": "databases-019",
@@ -759,7 +1275,12 @@
       "title": "What is a View in SQL?",
       "time": "",
       "frequency": "75%",
-      "related": []
+      "related": [],
+      "tags": [
+        "databases",
+        "spring-core",
+        "collections"
+      ]
     },
     {
       "id": "databases-020",
@@ -770,7 +1291,16 @@
       "title": "What is a Stored Procedure?",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "databases",
+        "stream-api",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "databases-021",
@@ -781,7 +1311,13 @@
       "title": "Explain DDL, DML, DCL, and TCL.",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "databases",
+        "oop",
+        "spring-core",
+        "exceptions"
+      ]
     },
     {
       "id": "databases-022",
@@ -792,7 +1328,12 @@
       "title": "Primary Key vs. Candidate Key vs. Super Key.",
       "time": "",
       "frequency": "75%",
-      "related": []
+      "related": [],
+      "tags": [
+        "databases",
+        "spring-core",
+        "system-design"
+      ]
     },
     {
       "id": "databases-023",
@@ -803,7 +1344,13 @@
       "title": "Explain UNION vs. UNION ALL.",
       "time": "",
       "frequency": "90%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "memory",
+        "collections",
+        "databases"
+      ]
     },
     {
       "id": "databases-024",
@@ -814,7 +1361,13 @@
       "title": "What is a CROSS JOIN?",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "databases",
+        "testing",
+        "spring-core",
+        "collections"
+      ]
     },
     {
       "id": "databases-025",
@@ -825,7 +1378,12 @@
       "title": "Explain Cascading operations in Hibernate/JPA.",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "spring-data"
+      ]
     },
     {
       "id": "databases-026",
@@ -836,7 +1394,13 @@
       "title": "What is a Dirty Read?",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "multithreading",
+        "collections",
+        "databases"
+      ]
     },
     {
       "id": "databases-027",
@@ -847,7 +1411,13 @@
       "title": "What is a Non-Repeatable Read?",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "multithreading",
+        "collections",
+        "databases"
+      ]
     },
     {
       "id": "databases-028",
@@ -858,7 +1428,13 @@
       "title": "What is a Phantom Read?",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "multithreading",
+        "collections",
+        "databases"
+      ]
     },
     {
       "id": "databases-029",
@@ -869,7 +1445,14 @@
       "title": "What is a Two-Phase Commit (2PC)?",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "databases",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "databases-030",
@@ -880,7 +1463,14 @@
       "title": "What is Database Normalization?",
       "time": "",
       "frequency": "95%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "databases",
+        "stream-api",
+        "collections"
+      ]
     },
     {
       "id": "databases-031",
@@ -891,7 +1481,12 @@
       "title": "What is Denormalization and when would you use it?",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "databases",
+        "spring-core",
+        "system-design"
+      ]
     },
     {
       "id": "databases-032",
@@ -902,7 +1497,12 @@
       "title": "What are the drawbacks of adding too many indexes?",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "memory",
+        "databases"
+      ]
     },
     {
       "id": "databases-033",
@@ -913,7 +1513,11 @@
       "title": "What is a Composite Index?",
       "time": "",
       "frequency": "75%",
-      "related": []
+      "related": [],
+      "tags": [
+        "databases",
+        "spring-core"
+      ]
     },
     {
       "id": "databases-034",
@@ -924,7 +1528,13 @@
       "title": "What is a Covering Index?",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "memory",
+        "collections",
+        "databases"
+      ]
     },
     {
       "id": "databases-035",
@@ -935,7 +1545,16 @@
       "title": "What is the JPA EntityManager?",
       "time": "",
       "frequency": "90%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "databases",
+        "multithreading",
+        "spring-data"
+      ]
     },
     {
       "id": "databases-036",
@@ -946,7 +1565,17 @@
       "title": "What is the First-Level Cache in Hibernate?",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "databases",
+        "stream-api",
+        "multithreading",
+        "collections",
+        "spring-data"
+      ]
     },
     {
       "id": "databases-037",
@@ -957,7 +1586,18 @@
       "title": "What is the Second-Level Cache in Hibernate?",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "patterns",
+        "databases",
+        "stream-api",
+        "multithreading",
+        "collections",
+        "spring-data",
+        "exceptions"
+      ]
     },
     {
       "id": "databases-038",
@@ -968,7 +1608,14 @@
       "title": "Explain the JPA Entity Lifecycle states.",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "databases",
+        "multithreading",
+        "spring-data"
+      ]
     },
     {
       "id": "databases-039",
@@ -979,7 +1626,18 @@
       "title": "What is the difference between Lazy and Eager loading?",
       "time": "",
       "frequency": "95%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns",
+        "databases",
+        "stream-api",
+        "memory",
+        "collections",
+        "exceptions",
+        "spring-data"
+      ]
     },
     {
       "id": "databases-040",
@@ -990,7 +1648,15 @@
       "title": "JDBC vs. ORM (Hibernate).",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "databases",
+        "stream-api",
+        "collections",
+        "spring-data"
+      ]
     },
     {
       "id": "databases-041",
@@ -1001,7 +1667,13 @@
       "title": "What is a SAVEPOINT in SQL?",
       "time": "",
       "frequency": "50%",
-      "related": []
+      "related": [],
+      "tags": [
+        "databases",
+        "spring-core",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "databases-042",
@@ -1012,7 +1684,13 @@
       "title": "Explain Transaction Propagation in Spring/Java.",
       "time": "",
       "frequency": "75%",
-      "related": []
+      "related": [],
+      "tags": [
+        "databases",
+        "spring-core",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "databases-043",
@@ -1023,7 +1701,17 @@
       "title": "What is Object-Relational Impedance Mismatch?",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "databases",
+        "stream-api",
+        "memory",
+        "collections",
+        "spring-data"
+      ]
     },
     {
       "id": "databases-044",
@@ -1034,7 +1722,15 @@
       "title": "Explain Dirty Checking in Hibernate.",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "databases",
+        "memory",
+        "collections",
+        "spring-data"
+      ]
     },
     {
       "id": "databases-045",
@@ -1045,7 +1741,16 @@
       "title": "Criteria API vs. JPQL.",
       "time": "",
       "frequency": "65%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns",
+        "databases",
+        "stream-api",
+        "exceptions",
+        "spring-data"
+      ]
     },
     {
       "id": "databases-046",
@@ -1056,7 +1761,13 @@
       "title": "What is a Deadlock in a database?",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "databases",
+        "spring-core",
+        "multithreading",
+        "exceptions"
+      ]
     },
     {
       "id": "databases-047",
@@ -1067,7 +1778,14 @@
       "title": "Explain the @Transactional annotation in Spring.",
       "time": "",
       "frequency": "95%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns",
+        "databases",
+        "exceptions"
+      ]
     },
     {
       "id": "databases-048",
@@ -1078,7 +1796,14 @@
       "title": "Basic JPA Annotations.",
       "time": "",
       "frequency": "95%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "collections",
+        "spring-data"
+      ]
     },
     {
       "id": "databases-049",
@@ -1089,7 +1814,16 @@
       "title": "SQL vs. NoSQL Databases.",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "databases",
+        "stream-api",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "databases-050",
@@ -1100,7 +1834,13 @@
       "title": "What is Database Connection Pooling?",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-boot",
+        "system-design",
+        "spring-core",
+        "collections"
+      ]
     },
     {
       "id": "general-001",
@@ -1111,7 +1851,12 @@
       "title": "Find the bug in the following code and explain how to fix it:",
       "time": "",
       "frequency": "",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "multithreading"
+      ]
     },
     {
       "id": "general-002",
@@ -1122,7 +1867,14 @@
       "title": "What is the difference between an abstract class and an interface in Java?",
       "time": "",
       "frequency": "95%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "collections",
+        "spring-data"
+      ]
     },
     {
       "id": "general-003",
@@ -1133,7 +1885,14 @@
       "title": "Design a URL Shortening Service (like bit.ly)",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "databases",
+        "stream-api",
+        "collections"
+      ]
     },
     {
       "id": "general-004",
@@ -1144,7 +1903,13 @@
       "title": "Checked vs Unchecked Exceptions",
       "time": "",
       "frequency": "90%",
-      "related": []
+      "related": [],
+      "tags": [
+        "databases",
+        "spring-core",
+        "multithreading",
+        "exceptions"
+      ]
     },
     {
       "id": "general-005",
@@ -1155,7 +1920,16 @@
       "title": "Memory Management of Static Variables",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "jvm",
+        "memory",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "general-006",
@@ -1166,7 +1940,17 @@
       "title": "String Pool and Memory Optimization",
       "time": "",
       "frequency": "75%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "stream-api",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "general-007",
@@ -1177,7 +1961,17 @@
       "title": "Enums as Singletons",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "patterns",
+        "testing",
+        "jvm",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "general-008",
@@ -1188,7 +1982,16 @@
       "title": "Type Erasure and Heap Pollution",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "jvm",
+        "memory",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "general-009",
@@ -1199,7 +2002,14 @@
       "title": "equals() and hashCode() Contract",
       "time": "",
       "frequency": "95%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "memory",
+        "collections"
+      ]
     },
     {
       "id": "general-010",
@@ -1210,7 +2020,17 @@
       "title": "Performance Implications of Reflection",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "jvm",
+        "memory",
+        "collections",
+        "spring-data"
+      ]
     },
     {
       "id": "general-011",
@@ -1221,7 +2041,16 @@
       "title": "Final, Finally, and Finalize",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "general-012",
@@ -1232,7 +2061,13 @@
       "title": "Pass by Value vs Pass by Reference",
       "time": "",
       "frequency": "95%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "oop",
+        "memory",
+        "collections"
+      ]
     },
     {
       "id": "general-013",
@@ -1243,7 +2078,16 @@
       "title": "StringBuilder vs StringBuffer",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "general-014",
@@ -1254,7 +2098,16 @@
       "title": "Why is String immutable in Java?",
       "time": "",
       "frequency": "95%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "general-015",
@@ -1265,7 +2118,14 @@
       "title": "What is the difference between static and final variables?",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "general-016",
@@ -1276,7 +2136,15 @@
       "title": "How does the try-with-resources statement work?",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "general-017",
@@ -1287,7 +2155,18 @@
       "title": "Can you explain how Reflection works and its drawbacks?",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "testing",
+        "stream-api",
+        "jvm",
+        "collections",
+        "exceptions",
+        "spring-data"
+      ]
     },
     {
       "id": "general-018",
@@ -1298,7 +2177,12 @@
       "title": "What are the differences between an Abstract Class and an Interface in modern Java (Java 8+)?",
       "time": "",
       "frequency": "90%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "collections"
+      ]
     },
     {
       "id": "general-019",
@@ -1309,7 +2193,15 @@
       "title": "Explain the Object class and its main methods",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "general-020",
@@ -1320,7 +2212,15 @@
       "title": "How do Generics work in Java and what is Type Erasure?",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "jvm",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "general-021",
@@ -1331,7 +2231,14 @@
       "title": "What is an Enum in Java and how does it differ from a static final constant?",
       "time": "",
       "frequency": "75%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns",
+        "jvm",
+        "collections"
+      ]
     },
     {
       "id": "general-022",
@@ -1342,7 +2249,12 @@
       "title": "Can you explain the concept of covariant return types?",
       "time": "",
       "frequency": "40%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "oop",
+        "memory"
+      ]
     },
     {
       "id": "general-023",
@@ -1353,7 +2265,15 @@
       "title": "Pass by value semantics: Modifying vs Reassigning",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "testing",
+        "stream-api",
+        "memory",
+        "collections"
+      ]
     },
     {
       "id": "general-024",
@@ -1364,7 +2284,17 @@
       "title": "Why are Strings immutable in Java?",
       "time": "",
       "frequency": "95%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "general-025",
@@ -1375,7 +2305,16 @@
       "title": "Checked vs Unchecked Exceptions",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "memory",
+        "multithreading",
+        "exceptions"
+      ]
     },
     {
       "id": "general-026",
@@ -1386,7 +2325,14 @@
       "title": "equals() and hashCode() Contract",
       "time": "",
       "frequency": "90%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "memory",
+        "collections"
+      ]
     },
     {
       "id": "general-027",
@@ -1397,7 +2343,14 @@
       "title": "Static and Final Variables",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "memory",
+        "multithreading",
+        "exceptions"
+      ]
     },
     {
       "id": "general-028",
@@ -1408,7 +2361,15 @@
       "title": "Generics and Type Erasure",
       "time": "",
       "frequency": "75%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns",
+        "jvm",
+        "exceptions",
+        "collections"
+      ]
     },
     {
       "id": "general-029",
@@ -1419,7 +2380,14 @@
       "title": "Primitives vs Wrapper Classes",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "memory",
+        "collections"
+      ]
     },
     {
       "id": "general-030",
@@ -1430,7 +2398,17 @@
       "title": "Designing with Enums",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "jvm",
+        "memory",
+        "multithreading",
+        "exceptions"
+      ]
     },
     {
       "id": "general-031",
@@ -1441,7 +2419,17 @@
       "title": "Java Reflection: Use Cases and Drawbacks",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "testing",
+        "jvm",
+        "collections",
+        "exceptions",
+        "spring-data"
+      ]
     },
     {
       "id": "general-032",
@@ -1452,7 +2440,14 @@
       "title": "Pass by Value vs Pass by Reference",
       "time": "",
       "frequency": "95%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns",
+        "testing",
+        "memory"
+      ]
     },
     {
       "id": "general-033",
@@ -1463,7 +2458,17 @@
       "title": "final, finally, and finalize",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "general-034",
@@ -1474,7 +2479,14 @@
       "title": "Type Erasure in Java Generics",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "jvm",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "general-035",
@@ -1485,7 +2497,13 @@
       "title": "Checked vs Unchecked Exceptions",
       "time": "",
       "frequency": "90%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "multithreading",
+        "exceptions"
+      ]
     },
     {
       "id": "general-036",
@@ -1496,7 +2514,18 @@
       "title": "Reflection Usage and Performance Implications",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "general-037",
@@ -1507,7 +2536,14 @@
       "title": "equals() and hashCode() Contract",
       "time": "",
       "frequency": "95%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "memory",
+        "collections"
+      ]
     },
     {
       "id": "general-038",
@@ -1518,7 +2554,16 @@
       "title": "Singleton Pattern using Enums",
       "time": "",
       "frequency": "75%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "jvm",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "general-039",
@@ -1529,7 +2574,15 @@
       "title": "String Immutability and the String Pool",
       "time": "",
       "frequency": "95%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "jvm",
+        "memory",
+        "multithreading"
+      ]
     },
     {
       "id": "general-040",
@@ -1540,7 +2593,15 @@
       "title": "Static vs Final Modifiers",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "databases",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "general-041",
@@ -1551,7 +2612,16 @@
       "title": "Primitive vs Wrapper Types in Data Structures",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "jvm",
+        "memory",
+        "collections"
+      ]
     },
     {
       "id": "general-042",
@@ -1562,7 +2632,16 @@
       "title": "JVM vs JRE vs JDK",
       "time": "",
       "frequency": "90%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "general-043",
@@ -1573,7 +2652,16 @@
       "title": "Try-with-Resources and AutoCloseable",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "exceptions"
+      ]
     },
     {
       "id": "general-044",
@@ -1584,7 +2672,15 @@
       "title": "Explain the Exception Hierarchy in Java",
       "time": "",
       "frequency": "90%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "databases",
+        "jvm",
+        "memory",
+        "exceptions"
+      ]
     },
     {
       "id": "general-045",
@@ -1595,7 +2691,18 @@
       "title": "String Immutability and String Pool",
       "time": "",
       "frequency": "95%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "general-046",
@@ -1606,7 +2713,17 @@
       "title": "Review Static and Final Usage",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "general-047",
@@ -1617,7 +2734,13 @@
       "title": "Generics Type Erasure",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "collections",
+        "jvm"
+      ]
     },
     {
       "id": "general-048",
@@ -1628,7 +2751,16 @@
       "title": "Java Reflection Performance and Security",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "testing",
+        "jvm",
+        "collections",
+        "spring-data"
+      ]
     },
     {
       "id": "general-049",
@@ -1639,7 +2771,16 @@
       "title": "Review Enum Instantiation",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "patterns",
+        "stream-api",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "general-050",
@@ -1650,7 +2791,14 @@
       "title": "equals() and hashCode() Contract",
       "time": "",
       "frequency": "95%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "memory",
+        "collections"
+      ]
     },
     {
       "id": "jvm-001",
@@ -1661,7 +2809,18 @@
       "title": "Unintentional Retention: Memory Leaks in Java",
       "time": "10",
       "frequency": "High",
-      "related": "jvm-002, jvm-003"
+      "related": "jvm-002, jvm-003",
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "jvm-002",
@@ -1672,7 +2831,18 @@
       "title": "Code Review: The Immortal Cache",
       "time": "15",
       "frequency": "Medium",
-      "related": "jvm-001"
+      "related": "jvm-001",
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "jvm-003",
@@ -1683,7 +2853,18 @@
       "title": "ThreadLocal Leaks and the Looming Future",
       "time": "15",
       "frequency": "High",
-      "related": "jvm-001, jvm-002"
+      "related": "jvm-001, jvm-002",
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "jvm-004",
@@ -1694,7 +2875,17 @@
       "title": "Code Review: The Off-Heap Illusion",
       "time": "20",
       "frequency": "Low",
-      "related": "jvm-002"
+      "related": "jvm-002",
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "jvm",
+        "memory",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "jvm-005",
@@ -1705,7 +2896,19 @@
       "title": "System Design: Ultra-Low Latency Order Cache",
       "time": "30",
       "frequency": "Medium",
-      "related": "jvm-004"
+      "related": "jvm-004",
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "databases",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "jvm-006",
@@ -1716,7 +2919,16 @@
       "title": "Where does a String live — String Pool or Heap, and why does it matter?",
       "time": "10",
       "frequency": "very_high",
-      "related": ""
+      "related": "",
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "jvm",
+        "memory",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "jvm-007",
@@ -1727,7 +2939,17 @@
       "title": "Code Review: Cache built with String keys — spot the memory and correctness bugs",
       "time": "15",
       "frequency": "high",
-      "related": ""
+      "related": "",
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "jvm-008",
@@ -1738,7 +2960,18 @@
       "title": "GC Generations: why does the JVM split the heap, and when does the split hurt you?",
       "time": "20",
       "frequency": "high",
-      "related": ""
+      "related": "",
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "jvm-009",
@@ -1749,7 +2982,20 @@
       "title": "Code Review: micro-benchmark of a math utility — find the JIT-related bugs",
       "time": "20",
       "frequency": "high",
-      "related": ""
+      "related": "",
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "databases",
+        "testing",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "jvm-010",
@@ -1760,7 +3006,20 @@
       "title": "System Design: Off-Heap Distributed Cache for a Low-Latency Trading Platform",
       "time": "40",
       "frequency": "medium",
-      "related": ""
+      "related": "",
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "databases",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "jvm-011",
@@ -1771,7 +3030,19 @@
       "title": "String Concatenation and Interning",
       "time": "15",
       "frequency": "High",
-      "related": "jvm-012, core-004"
+      "related": "jvm-012, core-004",
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "databases",
+        "stream-api",
+        "jvm",
+        "memory",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "jvm-012",
@@ -1782,7 +3053,16 @@
       "title": "GC Algorithm Trade-offs",
       "time": "10",
       "frequency": "High",
-      "related": "jvm-015"
+      "related": "jvm-015",
+      "tags": [
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "jvm-013",
@@ -1793,7 +3073,20 @@
       "title": "The Silent Web Leak",
       "time": "20",
       "frequency": "High",
-      "related": "core-010"
+      "related": "core-010",
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "jvm",
+        "memory",
+        "spring-mvc",
+        "multithreading",
+        "collections",
+        "spring-data",
+        "spring-boot",
+        "exceptions"
+      ]
     },
     {
       "id": "jvm-014",
@@ -1804,7 +3097,18 @@
       "title": "The Invisible Memory Limit",
       "time": "15",
       "frequency": "Medium",
-      "related": "jvm-011"
+      "related": "jvm-011",
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "stream-api",
+        "jvm",
+        "memory",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "jvm-015",
@@ -1815,7 +3119,17 @@
       "title": "Zero-Latency Bidding Engine",
       "time": "35",
       "frequency": "Medium",
-      "related": "sys-002, jvm-012"
+      "related": "sys-002, jvm-012",
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "jvm-016",
@@ -1829,6 +3143,18 @@
       "related": [
         "jvm-017",
         "core-005"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "testing",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
       ]
     },
     {
@@ -1843,6 +3169,18 @@
       "related": [
         "jvm-016",
         "io-002"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
       ]
     },
     {
@@ -1856,6 +3194,16 @@
       "frequency": "High",
       "related": [
         "jvm-020"
+      ],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "testing",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections"
       ]
     },
     {
@@ -1870,6 +3218,17 @@
       "related": [
         "jvm-016",
         "conc-003"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "jvm",
+        "memory",
+        "spring-mvc",
+        "multithreading",
+        "collections",
+        "exceptions"
       ]
     },
     {
@@ -1884,6 +3243,17 @@
       "related": [
         "jvm-018",
         "sys-011"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "databases",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections"
       ]
     },
     {
@@ -1895,7 +3265,18 @@
       "title": "Explain the Java ClassLoader hierarchy. What is the **parent-delegation model**, why does it exist, and what happens if you try to load `java.lang.String` with your own custom ClassLoader?",
       "time": "10",
       "frequency": "high",
-      "related": ""
+      "related": "",
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "jvm-022",
@@ -1906,7 +3287,18 @@
       "title": "Review the following code. It is a simple event-driven button component with a listener registry. Identify all bugs and explain **why** each one is a problem at the JVM/memory level.",
       "time": "15",
       "frequency": "very high",
-      "related": ""
+      "related": "",
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "jvm-023",
@@ -1917,7 +3309,18 @@
       "title": "Explain **Escape Analysis** and **Thread-Local Allocation Buffers (TLAB)**. How do they cooperate to make object allocation in Java nearly free in the common case? What kinds of objects defeat these optimizations?",
       "time": "15",
       "frequency": "medium",
-      "related": ""
+      "related": "",
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "jvm-024",
@@ -1928,7 +3331,19 @@
       "title": "Your team has written a simple in-process image cache for a web application. Review the code below. Find all bugs — including subtle memory issues — and explain their impact on a long-running JVM process.",
       "time": "20",
       "frequency": "high",
-      "related": ""
+      "related": "",
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "jvm-025",
@@ -1939,7 +3354,18 @@
       "title": "You are architecting the GC strategy for a **real-time order-matching engine** at a financial exchange. The service processes 500,000 orders/second, has a 99.9th-percentile latency SLA of **< 5 ms**, runs on a 128 GB heap, and must sustain operation for weeks without restart. A junior engineer proposes using **G1GC** because \"it's the default and well-understood.\" A platform engineer counters with **ZGC**.",
       "time": "35",
       "frequency": "medium",
-      "related": ""
+      "related": "",
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "jvm-026",
@@ -1950,7 +3376,15 @@
       "title": "What Do `-Xms`, `-Xmx`, and `-Xss` Control, and What Happens If You Set Them Wrong?",
       "time": "10",
       "frequency": "High",
-      "related": ""
+      "related": "",
+      "tags": [
+        "spring-core",
+        "jvm",
+        "memory",
+        "exceptions",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "jvm-027",
@@ -1961,7 +3395,20 @@
       "title": "Code Review: Find the Metaspace Leak",
       "time": "15",
       "frequency": "Medium",
-      "related": ""
+      "related": "",
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "databases",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "jvm-028",
@@ -1972,7 +3419,20 @@
       "title": "Walk Me Through Diagnosing an `OutOfMemoryError` Using a Heap Dump",
       "time": "20",
       "frequency": "High",
-      "related": ""
+      "related": "",
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "databases",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "jvm-029",
@@ -1983,7 +3443,20 @@
       "title": "Code Review: What Is Causing Mysterious Latency Spikes Unrelated to GC?",
       "time": "20",
       "frequency": "Medium",
-      "related": ""
+      "related": "",
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "databases",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "jvm-030",
@@ -1994,7 +3467,18 @@
       "title": "System Design: Continuous JVM Observability Platform Using JFR in a Kubernetes Microservices Fleet",
       "time": "35",
       "frequency": "Medium",
-      "related": ""
+      "related": "",
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "databases",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading"
+      ]
     },
     {
       "id": "jvm-031",
@@ -2005,7 +3489,19 @@
       "title": "You are tasked with choosing and configuring the optimal Garbage Collector for three distinct microservices deployed on Java 21 in a Kubernetes environment.",
       "time": "20",
       "frequency": "high",
-      "related": ""
+      "related": "",
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "databases",
+        "stream-api",
+        "jvm",
+        "memory",
+        "spring-mvc",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "jvm-032",
@@ -2016,7 +3512,17 @@
       "title": "How does the Escape Analysis optimization mechanism work within the HotSpot JIT compiler? Is it true that modern JVMs allocate objects directly on the execution stack instead of the heap to avoid GC overhead? Define \"Scalar Replacement\" and explain how it relates to this process.",
       "time": "15",
       "frequency": "high",
-      "related": ""
+      "related": "",
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "jvm-033",
@@ -2027,7 +3533,19 @@
       "title": "During profiling of a low-latency execution pipeline, you observe that the virtual method call cmd.process() in the hot loop below is running significantly slower than expected. The JIT compiler's assembly log shows that it is failing to inline this call.",
       "time": "15",
       "frequency": "high",
-      "related": ""
+      "related": "",
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "databases",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "jvm-034",
@@ -2041,6 +3559,16 @@
       "related": [
         "jvm-026",
         "jvm-028"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
       ]
     },
     {
@@ -2054,6 +3582,16 @@
       "frequency": "high",
       "related": [
         "jvm-030"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "databases",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
       ]
     },
     {
@@ -2068,6 +3606,19 @@
       "related": [
         "jvm-025",
         "jvm-031"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "databases",
+        "testing",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
       ]
     },
     {
@@ -2082,6 +3633,18 @@
       "related": [
         "jvm-030",
         "jvm-031"
+      ],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "patterns",
+        "stream-api",
+        "jvm",
+        "memory",
+        "spring-mvc",
+        "multithreading",
+        "collections",
+        "exceptions"
       ]
     },
     {
@@ -2096,6 +3659,18 @@
       "related": [
         "jvm-027",
         "jvm-030"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "databases",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
       ]
     },
     {
@@ -2109,6 +3684,16 @@
       "frequency": "high",
       "related": [
         "jvm-026"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "databases",
+        "stream-api",
+        "jvm",
+        "memory",
+        "collections"
       ]
     },
     {
@@ -2122,6 +3707,16 @@
       "frequency": "medium",
       "related": [
         "jvm-033"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections"
       ]
     },
     {
@@ -2135,6 +3730,20 @@
       "frequency": "medium",
       "related": [
         "jvm-049"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "databases",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions",
+        "spring-boot"
       ]
     },
     {
@@ -2148,6 +3757,16 @@
       "frequency": "medium",
       "related": [
         "jvm-039"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "spring-data"
       ]
     },
     {
@@ -2161,6 +3780,18 @@
       "frequency": "high",
       "related": [
         "jvm-038"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
       ]
     },
     {
@@ -2174,6 +3805,16 @@
       "frequency": "high",
       "related": [
         "jvm-030"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "databases",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections"
       ]
     },
     {
@@ -2188,6 +3829,16 @@
       "related": [
         "jvm-032",
         "jvm-033"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections"
       ]
     },
     {
@@ -2202,6 +3853,18 @@
       "related": [
         "jvm-030",
         "jvm-035"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "testing",
+        "stream-api",
+        "jvm",
+        "memory",
+        "collections",
+        "spring-boot"
       ]
     },
     {
@@ -2215,6 +3878,18 @@
       "frequency": "high",
       "related": [
         "jvm-040"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
       ]
     },
     {
@@ -2228,6 +3903,16 @@
       "frequency": "high",
       "related": [
         "jvm-026"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections"
       ]
     },
     {
@@ -2242,6 +3927,19 @@
       "related": [
         "jvm-028",
         "jvm-041"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "testing",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
       ]
     },
     {
@@ -2256,6 +3954,18 @@
       "related": [
         "jvm-029",
         "jvm-030"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "databases",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
       ]
     },
     {
@@ -2270,6 +3980,11 @@
       "related": [
         "Difference between volatile and synchronized",
         "What is happens-before"
+      ],
+      "tags": [
+        "spring-core",
+        "memory",
+        "multithreading"
       ]
     },
     {
@@ -2284,6 +3999,15 @@
       "related": [
         "How ThreadPoolExecutor works",
         "Thread lifecycle"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
       ]
     },
     {
@@ -2298,6 +4022,14 @@
       "related": [
         "Difference between CPU-bound and IO-bound",
         "Custom thread pool configuration"
+      ],
+      "tags": [
+        "spring-core",
+        "databases",
+        "stream-api",
+        "multithreading",
+        "collections",
+        "exceptions"
       ]
     },
     {
@@ -2312,6 +4044,17 @@
       "related": [
         "Difference between HashMap and ConcurrentHashMap",
         "computeIfAbsent method"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "stream-api",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
       ]
     },
     {
@@ -2326,6 +4069,15 @@
       "related": [
         "How Outbox / Saga patterns work",
         "Database Deadlocks"
+      ],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "patterns",
+        "databases",
+        "memory",
+        "multithreading",
+        "collections"
       ]
     },
     {
@@ -2337,7 +4089,13 @@
       "title": "Thread vs Runnable",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "system-design",
+        "oop",
+        "spring-core",
+        "multithreading"
+      ]
     },
     {
       "id": "multithreading-007",
@@ -2348,7 +4106,12 @@
       "title": "Understanding Deadlocks",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "multithreading",
+        "patterns"
+      ]
     },
     {
       "id": "multithreading-008",
@@ -2359,7 +4122,14 @@
       "title": "Code Review: Wait and Notify",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "multithreading-009",
@@ -2370,7 +4140,15 @@
       "title": "ConcurrentHashMap vs SynchronizedMap",
       "time": "",
       "frequency": "75%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns",
+        "stream-api",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "multithreading-010",
@@ -2381,7 +4159,16 @@
       "title": "Designing a Thread Pool",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "testing",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "multithreading-011",
@@ -2392,7 +4179,13 @@
       "title": "`Thread.sleep()` vs `Object.wait()`",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "oop",
+        "memory",
+        "multithreading"
+      ]
     },
     {
       "id": "multithreading-012",
@@ -2403,7 +4196,13 @@
       "title": "`volatile` Keyword Misuse",
       "time": "",
       "frequency": "75%",
-      "related": []
+      "related": [],
+      "tags": [
+        "testing",
+        "oop",
+        "spring-core",
+        "multithreading"
+      ]
     },
     {
       "id": "multithreading-013",
@@ -2414,7 +4213,17 @@
       "title": "In-Memory Cache with High Read/Write Ratio",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "multithreading-014",
@@ -2425,7 +4234,13 @@
       "title": "`Runnable` vs `Callable`",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "multithreading",
+        "exceptions"
+      ]
     },
     {
       "id": "multithreading-015",
@@ -2436,7 +4251,12 @@
       "title": "Deadlock Code Review",
       "time": "",
       "frequency": "65%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "multithreading"
+      ]
     },
     {
       "id": "multithreading-016",
@@ -2447,7 +4267,15 @@
       "title": "Thread Lifecycle States",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "databases",
+        "jvm",
+        "multithreading",
+        "exceptions"
+      ]
     },
     {
       "id": "multithreading-017",
@@ -2458,7 +4286,15 @@
       "title": "ThreadPoolExecutor Tuning",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "multithreading-018",
@@ -2469,7 +4305,15 @@
       "title": "Double-Checked Locking Singleton",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns",
+        "memory",
+        "multithreading",
+        "exceptions"
+      ]
     },
     {
       "id": "multithreading-019",
@@ -2480,7 +4324,12 @@
       "title": "`CountDownLatch` vs `CyclicBarrier`",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "multithreading-020",
@@ -2491,7 +4340,15 @@
       "title": "Calling `run()` Instead of `start()`",
       "time": "",
       "frequency": "90%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "jvm",
+        "memory",
+        "multithreading",
+        "exceptions"
+      ]
     },
     {
       "id": "multithreading-021",
@@ -2502,7 +4359,19 @@
       "title": "`ThreadLocal` Use Cases and Risks",
       "time": "",
       "frequency": "75%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "databases",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "multithreading-022",
@@ -2513,7 +4382,13 @@
       "title": "Race Conditions",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "memory",
+        "multithreading",
+        "patterns"
+      ]
     },
     {
       "id": "multithreading-023",
@@ -2524,7 +4399,13 @@
       "title": "Livelock vs Deadlock",
       "time": "",
       "frequency": "50%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "multithreading",
+        "exceptions"
+      ]
     },
     {
       "id": "multithreading-024",
@@ -2535,7 +4416,14 @@
       "title": "`IllegalMonitorStateException`",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "memory",
+        "multithreading",
+        "exceptions"
+      ]
     },
     {
       "id": "multithreading-025",
@@ -2546,7 +4434,18 @@
       "title": "`ForkJoinPool` vs `ThreadPoolExecutor`",
       "time": "",
       "frequency": "65%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "databases",
+        "stream-api",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "multithreading-026",
@@ -2557,7 +4456,16 @@
       "title": "Daemon Threads",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "multithreading-027",
@@ -2568,7 +4476,15 @@
       "title": "`ReentrantLock` vs `synchronized`",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "multithreading-028",
@@ -2579,7 +4495,16 @@
       "title": "Designing a Concurrent Bounded Queue",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "multithreading-029",
@@ -2590,7 +4515,14 @@
       "title": "`Future.get()` Blocking Main Thread",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "memory",
+        "multithreading",
+        "exceptions"
+      ]
     },
     {
       "id": "multithreading-030",
@@ -2601,7 +4533,15 @@
       "title": "`notify()` vs `notifyAll()`",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "databases",
+        "jvm",
+        "memory",
+        "multithreading"
+      ]
     },
     {
       "id": "multithreading-031",
@@ -2612,7 +4552,14 @@
       "title": "`Semaphore`",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "stream-api",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "multithreading-032",
@@ -2623,7 +4570,16 @@
       "title": "`ExecutorService` vs Direct `Thread` Creation",
       "time": "",
       "frequency": "90%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "patterns",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "multithreading-033",
@@ -2634,7 +4590,17 @@
       "title": "Parallel Streams and Thread Safety",
       "time": "",
       "frequency": "75%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "databases",
+        "stream-api",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "multithreading-034",
@@ -2645,7 +4611,13 @@
       "title": "Stopping a Thread",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "multithreading",
+        "exceptions"
+      ]
     },
     {
       "id": "multithreading-035",
@@ -2656,7 +4628,13 @@
       "title": "`Thread.join()`",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "databases",
+        "spring-core",
+        "multithreading",
+        "exceptions"
+      ]
     },
     {
       "id": "multithreading-036",
@@ -2667,7 +4645,12 @@
       "title": "`AtomicInteger` vs `volatile`",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "multithreading"
+      ]
     },
     {
       "id": "multithreading-037",
@@ -2678,7 +4661,16 @@
       "title": "\"Happens-Before\" Relationship",
       "time": "",
       "frequency": "45%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "databases",
+        "jvm",
+        "memory",
+        "multithreading"
+      ]
     },
     {
       "id": "multithreading-038",
@@ -2689,7 +4681,13 @@
       "title": "`synchronized` Method vs Block",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "oop",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "multithreading-039",
@@ -2700,7 +4698,13 @@
       "title": "`ScheduledExecutorService`",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "multithreading-040",
@@ -2711,7 +4715,15 @@
       "title": "False Sharing",
       "time": "",
       "frequency": "30%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "jvm",
+        "memory",
+        "multithreading"
+      ]
     },
     {
       "id": "multithreading-041",
@@ -2722,7 +4734,15 @@
       "title": "`Exchanger`",
       "time": "",
       "frequency": "40%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "testing",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "multithreading-042",
@@ -2733,7 +4753,14 @@
       "title": "Thread Priority",
       "time": "",
       "frequency": "55%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "stream-api",
+        "jvm",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "multithreading-043",
@@ -2744,7 +4771,15 @@
       "title": "`Phaser` vs `CyclicBarrier` / `CountDownLatch`",
       "time": "",
       "frequency": "35%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "databases",
+        "testing",
+        "multithreading"
+      ]
     },
     {
       "id": "multithreading-044",
@@ -2755,7 +4790,14 @@
       "title": "`shutdown()` vs `shutdownNow()`",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "memory",
+        "exceptions",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "multithreading-045",
@@ -2766,7 +4808,14 @@
       "title": "`Thread.yield()`",
       "time": "",
       "frequency": "45%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "databases",
+        "testing",
+        "jvm",
+        "multithreading"
+      ]
     },
     {
       "id": "multithreading-046",
@@ -2777,7 +4826,13 @@
       "title": "Context Switching Overhead",
       "time": "",
       "frequency": "50%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "memory",
+        "multithreading"
+      ]
     },
     {
       "id": "multithreading-047",
@@ -2788,7 +4843,14 @@
       "title": "`CompletableFuture`",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "testing",
+        "multithreading",
+        "exceptions"
+      ]
     },
     {
       "id": "multithreading-048",
@@ -2799,7 +4861,18 @@
       "title": "Uncaught Exceptions in Threads",
       "time": "",
       "frequency": "65%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "multithreading-049",
@@ -2810,7 +4883,15 @@
       "title": "`ThreadLocalRandom` vs `Math.random()`",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "multithreading-050",
@@ -2821,7 +4902,14 @@
       "title": "`lock()` Position inside `try` Block",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "memory",
+        "multithreading",
+        "exceptions"
+      ]
     },
     {
       "id": "oop-001",
@@ -2835,6 +4923,12 @@
       "related": [
         "Что такое SOLID?",
         "Разница между интерфейсом и абстрактным классом"
+      ],
+      "tags": [
+        "system-design",
+        "oop",
+        "spring-core",
+        "multithreading"
       ]
     },
     {
@@ -2849,6 +4943,12 @@
       "related": [
         "Статическое и динамическое связывание",
         "Может ли переопределенный метод выбрасывать новые Exception?"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "exceptions",
+        "jvm"
       ]
     },
     {
@@ -2863,6 +4963,14 @@
       "related": [
         "Как Pattern Matching работает с Sealed Classes?",
         "Разница между final и sealed"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "multithreading",
+        "exceptions"
       ]
     },
     {
@@ -2877,6 +4985,16 @@
       "related": [
         "Почему java.util.Stack считается устаревшим?",
         "Наследование vs Композиция"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "stream-api",
+        "memory",
+        "collections",
+        "exceptions"
       ]
     },
     {
@@ -2891,6 +5009,17 @@
       "related": [
         "Принцип Open/Closed",
         "Как Spring инжектит коллекции бинов?"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "testing",
+        "stream-api",
+        "collections",
+        "exceptions",
+        "spring-boot"
       ]
     },
     {
@@ -2904,6 +5033,14 @@
       "frequency": "High",
       "related": [
         "oop-001"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "testing",
+        "multithreading"
       ]
     },
     {
@@ -2918,6 +5055,16 @@
       "related": [
         "oop-002",
         "collections-004"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "testing",
+        "stream-api",
+        "memory",
+        "collections",
+        "exceptions",
+        "spring-data"
       ]
     },
     {
@@ -2931,6 +5078,15 @@
       "frequency": "Medium",
       "related": [
         "core-005"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "memory",
+        "multithreading",
+        "collections"
       ]
     },
     {
@@ -2944,6 +5100,16 @@
       "frequency": "Medium",
       "related": [
         "design-012"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "databases",
+        "stream-api",
+        "collections",
+        "exceptions"
       ]
     },
     {
@@ -2957,6 +5123,17 @@
       "frequency": "Low",
       "related": [
         "arch-005"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "databases",
+        "stream-api",
+        "collections",
+        "exceptions",
+        "spring-data"
       ]
     },
     {
@@ -2970,6 +5147,11 @@
       "frequency": "High",
       "related": [
         "oop-003"
+      ],
+      "tags": [
+        "spring-core",
+        "oop",
+        "memory"
       ]
     },
     {
@@ -2983,6 +5165,14 @@
       "frequency": "Medium",
       "related": [
         "oop-021"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "memory",
+        "collections"
       ]
     },
     {
@@ -2996,6 +5186,15 @@
       "frequency": "High",
       "related": [
         "oop-035"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "multithreading",
+        "collections",
+        "exceptions"
       ]
     },
     {
@@ -3009,6 +5208,11 @@
       "frequency": "Medium",
       "related": [
         "oop-040"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns"
       ]
     },
     {
@@ -3022,6 +5226,16 @@
       "frequency": "Low",
       "related": [
         "sys-010"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "testing",
+        "memory",
+        "multithreading",
+        "spring-data"
       ]
     },
     {
@@ -3033,7 +5247,13 @@
       "title": "Question: Static vs Dynamic Binding in Java",
       "time": "10",
       "frequency": "High",
-      "related": "oop-001, core-012"
+      "related": "oop-001, core-012",
+      "tags": [
+        "spring-core",
+        "oop",
+        "memory",
+        "jvm"
+      ]
     },
     {
       "id": "oop-017",
@@ -3044,7 +5264,16 @@
       "title": "Question: The Fragile Base Class",
       "time": "15",
       "frequency": "Medium",
-      "related": "oop-012"
+      "related": "oop-012",
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "stream-api",
+        "memory",
+        "collections"
+      ]
     },
     {
       "id": "oop-018",
@@ -3055,7 +5284,13 @@
       "title": "Question: The Rectangle-Square Dilemma",
       "time": "20",
       "frequency": "High",
-      "related": "oop-008"
+      "related": "oop-008",
+      "tags": [
+        "system-design",
+        "oop",
+        "spring-core",
+        "collections"
+      ]
     },
     {
       "id": "oop-019",
@@ -3066,7 +5301,16 @@
       "title": "Question: Defensive Copying and Encapsulation",
       "time": "15",
       "frequency": "Medium",
-      "related": "core-041"
+      "related": "core-041",
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "oop-020",
@@ -3077,7 +5321,15 @@
       "title": "Question: Domain Models in Distributed Systems",
       "time": "35",
       "frequency": "High",
-      "related": "sys-014, arch-005"
+      "related": "sys-014, arch-005",
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "memory",
+        "collections",
+        "spring-data"
+      ]
     },
     {
       "id": "oop-021",
@@ -3088,7 +5340,15 @@
       "title": "Understanding Polymorphism and Method Dispatch",
       "time": "10",
       "frequency": "High",
-      "related": "oop-022, oop-023"
+      "related": "oop-022, oop-023",
+      "tags": [
+        "oop",
+        "spring-core",
+        "databases",
+        "jvm",
+        "memory",
+        "multithreading"
+      ]
     },
     {
       "id": "oop-022",
@@ -3099,7 +5359,14 @@
       "title": "The Fragile Subclass",
       "time": "15",
       "frequency": "High",
-      "related": "oop-021"
+      "related": "oop-021",
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "oop-023",
@@ -3110,7 +5377,16 @@
       "title": "Modernizing OOP: Inheritance vs. Composition",
       "time": "15",
       "frequency": "Medium",
-      "related": "oop-021, oop-024"
+      "related": "oop-021, oop-024",
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "testing",
+        "multithreading",
+        "spring-data"
+      ]
     },
     {
       "id": "oop-024",
@@ -3121,7 +5397,16 @@
       "title": "The Deceptive Processor",
       "time": "20",
       "frequency": "High",
-      "related": "oop-022"
+      "related": "oop-022",
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "memory",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "oop-025",
@@ -3132,7 +5417,17 @@
       "title": "OOP at Scale: Distributed Payment Processing",
       "time": "30",
       "frequency": "Medium",
-      "related": "oop-023"
+      "related": "oop-023",
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "databases",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "oop-026",
@@ -3145,6 +5440,13 @@
       "frequency": "High",
       "related": [
         "oop-015"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "memory",
+        "collections"
       ]
     },
     {
@@ -3158,6 +5460,13 @@
       "frequency": "Medium",
       "related": [
         "oop-012"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "memory",
+        "collections",
+        "spring-data"
       ]
     },
     {
@@ -3171,6 +5480,16 @@
       "frequency": "Medium",
       "related": [
         "oop-045"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "databases",
+        "jvm",
+        "collections",
+        "exceptions"
       ]
     },
     {
@@ -3184,6 +5503,16 @@
       "frequency": "High",
       "related": [
         "oop-022"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "memory",
+        "collections",
+        "exceptions",
+        "spring-data"
       ]
     },
     {
@@ -3197,6 +5526,17 @@
       "frequency": "Medium",
       "related": [
         "sys-014"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "databases",
+        "stream-api",
+        "multithreading",
+        "collections",
+        "exceptions"
       ]
     },
     {
@@ -3208,7 +5548,14 @@
       "title": "In Java, we frequently hear the advice to \"favor composition over inheritance.\"",
       "time": "10",
       "frequency": "High",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "spring-data"
+      ]
     },
     {
       "id": "oop-032",
@@ -3219,7 +5566,16 @@
       "title": "Review the following `ShoppingCart` class. It represents a user's cart in an e-commerce application. Point out any design flaws or bugs, focusing on Object-Oriented principles.",
       "time": "15",
       "frequency": "High",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "memory",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "oop-033",
@@ -3230,7 +5586,16 @@
       "title": "The Liskov Substitution Principle (LSP) states that objects of a superclass should be replaceable with objects of its subclasses without breaking the application.",
       "time": "15",
       "frequency": "Medium",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "memory",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "oop-034",
@@ -3241,7 +5606,16 @@
       "title": "Review the following Java 17 code snippet representing a `User` entity, often stored in `HashSet`s and `HashMap`s for caching. Point out the bugs and architectural flaws related to OOP and Java core contracts.",
       "time": "20",
       "frequency": "High",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns",
+        "stream-api",
+        "memory",
+        "collections",
+        "spring-data"
+      ]
     },
     {
       "id": "oop-035",
@@ -3252,7 +5626,16 @@
       "title": "You are tasked with designing a Distributed Pricing Engine for a ride-sharing application (like Uber/Lyft).",
       "time": "40",
       "frequency": "Medium",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "stream-api",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "oop-036",
@@ -3266,6 +5649,13 @@
       "related": [
         "oop-012",
         "core-045"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "multithreading",
+        "collections"
       ]
     },
     {
@@ -3280,6 +5670,13 @@
       "related": [
         "oop-022",
         "collections-011"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "collections"
       ]
     },
     {
@@ -3294,6 +5691,12 @@
       "related": [
         "oop-015",
         "core-088"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "spring-data"
       ]
     },
     {
@@ -3308,6 +5711,17 @@
       "related": [
         "oop-029",
         "design-004"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "stream-api",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
       ]
     },
     {
@@ -3322,6 +5736,17 @@
       "related": [
         "sys-014",
         "arch-007"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "databases",
+        "jvm",
+        "memory",
+        "multithreading",
+        "collections"
       ]
     },
     {
@@ -3336,6 +5761,12 @@
       "related": [
         "oop-010",
         "oop-025"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns"
       ]
     },
     {
@@ -3349,6 +5780,13 @@
       "frequency": "Medium",
       "related": [
         "oop-012"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "memory",
+        "collections"
       ]
     },
     {
@@ -3362,6 +5800,17 @@
       "frequency": "High",
       "related": [
         "oop-035"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "testing",
+        "stream-api",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
       ]
     },
     {
@@ -3375,6 +5824,14 @@
       "frequency": "Medium",
       "related": [
         "oop-022"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "collections",
+        "exceptions"
       ]
     },
     {
@@ -3388,6 +5845,18 @@
       "frequency": "Low",
       "related": [
         "sys-015"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "databases",
+        "memory",
+        "multithreading",
+        "collections",
+        "spring-data",
+        "exceptions"
       ]
     },
     {
@@ -3402,6 +5871,13 @@
       "related": [
         "oop-023",
         "core-012"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "memory",
+        "collections"
       ]
     },
     {
@@ -3416,6 +5892,14 @@
       "related": [
         "oop-010",
         "collections-005"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "memory",
+        "collections",
+        "spring-data"
       ]
     },
     {
@@ -3430,6 +5914,13 @@
       "related": [
         "design-002",
         "oop-033"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "memory"
       ]
     },
     {
@@ -3444,6 +5935,15 @@
       "related": [
         "solid-003",
         "oop-044"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "memory",
+        "collections",
+        "exceptions"
       ]
     },
     {
@@ -3458,6 +5958,16 @@
       "related": [
         "design-015",
         "arch-008"
+      ],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "databases",
+        "memory",
+        "collections",
+        "spring-data"
       ]
     },
     {
@@ -3469,7 +5979,16 @@
       "title": "What is the Singleton pattern and what are its pros and cons?",
       "time": "",
       "frequency": "95%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "testing",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "patterns-002",
@@ -3480,7 +5999,14 @@
       "title": "Review Double-Checked Locking Singleton",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns",
+        "memory",
+        "multithreading"
+      ]
     },
     {
       "id": "patterns-003",
@@ -3491,7 +6017,13 @@
       "title": "What is the Factory Method Pattern?",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns"
+      ]
     },
     {
       "id": "patterns-004",
@@ -3502,7 +6034,13 @@
       "title": "Abstract Factory vs Factory Method",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns"
+      ]
     },
     {
       "id": "patterns-005",
@@ -3513,7 +6051,16 @@
       "title": "What is the Builder Pattern?",
       "time": "",
       "frequency": "90%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "stream-api",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "patterns-006",
@@ -3524,7 +6071,13 @@
       "title": "What is the Prototype Pattern?",
       "time": "",
       "frequency": "40%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns"
+      ]
     },
     {
       "id": "patterns-007",
@@ -3535,7 +6088,13 @@
       "title": "What is the Adapter Pattern?",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns"
+      ]
     },
     {
       "id": "patterns-008",
@@ -3546,7 +6105,15 @@
       "title": "Bridge Pattern vs Adapter Pattern",
       "time": "",
       "frequency": "50%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "memory",
+        "collections"
+      ]
     },
     {
       "id": "patterns-009",
@@ -3557,7 +6124,13 @@
       "title": "What is the Composite Pattern?",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns"
+      ]
     },
     {
       "id": "patterns-010",
@@ -3568,7 +6141,15 @@
       "title": "The Decorator Pattern and Java I/O",
       "time": "",
       "frequency": "90%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "stream-api",
+        "memory"
+      ]
     },
     {
       "id": "patterns-011",
@@ -3579,7 +6160,14 @@
       "title": "What is the Facade Pattern?",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "collections"
+      ]
     },
     {
       "id": "patterns-012",
@@ -3590,7 +6178,15 @@
       "title": "What is the Flyweight Pattern?",
       "time": "",
       "frequency": "45%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "stream-api",
+        "memory"
+      ]
     },
     {
       "id": "patterns-013",
@@ -3601,7 +6197,13 @@
       "title": "Proxy Pattern vs Decorator Pattern",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns"
+      ]
     },
     {
       "id": "patterns-014",
@@ -3612,7 +6214,15 @@
       "title": "Chain of Responsibility Pattern",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "stream-api",
+        "exceptions"
+      ]
     },
     {
       "id": "patterns-015",
@@ -3623,7 +6233,16 @@
       "title": "What is the Command Pattern?",
       "time": "",
       "frequency": "65%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "patterns-016",
@@ -3634,7 +6253,16 @@
       "title": "What is the Iterator Pattern?",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "stream-api",
+        "memory",
+        "collections"
+      ]
     },
     {
       "id": "patterns-017",
@@ -3645,7 +6273,15 @@
       "title": "What is the Mediator Pattern?",
       "time": "",
       "frequency": "30%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "stream-api",
+        "multithreading"
+      ]
     },
     {
       "id": "patterns-018",
@@ -3656,7 +6292,13 @@
       "title": "What is the Memento Pattern?",
       "time": "",
       "frequency": "40%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns"
+      ]
     },
     {
       "id": "patterns-019",
@@ -3667,7 +6309,15 @@
       "title": "What is the Observer Pattern?",
       "time": "",
       "frequency": "90%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "memory",
+        "collections"
+      ]
     },
     {
       "id": "patterns-020",
@@ -3678,7 +6328,13 @@
       "title": "State Pattern vs Strategy Pattern",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns"
+      ]
     },
     {
       "id": "patterns-021",
@@ -3689,7 +6345,14 @@
       "title": "What is the Strategy Pattern?",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "memory"
+      ]
     },
     {
       "id": "patterns-022",
@@ -3700,7 +6363,13 @@
       "title": "Template Method vs Strategy Pattern",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns"
+      ]
     },
     {
       "id": "patterns-023",
@@ -3711,7 +6380,13 @@
       "title": "What is the Visitor Pattern?",
       "time": "",
       "frequency": "25%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns"
+      ]
     },
     {
       "id": "patterns-024",
@@ -3722,7 +6397,15 @@
       "title": "Single Responsibility Principle (SRP)",
       "time": "",
       "frequency": "95%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns",
+        "testing",
+        "exceptions",
+        "spring-data"
+      ]
     },
     {
       "id": "patterns-025",
@@ -3733,7 +6416,13 @@
       "title": "Open/Closed Principle (OCP)",
       "time": "",
       "frequency": "90%",
-      "related": []
+      "related": [],
+      "tags": [
+        "testing",
+        "oop",
+        "spring-core",
+        "patterns"
+      ]
     },
     {
       "id": "patterns-026",
@@ -3744,7 +6433,14 @@
       "title": "Liskov Substitution Principle (LSP)",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns",
+        "testing",
+        "collections"
+      ]
     },
     {
       "id": "patterns-027",
@@ -3755,7 +6451,13 @@
       "title": "Interface Segregation Principle (ISP)",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "exceptions",
+        "patterns"
+      ]
     },
     {
       "id": "patterns-028",
@@ -3766,7 +6468,13 @@
       "title": "Dependency Inversion Principle (DIP)",
       "time": "",
       "frequency": "95%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns"
+      ]
     },
     {
       "id": "patterns-029",
@@ -3777,7 +6485,15 @@
       "title": "DRY (Don't Repeat Yourself)",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "patterns",
+        "databases",
+        "stream-api",
+        "memory",
+        "multithreading"
+      ]
     },
     {
       "id": "patterns-030",
@@ -3788,7 +6504,13 @@
       "title": "KISS (Keep It Simple, Stupid)",
       "time": "",
       "frequency": "90%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns"
+      ]
     },
     {
       "id": "patterns-031",
@@ -3799,7 +6521,12 @@
       "title": "YAGNI (You Aren't Gonna Need It)",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "testing",
+        "spring-core",
+        "patterns"
+      ]
     },
     {
       "id": "patterns-032",
@@ -3810,7 +6537,15 @@
       "title": "Anti-pattern: God Object",
       "time": "",
       "frequency": "75%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "testing",
+        "collections"
+      ]
     },
     {
       "id": "patterns-033",
@@ -3821,7 +6556,13 @@
       "title": "Anti-pattern: Spaghetti Code",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "testing",
+        "spring-core",
+        "system-design",
+        "patterns"
+      ]
     },
     {
       "id": "patterns-034",
@@ -3832,7 +6573,14 @@
       "title": "Anti-pattern: Magic Numbers / Magic Strings",
       "time": "",
       "frequency": "95%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns",
+        "databases",
+        "stream-api"
+      ]
     },
     {
       "id": "patterns-035",
@@ -3843,7 +6591,17 @@
       "title": "Anti-pattern: Poltergeist",
       "time": "",
       "frequency": "30%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "databases",
+        "stream-api",
+        "memory",
+        "spring-mvc"
+      ]
     },
     {
       "id": "patterns-036",
@@ -3854,7 +6612,13 @@
       "title": "The Boy Scout Rule",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "testing",
+        "spring-core",
+        "exceptions",
+        "patterns"
+      ]
     },
     {
       "id": "patterns-037",
@@ -3865,7 +6629,13 @@
       "title": "Anti-pattern: Golden Hammer",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "databases",
+        "spring-core",
+        "system-design",
+        "patterns"
+      ]
     },
     {
       "id": "patterns-038",
@@ -3876,7 +6646,12 @@
       "title": "Anti-pattern: Premature Optimization",
       "time": "",
       "frequency": "90%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "memory",
+        "patterns"
+      ]
     },
     {
       "id": "patterns-039",
@@ -3887,7 +6662,13 @@
       "title": "Anti-pattern: Shotgun Surgery",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns"
+      ]
     },
     {
       "id": "patterns-040",
@@ -3898,7 +6679,13 @@
       "title": "Clean Code: Naming Conventions",
       "time": "",
       "frequency": "95%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "oop",
+        "stream-api",
+        "patterns"
+      ]
     },
     {
       "id": "patterns-041",
@@ -3909,7 +6696,13 @@
       "title": "Clean Code: Comments",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "multithreading",
+        "patterns"
+      ]
     },
     {
       "id": "patterns-042",
@@ -3920,7 +6713,13 @@
       "title": "Anti-pattern: Copy-Paste Programming",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "oop",
+        "memory",
+        "patterns"
+      ]
     },
     {
       "id": "patterns-043",
@@ -3931,7 +6730,11 @@
       "title": "Clean Code: Formatting and Structure",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "patterns"
+      ]
     },
     {
       "id": "patterns-044",
@@ -3942,7 +6745,12 @@
       "title": "Clean Code: Functions",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns"
+      ]
     },
     {
       "id": "patterns-045",
@@ -3953,7 +6761,14 @@
       "title": "Anti-pattern: Singleton Abuse",
       "time": "",
       "frequency": "75%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "testing"
+      ]
     },
     {
       "id": "patterns-046",
@@ -3964,7 +6779,17 @@
       "title": "Anti-pattern: Circular Dependency",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "databases",
+        "testing",
+        "memory",
+        "collections"
+      ]
     },
     {
       "id": "patterns-047",
@@ -3975,7 +6800,13 @@
       "title": "Anti-pattern: Primitive Obsession",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "exceptions",
+        "patterns"
+      ]
     },
     {
       "id": "patterns-048",
@@ -3986,7 +6817,16 @@
       "title": "Anti-pattern: Hardcoding",
       "time": "",
       "frequency": "90%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns",
+        "testing",
+        "memory",
+        "spring-data",
+        "spring-boot"
+      ]
     },
     {
       "id": "patterns-049",
@@ -3997,7 +6837,12 @@
       "title": "Anti-pattern: Yo-Yo Problem",
       "time": "",
       "frequency": "40%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns"
+      ]
     },
     {
       "id": "patterns-050",
@@ -4008,7 +6853,14 @@
       "title": "Anti-pattern: Boat Anchor",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns",
+        "databases",
+        "exceptions"
+      ]
     },
     {
       "id": "spring-001",
@@ -4019,7 +6871,15 @@
       "title": "What is Inversion of Control (IoC) and Dependency Injection (DI) in Spring?",
       "time": "",
       "frequency": "95%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "testing",
+        "spring-data"
+      ]
     },
     {
       "id": "spring-002",
@@ -4030,7 +6890,15 @@
       "title": "What are the different types of Dependency Injection in Spring?",
       "time": "",
       "frequency": "90%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns",
+        "testing",
+        "stream-api",
+        "collections"
+      ]
     },
     {
       "id": "spring-003",
@@ -4041,7 +6909,17 @@
       "title": "BeanFactory vs ApplicationContext",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "spring-004",
@@ -4052,7 +6930,12 @@
       "title": "What are the different Bean Scopes in Spring?",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "multithreading",
+        "patterns"
+      ]
     },
     {
       "id": "spring-005",
@@ -4063,7 +6946,13 @@
       "title": "Explain the Spring Bean Lifecycle.",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "collections",
+        "patterns"
+      ]
     },
     {
       "id": "spring-006",
@@ -4074,7 +6963,18 @@
       "title": "Explain @Component, @Service, @Repository, and @Controller stereotypes.",
       "time": "",
       "frequency": "90%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "databases",
+        "stream-api",
+        "spring-mvc",
+        "collections",
+        "exceptions",
+        "spring-data"
+      ]
     },
     {
       "id": "spring-007",
@@ -4085,7 +6985,11 @@
       "title": "How does @Autowired work, and how do you resolve ambiguity?",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "exceptions"
+      ]
     },
     {
       "id": "spring-008",
@@ -4096,7 +7000,12 @@
       "title": "What is the difference between @Bean and @Component?",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "spring-data"
+      ]
     },
     {
       "id": "spring-009",
@@ -4107,7 +7016,12 @@
       "title": "Explain @Configuration and Full vs Lite @Bean mode.",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns"
+      ]
     },
     {
       "id": "spring-010",
@@ -4118,7 +7032,15 @@
       "title": "How are properties injected in Spring? (@Value vs @ConfigurationProperties)",
       "time": "",
       "frequency": "75%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "multithreading",
+        "collections",
+        "spring-data",
+        "spring-boot"
+      ]
     },
     {
       "id": "spring-011",
@@ -4129,7 +7051,14 @@
       "title": "What is Spring AOP? Define Aspect, Advice, Pointcut, and JoinPoint.",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "databases",
+        "memory",
+        "multithreading"
+      ]
     },
     {
       "id": "spring-012",
@@ -4140,7 +7069,14 @@
       "title": "What are the different types of Advice in Spring AOP?",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "databases",
+        "exceptions",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "spring-013",
@@ -4151,7 +7087,16 @@
       "title": "Spring AOP vs AspectJ",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "databases",
+        "jvm",
+        "collections"
+      ]
     },
     {
       "id": "spring-014",
@@ -4162,7 +7107,17 @@
       "title": "How does Spring AOP proxying work? (JDK vs CGLIB)",
       "time": "",
       "frequency": "65%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "jvm",
+        "collections",
+        "exceptions",
+        "spring-boot"
+      ]
     },
     {
       "id": "spring-015",
@@ -4173,7 +7128,16 @@
       "title": "Why does AOP / @Transactional fail in self-invocation?",
       "time": "",
       "frequency": "90%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "databases",
+        "memory",
+        "collections"
+      ]
     },
     {
       "id": "spring-016",
@@ -4184,7 +7148,16 @@
       "title": "What is the DispatcherServlet in Spring MVC?",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "patterns",
+        "stream-api",
+        "spring-mvc",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "spring-017",
@@ -4195,7 +7168,15 @@
       "title": "Explain the Spring MVC Request Processing flow.",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "spring-mvc",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "spring-018",
@@ -4206,7 +7187,12 @@
       "title": "@Controller vs @RestController",
       "time": "",
       "frequency": "95%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "spring-mvc"
+      ]
     },
     {
       "id": "spring-019",
@@ -4217,7 +7203,14 @@
       "title": "How do you handle exceptions globally in Spring MVC?",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "spring-mvc",
+        "multithreading",
+        "exceptions"
+      ]
     },
     {
       "id": "spring-020",
@@ -4228,7 +7221,13 @@
       "title": "@RequestParam vs @PathVariable",
       "time": "",
       "frequency": "90%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "stream-api",
+        "spring-mvc",
+        "collections"
+      ]
     },
     {
       "id": "spring-021",
@@ -4239,7 +7238,14 @@
       "title": "Explain @RequestBody and @ResponseBody.",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "spring-mvc",
+        "collections"
+      ]
     },
     {
       "id": "spring-022",
@@ -4250,7 +7256,16 @@
       "title": "What is ResponseEntity in Spring?",
       "time": "",
       "frequency": "75%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns",
+        "stream-api",
+        "spring-mvc",
+        "collections",
+        "spring-data"
+      ]
     },
     {
       "id": "spring-023",
@@ -4261,7 +7276,15 @@
       "title": "How does Content Negotiation work in Spring?",
       "time": "",
       "frequency": "50%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns",
+        "spring-mvc",
+        "multithreading",
+        "spring-boot"
+      ]
     },
     {
       "id": "spring-024",
@@ -4272,7 +7295,15 @@
       "title": "What is a Spring MVC Interceptor?",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns",
+        "stream-api",
+        "spring-mvc",
+        "collections"
+      ]
     },
     {
       "id": "spring-025",
@@ -4283,7 +7314,15 @@
       "title": "How do you resolve CORS issues in Spring?",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "spring-mvc",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "spring-026",
@@ -4294,7 +7333,15 @@
       "title": "What is Spring Data JPA?",
       "time": "",
       "frequency": "90%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "databases",
+        "stream-api",
+        "collections",
+        "spring-data"
+      ]
     },
     {
       "id": "spring-027",
@@ -4305,7 +7352,16 @@
       "title": "CrudRepository vs JpaRepository",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "multithreading",
+        "collections",
+        "spring-data"
+      ]
     },
     {
       "id": "spring-028",
@@ -4316,7 +7372,14 @@
       "title": "How do Derived Query Methods work?",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "databases",
+        "collections",
+        "spring-data"
+      ]
     },
     {
       "id": "spring-029",
@@ -4327,7 +7390,14 @@
       "title": "Explain the @Query annotation in Spring Data.",
       "time": "",
       "frequency": "75%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "databases",
+        "collections",
+        "spring-data"
+      ]
     },
     {
       "id": "spring-030",
@@ -4338,7 +7408,17 @@
       "title": "Explain the N+1 Select Problem and its solutions.",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns",
+        "databases",
+        "stream-api",
+        "memory",
+        "collections",
+        "spring-data"
+      ]
     },
     {
       "id": "spring-031",
@@ -4349,7 +7429,15 @@
       "title": "How does @Transactional work under the hood?",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns",
+        "databases",
+        "multithreading",
+        "exceptions"
+      ]
     },
     {
       "id": "spring-032",
@@ -4360,7 +7448,13 @@
       "title": "What are the Spring Transaction Propagation behaviors?",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "memory",
+        "exceptions",
+        "databases"
+      ]
     },
     {
       "id": "spring-033",
@@ -4371,7 +7465,12 @@
       "title": "What are Transaction Isolation Levels in Spring?",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "databases",
+        "spring-core",
+        "multithreading"
+      ]
     },
     {
       "id": "spring-034",
@@ -4382,7 +7481,14 @@
       "title": "What triggers a rollback in Spring Transactions?",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "databases",
+        "exceptions",
+        "spring-data"
+      ]
     },
     {
       "id": "spring-035",
@@ -4393,7 +7499,16 @@
       "title": "Why use @Transactional(readOnly = true)?",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "databases",
+        "memory",
+        "multithreading",
+        "collections",
+        "spring-data",
+        "exceptions"
+      ]
     },
     {
       "id": "spring-036",
@@ -4404,7 +7519,12 @@
       "title": "What is Spring Security? What are its core concepts?",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "spring-data"
+      ]
     },
     {
       "id": "spring-037",
@@ -4415,7 +7535,14 @@
       "title": "Explain the Spring Security Authentication Architecture.",
       "time": "",
       "frequency": "75%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "collections"
+      ]
     },
     {
       "id": "spring-038",
@@ -4426,7 +7553,17 @@
       "title": "How is the currently authenticated user stored?",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns",
+        "stream-api",
+        "spring-mvc",
+        "multithreading",
+        "collections",
+        "spring-data"
+      ]
     },
     {
       "id": "spring-039",
@@ -4437,7 +7574,16 @@
       "title": "What is the SecurityFilterChain?",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "patterns",
+        "stream-api",
+        "multithreading",
+        "collections",
+        "exceptions",
+        "spring-boot"
+      ]
     },
     {
       "id": "spring-040",
@@ -4448,7 +7594,16 @@
       "title": "Explain Method-Level Security (@PreAuthorize).",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns",
+        "stream-api",
+        "memory",
+        "multithreading",
+        "exceptions"
+      ]
     },
     {
       "id": "spring-041",
@@ -4459,7 +7614,16 @@
       "title": "Spring Boot vs Spring Framework",
       "time": "",
       "frequency": "95%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "memory",
+        "spring-mvc",
+        "collections",
+        "spring-boot"
+      ]
     },
     {
       "id": "spring-042",
@@ -4470,7 +7634,16 @@
       "title": "Explain the @SpringBootApplication annotation.",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "memory",
+        "spring-mvc",
+        "collections",
+        "spring-boot"
+      ]
     },
     {
       "id": "spring-043",
@@ -4481,7 +7654,14 @@
       "title": "How does Spring Boot Auto-configuration work under the hood?",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "spring-mvc",
+        "collections",
+        "spring-boot"
+      ]
     },
     {
       "id": "spring-044",
@@ -4492,7 +7672,17 @@
       "title": "What are Spring Boot Starters?",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "testing",
+        "spring-mvc",
+        "collections",
+        "exceptions",
+        "spring-data",
+        "spring-boot"
+      ]
     },
     {
       "id": "spring-045",
@@ -4503,7 +7693,17 @@
       "title": "What is Spring Boot Actuator?",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "jvm",
+        "memory",
+        "spring-mvc",
+        "collections",
+        "spring-boot"
+      ]
     },
     {
       "id": "spring-046",
@@ -4514,7 +7714,18 @@
       "title": "How do you test a Spring Boot application? (@SpringBootTest)",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "testing",
+        "stream-api",
+        "spring-mvc",
+        "collections",
+        "exceptions",
+        "spring-data",
+        "spring-boot"
+      ]
     },
     {
       "id": "spring-047",
@@ -4525,7 +7736,17 @@
       "title": "@Mock vs @MockBean",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns",
+        "testing",
+        "memory",
+        "spring-mvc",
+        "collections",
+        "spring-boot"
+      ]
     },
     {
       "id": "spring-048",
@@ -4536,7 +7757,18 @@
       "title": "What is Test Slicing? (@WebMvcTest, @DataJpaTest)",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "databases",
+        "testing",
+        "memory",
+        "spring-mvc",
+        "exceptions",
+        "spring-data",
+        "spring-boot"
+      ]
     },
     {
       "id": "spring-049",
@@ -4547,7 +7779,17 @@
       "title": "How to handle Circular Dependencies in Spring?",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "multithreading",
+        "collections",
+        "exceptions",
+        "spring-boot"
+      ]
     },
     {
       "id": "spring-050",
@@ -4558,7 +7800,15 @@
       "title": "Explain Spring Profiles and externalized configuration.",
       "time": "",
       "frequency": "90%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "testing",
+        "collections",
+        "exceptions",
+        "spring-boot"
+      ]
     },
     {
       "id": "stream-001",
@@ -4569,7 +7819,16 @@
       "title": "What is the Stream API in Java and why was it introduced?",
       "time": "",
       "frequency": "95%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "stream-api",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "stream-002",
@@ -4580,7 +7839,13 @@
       "title": "What is the difference between Intermediate and Terminal operations?",
       "time": "",
       "frequency": "90%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "oop",
+        "stream-api",
+        "collections"
+      ]
     },
     {
       "id": "stream-003",
@@ -4591,7 +7856,13 @@
       "title": "How do Lambdas relate to Functional Interfaces?",
       "time": "",
       "frequency": "95%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "oop",
+        "stream-api",
+        "multithreading"
+      ]
     },
     {
       "id": "stream-004",
@@ -4602,7 +7873,15 @@
       "title": "What is an Optional and how does it prevent NullPointerException?",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "stream-005",
@@ -4613,7 +7892,14 @@
       "title": "Method References Syntax",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "memory",
+        "collections"
+      ]
     },
     {
       "id": "stream-006",
@@ -4624,7 +7910,12 @@
       "title": "What is the difference between map() and flatMap()?",
       "time": "",
       "frequency": "90%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "stream-api",
+        "collections"
+      ]
     },
     {
       "id": "stream-007",
@@ -4635,7 +7926,15 @@
       "title": "Stateful vs Stateless Intermediate Operations",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "testing",
+        "stream-api",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "stream-008",
@@ -4646,7 +7945,16 @@
       "title": "When to avoid Parallel Streams?",
       "time": "",
       "frequency": "75%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "databases",
+        "stream-api",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "stream-009",
@@ -4657,7 +7965,19 @@
       "title": "Custom Collectors",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns",
+        "databases",
+        "stream-api",
+        "memory",
+        "multithreading",
+        "collections",
+        "spring-data",
+        "exceptions"
+      ]
     },
     {
       "id": "stream-010",
@@ -4668,7 +7988,14 @@
       "title": "findFirst() vs findAny()",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "stream-api",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "stream-011",
@@ -4679,7 +8006,13 @@
       "title": "The reduce() Operation",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "stream-api",
+        "collections",
+        "spring-data"
+      ]
     },
     {
       "id": "stream-012",
@@ -4690,7 +8023,15 @@
       "title": "Primitive Streams",
       "time": "",
       "frequency": "65%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "memory",
+        "collections"
+      ]
     },
     {
       "id": "stream-013",
@@ -4701,7 +8042,15 @@
       "title": "Using groupingBy",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "stream-014",
@@ -4712,7 +8061,13 @@
       "title": "partitioningBy vs groupingBy",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "oop",
+        "stream-api",
+        "collections"
+      ]
     },
     {
       "id": "stream-015",
@@ -4723,7 +8078,11 @@
       "title": "Short-circuiting Operations",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "stream-api"
+      ]
     },
     {
       "id": "stream-016",
@@ -4734,7 +8093,15 @@
       "title": "The peek() Operation",
       "time": "",
       "frequency": "75%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns",
+        "stream-api",
+        "jvm",
+        "collections"
+      ]
     },
     {
       "id": "stream-017",
@@ -4745,7 +8112,15 @@
       "title": "Custom Functional Interfaces",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "collections",
+        "exceptions",
+        "spring-data"
+      ]
     },
     {
       "id": "stream-018",
@@ -4756,7 +8131,15 @@
       "title": "Collecting to Unmodifiable Lists",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "memory",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "stream-019",
@@ -4767,7 +8150,13 @@
       "title": "Infinite Streams: iterate vs generate",
       "time": "",
       "frequency": "50%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "oop",
+        "stream-api",
+        "patterns"
+      ]
     },
     {
       "id": "stream-020",
@@ -4778,7 +8167,14 @@
       "title": "Reusing Streams",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "stream-api",
+        "memory",
+        "exceptions",
+        "collections"
+      ]
     },
     {
       "id": "stream-021",
@@ -4789,7 +8185,15 @@
       "title": "Collectors.toMap and Duplicate Keys",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "testing",
+        "stream-api",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "stream-022",
@@ -4800,7 +8204,13 @@
       "title": "skip() and limit()",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "stream-api",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "stream-023",
@@ -4811,7 +8221,16 @@
       "title": "Optional.of() vs Optional.ofNullable()",
       "time": "",
       "frequency": "90%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "patterns",
+        "stream-api",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "stream-024",
@@ -4822,7 +8241,15 @@
       "title": "Stream.concat()",
       "time": "",
       "frequency": "50%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "memory",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "stream-025",
@@ -4833,7 +8260,14 @@
       "title": "flatMap vs flatMapToInt",
       "time": "",
       "frequency": "55%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "memory",
+        "collections"
+      ]
     },
     {
       "id": "stream-026",
@@ -4844,7 +8278,13 @@
       "title": "Summary Statistics",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "oop",
+        "stream-api",
+        "collections"
+      ]
     },
     {
       "id": "stream-027",
@@ -4855,7 +8295,14 @@
       "title": "Stream.ofNullable()",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "patterns",
+        "stream-api",
+        "exceptions",
+        "collections"
+      ]
     },
     {
       "id": "stream-028",
@@ -4866,7 +8313,12 @@
       "title": "takeWhile vs dropWhile",
       "time": "",
       "frequency": "65%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "stream-api",
+        "system-design"
+      ]
     },
     {
       "id": "stream-029",
@@ -4877,7 +8329,15 @@
       "title": "mapMulti()",
       "time": "",
       "frequency": "40%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "stream-030",
@@ -4888,7 +8348,17 @@
       "title": "Exception Handling in Streams",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "stream-api",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "stream-031",
@@ -4899,7 +8369,16 @@
       "title": "Collectors.joining()",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "databases",
+        "stream-api",
+        "collections"
+      ]
     },
     {
       "id": "stream-032",
@@ -4910,7 +8389,13 @@
       "title": "Stream Execution Order",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "oop",
+        "stream-api",
+        "collections"
+      ]
     },
     {
       "id": "stream-033",
@@ -4921,7 +8406,15 @@
       "title": "Stream to Array",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns",
+        "stream-api",
+        "memory",
+        "collections"
+      ]
     },
     {
       "id": "stream-034",
@@ -4932,7 +8425,15 @@
       "title": "Stream.builder()",
       "time": "",
       "frequency": "50%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns",
+        "stream-api",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "stream-035",
@@ -4943,7 +8444,14 @@
       "title": "Teeing Collector",
       "time": "",
       "frequency": "45%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "stream-036",
@@ -4954,7 +8462,14 @@
       "title": "UnaryOperator and BinaryOperator",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "collections"
+      ]
     },
     {
       "id": "stream-037",
@@ -4965,7 +8480,14 @@
       "title": "Consumer vs Supplier",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns",
+        "stream-api",
+        "exceptions"
+      ]
     },
     {
       "id": "stream-038",
@@ -4976,7 +8498,14 @@
       "title": "Collectors.reducing",
       "time": "",
       "frequency": "50%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "collections"
+      ]
     },
     {
       "id": "stream-039",
@@ -4987,7 +8516,15 @@
       "title": "Comparator.comparing",
       "time": "",
       "frequency": "75%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns",
+        "stream-api",
+        "memory",
+        "collections"
+      ]
     },
     {
       "id": "stream-040",
@@ -4998,7 +8535,13 @@
       "title": "Predicate Composition",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "oop",
+        "stream-api",
+        "memory"
+      ]
     },
     {
       "id": "stream-041",
@@ -5009,7 +8552,14 @@
       "title": "Collectors.mapping()",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "memory",
+        "collections"
+      ]
     },
     {
       "id": "stream-042",
@@ -5020,7 +8570,14 @@
       "title": "anyMatch() vs Collection.contains()",
       "time": "",
       "frequency": "75%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "databases",
+        "stream-api",
+        "collections"
+      ]
     },
     {
       "id": "stream-043",
@@ -5031,7 +8588,15 @@
       "title": "distinct() and Object Identity",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "stream-api",
+        "memory",
+        "collections",
+        "spring-data"
+      ]
     },
     {
       "id": "stream-044",
@@ -5042,7 +8607,13 @@
       "title": "Map.forEach() and BiConsumer",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "oop",
+        "stream-api",
+        "collections"
+      ]
     },
     {
       "id": "stream-045",
@@ -5053,7 +8624,16 @@
       "title": "Effectively Final Variables",
       "time": "",
       "frequency": "90%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "memory",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "stream-046",
@@ -5064,7 +8644,14 @@
       "title": "IntStream range() vs rangeClosed()",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "databases",
+        "stream-api",
+        "exceptions"
+      ]
     },
     {
       "id": "stream-047",
@@ -5075,7 +8662,15 @@
       "title": "Stream.empty() vs null",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "patterns",
+        "stream-api",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "stream-048",
@@ -5086,7 +8681,13 @@
       "title": "summarizingInt vs mapToInt.summaryStatistics",
       "time": "",
       "frequency": "50%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "oop",
+        "stream-api",
+        "collections"
+      ]
     },
     {
       "id": "stream-049",
@@ -5097,7 +8698,16 @@
       "title": "min() and max()",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "testing",
+        "stream-api",
+        "memory",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "stream-050",
@@ -5108,7 +8718,16 @@
       "title": "ForkJoinPool and Parallel Streams",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "databases",
+        "stream-api",
+        "jvm",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "system-design-001",
@@ -5119,7 +8738,15 @@
       "title": "Explain the CAP Theorem and its implications",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "databases",
+        "memory",
+        "multithreading",
+        "exceptions"
+      ]
     },
     {
       "id": "system-design-002",
@@ -5130,7 +8757,13 @@
       "title": "Idempotency in REST APIs",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "databases",
+        "spring-core",
+        "spring-mvc",
+        "system-design"
+      ]
     },
     {
       "id": "system-design-003",
@@ -5141,7 +8774,16 @@
       "title": "Microservices vs Monolith",
       "time": "",
       "frequency": "75%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "patterns",
+        "testing",
+        "databases",
+        "stream-api",
+        "collections"
+      ]
     },
     {
       "id": "system-design-004",
@@ -5152,7 +8794,13 @@
       "title": "Kafka vs RabbitMQ",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "collections"
+      ]
     },
     {
       "id": "system-design-005",
@@ -5163,7 +8811,14 @@
       "title": "Caching Strategies (Cache-Aside, Write-Through)",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "patterns",
+        "memory"
+      ]
     },
     {
       "id": "system-design-006",
@@ -5174,7 +8829,12 @@
       "title": "Load Balancing (Layer 4 vs Layer 7)",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "memory",
+        "system-design"
+      ]
     },
     {
       "id": "system-design-007",
@@ -5185,7 +8845,14 @@
       "title": "Database Sharding",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "databases",
+        "stream-api",
+        "collections"
+      ]
     },
     {
       "id": "system-design-008",
@@ -5196,7 +8863,14 @@
       "title": "Distributed Tracing and Correlation IDs",
       "time": "",
       "frequency": "75%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "memory",
+        "exceptions"
+      ]
     },
     {
       "id": "system-design-009",
@@ -5207,7 +8881,14 @@
       "title": "Rate Limiting (Token Bucket Algorithm)",
       "time": "",
       "frequency": "75%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "patterns",
+        "memory",
+        "multithreading"
+      ]
     },
     {
       "id": "system-design-010",
@@ -5218,7 +8899,14 @@
       "title": "Consistent Hashing",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "system-design-011",
@@ -5229,7 +8917,13 @@
       "title": "Content Delivery Networks (CDN)",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "stream-api",
+        "system-design",
+        "patterns"
+      ]
     },
     {
       "id": "system-design-012",
@@ -5240,7 +8934,15 @@
       "title": "Relational vs NoSQL Databases",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "databases",
+        "memory",
+        "multithreading",
+        "exceptions"
+      ]
     },
     {
       "id": "system-design-013",
@@ -5251,7 +8953,13 @@
       "title": "Long Polling vs WebSockets vs Server-Sent Events (SSE)",
       "time": "",
       "frequency": "75%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "collections"
+      ]
     },
     {
       "id": "system-design-014",
@@ -5262,7 +8970,16 @@
       "title": "Circuit Breaker Pattern",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "patterns",
+        "testing",
+        "multithreading",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "system-design-015",
@@ -5273,7 +8990,14 @@
       "title": "API Gateway Pattern",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "patterns",
+        "stream-api",
+        "collections"
+      ]
     },
     {
       "id": "system-design-016",
@@ -5284,7 +9008,16 @@
       "title": "Two-Phase Commit (2PC) vs Saga Pattern",
       "time": "",
       "frequency": "75%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "patterns",
+        "databases",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "system-design-017",
@@ -5295,7 +9028,15 @@
       "title": "Event Sourcing",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "patterns",
+        "databases",
+        "multithreading",
+        "spring-data"
+      ]
     },
     {
       "id": "system-design-018",
@@ -5306,7 +9047,15 @@
       "title": "Command Query Responsibility Segregation (CQRS)",
       "time": "",
       "frequency": "75%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "patterns",
+        "databases",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "system-design-019",
@@ -5317,7 +9066,15 @@
       "title": "Leader Election in Distributed Systems",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "databases",
+        "memory",
+        "multithreading"
+      ]
     },
     {
       "id": "system-design-020",
@@ -5328,7 +9085,14 @@
       "title": "Forward Proxy vs Reverse Proxy",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "patterns",
+        "stream-api",
+        "multithreading"
+      ]
     },
     {
       "id": "system-design-021",
@@ -5339,7 +9103,13 @@
       "title": "Gossip Protocol",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "memory",
+        "system-design",
+        "databases"
+      ]
     },
     {
       "id": "system-design-022",
@@ -5350,7 +9120,15 @@
       "title": "Master-Slave vs Peer-to-Peer Replication",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "memory",
+        "multithreading"
+      ]
     },
     {
       "id": "system-design-023",
@@ -5361,7 +9139,12 @@
       "title": "Database Indexes (B-Tree vs Hash)",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "databases",
+        "spring-core",
+        "system-design"
+      ]
     },
     {
       "id": "system-design-024",
@@ -5372,7 +9155,15 @@
       "title": "Bloom Filters",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "testing",
+        "stream-api",
+        "memory",
+        "collections"
+      ]
     },
     {
       "id": "system-design-025",
@@ -5383,7 +9174,12 @@
       "title": "Data Partitioning vs Replication",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "system-design",
+        "spring-core",
+        "collections"
+      ]
     },
     {
       "id": "system-design-026",
@@ -5394,7 +9190,14 @@
       "title": "Single Point of Failure (SPOF)",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "patterns",
+        "stream-api",
+        "collections"
+      ]
     },
     {
       "id": "system-design-027",
@@ -5405,7 +9208,14 @@
       "title": "Asynchronous Communication",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "system-design-028",
@@ -5416,7 +9226,12 @@
       "title": "Service Discovery (Consul / Eureka)",
       "time": "",
       "frequency": "75%",
-      "related": []
+      "related": [],
+      "tags": [
+        "system-design",
+        "spring-core",
+        "collections"
+      ]
     },
     {
       "id": "system-design-029",
@@ -5427,7 +9242,15 @@
       "title": "Data Lake vs Data Warehouse",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "databases",
+        "memory",
+        "exceptions"
+      ]
     },
     {
       "id": "system-design-030",
@@ -5438,7 +9261,12 @@
       "title": "High Availability (Active-Active vs Active-Passive)",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "system-design",
+        "spring-core",
+        "multithreading"
+      ]
     },
     {
       "id": "system-design-031",
@@ -5449,7 +9277,15 @@
       "title": "Heartbeats and Failure Detection",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "memory",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "system-design-032",
@@ -5460,7 +9296,14 @@
       "title": "Idempotency Keys in Distributed Systems",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "system-design-033",
@@ -5471,7 +9314,15 @@
       "title": "API Pagination (Offset vs Cursor)",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "databases",
+        "spring-mvc",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "system-design-034",
@@ -5482,7 +9333,14 @@
       "title": "Search Engines / Inverted Index",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "databases",
+        "stream-api",
+        "collections"
+      ]
     },
     {
       "id": "system-design-035",
@@ -5493,7 +9351,13 @@
       "title": "The Thundering Herd Problem",
       "time": "",
       "frequency": "65%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "system-design-036",
@@ -5504,7 +9368,14 @@
       "title": "Content Delivery Network (CDN) - Dynamic Content",
       "time": "",
       "frequency": "65%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "patterns",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "system-design-037",
@@ -5515,7 +9386,13 @@
       "title": "Unique ID Generator (Twitter Snowflake)",
       "time": "",
       "frequency": "75%",
-      "related": []
+      "related": [],
+      "tags": [
+        "databases",
+        "system-design",
+        "spring-core",
+        "collections"
+      ]
     },
     {
       "id": "system-design-038",
@@ -5526,7 +9403,14 @@
       "title": "Sticky Sessions",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "patterns",
+        "memory",
+        "multithreading"
+      ]
     },
     {
       "id": "system-design-039",
@@ -5537,7 +9421,13 @@
       "title": "Write-Ahead Logging (WAL)",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "memory",
+        "system-design",
+        "databases"
+      ]
     },
     {
       "id": "system-design-040",
@@ -5548,7 +9438,13 @@
       "title": "Vector Clocks",
       "time": "",
       "frequency": "65%",
-      "related": []
+      "related": [],
+      "tags": [
+        "system-design",
+        "oop",
+        "spring-core",
+        "multithreading"
+      ]
     },
     {
       "id": "system-design-041",
@@ -5559,7 +9455,13 @@
       "title": "Service Mesh (Istio / Linkerd)",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "memory",
+        "system-design",
+        "patterns"
+      ]
     },
     {
       "id": "system-design-042",
@@ -5570,7 +9472,12 @@
       "title": "Container Orchestration (Kubernetes)",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "exceptions"
+      ]
     },
     {
       "id": "system-design-043",
@@ -5581,7 +9488,12 @@
       "title": "Rate Limiting Algorithms (Leaky Bucket vs Sliding Window)",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "memory",
+        "system-design"
+      ]
     },
     {
       "id": "system-design-044",
@@ -5592,7 +9504,15 @@
       "title": "Database Deadlocks",
       "time": "",
       "frequency": "75%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "databases",
+        "stream-api",
+        "multithreading",
+        "exceptions"
+      ]
     },
     {
       "id": "system-design-045",
@@ -5603,7 +9523,16 @@
       "title": "Blue-Green vs Canary Deployments",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "patterns",
+        "testing",
+        "memory",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "system-design-046",
@@ -5614,7 +9543,14 @@
       "title": "Backpressure",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "stream-api",
+        "memory",
+        "exceptions"
+      ]
     },
     {
       "id": "system-design-047",
@@ -5625,7 +9561,14 @@
       "title": "Geo-DNS and Anycast",
       "time": "",
       "frequency": "65%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "testing",
+        "stream-api",
+        "collections"
+      ]
     },
     {
       "id": "system-design-048",
@@ -5636,7 +9579,15 @@
       "title": "Long Tail Latency (p99)",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "testing",
+        "stream-api",
+        "memory",
+        "collections"
+      ]
     },
     {
       "id": "system-design-049",
@@ -5647,7 +9598,13 @@
       "title": "Eventual vs Strong Consistency",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "databases",
+        "system-design",
+        "spring-core",
+        "multithreading"
+      ]
     },
     {
       "id": "system-design-050",
@@ -5658,7 +9615,16 @@
       "title": "Change Data Capture (CDC)",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "patterns",
+        "databases",
+        "stream-api",
+        "multithreading",
+        "collections"
+      ]
     },
     {
       "id": "testing-001",
@@ -5669,7 +9635,17 @@
       "title": "JUnit 5 vs JUnit 4",
       "time": "",
       "frequency": "90%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "testing",
+        "stream-api",
+        "jvm",
+        "multithreading",
+        "exceptions"
+      ]
     },
     {
       "id": "testing-002",
@@ -5680,7 +9656,14 @@
       "title": "@Mock vs @InjectMocks",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "testing",
+        "collections",
+        "spring-data"
+      ]
     },
     {
       "id": "testing-003",
@@ -5691,7 +9674,16 @@
       "title": "Testcontainers Overview",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "testing",
+        "databases",
+        "memory",
+        "collections",
+        "exceptions"
+      ]
     },
     {
       "id": "testing-004",
@@ -5702,7 +9694,14 @@
       "title": "TDD Cycle (Red-Green-Refactor)",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "system-design",
+        "patterns",
+        "testing",
+        "exceptions"
+      ]
     },
     {
       "id": "testing-005",
@@ -5713,7 +9712,15 @@
       "title": "REST vs SOAP",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "system-design",
+        "databases",
+        "testing",
+        "multithreading"
+      ]
     },
     {
       "id": "testing-006",
@@ -5724,7 +9731,12 @@
       "title": "WebSockets vs HTTP",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "testing",
+        "spring-core",
+        "multithreading"
+      ]
     },
     {
       "id": "testing-007",
@@ -5735,7 +9747,12 @@
       "title": "OAuth2 Authorization Code Flow",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "testing",
+        "memory"
+      ]
     },
     {
       "id": "testing-008",
@@ -5746,7 +9763,11 @@
       "title": "JWT Structure",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "testing",
+        "spring-core"
+      ]
     },
     {
       "id": "testing-009",
@@ -5757,7 +9778,14 @@
       "title": "Unit vs Integration Testing",
       "time": "",
       "frequency": "90%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "databases",
+        "testing",
+        "collections"
+      ]
     },
     {
       "id": "testing-010",
@@ -5768,7 +9796,12 @@
       "title": "QA Test Pyramid",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "testing",
+        "memory"
+      ]
     },
     {
       "id": "testing-011",
@@ -5779,7 +9812,12 @@
       "title": "JUnit 5 @ParameterizedTest",
       "time": "",
       "frequency": "75%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "testing",
+        "stream-api"
+      ]
     },
     {
       "id": "testing-012",
@@ -5790,7 +9828,13 @@
       "title": "Mockito ArgumentCaptor",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "testing",
+        "oop",
+        "spring-core",
+        "system-design"
+      ]
     },
     {
       "id": "testing-013",
@@ -5801,7 +9845,13 @@
       "title": "Consumer-Driven Contract Testing",
       "time": "",
       "frequency": "50%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "testing",
+        "memory",
+        "system-design"
+      ]
     },
     {
       "id": "testing-014",
@@ -5812,7 +9862,12 @@
       "title": "E2E Testing Downsides",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "testing",
+        "spring-core",
+        "patterns"
+      ]
     },
     {
       "id": "testing-015",
@@ -5823,7 +9878,12 @@
       "title": "BDD vs TDD",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "testing",
+        "spring-core",
+        "system-design"
+      ]
     },
     {
       "id": "testing-016",
@@ -5834,7 +9894,13 @@
       "title": "HTTP Methods",
       "time": "",
       "frequency": "95%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "testing",
+        "stream-api",
+        "collections"
+      ]
     },
     {
       "id": "testing-017",
@@ -5845,7 +9911,13 @@
       "title": "HTTP Status Codes",
       "time": "",
       "frequency": "95%",
-      "related": []
+      "related": [],
+      "tags": [
+        "testing",
+        "oop",
+        "spring-core",
+        "exceptions"
+      ]
     },
     {
       "id": "testing-018",
@@ -5856,7 +9928,13 @@
       "title": "TCP vs UDP",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "testing",
+        "stream-api",
+        "exceptions"
+      ]
     },
     {
       "id": "testing-019",
@@ -5867,7 +9945,11 @@
       "title": "REST Idempotency",
       "time": "",
       "frequency": "75%",
-      "related": []
+      "related": [],
+      "tags": [
+        "testing",
+        "spring-core"
+      ]
     },
     {
       "id": "testing-020",
@@ -5878,7 +9960,12 @@
       "title": "CORS",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "testing",
+        "spring-core",
+        "collections"
+      ]
     },
     {
       "id": "testing-021",
@@ -5889,7 +9976,12 @@
       "title": "HTTP vs HTTPS",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "testing",
+        "spring-core",
+        "multithreading"
+      ]
     },
     {
       "id": "testing-022",
@@ -5900,7 +9992,13 @@
       "title": "Test Coverage",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "testing",
+        "memory",
+        "collections"
+      ]
     },
     {
       "id": "testing-023",
@@ -5911,7 +10009,11 @@
       "title": "Mockito verify()",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "testing",
+        "spring-core"
+      ]
     },
     {
       "id": "testing-024",
@@ -5922,7 +10024,12 @@
       "title": "Mockito @Spy",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "testing",
+        "oop",
+        "spring-core"
+      ]
     },
     {
       "id": "testing-025",
@@ -5933,7 +10040,11 @@
       "title": "JUnit 5 Assumptions",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "testing",
+        "spring-core"
+      ]
     },
     {
       "id": "testing-026",
@@ -5944,7 +10055,12 @@
       "title": "REST API Versioning",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "testing",
+        "spring-core",
+        "spring-mvc"
+      ]
     },
     {
       "id": "testing-027",
@@ -5955,7 +10071,14 @@
       "title": "JUnit 5 assertThrows",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "oop",
+        "spring-core",
+        "testing",
+        "stream-api",
+        "exceptions"
+      ]
     },
     {
       "id": "testing-028",
@@ -5966,7 +10089,11 @@
       "title": "OAuth2 Scopes",
       "time": "",
       "frequency": "65%",
-      "related": []
+      "related": [],
+      "tags": [
+        "testing",
+        "spring-core"
+      ]
     },
     {
       "id": "testing-029",
@@ -5977,7 +10104,13 @@
       "title": "JWT Security Risks",
       "time": "",
       "frequency": "80%",
-      "related": []
+      "related": [],
+      "tags": [
+        "testing",
+        "system-design",
+        "spring-core",
+        "collections"
+      ]
     },
     {
       "id": "testing-030",
@@ -5988,7 +10121,12 @@
       "title": "Mockito thenReturn vs doReturn",
       "time": "",
       "frequency": "90%",
-      "related": []
+      "related": [],
+      "tags": [
+        "testing",
+        "spring-core",
+        "exceptions"
+      ]
     },
     {
       "id": "testing-031",
@@ -5999,7 +10137,13 @@
       "title": "Integration Test Database",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "testing",
+        "memory",
+        "spring-boot"
+      ]
     },
     {
       "id": "testing-032",
@@ -6010,7 +10154,13 @@
       "title": "Testcontainers GenericContainer",
       "time": "",
       "frequency": "40%",
-      "related": []
+      "related": [],
+      "tags": [
+        "testing",
+        "oop",
+        "spring-core",
+        "multithreading"
+      ]
     },
     {
       "id": "testing-033",
@@ -6021,7 +10171,12 @@
       "title": "REST HATEOAS",
       "time": "",
       "frequency": "40%",
-      "related": []
+      "related": [],
+      "tags": [
+        "testing",
+        "spring-core",
+        "system-design"
+      ]
     },
     {
       "id": "testing-034",
@@ -6032,7 +10187,12 @@
       "title": "TCP 3-Way Handshake",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "testing",
+        "spring-core",
+        "multithreading"
+      ]
     },
     {
       "id": "testing-035",
@@ -6043,7 +10203,13 @@
       "title": "JWT vs Sessions",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "testing",
+        "system-design",
+        "spring-core",
+        "collections"
+      ]
     },
     {
       "id": "testing-036",
@@ -6054,7 +10220,12 @@
       "title": "OAuth2 Grant Types",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "testing",
+        "stream-api"
+      ]
     },
     {
       "id": "testing-037",
@@ -6065,7 +10236,13 @@
       "title": "HTTP/2 Features",
       "time": "",
       "frequency": "50%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "testing",
+        "stream-api",
+        "multithreading"
+      ]
     },
     {
       "id": "testing-038",
@@ -6076,7 +10253,11 @@
       "title": "Mockito Argument Matchers",
       "time": "",
       "frequency": "90%",
-      "related": []
+      "related": [],
+      "tags": [
+        "testing",
+        "spring-core"
+      ]
     },
     {
       "id": "testing-039",
@@ -6087,7 +10268,14 @@
       "title": "JUnit 5 @TestFactory",
       "time": "",
       "frequency": "30%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "patterns",
+        "testing",
+        "stream-api",
+        "collections"
+      ]
     },
     {
       "id": "testing-040",
@@ -6098,7 +10286,13 @@
       "title": "Transactional Tests",
       "time": "",
       "frequency": "75%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-boot",
+        "testing",
+        "spring-core",
+        "databases"
+      ]
     },
     {
       "id": "testing-041",
@@ -6109,7 +10303,12 @@
       "title": "GraphQL vs REST",
       "time": "",
       "frequency": "85%",
-      "related": []
+      "related": [],
+      "tags": [
+        "testing",
+        "spring-core",
+        "collections"
+      ]
     },
     {
       "id": "testing-042",
@@ -6120,7 +10319,13 @@
       "title": "JUnit 5 @Nested",
       "time": "",
       "frequency": "40%",
-      "related": []
+      "related": [],
+      "tags": [
+        "testing",
+        "oop",
+        "spring-core",
+        "collections"
+      ]
     },
     {
       "id": "testing-043",
@@ -6131,7 +10336,12 @@
       "title": "WireMock",
       "time": "",
       "frequency": "50%",
-      "related": []
+      "related": [],
+      "tags": [
+        "testing",
+        "spring-core",
+        "collections"
+      ]
     },
     {
       "id": "testing-044",
@@ -6142,7 +10352,12 @@
       "title": "API Gateway",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "testing",
+        "spring-core",
+        "system-design"
+      ]
     },
     {
       "id": "testing-045",
@@ -6153,7 +10368,12 @@
       "title": "BDDMockito",
       "time": "",
       "frequency": "50%",
-      "related": []
+      "related": [],
+      "tags": [
+        "spring-core",
+        "testing",
+        "memory"
+      ]
     },
     {
       "id": "testing-046",
@@ -6164,7 +10384,12 @@
       "title": "Mockito InOrder",
       "time": "",
       "frequency": "40%",
-      "related": []
+      "related": [],
+      "tags": [
+        "testing",
+        "oop",
+        "spring-core"
+      ]
     },
     {
       "id": "testing-047",
@@ -6175,7 +10400,11 @@
       "title": "Load Testing vs Stress Testing",
       "time": "",
       "frequency": "60%",
-      "related": []
+      "related": [],
+      "tags": [
+        "testing",
+        "spring-core"
+      ]
     },
     {
       "id": "testing-048",
@@ -6186,7 +10415,13 @@
       "title": "Richardson Maturity Model",
       "time": "",
       "frequency": "50%",
-      "related": []
+      "related": [],
+      "tags": [
+        "testing",
+        "spring-core",
+        "spring-mvc",
+        "system-design"
+      ]
     },
     {
       "id": "testing-049",
@@ -6197,7 +10432,11 @@
       "title": "OAuth2 Refresh Tokens",
       "time": "",
       "frequency": "70%",
-      "related": []
+      "related": [],
+      "tags": [
+        "testing",
+        "spring-core"
+      ]
     },
     {
       "id": "testing-050",
@@ -6208,7 +10447,13 @@
       "title": "JUnit 5 Extensions",
       "time": "",
       "frequency": "40%",
-      "related": []
+      "related": [],
+      "tags": [
+        "testing",
+        "oop",
+        "spring-core",
+        "exceptions"
+      ]
     }
   ]
 }

@@ -7,6 +7,7 @@ time: 5
 frequency: 70%
 source: Custom
 prerequisites: ["Stream API"]
+tags: [oop, spring-core, stream-api, memory, collections, exceptions]
 ---
 
 # Collecting to Unmodifiable Lists

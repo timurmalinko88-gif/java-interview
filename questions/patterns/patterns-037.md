@@ -7,6 +7,7 @@ time: 5
 frequency: 60%
 source: Custom
 prerequisites: ["Anti-patterns"]
+tags: [databases, spring-core, system-design, patterns]
 ---
 
 # Anti-pattern: Golden Hammer

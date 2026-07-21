@@ -7,6 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["Iterators"]
+tags: [oop, spring-core, stream-api, multithreading, collections, exceptions]
 ---
 
 # Avoiding ConcurrentModificationException

@@ -7,6 +7,7 @@ time: 5
 frequency: 90%
 source: Custom
 prerequisites: ["Mockito"]
+tags: [testing, spring-core, exceptions]
 ---
 
 # Mockito thenReturn vs doReturn

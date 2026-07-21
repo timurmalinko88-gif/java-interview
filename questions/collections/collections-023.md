@@ -7,6 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["Data Structures"]
+tags: [oop, spring-core, system-design, databases, stream-api, memory, multithreading, collections, exceptions]
 ---
 
 # Stack vs Deque

@@ -7,6 +7,7 @@ time: 20
 frequency: 85%
 source: Custom
 prerequisites: ["REST", "HTTP", "Idempotency"]
+tags: [databases, spring-core, spring-mvc, system-design]
 ---
 
 # Idempotency in REST APIs

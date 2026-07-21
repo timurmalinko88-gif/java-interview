@@ -7,6 +7,7 @@ time: 5
 frequency: 70%
 source: Custom
 prerequisites: ["wait/notify", "Monitors"]
+tags: [oop, spring-core, multithreading, collections, exceptions]
 ---
 
 # Code Review: Wait and Notify

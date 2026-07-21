@@ -7,6 +7,7 @@ time: 5
 frequency: 95%
 source: Custom
 prerequisites: ["Core Java", "Pass by Value", "References"]
+tags: [oop, spring-core, patterns, testing, memory]
 ---
 
 # Pass by Value vs Pass by Reference

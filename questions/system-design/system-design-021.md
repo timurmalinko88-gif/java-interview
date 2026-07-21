@@ -7,6 +7,7 @@ time: 20
 frequency: 60%
 source: Custom
 prerequisites: ["Distributed Systems", "Networking"]
+tags: [spring-core, memory, system-design, databases]
 ---
 
 # Gossip Protocol

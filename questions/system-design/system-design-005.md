@@ -7,6 +7,7 @@ time: 20
 frequency: 85%
 source: Custom
 prerequisites: ["Caching", "Databases"]
+tags: [oop, spring-core, system-design, patterns, memory]
 ---
 
 # Caching Strategies (Cache-Aside, Write-Through)

@@ -7,6 +7,7 @@ time: 10
 frequency: 50%
 source: Custom
 prerequisites: ["OOP", "Design Patterns"]
+tags: [oop, spring-core, system-design, patterns, memory, collections]
 ---
 
 # Bridge Pattern vs Adapter Pattern

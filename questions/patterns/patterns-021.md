@@ -7,6 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["OOP", "Design Patterns"]
+tags: [oop, spring-core, system-design, patterns, memory]
 ---
 
 # What is the Strategy Pattern?

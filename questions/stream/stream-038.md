@@ -7,6 +7,7 @@ time: 5
 frequency: 50%
 source: Custom
 prerequisites: ["Stream API"]
+tags: [oop, spring-core, system-design, stream-api, collections]
 ---
 
 # Collectors.reducing

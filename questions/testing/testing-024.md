@@ -7,6 +7,7 @@ time: 5
 frequency: 70%
 source: Custom
 prerequisites: ["Mockito"]
+tags: [testing, oop, spring-core]
 ---
 
 # Mockito @Spy

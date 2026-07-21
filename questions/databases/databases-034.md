@@ -7,6 +7,7 @@ time: 5
 frequency: 60%
 source: Custom
 prerequisites: ["Indexes", "Composite Indexes"]
+tags: [spring-core, memory, collections, databases]
 ---
 
 # What is a Covering Index?

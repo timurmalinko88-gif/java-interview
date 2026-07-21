@@ -7,6 +7,7 @@ time: 6
 frequency: 80%
 source: Custom
 prerequisites: ["Spring MVC"]
+tags: [oop, spring-core, spring-mvc, multithreading, exceptions]
 ---
 
 # How do you handle exceptions globally in Spring MVC?

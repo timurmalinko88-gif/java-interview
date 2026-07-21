@@ -7,6 +7,7 @@ time: 4
 frequency: 85%
 source: Custom
 prerequisites: ["Indexes"]
+tags: [spring-core, memory, databases]
 ---
 
 # What are the drawbacks of adding too many indexes?

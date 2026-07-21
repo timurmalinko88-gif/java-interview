@@ -8,6 +8,7 @@ frequency: High
 related_questions: [How ThreadPoolExecutor works, Thread lifecycle]
 source: Custom
 prerequisites: [Thread class, Runnable interface]
+tags: [oop, spring-core, system-design, memory, multithreading, collections, exceptions]
 ---
 
 On a project, a developer implemented asynchronous email notifications: for every user registration, they create a new thread:

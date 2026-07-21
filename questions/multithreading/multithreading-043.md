@@ -7,6 +7,7 @@ time: 8
 frequency: 35%
 source: Custom
 prerequisites: ["Concurrency", "Phaser"]
+tags: [oop, spring-core, system-design, databases, testing, multithreading]
 ---
 
 # `Phaser` vs `CyclicBarrier` / `CountDownLatch`

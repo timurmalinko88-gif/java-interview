@@ -7,6 +7,7 @@ time: 10
 frequency: 70%
 source: Custom
 prerequisites: ["Parallel Streams", "Multithreading"]
+tags: [spring-core, system-design, databases, stream-api, jvm, multithreading, collections]
 ---
 
 # ForkJoinPool and Parallel Streams

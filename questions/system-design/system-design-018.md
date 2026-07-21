@@ -7,6 +7,7 @@ time: 15
 frequency: 75%
 source: Custom
 prerequisites: ["CQRS", "Architecture"]
+tags: [spring-core, system-design, patterns, databases, multithreading, collections]
 ---
 
 # Command Query Responsibility Segregation (CQRS)

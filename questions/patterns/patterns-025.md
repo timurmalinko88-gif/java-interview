@@ -7,6 +7,7 @@ time: 10
 frequency: 90%
 source: Custom
 prerequisites: ["OOP", "SOLID"]
+tags: [testing, oop, spring-core, patterns]
 ---
 
 # Open/Closed Principle (OCP)

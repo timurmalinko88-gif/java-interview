@@ -7,6 +7,7 @@ time: 8
 frequency: 70%
 source: Custom
 prerequisites: ["Concurrency", "ScheduledExecutorService"]
+tags: [spring-core, system-design, multithreading, collections]
 ---
 
 # `ScheduledExecutorService`

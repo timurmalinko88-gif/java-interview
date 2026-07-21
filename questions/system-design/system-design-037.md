@@ -7,6 +7,7 @@ time: 25
 frequency: 75%
 source: Custom
 prerequisites: ["Databases", "Distributed Systems"]
+tags: [databases, system-design, spring-core, collections]
 ---
 
 # Unique ID Generator (Twitter Snowflake)

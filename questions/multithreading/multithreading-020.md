@@ -7,6 +7,7 @@ time: 3
 frequency: 90%
 source: Custom
 prerequisites: ["Concurrency", "Thread"]
+tags: [oop, spring-core, jvm, memory, multithreading, exceptions]
 ---
 
 # Calling `run()` Instead of `start()`

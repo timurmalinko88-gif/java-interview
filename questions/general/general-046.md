@@ -7,6 +7,7 @@ time: 10
 frequency: 80%
 source: Custom
 prerequisites: ["Core Java", "Static", "Final"]
+tags: [oop, spring-core, system-design, stream-api, memory, multithreading, collections, exceptions]
 ---
 
 # Review Static and Final Usage

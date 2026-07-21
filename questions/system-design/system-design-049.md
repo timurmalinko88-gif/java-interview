@@ -7,6 +7,7 @@ time: 20
 frequency: 85%
 source: Custom
 prerequisites: ["Databases", "Distributed Systems"]
+tags: [databases, system-design, spring-core, multithreading]
 ---
 
 # Eventual vs Strong Consistency

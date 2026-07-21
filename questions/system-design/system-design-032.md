@@ -7,6 +7,7 @@ time: 20
 frequency: 85%
 source: Custom
 prerequisites: ["API Design", "Idempotency"]
+tags: [spring-core, system-design, stream-api, multithreading, collections]
 ---
 
 # Idempotency Keys in Distributed Systems

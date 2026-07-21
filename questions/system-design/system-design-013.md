@@ -7,6 +7,7 @@ time: 20
 frequency: 75%
 source: Custom
 prerequisites: ["HTTP", "Networking"]
+tags: [spring-core, system-design, stream-api, collections]
 ---
 
 # Long Polling vs WebSockets vs Server-Sent Events (SSE)

@@ -7,6 +7,7 @@ time: 10
 frequency: 90%
 source: Custom
 prerequisites: ["OOP", "Design Patterns", "Java I/O"]
+tags: [oop, spring-core, system-design, patterns, stream-api, memory]
 ---
 
 # The Decorator Pattern and Java I/O

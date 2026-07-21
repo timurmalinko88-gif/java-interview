@@ -7,6 +7,7 @@ time: 6
 frequency: 80%
 source: Custom
 prerequisites: ["Concurrency", "AtomicInteger", "volatile"]
+tags: [oop, spring-core, multithreading]
 ---
 
 # `AtomicInteger` vs `volatile`

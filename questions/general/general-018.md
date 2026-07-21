@@ -7,6 +7,7 @@ time: 10
 frequency: 90%
 source: Custom
 prerequisites: ["Core Java", "Basics"]
+tags: [oop, spring-core, collections]
 ---
 
 # What are the differences between an Abstract Class and an Interface in modern Java (Java 8+)?

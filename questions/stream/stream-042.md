@@ -7,6 +7,7 @@ time: 5
 frequency: 75%
 source: Custom
 prerequisites: ["Stream API"]
+tags: [oop, spring-core, databases, stream-api, collections]
 ---
 
 # anyMatch() vs Collection.contains()

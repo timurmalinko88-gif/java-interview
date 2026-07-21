@@ -7,6 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["Clean Code"]
+tags: [testing, spring-core, exceptions, patterns]
 ---
 
 # The Boy Scout Rule

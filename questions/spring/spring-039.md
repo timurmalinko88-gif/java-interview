@@ -7,6 +7,7 @@ time: 6
 frequency: 85%
 source: Custom
 prerequisites: ["Spring Security", "Servlet Filters"]
+tags: [spring-core, patterns, stream-api, multithreading, collections, exceptions, spring-boot]
 ---
 
 # What is the SecurityFilterChain?

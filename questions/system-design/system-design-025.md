@@ -7,6 +7,7 @@ time: 15
 frequency: 85%
 source: Custom
 prerequisites: ["Databases", "Scalability"]
+tags: [system-design, spring-core, collections]
 ---
 
 # Data Partitioning vs Replication

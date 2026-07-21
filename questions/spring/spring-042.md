@@ -7,6 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["Spring Boot"]
+tags: [oop, spring-core, system-design, memory, spring-mvc, collections, spring-boot]
 ---
 
 # Explain the @SpringBootApplication annotation.

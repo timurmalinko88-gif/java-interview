@@ -7,6 +7,7 @@ time: 4
 frequency: 90%
 source: Custom
 prerequisites: ["Spring MVC"]
+tags: [spring-core, stream-api, spring-mvc, collections]
 ---
 
 # @RequestParam vs @PathVariable

@@ -7,6 +7,7 @@ time: 4
 frequency: 95%
 source: Custom
 prerequisites: ["SQL"]
+tags: [databases, spring-core, collections, spring-data]
 ---
 
 # What is SQL Injection and how can it be prevented?

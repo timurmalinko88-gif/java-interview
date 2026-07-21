@@ -7,6 +7,7 @@ time: 4
 frequency: 70%
 source: Custom
 prerequisites: ["Database Normalization"]
+tags: [databases, spring-core, system-design]
 ---
 
 # What is Denormalization and when would you use it?

@@ -7,6 +7,7 @@ time: 8
 frequency: 90%
 source: Custom
 prerequisites: ["Spring AOP", "Proxies"]
+tags: [oop, spring-core, system-design, patterns, databases, memory, collections]
 ---
 
 # Why does AOP / @Transactional fail in self-invocation?

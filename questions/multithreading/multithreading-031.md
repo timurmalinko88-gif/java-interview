@@ -7,6 +7,7 @@ time: 5
 frequency: 70%
 source: Custom
 prerequisites: ["Concurrency", "Semaphore"]
+tags: [spring-core, stream-api, memory, multithreading, collections]
 ---
 
 # `Semaphore`

@@ -7,6 +7,7 @@ time: 10
 frequency: 70%
 source: Custom
 prerequisites: ["Data Structures", "Trees"]
+tags: [oop, spring-core, stream-api, memory, multithreading, collections]
 ---
 
 # PriorityQueue in Java

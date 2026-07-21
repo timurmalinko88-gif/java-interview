@@ -8,6 +8,7 @@ frequency: High
 related_questions: [Difference between HashMap and ConcurrentHashMap, computeIfAbsent method]
 source: Custom
 prerequisites: [ConcurrentHashMap, Race Condition]
+tags: [oop, spring-core, system-design, patterns, stream-api, memory, multithreading, collections, exceptions]
 ---
 
 A developer implemented a thread-safe user cache based on `ConcurrentHashMap`. Look at the code below (Java 17). It compiles successfully. Find bugs and vulnerabilities when working in a multithreaded environment and suggest how to fix them.

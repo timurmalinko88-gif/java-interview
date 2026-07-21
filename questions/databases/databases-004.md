@@ -7,6 +7,7 @@ time: 3
 frequency: 80%
 source: Custom
 prerequisites: ["SQL", "Relational Databases"]
+tags: [databases, spring-core, spring-data]
 ---
 
 # What is the difference between a Primary Key and a Unique Key?

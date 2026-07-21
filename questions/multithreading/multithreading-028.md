@@ -7,6 +7,7 @@ time: 15
 frequency: 70%
 source: Custom
 prerequisites: ["Concurrency", "Condition", "ReentrantLock"]
+tags: [oop, spring-core, system-design, stream-api, multithreading, collections, exceptions]
 ---
 
 # Designing a Concurrent Bounded Queue

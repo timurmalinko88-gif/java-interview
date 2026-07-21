@@ -7,6 +7,7 @@ time: 20
 frequency: 85%
 source: Custom
 prerequisites: ["Microservices", "Architecture"]
+tags: [spring-core, system-design, patterns, stream-api, collections]
 ---
 
 # API Gateway Pattern

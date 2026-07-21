@@ -7,6 +7,7 @@ time: 20
 frequency: 70%
 source: Custom
 prerequisites: ["Event Sourcing", "Architecture"]
+tags: [spring-core, system-design, patterns, databases, multithreading, spring-data]
 ---
 
 # Event Sourcing

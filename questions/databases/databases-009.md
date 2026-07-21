@@ -7,6 +7,7 @@ time: 6
 frequency: 80%
 source: Custom
 prerequisites: ["SQL", "Indexes"]
+tags: [databases, spring-core, collections]
 ---
 
 # Clustered vs. Non-Clustered Indexes.

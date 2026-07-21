@@ -7,6 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["Concurrency", "Race Conditions"]
+tags: [spring-core, memory, multithreading, patterns]
 ---
 
 # Race Conditions

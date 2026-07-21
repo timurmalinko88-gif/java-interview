@@ -7,6 +7,7 @@ time: 5
 frequency: 80%
 source: Custom
 prerequisites: ["TCP/IP"]
+tags: [spring-core, testing, stream-api, exceptions]
 ---
 
 # TCP vs UDP

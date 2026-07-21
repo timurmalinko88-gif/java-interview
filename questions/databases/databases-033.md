@@ -7,6 +7,7 @@ time: 4
 frequency: 75%
 source: Custom
 prerequisites: ["Indexes"]
+tags: [databases, spring-core]
 ---
 
 # What is a Composite Index?

@@ -7,6 +7,7 @@ time: 5
 frequency: 80%
 source: Custom
 prerequisites: ["Stream API"]
+tags: [oop, spring-core, testing, stream-api, memory, collections, exceptions]
 ---
 
 # min() and max()

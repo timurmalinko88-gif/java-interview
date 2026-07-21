@@ -1,0 +1,98 @@
+[
+  {
+    "id": "q1",
+    "question": "Что произойдет при коллизии в HashMap (начиная с Java 8)?",
+    "options": [
+      "Старое значение затрется",
+      "Элемент будет добавлен в связный список (или дерево, если элементов много)",
+      "Будет выброшено исключение HashCollisionException",
+      "Будет создан новый бакет"
+    ],
+    "correctIndex": 1,
+    "testedTags": ["collections", "hashmap"]
+  },
+  {
+    "id": "q2",
+    "question": "Какой метод нужно вызвать, чтобы поток отдал монитор и перешел в ожидание?",
+    "options": [
+      "Thread.sleep()",
+      "Thread.yield()",
+      "Object.wait()",
+      "Object.notify()"
+    ],
+    "correctIndex": 2,
+    "testedTags": ["multithreading", "wait", "thread"]
+  },
+  {
+    "id": "q3",
+    "question": "Какой паттерн гарантирует, что у класса есть только один экземпляр?",
+    "options": [
+      "Factory",
+      "Builder",
+      "Singleton",
+      "Prototype"
+    ],
+    "correctIndex": 2,
+    "testedTags": ["patterns", "singleton"]
+  },
+  {
+    "id": "q4",
+    "question": "Какая аннотация в Spring Boot автоматически включает конфигурацию и сканирование компонентов?",
+    "options": [
+      "@EnableAutoConfiguration",
+      "@SpringBootApplication",
+      "@ComponentScan",
+      "@Configuration"
+    ],
+    "correctIndex": 1,
+    "testedTags": ["spring-boot", "spring-core"]
+  },
+  {
+    "id": "q5",
+    "question": "Что из этого является промежуточной (intermediate) операцией в Stream API?",
+    "options": [
+      "collect()",
+      "reduce()",
+      "count()",
+      "filter()"
+    ],
+    "correctIndex": 3,
+    "testedTags": ["stream-api", "filter"]
+  },
+  {
+    "id": "q6",
+    "question": "В чем главное отличие RuntimeException от Exception?",
+    "options": [
+      "RuntimeException нужно обязательно перехватывать (checked)",
+      "RuntimeException не нужно объявлять в throws (unchecked)",
+      "RuntimeException появляется только во время компиляции",
+      "RuntimeException - это интерфейс"
+    ],
+    "correctIndex": 1,
+    "testedTags": ["exceptions", "runtimeexception"]
+  },
+  {
+    "id": "q7",
+    "question": "Какая область памяти (в старых версиях Java) или метаданных (в новых) хранит информацию о классах?",
+    "options": [
+      "Heap",
+      "Stack",
+      "Metaspace (PermGen)",
+      "Code Cache"
+    ],
+    "correctIndex": 2,
+    "testedTags": ["jvm", "memory"]
+  },
+  {
+    "id": "q8",
+    "question": "Какое свойство транзакции (ACID) гарантирует, что транзакция выполнится либо полностью, либо никак?",
+    "options": [
+      "Atomicity",
+      "Consistency",
+      "Isolation",
+      "Durability"
+    ],
+    "correctIndex": 0,
+    "testedTags": ["databases", "transaction"]
+  }
+]

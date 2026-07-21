@@ -7,6 +7,7 @@ time: 5
 frequency: 80%
 source: Custom
 prerequisites: ["Spring Security", "AOP"]
+tags: [oop, spring-core, patterns, stream-api, memory, multithreading, exceptions]
 ---
 
 # Explain Method-Level Security (@PreAuthorize).

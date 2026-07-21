@@ -7,6 +7,7 @@ time: 4
 frequency: 85%
 source: Custom
 prerequisites: ["Concurrency", "wait", "notify"]
+tags: [oop, spring-core, databases, jvm, memory, multithreading]
 ---
 
 # `notify()` vs `notifyAll()`

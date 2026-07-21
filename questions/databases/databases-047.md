@@ -7,6 +7,7 @@ time: 3
 frequency: 95%
 source: Custom
 prerequisites: ["Spring", "Transactions"]
+tags: [oop, spring-core, patterns, databases, exceptions]
 ---
 
 # Explain the @Transactional annotation in Spring.

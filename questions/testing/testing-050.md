@@ -7,6 +7,7 @@ time: 5
 frequency: 40%
 source: Custom
 prerequisites: ["JUnit 5"]
+tags: [testing, oop, spring-core, exceptions]
 ---
 
 # JUnit 5 Extensions

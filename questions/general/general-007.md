@@ -7,6 +7,7 @@ time: 7
 frequency: 85%
 source: Custom
 prerequisites: ["Core Java", "Enums", "Design Patterns"]
+tags: [spring-core, system-design, patterns, testing, jvm, multithreading, collections, exceptions]
 ---
 
 # Enums as Singletons

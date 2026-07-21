@@ -7,6 +7,7 @@ time: 5
 frequency: 60%
 source: Custom
 prerequisites: ["Anti-patterns"]
+tags: [oop, spring-core, patterns, databases, exceptions]
 ---
 
 # Anti-pattern: Boat Anchor

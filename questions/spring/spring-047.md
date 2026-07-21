@@ -7,6 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["Testing", "Mockito"]
+tags: [oop, spring-core, patterns, testing, memory, spring-mvc, collections, spring-boot]
 ---
 
 # @Mock vs @MockBean

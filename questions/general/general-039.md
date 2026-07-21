@@ -7,6 +7,7 @@ time: 5
 frequency: 95%
 source: Custom
 prerequisites: ["Strings", "Basics"]
+tags: [oop, spring-core, system-design, jvm, memory, multithreading]
 ---
 
 # String Immutability and the String Pool

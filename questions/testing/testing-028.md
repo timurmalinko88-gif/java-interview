@@ -7,6 +7,7 @@ time: 5
 frequency: 65%
 source: Custom
 prerequisites: ["OAuth2"]
+tags: [testing, spring-core]
 ---
 
 # OAuth2 Scopes

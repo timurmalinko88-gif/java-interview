@@ -7,6 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["OOP", "Data Structures"]
+tags: [oop, spring-core, system-design, patterns, stream-api, memory, collections]
 ---
 
 # What is the Iterator Pattern?

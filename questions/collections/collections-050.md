@@ -7,6 +7,7 @@ time: 10
 frequency: 85%
 source: Custom
 prerequisites: ["Java 8 Features", "Streams"]
+tags: [oop, spring-core, system-design, stream-api, memory, collections]
 ---
 
 # Collections vs Streams

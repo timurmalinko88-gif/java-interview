@@ -7,6 +7,7 @@ time: 7
 frequency: 80%
 source: Custom
 prerequisites: ["DI", "Spring Core"]
+tags: [oop, spring-core, system-design, patterns, multithreading, collections, exceptions, spring-boot]
 ---
 
 # How to handle Circular Dependencies in Spring?

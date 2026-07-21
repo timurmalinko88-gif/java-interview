@@ -7,6 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["Core Java", "Primitives", "Wrapper Classes"]
+tags: [oop, spring-core, stream-api, memory, collections]
 ---
 
 # Primitives vs Wrapper Classes

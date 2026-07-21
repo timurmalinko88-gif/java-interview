@@ -7,6 +7,7 @@ time: 10
 frequency: 50%
 source: Custom
 prerequisites: ["Garbage Collection", "Hashing"]
+tags: [oop, spring-core, system-design, stream-api, memory, multithreading, collections]
 ---
 
 # WeakHashMap

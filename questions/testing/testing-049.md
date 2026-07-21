@@ -7,6 +7,7 @@ time: 5
 frequency: 70%
 source: Custom
 prerequisites: ["OAuth2"]
+tags: [testing, spring-core]
 ---
 
 # OAuth2 Refresh Tokens

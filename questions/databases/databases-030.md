@@ -7,6 +7,7 @@ time: 4
 frequency: 95%
 source: Custom
 prerequisites: ["Database Design"]
+tags: [spring-core, system-design, databases, stream-api, collections]
 ---
 
 # What is Database Normalization?

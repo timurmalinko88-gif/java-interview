@@ -7,6 +7,7 @@ time: 10
 frequency: 85%
 source: Custom
 prerequisites: ["Concurrency", "Singleton", "volatile"]
+tags: [oop, spring-core, patterns, memory, multithreading, exceptions]
 ---
 
 # Double-Checked Locking Singleton

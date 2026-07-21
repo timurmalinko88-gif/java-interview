@@ -7,6 +7,7 @@ time: 5
 frequency: 90%
 source: Custom
 prerequisites: ["Core Java", "Exceptions"]
+tags: [oop, spring-core, databases, jvm, memory, exceptions]
 ---
 
 # Explain the Exception Hierarchy in Java

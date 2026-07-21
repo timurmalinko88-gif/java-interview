@@ -7,6 +7,7 @@ time: 5
 frequency: 75%
 source: Custom
 prerequisites: ["Concurrent Collections", "Locks"]
+tags: [oop, spring-core, patterns, stream-api, multithreading, collections]
 ---
 
 # ConcurrentHashMap vs SynchronizedMap

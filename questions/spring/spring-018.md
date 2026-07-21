@@ -7,6 +7,7 @@ time: 4
 frequency: 95%
 source: Custom
 prerequisites: ["Spring MVC"]
+tags: [oop, spring-core, spring-mvc]
 ---
 
 # @Controller vs @RestController

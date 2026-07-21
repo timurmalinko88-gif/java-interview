@@ -7,6 +7,7 @@ time: 10
 frequency: 60%
 source: Custom
 prerequisites: ["Reflection", "Core Java"]
+tags: [oop, spring-core, system-design, patterns, jvm, memory, multithreading, collections, exceptions]
 ---
 
 # Reflection Usage and Performance Implications

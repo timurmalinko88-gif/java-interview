@@ -7,6 +7,7 @@ time: 4
 frequency: 90%
 source: Custom
 prerequisites: ["JPA", "Hibernate"]
+tags: [oop, spring-core, databases, stream-api, collections, spring-data]
 ---
 
 # What is Spring Data JPA?

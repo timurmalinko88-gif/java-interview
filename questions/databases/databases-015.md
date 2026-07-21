@@ -7,6 +7,7 @@ time: 6
 frequency: 80%
 source: Custom
 prerequisites: ["Indexes", "Data Structures"]
+tags: [spring-core, databases, stream-api, memory, collections]
 ---
 
 # B-Tree vs. Hash Indexes.

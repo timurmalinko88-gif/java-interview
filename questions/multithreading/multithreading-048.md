@@ -7,6 +7,7 @@ time: 5
 frequency: 65%
 source: Custom
 prerequisites: ["Concurrency", "Exceptions", "Thread"]
+tags: [oop, spring-core, system-design, stream-api, jvm, memory, multithreading, collections, exceptions]
 ---
 
 # Uncaught Exceptions in Threads

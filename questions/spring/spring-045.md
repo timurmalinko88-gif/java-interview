@@ -7,6 +7,7 @@ time: 5
 frequency: 70%
 source: Custom
 prerequisites: ["Spring Boot"]
+tags: [spring-core, system-design, stream-api, jvm, memory, spring-mvc, collections, spring-boot]
 ---
 
 # What is Spring Boot Actuator?

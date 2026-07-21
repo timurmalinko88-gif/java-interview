@@ -7,6 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["Clean Code"]
+tags: [spring-core, patterns, databases, stream-api, memory, multithreading]
 ---
 
 # DRY (Don't Repeat Yourself)

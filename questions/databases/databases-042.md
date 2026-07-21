@@ -7,6 +7,7 @@ time: 5
 frequency: 75%
 source: Custom
 prerequisites: ["Spring", "Transactions"]
+tags: [databases, spring-core, collections, exceptions]
 ---
 
 # Explain Transaction Propagation in Spring/Java.

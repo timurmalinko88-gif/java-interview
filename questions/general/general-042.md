@@ -7,6 +7,7 @@ time: 5
 frequency: 90%
 source: Custom
 prerequisites: ["Core Java"]
+tags: [oop, spring-core, stream-api, jvm, memory, multithreading, collections]
 ---
 
 # JVM vs JRE vs JDK

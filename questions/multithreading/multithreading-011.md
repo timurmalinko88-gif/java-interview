@@ -7,6 +7,7 @@ time: 5
 frequency: 80%
 source: Custom
 prerequisites: ["Concurrency", "Object Methods"]
+tags: [spring-core, oop, memory, multithreading]
 ---
 
 # `Thread.sleep()` vs `Object.wait()`

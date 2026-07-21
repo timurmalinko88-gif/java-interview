@@ -7,6 +7,7 @@ time: 20
 frequency: 75%
 source: Custom
 prerequisites: ["API Design", "Security"]
+tags: [spring-core, system-design, patterns, memory, multithreading]
 ---
 
 # Rate Limiting (Token Bucket Algorithm)

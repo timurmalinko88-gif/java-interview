@@ -7,6 +7,7 @@ time: 3
 frequency: 90%
 source: Custom
 prerequisites: ["JPA", "Hibernate"]
+tags: [oop, spring-core, system-design, patterns, databases, multithreading, spring-data]
 ---
 
 # What is the JPA EntityManager?

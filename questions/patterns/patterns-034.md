@@ -7,6 +7,7 @@ time: 5
 frequency: 95%
 source: Custom
 prerequisites: ["Clean Code"]
+tags: [oop, spring-core, patterns, databases, stream-api]
 ---
 
 # Anti-pattern: Magic Numbers / Magic Strings

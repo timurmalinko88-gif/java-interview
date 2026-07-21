@@ -7,6 +7,7 @@ time: 7
 frequency: 80%
 source: Custom
 prerequisites: ["IoC Container"]
+tags: [oop, spring-core, system-design, patterns, memory, multithreading, collections, exceptions]
 ---
 
 # BeanFactory vs ApplicationContext

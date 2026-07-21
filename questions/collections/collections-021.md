@@ -7,6 +7,7 @@ time: 5
 frequency: 45%
 source: Custom
 prerequisites: ["Enums"]
+tags: [oop, spring-core, system-design, databases, stream-api, memory, collections]
 ---
 
 # EnumMap

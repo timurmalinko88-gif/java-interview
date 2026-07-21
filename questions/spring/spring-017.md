@@ -7,6 +7,7 @@ time: 8
 frequency: 85%
 source: Custom
 prerequisites: ["DispatcherServlet"]
+tags: [oop, spring-core, stream-api, spring-mvc, multithreading, collections]
 ---
 
 # Explain the Spring MVC Request Processing flow.

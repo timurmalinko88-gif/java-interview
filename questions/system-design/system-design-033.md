@@ -7,6 +7,7 @@ time: 20
 frequency: 80%
 source: Custom
 prerequisites: ["API Design", "Databases"]
+tags: [spring-core, system-design, databases, spring-mvc, collections, exceptions]
 ---
 
 # API Pagination (Offset vs Cursor)

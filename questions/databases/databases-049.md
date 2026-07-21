@@ -7,6 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["Databases"]
+tags: [spring-core, system-design, databases, stream-api, memory, multithreading, collections]
 ---
 
 # SQL vs. NoSQL Databases.

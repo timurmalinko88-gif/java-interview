@@ -7,6 +7,7 @@ time: 7
 frequency: 60%
 source: Custom
 prerequisites: ["@Bean", "@Configuration"]
+tags: [oop, spring-core, patterns]
 ---
 
 # Explain @Configuration and Full vs Lite @Bean mode.

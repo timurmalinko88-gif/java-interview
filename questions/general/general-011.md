@@ -7,6 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["Core Java", "Keywords"]
+tags: [oop, spring-core, stream-api, memory, multithreading, collections, exceptions]
 ---
 
 # Final, Finally, and Finalize

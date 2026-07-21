@@ -7,6 +7,7 @@ time: 4
 frequency: 85%
 source: Custom
 prerequisites: ["Hibernate", "JPA"]
+tags: [oop, spring-core, system-design, databases, stream-api, multithreading, collections, spring-data]
 ---
 
 # What is the First-Level Cache in Hibernate?

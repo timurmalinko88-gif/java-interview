@@ -7,6 +7,7 @@ time: 15
 frequency: 85%
 source: Custom
 prerequisites: ["System Design", "Hashing", "Databases"]
+tags: [spring-core, system-design, databases, stream-api, collections]
 ---
 
 # Design a URL Shortening Service (like bit.ly)

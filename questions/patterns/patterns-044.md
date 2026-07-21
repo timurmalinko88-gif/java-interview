@@ -7,6 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["Clean Code"]
+tags: [oop, spring-core, patterns]
 ---
 
 # Clean Code: Functions

@@ -7,6 +7,7 @@ time: 20
 frequency: 70%
 source: Custom
 prerequisites: ["Data Structures", "Search"]
+tags: [spring-core, system-design, databases, stream-api, collections]
 ---
 
 # Search Engines / Inverted Index

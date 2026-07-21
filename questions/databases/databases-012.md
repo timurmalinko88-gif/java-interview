@@ -7,6 +7,7 @@ time: 3
 frequency: 70%
 source: Custom
 prerequisites: ["Database Design"]
+tags: [spring-core, system-design, databases, multithreading, collections]
 ---
 
 # Explain First Normal Form (1NF).

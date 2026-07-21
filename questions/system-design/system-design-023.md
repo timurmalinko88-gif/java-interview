@@ -7,6 +7,7 @@ time: 15
 frequency: 80%
 source: Custom
 prerequisites: ["Databases", "Data Structures"]
+tags: [databases, spring-core, system-design]
 ---
 
 # Database Indexes (B-Tree vs Hash)

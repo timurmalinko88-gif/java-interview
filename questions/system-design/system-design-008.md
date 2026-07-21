@@ -7,6 +7,7 @@ time: 20
 frequency: 75%
 source: Custom
 prerequisites: ["Observability", "Microservices"]
+tags: [spring-core, system-design, stream-api, memory, exceptions]
 ---
 
 # Distributed Tracing and Correlation IDs

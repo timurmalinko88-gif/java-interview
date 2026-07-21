@@ -7,6 +7,7 @@ time: 10
 frequency: 60%
 source: Custom
 prerequisites: ["Mockito"]
+tags: [testing, oop, spring-core, system-design]
 ---
 
 # Mockito ArgumentCaptor

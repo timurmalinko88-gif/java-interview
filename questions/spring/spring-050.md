@@ -7,6 +7,7 @@ time: 5
 frequency: 90%
 source: Custom
 prerequisites: ["Spring Boot"]
+tags: [oop, spring-core, testing, collections, exceptions, spring-boot]
 ---
 
 # Explain Spring Profiles and externalized configuration.

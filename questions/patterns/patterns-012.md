@@ -7,6 +7,7 @@ time: 5
 frequency: 45%
 source: Custom
 prerequisites: ["OOP", "Design Patterns", "Memory Management"]
+tags: [oop, spring-core, system-design, patterns, stream-api, memory]
 ---
 
 # What is the Flyweight Pattern?

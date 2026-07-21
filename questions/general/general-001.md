@@ -3,6 +3,7 @@ id: general-001
 topic: General
 format: Code Review
 level: Middle
+tags: [oop, spring-core, multithreading]
 ---
 
 Find the bug in the following code and explain how to fix it:

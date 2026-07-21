@@ -7,6 +7,7 @@ time: 10
 frequency: 85%
 source: Custom
 prerequisites: ["Basics", "Collections"]
+tags: [oop, spring-core, system-design, stream-api, jvm, memory, collections]
 ---
 
 # Primitive vs Wrapper Types in Data Structures

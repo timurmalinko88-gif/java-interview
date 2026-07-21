@@ -7,6 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["Spring Data JPA"]
+tags: [oop, spring-core, databases, collections, spring-data]
 ---
 
 # How do Derived Query Methods work?

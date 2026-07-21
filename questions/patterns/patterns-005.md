@@ -7,6 +7,7 @@ time: 5
 frequency: 90%
 source: Custom
 prerequisites: ["OOP", "Design Patterns"]
+tags: [oop, spring-core, system-design, patterns, stream-api, collections, exceptions]
 ---
 
 # What is the Builder Pattern?

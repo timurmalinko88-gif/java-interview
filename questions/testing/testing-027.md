@@ -7,6 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["JUnit 5"]
+tags: [oop, spring-core, testing, stream-api, exceptions]
 ---
 
 # JUnit 5 assertThrows

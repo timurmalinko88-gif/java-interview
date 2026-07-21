@@ -7,6 +7,7 @@ time: 20
 frequency: 65%
 source: Custom
 prerequisites: ["CDN", "Networking"]
+tags: [spring-core, system-design, patterns, multithreading, collections]
 ---
 
 # Content Delivery Network (CDN) - Dynamic Content

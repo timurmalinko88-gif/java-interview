@@ -7,6 +7,7 @@ time: 5
 frequency: 75%
 source: Custom
 prerequisites: ["Enums", "Design Patterns"]
+tags: [oop, spring-core, system-design, patterns, jvm, multithreading, collections]
 ---
 
 # Singleton Pattern using Enums

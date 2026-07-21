@@ -7,6 +7,7 @@ time: 5
 frequency: 40%
 source: Custom
 prerequisites: ["Stream API"]
+tags: [oop, spring-core, stream-api, memory, multithreading, collections]
 ---
 
 # mapMulti()

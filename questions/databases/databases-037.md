@@ -7,6 +7,7 @@ time: 5
 frequency: 70%
 source: Custom
 prerequisites: ["Hibernate", "First-Level Cache"]
+tags: [spring-core, system-design, patterns, databases, stream-api, multithreading, collections, spring-data, exceptions]
 ---
 
 # What is the Second-Level Cache in Hibernate?

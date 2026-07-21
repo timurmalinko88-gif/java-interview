@@ -7,6 +7,7 @@ time: 5
 frequency: 80%
 source: Custom
 prerequisites: ["JWT"]
+tags: [testing, system-design, spring-core, collections]
 ---
 
 # JWT Security Risks

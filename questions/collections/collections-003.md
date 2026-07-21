@@ -7,6 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["Hashing"]
+tags: [oop, spring-core, stream-api, jvm, multithreading, collections, exceptions]
 ---
 
 # HashMap vs HashTable

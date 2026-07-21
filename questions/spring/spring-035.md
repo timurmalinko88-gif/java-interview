@@ -7,6 +7,7 @@ time: 4
 frequency: 70%
 source: Custom
 prerequisites: ["@Transactional"]
+tags: [spring-core, databases, memory, multithreading, collections, spring-data, exceptions]
 ---
 
 # Why use @Transactional(readOnly = true)?

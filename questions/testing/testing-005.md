@@ -7,6 +7,7 @@ time: 10
 frequency: 85%
 source: Custom
 prerequisites: ["HTTP"]
+tags: [oop, spring-core, system-design, databases, testing, multithreading]
 ---
 
 # REST vs SOAP

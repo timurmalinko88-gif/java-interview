@@ -7,6 +7,7 @@ time: 8
 frequency: 50%
 source: Custom
 prerequisites: ["Concurrency", "Context Switching"]
+tags: [spring-core, system-design, memory, multithreading]
 ---
 
 # Context Switching Overhead

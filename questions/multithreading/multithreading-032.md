@@ -7,6 +7,7 @@ time: 5
 frequency: 90%
 source: Custom
 prerequisites: ["Concurrency", "ExecutorService", "Thread"]
+tags: [spring-core, system-design, patterns, memory, multithreading, collections, exceptions]
 ---
 
 # `ExecutorService` vs Direct `Thread` Creation

@@ -7,6 +7,7 @@ time: 15
 frequency: 80%
 source: Custom
 prerequisites: ["Microservices", "Resiliency"]
+tags: [spring-core, system-design, patterns, testing, multithreading, collections, exceptions]
 ---
 
 # Circuit Breaker Pattern

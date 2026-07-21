@@ -7,6 +7,7 @@ time: 10
 frequency: 95%
 source: Custom
 prerequisites: ["Object Methods", "Hashing"]
+tags: [oop, spring-core, stream-api, memory, collections]
 ---
 
 # hashCode() and equals() Contract

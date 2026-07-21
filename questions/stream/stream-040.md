@@ -7,6 +7,7 @@ time: 5
 frequency: 70%
 source: Custom
 prerequisites: ["Lambdas"]
+tags: [spring-core, oop, stream-api, memory]
 ---
 
 # Predicate Composition

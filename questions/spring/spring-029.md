@@ -7,6 +7,7 @@ time: 5
 frequency: 75%
 source: Custom
 prerequisites: ["Spring Data JPA"]
+tags: [oop, spring-core, databases, collections, spring-data]
 ---
 
 # Explain the @Query annotation in Spring Data.

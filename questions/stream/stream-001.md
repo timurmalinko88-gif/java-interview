@@ -7,6 +7,7 @@ time: 5
 frequency: 95%
 source: Custom
 prerequisites: ["Core Java"]
+tags: [oop, spring-core, system-design, patterns, stream-api, multithreading, collections]
 ---
 
 # What is the Stream API in Java and why was it introduced?

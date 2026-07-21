@@ -7,6 +7,7 @@ time: 10
 frequency: 25%
 source: Custom
 prerequisites: ["OOP", "Design Patterns", "Double Dispatch"]
+tags: [oop, spring-core, system-design, patterns]
 ---
 
 # What is the Visitor Pattern?

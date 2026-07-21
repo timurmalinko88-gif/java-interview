@@ -8,6 +8,7 @@ frequency: High
 related_questions: [Difference between volatile and synchronized, What is happens-before]
 source: Custom
 prerequisites: [Basic understanding of threads, volatile keyword]
+tags: [spring-core, memory, multithreading]
 ---
 
 You have a user profile view counter implemented as follows:

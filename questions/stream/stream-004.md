@@ -7,6 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["Core Java"]
+tags: [oop, spring-core, stream-api, multithreading, collections, exceptions]
 ---
 
 # What is an Optional and how does it prevent NullPointerException?

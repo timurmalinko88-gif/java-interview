@@ -7,6 +7,7 @@ time: 6
 frequency: 70%
 source: Custom
 prerequisites: ["Distributed Systems", "Transactions"]
+tags: [spring-core, system-design, databases, multithreading, collections]
 ---
 
 # What is a Two-Phase Commit (2PC)?

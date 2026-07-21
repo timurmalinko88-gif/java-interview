@@ -7,6 +7,7 @@ time: 4
 frequency: 85%
 source: Custom
 prerequisites: ["Spring MVC"]
+tags: [oop, spring-core, stream-api, spring-mvc, collections]
 ---
 
 # Explain @RequestBody and @ResponseBody.

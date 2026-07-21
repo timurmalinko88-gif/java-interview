@@ -7,6 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["Concurrency", "synchronized"]
+tags: [spring-core, oop, multithreading, collections]
 ---
 
 # `synchronized` Method vs Block

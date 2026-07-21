@@ -7,6 +7,7 @@ time: 5
 frequency: 60%
 source: Custom
 prerequisites: ["Stream API"]
+tags: [oop, spring-core, patterns, databases, stream-api, memory, multithreading, collections, spring-data, exceptions]
 ---
 
 # Custom Collectors

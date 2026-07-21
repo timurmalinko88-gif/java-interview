@@ -7,6 +7,7 @@ time: 5
 frequency: 40%
 source: Custom
 prerequisites: ["OOP", "Design Patterns"]
+tags: [oop, spring-core, system-design, patterns]
 ---
 
 # What is the Memento Pattern?

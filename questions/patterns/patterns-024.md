@@ -7,6 +7,7 @@ time: 5
 frequency: 95%
 source: Custom
 prerequisites: ["OOP", "SOLID"]
+tags: [oop, spring-core, patterns, testing, exceptions, spring-data]
 ---
 
 # Single Responsibility Principle (SRP)

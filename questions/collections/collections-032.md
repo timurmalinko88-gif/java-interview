@@ -7,6 +7,7 @@ time: 5
 frequency: 30%
 source: Custom
 prerequisites: ["Concurrency"]
+tags: [oop, spring-core, stream-api, memory, multithreading, collections, exceptions]
 ---
 
 # PriorityBlockingQueue

@@ -7,6 +7,7 @@ time: 4
 frequency: 85%
 source: Custom
 prerequisites: ["JDBC", "Performance"]
+tags: [spring-boot, system-design, spring-core, collections]
 ---
 
 # What is Database Connection Pooling?

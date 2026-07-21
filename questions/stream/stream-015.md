@@ -7,6 +7,7 @@ time: 5
 frequency: 70%
 source: Custom
 prerequisites: ["Stream API"]
+tags: [spring-core, stream-api]
 ---
 
 # Short-circuiting Operations

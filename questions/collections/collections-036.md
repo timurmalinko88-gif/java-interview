@@ -7,6 +7,7 @@ time: 5
 frequency: 60%
 source: Custom
 prerequisites: ["Data Structures"]
+tags: [spring-core, oop, stream-api, collections]
 ---
 
 # HashSet vs HashMap

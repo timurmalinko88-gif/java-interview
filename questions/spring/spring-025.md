@@ -7,6 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["Spring MVC", "Web Concepts"]
+tags: [oop, spring-core, stream-api, spring-mvc, multithreading, collections]
 ---
 
 # How do you resolve CORS issues in Spring?

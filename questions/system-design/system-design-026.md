@@ -7,6 +7,7 @@ time: 15
 frequency: 85%
 source: Custom
 prerequisites: ["Architecture", "Resiliency"]
+tags: [spring-core, system-design, patterns, stream-api, collections]
 ---
 
 # Single Point of Failure (SPOF)

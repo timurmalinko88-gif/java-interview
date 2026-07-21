@@ -7,6 +7,7 @@ time: 5
 frequency: 80%
 source: Custom
 prerequisites: ["@Transactional"]
+tags: [oop, spring-core, databases, exceptions, spring-data]
 ---
 
 # What triggers a rollback in Spring Transactions?

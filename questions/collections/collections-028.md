@@ -7,6 +7,7 @@ time: 5
 frequency: 40%
 source: Custom
 prerequisites: ["Interfaces"]
+tags: [oop, spring-core, testing, stream-api, collections]
 ---
 
 # NavigableMap Interface

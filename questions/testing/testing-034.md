@@ -7,6 +7,7 @@ time: 5
 frequency: 70%
 source: Custom
 prerequisites: ["TCP/IP"]
+tags: [testing, spring-core, multithreading]
 ---
 
 # TCP 3-Way Handshake

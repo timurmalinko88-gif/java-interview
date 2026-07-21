@@ -7,6 +7,7 @@ time: 5
 frequency: 80%
 source: Custom
 prerequisites: ["Spring MVC"]
+tags: [spring-core, system-design, patterns, stream-api, spring-mvc, collections, exceptions]
 ---
 
 # What is the DispatcherServlet in Spring MVC?

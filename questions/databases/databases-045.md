@@ -7,6 +7,7 @@ time: 5
 frequency: 65%
 source: Custom
 prerequisites: ["JPA", "Hibernate"]
+tags: [oop, spring-core, patterns, databases, stream-api, exceptions, spring-data]
 ---
 
 # Criteria API vs. JPQL.

@@ -7,6 +7,7 @@ time: 4
 frequency: 80%
 source: Custom
 prerequisites: ["Spring Data JPA"]
+tags: [oop, spring-core, system-design, stream-api, multithreading, collections, spring-data]
 ---
 
 # CrudRepository vs JpaRepository

@@ -7,6 +7,7 @@ time: 10
 frequency: 60%
 source: Custom
 prerequisites: ["OOP", "Design Patterns"]
+tags: [oop, spring-core, system-design, patterns, stream-api, exceptions]
 ---
 
 # Chain of Responsibility Pattern

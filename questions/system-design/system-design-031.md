@@ -7,6 +7,7 @@ time: 15
 frequency: 70%
 source: Custom
 prerequisites: ["Distributed Systems", "Resiliency"]
+tags: [spring-core, system-design, stream-api, memory, multithreading, collections]
 ---
 
 # Heartbeats and Failure Detection

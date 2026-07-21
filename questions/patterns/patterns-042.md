@@ -7,6 +7,7 @@ time: 5
 frequency: 80%
 source: Custom
 prerequisites: ["Anti-patterns"]
+tags: [spring-core, oop, memory, patterns]
 ---
 
 # Anti-pattern: Copy-Paste Programming

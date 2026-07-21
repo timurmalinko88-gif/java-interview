@@ -7,6 +7,7 @@ time: 5
 frequency: 75%
 source: Custom
 prerequisites: ["OOP", "Design Patterns", "Anti-patterns"]
+tags: [oop, spring-core, system-design, patterns, testing, collections]
 ---
 
 # Anti-pattern: God Object

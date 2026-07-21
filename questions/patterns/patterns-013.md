@@ -7,6 +7,7 @@ time: 10
 frequency: 80%
 source: Custom
 prerequisites: ["OOP", "Design Patterns"]
+tags: [oop, spring-core, system-design, patterns]
 ---
 
 # Proxy Pattern vs Decorator Pattern

@@ -7,6 +7,7 @@ time: 2
 frequency: 90%
 source: Custom
 prerequisites: ["ORM", "JPA"]
+tags: [oop, spring-core, databases, stream-api, memory, collections, spring-data]
 ---
 
 # What is the difference between an Entity and a Table?

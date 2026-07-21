@@ -7,6 +7,7 @@ time: 5
 frequency: 90%
 source: Custom
 prerequisites: ["Clean Code"]
+tags: [oop, spring-core, system-design, patterns]
 ---
 
 # KISS (Keep It Simple, Stupid)

@@ -7,6 +7,7 @@ time: 5
 frequency: 80%
 source: Custom
 prerequisites: ["Clean Code"]
+tags: [testing, spring-core, patterns]
 ---
 
 # YAGNI (You Aren't Gonna Need It)

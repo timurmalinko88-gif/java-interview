@@ -7,6 +7,7 @@ time: 20
 frequency: 65%
 source: Custom
 prerequisites: ["Distributed Systems", "Consensus Algorithms"]
+tags: [system-design, oop, spring-core, multithreading]
 ---
 
 # Vector Clocks

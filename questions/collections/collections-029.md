@@ -7,6 +7,7 @@ time: 5
 frequency: 30%
 source: Custom
 prerequisites: ["Interfaces"]
+tags: [oop, spring-core, testing, stream-api, multithreading, collections]
 ---
 
 # NavigableSet Interface

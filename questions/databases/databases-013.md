@@ -7,6 +7,7 @@ time: 4
 frequency: 65%
 source: Custom
 prerequisites: ["Database Design", "1NF"]
+tags: [spring-core, oop, stream-api, system-design]
 ---
 
 # Explain Second Normal Form (2NF).

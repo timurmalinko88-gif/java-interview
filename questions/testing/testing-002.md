@@ -7,6 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["Mockito"]
+tags: [oop, spring-core, testing, collections, spring-data]
 ---
 
 # @Mock vs @InjectMocks

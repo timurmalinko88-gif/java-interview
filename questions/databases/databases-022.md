@@ -7,6 +7,7 @@ time: 3
 frequency: 75%
 source: Custom
 prerequisites: ["SQL"]
+tags: [databases, spring-core, system-design]
 ---
 
 # Primary Key vs. Candidate Key vs. Super Key.

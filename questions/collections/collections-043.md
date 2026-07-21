@@ -7,6 +7,7 @@ time: 5
 frequency: 70%
 source: Custom
 prerequisites: ["Hashing"]
+tags: [spring-core, system-design, stream-api, memory, multithreading, collections]
 ---
 
 # Load Factor in HashMap

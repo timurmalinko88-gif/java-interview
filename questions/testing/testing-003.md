@@ -7,6 +7,7 @@ time: 10
 frequency: 70%
 source: Custom
 prerequisites: ["Integration Testing", "Docker"]
+tags: [spring-core, system-design, testing, databases, memory, collections, exceptions]
 ---
 
 # Testcontainers Overview

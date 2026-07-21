@@ -7,6 +7,7 @@ time: 5
 frequency: 90%
 source: Custom
 prerequisites: ["JUnit"]
+tags: [oop, spring-core, system-design, testing, stream-api, jvm, multithreading, exceptions]
 ---
 
 # JUnit 5 vs JUnit 4

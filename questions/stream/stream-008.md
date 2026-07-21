@@ -7,6 +7,7 @@ time: 10
 frequency: 75%
 source: Custom
 prerequisites: ["Parallel Streams"]
+tags: [spring-core, system-design, databases, stream-api, memory, multithreading, collections]
 ---
 
 # When to avoid Parallel Streams?

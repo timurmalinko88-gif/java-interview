@@ -7,6 +7,7 @@ time: 5
 frequency: 90%
 source: Custom
 prerequisites: ["Spring Core"]
+tags: [oop, spring-core, system-design, databases, stream-api, spring-mvc, collections, exceptions, spring-data]
 ---
 
 # Explain @Component, @Service, @Repository, and @Controller stereotypes.

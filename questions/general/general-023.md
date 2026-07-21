@@ -7,6 +7,7 @@ time: 12
 frequency: 85%
 source: Custom
 prerequisites: ["Core Java", "Basics"]
+tags: [oop, spring-core, testing, stream-api, memory, collections]
 ---
 
 # Pass by value semantics: Modifying vs Reassigning

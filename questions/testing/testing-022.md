@@ -7,6 +7,7 @@ time: 5
 frequency: 70%
 source: Custom
 prerequisites: ["Testing"]
+tags: [spring-core, testing, memory, collections]
 ---
 
 # Test Coverage

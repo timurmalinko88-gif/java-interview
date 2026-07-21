@@ -7,6 +7,7 @@ time: 6
 frequency: 60%
 source: Custom
 prerequisites: ["@Transactional", "Databases"]
+tags: [databases, spring-core, multithreading]
 ---
 
 # What are Transaction Isolation Levels in Spring?

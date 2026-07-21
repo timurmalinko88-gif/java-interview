@@ -7,6 +7,7 @@ time: 6
 frequency: 95%
 source: Custom
 prerequisites: ["Core Java", "Memory"]
+tags: [spring-core, oop, memory, collections]
 ---
 
 # Pass by Value vs Pass by Reference

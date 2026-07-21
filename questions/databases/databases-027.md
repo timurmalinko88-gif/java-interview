@@ -7,6 +7,7 @@ time: 3
 frequency: 80%
 source: Custom
 prerequisites: ["Transactions", "ACID"]
+tags: [spring-core, multithreading, collections, databases]
 ---
 
 # What is a Non-Repeatable Read?

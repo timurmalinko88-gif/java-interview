@@ -7,6 +7,7 @@ time: 20
 frequency: 60%
 source: Custom
 prerequisites: ["Databases"]
+tags: [spring-core, memory, system-design, databases]
 ---
 
 # Write-Ahead Logging (WAL)

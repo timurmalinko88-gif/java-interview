@@ -7,6 +7,7 @@ time: 5
 frequency: 90%
 source: Custom
 prerequisites: ["Stream API"]
+tags: [spring-core, stream-api, collections]
 ---
 
 # What is the difference between map() and flatMap()?

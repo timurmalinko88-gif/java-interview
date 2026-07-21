@@ -133,7 +133,8 @@ def build_index():
             'title': title if title else os.path.splitext(os.path.basename(filepath))[0],
             'time': metadata.get('estimated_time_minutes', ''),
             'frequency': metadata.get('frequency', ''),
-            'related': metadata.get('related_questions', [])
+            'related': metadata.get('related_questions', []),
+            'tags': metadata.get('tags', [])
         })
 
     # Сохраняем итоговый индекс

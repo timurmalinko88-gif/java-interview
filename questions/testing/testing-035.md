@@ -7,6 +7,7 @@ time: 10
 frequency: 85%
 source: Custom
 prerequisites: ["Security"]
+tags: [testing, system-design, spring-core, collections]
 ---
 
 # JWT vs Sessions

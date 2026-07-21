@@ -7,6 +7,7 @@ time: 5
 frequency: 40%
 source: Custom
 prerequisites: ["Arrays"]
+tags: [oop, spring-core, stream-api, jvm, memory, collections]
 ---
 
 # Arrays.copyOf vs System.arraycopy

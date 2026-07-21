@@ -7,6 +7,7 @@ time: 10
 frequency: 50%
 source: Custom
 prerequisites: ["Concurrency", "Livelock"]
+tags: [oop, spring-core, multithreading, exceptions]
 ---
 
 # Livelock vs Deadlock

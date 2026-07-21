@@ -7,6 +7,7 @@ time: 8
 frequency: 80%
 source: Custom
 prerequisites: ["@Transactional"]
+tags: [spring-core, memory, exceptions, databases]
 ---
 
 # What are the Spring Transaction Propagation behaviors?

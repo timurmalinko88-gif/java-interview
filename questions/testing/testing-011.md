@@ -7,6 +7,7 @@ time: 5
 frequency: 75%
 source: Custom
 prerequisites: ["JUnit 5"]
+tags: [spring-core, testing, stream-api]
 ---
 
 # JUnit 5 @ParameterizedTest

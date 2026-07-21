@@ -7,6 +7,7 @@ time: 15
 frequency: 75%
 source: Custom
 prerequisites: ["Microservices", "Networking"]
+tags: [system-design, spring-core, collections]
 ---
 
 # Service Discovery (Consul / Eureka)

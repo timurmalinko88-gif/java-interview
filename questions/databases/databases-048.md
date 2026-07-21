@@ -7,6 +7,7 @@ time: 4
 frequency: 95%
 source: Custom
 prerequisites: ["JPA"]
+tags: [oop, spring-core, stream-api, collections, spring-data]
 ---
 
 # Basic JPA Annotations.

@@ -7,6 +7,7 @@ time: 5
 frequency: 80%
 source: Custom
 prerequisites: ["TDD"]
+tags: [spring-core, system-design, patterns, testing, exceptions]
 ---
 
 # TDD Cycle (Red-Green-Refactor)

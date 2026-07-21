@@ -7,6 +7,7 @@ time: 5
 frequency: 60%
 source: Custom
 prerequisites: ["Integration Testing", "Spring Boot"]
+tags: [spring-core, testing, memory, spring-boot]
 ---
 
 # Integration Test Database

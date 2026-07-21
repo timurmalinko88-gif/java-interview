@@ -7,6 +7,7 @@ time: 7
 frequency: 50%
 source: Custom
 prerequisites: ["Spring MVC", "REST"]
+tags: [oop, spring-core, patterns, spring-mvc, multithreading, spring-boot]
 ---
 
 # How does Content Negotiation work in Spring?

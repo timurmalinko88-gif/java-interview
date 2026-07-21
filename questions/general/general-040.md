@@ -7,6 +7,7 @@ time: 5
 frequency: 80%
 source: Custom
 prerequisites: ["Static", "Final"]
+tags: [oop, spring-core, databases, multithreading, collections, exceptions]
 ---
 
 # Static vs Final Modifiers

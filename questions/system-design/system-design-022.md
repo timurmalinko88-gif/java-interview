@@ -7,6 +7,7 @@ time: 20
 frequency: 80%
 source: Custom
 prerequisites: ["Databases", "Replication"]
+tags: [oop, spring-core, system-design, stream-api, memory, multithreading]
 ---
 
 # Master-Slave vs Peer-to-Peer Replication

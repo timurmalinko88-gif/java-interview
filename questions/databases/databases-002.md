@@ -7,6 +7,7 @@ time: 7
 frequency: 85%
 source: Custom
 prerequisites: ["Hibernate", "JPA", "SQL"]
+tags: [oop, spring-core, patterns, databases, stream-api, multithreading, collections, spring-data]
 ---
 
 # What is the N+1 problem in Hibernate, and how do you solve it?

@@ -7,6 +7,7 @@ time: 5
 frequency: 80%
 source: Custom
 prerequisites: ["Data Structures"]
+tags: [oop, spring-core, stream-api, collections, exceptions]
 ---
 
 # TreeSet vs HashSet

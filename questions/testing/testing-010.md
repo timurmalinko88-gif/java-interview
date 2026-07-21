@@ -7,6 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["QA"]
+tags: [spring-core, testing, memory]
 ---
 
 # QA Test Pyramid

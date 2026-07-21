@@ -7,6 +7,7 @@ time: 10
 frequency: 40%
 source: Custom
 prerequisites: ["Core Java", "Inheritance"]
+tags: [spring-core, oop, memory]
 ---
 
 # Can you explain the concept of covariant return types?

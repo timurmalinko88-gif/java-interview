@@ -7,6 +7,7 @@ time: 5
 frequency: 75%
 source: Custom
 prerequisites: ["HTTP"]
+tags: [testing, spring-core]
 ---
 
 # REST Idempotency

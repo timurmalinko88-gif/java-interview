@@ -7,6 +7,7 @@ time: 4
 frequency: 70%
 source: Custom
 prerequisites: ["AOP Concepts"]
+tags: [spring-core, databases, exceptions, multithreading, collections]
 ---
 
 # What are the different types of Advice in Spring AOP?

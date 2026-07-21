@@ -7,6 +7,7 @@ time: 8
 frequency: 80%
 source: Custom
 prerequisites: ["Concurrency", "Thread Interruption"]
+tags: [oop, spring-core, multithreading, exceptions]
 ---
 
 # Stopping a Thread

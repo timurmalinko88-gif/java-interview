@@ -7,6 +7,7 @@ time: 3
 frequency: 60%
 source: Custom
 prerequisites: ["SQL"]
+tags: [databases, testing, spring-core, collections]
 ---
 
 # What is a CROSS JOIN?

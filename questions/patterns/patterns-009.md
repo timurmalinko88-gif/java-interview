@@ -7,6 +7,7 @@ time: 5
 frequency: 60%
 source: Custom
 prerequisites: ["OOP", "Design Patterns", "Recursion"]
+tags: [oop, spring-core, system-design, patterns]
 ---
 
 # What is the Composite Pattern?

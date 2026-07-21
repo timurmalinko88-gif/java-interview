@@ -7,6 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["Generics", "Core Java"]
+tags: [oop, spring-core, jvm, collections, exceptions]
 ---
 
 # Type Erasure in Java Generics

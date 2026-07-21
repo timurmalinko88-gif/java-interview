@@ -7,6 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["HTTP"]
+tags: [testing, spring-core, multithreading]
 ---
 
 # HTTP vs HTTPS

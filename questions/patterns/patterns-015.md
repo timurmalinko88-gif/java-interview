@@ -7,6 +7,7 @@ time: 5
 frequency: 65%
 source: Custom
 prerequisites: ["OOP", "Design Patterns"]
+tags: [oop, spring-core, system-design, patterns, memory, multithreading, collections]
 ---
 
 # What is the Command Pattern?

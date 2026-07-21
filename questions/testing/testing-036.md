@@ -7,6 +7,7 @@ time: 5
 frequency: 60%
 source: Custom
 prerequisites: ["OAuth2"]
+tags: [spring-core, testing, stream-api]
 ---
 
 # OAuth2 Grant Types

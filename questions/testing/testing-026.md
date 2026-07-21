@@ -7,6 +7,7 @@ time: 5
 frequency: 80%
 source: Custom
 prerequisites: ["REST"]
+tags: [testing, spring-core, spring-mvc]
 ---
 
 # REST API Versioning

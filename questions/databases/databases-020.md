@@ -7,6 +7,7 @@ time: 4
 frequency: 70%
 source: Custom
 prerequisites: ["SQL"]
+tags: [oop, spring-core, system-design, databases, stream-api, multithreading, collections]
 ---
 
 # What is a Stored Procedure?

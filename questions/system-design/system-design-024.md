@@ -7,6 +7,7 @@ time: 20
 frequency: 70%
 source: Custom
 prerequisites: ["Data Structures", "Caching"]
+tags: [spring-core, system-design, testing, stream-api, memory, collections]
 ---
 
 # Bloom Filters

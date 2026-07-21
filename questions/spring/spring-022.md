@@ -7,6 +7,7 @@ time: 5
 frequency: 75%
 source: Custom
 prerequisites: ["Spring MVC"]
+tags: [oop, spring-core, patterns, stream-api, spring-mvc, collections, spring-data]
 ---
 
 # What is ResponseEntity in Spring?

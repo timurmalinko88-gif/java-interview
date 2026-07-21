@@ -7,6 +7,7 @@ time: 5
 frequency: 50%
 source: Custom
 prerequisites: ["Mockito", "BDD"]
+tags: [spring-core, testing, memory]
 ---
 
 # BDDMockito

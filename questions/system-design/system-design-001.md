@@ -7,6 +7,7 @@ time: 15
 frequency: 80%
 source: Custom
 prerequisites: ["Distributed Systems"]
+tags: [spring-core, system-design, databases, memory, multithreading, exceptions]
 ---
 
 # Explain the CAP Theorem and its implications

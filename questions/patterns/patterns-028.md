@@ -7,6 +7,7 @@ time: 10
 frequency: 95%
 source: Custom
 prerequisites: ["OOP", "SOLID", "Dependency Injection"]
+tags: [oop, spring-core, system-design, patterns]
 ---
 
 # Dependency Inversion Principle (DIP)

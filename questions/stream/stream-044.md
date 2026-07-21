@@ -7,6 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["Lambdas", "Collections"]
+tags: [spring-core, oop, stream-api, collections]
 ---
 
 # Map.forEach() and BiConsumer

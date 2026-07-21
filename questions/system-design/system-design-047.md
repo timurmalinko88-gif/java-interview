@@ -7,6 +7,7 @@ time: 20
 frequency: 65%
 source: Custom
 prerequisites: ["Networking", "Load Balancing"]
+tags: [spring-core, system-design, testing, stream-api, collections]
 ---
 
 # Geo-DNS and Anycast

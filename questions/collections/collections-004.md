@@ -7,6 +7,7 @@ time: 15
 frequency: 80%
 source: Custom
 prerequisites: ["Concurrency", "Hashing"]
+tags: [spring-core, system-design, stream-api, memory, multithreading, collections]
 ---
 
 # ConcurrentHashMap Internal Working
