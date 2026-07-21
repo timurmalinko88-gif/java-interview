@@ -184,6 +184,12 @@
                     <i class="fa-solid fa-graduation-cap"></i>
                     <span class="hidden sm:inline">Adaptive Plan</span>
                 </button>
+                
+                <!-- My Roadmap Button (hidden by default) -->
+                <button id="my-roadmap-btn" class="hidden items-center space-x-1 border border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-white px-3 py-1.5 rounded-lg text-sm font-semibold transition-all-300">
+                    <i class="fa-solid fa-map"></i>
+                    <span class="hidden sm:inline">My Roadmap</span>
+                </button>
 
                 <!-- Spaced Repetition Mode / Blitz -->
                 <button id="blitz-btn" class="flex items-center space-x-1 bg-brand-500 hover:bg-brand-600 text-white px-3 py-1.5 rounded-lg text-sm font-semibold shadow-md shadow-brand-500/10 transition-all-300 hover:scale-[1.03]">
@@ -1432,6 +1438,11 @@
                 savePersistence();
                 syncActionButtons(activeId);
                 buildSidebarList();
+                
+                // Adaptive Plan hook
+                if (typeof checkAdaptiveProgression === 'function') {
+                    checkAdaptiveProgression();
+                }
             };
 
             // Filters updates triggers
@@ -1569,6 +1580,43 @@
                     <button id="apply-adaptive-plan" class="mt-6 w-full py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-xl shadow-lg shadow-emerald-500/20 transition-all hover:scale-[1.02]">Show my plan</button>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Adaptive Roadmap Modal -->
+    <div id="adaptive-roadmap-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-slate-900/80 backdrop-blur-sm transition-opacity opacity-0">
+        <div class="bg-slate-50 dark:bg-slate-900 rounded-2xl w-full max-w-4xl max-h-[90vh] flex flex-col shadow-2xl border border-slate-200 dark:border-slate-800 m-4 overflow-hidden">
+            <div class="p-6 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center bg-white dark:bg-darkCard shrink-0">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 text-lg">
+                        <i class="fa-solid fa-map"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-900 dark:text-white">Your Adaptive Roadmap</h2>
+                        <p class="text-sm text-slate-500">Master these topics to complete your plan</p>
+                    </div>
+                </div>
+                <button id="close-roadmap-modal" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors w-8 h-8 flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+            
+            <div class="p-6 overflow-y-auto grow" id="roadmap-content">
+                <!-- Grouped cards will be injected here by adaptive.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Adaptive Success Modal -->
+    <div id="adaptive-success-modal" class="fixed inset-0 z-[110] hidden flex items-center justify-center bg-slate-900/90 backdrop-blur-md transition-opacity opacity-0">
+        <div class="bg-white dark:bg-darkCard rounded-2xl w-full max-w-md p-8 text-center shadow-2xl border border-emerald-500/30 m-4 transform scale-95 transition-transform">
+            <div class="w-24 h-24 mx-auto bg-emerald-500/20 text-emerald-500 rounded-full flex items-center justify-center text-5xl mb-6 relative">
+                <i class="fa-solid fa-trophy absolute z-10"></i>
+                <div class="absolute inset-0 bg-emerald-500 rounded-full animate-ping opacity-20"></div>
+            </div>
+            <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mb-2">Plan Completed!</h2>
+            <p class="text-slate-600 dark:text-slate-300 mb-8">You have successfully mastered all the topics in your personalized adaptive plan. Great job!</p>
+            <button id="close-success-modal" class="w-full py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-xl shadow-lg shadow-emerald-500/20 transition-all hover:scale-[1.02]">Awesome!</button>
         </div>
     </div>
 
