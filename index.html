@@ -280,14 +280,14 @@
             </div>
 
             <!-- Premium Feature Teaser -->
-            <button class="w-full bg-gradient-to-r from-brand-500 to-indigo-600 text-white rounded-xl p-4 flex items-center justify-between hover:scale-[1.02] hover:shadow-lg hover:shadow-brand-500/20 transition-all-300 group">
+            <button id="mock-interview-btn" class="w-full bg-gradient-to-r from-brand-500 to-indigo-600 text-white rounded-xl p-4 flex items-center justify-between hover:scale-[1.02] hover:shadow-lg hover:shadow-brand-500/20 transition-all-300 group">
                 <div class="flex items-center space-x-3">
                     <div class="bg-white/20 p-2 rounded-lg group-hover:animate-pulse">
                         <i class="fa-solid fa-gamepad"></i>
                     </div>
                     <div class="text-left">
                         <h4 class="font-bold text-sm leading-tight">Mock Interview</h4>
-                        <p class="text-[10px] text-white/80">Coming Soon</p>
+                        <p class="text-[10px] text-white/80">Simulator & Timer</p>
                     </div>
                 </div>
                 <i class="fa-solid fa-chevron-right text-white/60"></i>
@@ -302,6 +302,23 @@
                 
                 <!-- Card Background Subtle Design Details -->
                 <div class="absolute -top-12 -right-12 w-48 h-48 bg-gradient-to-br from-brand-500/10 to-transparent rounded-full blur-2xl pointer-events-none"></div>
+
+                <!-- Mock Interview Header Bar (Shown during mock mode) -->
+                <div id="mock-status-bar" class="hidden bg-gradient-to-r from-brand-500/10 via-indigo-500/10 to-brand-500/10 border border-brand-500/20 rounded-xl p-3 flex items-center justify-between">
+                    <div class="flex items-center space-x-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-ping"></span>
+                        <span class="text-xs font-bold text-brand-600 dark:text-brand-400 uppercase tracking-wider">Mock Interview Live</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="flex items-center space-x-1.5 text-xs font-bold text-slate-700 dark:text-slate-200">
+                            <i class="fa-solid fa-clock text-brand-500"></i>
+                            <span id="mock-timer-display">30:00</span>
+                        </div>
+                        <button id="exit-mock-btn" class="text-[10px] font-bold text-slate-400 hover:text-red-500 uppercase tracking-wider">
+                            Exit
+                        </button>
+                    </div>
+                </div>
 
                 <!-- Active Question Header Metadata -->
                 <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-100 dark:border-slate-800/80">
@@ -424,6 +441,19 @@
                             <i id="btn-answer-icon" class="fa-solid fa-eye"></i>
                             <span id="btn-answer-text">Show Answer</span>
                         </button>
+
+                        <!-- Mock Evaluation Controls -->
+                        <div id="mock-eval-bar" class="hidden flex flex-wrap items-center gap-2 w-full sm:w-auto">
+                            <button id="eval-missed-btn" class="flex-1 sm:flex-initial px-3.5 py-2.5 rounded-xl bg-red-500/10 hover:bg-red-500/20 text-red-600 dark:text-red-400 border border-red-500/20 font-bold text-xs flex items-center justify-center space-x-1 transition-all">
+                                <span>🔴 Missed (0 XP)</span>
+                            </button>
+                            <button id="eval-partial-btn" class="flex-1 sm:flex-initial px-3.5 py-2.5 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 text-amber-600 dark:text-amber-400 border border-amber-500/20 font-bold text-xs flex items-center justify-center space-x-1 transition-all">
+                                <span>🟡 Partial (+5 XP)</span>
+                            </button>
+                            <button id="eval-nailed-btn" class="flex-1 sm:flex-initial px-3.5 py-2.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 font-bold text-xs flex items-center justify-center space-x-1 transition-all">
+                                <span>🟢 Nailed It (+10 XP)</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -442,6 +472,103 @@
     <div id="toast" class="fixed bottom-6 right-6 z-50 bg-slate-900 text-white border border-slate-800 rounded-xl px-4 py-3 shadow-2xl flex items-center space-x-3 pointer-events-none opacity-0 transform translate-y-2 transition-all duration-300">
         <i id="toast-icon" class="fa-solid fa-check text-emerald-500"></i>
         <span id="toast-message" class="text-sm font-semibold"></span>
+    </div>
+
+    <!-- Mock Interview Setup Modal -->
+    <div id="mock-setup-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+        <div class="bg-white dark:bg-darkCard rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl max-w-md w-full p-6 space-y-6 relative">
+            <button id="close-mock-setup-btn" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-brand-500 to-indigo-600 flex items-center justify-center text-white text-xl shadow-lg shadow-brand-500/20">
+                    <i class="fa-solid fa-gamepad"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg text-slate-900 dark:text-white">Mock Interview Setup</h3>
+                    <p class="text-xs text-slate-400">Configure your simulated interview session</p>
+                </div>
+            </div>
+
+            <!-- Options -->
+            <div class="space-y-4">
+                <!-- Target Grade -->
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Target Grade</label>
+                    <div class="grid grid-cols-3 gap-2">
+                        <button type="button" data-mock-grade="Junior" class="mock-grade-btn p-3 rounded-xl border text-center hover:border-brand-500 transition-all font-bold text-xs bg-brand-500/10 border-brand-500 text-brand-600 dark:text-brand-400">
+                            Junior<br><span class="text-[10px] font-normal opacity-80">10 questions</span>
+                        </button>
+                        <button type="button" data-mock-grade="Middle" class="mock-grade-btn p-3 rounded-xl border border-slate-200 dark:border-slate-800 text-center hover:border-brand-500 transition-all font-bold text-xs text-slate-600 dark:text-slate-400">
+                            Middle<br><span class="text-[10px] font-normal opacity-80">12 questions</span>
+                        </button>
+                        <button type="button" data-mock-grade="Senior" class="mock-grade-btn p-3 rounded-xl border border-slate-200 dark:border-slate-800 text-center hover:border-brand-500 transition-all font-bold text-xs text-slate-600 dark:text-slate-400">
+                            Senior<br><span class="text-[10px] font-normal opacity-80">15 questions</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Duration -->
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Interview Time Limit</label>
+                    <select id="mock-time-select" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-3 text-xs font-semibold focus:outline-none focus:border-brand-500 text-slate-800 dark:text-slate-200">
+                        <option value="15">⚡ 15 Minutes (Express)</option>
+                        <option value="30" selected>⏱️ 30 Minutes (Standard)</option>
+                        <option value="45">⌛ 45 Minutes (In-Depth)</option>
+                        <option value="0">♾️ No Timer (Relaxed)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Start Button -->
+            <button id="start-mock-btn" class="w-full bg-gradient-to-r from-brand-500 to-indigo-600 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-brand-500/25 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center space-x-2">
+                <span>Start Simulation</span>
+                <i class="fa-solid fa-play text-xs"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mock Interview Results Modal -->
+    <div id="mock-results-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+        <div class="bg-white dark:bg-darkCard rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl max-w-lg w-full p-6 space-y-6 relative">
+            <div class="text-center space-y-2">
+                <div id="mock-result-badge-icon" class="w-16 h-16 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-3xl mx-auto">
+                    <i class="fa-solid fa-trophy"></i>
+                </div>
+                <h3 id="mock-result-title" class="font-extrabold text-2xl text-slate-900 dark:text-white">Interview Complete!</h3>
+                <p id="mock-result-subtitle" class="text-xs text-slate-400">Here is your performance report card</p>
+            </div>
+
+            <!-- Score Summary Cards -->
+            <div class="grid grid-cols-3 gap-3 text-center">
+                <div class="bg-slate-50 dark:bg-slate-900/60 p-3 rounded-xl border border-slate-100 dark:border-slate-800">
+                    <span class="text-[10px] text-slate-400 uppercase font-bold block">Score</span>
+                    <span id="mock-result-score" class="text-lg font-extrabold text-brand-500">0%</span>
+                </div>
+                <div class="bg-slate-50 dark:bg-slate-900/60 p-3 rounded-xl border border-slate-100 dark:border-slate-800">
+                    <span class="text-[10px] text-slate-400 uppercase font-bold block">XP Gained</span>
+                    <span id="mock-result-xp" class="text-lg font-extrabold text-amber-500">+0 XP</span>
+                </div>
+                <div class="bg-slate-50 dark:bg-slate-900/60 p-3 rounded-xl border border-slate-100 dark:border-slate-800">
+                    <span class="text-[10px] text-slate-400 uppercase font-bold block">Verdict</span>
+                    <span id="mock-result-verdict" class="text-xs font-bold text-emerald-500 block mt-1">PASSED</span>
+                </div>
+            </div>
+
+            <!-- Topic Performance Breakdown -->
+            <div class="space-y-2">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400">Topic Breakdown</h4>
+                <div id="mock-result-topics" class="space-y-1.5 max-h-40 overflow-y-auto pr-1">
+                    <!-- Dynamic rendering -->
+                </div>
+            </div>
+
+            <!-- Finish Button -->
+            <button id="finish-mock-btn" class="w-full bg-brand-500 text-white font-bold py-3 rounded-xl shadow-md hover:bg-brand-600 transition-all">
+                Collect Rewards & Exit
+            </button>
+        </div>
     </div>
 
     <!-- Embedded high fidelity backup database in Russian to assure 100% execution instantly inside iframe sandboxes -->
@@ -941,13 +1068,255 @@
             }, 2500);
         }
 
+        // Mock Interview Engine State
+        let isMockMode = false;
+        let mockQuestions = [];
+        let mockCurrentIdx = 0;
+        let mockTimerInterval = null;
+        let mockTimeRemaining = 0;
+        let mockScores = [];
+        let mockSelectedGrade = 'Junior';
+
+        function openMockSetup() {
+            document.getElementById('mock-setup-modal').classList.remove('hidden');
+        }
+
+        function closeMockSetup() {
+            document.getElementById('mock-setup-modal').classList.add('hidden');
+        }
+
+        function startMockInterview() {
+            const timeLimit = parseInt(document.getElementById('mock-time-select').value, 10);
+            
+            // Pool filtering based on target grade
+            let candidatePool = questionsList.filter(q => {
+                if (mockSelectedGrade === 'Junior') return q.difficulty === 'Junior' || q.difficulty === 'Middle';
+                if (mockSelectedGrade === 'Middle') return q.difficulty === 'Middle' || q.difficulty === 'Senior' || q.difficulty === 'Junior';
+                return q.difficulty === 'Senior' || q.difficulty === 'Middle';
+            });
+
+            if (candidatePool.length === 0) candidatePool = [...questionsList];
+
+            // Shuffle pool (Fisher-Yates)
+            for (let i = candidatePool.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [candidatePool[i], candidatePool[j]] = [candidatePool[j], candidatePool[i]];
+            }
+
+            // Target question count: Junior: 10, Middle: 12, Senior: 15
+            let targetCount = 10;
+            if (mockSelectedGrade === 'Middle') targetCount = 12;
+            if (mockSelectedGrade === 'Senior') targetCount = 15;
+
+            mockQuestions = candidatePool.slice(0, Math.min(targetCount, candidatePool.length));
+            mockCurrentIdx = 0;
+            mockScores = [];
+            isMockMode = true;
+
+            // Timer setup
+            if (mockTimerInterval) clearInterval(mockTimerInterval);
+            if (timeLimit > 0) {
+                mockTimeRemaining = timeLimit * 60;
+                updateMockTimerDisplay();
+                mockTimerInterval = setInterval(() => {
+                    mockTimeRemaining--;
+                    updateMockTimerDisplay();
+                    if (mockTimeRemaining <= 0) {
+                        clearInterval(mockTimerInterval);
+                        showToast("Time's up! Submitting interview...", "info");
+                        finishMockInterview();
+                    }
+                }, 1000);
+            } else {
+                document.getElementById('mock-timer-display').textContent = "Untimed";
+            }
+
+            closeMockSetup();
+            document.getElementById('mock-status-bar').classList.remove('hidden');
+            loadMockQuestion(0);
+            showToast(`Mock Interview Started (${mockQuestions.length} Questions)`, "success");
+        }
+
+        function updateMockTimerDisplay() {
+            const mins = Math.floor(mockTimeRemaining / 60);
+            const secs = mockTimeRemaining % 60;
+            document.getElementById('mock-timer-display').textContent = 
+                `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        async function loadMockQuestion(idx) {
+            if (idx < 0 || idx >= mockQuestions.length) return;
+            mockCurrentIdx = idx;
+            
+            const q = mockQuestions[idx];
+            
+            // Temporarily set filteredQuestions to single item list or navigate
+            const realIdx = questionsList.findIndex(item => item.id === q.id);
+            if (realIdx !== -1) {
+                currentIndex = filteredQuestions.findIndex(item => item.id === q.id);
+                if (currentIndex === -1) {
+                    filteredQuestions = [q];
+                    currentIndex = 0;
+                }
+            }
+
+            await loadQuestion(currentIndex);
+            
+            // Adjust UI for mock
+            document.getElementById('counter').textContent = `Mock: ${idx + 1} / ${mockQuestions.length}`;
+            document.getElementById('mock-eval-bar').classList.add('hidden');
+            document.getElementById('mock-eval-bar').classList.remove('flex');
+            document.getElementById('btn-answer').classList.remove('hidden');
+        }
+
+        function revealMockAnswer() {
+            if (!isAnswerVisible) {
+                document.getElementById('btn-answer').click();
+            }
+            document.getElementById('btn-answer').classList.add('hidden');
+            document.getElementById('mock-eval-bar').classList.remove('hidden');
+            document.getElementById('mock-eval-bar').classList.add('flex');
+        }
+
+        function evaluateMockQuestion(points) {
+            const currentQ = mockQuestions[mockCurrentIdx];
+            mockScores.push({
+                id: currentQ.id,
+                topic: currentQ.topic,
+                points: points
+            });
+
+            if (points === 10 && !masteredIds.includes(currentQ.id)) {
+                masteredIds.push(currentQ.id);
+                savePersistence();
+            }
+
+            if (mockCurrentIdx + 1 < mockQuestions.length) {
+                loadMockQuestion(mockCurrentIdx + 1);
+            } else {
+                finishMockInterview();
+            }
+        }
+
+        function finishMockInterview() {
+            if (mockTimerInterval) clearInterval(mockTimerInterval);
+            isMockMode = false;
+            
+            document.getElementById('mock-status-bar').classList.add('hidden');
+            document.getElementById('mock-eval-bar').classList.add('hidden');
+            document.getElementById('btn-answer').classList.remove('hidden');
+
+            // Calculate results
+            const totalQuestions = mockQuestions.length;
+            const maxPossibleXP = totalQuestions * 10;
+            const totalEarnedXP = mockScores.reduce((acc, curr) => acc + curr.points, 0);
+            const scorePercent = maxPossibleXP > 0 ? Math.round((totalEarnedXP / maxPossibleXP) * 100) : 0;
+
+            document.getElementById('mock-result-score').textContent = `${scorePercent}%`;
+            document.getElementById('mock-result-xp').textContent = `+${totalEarnedXP} XP`;
+
+            let verdict = "PASSED";
+            let verdictColor = "text-emerald-500";
+            let badgeIcon = '<i class="fa-solid fa-trophy"></i>';
+            let badgeBg = "bg-emerald-500/10 text-emerald-500";
+
+            if (scorePercent < 50) {
+                verdict = "NEEDS WORK";
+                verdictColor = "text-red-500";
+                badgeIcon = '<i class="fa-solid fa-book-open"></i>';
+                badgeBg = "bg-red-500/10 text-red-500";
+            } else if (scorePercent < 75) {
+                verdict = "PARTIAL PASS";
+                verdictColor = "text-amber-500";
+                badgeIcon = '<i class="fa-solid fa-award"></i>';
+                badgeBg = "bg-amber-500/10 text-amber-500";
+            }
+
+            document.getElementById('mock-result-verdict').textContent = verdict;
+            document.getElementById('mock-result-verdict').className = `text-xs font-bold ${verdictColor} block mt-1`;
+            
+            const badgeEl = document.getElementById('mock-result-badge-icon');
+            badgeEl.className = `w-16 h-16 rounded-2xl ${badgeBg} flex items-center justify-center text-3xl mx-auto`;
+            badgeEl.innerHTML = badgeIcon;
+
+            // Topic Breakdown
+            const topicStats = {};
+            mockScores.forEach(s => {
+                const topic = s.topic || "General";
+                if (!topicStats[topic]) topicStats[topic] = { earned: 0, total: 0 };
+                topicStats[topic].earned += s.points;
+                topicStats[topic].total += 10;
+            });
+
+            const topicsContainer = document.getElementById('mock-result-topics');
+            topicsContainer.innerHTML = '';
+
+            Object.keys(topicStats).forEach(topic => {
+                const stat = topicStats[topic];
+                const pct = Math.round((stat.earned / stat.total) * 100);
+                const row = document.createElement('div');
+                row.className = "flex items-center justify-between p-2 rounded-lg bg-slate-50 dark:bg-slate-900 text-xs";
+                row.innerHTML = `
+                    <span class="font-semibold text-slate-700 dark:text-slate-300">${topic}</span>
+                    <span class="font-bold ${pct >= 70 ? 'text-emerald-500' : 'text-amber-500'}">${pct}% (${stat.earned}/${stat.total} XP)</span>
+                `;
+                topicsContainer.appendChild(row);
+            });
+
+            document.getElementById('mock-results-modal').classList.remove('hidden');
+            triggerFilterAction();
+        }
+
+        function exitMockInterview() {
+            if (confirm("Are you sure you want to exit the active Mock Interview? Progress will be lost.")) {
+                if (mockTimerInterval) clearInterval(mockTimerInterval);
+                isMockMode = false;
+                document.getElementById('mock-status-bar').classList.add('hidden');
+                document.getElementById('mock-eval-bar').classList.add('hidden');
+                document.getElementById('btn-answer').classList.remove('hidden');
+                triggerFilterAction();
+                showToast("Mock Interview cancelled", "info");
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             
             // Load and initialize core engine
             fetchQuestions();
 
+            // Mock Interview listeners
+            document.getElementById('mock-interview-btn').onclick = openMockSetup;
+            document.getElementById('close-mock-setup-btn').onclick = closeMockSetup;
+            document.getElementById('start-mock-btn').onclick = startMockInterview;
+            document.getElementById('exit-mock-btn').onclick = exitMockInterview;
+            document.getElementById('finish-mock-btn').onclick = () => {
+                document.getElementById('mock-results-modal').classList.add('hidden');
+            };
+
+            // Grade selection buttons inside setup modal
+            document.querySelectorAll('.mock-grade-btn').forEach(btn => {
+                btn.onclick = () => {
+                    document.querySelectorAll('.mock-grade-btn').forEach(b => {
+                        b.classList.remove('bg-brand-500/10', 'border-brand-500', 'text-brand-600', 'dark:text-brand-400');
+                        b.classList.add('border-slate-200', 'dark:border-slate-800', 'text-slate-600', 'dark:text-slate-400');
+                    });
+                    btn.classList.remove('border-slate-200', 'dark:border-slate-800', 'text-slate-600', 'dark:text-slate-400');
+                    btn.classList.add('bg-brand-500/10', 'border-brand-500', 'text-brand-600', 'dark:text-brand-400');
+                    mockSelectedGrade = btn.getAttribute('data-mock-grade');
+                };
+            });
+
+            // Evaluation buttons
+            document.getElementById('eval-missed-btn').onclick = () => evaluateMockQuestion(0);
+            document.getElementById('eval-partial-btn').onclick = () => evaluateMockQuestion(5);
+            document.getElementById('eval-nailed-btn').onclick = () => evaluateMockQuestion(10);
+
             // Toggle Answer actions event triggers
             document.getElementById('btn-answer').onclick = () => {
+                if (isMockMode) {
+                    revealMockAnswer();
+                    return;
+                }
                 if (filteredQuestions.length === 0) return;
                 const q = filteredQuestions[currentIndex];
                 isAnswerVisible = !isAnswerVisible;
@@ -977,6 +1346,8 @@
                     ansBtnIcon.className = "fa-solid fa-eye";
                 }
             };
+            
+            // ... (rest of listeners exist)
 
             // Previous and Next button actions
             document.getElementById('btn-prev').onclick = async () => {
