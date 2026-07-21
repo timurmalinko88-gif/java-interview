@@ -91,11 +91,22 @@
         /* Custom macOS terminal style for code blocks */
         pre {
             position: relative;
-            padding-top: 2.5rem !important;
+            padding-top: 2.75rem !important;
+            padding-bottom: 1rem !important;
+            padding-left: 1.25rem !important;
+            padding-right: 1.25rem !important;
             border-radius: 0.75rem !important;
             background: #f8fafc;
             border: 1px solid #e2e8f0;
             box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+        }
+        .prose pre {
+            padding-top: 2.75rem !important;
+            padding-bottom: 1rem !important;
+            padding-left: 1.25rem !important;
+            padding-right: 1.25rem !important;
+            margin-top: 1rem !important;
+            margin-bottom: 1rem !important;
         }
         .dark pre {
             background: #0f172a;
@@ -386,7 +397,7 @@
                             </button>
                         </div>
                         <div class="relative rounded-xl overflow-hidden shadow-inner group">
-                            <pre class="!my-0 !p-4 !bg-slate-900 overflow-x-auto"><code id="code-content" class="language-java font-mono text-sm"></code></pre>
+                            <pre class="!my-0 !pt-11 !pb-4 !px-4 !bg-slate-900 overflow-x-auto"><code id="code-content" class="language-java font-mono text-sm"></code></pre>
                         </div>
                     </div>
 
