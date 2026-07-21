@@ -69,15 +69,35 @@ def build_index():
         # Относительный путь для фронтенда
         rel_path = filepath.replace('\\', '/')
 
+        # Извлекаем тело документа (после frontmatter)
+        body_lines = []
+        dash_count = 0
+        if has_explicit_frontmatter:
+            for line in lines:
+                if line.strip() == '---':
+                    dash_count += 1
+                    continue
+                if dash_count >= 2:
+                    body_lines.append(line)
+        else:
+            in_body = False
+            for line in lines:
+                line_str = line.strip()
+                if not line_str:
+                    in_body = True
+                    continue
+                if in_body:
+                    body_lines.append(line)
+
         # Попытка автоматически извлечь красивый заголовок вопроса для списка
         title = metadata.get('title', '')
         if not title:
-            for line in lines:
+            for line in body_lines:
                 line_str = line.strip()
                 if line_str.startswith('#'):
                     title = line_str.lstrip('#').strip()
                     break
-                elif line_str and not line_str.startswith('---') and ':' not in line_str:
+                elif line_str and not line_str.startswith('```') and not line_str.startswith('---'):
                     title = line_str
                     break
 
@@ -89,8 +109,20 @@ def build_index():
             topic = 'OOP'
         elif question_id.startswith('multithreading-') or question_id in {'q2'}:
             topic = 'Multithreading'
-        elif question_id == 'q3':
+        elif question_id.startswith('collections-'):
+            topic = 'Collections'
+        elif question_id.startswith('stream-'):
+            topic = 'Stream API'
+        elif question_id.startswith('spring-'):
+            topic = 'Spring'
+        elif question_id.startswith('databases-'):
+            topic = 'Databases'
+        elif question_id.startswith('system-design-') or question_id in {'q3'}:
             topic = 'System Design'
+        elif question_id.startswith('patterns-'):
+            topic = 'Patterns'
+        elif question_id.startswith('testing-'):
+            topic = 'Testing'
 
         questions.append({
             'id': question_id,

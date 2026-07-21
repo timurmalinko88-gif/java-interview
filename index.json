@@ -1108,7 +1108,7 @@
       "topic": "General",
       "difficulty": "Middle",
       "format": "Code Review",
-      "title": "```java",
+      "title": "Find the bug in the following code and explain how to fix it:",
       "time": "",
       "frequency": "",
       "related": []
@@ -2090,7 +2090,7 @@
       "topic": "JVM & Memory Management",
       "difficulty": "Senior",
       "format": "System Design",
-      "title": "Specifically, explain how you would capture a heap dump without crashing the service, the architectural difference between Shallow Size and Retained Size, how to utilize a Dominator Tree and Path to GC Roots in Eclipse Memory Analyzer (MAT), and how you would prevent similar leaks using modern JVM profiling techniques.",
+      "title": "Your production JVM application is experiencing a gradual increase in memory consumption, eventually leading to a `java.lang.OutOfMemoryError: Java heap space` after 48 hours of continuous load. Describe your step-by-step diagnostic workflow to isolate, analyze, and fix this memory leak.",
       "time": "25",
       "frequency": "high",
       "related": [
@@ -2156,7 +2156,7 @@
       "topic": "JVM & Memory Management",
       "difficulty": "Middle",
       "format": "Open Answer",
-      "title": "The GC overhead limit exceeded error is a protective safeguard built into the HotSpot JVM. Rather than allowing an application to hang indefinitely in a near-frozen state while performing constant garbage collections, the JVM terminates execution proactively.",
+      "title": "What is the precise JVM definition and triggering condition for a `java.lang.OutOfMemoryError: GC overhead limit exceeded`? How does this error differ from a standard `java.lang.OutOfMemoryError: Java heap space`, and how do you diagnose and prevent it?",
       "time": "15",
       "frequency": "high",
       "related": [
@@ -2223,7 +2223,7 @@
       "topic": "JVM & Memory Management",
       "difficulty": "Junior",
       "format": "Open Answer",
-      "title": "* An `ArrayList<Integer>` (fully compacted, with no empty trailing array capacity)",
+      "title": "Calculate and compare the exact memory footprint required to store 1,000,000 primitive integers in three different structures on a 64-bit HotSpot JVM with Compressed OOPs enabled (and 8-byte object alignment):",
       "time": "15",
       "frequency": "high",
       "related": [
@@ -2250,7 +2250,7 @@
       "topic": "JVM & Memory Management",
       "difficulty": "Middle",
       "format": "Open Answer",
-      "title": "Detail their architectural differences, where duplicate data is stored, how the optimization is scheduled (runtime thread vs. GC background thread), the associated CPU overhead, and when you would select one over the other.",
+      "title": "Compare JVM-level String Deduplication (`-XX:+UseStringDeduplication`) with explicit String Interning (`String.intern()`) as memory optimization strategies on modern HotSpot JVMs (Java 11/17/21).",
       "time": "15",
       "frequency": "medium",
       "related": [
@@ -2264,7 +2264,7 @@
       "topic": "Multithreading",
       "difficulty": "Junior",
       "format": "Open Answer",
-      "title": "```java",
+      "title": "You have a user profile view counter implemented as follows:",
       "time": "5",
       "frequency": "High",
       "related": [
@@ -2278,7 +2278,7 @@
       "topic": "Multithreading",
       "difficulty": "Junior",
       "format": "Open Answer",
-      "title": "```java",
+      "title": "On a project, a developer implemented asynchronous email notifications: for every user registration, they create a new thread:",
       "time": "7",
       "frequency": "High",
       "related": [
