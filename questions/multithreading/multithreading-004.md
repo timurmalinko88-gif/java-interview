@@ -5,12 +5,12 @@ difficulty: Middle
 format: Code Review
 estimated_time_minutes: 10
 frequency: High
-related_questions: [Разница между HashMap и ConcurrentHashMap, Метод computeIfAbsent]
+related_questions: [Difference between HashMap and ConcurrentHashMap, computeIfAbsent method]
 source: Custom
 prerequisites: [ConcurrentHashMap, Race Condition]
 ---
 
-Разработчик реализовал потокобезопасный кэш пользователей на основе `ConcurrentHashMap`. Посмотрите на код ниже (Java 17). Компиляция проходит успешно. Найдите баги и уязвимости при работе в многопоточной среде и предложите, как их исправить.
+A developer implemented a thread-safe user cache based on `ConcurrentHashMap`. Look at the code below (Java 17). It compiles successfully. Find bugs and vulnerabilities when working in a multithreaded environment and suggest how to fix them.
 
 ```java
 import java.util.Map;
@@ -22,7 +22,7 @@ public class UserCache {
     public User getUser(String userId) {
         User user = cache.get(userId);
         if (user == null) {
-            user = loadUserFromDatabase(userId); // Метод занимает ~200мс
+            user = loadUserFromDatabase(userId); // The method takes ~200ms
             cache.put(userId, user);
         }
         return user;
@@ -43,35 +43,34 @@ public class UserCache {
 
 ---ANSWER---
 
-В коде присутствует классический **Race Condition (Состояние гонки) типа "Check-Then-Act" (Проверь-Затем-Действуй)**.
+There is a classic **"Check-Then-Act" Race Condition** present in the code.
 
-Несмотря на использование `ConcurrentHashMap`, методы `get` и `put` вызываются раздельно. Сама мапа защищает от повреждения своей внутренней структуры, но не гарантирует атомарность последовательности действий.
+Despite using `ConcurrentHashMap`, the `get` and `put` methods are called separately. The map itself protects against corruption of its internal structure, but it does not guarantee the atomicity of the sequence of actions.
 
-Если два потока одновременно запросят `getUser("id1")`, они оба получат `null` из `cache.get()`, оба пойдут в метод `loadUserFromDatabase()` и дважды выполнят "тяжелый" запрос к БД, а затем последовательно перезапишут значения в мапе. В условиях высокой нагрузки база данных ляжет от дублирующихся запросов (Cache Stampede).
+If two threads request `getUser("id1")` simultaneously, they will both receive `null` from `cache.get()`, they will both go into the `loadUserFromDatabase()` method, and they will execute the "heavy" database query twice, sequentially overwriting the values in the map afterwards. Under high load, the database will crash from duplicated queries (Cache Stampede).
 
-**Как исправить:**
+**How to fix it:**
 
-Нужно использовать атомарный метод `computeIfAbsent`, который блокирует сегмент мапы (или бакет) только для конкретного ключа на время вычисления.
+You need to use the atomic `computeIfAbsent` method, which locks the map segment (or bucket) only for a specific key during computation.
 
-**Исправленный код:**
+**Fixed code:**
 
 ```java
 public User getUser(String userId) {
-    // Выполнит загрузку из БД только один раз для одного ключа,
-    // остальные потоки с тем же ключом будут ждать результата
+    // Will load from the DB only once for a single key,
+    // other threads with the same key will wait for the result
     return cache.computeIfAbsent(userId, this::loadUserFromDatabase);
 }
 ```
 
-*Дополнительный нюанс:* Перехват `InterruptedException` с восстановлением флага прерывания `Thread.currentThread().interrupt()` сделан правильно, но в исходном коде после этого мы всё равно возвращаем фейкового пользователя, что может быть некорректно для бизнес-логики (лучше пробросить Exception или вернуть null/Optional).
+*Additional nuance:* Catching `InterruptedException` and restoring the interrupt flag with `Thread.currentThread().interrupt()` is done correctly, but in the original code, we still return a fake user after this, which might be incorrect for business logic (it's better to throw an Exception or return null/Optional).
 
-### Ключевые моменты
+### Key Points
+* `ConcurrentHashMap` guarantees thread safety for single operations (put, get), but not for their combinations.
+* The pattern `if (map.get(key) == null) { map.put(key, val); }` is prone to a race condition (Check-Then-Act).
+* The `computeIfAbsent` method provides atomic checking and initialization of a key.
+* `computeIfAbsent` only blocks the computation for a specific key, without preventing parallel threads from working with other keys.
 
-* `ConcurrentHashMap` гарантирует потокобезопасность одиночных операций (put, get), но не их комбинаций.
-* Паттерн `if (map.get(key) == null) { map.put(key, val); }` подвержен состоянию гонки (Check-Then-Act).
-* Метод `computeIfAbsent` обеспечивает атомарную проверку и инициализацию ключа.
-* `computeIfAbsent` блокирует только вычисление для конкретного ключа, не мешая параллельным потокам работать с другими ключами.
+### Life Analogy
 
-## Analogy
-
-Вы с соседом по комнате (два потока) одновременно заглянули в холодильник (ConcurrentHashMap). Молока нет (вернулся null). Не договорившись, вы оба пошли в магазин и купили по пакету молока. Теперь у вас два пакета вместо одного (двойная нагрузка на БД). Использование `computeIfAbsent` — это повесить записку на холодильник "Я ушел за молоком", чтобы второй сосед просто подождал.
+You and your roommate (two threads) look into the fridge (ConcurrentHashMap) at the same time. There is no milk (returns null). Without agreeing, you both go to the store and buy a carton of milk each. Now you have two cartons instead of one (double load on the DB). Using `computeIfAbsent` is like leaving a note on the fridge saying "I went for milk", so the second roommate simply waits.

@@ -103,11 +103,11 @@
             <!-- Stats Bar (Hidden on Mobile) -->
             <div class="hidden md:flex items-center space-x-6 text-sm">
                 <div class="flex items-center space-x-2">
-                    <span class="text-slate-400">Изучено:</span>
+                    <span class="text-slate-400">Mastered:</span>
                     <span id="stats-mastered" class="font-bold text-emerald-500 bg-emerald-500/10 px-2 py-0.5 rounded-full text-xs">0 / 0</span>
                 </div>
                 <div class="flex items-center space-x-2">
-                    <span class="text-slate-400">В закладках:</span>
+                    <span class="text-slate-400">Bookmarked:</span>
                     <span id="stats-flagged" class="font-bold text-amber-500 bg-amber-500/10 px-2 py-0.5 rounded-full text-xs">0</span>
                 </div>
             </div>
@@ -117,7 +117,7 @@
                 <!-- Spaced Repetition Mode / Blitz -->
                 <button id="blitz-btn" class="flex items-center space-x-1 bg-brand-500 hover:bg-brand-600 text-white px-3 py-1.5 rounded-lg text-sm font-semibold shadow-md shadow-brand-500/10 transition-all-300 hover:scale-[1.03]">
                     <i class="fa-solid fa-bolt"></i>
-                    <span class="hidden sm:inline">Блиц-опрос</span>
+                    <span class="hidden sm:inline">Blitz Quiz</span>
                 </button>
 
                 <!-- Dark Mode Toggle Button -->
@@ -145,34 +145,34 @@
                 <div class="flex items-center justify-between">
                     <h3 class="font-bold text-slate-900 dark:text-white flex items-center space-x-2">
                         <i class="fa-solid fa-sliders text-brand-500"></i>
-                        <span>Фильтры</span>
+                        <span>Filters</span>
                     </h3>
-                    <button id="clear-filters" class="text-xs text-brand-500 hover:underline hidden">Сбросить</button>
+                    <button id="clear-filters" class="text-xs text-brand-500 hover:underline hidden">Reset</button>
                 </div>
                 
                 <!-- Search Input -->
                 <div class="relative">
-                    <input type="text" id="search-input" placeholder="Поиск по вопросу..." 
+                    <input type="text" id="search-input" placeholder="Search questions..." 
                         class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 pl-10 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all">
                     <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400 text-sm"></i>
                 </div>
 
                 <!-- Topic Selector -->
                 <div class="space-y-1.5">
-                    <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Раздел</label>
+                    <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Topic</label>
                     <select id="topic-filter" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all">
-                        <option value="all">Все темы</option>
-                        <option value="JVM & Memory Management">JVM & Сборка мусора</option>
-                        <option value="Multithreading">Многопоточность (Concurrency)</option>
-                        <option value="OOP">ООП & Паттерны</option>
-                        <option value="General">Общие вопросы Java</option>
+                        <option value="all">All Topics</option>
+                        <option value="JVM & Memory Management">JVM & Garbage Collection</option>
+                        <option value="Multithreading">Multithreading</option>
+                        <option value="OOP">OOP & Patterns</option>
+                        <option value="General">General Java Questions</option>
                         <option value="System Design">System Design</option>
                     </select>
                 </div>
 
                 <!-- Difficulty Selectors -->
                 <div class="space-y-1.5">
-                    <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Грейд (Сложность)</label>
+                    <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Difficulty Grade</label>
                     <div class="flex flex-wrap gap-2">
                         <button data-diff="Junior" class="diff-chip flex-1 px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 hover:bg-emerald-500/20 transition-all duration-200">
                             Junior
@@ -188,15 +188,15 @@
 
                 <!-- Format Filter -->
                 <div class="space-y-1.5">
-                    <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Формат вопроса</label>
+                    <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Question Format</label>
                     <div class="grid grid-cols-2 gap-2 text-xs">
                         <label class="flex items-center space-x-2 bg-slate-50 dark:bg-slate-900 p-2 rounded-lg border border-slate-200 dark:border-slate-800 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800">
                             <input type="checkbox" value="Open Answer" class="format-checkbox rounded text-brand-500 focus:ring-brand-500 bg-transparent border-slate-300 dark:border-slate-700">
-                            <span>Теория</span>
+                            <span>Theory</span>
                         </label>
                         <label class="flex items-center space-x-2 bg-slate-50 dark:bg-slate-900 p-2 rounded-lg border border-slate-200 dark:border-slate-800 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800">
                             <input type="checkbox" value="Code Review" class="format-checkbox rounded text-brand-500 focus:ring-brand-500 bg-transparent border-slate-300 dark:border-slate-700">
-                            <span>Ревью Кода</span>
+                            <span>Code Review</span>
                         </label>
                     </div>
                 </div>
@@ -205,7 +205,7 @@
             <!-- List Panel -->
             <div class="bg-white dark:bg-darkCard rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col flex-1 overflow-hidden transition-colors duration-300 max-h-[480px] lg:max-h-[calc(100vh-420px)]">
                 <div class="p-4 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center bg-slate-50/50 dark:bg-slate-900/50">
-                    <span class="font-bold text-sm text-slate-700 dark:text-slate-300">Список вопросов</span>
+                    <span class="font-bold text-sm text-slate-700 dark:text-slate-300">Questions List</span>
                     <span id="question-list-count" class="text-xs bg-slate-200 dark:bg-slate-800 px-2 py-0.5 rounded-full font-semibold text-slate-500">0</span>
                 </div>
                 
@@ -214,7 +214,7 @@
                     <!-- Dynamic rendering of question buttons goes here -->
                     <div class="p-6 text-center text-slate-400 text-sm">
                         <i class="fa-solid fa-spinner fa-spin text-brand-500 text-lg mb-2 block"></i>
-                        Загрузка вопросов...
+                        Loading questions...
                     </div>
                 </div>
             </div>
@@ -254,13 +254,13 @@
                     <!-- Bookmark & Mastery Toggle Controls -->
                     <div class="flex items-center space-x-2">
                         <!-- Bookmark flag -->
-                        <button id="flag-btn" title="Добавить в закладки" class="w-9 h-9 rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-center text-slate-400 hover:text-amber-500 dark:hover:text-amber-400 transition-all-300">
+                        <button id="flag-btn" title="Bookmark" class="w-9 h-9 rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-center text-slate-400 hover:text-amber-500 dark:hover:text-amber-400 transition-all-300">
                             <i class="fa-solid fa-bookmark text-sm"></i>
                         </button>
                         <!-- Mastered checkbox indicator -->
-                        <button id="mastered-btn" title="Отметить как выученный" class="h-9 px-3 rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center space-x-2 text-slate-400 hover:text-emerald-500 transition-all-300">
+                        <button id="mastered-btn" title="Mark as Mastered" class="h-9 px-3 rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center space-x-2 text-slate-400 hover:text-emerald-500 transition-all-300">
                             <i class="fa-solid fa-circle-check text-sm"></i>
-                            <span class="text-xs font-semibold">Изучено</span>
+                            <span class="text-xs font-semibold">Mastered</span>
                         </button>
                     </div>
                 </div>
@@ -271,7 +271,7 @@
                     <div class="space-y-3">
                         <div class="flex items-center space-x-2">
                             <span class="w-1.5 h-4 bg-brand-500 rounded-full"></span>
-                            <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400">Вопрос</h2>
+                            <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400">Question</h2>
                         </div>
                         <div id="question-text" class="prose prose-slate dark:prose-invert max-w-none text-slate-800 dark:text-slate-100 text-base font-medium leading-relaxed">
                             <!-- Injected by JS -->
@@ -283,11 +283,11 @@
                         <div class="flex items-center justify-between">
                             <div class="flex items-center space-x-2">
                                 <span class="w-1.5 h-4 bg-amber-500 rounded-full"></span>
-                                <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Проблемный Код (Java)</h3>
+                                <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Code Snippet (Java)</h3>
                             </div>
                             <button id="copy-code-btn" class="text-xs text-slate-400 hover:text-white bg-slate-100 dark:bg-slate-800 hover:bg-brand-500 dark:hover:bg-brand-500 px-2.5 py-1 rounded-md flex items-center space-x-1.5 transition-all-300">
                                 <i class="fa-solid fa-copy"></i>
-                                <span>Копировать</span>
+                                <span>Copy</span>
                             </button>
                         </div>
                         <div class="relative rounded-xl overflow-hidden shadow-inner group">
@@ -300,7 +300,7 @@
                         <!-- Heading of Answer -->
                         <div class="flex items-center space-x-2">
                             <span class="w-1.5 h-4 bg-emerald-500 rounded-full"></span>
-                            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Правильный ответ</h3>
+                            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Correct Answer</h3>
                         </div>
                         <!-- Inner Card with Emerald Accents -->
                         <div class="bg-emerald-50/40 dark:bg-emerald-950/20 border border-emerald-500/20 rounded-2xl p-5 sm:p-6 shadow-sm">
@@ -313,7 +313,7 @@
                         <div id="analogy-subsection" class="space-y-2 pt-2 hidden">
                             <div class="flex items-center space-x-2">
                                 <i class="fa-solid fa-lightbulb text-amber-500 text-sm"></i>
-                                <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Интуитивная аналогия</span>
+                                <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Intuitive Analogy</span>
                             </div>
                             <div class="bg-amber-50/40 dark:bg-amber-950/10 border border-amber-500/20 rounded-2xl p-5 text-slate-600 dark:text-slate-300 italic text-sm leading-relaxed">
                                 <p id="analogy-content"></p>
@@ -344,7 +344,7 @@
                     <div class="flex items-center space-x-3 w-full sm:w-auto">
                         <button id="btn-answer" class="flex-1 sm:flex-initial flex items-center justify-center space-x-2 bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 text-white font-bold px-6 py-3 rounded-xl shadow-lg shadow-brand-500/20 hover:shadow-brand-500/35 transition-all-300 active:scale-95 text-base">
                             <i id="btn-answer-icon" class="fa-solid fa-eye"></i>
-                            <span id="btn-answer-text">Показать ответ</span>
+                            <span id="btn-answer-text">Show Answer</span>
                         </button>
                     </div>
                 </div>
@@ -354,7 +354,7 @@
             <div class="bg-gradient-to-r from-amber-500/10 via-brand-500/5 to-transparent rounded-2xl border border-amber-500/10 p-4 flex items-start space-x-3">
                 <i class="fa-solid fa-graduation-cap text-amber-500 mt-0.5 text-lg"></i>
                 <div class="text-xs leading-relaxed text-slate-600 dark:text-slate-400">
-                    <strong class="text-slate-800 dark:text-slate-200 font-bold">Совет по изучению:</strong> Прочитайте вопрос и уделите не менее 1-й минуты на самостоятельное мысленное формулирование ответа или решение кода перед просмотром готового ответа. Пользуйтесь яркими ассоциациями в разделе «Аналогии» для легкого запоминания.
+                    <strong class="text-slate-800 dark:text-slate-200 font-bold">Study Tip:</strong> Read the question and take at least 1 minute to mentally formulate your answer or solve the code before viewing the correct answer. Use the vivid associations in the "Analogy" section for easy memorization.
                 </div>
             </div>
         </section>
@@ -511,8 +511,8 @@
                 container.innerHTML = `
                     <div class="p-8 text-center text-slate-400">
                         <i class="fa-solid fa-face-frown text-2xl mb-2 text-slate-300 dark:text-slate-600"></i>
-                        <p class="text-xs font-semibold">Вопросы не найдены</p>
-                        <p class="text-[10px] text-slate-400 mt-1">Попробуйте изменить параметры поиска или фильтров</p>
+                        <p class="text-xs font-semibold">Questionы не найдены</p>
+                        <p class="text-[10px] text-slate-400 mt-1">Try changing search parameters or filters</p>
                     </div>
                 `;
                 return;
@@ -643,15 +643,31 @@
 
         // Parse the canonical Markdown format
         function parseMarkdown(text) {
-            const result = { question: '', answer: '', code: '', analogy: '' };
+            const result = { question: '', answer: '', code: '', analogy: '', keyPoints: '' };
             const cleanText = text.replace(/^---[\s\S]*?---\s*/m, '').trim();
             
             const parts = cleanText.split('---ANSWER---');
             result.question = parts[0] ? parts[0].trim() : '';
-            result.answer = parts[1] ? parts[1].trim() : '';
+            let rawAnswer = parts[1] ? parts[1].trim() : '';
 
-            const codeMatch = cleanText.match(/```java\s*\n([\s\S]*?)\n```/i);
+            const codeMatch = rawAnswer.match(/```java\s*\n([\s\S]*?)\n```/i) || result.question.match(/```java\s*\n([\s\S]*?)\n```/i);
             if (codeMatch) result.code = codeMatch[1];
+            
+            // Extract Analogy
+            const analogyMatch = rawAnswer.match(/###\s*Life Analogy\s*\n([\s\S]*?)(?=###|$)/i);
+            if (analogyMatch) {
+                result.analogy = analogyMatch[1].trim();
+                rawAnswer = rawAnswer.replace(analogyMatch[0], '');
+            }
+
+            // Extract Key Points
+            const keyPointsMatch = rawAnswer.match(/###\s*Key Points\s*\n([\s\S]*?)(?=###|$)/i);
+            if (keyPointsMatch) {
+                result.keyPoints = keyPointsMatch[1].trim();
+                rawAnswer = rawAnswer.replace(keyPointsMatch[0], '');
+            }
+
+            result.answer = rawAnswer.trim();
             return result;
         }
         // Handle dynamically loading file content or pulling from fallbacks
@@ -686,7 +702,7 @@
                 extraMetaContainer.innerHTML += `<span class="flex items-center gap-1 bg-slate-50 dark:bg-slate-800/50 px-2 py-1 rounded"><i class="fa-regular fa-clock text-amber-500"></i> ${q.time} мин</span>`;
             }
             if (q.frequency) {
-                extraMetaContainer.innerHTML += `<span class="flex items-center gap-1 bg-slate-50 dark:bg-slate-800/50 px-2 py-1 rounded"><i class="fa-solid fa-fire-flame-curved text-brand-500"></i> Частота: ${q.frequency}</span>`;
+                extraMetaContainer.innerHTML += `<span class="flex items-center gap-1 bg-slate-50 dark:bg-slate-800/50 px-2 py-1 rounded"><i class="fa-solid fa-fire-flame-curved text-brand-500"></i> Frequency: ${q.frequency}</span>`;
             }
             if (q.related && q.related.length > 0) {
                 extraMetaContainer.innerHTML += `<span class="flex items-center gap-1 bg-slate-50 dark:bg-slate-800/50 px-2 py-1 rounded"><i class="fa-solid fa-link text-blue-500"></i> ${Array.isArray(q.related) ? q.related.join(', ') : q.related}</span>`;
@@ -700,7 +716,7 @@
             answerSection.classList.add('hidden');
             const ansBtnText = document.getElementById('btn-answer-text');
             const ansBtnIcon = document.getElementById('btn-answer-icon');
-            ansBtnText.textContent = "Показать ответ";
+            ansBtnText.textContent = "Show Answer";
             ansBtnIcon.className = "fa-solid fa-eye";
             isAnswerVisible = false;
 
@@ -709,7 +725,7 @@
             questionTextEl.innerHTML = `
                 <div class="flex items-center space-x-2 text-slate-400 py-4 animate-pulse">
                     <i class="fa-solid fa-spinner fa-spin text-brand-500"></i>
-                    <span>Загрузка содержимого вопроса...</span>
+                    <span>Loading question content...</span>
                 </div>
             `;
             document.getElementById('code-section').classList.add('hidden');
@@ -754,7 +770,7 @@
             }
 
             // Render Markdown Question Content
-            questionTextEl.innerHTML = marked.parse(q.loadedQuestion || "Содержимое вопроса отсутствует.");
+            questionTextEl.innerHTML = marked.parse(q.loadedQuestion || "No question content.");
 
             // Display code section if Java source is present
             const codeSec = document.getElementById('code-section');
@@ -804,10 +820,10 @@
                     <div class="w-16 h-16 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 mb-4 text-2xl">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
-                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Ничего не найдено</h3>
-                    <p class="text-sm text-slate-400 max-w-sm">Сбросьте фильтры, чтобы увидеть полный список вопросов для подготовки.</p>
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Nothing Found</h3>
+                    <p class="text-sm text-slate-400 max-w-sm">Reset filters to see the full list of preparation questions.</p>
                     <button onclick="clearAllFilters()" class="mt-4 bg-brand-500 hover:bg-brand-600 text-white font-bold text-xs px-4 py-2 rounded-xl transition-all">
-                        Сбросить фильтры
+                        Reset фильтры
                     </button>
                 </div>
             `;
@@ -855,7 +871,7 @@
 
                 if (isAnswerVisible) {
                     answerSection.classList.remove('hidden');
-                    document.getElementById('answer-content').innerHTML = marked.parse(q.loadedAnswer || "Ответ отсутствует.");
+                    document.getElementById('answer-content').innerHTML = marked.parse(q.loadedAnswer || "No answer content.");
 
                     // Populate intuitive analogy if defined
                     const analogySec = document.getElementById('analogy-subsection');
@@ -866,11 +882,11 @@
                         analogySec.classList.add('hidden');
                     }
 
-                    ansBtnText.textContent = "Скрыть ответ";
+                    ansBtnText.textContent = "Hide Answer";
                     ansBtnIcon.className = "fa-solid fa-eye-slash";
                 } else {
                     answerSection.classList.add('hidden');
-                    ansBtnText.textContent = "Показать ответ";
+                    ansBtnText.textContent = "Show Answer";
                     ansBtnIcon.className = "fa-solid fa-eye";
                 }
             };
@@ -902,10 +918,10 @@
 
                 if (idx > -1) {
                     flaggedIds.splice(idx, 1);
-                    showToast("Удалено из закладок", "info");
+                    showToast("Removed from bookmarks", "info");
                 } else {
                     flaggedIds.push(activeId);
-                    showToast("Добавлено в закладки!", "bookmark");
+                    showToast("Added to bookmarks!", "bookmark");
                 }
                 
                 savePersistence();
@@ -921,10 +937,10 @@
 
                 if (idx > -1) {
                     masteredIds.splice(idx, 1);
-                    showToast("Вопрос возвращен к изучению", "info");
+                    showToast("Question возвращен к изучению", "info");
                 } else {
                     masteredIds.push(activeId);
-                    showToast("Поздравляем! Отмечено как изучено 👍", "success");
+                    showToast("Congratulations! Marked as mastered 👍", "success");
                 }
 
                 savePersistence();

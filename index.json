@@ -618,8 +618,8 @@
       "time": "5",
       "frequency": "High",
       "related": [
-        "Разница между volatile и synchronized",
-        "Что такое happens-before"
+        "Difference between volatile and synchronized",
+        "What is happens-before"
       ]
     },
     {
@@ -632,8 +632,8 @@
       "time": "7",
       "frequency": "High",
       "related": [
-        "Как работает ThreadPoolExecutor",
-        "Жизненный цикл потока"
+        "How ThreadPoolExecutor works",
+        "Thread lifecycle"
       ]
     },
     {
@@ -642,12 +642,12 @@
       "topic": "Multithreading",
       "difficulty": "Middle",
       "format": "Open Answer",
-      "title": "Вам нужно сделать 20 независимых HTTP-запросов к стороннему метеорологическому API, собрать их результаты в список и вернуть пользователю.",
+      "title": "You need to make 20 independent HTTP requests to a third-party weather API, collect their results into a list, and return it to the user.",
       "time": "10",
       "frequency": "Medium",
       "related": [
-        "Разница между CPU-bound и IO-bound",
-        "Настройка кастомного пула потоков"
+        "Difference between CPU-bound and IO-bound",
+        "Custom thread pool configuration"
       ]
     },
     {
@@ -656,12 +656,12 @@
       "topic": "Multithreading",
       "difficulty": "Middle",
       "format": "Code Review",
-      "title": "Разработчик реализовал потокобезопасный кэш пользователей на основе `ConcurrentHashMap`. Посмотрите на код ниже (Java 17). Компиляция проходит успешно. Найдите баги и уязвимости при работе в многопоточной среде и предложите, как их исправить.",
+      "title": "A developer implemented a thread-safe user cache based on `ConcurrentHashMap`. Look at the code below (Java 17). It compiles successfully. Find bugs and vulnerabilities when working in a multithreaded environment and suggest how to fix them.",
       "time": "10",
       "frequency": "High",
       "related": [
-        "Разница между HashMap и ConcurrentHashMap",
-        "Метод computeIfAbsent"
+        "Difference between HashMap and ConcurrentHashMap",
+        "computeIfAbsent method"
       ]
     },
     {
@@ -670,12 +670,12 @@
       "topic": "Multithreading",
       "difficulty": "Senior",
       "format": "System Design",
-      "title": "Спроектируйте распределенный планировщик задач (Distributed Task Scheduler) для микросервисной архитектуры. Система должна выполнять миллионы отложенных задач (например, отправить push-уведомление ровно через 24 часа после события).",
+      "title": "Design a Distributed Task Scheduler for a microservice architecture. The system must execute millions of delayed tasks (for example, send a push notification exactly 24 hours after an event).",
       "time": "25",
       "frequency": "Medium",
       "related": [
-        "Как работают паттерны Outbox / Saga",
-        "Deadlocks в БД"
+        "How Outbox / Saga patterns work",
+        "Database Deadlocks"
       ]
     },
     {

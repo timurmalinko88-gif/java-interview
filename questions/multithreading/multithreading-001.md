@@ -5,44 +5,43 @@ difficulty: Junior
 format: Open Answer
 estimated_time_minutes: 5
 frequency: High
-related_questions: [Разница между volatile и synchronized, Что такое happens-before]
+related_questions: [Difference between volatile and synchronized, What is happens-before]
 source: Custom
-prerequisites: [Базовое понимание потоков, Ключевое слово volatile]
+prerequisites: [Basic understanding of threads, volatile keyword]
 ---
 
-У вас есть счетчик просмотров профиля пользователя, который реализован следующим образом:
+You have a user profile view counter implemented as follows:
 
 ```java
 private volatile int views = 0;
 ```
 
-Несколько потоков одновременно вызывают метод, делающий `views++`. Что произойдет со значением счетчика при высокой нагрузке? Если `volatile` не подходит для этой задачи, то для чего он вообще нужен? Приведите пример корректного использования.
+Multiple threads simultaneously call a method that executes `views++`. What will happen to the counter's value under high load? If `volatile` is not suitable for this task, what is it actually used for? Provide an example of its correct usage.
 
 ---ANSWER---
 
-При высокой нагрузке **счетчик потеряет часть инкрементов**. Операция `views++` не является атомарной. Под капотом она разбивается на три шага:
+Under high load, **the counter will lose some increments**. The `views++` operation is not atomic. Under the hood, it is broken down into three steps:
 
-* Чтение текущего значения `views` из памяти.
-* Увеличение значения на 1.
-* Запись нового значения обратно в память.
+* Reading the current value of `views` from memory.
+* Incrementing the value by 1.
+* Writing the new value back to memory.
 
-`volatile` гарантирует только **видимость** (visibility) изменений для других потоков (запрещает кэширование переменной в регистрах процессора), но **не обеспечивает атомарность** (atomicity). Два потока могут одновременно прочитать одно и то же значение, увеличить его и записать обратно, затерев результат друг друга (состояние гонки / race condition).
+`volatile` only guarantees **visibility** of changes to other threads (it prevents caching the variable in processor registers), but it **does not provide atomicity**. Two threads can read the same value simultaneously, increment it, and write it back, overwriting each other's result (race condition).
 
-**Как починить:** Использовать `AtomicInteger` (или `LongAdder` для очень высокой конкуренции) либо блок `synchronized`.
+**How to fix it:** Use `AtomicInteger` (or `LongAdder` for very high contention) or a `synchronized` block.
 
-**Для чего нужен `volatile`:** Он идеально подходит для переменных-флагов состояния, когда один поток пишет, а другие только читают. Например, флаг остановки фонового процесса:
+**What `volatile` is used for:** It is perfectly suited for state flag variables when one thread writes and others only read. For example, a background process stop flag:
 
 ```java
 private volatile boolean isRunning = true;
 ```
 
-### Ключевые моменты
+### Key Points
+* `volatile` solves the visibility problem, but does not solve the atomicity problem of operations.
+* The increment operation `++` is not atomic (consists of 3 steps: read-modify-write).
+* For counters in a multithreaded environment, you should use `AtomicInteger` / `AtomicLong` or `LongAdder`.
+* The correct use case for `volatile` is boolean stop/signal flags (one writer, many readers).
 
-* `volatile` решает проблему видимости, но не решает проблему атомарности операций.
-* Операция инкремента `++` не является атомарной (состоит из 3 шагов: read-modify-write).
-* Для счетчиков в многопоточной среде следует использовать `AtomicInteger` / `AtomicLong` или `LongAdder`.
-* Правильный юзкейс для `volatile` — булевы флаги остановки/сигнализации (один писатель, много читателей).
+### Life Analogy
 
-## Analogy
-
-Представьте школьную доску (это оперативная память). `volatile` означает, что ученики всегда смотрят на саму доску, а не в свои блокноты. Но если два ученика одновременно подбегут к доске, увидят число "5", оба в уме прибавят "1" и одновременно напишут "6" — одно действие будет потеряно. Должно было стать "7", но из-за отсутствия координации (атомарности) получилось "6".
+Imagine a school chalkboard (this is main memory). `volatile` means that students always look at the board itself, not in their notebooks. But if two students run to the board at the same time, see the number "5", both mentally add "1", and simultaneously write "6" — one action will be lost. It should have become "7", but due to a lack of coordination (atomicity), it resulted in "6".
