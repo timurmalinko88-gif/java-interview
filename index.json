@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "total": 139,
+  "total": 143,
   "questions": [
     {
       "id": "general-001",
@@ -1050,6 +1050,50 @@
       "title": "`AtomicInteger` vs `volatile`",
       "time": "",
       "frequency": "80%",
+      "related": []
+    },
+    {
+      "id": "multithreading-037",
+      "path": "questions/multithreading/multithreading-037.md",
+      "topic": "Multithreading",
+      "difficulty": "Senior",
+      "format": "Open Answer",
+      "title": "\"Happens-Before\" Relationship",
+      "time": "",
+      "frequency": "45%",
+      "related": []
+    },
+    {
+      "id": "multithreading-038",
+      "path": "questions/multithreading/multithreading-038.md",
+      "topic": "Multithreading",
+      "difficulty": "Junior",
+      "format": "Code Review",
+      "title": "`synchronized` Method vs Block",
+      "time": "",
+      "frequency": "85%",
+      "related": []
+    },
+    {
+      "id": "multithreading-039",
+      "path": "questions/multithreading/multithreading-039.md",
+      "topic": "Multithreading",
+      "difficulty": "Middle",
+      "format": "System Design",
+      "title": "`ScheduledExecutorService`",
+      "time": "",
+      "frequency": "70%",
+      "related": []
+    },
+    {
+      "id": "multithreading-040",
+      "path": "questions/multithreading/multithreading-040.md",
+      "topic": "Multithreading",
+      "difficulty": "Senior",
+      "format": "Code Review",
+      "title": "False Sharing",
+      "time": "",
+      "frequency": "30%",
       "related": []
     },
     {
