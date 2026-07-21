@@ -3,8 +3,41 @@
   "total": 108,
   "questions": [
     {
+      "id": "general-001",
+      "path": "questions/general/general-001.md",
+      "topic": "Multithreading",
+      "difficulty": "Middle",
+      "format": "Code Review",
+      "title": "```java",
+      "time": "",
+      "frequency": "",
+      "related": []
+    },
+    {
+      "id": "general-002",
+      "path": "questions/general/general-002.md",
+      "topic": "OOP",
+      "difficulty": "Junior",
+      "format": "Open Answer",
+      "title": "В чем разница между абстрактным классом и интерфейсом в Java?",
+      "time": "",
+      "frequency": "",
+      "related": []
+    },
+    {
+      "id": "general-003",
+      "path": "questions/general/general-003.md",
+      "topic": "System Design",
+      "difficulty": "Senior",
+      "format": "System Design",
+      "title": "Спроектируйте сервис сокращения URL-адресов (наподобие bit.ly).",
+      "time": "",
+      "frequency": "",
+      "related": []
+    },
+    {
       "id": "jvm-001",
-      "path": "questions/jvm-memory-management/jvm-001.md",
+      "path": "questions/jvm/jvm-001.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Junior",
       "format": "Open Answer",
@@ -15,7 +48,7 @@
     },
     {
       "id": "jvm-002",
-      "path": "questions/jvm-memory-management/jvm-002.md",
+      "path": "questions/jvm/jvm-002.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Junior",
       "format": "Code Review",
@@ -26,7 +59,7 @@
     },
     {
       "id": "jvm-003",
-      "path": "questions/jvm-memory-management/jvm-003.md",
+      "path": "questions/jvm/jvm-003.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Middle",
       "format": "Open Answer",
@@ -37,7 +70,7 @@
     },
     {
       "id": "jvm-004",
-      "path": "questions/jvm-memory-management/jvm-004.md",
+      "path": "questions/jvm/jvm-004.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Middle",
       "format": "Code Review",
@@ -48,7 +81,7 @@
     },
     {
       "id": "jvm-005",
-      "path": "questions/jvm-memory-management/jvm-005.md",
+      "path": "questions/jvm/jvm-005.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Senior",
       "format": "System Design",
@@ -59,7 +92,7 @@
     },
     {
       "id": "jvm-006",
-      "path": "questions/jvm-memory-management/jvm-006.md",
+      "path": "questions/jvm/jvm-006.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Junior",
       "format": "Open Answer",
@@ -70,7 +103,7 @@
     },
     {
       "id": "jvm-007",
-      "path": "questions/jvm-memory-management/jvm-007.md",
+      "path": "questions/jvm/jvm-007.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Junior",
       "format": "Code Review",
@@ -81,7 +114,7 @@
     },
     {
       "id": "jvm-008",
-      "path": "questions/jvm-memory-management/jvm-008.md",
+      "path": "questions/jvm/jvm-008.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Middle",
       "format": "Open Answer",
@@ -92,7 +125,7 @@
     },
     {
       "id": "jvm-009",
-      "path": "questions/jvm-memory-management/jvm-009.md",
+      "path": "questions/jvm/jvm-009.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Middle",
       "format": "Code Review",
@@ -103,7 +136,7 @@
     },
     {
       "id": "jvm-010",
-      "path": "questions/jvm-memory-management/jvm-010.md",
+      "path": "questions/jvm/jvm-010.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Senior",
       "format": "System Design",
@@ -114,7 +147,7 @@
     },
     {
       "id": "jvm-011",
-      "path": "questions/jvm-memory-management/jvm-011.md",
+      "path": "questions/jvm/jvm-011.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Junior",
       "format": "Code Review",
@@ -125,7 +158,7 @@
     },
     {
       "id": "jvm-012",
-      "path": "questions/jvm-memory-management/jvm-012.md",
+      "path": "questions/jvm/jvm-012.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Junior",
       "format": "Open Answer",
@@ -136,7 +169,7 @@
     },
     {
       "id": "jvm-013",
-      "path": "questions/jvm-memory-management/jvm-013.md",
+      "path": "questions/jvm/jvm-013.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Middle",
       "format": "Code Review",
@@ -147,7 +180,7 @@
     },
     {
       "id": "jvm-014",
-      "path": "questions/jvm-memory-management/jvm-014.md",
+      "path": "questions/jvm/jvm-014.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Middle",
       "format": "Open Answer",
@@ -158,7 +191,7 @@
     },
     {
       "id": "jvm-015",
-      "path": "questions/jvm-memory-management/jvm-015.md",
+      "path": "questions/jvm/jvm-015.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Senior",
       "format": "System Design",
@@ -169,7 +202,7 @@
     },
     {
       "id": "jvm-016",
-      "path": "questions/jvm-memory-management/jvm-016.md",
+      "path": "questions/jvm/jvm-016.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Junior",
       "format": "Open Answer",
@@ -183,7 +216,7 @@
     },
     {
       "id": "jvm-017",
-      "path": "questions/jvm-memory-management/jvm-017.md",
+      "path": "questions/jvm/jvm-017.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Junior",
       "format": "Code Review",
@@ -197,7 +230,7 @@
     },
     {
       "id": "jvm-018",
-      "path": "questions/jvm-memory-management/jvm-018.md",
+      "path": "questions/jvm/jvm-018.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Middle",
       "format": "Open Answer",
@@ -210,7 +243,7 @@
     },
     {
       "id": "jvm-019",
-      "path": "questions/jvm-memory-management/jvm-019.md",
+      "path": "questions/jvm/jvm-019.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Middle",
       "format": "Code Review",
@@ -224,7 +257,7 @@
     },
     {
       "id": "jvm-020",
-      "path": "questions/jvm-memory-management/jvm-020.md",
+      "path": "questions/jvm/jvm-020.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Senior",
       "format": "System Design",
@@ -238,7 +271,7 @@
     },
     {
       "id": "jvm-021",
-      "path": "questions/jvm-memory-management/jvm-021.md",
+      "path": "questions/jvm/jvm-021.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Junior",
       "format": "Open Answer",
@@ -249,7 +282,7 @@
     },
     {
       "id": "jvm-022",
-      "path": "questions/jvm-memory-management/jvm-022.md",
+      "path": "questions/jvm/jvm-022.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Junior",
       "format": "Code Review",
@@ -260,7 +293,7 @@
     },
     {
       "id": "jvm-023",
-      "path": "questions/jvm-memory-management/jvm-023.md",
+      "path": "questions/jvm/jvm-023.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Middle",
       "format": "Open Answer",
@@ -271,7 +304,7 @@
     },
     {
       "id": "jvm-024",
-      "path": "questions/jvm-memory-management/jvm-024.md",
+      "path": "questions/jvm/jvm-024.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Middle",
       "format": "Code Review",
@@ -282,7 +315,7 @@
     },
     {
       "id": "jvm-025",
-      "path": "questions/jvm-memory-management/jvm-025.md",
+      "path": "questions/jvm/jvm-025.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Senior",
       "format": "System Design",
@@ -293,7 +326,7 @@
     },
     {
       "id": "jvm-026",
-      "path": "questions/jvm-memory-management/jvm-026.md",
+      "path": "questions/jvm/jvm-026.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Junior",
       "format": "Open Answer",
@@ -304,7 +337,7 @@
     },
     {
       "id": "jvm-027",
-      "path": "questions/jvm-memory-management/jvm-027.md",
+      "path": "questions/jvm/jvm-027.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Junior",
       "format": "Code Review",
@@ -315,7 +348,7 @@
     },
     {
       "id": "jvm-028",
-      "path": "questions/jvm-memory-management/jvm-028.md",
+      "path": "questions/jvm/jvm-028.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Middle",
       "format": "Open Answer",
@@ -326,7 +359,7 @@
     },
     {
       "id": "jvm-029",
-      "path": "questions/jvm-memory-management/jvm-029.md",
+      "path": "questions/jvm/jvm-029.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Middle",
       "format": "Code Review",
@@ -337,7 +370,7 @@
     },
     {
       "id": "jvm-030",
-      "path": "questions/jvm-memory-management/jvm-030.md",
+      "path": "questions/jvm/jvm-030.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Senior",
       "format": "System Design",
@@ -348,7 +381,7 @@
     },
     {
       "id": "jvm-031",
-      "path": "questions/jvm-memory-management/jvm-031.md",
+      "path": "questions/jvm/jvm-031.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Senior",
       "format": "System Design",
@@ -359,7 +392,7 @@
     },
     {
       "id": "jvm-032",
-      "path": "questions/jvm-memory-management/jvm-032.md",
+      "path": "questions/jvm/jvm-032.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Senior",
       "format": "Open Answer",
@@ -370,7 +403,7 @@
     },
     {
       "id": "jvm-033",
-      "path": "questions/jvm-memory-management/jvm-033.md",
+      "path": "questions/jvm/jvm-033.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Senior",
       "format": "Code Review",
@@ -381,7 +414,7 @@
     },
     {
       "id": "jvm-034",
-      "path": "questions/jvm-memory-management/jvm-034.md",
+      "path": "questions/jvm/jvm-034.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Junior",
       "format": "Open Answer",
@@ -395,7 +428,7 @@
     },
     {
       "id": "jvm-035",
-      "path": "questions/jvm-memory-management/jvm-035.md",
+      "path": "questions/jvm/jvm-035.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Middle",
       "format": "Open Answer",
@@ -408,7 +441,7 @@
     },
     {
       "id": "jvm-036",
-      "path": "questions/jvm-memory-management/jvm-036.md",
+      "path": "questions/jvm/jvm-036.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Senior",
       "format": "Open Answer",
@@ -422,7 +455,7 @@
     },
     {
       "id": "jvm-037",
-      "path": "questions/jvm-memory-management/jvm-037.md",
+      "path": "questions/jvm/jvm-037.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Middle",
       "format": "Open Answer",
@@ -436,7 +469,7 @@
     },
     {
       "id": "jvm-038",
-      "path": "questions/jvm-memory-management/jvm-038.md",
+      "path": "questions/jvm/jvm-038.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Senior",
       "format": "System Design",
@@ -450,7 +483,7 @@
     },
     {
       "id": "jvm-039",
-      "path": "questions/jvm-memory-management/jvm-039.md",
+      "path": "questions/jvm/jvm-039.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Middle",
       "format": "Open Answer",
@@ -463,7 +496,7 @@
     },
     {
       "id": "jvm-040",
-      "path": "questions/jvm-memory-management/jvm-040.md",
+      "path": "questions/jvm/jvm-040.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Senior",
       "format": "Open Answer",
@@ -476,7 +509,7 @@
     },
     {
       "id": "jvm-041",
-      "path": "questions/jvm-memory-management/jvm-041.md",
+      "path": "questions/jvm/jvm-041.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Senior",
       "format": "Open Answer",
@@ -489,7 +522,7 @@
     },
     {
       "id": "jvm-042",
-      "path": "questions/jvm-memory-management/jvm-042.md",
+      "path": "questions/jvm/jvm-042.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Senior",
       "format": "Open Answer",
@@ -502,7 +535,7 @@
     },
     {
       "id": "jvm-043",
-      "path": "questions/jvm-memory-management/jvm-043.md",
+      "path": "questions/jvm/jvm-043.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Middle",
       "format": "Open Answer",
@@ -515,7 +548,7 @@
     },
     {
       "id": "jvm-044",
-      "path": "questions/jvm-memory-management/jvm-044.md",
+      "path": "questions/jvm/jvm-044.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Senior",
       "format": "Open Answer",
@@ -528,7 +561,7 @@
     },
     {
       "id": "jvm-045",
-      "path": "questions/jvm-memory-management/jvm-045.md",
+      "path": "questions/jvm/jvm-045.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Middle",
       "format": "Open Answer",
@@ -542,7 +575,7 @@
     },
     {
       "id": "jvm-046",
-      "path": "questions/jvm-memory-management/jvm-046.md",
+      "path": "questions/jvm/jvm-046.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Middle",
       "format": "Open Answer",
@@ -556,7 +589,7 @@
     },
     {
       "id": "jvm-047",
-      "path": "questions/jvm-memory-management/jvm-047.md",
+      "path": "questions/jvm/jvm-047.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Senior",
       "format": "System Design",
@@ -569,7 +602,7 @@
     },
     {
       "id": "jvm-048",
-      "path": "questions/jvm-memory-management/jvm-048.md",
+      "path": "questions/jvm/jvm-048.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Junior",
       "format": "Open Answer",
@@ -582,7 +615,7 @@
     },
     {
       "id": "jvm-049",
-      "path": "questions/jvm-memory-management/jvm-049.md",
+      "path": "questions/jvm/jvm-049.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Middle",
       "format": "Code Review",
@@ -596,7 +629,7 @@
     },
     {
       "id": "jvm-050",
-      "path": "questions/jvm-memory-management/jvm-050.md",
+      "path": "questions/jvm/jvm-050.md",
       "topic": "JVM & Memory Management",
       "difficulty": "Middle",
       "format": "Open Answer",
@@ -677,17 +710,6 @@
         "How Outbox / Saga patterns work",
         "Database Deadlocks"
       ]
-    },
-    {
-      "id": "q2",
-      "path": "questions/multithreading/q2.md",
-      "topic": "Multithreading",
-      "difficulty": "Middle",
-      "format": "Code Review",
-      "title": "```java",
-      "time": "",
-      "frequency": "",
-      "related": []
     },
     {
       "id": "oop-001",
@@ -1325,28 +1347,6 @@
         "design-015",
         "arch-008"
       ]
-    },
-    {
-      "id": "q1",
-      "path": "questions/oop/q1.md",
-      "topic": "OOP",
-      "difficulty": "Junior",
-      "format": "Open Answer",
-      "title": "В чем разница между абстрактным классом и интерфейсом в Java?",
-      "time": "",
-      "frequency": "",
-      "related": []
-    },
-    {
-      "id": "q3",
-      "path": "questions/system-design/q3.md",
-      "topic": "System Design",
-      "difficulty": "Senior",
-      "format": "System Design",
-      "title": "Спроектируйте сервис сокращения URL-адресов (наподобие bit.ly).",
-      "time": "",
-      "frequency": "",
-      "related": []
     }
   ]
 }

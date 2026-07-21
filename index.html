@@ -236,6 +236,10 @@
                         <span id="active-difficulty" class="px-2.5 py-1 rounded-lg text-xs font-bold uppercase tracking-wider">
                             Junior
                         </span>
+                        <!-- ID Badge -->
+                        <span id="active-id" class="px-2.5 py-1 rounded-lg text-xs font-mono font-bold bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-700/50">
+                            #ID
+                        </span>
                         <!-- Topic Badge -->
                         <span id="active-topic" class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700/50">
                             JVM & Memory
@@ -692,6 +696,7 @@
             }
 
             document.getElementById('active-topic').textContent = q.topic;
+            document.getElementById('active-id').textContent = '#' + q.id;
             document.getElementById('active-format').textContent = q.format;
             document.getElementById('counter').textContent = `${index + 1} / ${filteredQuestions.length}`;
 
