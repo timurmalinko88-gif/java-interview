@@ -278,7 +278,7 @@ async function loadQuestion(indexOrQuestion) {
   const extraMetaContainer = document.getElementById('extra-metadata');
   extraMetaContainer.innerHTML = '';
   if (q.time) {
-    extraMetaContainer.innerHTML += `<span class="flex items-center gap-1 bg-slate-50 dark:bg-slate-800/50 px-2 py-1 rounded"><i class="fa-regular fa-clock text-amber-500"></i> ${q.time} мин</span>`;
+    extraMetaContainer.innerHTML += `<span class="flex items-center gap-1 bg-slate-50 dark:bg-slate-800/50 px-2 py-1 rounded"><i class="fa-regular fa-clock text-amber-500"></i> ${q.time}</span>`;
   }
   if (q.frequency) {
     extraMetaContainer.innerHTML += `<span class="flex items-center gap-1 bg-slate-50 dark:bg-slate-800/50 px-2 py-1 rounded"><i class="fa-solid fa-fire-flame-curved text-brand-500"></i> Frequency: ${q.frequency}</span>`;

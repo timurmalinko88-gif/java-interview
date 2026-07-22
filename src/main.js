@@ -16,6 +16,10 @@ import { fetchQuestions } from './api.js';
 // --- app.js ---
 // Initialize and load dynamic questions indexes
 document.addEventListener('DOMContentLoaded', () => {
+  if (typeof marked !== 'undefined') {
+    marked.use({ breaks: true });
+  }
+
   // Load and initialize core engine
   fetchQuestions();
 
