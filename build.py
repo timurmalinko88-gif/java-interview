@@ -12,8 +12,8 @@ import re
 def build_index():
     """Сканирует папку questions/ и создаёт index.json"""
     questions = []
-    # Ищем файлы .md в папке questions и во всех подпапках
-    md_files = sorted(glob.glob('questions/**/*.md', recursive=True))
+    # Ищем файлы .md в папке public/questions
+    md_files = sorted(glob.glob('public/questions/**/*.md', recursive=True))
 
     print(f"Найдено файлов: {len(md_files)}")
 
@@ -72,8 +72,8 @@ def build_index():
                 else:
                     break  # Если строка не похожа на "ключ: значение", метаданные закончились
 
-        # Относительный путь для фронтенда
-        rel_path = filepath.replace('\\', '/')
+        # Относительный путь для фронтенда (удаляем public/ чтобы url был /questions/...)
+        rel_path = filepath.replace('\\', '/').replace('public/', '', 1)
 
         # Извлекаем тело документа (после frontmatter)
         body_lines = []
@@ -150,10 +150,10 @@ def build_index():
         'questions': questions
     }
 
-    with open('index.json', 'w', encoding='utf-8') as f:
+    with open('public/index.json', 'w', encoding='utf-8') as f:
         json.dump(index, f, ensure_ascii=False, indent=2)
 
-    print(f"\nУспешно! Обновлен index.json. Проиндексировано файлов: {len(questions)}")
+    print(f"\nУспешно! Обновлен public/index.json. Проиндексировано файлов: {len(questions)}")
 
 if __name__ == '__main__':
     build_index()
