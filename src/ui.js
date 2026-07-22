@@ -1,4 +1,4 @@
-import { debounce, setDifficultyChipInactive } from './utils.js';
+import { setDifficultyChipInactive } from './utils.js';
 import { state } from './state.js';
 import { isFlagged } from './collections.js';
 

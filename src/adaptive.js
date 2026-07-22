@@ -254,12 +254,8 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => modal.close(), 300);
       if (typeof state.questionsList !== 'undefined') {
         const diffSelect = document.querySelector(`.diff-chip[data-diff="${selectedLevel}"]`);
-        if (diffSelect && typeof toggleDifficulty === 'function') {
+        if (diffSelect) {
           document.querySelectorAll('.diff-chip').forEach(c => c.classList.remove('ring-2', 'ring-offset-2', 'ring-offset-white', 'dark:ring-offset-darkCard'));
-          if (typeof selectedDifficulties !== 'undefined') {
-            selectedDifficulties.clear();
-            selectedDifficulties.add(selectedLevel);
-          }
           const isJunior = selectedLevel === 'Junior';
           const isMiddle = selectedLevel === 'Middle';
           diffSelect.classList.add('ring-2', 'ring-offset-2', 'ring-offset-white', 'dark:ring-offset-darkCard', isJunior ? 'ring-emerald-500' : isMiddle ? 'ring-amber-500' : 'ring-rose-500');

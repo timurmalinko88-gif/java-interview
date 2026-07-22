@@ -1,11 +1,11 @@
 import "./style.css";
 import { debounce, setDifficultyChipInactive, setDifficultyChipActive } from './utils.js';
-import { state, loadPersistence, savePersistence } from './state.js';
-import { buildSidebarList, triggerFilterAction, clearAllFilters, loadQuestion, syncActionButtons, updateStatsUI, showToast, renderAnswerContent, hideAnswerSection } from './ui.js';
-import { openMockSetup, closeMockSetup, startMockInterview, exitMockInterview, finishMockInterview, evaluateMockQuestion, revealMockAnswer } from './mock.js';
+import { state, savePersistence } from './state.js';
+import { buildSidebarList, triggerFilterAction, clearAllFilters, loadQuestion, syncActionButtons, showToast, renderAnswerContent, hideAnswerSection } from './ui.js';
+import { openMockSetup, closeMockSetup, startMockInterview, exitMockInterview, evaluateMockQuestion, revealMockAnswer } from './mock.js';
 import { updateStatsDashboard } from './stats.js';
 import { checkAdaptiveProgression } from './adaptive.js';
-import { evaluateSR, isDueForReview } from './spacedRepetition.js';
+import { evaluateSR } from './spacedRepetition.js';
 import { toggleFlag } from './collections.js';
 
 import "./style.css";

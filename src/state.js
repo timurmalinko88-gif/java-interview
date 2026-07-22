@@ -91,8 +91,8 @@ function loadPersistence() {
     state.flaggedIds = parsedFlagged;
     
     state.srData = storedSr ? JSON.parse(storedSr) : {};
-    if (typeof updateStatsUI === 'function') updateStatsUI();
-    if (typeof updateStatsDashboard === 'function') updateStatsDashboard();
+    import('./ui.js').then(m => m.updateStatsUI && m.updateStatsUI());
+    import('./stats.js').then(m => m.updateStatsDashboard && m.updateStatsDashboard());
   } catch (err) {
     console.error("Failed to read localStorage persistence states", err);
   }
@@ -102,8 +102,8 @@ export function savePersistence() {
     localStorage.setItem('java_trainer_mastered', JSON.stringify(state.masteredIds));
     localStorage.setItem('java_trainer_flagged', JSON.stringify(state.flaggedIds));
     localStorage.setItem('java_trainer_sr', JSON.stringify(state.srData));
-    if (typeof updateStatsUI === 'function') updateStatsUI();
-    if (typeof updateStatsDashboard === 'function') updateStatsDashboard();
+    import('./ui.js').then(m => m.updateStatsUI && m.updateStatsUI());
+    import('./stats.js').then(m => m.updateStatsDashboard && m.updateStatsDashboard());
   } catch (err) {
     console.error("Failed to write to localStorage", err);
   }

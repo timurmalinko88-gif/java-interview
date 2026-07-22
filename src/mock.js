@@ -1,4 +1,4 @@
-import { loadQuestion, showToast, buildSidebarList, renderAnswerContent } from './ui.js';
+import { loadQuestion, showToast, renderAnswerContent } from './ui.js';
 import { state } from './state.js';
 export function openMockSetup() {
   document.getElementById('mock-setup-modal').showModal();
