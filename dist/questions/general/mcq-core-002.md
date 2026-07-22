@@ -5,16 +5,16 @@ difficulty: Middle
 format: MCQ
 tags: []
 ---
-Какое требование к контракту equals() и hashCode() является верным?
+Which requirement for the equals() and hashCode() contract is correct?
 
-A. Если хэш-коды двух объектов равны, то объекты всегда равны по equals
-B. Если объекты равны по equals, то их хэш-коды обязательно должны быть равны
-C. Если хэш-коды разные, то объекты могут быть равны по equals
-D. Нет жесткой зависимости между этими методами
+A. If the hash codes of two objects are equal, the objects are always equal according to equals
+B. If objects are equal according to equals, their hash codes must necessarily be equal
+C. If hash codes are different, the objects can be equal according to equals
+D. There is no strict dependency between these methods
 
 ---ANSWER---
-**Правильный ответ: B**
+**Correct answer: B**
 
 ### Key Points
-- Главное правило: `a.equals(b) == true` => `a.hashCode() == b.hashCode()`.
-- Обратное неверно: одинаковый хэш-код не гарантирует равенство объектов (возникает коллизия).
+- The main rule: `a.equals(b) == true` => `a.hashCode() == b.hashCode()`.
+- The reverse is not true: the same hash code does not guarantee object equality (a collision occurs).

@@ -5,16 +5,16 @@ difficulty: Junior
 format: MCQ
 tags: ['oop', 'inheritance']
 ---
-Поддерживает ли Java множественное наследование классов?
+Does Java support multiple inheritance of classes?
 
-A. Да, с помощью ключевого слова extends
-B. Нет, не поддерживает ни в каком виде
-C. Нет, класс может наследоваться только от одного класса, но может реализовывать несколько интерфейсов
-D. Да, с помощью ключевого слова implements
+A. Yes, using the extends keyword
+B. No, it does not support it in any form
+C. No, a class can inherit only from one class, but can implement multiple interfaces
+D. Yes, using the implements keyword
 
 ---ANSWER---
-**Правильный ответ: C**
+**Correct answer: C**
 
 ### Key Points
-- Java не поддерживает множественное наследование состояний (классов) во избежание проблемы "ромбовидного наследования" (Diamond Problem).
-- Множественное наследование типов достигается через реализацию множества интерфейсов.
+- Java does not support multiple inheritance of state (classes) to avoid the "Diamond Problem".
+- Multiple inheritance of types is achieved through implementing multiple interfaces.

@@ -5,16 +5,16 @@ difficulty: Senior
 format: MCQ
 tags: ['system-design']
 ---
-В контексте очередей сообщений (например, Kafka или RabbitMQ), что означает гарантия доставки "At-least-once"?
+In the context of message queues (e.g., Kafka or RabbitMQ), what does the "At-least-once" delivery guarantee mean?
 
-A. Сообщение будет доставлено ровно один раз без дубликатов
-B. Сообщение может быть потеряно, но никогда не доставится дважды
-C. Сообщение гарантированно дойдет до потребителя, но могут быть доставлены дубликаты
-D. Сообщение доставляется только при наличии активного соединения
+A. The message will be delivered exactly once without duplicates
+B. The message can be lost, but will never be delivered twice
+C. The message is guaranteed to reach the consumer, but duplicates may be delivered
+D. The message is delivered only when there is an active connection
 
 ---ANSWER---
-**Правильный ответ: C**
+**Correct Answer: C**
 
 ### Key Points
-- At-least-once (как минимум один раз): если консьюмер не отправил ACK (подтверждение), брокер пошлет сообщение снова. Возможны дубликаты, поэтому обработчики сообщений должны быть **идемпотентными**.
-- Exactly-once (ровно один раз) — самая сложная в реализации гарантия.
+- At-least-once: if the consumer does not send an ACK (acknowledgment), the broker will send the message again. Duplicates are possible, so message handlers must be **idempotent**.
+- Exactly-once — is the most complex guarantee to implement.

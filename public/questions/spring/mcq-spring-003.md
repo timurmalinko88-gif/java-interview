@@ -5,7 +5,7 @@ difficulty: Middle
 format: MCQ
 tags: ['spring-boot']
 ---
-Что объединяет в себе аннотация @SpringBootApplication?
+What does the @SpringBootApplication annotation combine?
 
 A. @Configuration, @EnableAutoConfiguration, @ComponentScan
 B. @Controller, @Service, @Repository
@@ -13,9 +13,9 @@ C. @EnableWebMvc, @Configuration, @Bean
 D. @EnableJpaRepositories, @EntityScan, @ComponentScan
 
 ---ANSWER---
-**Правильный ответ: A**
+**Correct answer: A**
 
 ### Key Points
-- `@SpringBootApplication` — это удобная мета-аннотация.
-- `@EnableAutoConfiguration` — включает магию автонастройки Spring Boot.
-- `@ComponentScan` — сканирует текущий пакет на наличие других компонентов.
+- `@SpringBootApplication` is a convenient meta-annotation.
+- `@EnableAutoConfiguration` enables Spring Boot's auto-configuration magic.
+- `@ComponentScan` scans the current package for other components.

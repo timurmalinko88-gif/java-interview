@@ -5,15 +5,15 @@ difficulty: Junior
 format: MCQ
 tags: ['string']
 ---
-Почему класс String в Java является неизменяемым (immutable)?
+Why is the String class immutable in Java?
 
-A. Для обеспечения потокобезопасности
-B. Для возможности кеширования хэш-кода
-C. Для безопасности (например, использование в качестве параметров подключения к БД)
-D. Все вышеперечисленное
+A. To ensure thread safety
+B. To allow caching of the hash code
+C. For security (e.g., use as database connection parameters)
+D. All of the above
 
 ---ANSWER---
-**Правильный ответ: D (Все вышеперечисленное)**
+**Correct answer: D (All of the above)**
 
 ### Key Points
-- Неизменяемость `String` делает его идеальным кандидатом в качестве ключей в `HashMap`, позволяет безопасно использовать в многопоточной среде и защищает от изменения критичных параметров.
+- The immutability of `String` makes it an ideal candidate as a key in `HashMap`, allows safe use in a multithreaded environment, and protects against modification of critical parameters.

@@ -5,15 +5,15 @@ difficulty: Middle
 format: MCQ
 tags: ['system-design']
 ---
-Какое утверждение о реляционных (SQL) и нереляционных (NoSQL) базах данных верно?
+Which statement about relational (SQL) and non-relational (NoSQL) databases is true?
 
-A. SQL базы лучше масштабируются горизонтально по сравнению с NoSQL (например, Cassandra)
-B. NoSQL базы данных (Document, Key-Value) обычно не поддерживают строгие ACID транзакции на уровне нескольких документов/таблиц
-C. SQL базы данных предназначены для хранения неструктурированных файлов (изображения, видео)
-D. NoSQL базы используют строго фиксированную схему (Schema)
+A. SQL databases scale horizontally better compared to NoSQL (e.g., Cassandra)
+B. NoSQL databases (Document, Key-Value) usually do not support strict ACID transactions across multiple documents/tables
+C. SQL databases are designed for storing unstructured files (images, video)
+D. NoSQL databases use a strictly fixed schema
 
 ---ANSWER---
-**Правильный ответ: B**
+**Correct Answer: B**
 
 ### Key Points
-- Большинство NoSQL решений делают компромисс: они жертвуют строгими ACID транзакциями в пользу высокой доступности (Availability), низкой задержки (Low Latency) и легкого горизонтального масштабирования.
+- Most NoSQL solutions make a trade-off: they sacrifice strict ACID transactions in favor of high availability, low latency, and easy horizontal scaling.

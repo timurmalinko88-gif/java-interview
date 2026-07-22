@@ -5,7 +5,7 @@ difficulty: Middle
 format: MCQ
 tags: ['system-design']
 ---
-Согласно CAP-теореме, распределенная система может гарантировать не более двух из трех свойств. Какие это свойства?
+According to the CAP theorem, a distributed system can guarantee no more than two of three properties. What are these properties?
 
 A. Consistency, Availability, Partition Tolerance
 B. Cacheability, Atomicity, Performance
@@ -13,9 +13,9 @@ C. Concurrency, Availability, Persistence
 D. Consistency, Asynchrony, Partition Tolerance
 
 ---ANSWER---
-**Правильный ответ: A**
+**Correct Answer: A**
 
 ### Key Points
-- **C (Consistency)**: каждое чтение получает самую последнюю запись или ошибку.
-- **A (Availability)**: каждый запрос получает ответ (без гарантии свежести данных).
-- **P (Partition Tolerance)**: система продолжает работу несмотря на обрыв сети между узлами.
+- **C (Consistency)**: Every read receives the most recent write or an error.
+- **A (Availability)**: Every request receives a non-error response (without the guarantee that it contains the most recent write).
+- **P (Partition Tolerance)**: The system continues to operate despite network drops or delays between nodes.

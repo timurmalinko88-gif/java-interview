@@ -5,18 +5,18 @@ difficulty: Middle
 format: MCQ
 tags: ['sql']
 ---
-Что означает буква "I" в аббревиатуре ACID (свойства транзакций баз данных)?
+What does the letter "I" stand for in the acronym ACID (database transaction properties)?
 
-A. Integration (Интеграция)
-B. Isolation (Изоляция)
-C. Inheritance (Наследование)
-D. Indexing (Индексация)
+A. Integration
+B. Isolation
+C. Inheritance
+D. Indexing
 
 ---ANSWER---
-**Правильный ответ: B (Isolation)**
+**Correct answer: B (Isolation)**
 
 ### Key Points
-- **A**tomicity (Атомарность)
-- **C**onsistency (Согласованность)
-- **I**solation (Изолированность) - Транзакции не должны влиять друг на друга.
-- **D**urability (Долговечность)
+- **A**tomicity
+- **C**onsistency
+- **I**solation - Transactions should not affect each other.
+- **D**urability

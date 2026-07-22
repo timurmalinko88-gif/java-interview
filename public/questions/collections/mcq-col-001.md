@@ -5,7 +5,7 @@ difficulty: Junior
 format: MCQ
 tags: ['collections', 'list']
 ---
-Какая реализация интерфейса List работает быстрее при вставке элементов в середину списка?
+Which implementation of the List interface works faster when inserting elements into the middle of the list?
 
 A. ArrayList
 B. LinkedList
@@ -13,8 +13,8 @@ C. Vector
 D. CopyOnWriteArrayList
 
 ---ANSWER---
-**Правильный ответ: B (LinkedList)**
+**Correct answer: B (LinkedList)**
 
 ### Key Points
-- В LinkedList вставка узла требует только изменения ссылок у соседних узлов O(1) (после нахождения позиции O(N)).
-- В ArrayList вставка в середину требует сдвига всех последующих элементов вправо O(N).
+- In a LinkedList, inserting a node requires only changing the references of neighboring nodes O(1) (after finding the position O(N)).
+- In an ArrayList, inserting into the middle requires shifting all subsequent elements to the right O(N).

@@ -5,15 +5,15 @@ difficulty: Junior
 format: MCQ
 tags: ['spring-boot']
 ---
-Какой интерфейс Spring Data JPA используется для базовых CRUD операций и пагинации, если вы хотите наследовать все методы по умолчанию?
+Which Spring Data JPA interface is used for basic CRUD operations and pagination if you want to inherit all default methods?
 
 A. CrudRepository
 B. JpaRepository
 C. PagingAndSortingRepository
-D. JpaRepository и CrudRepository
+D. JpaRepository and CrudRepository
 
 ---ANSWER---
-**Правильный ответ: B (JpaRepository)**
+**Correct answer: B (JpaRepository)**
 
 ### Key Points
-- `JpaRepository` расширяет `PagingAndSortingRepository` и `CrudRepository`, а также предоставляет JPA-специфичные методы (такие как `flush`, `saveAll` и т.д.).
+- `JpaRepository` extends `PagingAndSortingRepository` and `CrudRepository`, and also provides JPA-specific methods (such as `flush`, `saveAll`, etc.).

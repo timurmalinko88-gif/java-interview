@@ -5,16 +5,16 @@ difficulty: Middle
 format: MCQ
 tags: ['multithreading', 'volatile']
 ---
-Какую проблему решает ключевое слово volatile?
+What problem does the volatile keyword solve?
 
-A. Обеспечивает атомарность сложных операций (например, инкремента)
-B. Предотвращает Deadlock (взаимоблокировку)
-C. Гарантирует видимость изменений переменной между потоками
-D. Увеличивает размер пула потоков
+A. Provides atomicity for complex operations (e.g., increment)
+B. Prevents Deadlock
+C. Guarantees visibility of variable changes between threads
+D. Increases thread pool size
 
 ---ANSWER---
-**Правильный ответ: C**
+**Correct answer: C**
 
 ### Key Points
-- `volatile` решает проблему видимости кэшей процессоров и предотвращает переупорядочивание инструкций (instruction reordering).
-- Оно **не гарантирует атомарность** (например, `i++` не будет потокобезопасным даже с `volatile`).
+- `volatile` solves the visibility problem of processor caches and prevents instruction reordering.
+- It **does not guarantee atomicity** (for example, `i++` will not be thread-safe even with `volatile`).

@@ -5,7 +5,7 @@ difficulty: Middle
 format: MCQ
 tags: ['system-design']
 ---
-Какой алгоритм балансировки нагрузки отправляет новый запрос на сервер с наименьшим количеством активных соединений?
+Which load balancing algorithm sends a new request to the server with the fewest active connections?
 
 A. Round Robin
 B. Least Connections
@@ -13,7 +13,7 @@ C. IP Hash
 D. Weighted Round Robin
 
 ---ANSWER---
-**Правильный ответ: B (Least Connections)**
+**Correct Answer: B (Least Connections)**
 
 ### Key Points
-- Алгоритм "Least Connections" идеален, когда запросы занимают разное время на обработку. Он предотвращает перегрузку сервера, который случайно получил много долгих запросов.
+- The "Least Connections" algorithm is ideal when requests take varying amounts of time to process. It prevents overloading a server that happens to receive many long-running requests.

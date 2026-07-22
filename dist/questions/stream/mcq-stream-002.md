@@ -5,16 +5,16 @@ difficulty: Senior
 format: MCQ
 tags: ['stream-api']
 ---
-В каком пуле потоков по умолчанию выполняются parallelStream()?
+In which thread pool are parallelStream() executed by default?
 
 A. CachedThreadPool
-B. Специфичном для каждого стрима пуле, который создается при вызове
+B. A stream-specific pool that is created upon invocation
 C. ForkJoinPool.commonPool()
 D. SingleThreadExecutor
 
 ---ANSWER---
-**Правильный ответ: C**
+**Correct answer: C**
 
 ### Key Points
-- По умолчанию все параллельные стримы в JVM делят общий глобальный `ForkJoinPool.commonPool()`.
-- Если одна долгая блокирующая задача (I/O) займет потоки в commonPool, это негативно повлияет на все другие parallelStream в приложении.
+- By default, all parallel streams in the JVM share the common global `ForkJoinPool.commonPool()`.
+- If one long blocking task (I/O) occupies the threads in the commonPool, it will negatively affect all other parallelStreams in the application.

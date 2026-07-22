@@ -5,16 +5,16 @@ difficulty: Senior
 format: MCQ
 tags: ['system-design']
 ---
-Какой паттерн решает проблему распределенных транзакций между несколькими микросервисами?
+Which pattern solves the problem of distributed transactions across multiple microservices?
 
 A. Singleton
-B. Saga (Сага)
+B. Saga
 C. Circuit Breaker
 D. API Composition
 
 ---ANSWER---
-**Правильный ответ: B (Saga)**
+**Correct Answer: B (Saga)**
 
 ### Key Points
-- В микросервисной архитектуре нет локальных ACID транзакций, захватывающих несколько баз данных.
-- Паттерн Saga разбивает бизнес-процесс на цепочку локальных транзакций. Если шаг падает, запускаются компенсирующие транзакции (откат предыдущих шагов).
+- In a microservice architecture, there are no local ACID transactions spanning multiple databases.
+- The Saga pattern breaks a business process into a sequence of local transactions. If a step fails, compensating transactions are triggered (rolling back previous steps).

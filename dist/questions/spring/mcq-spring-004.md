@@ -5,16 +5,16 @@ difficulty: Senior
 format: MCQ
 tags: ['spring-boot', 'aop']
 ---
-Как Spring AOP реализует создание прокси-объектов по умолчанию?
+How does Spring AOP implement the creation of proxy objects by default?
 
-A. Путем модификации байт-кода исходных классов (CGLIB)
-B. Путем создания динамических прокси JDK, если класс реализует интерфейс
-C. Используя паттерн Decorator на этапе компиляции (AspectJ)
-D. Через Java Reflection Proxy без кэширования
+A. By modifying the bytecode of the original classes (CGLIB)
+B. By creating JDK dynamic proxies if the class implements an interface
+C. Using the Decorator pattern at compile time (AspectJ)
+D. Through Java Reflection Proxy without caching
 
 ---ANSWER---
-**Правильный ответ: B**
+**Correct answer: B**
 
 ### Key Points
-- Если целевой класс реализует хотя бы один интерфейс, используется JDK Dynamic Proxy.
-- Если интерфейсов нет, Spring прибегает к генерации подклассов через CGLIB.
+- If the target class implements at least one interface, JDK Dynamic Proxy is used.
+- If there are no interfaces, Spring resorts to generating subclasses via CGLIB.

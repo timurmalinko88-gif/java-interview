@@ -5,7 +5,7 @@ difficulty: Middle
 format: MCQ
 tags: ['jvm', 'gc']
 ---
-Какой сборщик мусора используется по умолчанию начиная с Java 9?
+Which garbage collector is used by default starting from Java 9?
 
 A. Parallel GC
 B. CMS GC
@@ -13,8 +13,8 @@ C. ZGC
 D. G1 GC
 
 ---ANSWER---
-**Правильный ответ: D (G1 GC)**
+**Correct answer: D (G1 GC)**
 
 ### Key Points
-- G1 GC (Garbage-First) был введен в Java 7 и стал дефолтным в Java 9, заменив Parallel GC.
-- ZGC стал доступен для production-использования в Java 15.
+- G1 GC (Garbage-First) was introduced in Java 7 and became the default in Java 9, replacing Parallel GC.
+- ZGC became available for production use in Java 15.

@@ -5,15 +5,15 @@ difficulty: Senior
 format: MCQ
 tags: ['system-design']
 ---
-Какую из следующих задач ОБЫЧНО НЕ решает API Gateway в микросервисной архитектуре?
+Which of the following tasks is USUALLY NOT solved by an API Gateway in a microservice architecture?
 
-A. Аутентификация и авторизация
-B. Rate Limiting (ограничение запросов)
-C. Хранение персистентных бизнес-данных (как БД)
-D. Маршрутизация (Routing) запросов к нужным микросервисам
+A. Authentication and authorization
+B. Rate Limiting
+C. Storing persistent business data (like a DB)
+D. Routing requests to the appropriate microservices
 
 ---ANSWER---
-**Правильный ответ: C**
+**Correct Answer: C**
 
 ### Key Points
-- API Gateway должен быть легковесным слоем (Stateless), отвечающим за безопасность, маршрутизацию, аггрегацию и мониторинг. Бизнес-данные должны храниться внутри специфичных микросервисов.
+- The API Gateway should be a lightweight layer (Stateless) responsible for security, routing, aggregation, and monitoring. Business data should be stored within specific microservices.

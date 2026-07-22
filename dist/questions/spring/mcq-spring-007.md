@@ -5,15 +5,15 @@ difficulty: Middle
 format: MCQ
 tags: ['spring-boot']
 ---
-Зачем используется модуль Spring Boot Actuator?
+What is the Spring Boot Actuator module used for?
 
-A. Для генерации swagger документации
-B. Для мониторинга и управления приложением (health checks, метрики, логи) в production среде
-C. Для горячей перезагрузки контекста (Hot Reloading)
-D. Для конфигурации безопасности (Security Configurations)
+A. To generate swagger documentation
+B. For monitoring and managing the application (health checks, metrics, logs) in a production environment
+C. For hot reloading of the context
+D. For Security Configurations
 
 ---ANSWER---
-**Правильный ответ: B**
+**Correct answer: B**
 
 ### Key Points
-- Actuator предоставляет эндпоинты (например, `/actuator/health`, `/actuator/metrics`), которые полезны для интеграции с системами мониторинга (Prometheus) и оркестраторами (Kubernetes).
+- Actuator provides endpoints (for example, `/actuator/health`, `/actuator/metrics`) that are useful for integration with monitoring systems (Prometheus) and orchestrators (Kubernetes).

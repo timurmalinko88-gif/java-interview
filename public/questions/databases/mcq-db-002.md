@@ -5,7 +5,7 @@ difficulty: Senior
 format: MCQ
 tags: ['sql']
 ---
-Какой уровень изоляции транзакций решает проблему "Фантомного чтения" (Phantom Read)?
+Which transaction isolation level solves the "Phantom Read" problem?
 
 A. READ UNCOMMITTED
 B. READ COMMITTED
@@ -13,8 +13,8 @@ C. REPEATABLE READ
 D. SERIALIZABLE
 
 ---ANSWER---
-**Правильный ответ: D (SERIALIZABLE)**
+**Correct answer: D (SERIALIZABLE)**
 
 ### Key Points
-- Phantom Read возникает, когда другая транзакция добавляет или удаляет строки, удовлетворяющие условию запроса текущей транзакции.
-- Изоляция уровня SERIALIZABLE блокирует диапазон строк, предотвращая фантомные чтения (однако сильно снижает производительность).
+- A Phantom Read occurs when another transaction adds or removes rows that satisfy the query condition of the current transaction.
+- The SERIALIZABLE isolation level locks a range of rows, preventing phantom reads (however, it significantly reduces performance).

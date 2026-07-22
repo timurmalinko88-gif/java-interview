@@ -5,7 +5,7 @@ difficulty: Junior
 format: MCQ
 tags: [exceptions, checked, unchecked]
 ---
-Какой класс является базовым для всех проверяемых (checked) исключений?
+Which class is the base class for all checked exceptions?
 
 A. Error
 B. RuntimeException
@@ -13,8 +13,8 @@ C. Exception
 D. Throwable
 
 ---ANSWER---
-**Правильный ответ: C (Exception)**
+**Correct answer: C (Exception)**
 
 ### Key Points
-- Все классы, наследующие `Exception` (кроме ветки `RuntimeException`), являются Checked (проверяемыми компилятором).
-- `Error` и `RuntimeException` являются Unchecked.
+- All classes inheriting from `Exception` (except the `RuntimeException` branch) are Checked (checked by the compiler).
+- `Error` and `RuntimeException` are Unchecked.

@@ -5,16 +5,16 @@ difficulty: Junior
 format: MCQ
 tags: ['jvm', 'memory']
 ---
-Где хранятся локальные переменные примитивных типов в Java?
+Where are primitive type local variables stored in Java?
 
-A. Heap (Куча)
-B. Stack (Стек)
+A. Heap
+B. Stack
 C. Metaspace
 D. String Pool
 
 ---ANSWER---
-**Правильный ответ: B (Stack)**
+**Correct answer: B (Stack)**
 
 ### Key Points
-- Локальные переменные примитивных типов (int, double, boolean и т.д.) хранятся в стеке (Stack) в рамках текущего фрейма метода.
-- Объекты всегда создаются в куче (Heap), а в стеке хранится лишь ссылка на них.
+- Local variables of primitive types (int, double, boolean, etc.) are stored in the Stack within the current method's frame.
+- Objects are always created in the Heap, while only a reference to them is stored in the Stack.

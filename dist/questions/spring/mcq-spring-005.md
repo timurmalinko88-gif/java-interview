@@ -5,16 +5,16 @@ difficulty: Middle
 format: MCQ
 tags: ['spring-boot']
 ---
-В чем отличие аннотации @RestController от @Controller в Spring MVC?
+What is the difference between the @RestController and @Controller annotations in Spring MVC?
 
-A. @RestController возвращает JSON по умолчанию, автоматически добавляя @ResponseBody ко всем методам
-B. @RestController используется только для микросервисов
-C. @RestController не поддерживает обработку исключений через @ExceptionHandler
-D. Разницы нет, это синонимы
+A. @RestController returns JSON by default, automatically adding @ResponseBody to all methods
+B. @RestController is used only for microservices
+C. @RestController does not support exception handling via @ExceptionHandler
+D. There is no difference, they are synonyms
 
 ---ANSWER---
-**Правильный ответ: A**
+**Correct answer: A**
 
 ### Key Points
-- `@RestController` является комбинацией `@Controller` и `@ResponseBody`.
-- Любые возвращаемые объектом данные будут сериализованы в формат ответа (например, JSON) и записаны напрямую в HTTP Response.
+- `@RestController` is a combination of `@Controller` and `@ResponseBody`.
+- Any data returned by the object will be serialized into the response format (e.g., JSON) and written directly to the HTTP Response.

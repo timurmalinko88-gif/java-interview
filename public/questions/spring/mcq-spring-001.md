@@ -5,7 +5,7 @@ difficulty: Junior
 format: MCQ
 tags: ['spring-boot', 'di']
 ---
-Какая аннотация в Spring Boot используется для автоматического внедрения зависимостей (Dependency Injection)?
+Which annotation in Spring Boot is used for automatic Dependency Injection?
 
 A. @InjectDependency
 B. @Bean
@@ -13,8 +13,8 @@ C. @Autowired
 D. @Provide
 
 ---ANSWER---
-**Правильный ответ: C (@Autowired)**
+**Correct answer: C (@Autowired)**
 
 ### Key Points
-- `@Autowired` инструктирует IoC контейнер Spring найти и внедрить соответствующий бин.
-- Рекомендуется использовать внедрение через конструктор, а не инжект полей (Field Injection).
+- `@Autowired` instructs the Spring IoC container to find and inject the appropriate bean.
+- Constructor injection is recommended over field injection.

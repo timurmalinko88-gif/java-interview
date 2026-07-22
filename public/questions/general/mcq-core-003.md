@@ -5,15 +5,15 @@ difficulty: Middle
 format: MCQ
 tags: ['generics']
 ---
-Что такое стирание типов (Type Erasure) в Java Generics?
+What is Type Erasure in Java Generics?
 
-A. Удаление неиспользуемых generic-классов сборщиком мусора
-B. Процесс, при котором компилятор заменяет все параметры типов на их границы (или Object) и вставляет приведения типов в байт-код
-C. Фича IDE для скрытия сложных типов
-D. Ошибка времени выполнения (Runtime Error)
+A. Removal of unused generic classes by the garbage collector
+B. The process by which the compiler replaces all type parameters with their bounds (or Object) and inserts type casts in the bytecode
+C. An IDE feature for hiding complex types
+D. A Runtime Error
 
 ---ANSWER---
-**Правильный ответ: B**
+**Correct answer: B**
 
 ### Key Points
-- Generics были добавлены в Java 5 с условием обратной совместимости. Поэтому в рантайме JVM не знает о типах `<T>`, они "стираются" компилятором.
+- Generics were added in Java 5 with a backward compatibility requirement. Therefore, at runtime, the JVM does not know about `<T>` types; they are "erased" by the compiler.

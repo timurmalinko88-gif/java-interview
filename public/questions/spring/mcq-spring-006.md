@@ -5,15 +5,15 @@ difficulty: Senior
 format: MCQ
 tags: ['spring-boot']
 ---
-Что произойдет, если метод, аннотированный @Transactional, будет вызван из другого метода того же класса (внутри этого же бина)?
+What happens if a method annotated with @Transactional is called from another method of the same class (inside the same bean)?
 
-A. Транзакция откроется как обычно
-B. Транзакция не откроется, так как вызов проходит мимо Spring Proxy
-C. Будет выброшено исключение TransactionRequiredException
-D. Создастся вложенная транзакция (Propagation.NESTED)
+A. The transaction will open as usual
+B. The transaction will not open because the call bypasses the Spring Proxy
+C. A TransactionRequiredException will be thrown
+D. A nested transaction will be created (Propagation.NESTED)
 
 ---ANSWER---
-**Правильный ответ: B**
+**Correct answer: B**
 
 ### Key Points
-- Внутриклассовые вызовы обходят прокси-объект, поэтому AOP-перехватчик Spring не срабатывает. Аннотация `@Transactional` (а также `@Async`, `@Cacheable`) будет проигнорирована.
+- Intra-class calls bypass the proxy object, so the Spring AOP interceptor is not triggered. The `@Transactional` annotation (as well as `@Async`, `@Cacheable`) will be ignored.

@@ -5,16 +5,16 @@ difficulty: Middle
 format: MCQ
 tags: ['system-design', 'scaling']
 ---
-В чем разница между горизонтальным (Scale Out) и вертикальным (Scale Up) масштабированием?
+What is the difference between horizontal (Scale Out) and vertical (Scale Up) scaling?
 
-A. Вертикальное означает добавление новых машин в кластер, горизонтальное — замену процессора или добавление RAM
-B. Горизонтальное означает добавление новых серверов в пул, вертикальное — усиление ресурсов одной существующей машины (CPU/RAM)
-C. Это синонимы в контексте микросервисов
-D. Горизонтальное масштабирование применимо только к базам данных
+A. Vertical means adding new machines to a cluster, horizontal means replacing the processor or adding RAM
+B. Horizontal means adding new servers to the pool, vertical means increasing the resources of a single existing machine (CPU/RAM)
+C. They are synonyms in the context of microservices
+D. Horizontal scaling is only applicable to databases
 
 ---ANSWER---
-**Правильный ответ: B**
+**Correct Answer: B**
 
 ### Key Points
-- Вертикальное масштабирование имеет аппаратный предел и единую точку отказа (SPOF).
-- Горизонтальное масштабирование позволяет добавлять бесконечное количество машин-реплик, но требует балансировки нагрузки и распределенной логики.
+- Vertical scaling has a hardware limit and a single point of failure (SPOF).
+- Horizontal scaling allows adding an infinite number of replica machines, but requires load balancing and distributed logic.

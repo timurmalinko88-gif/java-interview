@@ -5,7 +5,7 @@ difficulty: Middle
 format: MCQ
 tags: [exceptions, try-with-resources]
 ---
-С какой версии Java доступна конструкция try-with-resources?
+Starting from which Java version is the try-with-resources statement available?
 
 A. Java 6
 B. Java 7
@@ -13,7 +13,7 @@ C. Java 8
 D. Java 9
 
 ---ANSWER---
-**Правильный ответ: B (Java 7)**
+**Correct answer: B (Java 7)**
 
 ### Key Points
-- try-with-resources автоматизирует вызов метода `close()` у ресурсов, реализующих интерфейс `AutoCloseable` или `Closeable`.
+- try-with-resources automates the `close()` method call on resources that implement the `AutoCloseable` or `Closeable` interface.

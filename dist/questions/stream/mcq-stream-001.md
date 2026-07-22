@@ -5,7 +5,7 @@ difficulty: Middle
 format: MCQ
 tags: ['stream-api']
 ---
-Какая из следующих операций Stream API является терминальной (terminal)?
+Which of the following Stream API operations is terminal?
 
 A. map()
 B. filter()
@@ -13,8 +13,8 @@ C. flatMap()
 D. collect()
 
 ---ANSWER---
-**Правильный ответ: D (collect)**
+**Correct answer: D (collect)**
 
 ### Key Points
-- `map`, `filter`, `flatMap` — это промежуточные (intermediate) операции, они возвращают новый Stream и выполняются лениво.
-- `collect` — терминальная операция, запускающая реальную обработку пайплайна.
+- `map`, `filter`, `flatMap` are intermediate operations; they return a new Stream and are executed lazily.
+- `collect` is a terminal operation that triggers the actual processing of the pipeline.

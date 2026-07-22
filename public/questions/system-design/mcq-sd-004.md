@@ -5,7 +5,7 @@ difficulty: Senior
 format: MCQ
 tags: ['system-design', 'caching']
 ---
-Как называется стратегия кэширования, при которой приложение сначала пишет данные в кэш (например, Redis), а сам кэш асинхронно записывает их в базу данных?
+What is the caching strategy where the application first writes data to the cache (e.g., Redis), and the cache itself asynchronously writes it to the database?
 
 A. Cache Aside
 B. Read Through
@@ -13,8 +13,8 @@ C. Write Through
 D. Write Behind (Write Back)
 
 ---ANSWER---
-**Правильный ответ: D (Write Behind / Write Back)**
+**Correct Answer: D (Write Behind / Write Back)**
 
 ### Key Points
-- Write Behind повышает производительность записи, так как приложению не нужно ждать ответа от медленной базы данных.
-- Минус: риск потери данных при сбое кэш-сервера до того, как они попадут в БД.
+- Write Behind improves write performance since the application does not have to wait for a response from a slow database.
+- Disadvantage: The risk of data loss if the cache server crashes before the data reaches the DB.
