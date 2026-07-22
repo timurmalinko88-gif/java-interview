@@ -1,5 +1,7 @@
 import { debounce } from './utils.js';
 import { state } from './state.js';
+import { isFlagged } from './collections.js';
+
 export // --- ui.js ---
 // Build the left sidebar navigation items
 function buildSidebarList() {
@@ -14,7 +16,7 @@ function buildSidebarList() {
   const fragment = document.createDocumentFragment();
   state.filteredQuestions.forEach((q, idx) => {
     const isMastered = state.masteredIds.includes(q.id);
-    const isFlagged = state.flaggedIds.includes(q.id);
+    const flagged = isFlagged(q.id);
     const isActive = idx === state.currentIndex;
 
     // Color configuration for difficulties
@@ -38,7 +40,8 @@ function buildSidebarList() {
                 </div>
                 <div class="flex items-center space-x-1">
                     ${isMastered ? '<i class="fa-solid fa-circle-check text-emerald-500 text-xs"></i>' : ''}
-                    ${isFlagged ? '<i class="fa-solid fa-bookmark text-amber-500 text-xs"></i>' : ''}
+                    ${flagged ? '<i class="fa-solid fa-bookmark text-amber-500 text-xs"></i>' : ''}
+                    ${state.srData[q.id] && new Date(state.srData[q.id].nextReviewDate) <= new Date() ? '<span class="px-1 py-0.5 bg-rose-500/10 text-rose-500 rounded text-[9px] font-bold uppercase tracking-wider animate-pulse">Due</span>' : ''}
                 </div>
             </div>
             <h4 class="text-xs font-bold leading-snug line-clamp-2 ${isActive ? 'text-brand-500' : 'text-slate-700 dark:text-slate-300'}">
@@ -223,6 +226,10 @@ async function loadQuestion(indexOrQuestion) {
   const ansBtnIcon = document.getElementById('btn-answer-icon');
   ansBtnText.textContent = "Show Answer";
   ansBtnIcon.className = "fa-solid fa-eye";
+  document.getElementById('btn-answer').classList.remove('hidden');
+  
+  const srEvalBar = document.getElementById('sr-eval-bar');
+  if (srEvalBar) srEvalBar.classList.add('hidden');
   state.isAnswerVisible = false;
 
   // Display loading indicators
@@ -301,9 +308,9 @@ async function loadQuestion(indexOrQuestion) {
 // Synch flag/mastered active buttons styling state
 export // Synch flag/mastered active buttons styling state
 function syncActionButtons(activeId) {
-  const isFlagged = state.flaggedIds.includes(activeId);
+  const flagged = isFlagged(activeId);
   const flagBtn = document.getElementById('flag-btn');
-  if (isFlagged) {
+  if (flagged) {
     flagBtn.classList.add('bg-amber-500/10', 'text-amber-500', 'border-amber-500/30');
     flagBtn.classList.remove('text-slate-400');
   } else {
@@ -380,6 +387,13 @@ export function renderAnswerContent() {
   const ansBtnIcon = document.getElementById('btn-answer-icon');
   answerSection.classList.remove('hidden');
   document.getElementById('answer-content').innerHTML = marked.parse(q.loadedAnswer || "No answer content.");
+  
+  if (!state.isMockMode) {
+    const srEvalBar = document.getElementById('sr-eval-bar');
+    if (srEvalBar) srEvalBar.classList.remove('hidden');
+    // Hide the actual toggle button since the user should grade themselves now
+    document.getElementById('btn-answer').classList.add('hidden');
+  }
 
   // Populate intuitive analogy if defined
   const analogySec = document.getElementById('analogy-subsection');
@@ -400,4 +414,8 @@ export function hideAnswerSection() {
   answerSection.classList.add('hidden');
   if (ansBtnText) ansBtnText.textContent = "Show Answer";
   if (ansBtnIcon) ansBtnIcon.className = "fa-solid fa-eye";
+  
+  const srEvalBar = document.getElementById('sr-eval-bar');
+  if (srEvalBar) srEvalBar.classList.add('hidden');
+  document.getElementById('btn-answer').classList.remove('hidden');
 }

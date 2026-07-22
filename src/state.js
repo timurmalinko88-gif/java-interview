@@ -4,7 +4,8 @@ export const state = {
     isMockMode: false, mockQuestions: [], mockCurrentIdx: 0, mockTimerInterval: null,
     mockTimeRemaining: 0, mockScores: [], mockSelectedGrade: 'Junior', mockSelectedCompany: 'Any',
     fallbackDatabase: [], quizData: [], currentQuizIndex: 0, selectedLevel: 'Middle', failedTags: new Set(),
-    isAdaptivePlanActive: false
+    isAdaptivePlanActive: false,
+    srData: {}
 };
 // --- state.js ---
 const fallbackDatabase = [{
@@ -79,8 +80,17 @@ function loadPersistence() {
   try {
     const storedMastered = localStorage.getItem('java_trainer_mastered');
     const storedFlagged = localStorage.getItem('java_trainer_flagged');
+    const storedSr = localStorage.getItem('java_trainer_sr');
     state.masteredIds = storedMastered ? JSON.parse(storedMastered) : [];
-    state.flaggedIds = storedFlagged ? JSON.parse(storedFlagged) : [];
+    
+    let parsedFlagged = storedFlagged ? JSON.parse(storedFlagged) : { "Favorites": [] };
+    if (Array.isArray(parsedFlagged)) {
+        // Migrate old array format to object format
+        parsedFlagged = { "Favorites": parsedFlagged };
+    }
+    state.flaggedIds = parsedFlagged;
+    
+    state.srData = storedSr ? JSON.parse(storedSr) : {};
     if (typeof updateStatsUI === 'function') updateStatsUI();
     if (typeof updateStatsDashboard === 'function') updateStatsDashboard();
   } catch (err) {
@@ -91,6 +101,7 @@ export function savePersistence() {
   try {
     localStorage.setItem('java_trainer_mastered', JSON.stringify(state.masteredIds));
     localStorage.setItem('java_trainer_flagged', JSON.stringify(state.flaggedIds));
+    localStorage.setItem('java_trainer_sr', JSON.stringify(state.srData));
     if (typeof updateStatsUI === 'function') updateStatsUI();
     if (typeof updateStatsDashboard === 'function') updateStatsDashboard();
   } catch (err) {

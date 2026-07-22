@@ -5,6 +5,8 @@ import { buildSidebarList, triggerFilterAction, clearAllFilters, loadQuestion, s
 import { openMockSetup, closeMockSetup, startMockInterview, exitMockInterview, finishMockInterview, evaluateMockQuestion, revealMockAnswer } from './mock.js';
 import { updateStatsDashboard } from './stats.js';
 import { checkAdaptiveProgression } from './adaptive.js';
+import { evaluateSR, isDueForReview } from './spacedRepetition.js';
+import { toggleFlag } from './collections.js';
 
 import "./style.css";
 
@@ -65,6 +67,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const evalNailedBtn = document.getElementById('eval-nailed-btn');
   if (evalNailedBtn) evalNailedBtn.addEventListener("click", () => evaluateMockQuestion(10));
 
+  // Spaced Repetition Evaluation buttons
+  const srHardBtn = document.getElementById('sr-hard-btn');
+  if (srHardBtn) srHardBtn.addEventListener("click", () => {
+      const activeId = state.filteredQuestions[state.currentIndex].id;
+      evaluateSR(activeId, 1);
+  });
+  const srMediumBtn = document.getElementById('sr-medium-btn');
+  if (srMediumBtn) srMediumBtn.addEventListener("click", () => {
+      const activeId = state.filteredQuestions[state.currentIndex].id;
+      evaluateSR(activeId, 2);
+  });
+  const srEasyBtn = document.getElementById('sr-easy-btn');
+  if (srEasyBtn) srEasyBtn.addEventListener("click", () => {
+      const activeId = state.filteredQuestions[state.currentIndex].id;
+      evaluateSR(activeId, 3);
+  });
+
   // Toggle Answer actions event triggers
   const btnAnswer = document.getElementById('btn-answer');
   if (btnAnswer) {
@@ -111,17 +130,9 @@ document.addEventListener('DOMContentLoaded', () => {
     flagBtn.addEventListener("click", () => {
       if (state.filteredQuestions.length === 0) return;
       const activeId = state.filteredQuestions[state.currentIndex].id;
-      const idx = state.flaggedIds.indexOf(activeId);
-      if (idx > -1) {
-        state.flaggedIds.splice(idx, 1);
-        showToast("Removed from bookmarks", "info");
-      } else {
-        state.flaggedIds.push(activeId);
-        showToast("Added to bookmarks!", "bookmark");
-      }
-      savePersistence();
-      syncActionButtons(activeId);
-      buildSidebarList();
+      
+      // Basic toggle (always adds to Favorites for now; could be expanded to a UI selector)
+      toggleFlag(activeId, "Favorites");
     });
   }
 
