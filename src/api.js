@@ -1,5 +1,5 @@
 import { state, loadPersistence } from './state.js';
-import { buildSidebarList, loadQuestion } from './ui.js';
+import { buildSidebarList, loadQuestion, updateStatsUI } from './ui.js';
 
 export async function fetchQuestions() {
     try {
@@ -20,6 +20,7 @@ export async function fetchQuestions() {
 
     state.filteredQuestions = [...state.questionsList];
     loadPersistence();
+    updateStatsUI(); // Initialize XP and Rank
     buildSidebarList();
     await loadQuestion(0);
 }
