@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Master your Java interviews with our interactive simulator. Practice Java questions, get personalized roadmaps, and track your progress.">
+    <meta property="og:title" content="Java Interview Trainer & Simulator">
+    <meta property="og:description" content="Master your Java interviews with our interactive simulator. Practice Java questions, get personalized roadmaps, and track your progress.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Java Interview Trainer & Simulator">
+    <meta name="twitter:description" content="Master your Java interviews with our interactive simulator. Practice Java questions, get personalized roadmaps, and track your progress.">
     <title>Java Interview Trainer & Simulator</title>
     
     <!-- External Libraries -->
@@ -21,98 +28,25 @@
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/java.min.js"></script>
 
-    
-
-    <style>
-        /* Smooth transitions */
-        .transition-all-300 {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        /* Custom scrollbar styling */
-        ::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: transparent;
-        }
-        .dark ::-webkit-scrollbar-thumb {
-            background: #334155;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8;
-        }
-
-        /* Sparkle/Pulsate animation for badges */
-        @keyframes subtle-pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-        }
-        .pulse-hover:hover {
-            animation: subtle-pulse 1.5s infinite ease-in-out;
-        }
-
-        /* Custom macOS terminal style for code blocks */
-        pre {
-            position: relative;
-            padding-top: 2.75rem !important;
-            padding-bottom: 1rem !important;
-            padding-left: 1.25rem !important;
-            padding-right: 1.25rem !important;
-            border-radius: 0.75rem !important;
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
-        }
-        .prose pre {
-            padding-top: 2.75rem !important;
-            padding-bottom: 1rem !important;
-            padding-left: 1.25rem !important;
-            padding-right: 1.25rem !important;
-            margin-top: 1rem !important;
-            margin-bottom: 1rem !important;
-        }
-        .dark pre {
-            background: #0f172a;
-            border: 1px solid #1e293b;
-            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.2);
-        }
-        pre::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 2rem;
-            background: #f1f5f9;
-            border-bottom: 1px solid #e2e8f0;
-            z-index: 10;
-        }
-        .dark pre::before {
-            background: #1e293b;
-            border-bottom: 1px solid #334155;
-        }
-        pre::after {
-            content: '';
-            position: absolute;
-            top: 0.75rem;
-            left: 1rem;
-            width: 0.6rem;
-            height: 0.6rem;
-            border-radius: 50%;
-            background: #ff5f56;
-            box-shadow: 1.2rem 0 0 #ffbd2e, 2.4rem 0 0 #27c93f;
-            z-index: 20;
-        }
-    </style>
+    <!-- Head Ends -->
+    <!-- JSON-LD Semantic Web Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LearningResource",
+      "name": "Java Interview Prep Hub",
+      "description": "Comprehensive simulator for Java Developer Interviews. Covers Core Java, JVM, Multithreading, Spring Boot, Databases, and System Design.",
+      "learningResourceType": "Mock Interview & Quiz",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Software Engineers preparing for interviews"
+      }
+    }
+    </script>
 </head>
 <body class="bg-lightBg dark:bg-darkBg text-slate-800 dark:text-slate-200 min-h-screen flex flex-col font-sans transition-colors duration-300">
+    <!-- Visually hidden H1 for SEO and A11y -->
+    <h1 class="sr-only">Java Interview Trainer & Simulator</h1>
 
     <!-- Top Modern Navigation Bar -->
     <header class="border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-darkCard/80 backdrop-blur-md sticky top-0 z-50 transition-colors duration-300">
@@ -120,10 +54,10 @@
             <!-- Brand Logo -->
             <div class="flex items-center space-x-3">
                 <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-500 to-amber-500 flex items-center justify-center text-white shadow-lg shadow-brand-500/20">
-                    <i class="fa-solid fa-mug-hot text-xl"></i>
+                    <i aria-hidden="true" class="fa-solid fa-mug-hot text-xl"></i>
                 </div>
                 <div>
-                    <h1 class="font-bold text-lg leading-none tracking-tight text-slate-900 dark:text-white">Java Interview</h1>
+                    <span class="font-bold text-lg leading-none tracking-tight text-slate-900 dark:text-white">Java Interview</span>
                     <span class="text-xs text-brand-500 font-semibold tracking-wider uppercase">Trainer & Simulator</span>
                 </div>
             </div>
@@ -132,17 +66,17 @@
             <div class="hidden md:flex items-center space-x-4 text-sm">
                 <!-- XP -->
                 <div class="flex items-center space-x-2 bg-slate-50 dark:bg-slate-800/50 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700/50 transition-all hover:border-amber-500/50">
-                    <i class="fa-solid fa-star text-amber-500 animate-pulse"></i>
+                    <i aria-hidden="true" class="fa-solid fa-star text-amber-500 animate-pulse"></i>
                     <span id="stats-xp" class="font-bold text-amber-600 dark:text-amber-400">0 XP</span>
                 </div>
                 <!-- Rank -->
                 <div class="flex items-center space-x-2 bg-slate-50 dark:bg-slate-800/50 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700/50 transition-all hover:border-brand-500/50">
-                    <i class="fa-solid fa-shield-halved text-brand-500"></i>
+                    <i aria-hidden="true" class="fa-solid fa-shield-halved text-brand-500"></i>
                     <span id="stats-rank" class="font-bold text-brand-600 dark:text-brand-400 tracking-wide uppercase text-xs">Intern</span>
                 </div>
                 <!-- Progress -->
                 <div class="flex items-center space-x-2 px-2" title="Overall Completion">
-                    <i class="fa-solid fa-graduation-cap text-slate-400"></i>
+                    <i aria-hidden="true" class="fa-solid fa-graduation-cap text-slate-400"></i>
                     <span id="stats-progress" class="font-bold text-slate-600 dark:text-slate-300 text-xs">0%</span>
                 </div>
             </div>
@@ -151,32 +85,32 @@
             <div class="flex items-center space-x-3">
                 <!-- Adaptive Learning Mode -->
                 <button id="adaptive-btn" class="flex items-center space-x-1 bg-emerald-500 hover:bg-emerald-600 text-white px-3 py-1.5 rounded-lg text-sm font-semibold shadow-md shadow-emerald-500/10 transition-all-300 hover:scale-[1.03]">
-                    <i class="fa-solid fa-graduation-cap"></i>
+                    <i aria-hidden="true" class="fa-solid fa-graduation-cap"></i>
                     <span class="hidden sm:inline">Adaptive Plan</span>
                 </button>
                 
                 <!-- My Roadmap Button (hidden by default) -->
                 <button id="my-roadmap-btn" class="hidden items-center space-x-1 border border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-white px-3 py-1.5 rounded-lg text-sm font-semibold transition-all-300">
-                    <i class="fa-solid fa-map"></i>
+                    <i aria-hidden="true" class="fa-solid fa-map"></i>
                     <span class="hidden sm:inline">My Roadmap</span>
                 </button>
 
                 <!-- Spaced Repetition Mode / Blitz -->
                 <button id="blitz-btn" class="flex items-center space-x-1 bg-brand-500 hover:bg-brand-600 text-white px-3 py-1.5 rounded-lg text-sm font-semibold shadow-md shadow-brand-500/10 transition-all-300 hover:scale-[1.03]">
-                    <i class="fa-solid fa-bolt"></i>
+                    <i aria-hidden="true" class="fa-solid fa-bolt"></i>
                     <span class="hidden sm:inline">Blitz Quiz</span>
                 </button>
 
                 <!-- My Stats Button -->
                 <button id="my-stats-btn" class="flex items-center space-x-1 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 px-3 py-1.5 rounded-lg text-sm font-semibold transition-all-300">
-                    <i class="fa-solid fa-chart-pie"></i>
+                    <i aria-hidden="true" class="fa-solid fa-chart-pie"></i>
                     <span class="hidden lg:inline">My Stats</span>
                 </button>
 
                 <!-- Dark Mode Toggle Button -->
                 <button id="theme-toggle" aria-label="Toggle theme"  class="w-10 h-10 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/80 flex items-center justify-center transition-all-300">
-                    <i class="fa-solid fa-sun hidden dark:block text-amber-400"></i>
-                    <i class="fa-solid fa-moon dark:hidden text-slate-700"></i>
+                    <i aria-hidden="true" class="fa-solid fa-sun hidden dark:block text-amber-400"></i>
+                    <i aria-hidden="true" class="fa-solid fa-moon dark:hidden text-slate-700"></i>
                 </button>
             </div>
         </div>
@@ -196,10 +130,10 @@
             <!-- Filters Card -->
             <div class="bg-white dark:bg-darkCard p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-4 transition-colors duration-300">
                 <div class="flex items-center justify-between">
-                    <h3 class="font-bold text-slate-900 dark:text-white flex items-center space-x-2">
-                        <i class="fa-solid fa-sliders text-brand-500"></i>
+                    <h2 class="font-bold text-slate-900 dark:text-white flex items-center space-x-2">
+                        <i aria-hidden="true" class="fa-solid fa-sliders text-brand-500"></i>
                         <span>Filters</span>
-                    </h3>
+                    </h2>
                     <button id="clear-filters" class="text-xs text-brand-500 hover:underline hidden">Reset</button>
                 </div>
                 
@@ -207,12 +141,12 @@
                 <div class="relative">
                     <input type="text" id="search-input" placeholder="Search questions..." 
                         class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 pl-10 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all">
-                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400 text-sm"></i>
+                    <i aria-hidden="true" class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400 text-sm"></i>
                 </div>
 
                 <!-- Topic Selector -->
                 <div class="space-y-1.5">
-                    <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Topic</label>
+                    <label for="topic-filter" class="text-xs font-bold uppercase tracking-wider text-slate-400">Topic</label>
                     <select id="topic-filter" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all">
                         <option value="all">All Topics</option>
                         <option value="General">General Java Questions</option>
@@ -231,7 +165,7 @@
 
                 <!-- Difficulty Selectors -->
                 <div class="space-y-1.5">
-                    <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Difficulty Grade</label>
+                    <p id="diff-label" class="text-xs font-bold uppercase tracking-wider text-slate-400">Difficulty Grade</p>
                     <div class="flex flex-wrap gap-2">
                         <button data-diff="Junior" class="diff-chip flex-1 px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 hover:bg-emerald-500/20 transition-all duration-200">
                             Junior
@@ -247,7 +181,7 @@
 
                 <!-- Format Filter -->
                 <div class="space-y-1.5">
-                    <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Question Format</label>
+                    <p id="format-label" class="text-xs font-bold uppercase tracking-wider text-slate-400">Question Format</p>
                     <div class="grid grid-cols-2 gap-2 text-xs">
                         <label class="flex items-center space-x-2 bg-slate-50 dark:bg-slate-900 p-2 rounded-lg border border-slate-200 dark:border-slate-800 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800">
                             <input type="checkbox" value="Open Answer" class="format-checkbox rounded text-brand-500 focus:ring-brand-500 bg-transparent border-slate-300 dark:border-slate-700">
@@ -272,7 +206,7 @@
                 <div id="questions-container" class="overflow-y-auto divide-y divide-slate-100 dark:divide-slate-800/60 flex-1">
                     <!-- Dynamic rendering of question buttons goes here -->
                     <div class="p-6 text-center text-slate-400 text-sm">
-                        <i class="fa-solid fa-spinner fa-spin text-brand-500 text-lg mb-2 block"></i>
+                        <i aria-hidden="true" class="fa-solid fa-spinner fa-spin text-brand-500 text-lg mb-2 block"></i>
                         Loading questions...
                     </div>
                 </div>
@@ -282,14 +216,14 @@
             <button id="mock-interview-btn" class="w-full bg-gradient-to-r from-brand-500 to-indigo-600 text-white rounded-xl p-4 flex items-center justify-between hover:scale-[1.02] hover:shadow-lg hover:shadow-brand-500/20 transition-all-300 group">
                 <div class="flex items-center space-x-3">
                     <div class="bg-white/20 p-2 rounded-lg group-hover:animate-pulse">
-                        <i class="fa-solid fa-gamepad"></i>
+                        <i aria-hidden="true" class="fa-solid fa-gamepad"></i>
                     </div>
                     <div class="text-left">
-                        <h4 class="font-bold text-sm leading-tight">Mock Interview</h4>
+                        <h3 class="font-bold text-sm leading-tight">Mock Interview</h3>
                         <p class="text-[10px] text-white/80">Simulator & Timer</p>
                     </div>
                 </div>
-                <i class="fa-solid fa-chevron-right text-white/60"></i>
+                <i aria-hidden="true" class="fa-solid fa-chevron-right text-white/60"></i>
             </button>
         </aside>
 
@@ -310,7 +244,7 @@
                     </div>
                     <div class="flex items-center space-x-4">
                         <div class="flex items-center space-x-1.5 text-xs font-bold text-slate-700 dark:text-slate-200">
-                            <i class="fa-solid fa-clock text-brand-500"></i>
+                            <i aria-hidden="true" class="fa-solid fa-clock text-brand-500"></i>
                             <span id="mock-timer-display">30:00</span>
                         </div>
                         <button id="exit-mock-btn" class="text-[10px] font-bold text-slate-400 hover:text-red-500 uppercase tracking-wider">
@@ -348,12 +282,12 @@
                     <!-- Bookmark & Mastery Toggle Controls -->
                     <div class="flex items-center space-x-2">
                         <!-- Bookmark flag -->
-                        <button id="flag-btn" title="Bookmark" class="w-9 h-9 rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-center text-slate-400 hover:text-amber-500 dark:hover:text-amber-400 transition-all-300">
-                            <i class="fa-solid fa-bookmark text-sm"></i>
+                        <button id="flag-btn" aria-label="Bookmark" title="Bookmark" class="w-9 h-9 rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-center text-slate-400 hover:text-amber-500 dark:hover:text-amber-400 transition-all-300">
+                            <i aria-hidden="true" class="fa-solid fa-bookmark text-sm"></i>
                         </button>
                         <!-- Mastered checkbox indicator -->
                         <button id="mastered-btn" title="Mark as Mastered" class="h-9 px-3 rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center space-x-2 text-slate-400 hover:text-emerald-500 transition-all-300">
-                            <i class="fa-solid fa-circle-check text-sm"></i>
+                            <i aria-hidden="true" class="fa-solid fa-circle-check text-sm"></i>
                             <span class="text-xs font-semibold">Mastered</span>
                         </button>
                     </div>
@@ -365,7 +299,7 @@
                     <div class="space-y-3">
                         <div class="flex items-center space-x-2">
                             <span class="w-1.5 h-4 bg-brand-500 rounded-full"></span>
-                            <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400">Question</h2>
+                            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Question</h3>
                         </div>
                         <div id="question-text" class="prose prose-slate dark:prose-invert max-w-none text-slate-800 dark:text-slate-100 text-base font-medium leading-relaxed">
                             <!-- Injected by JS -->
@@ -380,7 +314,7 @@
                                 <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Code Snippet (Java)</h3>
                             </div>
                             <button id="copy-code-btn" class="text-xs text-slate-400 hover:text-white bg-slate-100 dark:bg-slate-800 hover:bg-brand-500 dark:hover:bg-brand-500 px-2.5 py-1 rounded-md flex items-center space-x-1.5 transition-all-300">
-                                <i class="fa-solid fa-copy"></i>
+                                <i aria-hidden="true" class="fa-solid fa-copy"></i>
                                 <span>Copy</span>
                             </button>
                         </div>
@@ -406,7 +340,7 @@
                         <!-- Analogy Content Sub-Section -->
                         <div id="analogy-subsection" class="space-y-2 pt-2 hidden">
                             <div class="flex items-center space-x-2">
-                                <i class="fa-solid fa-lightbulb text-amber-500 text-sm"></i>
+                                <i aria-hidden="true" class="fa-solid fa-lightbulb text-amber-500 text-sm"></i>
                                 <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Intuitive Analogy</span>
                             </div>
                             <div class="bg-amber-50/40 dark:bg-amber-950/10 border border-amber-500/20 rounded-2xl p-5 text-slate-600 dark:text-slate-300 italic text-sm leading-relaxed">
@@ -422,11 +356,11 @@
                     <!-- Prev / Next & Counter Info -->
                     <div class="flex items-center space-x-4 w-full sm:w-auto justify-between sm:justify-start">
                         <div class="flex space-x-2">
-                            <button id="btn-prev" class="w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-center transition-all-300 text-slate-500 dark:text-slate-400 hover:scale-95 disabled:opacity-40 disabled:pointer-events-none" title="Previous question">
-                                <i class="fa-solid fa-arrow-left"></i>
+                            <button id="btn-prev" aria-label="Previous question" class="w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-center transition-all-300 text-slate-500 dark:text-slate-400 hover:scale-95 disabled:opacity-40 disabled:pointer-events-none" title="Previous question">
+                                <i aria-hidden="true" class="fa-solid fa-arrow-left"></i>
                             </button>
-                            <button id="btn-next" class="w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-center transition-all-300 text-slate-500 dark:text-slate-400 hover:scale-95 disabled:opacity-40 disabled:pointer-events-none" title="Next question">
-                                <i class="fa-solid fa-arrow-right"></i>
+                            <button id="btn-next" aria-label="Next question" class="w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-center transition-all-300 text-slate-500 dark:text-slate-400 hover:scale-95 disabled:opacity-40 disabled:pointer-events-none" title="Next question">
+                                <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
                             </button>
                         </div>
                         <span id="counter" class="text-xs font-semibold tracking-wider text-slate-400 bg-slate-100 dark:bg-slate-800/60 px-3 py-1.5 rounded-lg">
@@ -437,7 +371,7 @@
                     <!-- Toggle Answer / Learn State -->
                     <div class="flex items-center space-x-3 w-full sm:w-auto">
                         <button id="btn-answer" class="flex-1 sm:flex-initial flex items-center justify-center space-x-2 bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 text-white font-bold px-6 py-3 rounded-xl shadow-lg shadow-brand-500/20 hover:shadow-brand-500/35 transition-all-300 active:scale-95 text-base">
-                            <i id="btn-answer-icon" class="fa-solid fa-eye"></i>
+                            <i id="btn-answer-icon" aria-hidden="true" class="fa-solid fa-eye"></i>
                             <span id="btn-answer-text">Show Answer</span>
                         </button>
 
@@ -459,7 +393,7 @@
             
             <!-- Quick Tips Panel -->
             <div class="bg-gradient-to-r from-amber-500/10 via-brand-500/5 to-transparent rounded-2xl border border-amber-500/10 p-4 flex items-start space-x-3">
-                <i class="fa-solid fa-graduation-cap text-amber-500 mt-0.5 text-lg"></i>
+                <i aria-hidden="true" class="fa-solid fa-graduation-cap text-amber-500 mt-0.5 text-lg"></i>
                 <div class="text-xs leading-relaxed text-slate-600 dark:text-slate-400">
                     <strong class="text-slate-800 dark:text-slate-200 font-bold">Study Tip:</strong> Read the question and take at least 1 minute to mentally formulate your answer or solve the code before viewing the correct answer. Use the vivid associations in the "Analogy" section for easy memorization.
                 </div>
@@ -469,23 +403,23 @@
 
     <!-- Toasts feedback notifications dynamically injected -->
     <div id="toast" role="status" aria-live="polite" class="fixed bottom-6 right-6 z-50 bg-slate-900 text-white border border-slate-800 rounded-xl px-4 py-3 shadow-2xl flex items-center space-x-3 pointer-events-none opacity-0 transform translate-y-2 transition-all duration-300">
-        <i id="toast-icon" class="fa-solid fa-check text-emerald-500"></i>
+        <i id="toast-icon" aria-hidden="true" class="fa-solid fa-check text-emerald-500"></i>
         <span id="toast-message" class="text-sm font-semibold"></span>
     </div>
 
     <!-- Mock Interview Setup Modal -->
-    <div id="mock-setup-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+    <dialog id="mock-setup-modal" class="bg-transparent m-auto p-4">
         <div class="bg-white dark:bg-darkCard rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl max-w-md w-full p-6 space-y-6 relative">
             <button id="close-mock-setup-btn" aria-label="Close setup"  class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-lg">
-                <i class="fa-solid fa-xmark"></i>
+                <i aria-hidden="true" class="fa-solid fa-xmark"></i>
             </button>
 
             <div class="flex items-center space-x-3">
                 <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-brand-500 to-indigo-600 flex items-center justify-center text-white text-xl shadow-lg shadow-brand-500/20">
-                    <i class="fa-solid fa-gamepad"></i>
+                    <i aria-hidden="true" class="fa-solid fa-gamepad"></i>
                 </div>
                 <div>
-                    <h3 class="font-bold text-lg text-slate-900 dark:text-white">Mock Interview Setup</h3>
+                    <h2 class="font-bold text-lg text-slate-900 dark:text-white">Mock Interview Setup</h2>
                     <p class="text-xs text-slate-400">Configure your simulated interview session</p>
                 </div>
             </div>
@@ -494,7 +428,7 @@
             <div class="space-y-4">
                 <!-- Target Grade -->
                 <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Target Grade</label>
+                    <p class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Target Grade</p>
                     <div class="grid grid-cols-3 gap-2">
                         <button type="button" data-mock-grade="Junior" class="mock-grade-btn p-3 rounded-xl border text-center hover:border-brand-500 transition-all font-bold text-xs bg-brand-500/10 border-brand-500 text-brand-600 dark:text-brand-400">
                             Junior<br><span class="text-[10px] font-normal opacity-80">10 questions</span>
@@ -510,7 +444,7 @@
 
                 <!-- Target Company -->
                 <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Target Company</label>
+                    <p class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Target Company</p>
                     <div class="grid grid-cols-2 gap-2">
                         <button type="button" data-mock-company="Any" class="mock-company-btn p-3 rounded-xl border text-center hover:border-brand-500 transition-all font-bold text-xs bg-brand-500/10 border-brand-500 text-brand-600 dark:text-brand-400 col-span-2">
                             🎲 Any (Mix)<br><span class="text-[10px] font-normal opacity-80">All questions without filters</span>
@@ -532,7 +466,7 @@
 
                 <!-- Duration -->
                 <div>
-                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Interview Time Limit</label>
+                    <label for="mock-time-select" class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Interview Time Limit</label>
                     <select id="mock-time-select" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-3 text-xs font-semibold focus:outline-none focus:border-brand-500 text-slate-800 dark:text-slate-200">
                         <option value="15">⚡ 15 Minutes (Express)</option>
                         <option value="30" selected>⏱️ 30 Minutes (Standard)</option>
@@ -545,19 +479,19 @@
             <!-- Start Button -->
             <button id="start-mock-btn" class="w-full bg-gradient-to-r from-brand-500 to-indigo-600 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-brand-500/25 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center space-x-2">
                 <span>Start Simulation</span>
-                <i class="fa-solid fa-play text-xs"></i>
+                <i aria-hidden="true" class="fa-solid fa-play text-xs"></i>
             </button>
         </div>
-    </div>
+    </dialog>
 
     <!-- Mock Interview Results Modal -->
-    <div id="mock-results-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+    <dialog id="mock-results-modal" class="bg-transparent m-auto p-4">
         <div class="bg-white dark:bg-darkCard rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl max-w-lg w-full p-6 space-y-6 relative">
             <div class="text-center space-y-2">
                 <div id="mock-result-badge-icon" class="w-16 h-16 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-3xl mx-auto">
-                    <i class="fa-solid fa-trophy"></i>
+                    <i aria-hidden="true" class="fa-solid fa-trophy"></i>
                 </div>
-                <h3 id="mock-result-title" class="font-extrabold text-2xl text-slate-900 dark:text-white">Interview Complete!</h3>
+                <h2 id="mock-result-title" class="font-extrabold text-2xl text-slate-900 dark:text-white">Interview Complete!</h2>
                 <p id="mock-result-subtitle" class="text-xs text-slate-400">Here is your performance report card</p>
             </div>
 
@@ -579,7 +513,7 @@
 
             <!-- Topic Performance Breakdown -->
             <div class="space-y-2">
-                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400">Topic Breakdown</h4>
+                <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Topic Breakdown</h3>
                 <div id="mock-result-topics" class="space-y-1.5 max-h-40 overflow-y-auto pr-1">
                     <!-- Dynamic rendering -->
                 </div>
@@ -590,21 +524,21 @@
                 Collect Rewards & Exit
             </button>
         </div>
-    </div>
+    </dialog>
 
 
     <!-- Adaptive Quiz Modal -->
-    <div id="adaptive-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-slate-900/80 backdrop-blur-sm transition-opacity opacity-0">
+    <dialog id="adaptive-modal" class="bg-transparent m-auto p-0 transition-opacity opacity-0">
         <div class="bg-white dark:bg-darkCard rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 dark:border-slate-800 m-4">
             <div class="p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center">
                 <div class="flex items-center space-x-3">
                     <div class="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center">
-                        <i class="fa-solid fa-graduation-cap text-emerald-500 text-lg"></i>
+                        <i aria-hidden="true" class="fa-solid fa-graduation-cap text-emerald-500 text-lg"></i>
                     </div>
                     <h2 class="text-xl font-bold text-slate-900 dark:text-white">Adaptive Plan</h2>
                 </div>
-                <button id="close-adaptive-modal" aria-label="Close modal"  class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
-                    <i class="fa-solid fa-xmark text-xl"></i>
+                <button id="close-adaptive-modal" aria-label="Close adaptive quiz" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
+                    <i aria-hidden="true" class="fa-solid fa-xmark text-xl"></i>
                 </button>
             </div>
             
@@ -641,7 +575,7 @@
                 <!-- Results -->
                 <div id="adaptive-step-3" class="hidden space-y-6 text-center py-6">
                     <div class="w-20 h-20 mx-auto bg-emerald-500/10 text-emerald-500 rounded-full flex items-center justify-center text-4xl mb-4">
-                        <i class="fa-solid fa-check"></i>
+                        <i aria-hidden="true" class="fa-solid fa-check"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Quiz completed!</h3>
                     <p class="text-slate-600 dark:text-slate-300" id="quiz-results-text">We have analyzed your answers and created a personalized plan.</p>
@@ -649,23 +583,23 @@
                 </div>
             </div>
         </div>
-    </div>
+    </dialog>
 
     <!-- Adaptive Roadmap Modal -->
-    <div id="adaptive-roadmap-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-slate-900/80 backdrop-blur-sm transition-opacity opacity-0">
+    <dialog id="adaptive-roadmap-modal" class="bg-transparent m-auto p-0 transition-opacity opacity-0">
         <div class="bg-slate-50 dark:bg-slate-900 rounded-2xl w-full max-w-4xl max-h-[90vh] flex flex-col shadow-2xl border border-slate-200 dark:border-slate-800 m-4 overflow-hidden">
             <div class="p-6 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center bg-white dark:bg-darkCard shrink-0">
                 <div class="flex items-center space-x-3">
                     <div class="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 text-lg">
-                        <i class="fa-solid fa-map"></i>
+                        <i aria-hidden="true" class="fa-solid fa-map"></i>
                     </div>
                     <div>
                         <h2 class="text-xl font-bold text-slate-900 dark:text-white">Your Adaptive Roadmap</h2>
                         <p class="text-sm text-slate-500">Master these topics to complete your plan</p>
                     </div>
                 </div>
-                <button id="close-roadmap-modal" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors w-8 h-8 flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800">
-                    <i class="fa-solid fa-xmark text-xl"></i>
+                <button id="close-roadmap-modal" aria-label="Close roadmap" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors w-8 h-8 flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800">
+                    <i aria-hidden="true" class="fa-solid fa-xmark text-xl"></i>
                 </button>
             </div>
             
@@ -673,36 +607,36 @@
                 <!-- Grouped cards will be injected here by adaptive.js -->
             </div>
         </div>
-    </div>
+    </dialog>
 
     <!-- Adaptive Success Modal -->
-    <div id="adaptive-success-modal" class="fixed inset-0 z-[110] hidden flex items-center justify-center bg-slate-900/90 backdrop-blur-md transition-opacity opacity-0">
+    <dialog id="adaptive-success-modal" class="bg-transparent m-auto p-0 transition-opacity opacity-0">
         <div class="bg-white dark:bg-darkCard rounded-2xl w-full max-w-md p-8 text-center shadow-2xl border border-emerald-500/30 m-4 transform scale-95 transition-transform">
             <div class="w-24 h-24 mx-auto bg-emerald-500/20 text-emerald-500 rounded-full flex items-center justify-center text-5xl mb-6 relative">
-                <i class="fa-solid fa-trophy absolute z-10"></i>
+                <i aria-hidden="true" class="fa-solid fa-trophy absolute z-10"></i>
                 <div class="absolute inset-0 bg-emerald-500 rounded-full animate-ping opacity-20"></div>
             </div>
             <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mb-2">Plan Completed!</h2>
             <p class="text-slate-600 dark:text-slate-300 mb-8">You have successfully mastered all the topics in your personalized adaptive plan. Great job!</p>
             <button id="close-success-modal" class="w-full py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-xl shadow-lg shadow-emerald-500/20 transition-all hover:scale-[1.02]">Awesome!</button>
         </div>
-    </div>
+    </dialog>
 
     <!-- Statistics Dashboard Modal -->
-    <div id="stats-dashboard-modal" class="fixed inset-0 z-[120] hidden items-center justify-center bg-slate-900/80 backdrop-blur-sm transition-opacity opacity-0">
+    <dialog id="stats-dashboard-modal" class="bg-transparent m-auto p-0 transition-opacity opacity-0">
         <div class="bg-white dark:bg-darkCard rounded-2xl w-full max-w-3xl max-h-[90vh] flex flex-col shadow-2xl border border-slate-200 dark:border-slate-800 m-4 overflow-hidden">
             <div class="p-6 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center bg-slate-50 dark:bg-slate-900/50 shrink-0">
                 <div class="flex items-center space-x-3">
                     <div class="w-10 h-10 rounded-full bg-brand-500/10 flex items-center justify-center text-brand-500 text-lg">
-                        <i class="fa-solid fa-chart-pie"></i>
+                        <i aria-hidden="true" class="fa-solid fa-chart-pie"></i>
                     </div>
                     <div>
                         <h2 class="text-xl font-bold text-slate-900 dark:text-white">My Statistics</h2>
                         <p class="text-sm text-slate-500">Track your interview preparation progress</p>
                     </div>
                 </div>
-                <button id="close-stats-modal" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors w-8 h-8 flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800">
-                    <i class="fa-solid fa-xmark text-xl"></i>
+                <button id="close-stats-modal" aria-label="Close statistics" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors w-8 h-8 flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800">
+                    <i aria-hidden="true" class="fa-solid fa-xmark text-xl"></i>
                 </button>
             </div>
             
@@ -712,7 +646,7 @@
                 </div>
                 
                 <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center space-x-2">
-                    <i class="fa-solid fa-layer-group text-slate-400"></i>
+                    <i aria-hidden="true" class="fa-solid fa-layer-group text-slate-400"></i>
                     <span>Topic Mastery Breakdown</span>
                 </h3>
                 <div id="stats-topics-container" class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
@@ -720,7 +654,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </dialog>
 
     <!-- Main Script Dependencies -->
     <script type="module" src="/src/main.js"></script>

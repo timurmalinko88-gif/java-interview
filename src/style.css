@@ -2,12 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Firefox Scrollbar Support */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+}
+html.dark {
+    scrollbar-color: #334155 transparent;
+}
+
 /* Smooth transitions */
 .transition-all-300 {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Custom scrollbar styling */
+/* Custom scrollbar styling (Webkit) */
 ::-webkit-scrollbar {
     width: 6px;
     height: 6px;
@@ -87,4 +96,14 @@ pre::after {
     background: #ff5f56;
     box-shadow: 1.2rem 0 0 #ffbd2e, 2.4rem 0 0 #27c93f;
     z-index: 20;
+}
+
+/* Native Dialog Styling */
+dialog {
+    max-width: 100%;
+    max-height: 100%;
+}
+dialog::backdrop {
+    background-color: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(4px);
 }

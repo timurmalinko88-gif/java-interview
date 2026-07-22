@@ -1,0 +1,571 @@
+[
+  {
+    "id": "collections-001",
+    "path": "questions/collections/collections-001.md",
+    "topic": "Collections",
+    "difficulty": "Junior",
+    "format": "Open Answer",
+    "title": "Difference between ArrayList and LinkedList",
+    "time": "5 min",
+    "frequency": "High",
+    "related": [],
+    "tags": [
+      "oop",
+      "spring-core",
+      "system-design",
+      "stream-api",
+      "memory",
+      "multithreading",
+      "collections"
+    ]
+  },
+  {
+    "id": "collections-002",
+    "path": "questions/collections/collections-002.md",
+    "topic": "Collections",
+    "difficulty": "Middle",
+    "format": "Open Answer",
+    "title": "How HashMap works internally",
+    "time": "10 min",
+    "frequency": "High",
+    "related": [],
+    "tags": [
+      "spring-core",
+      "databases",
+      "stream-api",
+      "memory",
+      "collections"
+    ]
+  },
+  {
+    "id": "collections-003",
+    "path": "questions/collections/collections-003.md",
+    "topic": "Collections",
+    "difficulty": "Junior",
+    "format": "Open Answer",
+    "title": "HashMap vs HashTable",
+    "time": "5 min",
+    "frequency": "High",
+    "related": [],
+    "tags": [
+      "oop",
+      "spring-core",
+      "stream-api",
+      "jvm",
+      "multithreading",
+      "collections",
+      "exceptions"
+    ]
+  },
+  {
+    "id": "collections-004",
+    "path": "questions/collections/collections-004.md",
+    "topic": "Collections",
+    "difficulty": "Senior",
+    "format": "System Design",
+    "title": "ConcurrentHashMap Internal Working",
+    "time": "15 min",
+    "frequency": "High",
+    "related": [],
+    "tags": [
+      "spring-core",
+      "system-design",
+      "stream-api",
+      "memory",
+      "multithreading",
+      "collections"
+    ]
+  },
+  {
+    "id": "collections-005",
+    "path": "questions/collections/collections-005.md",
+    "topic": "Collections",
+    "difficulty": "Junior",
+    "format": "Open Answer",
+    "title": "Set vs List",
+    "time": "5 min",
+    "frequency": "High",
+    "related": [],
+    "tags": [
+      "oop",
+      "spring-core",
+      "databases",
+      "stream-api",
+      "collections"
+    ]
+  },
+  {
+    "id": "collections-006",
+    "path": "questions/collections/collections-006.md",
+    "topic": "Collections",
+    "difficulty": "Middle",
+    "format": "Open Answer",
+    "title": "HashSet Internal Implementation",
+    "time": "10 min",
+    "frequency": "High",
+    "related": [],
+    "tags": [
+      "spring-core",
+      "oop",
+      "stream-api",
+      "collections"
+    ]
+  },
+  {
+    "id": "collections-007",
+    "path": "questions/collections/collections-007.md",
+    "topic": "Collections",
+    "difficulty": "Middle",
+    "format": "Open Answer",
+    "title": "TreeSet vs HashSet",
+    "time": "5 min",
+    "frequency": "High",
+    "related": [],
+    "tags": [
+      "oop",
+      "spring-core",
+      "stream-api",
+      "collections",
+      "exceptions"
+    ]
+  },
+  {
+    "id": "collections-008",
+    "path": "questions/collections/collections-008.md",
+    "topic": "Collections",
+    "difficulty": "Middle",
+    "format": "Open Answer",
+    "title": "PriorityQueue in Java",
+    "time": "10 min",
+    "frequency": "Medium",
+    "related": [],
+    "tags": [
+      "oop",
+      "spring-core",
+      "stream-api",
+      "memory",
+      "multithreading",
+      "collections"
+    ]
+  },
+  {
+    "id": "collections-009",
+    "path": "questions/collections/collections-009.md",
+    "topic": "Collections",
+    "difficulty": "Senior",
+    "format": "Open Answer",
+    "title": "Fail-Fast vs Fail-Safe Iterators",
+    "time": "10 min",
+    "frequency": "High",
+    "related": [],
+    "tags": [
+      "spring-core",
+      "stream-api",
+      "multithreading",
+      "collections",
+      "exceptions"
+    ]
+  },
+  {
+    "id": "collections-010",
+    "path": "questions/collections/collections-010.md",
+    "topic": "Collections",
+    "difficulty": "Junior",
+    "format": "Open Answer",
+    "title": "Vector vs ArrayList",
+    "time": "5 min",
+    "frequency": "Medium",
+    "related": [],
+    "tags": [
+      "oop",
+      "spring-core",
+      "system-design",
+      "stream-api",
+      "multithreading",
+      "collections"
+    ]
+  },
+  {
+    "id": "collections-011",
+    "path": "questions/collections/collections-011.md",
+    "topic": "Collections",
+    "difficulty": "Middle",
+    "format": "Code Review",
+    "title": "Comparable vs Comparator",
+    "time": "10 min",
+    "frequency": "High",
+    "related": [],
+    "tags": [
+      "oop",
+      "spring-core",
+      "stream-api",
+      "collections",
+      "spring-data"
+    ]
+  },
+  {
+    "id": "collections-012",
+    "path": "questions/collections/collections-012.md",
+    "topic": "Collections",
+    "difficulty": "Junior",
+    "format": "Open Answer",
+    "title": "Iterator vs ListIterator",
+    "time": "5 min",
+    "frequency": "Medium",
+    "related": [],
+    "tags": [
+      "oop",
+      "spring-core",
+      "databases",
+      "stream-api",
+      "collections"
+    ]
+  },
+  {
+    "id": "collections-013",
+    "path": "questions/collections/collections-013.md",
+    "topic": "Collections",
+    "difficulty": "Middle",
+    "format": "System Design",
+    "title": "LinkedHashMap Insertion Order",
+    "time": "10 min",
+    "frequency": "Medium",
+    "related": [],
+    "tags": [
+      "spring-core",
+      "system-design",
+      "stream-api",
+      "collections"
+    ]
+  },
+  {
+    "id": "collections-014",
+    "path": "questions/collections/collections-014.md",
+    "topic": "Collections",
+    "difficulty": "Junior",
+    "format": "Open Answer",
+    "title": "Queue vs Deque",
+    "time": "5 min",
+    "frequency": "Medium",
+    "related": [],
+    "tags": [
+      "oop",
+      "spring-core",
+      "databases",
+      "stream-api",
+      "memory",
+      "collections"
+    ]
+  },
+  {
+    "id": "collections-015",
+    "path": "questions/collections/collections-015.md",
+    "topic": "Collections",
+    "difficulty": "Senior",
+    "format": "Code Review",
+    "title": "IdentityHashMap",
+    "time": "10 min",
+    "frequency": "Low",
+    "related": [],
+    "tags": [
+      "oop",
+      "spring-core",
+      "system-design",
+      "databases",
+      "stream-api",
+      "memory",
+      "collections",
+      "spring-data"
+    ]
+  },
+  {
+    "id": "collections-016",
+    "path": "questions/collections/collections-016.md",
+    "topic": "Collections",
+    "difficulty": "Senior",
+    "format": "Open Answer",
+    "title": "WeakHashMap",
+    "time": "10 min",
+    "frequency": "Medium",
+    "related": [],
+    "tags": [
+      "oop",
+      "spring-core",
+      "system-design",
+      "stream-api",
+      "memory",
+      "multithreading",
+      "collections"
+    ]
+  },
+  {
+    "id": "collections-017",
+    "path": "questions/collections/collections-017.md",
+    "topic": "Collections",
+    "difficulty": "Middle",
+    "format": "Open Answer",
+    "title": "CopyOnWriteArrayList",
+    "time": "10 min",
+    "frequency": "High",
+    "related": [],
+    "tags": [
+      "spring-core",
+      "stream-api",
+      "memory",
+      "multithreading",
+      "collections",
+      "exceptions"
+    ]
+  },
+  {
+    "id": "collections-018",
+    "path": "questions/collections/collections-018.md",
+    "topic": "Collections",
+    "difficulty": "Senior",
+    "format": "System Design",
+    "title": "BlockingQueue",
+    "time": "10 min",
+    "frequency": "Medium",
+    "related": [],
+    "tags": [
+      "oop",
+      "spring-core",
+      "system-design",
+      "patterns",
+      "stream-api",
+      "multithreading",
+      "collections"
+    ]
+  },
+  {
+    "id": "collections-019",
+    "path": "questions/collections/collections-019.md",
+    "topic": "Collections",
+    "difficulty": "Middle",
+    "format": "Open Answer",
+    "title": "SynchronizedMap vs ConcurrentHashMap",
+    "time": "10 min",
+    "frequency": "High",
+    "related": [],
+    "tags": [
+      "oop",
+      "spring-core",
+      "stream-api",
+      "memory",
+      "multithreading",
+      "collections"
+    ]
+  },
+  {
+    "id": "collections-020",
+    "path": "questions/collections/collections-020.md",
+    "topic": "Collections",
+    "difficulty": "Middle",
+    "format": "Open Answer",
+    "title": "EnumSet",
+    "time": "5 min",
+    "frequency": "Low",
+    "related": [],
+    "tags": [
+      "oop",
+      "spring-core",
+      "system-design",
+      "stream-api",
+      "memory",
+      "multithreading",
+      "collections"
+    ]
+  },
+  {
+    "id": "collections-021",
+    "path": "questions/collections/collections-021.md",
+    "topic": "Collections",
+    "difficulty": "Middle",
+    "format": "Open Answer",
+    "title": "EnumMap",
+    "time": "5 min",
+    "frequency": "Low",
+    "related": [],
+    "tags": [
+      "oop",
+      "spring-core",
+      "system-design",
+      "databases",
+      "stream-api",
+      "memory",
+      "collections"
+    ]
+  },
+  {
+    "id": "collections-022",
+    "path": "questions/collections/collections-022.md",
+    "topic": "Collections",
+    "difficulty": "Senior",
+    "format": "System Design",
+    "title": "TreeMap Internal Implementation",
+    "time": "15 min",
+    "frequency": "Medium",
+    "related": [],
+    "tags": [
+      "spring-core",
+      "system-design",
+      "stream-api",
+      "memory",
+      "collections"
+    ]
+  },
+  {
+    "id": "collections-023",
+    "path": "questions/collections/collections-023.md",
+    "topic": "Collections",
+    "difficulty": "Junior",
+    "format": "Open Answer",
+    "title": "Stack vs Deque",
+    "time": "5 min",
+    "frequency": "High",
+    "related": [],
+    "tags": [
+      "oop",
+      "spring-core",
+      "system-design",
+      "databases",
+      "stream-api",
+      "memory",
+      "multithreading",
+      "collections",
+      "exceptions"
+    ]
+  },
+  {
+    "id": "collections-024",
+    "path": "questions/collections/collections-024.md",
+    "topic": "Collections",
+    "difficulty": "Middle",
+    "format": "Open Answer",
+    "title": "Collections.sort vs Arrays.sort",
+    "time": "5 min",
+    "frequency": "Medium",
+    "related": [],
+    "tags": [
+      "oop",
+      "spring-core",
+      "stream-api",
+      "memory",
+      "collections"
+    ]
+  },
+  {
+    "id": "collections-025",
+    "path": "questions/collections/collections-025.md",
+    "topic": "Collections",
+    "difficulty": "Junior",
+    "format": "Code Review",
+    "title": "Collections.unmodifiableCollection",
+    "time": "5 min",
+    "frequency": "Medium",
+    "related": [],
+    "tags": [
+      "spring-core",
+      "stream-api",
+      "memory",
+      "exceptions",
+      "collections"
+    ]
+  },
+  {
+    "id": "collections-026",
+    "path": "questions/collections/collections-026.md",
+    "topic": "Collections",
+    "difficulty": "Middle",
+    "format": "Open Answer",
+    "title": "Immutable Collections (Java 9+)",
+    "time": "5 min",
+    "frequency": "High",
+    "related": [],
+    "tags": [
+      "oop",
+      "spring-core",
+      "system-design",
+      "patterns",
+      "stream-api",
+      "memory",
+      "collections",
+      "exceptions"
+    ]
+  },
+  {
+    "id": "collections-027",
+    "path": "questions/collections/collections-027.md",
+    "topic": "Collections",
+    "difficulty": "Middle",
+    "format": "Code Review",
+    "title": "Arrays.asList vs List.of",
+    "time": "5 min",
+    "frequency": "High",
+    "related": [],
+    "tags": [
+      "spring-core",
+      "databases",
+      "stream-api",
+      "memory",
+      "collections",
+      "exceptions"
+    ]
+  },
+  {
+    "id": "collections-028",
+    "path": "questions/collections/collections-028.md",
+    "topic": "Collections",
+    "difficulty": "Senior",
+    "format": "Open Answer",
+    "title": "NavigableMap Interface",
+    "time": "5 min",
+    "frequency": "Low",
+    "related": [],
+    "tags": [
+      "oop",
+      "spring-core",
+      "testing",
+      "stream-api",
+      "collections"
+    ]
+  },
+  {
+    "id": "collections-029",
+    "path": "questions/collections/collections-029.md",
+    "topic": "Collections",
+    "difficulty": "Senior",
+    "format": "Open Answer",
+    "title": "NavigableSet Interface",
+    "time": "5 min",
+    "frequency": "Low",
+    "related": [],
+    "tags": [
+      "oop",
+      "spring-core",
+      "testing",
+      "stream-api",
+      "multithreading",
+      "collections"
+    ]
+  },
+  {
+    "id": "collections-030",
+    "path": "questions/collections/collections-030.md",
+    "topic": "Collections",
+    "difficulty": "Junior",
+    "format": "Open Answer",
+    "title": "Dictionary Class",
+    "time": "2 min",
+    "frequency": "Low",
+    "related": [],
+    "tags": [
+      "oop",
+      "spring-core",
+      "stream-api",
+      "jvm",
+      "multithreading",
+      "collections"
+    ]
+  }
+]

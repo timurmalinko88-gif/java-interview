@@ -1,7 +1,7 @@
 # 🚀 Java Interview Prep Hub & Mock Simulator
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Questions-550-brightgreen.svg?style=for-the-badge&logo=java" alt="Total Questions">
+  <img src="https://img.shields.io/badge/Questions-583-brightgreen.svg?style=for-the-badge&logo=java" alt="Total Questions">
   <img src="https://img.shields.io/badge/Topics-11-blue.svg?style=for-the-badge&logo=codeforces" alt="Total Topics">
   <img src="https://img.shields.io/badge/Simulator-Mock%20Interview-purple.svg?style=for-the-badge&logo=target" alt="Mock Interview Simulator">
   <img src="https://img.shields.io/badge/License-MIT-orange.svg?style=for-the-badge" alt="License">
@@ -35,11 +35,11 @@ An interactive, high-performance Single Page Web Application (SPA), mock intervi
   5. 🔥 *Senior Developer*
   6. 👑 *Lead Engineer*
   7. 🧙‍♂️ *Java Architect*
-- **Global Progress Bar**: Visual progress indicator calculating your overall mastery percentage across all 550 questions.
+- **Global Progress Bar**: Visual progress indicator calculating your overall mastery percentage across all 583 questions.
 - **Local Persistence**: All progress, bookmarks, XP, and rank stats are automatically saved in browser `LocalStorage` without requiring any account registration.
 
 ### ⚡ Comprehensive Question Engine
-- **550 Curated Questions**: Detailed answers, clean Java code snippets, key takeaways, and real-world life analogies.
+- **583 Curated Questions**: Detailed answers, clean Java code snippets, key takeaways, and real-world life analogies.
 - **Smart Filtering & Search**: Instant full-text search with hotkey support (`Ctrl+K`), topic filters, difficulty badges, and format selectors.
 - **Flexible Training Modes**:
   - 📖 **Catalog View**: Browse, search, and bookmark questions systematically.
@@ -56,7 +56,7 @@ An interactive, high-performance Single Page Web Application (SPA), mock intervi
 
 ## 📊 Content Breakdown & Statistics
 
-The repository contains **550 pre-indexed questions** categorized across **11 core Java domains**:
+The repository contains **583 pre-indexed questions** categorized across **11 core Java domains**:
 
 ### Topic Breakdown
 
@@ -108,7 +108,7 @@ java-interview/
 │   └── deploy.yml              # CI/CD workflow for automated GitHub Pages deployment
 ├── build.py                    # Python build script to extract frontmatter & update index.json
 ├── index.html                  # Single-Page Web Application (HTML5, Tailwind CSS, Vanilla JS)
-├── index.json                  # Pre-compiled JSON catalog of all 550 questions
+├── index.json                  # Pre-compiled JSON catalog of all 583 questions
 ├── .gitignore                  # Git exclusion rules for OS & Python artifacts
 ├── .nojekyll                   # Bypasses Jekyll processing on GitHub Pages
 ├── LICENSE                     # MIT Open Source License

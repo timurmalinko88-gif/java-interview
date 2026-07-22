@@ -49,10 +49,11 @@ def build_index():
                         key = meta_match.group(1).lower()
                         value = meta_match.group(2).strip().strip('"').strip("'")
                         if value.startswith('[') and value.endswith(']'):
-                            value = [v.strip().strip('"').strip("'") for v in value[1:-1].split(',') if v.strip()]
-                        elif key in ('tags', 'related_questions', 'related'):
-                            value = [v.strip().strip('"').strip("'") for v in value.split(',') if v.strip()]
-                        metadata[key] = value
+                            value = value[1:-1]
+                        if key in ('tags', 'related_questions', 'related'):
+                            metadata[key] = [v.strip().strip('"').strip("'") for v in value.split(',') if v.strip()]
+                        else:
+                            metadata[key] = value
         else:
             # Логика для файлов без разделителей (чтение сплошного блока "ключ: значение" сверху)
             for line in lines:
@@ -65,10 +66,11 @@ def build_index():
                     key = meta_match.group(1).lower()
                     value = meta_match.group(2).strip().strip('"').strip("'")
                     if value.startswith('[') and value.endswith(']'):
-                        value = [v.strip().strip('"').strip("'") for v in value[1:-1].split(',') if v.strip()]
-                    elif key in ('tags', 'related_questions', 'related'):
-                        value = [v.strip().strip('"').strip("'") for v in value.split(',') if v.strip()]
-                    metadata[key] = value
+                        value = value[1:-1]
+                    if key in ('tags', 'related_questions', 'related'):
+                        metadata[key] = [v.strip().strip('"').strip("'") for v in value.split(',') if v.strip()]
+                    else:
+                        metadata[key] = value
                 else:
                     break  # Если строка не похожа на "ключ: значение", метаданные закончились
 
@@ -109,7 +111,10 @@ def build_index():
 
         question_id = metadata.get('id', os.path.splitext(os.path.basename(filepath))[0])
         topic = metadata.get('topic', 'General')
-        if question_id.startswith('jvm-'):
+        folder_name = os.path.basename(os.path.dirname(filepath))
+        if folder_name.startswith('general-'):
+            topic = folder_name.replace('general-', '').replace('-', ' ').title()
+        elif question_id.startswith('jvm-'):
             topic = 'JVM & Memory Management'
         elif question_id.startswith('oop-') or question_id in {'q1'}:
             topic = 'OOP'
@@ -130,6 +135,42 @@ def build_index():
         elif question_id.startswith('testing-'):
             topic = 'Testing'
 
+        # Time parsing
+        time_val = metadata.get('estimated_time_minutes', metadata.get('time', ''))
+        if not time_val:
+            time_val = '10 min'
+        else:
+            time_str = str(time_val).lower().strip()
+            if time_str.isdigit():
+                time_val = f"{time_str} min"
+            elif 'min' not in time_str:
+                time_val = f"{time_str} min"
+            else:
+                time_val = time_str
+
+        # Frequency standardizing
+        freq_val = str(metadata.get('frequency', '')).strip().lower()
+        if freq_val.endswith('%'):
+            try:
+                num = int(freq_val[:-1])
+                if num >= 80:
+                    freq_val = 'High'
+                elif num >= 50:
+                    freq_val = 'Medium'
+                else:
+                    freq_val = 'Low'
+            except ValueError:
+                freq_val = 'Medium'
+        elif not freq_val:
+            freq_val = 'Medium'
+        else:
+            if 'high' in freq_val or 'часто' in freq_val:
+                freq_val = 'High'
+            elif 'low' in freq_val or 'редко' in freq_val:
+                freq_val = 'Low'
+            else:
+                freq_val = 'Medium'
+
         questions.append({
             'id': question_id,
             'path': rel_path,
@@ -137,9 +178,9 @@ def build_index():
             'difficulty': metadata.get('difficulty', metadata.get('level', 'Junior')),
             'format': metadata.get('format', 'Open Answer'),
             'title': title if title else os.path.splitext(os.path.basename(filepath))[0],
-            'time': metadata.get('estimated_time_minutes', ''),
-            'frequency': metadata.get('frequency', ''),
-            'related': metadata.get('related_questions', []),
+            'time': time_val,
+            'frequency': freq_val,
+            'related': metadata.get('related_questions', metadata.get('related', [])),
             'tags': metadata.get('tags', [])
         })
 
