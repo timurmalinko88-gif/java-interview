@@ -376,6 +376,7 @@ var mockTimerInterval = null;
 var mockTimeRemaining = 0;
 var mockScores = [];
 var mockSelectedGrade = 'Junior';
+var mockSelectedCompany = 'Any';
 
 function openMockSetup() {
     document.getElementById('mock-setup-modal').classList.remove('hidden');
@@ -394,6 +395,36 @@ function startMockInterview() {
         if (mockSelectedGrade === 'Middle') return q.difficulty === 'Middle' || q.difficulty === 'Senior' || q.difficulty === 'Junior';
         return q.difficulty === 'Senior' || q.difficulty === 'Middle';
     });
+
+    // Pool filtering based on target company
+    if (mockSelectedCompany !== 'Any') {
+        const companyProfiles = {
+            'Bank': ['multithreading', 'memory', 'databases', 'jvm', 'spring-core'],
+            'Outsource': ['oop', 'patterns', 'stream-api', 'collections', 'solid', 'exceptions', 'spring-mvc'],
+            'BigTech': ['system-design', 'jvm', 'memory', 'multithreading', 'collections', 'high-load'],
+            'Startup': ['spring-boot', 'stream-api', 'databases', 'collections', 'patterns', 'rest']
+        };
+        const preferredTags = companyProfiles[mockSelectedCompany] || [];
+        
+        let filteredByCompany = candidatePool.filter(q => {
+            if (!q.tags) return false;
+            return q.tags.some(tag => preferredTags.includes(tag.toLowerCase()));
+        });
+        
+        let targetCount = mockSelectedGrade === 'Senior' ? 15 : (mockSelectedGrade === 'Middle' ? 12 : 10);
+        // Fallback: If strict company filter produces too few questions, pad with general pool
+        if (filteredByCompany.length < targetCount) {
+            const needed = targetCount - filteredByCompany.length;
+            const remaining = candidatePool.filter(q => !filteredByCompany.includes(q));
+            // Simple shuffle for remaining
+            for (let i = remaining.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [remaining[i], remaining[j]] = [remaining[j], remaining[i]];
+            }
+            filteredByCompany = [...filteredByCompany, ...remaining.slice(0, needed)];
+        }
+        candidatePool = filteredByCompany;
+    }
 
     if (candidatePool.length === 0) candidatePool = [...questionsList];
 

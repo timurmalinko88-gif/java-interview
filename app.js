@@ -58,6 +58,19 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     });
 
+    // Company selection buttons inside setup modal
+    document.querySelectorAll('.mock-company-btn').forEach(btn => {
+        btn.onclick = () => {
+            document.querySelectorAll('.mock-company-btn').forEach(b => {
+                b.classList.remove('bg-brand-500/10', 'border-brand-500', 'text-brand-600', 'dark:text-brand-400');
+                b.classList.add('border-slate-200', 'dark:border-slate-800', 'text-slate-600', 'dark:text-slate-400');
+            });
+            btn.classList.remove('border-slate-200', 'dark:border-slate-800', 'text-slate-600', 'dark:text-slate-400');
+            btn.classList.add('bg-brand-500/10', 'border-brand-500', 'text-brand-600', 'dark:text-brand-400');
+            mockSelectedCompany = btn.getAttribute('data-mock-company');
+        };
+    });
+
     // Evaluation buttons
     const evalMissedBtn = document.getElementById('eval-missed-btn');
     if (evalMissedBtn) evalMissedBtn.onclick = () => evaluateMockQuestion(0);
