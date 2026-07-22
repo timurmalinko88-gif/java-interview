@@ -1,13 +1,13 @@
 <!DOCTYPE html>
-<html lang="ru" class="dark">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Java Interview Trainer & Simulator</title>
     
     <!-- External Libraries -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Fonts -->
@@ -18,40 +18,10 @@
     <!-- Highlight.js for Java code syntax highlighting -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css" id="hljs-dark-theme">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css" id="hljs-light-theme" disabled>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/java.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/java.min.js"></script>
 
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            50: '#eef2ff',
-                            100: '#e0e7ff',
-                            200: '#c7d2fe',
-                            300: '#a5b4fc',
-                            400: '#818cf8',
-                            500: '#6366f1', // Indigo primary
-                            600: '#4f46e5',
-                            700: '#4338ca',
-                            800: '#3730a3',
-                            900: '#312e81',
-                        },
-                        darkBg: '#0f172a', // Deep obsidian slate
-                        darkCard: '#1e293b', // Rich slate
-                        lightBg: '#f8fafc',
-                        lightCard: '#ffffff'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'monospace']
-                    }
-                }
-            }
-        }
-    </script>
+    
 
     <style>
         /* Smooth transitions */
@@ -204,7 +174,7 @@
                 </button>
 
                 <!-- Dark Mode Toggle Button -->
-                <button id="theme-toggle" class="w-10 h-10 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/80 flex items-center justify-center transition-all-300">
+                <button id="theme-toggle" aria-label="Toggle theme"  class="w-10 h-10 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/80 flex items-center justify-center transition-all-300">
                     <i class="fa-solid fa-sun hidden dark:block text-amber-400"></i>
                     <i class="fa-solid fa-moon dark:hidden text-slate-700"></i>
                 </button>
@@ -452,10 +422,10 @@
                     <!-- Prev / Next & Counter Info -->
                     <div class="flex items-center space-x-4 w-full sm:w-auto justify-between sm:justify-start">
                         <div class="flex space-x-2">
-                            <button id="btn-prev" class="w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-center transition-all-300 text-slate-500 dark:text-slate-400 hover:scale-95 disabled:opacity-40 disabled:pointer-events-none" title="Предыдущий вопрос">
+                            <button id="btn-prev" class="w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-center transition-all-300 text-slate-500 dark:text-slate-400 hover:scale-95 disabled:opacity-40 disabled:pointer-events-none" title="Previous question">
                                 <i class="fa-solid fa-arrow-left"></i>
                             </button>
-                            <button id="btn-next" class="w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-center transition-all-300 text-slate-500 dark:text-slate-400 hover:scale-95 disabled:opacity-40 disabled:pointer-events-none" title="Следующий вопрос">
+                            <button id="btn-next" class="w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-center transition-all-300 text-slate-500 dark:text-slate-400 hover:scale-95 disabled:opacity-40 disabled:pointer-events-none" title="Next question">
                                 <i class="fa-solid fa-arrow-right"></i>
                             </button>
                         </div>
@@ -498,7 +468,7 @@
     </main>
 
     <!-- Toasts feedback notifications dynamically injected -->
-    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-slate-900 text-white border border-slate-800 rounded-xl px-4 py-3 shadow-2xl flex items-center space-x-3 pointer-events-none opacity-0 transform translate-y-2 transition-all duration-300">
+    <div id="toast" role="status" aria-live="polite" class="fixed bottom-6 right-6 z-50 bg-slate-900 text-white border border-slate-800 rounded-xl px-4 py-3 shadow-2xl flex items-center space-x-3 pointer-events-none opacity-0 transform translate-y-2 transition-all duration-300">
         <i id="toast-icon" class="fa-solid fa-check text-emerald-500"></i>
         <span id="toast-message" class="text-sm font-semibold"></span>
     </div>
@@ -506,7 +476,7 @@
     <!-- Mock Interview Setup Modal -->
     <div id="mock-setup-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
         <div class="bg-white dark:bg-darkCard rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl max-w-md w-full p-6 space-y-6 relative">
-            <button id="close-mock-setup-btn" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-lg">
+            <button id="close-mock-setup-btn" aria-label="Close setup"  class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-lg">
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
@@ -543,19 +513,19 @@
                     <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Target Company</label>
                     <div class="grid grid-cols-2 gap-2">
                         <button type="button" data-mock-company="Any" class="mock-company-btn p-3 rounded-xl border text-center hover:border-brand-500 transition-all font-bold text-xs bg-brand-500/10 border-brand-500 text-brand-600 dark:text-brand-400 col-span-2">
-                            🎲 Любая (Микс)<br><span class="text-[10px] font-normal opacity-80">Все вопросы без фильтров</span>
+                            🎲 Any (Mix)<br><span class="text-[10px] font-normal opacity-80">All questions without filters</span>
                         </button>
                         <button type="button" data-mock-company="Bank" class="mock-company-btn p-3 rounded-xl border border-slate-200 dark:border-slate-800 text-center hover:border-brand-500 transition-all font-bold text-xs text-slate-600 dark:text-slate-400">
-                            🏦 Банк / Финтех<br><span class="text-[10px] font-normal opacity-80">Concurrency, Memory, DB</span>
+                            🏦 Bank / FinTech<br><span class="text-[10px] font-normal opacity-80">Concurrency, Memory, DB</span>
                         </button>
                         <button type="button" data-mock-company="Outsource" class="mock-company-btn p-3 rounded-xl border border-slate-200 dark:border-slate-800 text-center hover:border-brand-500 transition-all font-bold text-xs text-slate-600 dark:text-slate-400">
-                            🏢 Аутсорс<br><span class="text-[10px] font-normal opacity-80">Core, OOP, Patterns, API</span>
+                            🏢 Outsource<br><span class="text-[10px] font-normal opacity-80">Core, OOP, Patterns, API</span>
                         </button>
                         <button type="button" data-mock-company="BigTech" class="mock-company-btn p-3 rounded-xl border border-slate-200 dark:border-slate-800 text-center hover:border-brand-500 transition-all font-bold text-xs text-slate-600 dark:text-slate-400">
                             🚀 BigTech<br><span class="text-[10px] font-normal opacity-80">System Design, High-Load</span>
                         </button>
                         <button type="button" data-mock-company="Startup" class="mock-company-btn p-3 rounded-xl border border-slate-200 dark:border-slate-800 text-center hover:border-brand-500 transition-all font-bold text-xs text-slate-600 dark:text-slate-400">
-                            🦄 Стартап<br><span class="text-[10px] font-normal opacity-80">Spring Boot, REST, DB</span>
+                            🦄 Startup<br><span class="text-[10px] font-normal opacity-80">Spring Boot, REST, DB</span>
                         </button>
                     </div>
                 </div>
@@ -633,7 +603,7 @@
                     </div>
                     <h2 class="text-xl font-bold text-slate-900 dark:text-white">Adaptive Plan</h2>
                 </div>
-                <button id="close-adaptive-modal" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
+                <button id="close-adaptive-modal" aria-label="Close modal"  class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
                     <i class="fa-solid fa-xmark text-xl"></i>
                 </button>
             </div>
@@ -753,11 +723,7 @@
     </div>
 
     <!-- Main Script Dependencies -->
-    <script src="state.js"></script>
-    <script src="ui.js"></script>
-    <script src="stats.js"></script>
-    <script src="app.js"></script>
-    <script src="adaptive.js"></script>
+    <script type="module" src="/src/main.js"></script>
 
 </body>
 </html>

@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "total": 550,
+  "total": 583,
   "questions": [
     {
       "id": "collections-001",
@@ -944,6 +944,37 @@
       ]
     },
     {
+      "id": "mcq-col-001",
+      "path": "questions/collections/mcq-col-001.md",
+      "topic": "Collections",
+      "difficulty": "Junior",
+      "format": "MCQ",
+      "title": "Какая реализация интерфейса List работает быстрее при вставке элементов в середину списка?",
+      "time": "",
+      "frequency": "",
+      "related": [],
+      "tags": [
+        "collections",
+        "list"
+      ]
+    },
+    {
+      "id": "mcq-col-002",
+      "path": "questions/collections/mcq-col-002.md",
+      "topic": "Collections",
+      "difficulty": "Middle",
+      "format": "MCQ",
+      "title": "С какой версии Java в HashMap для разрешения коллизий (при достижении определенного порога) вместо связного списка используется красно-черное дерево?",
+      "time": "",
+      "frequency": "",
+      "related": [],
+      "tags": [
+        "collections",
+        "map",
+        "hashmap"
+      ]
+    },
+    {
       "id": "databases-001",
       "path": "questions/databases/databases-001.md",
       "topic": "Databases",
@@ -1840,6 +1871,69 @@
         "system-design",
         "spring-core",
         "collections"
+      ]
+    },
+    {
+      "id": "mcq-db-001",
+      "path": "questions/databases/mcq-db-001.md",
+      "topic": "Databases",
+      "difficulty": "Middle",
+      "format": "MCQ",
+      "title": "Что означает буква \"I\" в аббревиатуре ACID (свойства транзакций баз данных)?",
+      "time": "",
+      "frequency": "",
+      "related": [],
+      "tags": [
+        "db",
+        "sql",
+        "acid"
+      ]
+    },
+    {
+      "id": "mcq-db-002",
+      "path": "questions/databases/mcq-db-002.md",
+      "topic": "Databases",
+      "difficulty": "Senior",
+      "format": "MCQ",
+      "title": "Какой уровень изоляции транзакций решает проблему \"Фантомного чтения\" (Phantom Read)?",
+      "time": "",
+      "frequency": "",
+      "related": [],
+      "tags": [
+        "db",
+        "sql",
+        "isolation"
+      ]
+    },
+    {
+      "id": "mcq-exc-001",
+      "path": "questions/exceptions/mcq-exc-001.md",
+      "topic": "Exceptions",
+      "difficulty": "Junior",
+      "format": "MCQ",
+      "title": "Какой класс является базовым для всех проверяемых (checked) исключений?",
+      "time": "",
+      "frequency": "",
+      "related": [],
+      "tags": [
+        "exceptions",
+        "checked",
+        "unchecked"
+      ]
+    },
+    {
+      "id": "mcq-exc-002",
+      "path": "questions/exceptions/mcq-exc-002.md",
+      "topic": "Exceptions",
+      "difficulty": "Middle",
+      "format": "MCQ",
+      "title": "С какой версии Java доступна конструкция try-with-resources?",
+      "time": "",
+      "frequency": "",
+      "related": [],
+      "tags": [
+        "exceptions",
+        "try-with-resources"
       ]
     },
     {
@@ -2801,6 +2895,51 @@
       ]
     },
     {
+      "id": "mcq-core-001",
+      "path": "questions/general/mcq-core-001.md",
+      "topic": "General",
+      "difficulty": "Junior",
+      "format": "MCQ",
+      "title": "Почему класс String в Java является неизменяемым (immutable)?",
+      "time": "",
+      "frequency": "",
+      "related": [],
+      "tags": [
+        "core",
+        "string"
+      ]
+    },
+    {
+      "id": "mcq-core-002",
+      "path": "questions/general/mcq-core-002.md",
+      "topic": "General",
+      "difficulty": "Middle",
+      "format": "MCQ",
+      "title": "Какое требование к контракту equals() и hashCode() является верным?",
+      "time": "",
+      "frequency": "",
+      "related": [],
+      "tags": [
+        "core",
+        "equals"
+      ]
+    },
+    {
+      "id": "mcq-core-003",
+      "path": "questions/general/mcq-core-003.md",
+      "topic": "General",
+      "difficulty": "Middle",
+      "format": "MCQ",
+      "title": "Что такое стирание типов (Type Erasure) в Java Generics?",
+      "time": "",
+      "frequency": "",
+      "related": [],
+      "tags": [
+        "core",
+        "generics"
+      ]
+    },
+    {
       "id": "jvm-001",
       "path": "questions/jvm/jvm-001.md",
       "topic": "JVM & Memory Management",
@@ -2809,7 +2948,10 @@
       "title": "Unintentional Retention: Memory Leaks in Java",
       "time": "10",
       "frequency": "High",
-      "related": "jvm-002, jvm-003",
+      "related": [
+        "jvm-002",
+        "jvm-003"
+      ],
       "tags": [
         "oop",
         "spring-core",
@@ -2831,7 +2973,9 @@
       "title": "Code Review: The Immortal Cache",
       "time": "15",
       "frequency": "Medium",
-      "related": "jvm-001",
+      "related": [
+        "jvm-001"
+      ],
       "tags": [
         "oop",
         "spring-core",
@@ -2853,7 +2997,10 @@
       "title": "ThreadLocal Leaks and the Looming Future",
       "time": "15",
       "frequency": "High",
-      "related": "jvm-001, jvm-002",
+      "related": [
+        "jvm-001",
+        "jvm-002"
+      ],
       "tags": [
         "oop",
         "spring-core",
@@ -2875,7 +3022,9 @@
       "title": "Code Review: The Off-Heap Illusion",
       "time": "20",
       "frequency": "Low",
-      "related": "jvm-002",
+      "related": [
+        "jvm-002"
+      ],
       "tags": [
         "oop",
         "spring-core",
@@ -2896,7 +3045,9 @@
       "title": "System Design: Ultra-Low Latency Order Cache",
       "time": "30",
       "frequency": "Medium",
-      "related": "jvm-004",
+      "related": [
+        "jvm-004"
+      ],
       "tags": [
         "oop",
         "spring-core",
@@ -2919,7 +3070,7 @@
       "title": "Where does a String live — String Pool or Heap, and why does it matter?",
       "time": "10",
       "frequency": "very_high",
-      "related": "",
+      "related": [],
       "tags": [
         "oop",
         "spring-core",
@@ -2939,7 +3090,7 @@
       "title": "Code Review: Cache built with String keys — spot the memory and correctness bugs",
       "time": "15",
       "frequency": "high",
-      "related": "",
+      "related": [],
       "tags": [
         "oop",
         "spring-core",
@@ -2960,7 +3111,7 @@
       "title": "GC Generations: why does the JVM split the heap, and when does the split hurt you?",
       "time": "20",
       "frequency": "high",
-      "related": "",
+      "related": [],
       "tags": [
         "oop",
         "spring-core",
@@ -2982,7 +3133,7 @@
       "title": "Code Review: micro-benchmark of a math utility — find the JIT-related bugs",
       "time": "20",
       "frequency": "high",
-      "related": "",
+      "related": [],
       "tags": [
         "oop",
         "spring-core",
@@ -3006,7 +3157,7 @@
       "title": "System Design: Off-Heap Distributed Cache for a Low-Latency Trading Platform",
       "time": "40",
       "frequency": "medium",
-      "related": "",
+      "related": [],
       "tags": [
         "oop",
         "spring-core",
@@ -3030,7 +3181,10 @@
       "title": "String Concatenation and Interning",
       "time": "15",
       "frequency": "High",
-      "related": "jvm-012, core-004",
+      "related": [
+        "jvm-012",
+        "core-004"
+      ],
       "tags": [
         "oop",
         "spring-core",
@@ -3053,7 +3207,9 @@
       "title": "GC Algorithm Trade-offs",
       "time": "10",
       "frequency": "High",
-      "related": "jvm-015",
+      "related": [
+        "jvm-015"
+      ],
       "tags": [
         "spring-core",
         "system-design",
@@ -3073,7 +3229,9 @@
       "title": "The Silent Web Leak",
       "time": "20",
       "frequency": "High",
-      "related": "core-010",
+      "related": [
+        "core-010"
+      ],
       "tags": [
         "oop",
         "spring-core",
@@ -3097,7 +3255,9 @@
       "title": "The Invisible Memory Limit",
       "time": "15",
       "frequency": "Medium",
-      "related": "jvm-011",
+      "related": [
+        "jvm-011"
+      ],
       "tags": [
         "oop",
         "spring-core",
@@ -3119,7 +3279,10 @@
       "title": "Zero-Latency Bidding Engine",
       "time": "35",
       "frequency": "Medium",
-      "related": "sys-002, jvm-012",
+      "related": [
+        "sys-002",
+        "jvm-012"
+      ],
       "tags": [
         "oop",
         "spring-core",
@@ -3265,7 +3428,7 @@
       "title": "Explain the Java ClassLoader hierarchy. What is the **parent-delegation model**, why does it exist, and what happens if you try to load `java.lang.String` with your own custom ClassLoader?",
       "time": "10",
       "frequency": "high",
-      "related": "",
+      "related": [],
       "tags": [
         "oop",
         "spring-core",
@@ -3287,7 +3450,7 @@
       "title": "Review the following code. It is a simple event-driven button component with a listener registry. Identify all bugs and explain **why** each one is a problem at the JVM/memory level.",
       "time": "15",
       "frequency": "very high",
-      "related": "",
+      "related": [],
       "tags": [
         "oop",
         "spring-core",
@@ -3309,7 +3472,7 @@
       "title": "Explain **Escape Analysis** and **Thread-Local Allocation Buffers (TLAB)**. How do they cooperate to make object allocation in Java nearly free in the common case? What kinds of objects defeat these optimizations?",
       "time": "15",
       "frequency": "medium",
-      "related": "",
+      "related": [],
       "tags": [
         "oop",
         "spring-core",
@@ -3331,7 +3494,7 @@
       "title": "Your team has written a simple in-process image cache for a web application. Review the code below. Find all bugs — including subtle memory issues — and explain their impact on a long-running JVM process.",
       "time": "20",
       "frequency": "high",
-      "related": "",
+      "related": [],
       "tags": [
         "oop",
         "spring-core",
@@ -3354,7 +3517,7 @@
       "title": "You are architecting the GC strategy for a **real-time order-matching engine** at a financial exchange. The service processes 500,000 orders/second, has a 99.9th-percentile latency SLA of **< 5 ms**, runs on a 128 GB heap, and must sustain operation for weeks without restart. A junior engineer proposes using **G1GC** because \"it's the default and well-understood.\" A platform engineer counters with **ZGC**.",
       "time": "35",
       "frequency": "medium",
-      "related": "",
+      "related": [],
       "tags": [
         "oop",
         "spring-core",
@@ -3376,7 +3539,7 @@
       "title": "What Do `-Xms`, `-Xmx`, and `-Xss` Control, and What Happens If You Set Them Wrong?",
       "time": "10",
       "frequency": "High",
-      "related": "",
+      "related": [],
       "tags": [
         "spring-core",
         "jvm",
@@ -3395,7 +3558,7 @@
       "title": "Code Review: Find the Metaspace Leak",
       "time": "15",
       "frequency": "Medium",
-      "related": "",
+      "related": [],
       "tags": [
         "oop",
         "spring-core",
@@ -3419,7 +3582,7 @@
       "title": "Walk Me Through Diagnosing an `OutOfMemoryError` Using a Heap Dump",
       "time": "20",
       "frequency": "High",
-      "related": "",
+      "related": [],
       "tags": [
         "oop",
         "spring-core",
@@ -3443,7 +3606,7 @@
       "title": "Code Review: What Is Causing Mysterious Latency Spikes Unrelated to GC?",
       "time": "20",
       "frequency": "Medium",
-      "related": "",
+      "related": [],
       "tags": [
         "oop",
         "spring-core",
@@ -3467,7 +3630,7 @@
       "title": "System Design: Continuous JVM Observability Platform Using JFR in a Kubernetes Microservices Fleet",
       "time": "35",
       "frequency": "Medium",
-      "related": "",
+      "related": [],
       "tags": [
         "oop",
         "spring-core",
@@ -3489,7 +3652,7 @@
       "title": "You are tasked with choosing and configuring the optimal Garbage Collector for three distinct microservices deployed on Java 21 in a Kubernetes environment.",
       "time": "20",
       "frequency": "high",
-      "related": "",
+      "related": [],
       "tags": [
         "oop",
         "spring-core",
@@ -3512,7 +3675,7 @@
       "title": "How does the Escape Analysis optimization mechanism work within the HotSpot JIT compiler? Is it true that modern JVMs allocate objects directly on the execution stack instead of the heap to avoid GC overhead? Define \"Scalar Replacement\" and explain how it relates to this process.",
       "time": "15",
       "frequency": "high",
-      "related": "",
+      "related": [],
       "tags": [
         "oop",
         "spring-core",
@@ -3530,10 +3693,10 @@
       "topic": "JVM & Memory Management",
       "difficulty": "Senior",
       "format": "Code Review",
-      "title": "During profiling of a low-latency execution pipeline, you observe that the virtual method call cmd.process() in the hot loop below is running significantly slower than expected. The JIT compiler's assembly log shows that it is failing to inline this call.",
+      "title": "During profiling of a low-latency execution pipeline, you observe that the virtual method call `cmd.process()` in the hot loop below is running significantly slower than expected. The JIT compiler's assembly log shows that it is failing to inline this call.",
       "time": "15",
       "frequency": "high",
-      "related": "",
+      "related": [],
       "tags": [
         "oop",
         "spring-core",
@@ -3966,6 +4129,68 @@
         "multithreading",
         "collections",
         "exceptions"
+      ]
+    },
+    {
+      "id": "mcq-jvm-001",
+      "path": "questions/jvm/mcq-jvm-001.md",
+      "topic": "JVM & Memory Management",
+      "difficulty": "Junior",
+      "format": "MCQ",
+      "title": "Где хранятся локальные переменные примитивных типов в Java?",
+      "time": "",
+      "frequency": "",
+      "related": [],
+      "tags": [
+        "jvm",
+        "memory",
+        "stack"
+      ]
+    },
+    {
+      "id": "mcq-jvm-002",
+      "path": "questions/jvm/mcq-jvm-002.md",
+      "topic": "JVM & Memory Management",
+      "difficulty": "Middle",
+      "format": "MCQ",
+      "title": "Какой сборщик мусора используется по умолчанию начиная с Java 9?",
+      "time": "",
+      "frequency": "",
+      "related": [],
+      "tags": [
+        "jvm",
+        "gc",
+        "g1"
+      ]
+    },
+    {
+      "id": "mcq-mt-001",
+      "path": "questions/multithreading/mcq-mt-001.md",
+      "topic": "Multithreading",
+      "difficulty": "Junior",
+      "format": "MCQ",
+      "title": "Какой метод интерфейса Runnable необходимо реализовать для определения логики потока?",
+      "time": "",
+      "frequency": "",
+      "related": [],
+      "tags": [
+        "multithreading",
+        "thread"
+      ]
+    },
+    {
+      "id": "mcq-mt-002",
+      "path": "questions/multithreading/mcq-mt-002.md",
+      "topic": "Multithreading",
+      "difficulty": "Middle",
+      "format": "MCQ",
+      "title": "Какую проблему решает ключевое слово volatile?",
+      "time": "",
+      "frequency": "",
+      "related": [],
+      "tags": [
+        "multithreading",
+        "volatile"
       ]
     },
     {
@@ -4912,6 +5137,36 @@
       ]
     },
     {
+      "id": "mcq-oop-001",
+      "path": "questions/oop/mcq-oop-001.md",
+      "topic": "OOP",
+      "difficulty": "Junior",
+      "format": "MCQ",
+      "title": "Поддерживает ли Java множественное наследование классов?",
+      "time": "",
+      "frequency": "",
+      "related": [],
+      "tags": [
+        "oop",
+        "inheritance"
+      ]
+    },
+    {
+      "id": "mcq-oop-002",
+      "path": "questions/oop/mcq-oop-002.md",
+      "topic": "OOP",
+      "difficulty": "Middle",
+      "format": "MCQ",
+      "title": "Какой принцип ООП нарушается, если подкласс изменяет ожидаемое поведение родительского класса?",
+      "time": "",
+      "frequency": "",
+      "related": [],
+      "tags": [
+        "oop",
+        "polymorphism"
+      ]
+    },
+    {
       "id": "oop-001",
       "path": "questions/oop/oop-001.md",
       "topic": "OOP",
@@ -5247,7 +5502,10 @@
       "title": "Question: Static vs Dynamic Binding in Java",
       "time": "10",
       "frequency": "High",
-      "related": "oop-001, core-012",
+      "related": [
+        "oop-001",
+        "core-012"
+      ],
       "tags": [
         "spring-core",
         "oop",
@@ -5264,7 +5522,9 @@
       "title": "Question: The Fragile Base Class",
       "time": "15",
       "frequency": "Medium",
-      "related": "oop-012",
+      "related": [
+        "oop-012"
+      ],
       "tags": [
         "oop",
         "spring-core",
@@ -5284,7 +5544,9 @@
       "title": "Question: The Rectangle-Square Dilemma",
       "time": "20",
       "frequency": "High",
-      "related": "oop-008",
+      "related": [
+        "oop-008"
+      ],
       "tags": [
         "system-design",
         "oop",
@@ -5301,7 +5563,9 @@
       "title": "Question: Defensive Copying and Encapsulation",
       "time": "15",
       "frequency": "Medium",
-      "related": "core-041",
+      "related": [
+        "core-041"
+      ],
       "tags": [
         "oop",
         "spring-core",
@@ -5321,7 +5585,10 @@
       "title": "Question: Domain Models in Distributed Systems",
       "time": "35",
       "frequency": "High",
-      "related": "sys-014, arch-005",
+      "related": [
+        "sys-014",
+        "arch-005"
+      ],
       "tags": [
         "oop",
         "spring-core",
@@ -5340,7 +5607,10 @@
       "title": "Understanding Polymorphism and Method Dispatch",
       "time": "10",
       "frequency": "High",
-      "related": "oop-022, oop-023",
+      "related": [
+        "oop-022",
+        "oop-023"
+      ],
       "tags": [
         "oop",
         "spring-core",
@@ -5359,7 +5629,9 @@
       "title": "The Fragile Subclass",
       "time": "15",
       "frequency": "High",
-      "related": "oop-021",
+      "related": [
+        "oop-021"
+      ],
       "tags": [
         "oop",
         "spring-core",
@@ -5377,7 +5649,10 @@
       "title": "Modernizing OOP: Inheritance vs. Composition",
       "time": "15",
       "frequency": "Medium",
-      "related": "oop-021, oop-024",
+      "related": [
+        "oop-021",
+        "oop-024"
+      ],
       "tags": [
         "oop",
         "spring-core",
@@ -5397,7 +5672,9 @@
       "title": "The Deceptive Processor",
       "time": "20",
       "frequency": "High",
-      "related": "oop-022",
+      "related": [
+        "oop-022"
+      ],
       "tags": [
         "oop",
         "spring-core",
@@ -5417,7 +5694,9 @@
       "title": "OOP at Scale: Distributed Payment Processing",
       "time": "30",
       "frequency": "Medium",
-      "related": "oop-023",
+      "related": [
+        "oop-023"
+      ],
       "tags": [
         "oop",
         "spring-core",
@@ -6863,6 +7142,126 @@
       ]
     },
     {
+      "id": "mcq-spring-001",
+      "path": "questions/spring/mcq-spring-001.md",
+      "topic": "Spring",
+      "difficulty": "Junior",
+      "format": "MCQ",
+      "title": "Какая аннотация в Spring Boot используется для автоматического внедрения зависимостей (Dependency Injection)?",
+      "time": "",
+      "frequency": "",
+      "related": [],
+      "tags": [
+        "spring-boot",
+        "di"
+      ]
+    },
+    {
+      "id": "mcq-spring-002",
+      "path": "questions/spring/mcq-spring-002.md",
+      "topic": "Spring",
+      "difficulty": "Middle",
+      "format": "MCQ",
+      "title": "Какой Scope у бинов в Spring установлен по умолчанию?",
+      "time": "",
+      "frequency": "",
+      "related": [],
+      "tags": [
+        "spring-boot",
+        "scope"
+      ]
+    },
+    {
+      "id": "mcq-spring-003",
+      "path": "questions/spring/mcq-spring-003.md",
+      "topic": "Spring",
+      "difficulty": "Middle",
+      "format": "MCQ",
+      "title": "Что объединяет в себе аннотация @SpringBootApplication?",
+      "time": "",
+      "frequency": "",
+      "related": [],
+      "tags": [
+        "spring-boot",
+        "annotations"
+      ]
+    },
+    {
+      "id": "mcq-spring-004",
+      "path": "questions/spring/mcq-spring-004.md",
+      "topic": "Spring",
+      "difficulty": "Senior",
+      "format": "MCQ",
+      "title": "Как Spring AOP реализует создание прокси-объектов по умолчанию?",
+      "time": "",
+      "frequency": "",
+      "related": [],
+      "tags": [
+        "spring-boot",
+        "aop"
+      ]
+    },
+    {
+      "id": "mcq-spring-005",
+      "path": "questions/spring/mcq-spring-005.md",
+      "topic": "Spring",
+      "difficulty": "Middle",
+      "format": "MCQ",
+      "title": "В чем отличие аннотации @RestController от @Controller в Spring MVC?",
+      "time": "",
+      "frequency": "",
+      "related": [],
+      "tags": [
+        "spring-boot",
+        "rest"
+      ]
+    },
+    {
+      "id": "mcq-spring-006",
+      "path": "questions/spring/mcq-spring-006.md",
+      "topic": "Spring",
+      "difficulty": "Senior",
+      "format": "MCQ",
+      "title": "Что произойдет, если метод, аннотированный @Transactional, будет вызван из другого метода того же класса (внутри этого же бина)?",
+      "time": "",
+      "frequency": "",
+      "related": [],
+      "tags": [
+        "spring-boot",
+        "transaction"
+      ]
+    },
+    {
+      "id": "mcq-spring-007",
+      "path": "questions/spring/mcq-spring-007.md",
+      "topic": "Spring",
+      "difficulty": "Middle",
+      "format": "MCQ",
+      "title": "Зачем используется модуль Spring Boot Actuator?",
+      "time": "",
+      "frequency": "",
+      "related": [],
+      "tags": [
+        "spring-boot",
+        "actuator"
+      ]
+    },
+    {
+      "id": "mcq-spring-008",
+      "path": "questions/spring/mcq-spring-008.md",
+      "topic": "Spring",
+      "difficulty": "Junior",
+      "format": "MCQ",
+      "title": "Какой интерфейс Spring Data JPA используется для базовых CRUD операций и пагинации, если вы хотите наследовать все методы по умолчанию?",
+      "time": "",
+      "frequency": "",
+      "related": [],
+      "tags": [
+        "spring-boot",
+        "jpa"
+      ]
+    },
+    {
       "id": "spring-001",
       "path": "questions/spring/spring-001.md",
       "topic": "Spring",
@@ -7811,6 +8210,37 @@
       ]
     },
     {
+      "id": "mcq-stream-001",
+      "path": "questions/stream/mcq-stream-001.md",
+      "topic": "Stream API",
+      "difficulty": "Middle",
+      "format": "MCQ",
+      "title": "Какая из следующих операций Stream API является терминальной (terminal)?",
+      "time": "",
+      "frequency": "",
+      "related": [],
+      "tags": [
+        "stream-api",
+        "intermediate",
+        "terminal"
+      ]
+    },
+    {
+      "id": "mcq-stream-002",
+      "path": "questions/stream/mcq-stream-002.md",
+      "topic": "Stream API",
+      "difficulty": "Senior",
+      "format": "MCQ",
+      "title": "В каком пуле потоков по умолчанию выполняются parallelStream()?",
+      "time": "",
+      "frequency": "",
+      "related": [],
+      "tags": [
+        "stream-api",
+        "parallel"
+      ]
+    },
+    {
       "id": "stream-001",
       "path": "questions/stream/stream-001.md",
       "topic": "Stream API",
@@ -8727,6 +9157,126 @@
         "jvm",
         "multithreading",
         "collections"
+      ]
+    },
+    {
+      "id": "mcq-sd-001",
+      "path": "questions/system-design/mcq-sd-001.md",
+      "topic": "System Design",
+      "difficulty": "Middle",
+      "format": "MCQ",
+      "title": "Согласно CAP-теореме, распределенная система может гарантировать не более двух из трех свойств. Какие это свойства?",
+      "time": "",
+      "frequency": "",
+      "related": [],
+      "tags": [
+        "system-design",
+        "cap"
+      ]
+    },
+    {
+      "id": "mcq-sd-002",
+      "path": "questions/system-design/mcq-sd-002.md",
+      "topic": "System Design",
+      "difficulty": "Middle",
+      "format": "MCQ",
+      "title": "В чем разница между горизонтальным (Scale Out) и вертикальным (Scale Up) масштабированием?",
+      "time": "",
+      "frequency": "",
+      "related": [],
+      "tags": [
+        "system-design",
+        "scaling"
+      ]
+    },
+    {
+      "id": "mcq-sd-003",
+      "path": "questions/system-design/mcq-sd-003.md",
+      "topic": "System Design",
+      "difficulty": "Senior",
+      "format": "MCQ",
+      "title": "Какую из следующих задач ОБЫЧНО НЕ решает API Gateway в микросервисной архитектуре?",
+      "time": "",
+      "frequency": "",
+      "related": [],
+      "tags": [
+        "system-design",
+        "api-gateway"
+      ]
+    },
+    {
+      "id": "mcq-sd-004",
+      "path": "questions/system-design/mcq-sd-004.md",
+      "topic": "System Design",
+      "difficulty": "Senior",
+      "format": "MCQ",
+      "title": "Как называется стратегия кэширования, при которой приложение сначала пишет данные в кэш (например, Redis), а сам кэш асинхронно записывает их в базу данных?",
+      "time": "",
+      "frequency": "",
+      "related": [],
+      "tags": [
+        "system-design",
+        "caching"
+      ]
+    },
+    {
+      "id": "mcq-sd-005",
+      "path": "questions/system-design/mcq-sd-005.md",
+      "topic": "System Design",
+      "difficulty": "Middle",
+      "format": "MCQ",
+      "title": "Какой алгоритм балансировки нагрузки отправляет новый запрос на сервер с наименьшим количеством активных соединений?",
+      "time": "",
+      "frequency": "",
+      "related": [],
+      "tags": [
+        "system-design",
+        "load-balancer"
+      ]
+    },
+    {
+      "id": "mcq-sd-006",
+      "path": "questions/system-design/mcq-sd-006.md",
+      "topic": "System Design",
+      "difficulty": "Senior",
+      "format": "MCQ",
+      "title": "В контексте очередей сообщений (например, Kafka или RabbitMQ), что означает гарантия доставки \"At-least-once\"?",
+      "time": "",
+      "frequency": "",
+      "related": [],
+      "tags": [
+        "system-design",
+        "message-broker"
+      ]
+    },
+    {
+      "id": "mcq-sd-007",
+      "path": "questions/system-design/mcq-sd-007.md",
+      "topic": "System Design",
+      "difficulty": "Senior",
+      "format": "MCQ",
+      "title": "Какой паттерн решает проблему распределенных транзакций между несколькими микросервисами?",
+      "time": "",
+      "frequency": "",
+      "related": [],
+      "tags": [
+        "system-design",
+        "saga"
+      ]
+    },
+    {
+      "id": "mcq-sd-008",
+      "path": "questions/system-design/mcq-sd-008.md",
+      "topic": "System Design",
+      "difficulty": "Middle",
+      "format": "MCQ",
+      "title": "Какое утверждение о реляционных (SQL) и нереляционных (NoSQL) базах данных верно?",
+      "time": "",
+      "frequency": "",
+      "related": [],
+      "tags": [
+        "system-design",
+        "sql-vs-nosql"
       ]
     },
     {

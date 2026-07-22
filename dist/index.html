@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Interview Trainer & Simulator</title>
+    
+    <!-- External Libraries -->
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Highlight.js for Java code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css" id="hljs-dark-theme">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css" id="hljs-light-theme" disabled>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/languages/java.min.js"></script>
+
+    
+
+    <style>
+        /* Smooth transitions */
+        .transition-all-300 {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* Custom scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        /* Sparkle/Pulsate animation for badges */
+        @keyframes subtle-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+        }
+        .pulse-hover:hover {
+            animation: subtle-pulse 1.5s infinite ease-in-out;
+        }
+
+        /* Custom macOS terminal style for code blocks */
+        pre {
+            position: relative;
+            padding-top: 2.75rem !important;
+            padding-bottom: 1rem !important;
+            padding-left: 1.25rem !important;
+            padding-right: 1.25rem !important;
+            border-radius: 0.75rem !important;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+        }
+        .prose pre {
+            padding-top: 2.75rem !important;
+            padding-bottom: 1rem !important;
+            padding-left: 1.25rem !important;
+            padding-right: 1.25rem !important;
+            margin-top: 1rem !important;
+            margin-bottom: 1rem !important;
+        }
+        .dark pre {
+            background: #0f172a;
+            border: 1px solid #1e293b;
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.2);
+        }
+        pre::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2rem;
+            background: #f1f5f9;
+            border-bottom: 1px solid #e2e8f0;
+            z-index: 10;
+        }
+        .dark pre::before {
+            background: #1e293b;
+            border-bottom: 1px solid #334155;
+        }
+        pre::after {
+            content: '';
+            position: absolute;
+            top: 0.75rem;
+            left: 1rem;
+            width: 0.6rem;
+            height: 0.6rem;
+            border-radius: 50%;
+            background: #ff5f56;
+            box-shadow: 1.2rem 0 0 #ffbd2e, 2.4rem 0 0 #27c93f;
+            z-index: 20;
+        }
+    </style>
+  <script type="module" crossorigin src="/assets/index-D3OmFZj5.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CH4QT8zN.css">
+</head>
+<body class="bg-lightBg dark:bg-darkBg text-slate-800 dark:text-slate-200 min-h-screen flex flex-col font-sans transition-colors duration-300">
+
+    <!-- Top Modern Navigation Bar -->
+    <header class="border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-darkCard/80 backdrop-blur-md sticky top-0 z-50 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-500 to-amber-500 flex items-center justify-center text-white shadow-lg shadow-brand-500/20">
+                    <i class="fa-solid fa-mug-hot text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg leading-none tracking-tight text-slate-900 dark:text-white">Java Interview</h1>
+                    <span class="text-xs text-brand-500 font-semibold tracking-wider uppercase">Trainer & Simulator</span>
+                </div>
+            </div>
+
+            <!-- Gamification Bar -->
+            <div class="hidden md:flex items-center space-x-4 text-sm">
+                <!-- XP -->
+                <div class="flex items-center space-x-2 bg-slate-50 dark:bg-slate-800/50 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700/50 transition-all hover:border-amber-500/50">
+                    <i class="fa-solid fa-star text-amber-500 animate-pulse"></i>
+                    <span id="stats-xp" class="font-bold text-amber-600 dark:text-amber-400">0 XP</span>
+                </div>
+                <!-- Rank -->
+                <div class="flex items-center space-x-2 bg-slate-50 dark:bg-slate-800/50 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700/50 transition-all hover:border-brand-500/50">
+                    <i class="fa-solid fa-shield-halved text-brand-500"></i>
+                    <span id="stats-rank" class="font-bold text-brand-600 dark:text-brand-400 tracking-wide uppercase text-xs">Intern</span>
+                </div>
+                <!-- Progress -->
+                <div class="flex items-center space-x-2 px-2" title="Overall Completion">
+                    <i class="fa-solid fa-graduation-cap text-slate-400"></i>
+                    <span id="stats-progress" class="font-bold text-slate-600 dark:text-slate-300 text-xs">0%</span>
+                </div>
+            </div>
+
+            <!-- System Utilities -->
+            <div class="flex items-center space-x-3">
+                <!-- Adaptive Learning Mode -->
+                <button id="adaptive-btn" class="flex items-center space-x-1 bg-emerald-500 hover:bg-emerald-600 text-white px-3 py-1.5 rounded-lg text-sm font-semibold shadow-md shadow-emerald-500/10 transition-all-300 hover:scale-[1.03]">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span class="hidden sm:inline">Adaptive Plan</span>
+                </button>
+                
+                <!-- My Roadmap Button (hidden by default) -->
+                <button id="my-roadmap-btn" class="hidden items-center space-x-1 border border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-white px-3 py-1.5 rounded-lg text-sm font-semibold transition-all-300">
+                    <i class="fa-solid fa-map"></i>
+                    <span class="hidden sm:inline">My Roadmap</span>
+                </button>
+
+                <!-- Spaced Repetition Mode / Blitz -->
+                <button id="blitz-btn" class="flex items-center space-x-1 bg-brand-500 hover:bg-brand-600 text-white px-3 py-1.5 rounded-lg text-sm font-semibold shadow-md shadow-brand-500/10 transition-all-300 hover:scale-[1.03]">
+                    <i class="fa-solid fa-bolt"></i>
+                    <span class="hidden sm:inline">Blitz Quiz</span>
+                </button>
+
+                <!-- My Stats Button -->
+                <button id="my-stats-btn" class="flex items-center space-x-1 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 px-3 py-1.5 rounded-lg text-sm font-semibold transition-all-300">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <span class="hidden lg:inline">My Stats</span>
+                </button>
+
+                <!-- Dark Mode Toggle Button -->
+                <button id="theme-toggle" aria-label="Toggle theme"  class="w-10 h-10 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/80 flex items-center justify-center transition-all-300">
+                    <i class="fa-solid fa-sun hidden dark:block text-amber-400"></i>
+                    <i class="fa-solid fa-moon dark:hidden text-slate-700"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Global Progress Bar -->
+        <div class="w-full bg-slate-100 dark:bg-slate-800/50 h-1">
+            <div id="global-progress" class="bg-gradient-to-r from-brand-500 to-amber-500 h-full w-0 transition-all duration-500"></div>
+        </div>
+    </header>
+
+    <!-- Content Wrapper -->
+    <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col lg:flex-row gap-6 relative">
+        
+        <!-- Sidebar: Navigation & Filters -->
+        <aside class="w-full lg:w-80 flex-shrink-0 flex flex-col space-y-4 lg:sticky lg:top-24 lg:h-[calc(100vh-8rem)] pb-6 lg:pb-0">
+            
+            <!-- Filters Card -->
+            <div class="bg-white dark:bg-darkCard p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-4 transition-colors duration-300">
+                <div class="flex items-center justify-between">
+                    <h3 class="font-bold text-slate-900 dark:text-white flex items-center space-x-2">
+                        <i class="fa-solid fa-sliders text-brand-500"></i>
+                        <span>Filters</span>
+                    </h3>
+                    <button id="clear-filters" class="text-xs text-brand-500 hover:underline hidden">Reset</button>
+                </div>
+                
+                <!-- Search Input -->
+                <div class="relative">
+                    <input type="text" id="search-input" placeholder="Search questions..." 
+                        class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 pl-10 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400 text-sm"></i>
+                </div>
+
+                <!-- Topic Selector -->
+                <div class="space-y-1.5">
+                    <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Topic</label>
+                    <select id="topic-filter" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all">
+                        <option value="all">All Topics</option>
+                        <option value="General">General Java Questions</option>
+                        <option value="OOP">OOP & Patterns</option>
+                        <option value="JVM & Memory Management">JVM & Garbage Collection</option>
+                        <option value="Multithreading">Multithreading</option>
+                        <option value="Collections">Collections Framework</option>
+                        <option value="Stream API">Stream API & Lambdas</option>
+                        <option value="Spring">Spring Framework</option>
+                        <option value="Databases">Databases & SQL</option>
+                        <option value="System Design">System Design</option>
+                        <option value="Patterns">Design Patterns & SOLID</option>
+                        <option value="Testing">Testing & Web Protocols</option>
+                    </select>
+                </div>
+
+                <!-- Difficulty Selectors -->
+                <div class="space-y-1.5">
+                    <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Difficulty Grade</label>
+                    <div class="flex flex-wrap gap-2">
+                        <button data-diff="Junior" class="diff-chip flex-1 px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 hover:bg-emerald-500/20 transition-all duration-200">
+                            Junior
+                        </button>
+                        <button data-diff="Middle" class="diff-chip flex-1 px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20 hover:bg-blue-500/20 transition-all duration-200">
+                            Middle
+                        </button>
+                        <button data-diff="Senior" class="diff-chip flex-1 px-3 py-1.5 rounded-lg text-xs font-semibold bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20 hover:bg-purple-500/20 transition-all duration-200">
+                            Senior
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Format Filter -->
+                <div class="space-y-1.5">
+                    <label class="text-xs font-bold uppercase tracking-wider text-slate-400">Question Format</label>
+                    <div class="grid grid-cols-2 gap-2 text-xs">
+                        <label class="flex items-center space-x-2 bg-slate-50 dark:bg-slate-900 p-2 rounded-lg border border-slate-200 dark:border-slate-800 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800">
+                            <input type="checkbox" value="Open Answer" class="format-checkbox rounded text-brand-500 focus:ring-brand-500 bg-transparent border-slate-300 dark:border-slate-700">
+                            <span>Theory</span>
+                        </label>
+                        <label class="flex items-center space-x-2 bg-slate-50 dark:bg-slate-900 p-2 rounded-lg border border-slate-200 dark:border-slate-800 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800">
+                            <input type="checkbox" value="Code Review" class="format-checkbox rounded text-brand-500 focus:ring-brand-500 bg-transparent border-slate-300 dark:border-slate-700">
+                            <span>Code Review</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Interactive Questions List Container -->
+            <div class="bg-white dark:bg-darkCard rounded-2xl border border-slate-200 dark:border-slate-800 shadow-md flex flex-col flex-1 overflow-hidden transition-colors duration-300 max-h-[480px] lg:max-h-none">
+                <div class="p-4 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center bg-slate-50/50 dark:bg-slate-900/50">
+                    <span class="font-bold text-sm text-slate-700 dark:text-slate-300">Questions List</span>
+                    <span id="question-list-count" class="text-xs bg-slate-200 dark:bg-slate-800 px-2 py-0.5 rounded-full font-semibold text-slate-500">0</span>
+                </div>
+                
+                <!-- Scrollable Container -->
+                <div id="questions-container" class="overflow-y-auto divide-y divide-slate-100 dark:divide-slate-800/60 flex-1">
+                    <!-- Dynamic rendering of question buttons goes here -->
+                    <div class="p-6 text-center text-slate-400 text-sm">
+                        <i class="fa-solid fa-spinner fa-spin text-brand-500 text-lg mb-2 block"></i>
+                        Loading questions...
+                    </div>
+                </div>
+            </div>
+
+            <!-- Premium Feature Teaser -->
+            <button id="mock-interview-btn" class="w-full bg-gradient-to-r from-brand-500 to-indigo-600 text-white rounded-xl p-4 flex items-center justify-between hover:scale-[1.02] hover:shadow-lg hover:shadow-brand-500/20 transition-all-300 group">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-white/20 p-2 rounded-lg group-hover:animate-pulse">
+                        <i class="fa-solid fa-gamepad"></i>
+                    </div>
+                    <div class="text-left">
+                        <h4 class="font-bold text-sm leading-tight">Mock Interview</h4>
+                        <p class="text-[10px] text-white/80">Simulator & Timer</p>
+                    </div>
+                </div>
+                <i class="fa-solid fa-chevron-right text-white/60"></i>
+            </button>
+        </aside>
+
+        <!-- Main Panel: Active Question Renderer -->
+        <section class="flex-1 flex flex-col space-y-4">
+            
+            <!-- Question Content Card -->
+            <div id="main-content-card" class="bg-white dark:bg-darkCard rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl hover:shadow-2xl hover:-translate-y-1 p-6 sm:p-10 flex flex-col space-y-6 transition-all duration-300 relative overflow-hidden min-h-[500px]">
+                
+                <!-- Card Background Subtle Design Details -->
+                <div class="absolute -top-12 -right-12 w-48 h-48 bg-gradient-to-br from-brand-500/10 to-transparent rounded-full blur-2xl pointer-events-none"></div>
+
+                <!-- Mock Interview Header Bar (Shown during mock mode) -->
+                <div id="mock-status-bar" class="hidden bg-gradient-to-r from-brand-500/10 via-indigo-500/10 to-brand-500/10 border border-brand-500/20 rounded-xl p-3 flex items-center justify-between">
+                    <div class="flex items-center space-x-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-ping"></span>
+                        <span class="text-xs font-bold text-brand-600 dark:text-brand-400 uppercase tracking-wider">Mock Interview Live</span>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="flex items-center space-x-1.5 text-xs font-bold text-slate-700 dark:text-slate-200">
+                            <i class="fa-solid fa-clock text-brand-500"></i>
+                            <span id="mock-timer-display">30:00</span>
+                        </div>
+                        <button id="exit-mock-btn" class="text-[10px] font-bold text-slate-400 hover:text-red-500 uppercase tracking-wider">
+                            Exit
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Active Question Header Metadata -->
+                <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-100 dark:border-slate-800/80">
+                    <div class="flex flex-wrap items-center gap-2">
+                        <!-- Difficulty Badge -->
+                        <span id="active-difficulty" class="px-2.5 py-1 rounded-lg text-xs font-bold uppercase tracking-wider">
+                            Junior
+                        </span>
+                        <!-- ID Badge -->
+                        <span id="active-id" class="px-2.5 py-1 rounded-lg text-xs font-mono font-bold bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-700/50">
+                            #ID
+                        </span>
+                        <!-- Topic Badge -->
+                        <span id="active-topic" class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700/50">
+                            JVM & Memory
+                        </span>
+                        <!-- Format Badge -->
+                        <span id="active-format" class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700/50">
+                            Open Answer
+                        </span>
+                    </div>
+
+                    <!-- Extra Metadata Badges (Hidden by default, shown if exists) -->
+                    <div id="extra-metadata" class="flex flex-wrap items-center gap-3 mt-2 w-full text-xs font-medium text-slate-500 dark:text-slate-400">
+                        <!-- Injected dynamically -->
+                    </div>
+
+                    <!-- Bookmark & Mastery Toggle Controls -->
+                    <div class="flex items-center space-x-2">
+                        <!-- Bookmark flag -->
+                        <button id="flag-btn" title="Bookmark" class="w-9 h-9 rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-center text-slate-400 hover:text-amber-500 dark:hover:text-amber-400 transition-all-300">
+                            <i class="fa-solid fa-bookmark text-sm"></i>
+                        </button>
+                        <!-- Mastered checkbox indicator -->
+                        <button id="mastered-btn" title="Mark as Mastered" class="h-9 px-3 rounded-lg border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center space-x-2 text-slate-400 hover:text-emerald-500 transition-all-300">
+                            <i class="fa-solid fa-circle-check text-sm"></i>
+                            <span class="text-xs font-semibold">Mastered</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Main Content Renderers -->
+                <div class="flex-1 space-y-6">
+                    <!-- Question Prompt Section -->
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2">
+                            <span class="w-1.5 h-4 bg-brand-500 rounded-full"></span>
+                            <h2 class="text-xs font-bold uppercase tracking-wider text-slate-400">Question</h2>
+                        </div>
+                        <div id="question-text" class="prose prose-slate dark:prose-invert max-w-none text-slate-800 dark:text-slate-100 text-base font-medium leading-relaxed">
+                            <!-- Injected by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Code Block Section with Syntax Highlighting -->
+                    <div id="code-section" class="space-y-3 hidden">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-2">
+                                <span class="w-1.5 h-4 bg-amber-500 rounded-full"></span>
+                                <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Code Snippet (Java)</h3>
+                            </div>
+                            <button id="copy-code-btn" class="text-xs text-slate-400 hover:text-white bg-slate-100 dark:bg-slate-800 hover:bg-brand-500 dark:hover:bg-brand-500 px-2.5 py-1 rounded-md flex items-center space-x-1.5 transition-all-300">
+                                <i class="fa-solid fa-copy"></i>
+                                <span>Copy</span>
+                            </button>
+                        </div>
+                        <div class="relative rounded-xl overflow-hidden shadow-inner group">
+                            <pre class="!my-0 !pt-11 !pb-4 !px-4 !bg-slate-900 overflow-x-auto"><code id="code-content" class="language-java font-mono text-sm"></code></pre>
+                        </div>
+                    </div>
+
+                    <!-- Answer Block Section -->
+                    <div id="answer-section" class="space-y-4 pt-4 border-t border-slate-100 dark:border-slate-800/80 hidden">
+                        <!-- Heading of Answer -->
+                        <div class="flex items-center space-x-2">
+                            <span class="w-1.5 h-4 bg-emerald-500 rounded-full"></span>
+                            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Correct Answer</h3>
+                        </div>
+                        <!-- Inner Card with Emerald Accents -->
+                        <div class="bg-emerald-50/40 dark:bg-emerald-950/20 border border-emerald-500/20 rounded-2xl p-5 sm:p-6 shadow-sm">
+                            <div id="answer-content" class="prose prose-emerald dark:prose-invert max-w-none text-slate-700 dark:text-slate-200 leading-relaxed text-base">
+                                <!-- Injected by JS -->
+                            </div>
+                        </div>
+
+                        <!-- Analogy Content Sub-Section -->
+                        <div id="analogy-subsection" class="space-y-2 pt-2 hidden">
+                            <div class="flex items-center space-x-2">
+                                <i class="fa-solid fa-lightbulb text-amber-500 text-sm"></i>
+                                <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Intuitive Analogy</span>
+                            </div>
+                            <div class="bg-amber-50/40 dark:bg-amber-950/10 border border-amber-500/20 rounded-2xl p-5 text-slate-600 dark:text-slate-300 italic text-sm leading-relaxed">
+                                <p id="analogy-content"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Bottom Controls and Actions -->
+                <div class="pt-6 border-t border-slate-100 dark:border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    
+                    <!-- Prev / Next & Counter Info -->
+                    <div class="flex items-center space-x-4 w-full sm:w-auto justify-between sm:justify-start">
+                        <div class="flex space-x-2">
+                            <button id="btn-prev" class="w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-center transition-all-300 text-slate-500 dark:text-slate-400 hover:scale-95 disabled:opacity-40 disabled:pointer-events-none" title="Previous question">
+                                <i class="fa-solid fa-arrow-left"></i>
+                            </button>
+                            <button id="btn-next" class="w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-center transition-all-300 text-slate-500 dark:text-slate-400 hover:scale-95 disabled:opacity-40 disabled:pointer-events-none" title="Next question">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                        <span id="counter" class="text-xs font-semibold tracking-wider text-slate-400 bg-slate-100 dark:bg-slate-800/60 px-3 py-1.5 rounded-lg">
+                            0 / 0
+                        </span>
+                    </div>
+
+                    <!-- Toggle Answer / Learn State -->
+                    <div class="flex items-center space-x-3 w-full sm:w-auto">
+                        <button id="btn-answer" class="flex-1 sm:flex-initial flex items-center justify-center space-x-2 bg-gradient-to-r from-brand-500 to-brand-600 hover:from-brand-600 hover:to-brand-700 text-white font-bold px-6 py-3 rounded-xl shadow-lg shadow-brand-500/20 hover:shadow-brand-500/35 transition-all-300 active:scale-95 text-base">
+                            <i id="btn-answer-icon" class="fa-solid fa-eye"></i>
+                            <span id="btn-answer-text">Show Answer</span>
+                        </button>
+
+                        <!-- Mock Evaluation Controls -->
+                        <div id="mock-eval-bar" class="hidden flex flex-wrap items-center gap-2 w-full sm:w-auto">
+                            <button id="eval-missed-btn" class="flex-1 sm:flex-initial px-3.5 py-2.5 rounded-xl bg-red-500/10 hover:bg-red-500/20 text-red-600 dark:text-red-400 border border-red-500/20 font-bold text-xs flex items-center justify-center space-x-1 transition-all">
+                                <span>🔴 Missed (0 XP)</span>
+                            </button>
+                            <button id="eval-partial-btn" class="flex-1 sm:flex-initial px-3.5 py-2.5 rounded-xl bg-amber-500/10 hover:bg-amber-500/20 text-amber-600 dark:text-amber-400 border border-amber-500/20 font-bold text-xs flex items-center justify-center space-x-1 transition-all">
+                                <span>🟡 Partial (+5 XP)</span>
+                            </button>
+                            <button id="eval-nailed-btn" class="flex-1 sm:flex-initial px-3.5 py-2.5 rounded-xl bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 font-bold text-xs flex items-center justify-center space-x-1 transition-all">
+                                <span>🟢 Nailed It (+10 XP)</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quick Tips Panel -->
+            <div class="bg-gradient-to-r from-amber-500/10 via-brand-500/5 to-transparent rounded-2xl border border-amber-500/10 p-4 flex items-start space-x-3">
+                <i class="fa-solid fa-graduation-cap text-amber-500 mt-0.5 text-lg"></i>
+                <div class="text-xs leading-relaxed text-slate-600 dark:text-slate-400">
+                    <strong class="text-slate-800 dark:text-slate-200 font-bold">Study Tip:</strong> Read the question and take at least 1 minute to mentally formulate your answer or solve the code before viewing the correct answer. Use the vivid associations in the "Analogy" section for easy memorization.
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Toasts feedback notifications dynamically injected -->
+    <div id="toast" role="status" aria-live="polite" class="fixed bottom-6 right-6 z-50 bg-slate-900 text-white border border-slate-800 rounded-xl px-4 py-3 shadow-2xl flex items-center space-x-3 pointer-events-none opacity-0 transform translate-y-2 transition-all duration-300">
+        <i id="toast-icon" class="fa-solid fa-check text-emerald-500"></i>
+        <span id="toast-message" class="text-sm font-semibold"></span>
+    </div>
+
+    <!-- Mock Interview Setup Modal -->
+    <div id="mock-setup-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+        <div class="bg-white dark:bg-darkCard rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl max-w-md w-full p-6 space-y-6 relative">
+            <button id="close-mock-setup-btn" aria-label="Close setup"  class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-lg">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="flex items-center space-x-3">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-brand-500 to-indigo-600 flex items-center justify-center text-white text-xl shadow-lg shadow-brand-500/20">
+                    <i class="fa-solid fa-gamepad"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg text-slate-900 dark:text-white">Mock Interview Setup</h3>
+                    <p class="text-xs text-slate-400">Configure your simulated interview session</p>
+                </div>
+            </div>
+
+            <!-- Options -->
+            <div class="space-y-4">
+                <!-- Target Grade -->
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Target Grade</label>
+                    <div class="grid grid-cols-3 gap-2">
+                        <button type="button" data-mock-grade="Junior" class="mock-grade-btn p-3 rounded-xl border text-center hover:border-brand-500 transition-all font-bold text-xs bg-brand-500/10 border-brand-500 text-brand-600 dark:text-brand-400">
+                            Junior<br><span class="text-[10px] font-normal opacity-80">10 questions</span>
+                        </button>
+                        <button type="button" data-mock-grade="Middle" class="mock-grade-btn p-3 rounded-xl border border-slate-200 dark:border-slate-800 text-center hover:border-brand-500 transition-all font-bold text-xs text-slate-600 dark:text-slate-400">
+                            Middle<br><span class="text-[10px] font-normal opacity-80">12 questions</span>
+                        </button>
+                        <button type="button" data-mock-grade="Senior" class="mock-grade-btn p-3 rounded-xl border border-slate-200 dark:border-slate-800 text-center hover:border-brand-500 transition-all font-bold text-xs text-slate-600 dark:text-slate-400">
+                            Senior<br><span class="text-[10px] font-normal opacity-80">15 questions</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Target Company -->
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Target Company</label>
+                    <div class="grid grid-cols-2 gap-2">
+                        <button type="button" data-mock-company="Any" class="mock-company-btn p-3 rounded-xl border text-center hover:border-brand-500 transition-all font-bold text-xs bg-brand-500/10 border-brand-500 text-brand-600 dark:text-brand-400 col-span-2">
+                            🎲 Any (Mix)<br><span class="text-[10px] font-normal opacity-80">All questions without filters</span>
+                        </button>
+                        <button type="button" data-mock-company="Bank" class="mock-company-btn p-3 rounded-xl border border-slate-200 dark:border-slate-800 text-center hover:border-brand-500 transition-all font-bold text-xs text-slate-600 dark:text-slate-400">
+                            🏦 Bank / FinTech<br><span class="text-[10px] font-normal opacity-80">Concurrency, Memory, DB</span>
+                        </button>
+                        <button type="button" data-mock-company="Outsource" class="mock-company-btn p-3 rounded-xl border border-slate-200 dark:border-slate-800 text-center hover:border-brand-500 transition-all font-bold text-xs text-slate-600 dark:text-slate-400">
+                            🏢 Outsource<br><span class="text-[10px] font-normal opacity-80">Core, OOP, Patterns, API</span>
+                        </button>
+                        <button type="button" data-mock-company="BigTech" class="mock-company-btn p-3 rounded-xl border border-slate-200 dark:border-slate-800 text-center hover:border-brand-500 transition-all font-bold text-xs text-slate-600 dark:text-slate-400">
+                            🚀 BigTech<br><span class="text-[10px] font-normal opacity-80">System Design, High-Load</span>
+                        </button>
+                        <button type="button" data-mock-company="Startup" class="mock-company-btn p-3 rounded-xl border border-slate-200 dark:border-slate-800 text-center hover:border-brand-500 transition-all font-bold text-xs text-slate-600 dark:text-slate-400">
+                            🦄 Startup<br><span class="text-[10px] font-normal opacity-80">Spring Boot, REST, DB</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Duration -->
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Interview Time Limit</label>
+                    <select id="mock-time-select" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-3 text-xs font-semibold focus:outline-none focus:border-brand-500 text-slate-800 dark:text-slate-200">
+                        <option value="15">⚡ 15 Minutes (Express)</option>
+                        <option value="30" selected>⏱️ 30 Minutes (Standard)</option>
+                        <option value="45">⌛ 45 Minutes (In-Depth)</option>
+                        <option value="0">♾️ No Timer (Relaxed)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Start Button -->
+            <button id="start-mock-btn" class="w-full bg-gradient-to-r from-brand-500 to-indigo-600 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-brand-500/25 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center space-x-2">
+                <span>Start Simulation</span>
+                <i class="fa-solid fa-play text-xs"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mock Interview Results Modal -->
+    <div id="mock-results-modal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+        <div class="bg-white dark:bg-darkCard rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl max-w-lg w-full p-6 space-y-6 relative">
+            <div class="text-center space-y-2">
+                <div id="mock-result-badge-icon" class="w-16 h-16 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-3xl mx-auto">
+                    <i class="fa-solid fa-trophy"></i>
+                </div>
+                <h3 id="mock-result-title" class="font-extrabold text-2xl text-slate-900 dark:text-white">Interview Complete!</h3>
+                <p id="mock-result-subtitle" class="text-xs text-slate-400">Here is your performance report card</p>
+            </div>
+
+            <!-- Score Summary Cards -->
+            <div class="grid grid-cols-3 gap-3 text-center">
+                <div class="bg-slate-50 dark:bg-slate-900/60 p-3 rounded-xl border border-slate-100 dark:border-slate-800">
+                    <span class="text-[10px] text-slate-400 uppercase font-bold block">Score</span>
+                    <span id="mock-result-score" class="text-lg font-extrabold text-brand-500">0%</span>
+                </div>
+                <div class="bg-slate-50 dark:bg-slate-900/60 p-3 rounded-xl border border-slate-100 dark:border-slate-800">
+                    <span class="text-[10px] text-slate-400 uppercase font-bold block">XP Gained</span>
+                    <span id="mock-result-xp" class="text-lg font-extrabold text-amber-500">+0 XP</span>
+                </div>
+                <div class="bg-slate-50 dark:bg-slate-900/60 p-3 rounded-xl border border-slate-100 dark:border-slate-800">
+                    <span class="text-[10px] text-slate-400 uppercase font-bold block">Verdict</span>
+                    <span id="mock-result-verdict" class="text-xs font-bold text-emerald-500 block mt-1">PASSED</span>
+                </div>
+            </div>
+
+            <!-- Topic Performance Breakdown -->
+            <div class="space-y-2">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400">Topic Breakdown</h4>
+                <div id="mock-result-topics" class="space-y-1.5 max-h-40 overflow-y-auto pr-1">
+                    <!-- Dynamic rendering -->
+                </div>
+            </div>
+
+            <!-- Finish Button -->
+            <button id="finish-mock-btn" class="w-full bg-brand-500 text-white font-bold py-3 rounded-xl shadow-md hover:bg-brand-600 transition-all">
+                Collect Rewards & Exit
+            </button>
+        </div>
+    </div>
+
+
+    <!-- Adaptive Quiz Modal -->
+    <div id="adaptive-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-slate-900/80 backdrop-blur-sm transition-opacity opacity-0">
+        <div class="bg-white dark:bg-darkCard rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl border border-slate-200 dark:border-slate-800 m-4">
+            <div class="p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center">
+                        <i class="fa-solid fa-graduation-cap text-emerald-500 text-lg"></i>
+                    </div>
+                    <h2 class="text-xl font-bold text-slate-900 dark:text-white">Adaptive Plan</h2>
+                </div>
+                <button id="close-adaptive-modal" aria-label="Close modal"  class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+            
+            <div class="p-6" id="adaptive-quiz-container">
+                <!-- Level Selection -->
+                <div id="adaptive-step-1" class="space-y-6">
+                    <h3 class="text-lg font-semibold text-slate-800 dark:text-slate-200">Select your target level</h3>
+                    <p class="text-sm text-slate-500 dark:text-slate-400">We will conduct a quick test (about 8 questions) to identify your knowledge gaps and create a personalized study plan.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <button class="level-select-btn p-4 rounded-xl border border-emerald-500/20 bg-emerald-500/5 hover:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-bold transition-colors" data-level="Junior">Junior</button>
+                        <button class="level-select-btn p-4 rounded-xl border border-amber-500/20 bg-amber-500/5 hover:bg-amber-500/10 text-amber-600 dark:text-amber-400 font-bold transition-colors" data-level="Middle">Middle</button>
+                        <button class="level-select-btn p-4 rounded-xl border border-rose-500/20 bg-rose-500/5 hover:bg-rose-500/10 text-rose-600 dark:text-rose-400 font-bold transition-colors" data-level="Senior">Senior</button>
+                    </div>
+                </div>
+
+                <!-- Quiz Area -->
+                <div id="adaptive-step-2" class="hidden space-y-6">
+                    <div class="flex justify-between items-center text-sm font-semibold text-slate-500 dark:text-slate-400">
+                        <span id="quiz-progress-text">Question 1 of 8</span>
+                        <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded-md" id="quiz-level-badge">Middle</span>
+                    </div>
+                    <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
+                        <div id="quiz-progress-bar" class="bg-emerald-500 h-2 rounded-full transition-all" style="width: 10%"></div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h3 id="quiz-question-text" class="text-xl font-semibold text-slate-900 dark:text-white leading-tight">...</h3>
+                        <div id="quiz-options" class="mt-6 space-y-3">
+                            <!-- Options injected here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results -->
+                <div id="adaptive-step-3" class="hidden space-y-6 text-center py-6">
+                    <div class="w-20 h-20 mx-auto bg-emerald-500/10 text-emerald-500 rounded-full flex items-center justify-center text-4xl mb-4">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Quiz completed!</h3>
+                    <p class="text-slate-600 dark:text-slate-300" id="quiz-results-text">We have analyzed your answers and created a personalized plan.</p>
+                    <button id="apply-adaptive-plan" class="mt-6 w-full py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-xl shadow-lg shadow-emerald-500/20 transition-all hover:scale-[1.02]">Show my plan</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Adaptive Roadmap Modal -->
+    <div id="adaptive-roadmap-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center bg-slate-900/80 backdrop-blur-sm transition-opacity opacity-0">
+        <div class="bg-slate-50 dark:bg-slate-900 rounded-2xl w-full max-w-4xl max-h-[90vh] flex flex-col shadow-2xl border border-slate-200 dark:border-slate-800 m-4 overflow-hidden">
+            <div class="p-6 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center bg-white dark:bg-darkCard shrink-0">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 text-lg">
+                        <i class="fa-solid fa-map"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-900 dark:text-white">Your Adaptive Roadmap</h2>
+                        <p class="text-sm text-slate-500">Master these topics to complete your plan</p>
+                    </div>
+                </div>
+                <button id="close-roadmap-modal" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors w-8 h-8 flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+            
+            <div class="p-6 overflow-y-auto grow" id="roadmap-content">
+                <!-- Grouped cards will be injected here by adaptive.js -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Adaptive Success Modal -->
+    <div id="adaptive-success-modal" class="fixed inset-0 z-[110] hidden flex items-center justify-center bg-slate-900/90 backdrop-blur-md transition-opacity opacity-0">
+        <div class="bg-white dark:bg-darkCard rounded-2xl w-full max-w-md p-8 text-center shadow-2xl border border-emerald-500/30 m-4 transform scale-95 transition-transform">
+            <div class="w-24 h-24 mx-auto bg-emerald-500/20 text-emerald-500 rounded-full flex items-center justify-center text-5xl mb-6 relative">
+                <i class="fa-solid fa-trophy absolute z-10"></i>
+                <div class="absolute inset-0 bg-emerald-500 rounded-full animate-ping opacity-20"></div>
+            </div>
+            <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mb-2">Plan Completed!</h2>
+            <p class="text-slate-600 dark:text-slate-300 mb-8">You have successfully mastered all the topics in your personalized adaptive plan. Great job!</p>
+            <button id="close-success-modal" class="w-full py-3 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-xl shadow-lg shadow-emerald-500/20 transition-all hover:scale-[1.02]">Awesome!</button>
+        </div>
+    </div>
+
+    <!-- Statistics Dashboard Modal -->
+    <div id="stats-dashboard-modal" class="fixed inset-0 z-[120] hidden items-center justify-center bg-slate-900/80 backdrop-blur-sm transition-opacity opacity-0">
+        <div class="bg-white dark:bg-darkCard rounded-2xl w-full max-w-3xl max-h-[90vh] flex flex-col shadow-2xl border border-slate-200 dark:border-slate-800 m-4 overflow-hidden">
+            <div class="p-6 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center bg-slate-50 dark:bg-slate-900/50 shrink-0">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-full bg-brand-500/10 flex items-center justify-center text-brand-500 text-lg">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-bold text-slate-900 dark:text-white">My Statistics</h2>
+                        <p class="text-sm text-slate-500">Track your interview preparation progress</p>
+                    </div>
+                </div>
+                <button id="close-stats-modal" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors w-8 h-8 flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+            
+            <div class="p-6 overflow-y-auto grow">
+                <div id="stats-summary-cards" class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                    <!-- Global summary injected here -->
+                </div>
+                
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center space-x-2">
+                    <i class="fa-solid fa-layer-group text-slate-400"></i>
+                    <span>Topic Mastery Breakdown</span>
+                </h3>
+                <div id="stats-topics-container" class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
+                    <!-- Progress bars injected here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Script Dependencies -->
+
+</body>
+</html>

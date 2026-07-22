@@ -18,6 +18,8 @@ def build_index():
     print(f"Найдено файлов: {len(md_files)}")
 
     for filepath in md_files:
+        if not filepath.endswith('.md'):
+            continue
         with open(filepath, 'r', encoding='utf-8') as f:
             lines = f.readlines()
 
@@ -48,6 +50,8 @@ def build_index():
                         value = meta_match.group(2).strip().strip('"').strip("'")
                         if value.startswith('[') and value.endswith(']'):
                             value = [v.strip().strip('"').strip("'") for v in value[1:-1].split(',') if v.strip()]
+                        elif key in ('tags', 'related_questions', 'related'):
+                            value = [v.strip().strip('"').strip("'") for v in value.split(',') if v.strip()]
                         metadata[key] = value
         else:
             # Логика для файлов без разделителей (чтение сплошного блока "ключ: значение" сверху)
@@ -62,6 +66,8 @@ def build_index():
                     value = meta_match.group(2).strip().strip('"').strip("'")
                     if value.startswith('[') and value.endswith(']'):
                         value = [v.strip().strip('"').strip("'") for v in value[1:-1].split(',') if v.strip()]
+                    elif key in ('tags', 'related_questions', 'related'):
+                        value = [v.strip().strip('"').strip("'") for v in value.split(',') if v.strip()]
                     metadata[key] = value
                 else:
                     break  # Если строка не похожа на "ключ: значение", метаданные закончились

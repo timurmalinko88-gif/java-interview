@@ -1,0 +1,35 @@
+{
+  "name": "java-prep",
+  "version": "1.0.0",
+  "description": "<p align=\"center\">   <img src=\"https://img.shields.io/badge/Questions-550-brightgreen.svg?style=for-the-badge&logo=java\" alt=\"Total Questions\">   <img src=\"https://img.shields.io/badge/Topics-11-blue.svg?style=for-the-badge&logo=codeforces\" alt=\"Total Topics\">   <img src=\"https://img.shields.io/badge/Simulator-Mock%20Interview-purple.svg?style=for-the-badge&logo=target\" alt=\"Mock Interview Simulator\">   <img src=\"https://img.shields.io/badge/License-MIT-orange.svg?style=for-the-badge\" alt=\"License\">   <img src=\"https://img.shields.io/badge/GitHub%20Pages-Active-success.svg?style=for-the-badge&logo=github\" alt=\"GitHub Pages\"> </p>",
+  "main": "adaptive.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timurmalinko88-gif/java-interview.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/timurmalinko88-gif/java-interview/issues"
+  },
+  "homepage": "https://github.com/timurmalinko88-gif/java-interview#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@tailwindcss/typography": "^0.5.20",
+    "@types/node": "^26.1.1",
+    "autoprefixer": "^10.5.4",
+    "postcss": "^8.5.22",
+    "tailwindcss": "^3.4.19",
+    "vite": "^8.1.5"
+  }
+}
