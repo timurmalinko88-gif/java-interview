@@ -7,7 +7,7 @@ time: 5
 frequency: 80%
 source: Custom
 prerequisites: ["Core Java", "Strings", "Concurrency"]
-tags: [oop, spring-core, system-design, patterns, memory, multithreading, collections]
+tags: []
 ---
 
 # StringBuilder vs StringBuffer

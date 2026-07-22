@@ -7,7 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["Stream API"]
-tags: [oop, spring-core, databases, stream-api, exceptions]
+tags: ['stream-api']
 ---
 
 # IntStream range() vs rangeClosed()

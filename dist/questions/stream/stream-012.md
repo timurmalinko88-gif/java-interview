@@ -7,7 +7,7 @@ time: 5
 frequency: 65%
 source: Custom
 prerequisites: ["Stream API"]
-tags: [oop, spring-core, system-design, stream-api, memory, collections]
+tags: ['stream-api']
 ---
 
 # Primitive Streams

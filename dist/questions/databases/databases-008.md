@@ -7,7 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["SQL"]
-tags: [spring-core, databases, stream-api, memory, collections, exceptions]
+tags: ['databases']
 ---
 
 # Explain WHERE vs. HAVING vs. GROUP BY.

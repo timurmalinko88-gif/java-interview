@@ -7,7 +7,7 @@ time: 5
 frequency: 60%
 source: Custom
 prerequisites: ["Concurrency", "CountDownLatch", "CyclicBarrier"]
-tags: [spring-core, multithreading, collections]
+tags: ['multithreading']
 ---
 
 # `CountDownLatch` vs `CyclicBarrier`

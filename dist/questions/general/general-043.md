@@ -7,7 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["Exceptions", "Core Java"]
-tags: [oop, spring-core, stream-api, jvm, memory, multithreading, exceptions]
+tags: ['exceptions']
 ---
 
 # Try-with-Resources and AutoCloseable

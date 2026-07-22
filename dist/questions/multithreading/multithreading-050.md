@@ -7,7 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["Concurrency", "ReentrantLock", "Exceptions"]
-tags: [oop, spring-core, memory, multithreading, exceptions]
+tags: ['multithreading']
 ---
 
 # `lock()` Position inside `try` Block

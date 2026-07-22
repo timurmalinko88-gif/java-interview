@@ -7,7 +7,7 @@ time: 4
 frequency: 95%
 source: Custom
 prerequisites: ["JPA", "Hibernate"]
-tags: [oop, spring-core, patterns, databases, stream-api, memory, collections, exceptions, spring-data]
+tags: ['databases']
 ---
 
 # What is the difference between Lazy and Eager loading?

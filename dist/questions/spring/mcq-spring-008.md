@@ -3,7 +3,7 @@ id: mcq-spring-008
 topic: Spring
 difficulty: Junior
 format: MCQ
-tags: [spring-boot, jpa]
+tags: ['spring-boot']
 ---
 Какой интерфейс Spring Data JPA используется для базовых CRUD операций и пагинации, если вы хотите наследовать все методы по умолчанию?
 

@@ -7,7 +7,7 @@ time: 25
 frequency: 75%
 source: Custom
 prerequisites: ["Microservices", "Architecture"]
-tags: [spring-core, system-design, patterns, testing, databases, stream-api, collections]
+tags: ['system-design']
 ---
 
 # Microservices vs Monolith

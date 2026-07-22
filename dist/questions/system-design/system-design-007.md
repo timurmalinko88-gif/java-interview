@@ -7,7 +7,7 @@ time: 25
 frequency: 80%
 source: Custom
 prerequisites: ["Databases", "Scalability"]
-tags: [spring-core, system-design, databases, stream-api, collections]
+tags: ['system-design']
 ---
 
 # Database Sharding

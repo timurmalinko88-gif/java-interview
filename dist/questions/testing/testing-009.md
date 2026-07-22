@@ -7,7 +7,7 @@ time: 5
 frequency: 90%
 source: Custom
 prerequisites: ["Unit Testing", "Integration Testing"]
-tags: [oop, spring-core, databases, testing, collections]
+tags: ['testing']
 ---
 
 # Unit vs Integration Testing

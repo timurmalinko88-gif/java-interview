@@ -7,7 +7,7 @@ time: 5
 frequency: 95%
 source: Custom
 prerequisites: ["Core Java"]
-tags: [oop, spring-core, system-design, patterns, testing, spring-data]
+tags: ['spring-core', 'spring-data']
 ---
 
 # What is Inversion of Control (IoC) and Dependency Injection (DI) in Spring?

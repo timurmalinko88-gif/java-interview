@@ -3,7 +3,7 @@ id: mcq-stream-002
 topic: Stream API
 difficulty: Senior
 format: MCQ
-tags: [stream-api, parallel]
+tags: ['stream-api']
 ---
 В каком пуле потоков по умолчанию выполняются parallelStream()?
 

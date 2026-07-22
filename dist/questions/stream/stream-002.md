@@ -7,7 +7,7 @@ time: 5
 frequency: 90%
 source: Custom
 prerequisites: ["Stream API"]
-tags: [spring-core, oop, stream-api, collections]
+tags: ['stream-api']
 ---
 
 # What is the difference between Intermediate and Terminal operations?

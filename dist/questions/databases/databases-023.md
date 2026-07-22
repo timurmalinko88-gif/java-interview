@@ -7,7 +7,7 @@ time: 3
 frequency: 90%
 source: Custom
 prerequisites: ["SQL"]
-tags: [spring-core, memory, collections, databases]
+tags: ['databases']
 ---
 
 # Explain UNION vs. UNION ALL.

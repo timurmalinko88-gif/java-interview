@@ -7,7 +7,7 @@ time: 15
 frequency: 85%
 source: Custom
 prerequisites: ["Architecture", "Resiliency"]
-tags: [system-design, spring-core, multithreading]
+tags: ['system-design']
 ---
 
 # High Availability (Active-Active vs Active-Passive)

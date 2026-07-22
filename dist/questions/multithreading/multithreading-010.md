@@ -7,7 +7,7 @@ time: 10
 frequency: 60%
 source: Custom
 prerequisites: ["ExecutorService", "BlockingQueue", "Thread Lifecycle"]
-tags: [oop, spring-core, system-design, patterns, testing, multithreading, collections]
+tags: ['multithreading']
 ---
 
 # Designing a Thread Pool

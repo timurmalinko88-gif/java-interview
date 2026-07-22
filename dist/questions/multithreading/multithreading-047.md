@@ -7,7 +7,7 @@ time: 10
 frequency: 85%
 source: Custom
 prerequisites: ["Concurrency", "CompletableFuture"]
-tags: [oop, spring-core, testing, multithreading, exceptions]
+tags: ['multithreading']
 ---
 
 # `CompletableFuture`

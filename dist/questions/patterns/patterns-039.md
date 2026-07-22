@@ -7,7 +7,7 @@ time: 5
 frequency: 70%
 source: Custom
 prerequisites: ["Anti-patterns", "Refactoring"]
-tags: [oop, spring-core, system-design, patterns]
+tags: ['patterns']
 ---
 
 # Anti-pattern: Shotgun Surgery

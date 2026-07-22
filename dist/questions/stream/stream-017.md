@@ -7,7 +7,7 @@ time: 5
 frequency: 60%
 source: Custom
 prerequisites: ["Lambdas"]
-tags: [oop, spring-core, stream-api, collections, exceptions, spring-data]
+tags: ['stream-api']
 ---
 
 # Custom Functional Interfaces

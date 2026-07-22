@@ -7,7 +7,7 @@ time: 5
 frequency: 20%
 source: Custom
 prerequisites: ["Concurrency"]
-tags: [oop, spring-core, system-design, stream-api, multithreading, collections]
+tags: ['collections']
 ---
 
 # LinkedTransferQueue vs LinkedBlockingQueue

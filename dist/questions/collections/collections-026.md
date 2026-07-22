@@ -7,7 +7,7 @@ time: 5
 frequency: 80%
 source: Custom
 prerequisites: ["Java 9 Features"]
-tags: [oop, spring-core, system-design, patterns, stream-api, memory, collections, exceptions]
+tags: ['collections']
 ---
 
 # Immutable Collections (Java 9+)

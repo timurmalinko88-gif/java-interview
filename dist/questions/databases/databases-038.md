@@ -7,7 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["JPA", "Hibernate"]
-tags: [oop, spring-core, databases, multithreading, spring-data]
+tags: ['databases']
 ---
 
 # Explain the JPA Entity Lifecycle states.

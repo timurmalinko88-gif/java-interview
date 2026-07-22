@@ -7,7 +7,7 @@ time: 5
 frequency: 60%
 source: Custom
 prerequisites: ["Sorting Algorithms"]
-tags: [oop, spring-core, stream-api, memory, collections]
+tags: ['collections']
 ---
 
 # Collections.sort vs Arrays.sort

@@ -7,7 +7,7 @@ time: 5
 frequency: 70%
 source: Custom
 prerequisites: ["Data Structures"]
-tags: [oop, spring-core, system-design, stream-api, multithreading, collections]
+tags: ['collections']
 ---
 
 # Vector vs ArrayList

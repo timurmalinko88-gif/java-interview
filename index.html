@@ -71,10 +71,18 @@
                     <i aria-hidden="true" class="fa-solid fa-star text-amber-500 animate-pulse"></i>
                     <span id="stats-xp" class="font-bold text-amber-600 dark:text-amber-400">0 XP</span>
                 </div>
-                <!-- Rank -->
-                <div class="flex items-center space-x-2 bg-slate-50 dark:bg-slate-800/50 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700/50 transition-all hover:border-brand-500/50">
-                    <i aria-hidden="true" class="fa-solid fa-shield-halved text-brand-500"></i>
-                    <span id="stats-rank" class="font-bold text-brand-600 dark:text-brand-400 tracking-wide uppercase text-xs">Intern</span>
+                <!-- Rank with Progress -->
+                <div class="relative flex items-center bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700/50 overflow-hidden transition-all hover:border-brand-500/50 min-w-[140px] h-9">
+                    <!-- Progress Bar Background -->
+                    <div id="rank-progress-bar" class="absolute left-0 top-0 bottom-0 bg-brand-500/15 dark:bg-brand-500/20 w-0 transition-all duration-1000"></div>
+                    
+                    <div class="relative z-10 flex items-center space-x-2 px-3 w-full">
+                        <i aria-hidden="true" id="rank-icon" class="fa-solid fa-shield-halved text-brand-500"></i>
+                        <div class="flex flex-col justify-center">
+                            <span id="stats-rank" class="font-bold text-brand-600 dark:text-brand-400 tracking-wide uppercase text-[10px] leading-tight">Intern</span>
+                            <span id="rank-xp-text" class="text-[9px] text-slate-500 dark:text-slate-400 font-semibold leading-tight">0 / 500 XP</span>
+                        </div>
+                    </div>
                 </div>
                 <!-- Progress -->
                 <div class="flex items-center space-x-2 px-2" title="Overall Completion">
@@ -199,9 +207,21 @@
 
             <!-- 2. Interactive Questions List Container -->
             <div class="bg-white dark:bg-darkCard rounded-2xl border border-slate-200 dark:border-slate-800 shadow-md flex flex-col flex-1 overflow-hidden transition-colors duration-300 max-h-[480px] lg:max-h-none">
-                <div class="p-4 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center bg-slate-50/50 dark:bg-slate-900/50">
-                    <span class="font-bold text-sm text-slate-700 dark:text-slate-300">Questions List</span>
-                    <span id="question-list-count" class="text-xs bg-slate-200 dark:bg-slate-800 px-2 py-0.5 rounded-full font-semibold text-slate-500">0</span>
+                <div class="p-4 border-b border-slate-200 dark:border-slate-800 flex flex-col space-y-3 bg-slate-50/50 dark:bg-slate-900/50">
+                    <div class="flex justify-between items-center">
+                        <span class="font-bold text-sm text-slate-700 dark:text-slate-300">Questions List</span>
+                        <span id="question-list-count" class="text-xs bg-slate-200 dark:bg-slate-800 px-2 py-0.5 rounded-full font-semibold text-slate-500">0</span>
+                    </div>
+                    <!-- Topic Micro Progress Bar -->
+                    <div id="topic-micro-progress" class="hidden flex-col space-y-1">
+                        <div class="flex justify-between text-[10px] font-semibold text-slate-500">
+                            <span id="topic-micro-title">Topic Mastery</span>
+                            <span id="topic-micro-percent">0%</span>
+                        </div>
+                        <div class="w-full bg-slate-200 dark:bg-slate-700/50 h-1.5 rounded-full overflow-hidden">
+                            <div id="topic-micro-bar" class="bg-brand-500 h-full w-0 transition-all duration-500"></div>
+                        </div>
+                    </div>
                 </div>
                 
                 <!-- Scrollable Container -->

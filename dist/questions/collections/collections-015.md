@@ -7,7 +7,7 @@ time: 10
 frequency: 40%
 source: Custom
 prerequisites: ["Hashing", "Object Identity"]
-tags: [oop, spring-core, system-design, databases, stream-api, memory, collections, spring-data]
+tags: ['collections']
 ---
 
 # IdentityHashMap

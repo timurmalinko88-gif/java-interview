@@ -7,7 +7,7 @@ time: 10
 frequency: 50%
 source: Custom
 prerequisites: ["Stream API"]
-tags: [spring-core, oop, stream-api, patterns]
+tags: ['stream-api']
 ---
 
 # Infinite Streams: iterate vs generate

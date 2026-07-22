@@ -7,7 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["REST"]
-tags: [testing, spring-core, collections]
+tags: ['testing']
 ---
 
 # GraphQL vs REST

@@ -3,12 +3,12 @@ id: multithreading-002
 topic: Multithreading
 difficulty: Junior
 format: Open Answer
-estimated_time_minutes: 7
-frequency: High
+time: 7
+frequency: 90%
 related_questions: [How ThreadPoolExecutor works, Thread lifecycle]
 source: Custom
 prerequisites: [Thread class, Runnable interface]
-tags: [oop, spring-core, system-design, memory, multithreading, collections, exceptions]
+tags: ['multithreading']
 ---
 
 On a project, a developer implemented asynchronous email notifications: for every user registration, they create a new thread:

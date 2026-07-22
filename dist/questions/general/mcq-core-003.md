@@ -3,7 +3,7 @@ id: mcq-core-003
 topic: General
 difficulty: Middle
 format: MCQ
-tags: [core, generics]
+tags: ['generics']
 ---
 Что такое стирание типов (Type Erasure) в Java Generics?
 

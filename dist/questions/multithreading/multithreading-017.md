@@ -7,7 +7,7 @@ time: 10
 frequency: 80%
 source: Custom
 prerequisites: ["Concurrency", "ThreadPoolExecutor"]
-tags: [spring-core, system-design, memory, multithreading, collections, exceptions]
+tags: ['multithreading']
 ---
 
 # ThreadPoolExecutor Tuning

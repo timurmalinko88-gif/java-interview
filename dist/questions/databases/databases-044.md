@@ -7,7 +7,7 @@ time: 5
 frequency: 80%
 source: Custom
 prerequisites: ["Hibernate", "JPA Entity Lifecycle"]
-tags: [oop, spring-core, databases, memory, collections, spring-data]
+tags: ['databases']
 ---
 
 # Explain Dirty Checking in Hibernate.

@@ -7,7 +7,7 @@ time: 10
 frequency: 50%
 source: Custom
 prerequisites: ["Microservices", "Testing"]
-tags: [spring-core, testing, memory, system-design]
+tags: ['testing']
 ---
 
 # Consumer-Driven Contract Testing

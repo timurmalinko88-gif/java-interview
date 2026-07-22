@@ -7,7 +7,7 @@ time: 5
 frequency: 80%
 source: Custom
 prerequisites: ["OAuth2"]
-tags: [spring-core, testing, memory]
+tags: ['testing']
 ---
 
 # OAuth2 Authorization Code Flow

@@ -7,7 +7,7 @@ time: 8
 frequency: 80%
 source: Custom
 prerequisites: ["Core Java", "Exceptions"]
-tags: [oop, spring-core, memory, multithreading, collections, exceptions]
+tags: ['exceptions']
 ---
 
 # How does the try-with-resources statement work?

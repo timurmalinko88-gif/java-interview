@@ -7,7 +7,7 @@ time: 5
 frequency: 80%
 source: Custom
 prerequisites: ["Core Java", "Enums"]
-tags: [spring-core, system-design, patterns, stream-api, multithreading, collections, exceptions]
+tags: ['exceptions']
 ---
 
 # Review Enum Instantiation

@@ -7,7 +7,7 @@ time: 6
 frequency: 60%
 source: Custom
 prerequisites: ["Spring AOP"]
-tags: [oop, spring-core, system-design, patterns, databases, jvm, collections]
+tags: ['spring-core']
 ---
 
 # Spring AOP vs AspectJ

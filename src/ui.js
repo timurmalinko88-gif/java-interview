@@ -13,6 +13,35 @@ function buildSidebarList() {
     renderNoQuestionsFoundState();
     return;
   }
+  
+  // Calculate micro progress
+  const totalFiltered = state.filteredQuestions.length;
+  let masteredFiltered = 0;
+  state.filteredQuestions.forEach(q => {
+      if (state.masteredIds.includes(q.id)) {
+          masteredFiltered++;
+      }
+  });
+  
+  const microPercent = totalFiltered > 0 ? Math.round((masteredFiltered / totalFiltered) * 100) : 0;
+  const topicMicroProgEl = document.getElementById('topic-micro-progress');
+  const topicFilter = document.getElementById('topic-filter');
+  const selectedTopicName = topicFilter ? topicFilter.options[topicFilter.selectedIndex].text : "All Topics";
+  
+  if (topicMicroProgEl) {
+      topicMicroProgEl.classList.remove('hidden');
+      topicMicroProgEl.classList.add('flex');
+      
+      const titleEl = document.getElementById('topic-micro-title');
+      if (titleEl) titleEl.textContent = `${selectedTopicName} Mastery`;
+      
+      const percentEl = document.getElementById('topic-micro-percent');
+      if (percentEl) percentEl.textContent = `${microPercent}%`;
+      
+      const barEl = document.getElementById('topic-micro-bar');
+      if (barEl) barEl.style.width = `${microPercent}%`;
+  }
+  
   const fragment = document.createDocumentFragment();
   state.filteredQuestions.forEach((q, idx) => {
     const isMastered = state.masteredIds.includes(q.id);
@@ -119,12 +148,57 @@ function updateStatsUI() {
 
   // Gamification Logic
   const xp = masteredCount * 10;
-  let rank = "Intern";
-  if (xp >= 5000) rank = "Staff Engineer";else if (xp >= 3000) rank = "Senior";else if (xp >= 1500) rank = "Middle";else if (xp >= 500) rank = "Junior";
+  
+  const ranks = [
+    { name: "Intern", minXp: 0, icon: "fa-shield-halved", color: "text-brand-500" },
+    { name: "Junior", minXp: 500, icon: "fa-medal", color: "text-emerald-500" },
+    { name: "Middle", minXp: 1500, icon: "fa-fire", color: "text-amber-500" },
+    { name: "Senior", minXp: 3000, icon: "fa-star", color: "text-purple-500" },
+    { name: "Staff Engineer", minXp: 5000, icon: "fa-crown", color: "text-rose-500" }
+  ];
+  
+  let currentRank = ranks[0];
+  let nextRank = ranks[1];
+  
+  for (let i = 0; i < ranks.length; i++) {
+    if (xp >= ranks[i].minXp) {
+      currentRank = ranks[i];
+      nextRank = ranks[i+1] || ranks[i];
+    }
+  }
+
+  // Handle level up animation
+  if (state.previousRank && state.previousRank !== currentRank.name && xp > 0) {
+    showLevelUpAnimation(currentRank);
+  }
+  state.previousRank = currentRank.name;
+
   const statsXpEl = document.getElementById('stats-xp');
   if (statsXpEl) statsXpEl.textContent = xp + ' XP';
+  
   const statsRankEl = document.getElementById('stats-rank');
-  if (statsRankEl) statsRankEl.textContent = rank;
+  if (statsRankEl) statsRankEl.textContent = currentRank.name;
+  
+  const rankIconEl = document.getElementById('rank-icon');
+  if (rankIconEl) {
+      rankIconEl.className = `fa-solid ${currentRank.icon} ${currentRank.color} relative z-10`;
+  }
+  
+  const rankXpTextEl = document.getElementById('rank-xp-text');
+  const rankProgressBarEl = document.getElementById('rank-progress-bar');
+  
+  if (currentRank.name === nextRank.name) {
+      // Max rank reached
+      if (rankXpTextEl) rankXpTextEl.textContent = `${xp} XP (Max)`;
+      if (rankProgressBarEl) rankProgressBarEl.style.width = '100%';
+  } else {
+      const xpIntoLevel = xp - currentRank.minXp;
+      const xpNeeded = nextRank.minXp - currentRank.minXp;
+      const progressPercent = Math.min(100, Math.round((xpIntoLevel / xpNeeded) * 100));
+      
+      if (rankXpTextEl) rankXpTextEl.textContent = `${xpIntoLevel} / ${xpNeeded} XP`;
+      if (rankProgressBarEl) rankProgressBarEl.style.width = `${progressPercent}%`;
+  }
 
   // Calculate percentage progress for globally tracked completion progress bar
   const percent = Math.min(100, Math.round(masteredCount / total * 100));
@@ -415,4 +489,44 @@ export function hideAnswerSection() {
   const srEvalBar = document.getElementById('sr-eval-bar');
   if (srEvalBar) srEvalBar.classList.add('hidden');
   document.getElementById('btn-answer').classList.remove('hidden');
+}
+
+// Gamification: Level Up Animation
+function showLevelUpAnimation(rankInfo) {
+    const overlay = document.createElement('div');
+    overlay.className = 'fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm transition-opacity duration-500 opacity-0';
+    
+    overlay.innerHTML = `
+        <div class="bg-white dark:bg-slate-900 rounded-3xl p-10 flex flex-col items-center text-center shadow-2xl transform scale-90 transition-transform duration-500 border border-slate-200 dark:border-slate-800">
+            <div class="w-24 h-24 mb-6 rounded-full bg-gradient-to-tr from-brand-400 to-amber-400 flex items-center justify-center text-5xl text-white shadow-lg shadow-brand-500/40 animate-bounce">
+                <i class="fa-solid ${rankInfo.icon}"></i>
+            </div>
+            <h2 class="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-amber-500 mb-2">LEVEL UP!</h2>
+            <p class="text-slate-600 dark:text-slate-400 text-lg">You are now a <span class="font-bold ${rankInfo.color}">${rankInfo.name}</span></p>
+            <p class="text-sm text-slate-500 mt-4 max-w-xs">Keep up the great work! Consistent studying leads to interview success.</p>
+            <button class="mt-8 bg-brand-500 hover:bg-brand-600 text-white px-8 py-3 rounded-xl font-bold shadow-md shadow-brand-500/20 transition-colors">Continue</button>
+        </div>
+    `;
+    
+    document.body.appendChild(overlay);
+    
+    // Trigger animations
+    requestAnimationFrame(() => {
+        overlay.classList.remove('opacity-0');
+        overlay.querySelector('div').classList.remove('scale-90');
+    });
+    
+    const closeBtn = overlay.querySelector('button');
+    closeBtn.addEventListener('click', () => {
+        overlay.classList.add('opacity-0');
+        overlay.querySelector('div').classList.add('scale-90');
+        setTimeout(() => overlay.remove(), 500);
+    });
+    
+    // Auto-close after 5 seconds
+    setTimeout(() => {
+        if (document.body.contains(overlay)) {
+            closeBtn.click();
+        }
+    }, 5000);
 }

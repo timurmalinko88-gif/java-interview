@@ -7,7 +7,7 @@ time: 5
 frequency: 40%
 source: Custom
 prerequisites: ["Mockito"]
-tags: [testing, oop, spring-core]
+tags: ['testing']
 ---
 
 # Mockito InOrder

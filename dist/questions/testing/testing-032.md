@@ -7,7 +7,7 @@ time: 5
 frequency: 40%
 source: Custom
 prerequisites: ["Testcontainers"]
-tags: [testing, oop, spring-core, multithreading]
+tags: ['testing']
 ---
 
 # Testcontainers GenericContainer

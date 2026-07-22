@@ -3,7 +3,7 @@ id: mcq-sd-001
 topic: System Design
 difficulty: Middle
 format: MCQ
-tags: [system-design, cap]
+tags: ['system-design']
 ---
 Согласно CAP-теореме, распределенная система может гарантировать не более двух из трех свойств. Какие это свойства?
 

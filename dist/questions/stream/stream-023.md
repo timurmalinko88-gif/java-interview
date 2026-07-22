@@ -7,7 +7,7 @@ time: 5
 frequency: 90%
 source: Custom
 prerequisites: ["Optional"]
-tags: [spring-core, patterns, stream-api, memory, multithreading, collections, exceptions]
+tags: ['stream-api']
 ---
 
 # Optional.of() vs Optional.ofNullable()

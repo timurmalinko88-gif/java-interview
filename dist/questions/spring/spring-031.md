@@ -7,7 +7,7 @@ time: 6
 frequency: 85%
 source: Custom
 prerequisites: ["Spring Core", "Transactions"]
-tags: [oop, spring-core, patterns, databases, multithreading, exceptions]
+tags: ['spring-core']
 ---
 
 # How does @Transactional work under the hood?

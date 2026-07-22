@@ -7,7 +7,7 @@ time: 5
 frequency: 80%
 source: Custom
 prerequisites: ["Stream API"]
-tags: [oop, spring-core, testing, stream-api, multithreading, collections]
+tags: ['stream-api']
 ---
 
 # Stateful vs Stateless Intermediate Operations

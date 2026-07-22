@@ -7,7 +7,7 @@ time: 3
 frequency: 80%
 source: Custom
 prerequisites: ["Synchronization", "Deadlocks"]
-tags: [spring-core, multithreading, patterns]
+tags: ['multithreading']
 ---
 
 # Understanding Deadlocks

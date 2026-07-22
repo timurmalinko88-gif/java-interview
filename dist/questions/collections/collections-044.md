@@ -7,7 +7,7 @@ time: 5
 frequency: 65%
 source: Custom
 prerequisites: ["Hashing"]
-tags: [spring-core, databases, stream-api, memory, collections, exceptions]
+tags: ['collections']
 ---
 
 # Hash Collision Resolution

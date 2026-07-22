@@ -7,7 +7,7 @@ time: 5
 frequency: 95%
 source: Custom
 prerequisites: ["SQL"]
-tags: [databases, oop, spring-core, collections]
+tags: ['databases']
 ---
 
 # What is the difference between INNER JOIN and OUTER JOIN?

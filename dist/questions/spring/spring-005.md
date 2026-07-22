@@ -7,7 +7,7 @@ time: 8
 frequency: 70%
 source: Custom
 prerequisites: ["Spring Beans", "IoC Container"]
-tags: [oop, spring-core, collections, patterns]
+tags: ['spring-core']
 ---
 
 # Explain the Spring Bean Lifecycle.

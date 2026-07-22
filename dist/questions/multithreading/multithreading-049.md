@@ -7,7 +7,7 @@ time: 5
 frequency: 60%
 source: Custom
 prerequisites: ["Concurrency", "ThreadLocalRandom", "Math.random"]
-tags: [oop, spring-core, system-design, memory, multithreading, collections]
+tags: ['multithreading']
 ---
 
 # `ThreadLocalRandom` vs `Math.random()`

@@ -3,7 +3,7 @@ id: mcq-mt-002
 topic: Multithreading
 difficulty: Middle
 format: MCQ
-tags: [multithreading, volatile]
+tags: ['multithreading', 'volatile']
 ---
 Какую проблему решает ключевое слово volatile?
 

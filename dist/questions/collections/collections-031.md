@@ -7,7 +7,7 @@ time: 5
 frequency: 50%
 source: Custom
 prerequisites: ["Data Structures"]
-tags: [spring-core, oop, stream-api, collections]
+tags: ['collections']
 ---
 
 # LinkedList Queue Implementation

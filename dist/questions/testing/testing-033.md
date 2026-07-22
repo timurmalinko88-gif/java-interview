@@ -7,7 +7,7 @@ time: 5
 frequency: 40%
 source: Custom
 prerequisites: ["REST"]
-tags: [testing, spring-core, system-design]
+tags: ['testing']
 ---
 
 # REST HATEOAS

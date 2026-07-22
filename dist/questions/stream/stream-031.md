@@ -7,7 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["Stream API"]
-tags: [oop, spring-core, system-design, patterns, databases, stream-api, collections]
+tags: ['stream-api']
 ---
 
 # Collectors.joining()

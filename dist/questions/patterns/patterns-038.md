@@ -7,7 +7,7 @@ time: 5
 frequency: 90%
 source: Custom
 prerequisites: ["Clean Code", "Anti-patterns"]
-tags: [spring-core, memory, patterns]
+tags: ['patterns']
 ---
 
 # Anti-pattern: Premature Optimization

@@ -7,7 +7,7 @@ time: 5
 frequency: 75%
 source: Custom
 prerequisites: ["Data Structures"]
-tags: [spring-core, stream-api, memory, exceptions, collections]
+tags: ['collections']
 ---
 
 # Collections.unmodifiableCollection

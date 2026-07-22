@@ -7,7 +7,7 @@ time: 5
 frequency: 40%
 source: Custom
 prerequisites: ["Enums"]
-tags: [oop, spring-core, system-design, stream-api, memory, multithreading, collections]
+tags: ['collections']
 ---
 
 # EnumSet

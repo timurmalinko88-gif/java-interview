@@ -7,7 +7,7 @@ time: 15
 frequency: 60%
 source: Custom
 prerequisites: ["Core Java", "Reflection"]
-tags: [oop, spring-core, system-design, testing, jvm, collections, spring-data]
+tags: []
 ---
 
 # Java Reflection Performance and Security

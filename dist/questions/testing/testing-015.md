@@ -7,7 +7,7 @@ time: 5
 frequency: 60%
 source: Custom
 prerequisites: ["TDD"]
-tags: [testing, spring-core, system-design]
+tags: ['testing']
 ---
 
 # BDD vs TDD

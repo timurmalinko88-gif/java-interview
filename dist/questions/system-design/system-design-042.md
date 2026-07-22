@@ -7,7 +7,7 @@ time: 15
 frequency: 85%
 source: Custom
 prerequisites: ["Containers", "Architecture"]
-tags: [spring-core, system-design, exceptions]
+tags: ['system-design']
 ---
 
 # Container Orchestration (Kubernetes)

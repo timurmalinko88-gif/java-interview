@@ -7,7 +7,7 @@ time: 20
 frequency: 85%
 source: Custom
 prerequisites: ["Architecture", "Deployment"]
-tags: [spring-core, system-design, patterns, testing, memory, collections, exceptions]
+tags: ['system-design']
 ---
 
 # Blue-Green vs Canary Deployments

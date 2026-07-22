@@ -7,7 +7,7 @@ time: 3
 frequency: 85%
 source: Custom
 prerequisites: ["Threads", "Runnable"]
-tags: [system-design, oop, spring-core, multithreading]
+tags: ['multithreading']
 ---
 
 # Thread vs Runnable

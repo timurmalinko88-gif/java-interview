@@ -7,7 +7,7 @@ time: 5
 frequency: 80%
 source: Custom
 prerequisites: ["Stream API"]
-tags: [spring-core, stream-api, collections, exceptions]
+tags: ['stream-api']
 ---
 
 # skip() and limit()

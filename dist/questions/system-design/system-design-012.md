@@ -7,7 +7,7 @@ time: 20
 frequency: 85%
 source: Custom
 prerequisites: ["Databases"]
-tags: [spring-core, system-design, databases, memory, multithreading, exceptions]
+tags: ['system-design']
 ---
 
 # Relational vs NoSQL Databases

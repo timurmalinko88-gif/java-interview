@@ -7,7 +7,7 @@ time: 5
 frequency: 80%
 source: Custom
 prerequisites: ["HTTP", "WebSockets"]
-tags: [testing, spring-core, multithreading]
+tags: ['testing']
 ---
 
 # WebSockets vs HTTP

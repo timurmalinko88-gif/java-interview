@@ -7,7 +7,7 @@ time: 5
 frequency: 80%
 source: Custom
 prerequisites: ["Hashing", "Big O Notation"]
-tags: [spring-core, oop, stream-api, collections]
+tags: ['collections']
 ---
 
 # Time Complexity of HashMap

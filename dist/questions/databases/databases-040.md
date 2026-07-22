@@ -7,7 +7,7 @@ time: 4
 frequency: 80%
 source: Custom
 prerequisites: ["Java", "SQL"]
-tags: [oop, spring-core, databases, stream-api, collections, spring-data]
+tags: ['databases']
 ---
 
 # JDBC vs. ORM (Hibernate).

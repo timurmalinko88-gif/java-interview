@@ -3,7 +3,7 @@ id: mcq-spring-003
 topic: Spring
 difficulty: Middle
 format: MCQ
-tags: [spring-boot, annotations]
+tags: ['spring-boot']
 ---
 Что объединяет в себе аннотация @SpringBootApplication?
 

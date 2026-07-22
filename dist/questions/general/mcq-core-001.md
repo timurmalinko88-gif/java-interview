@@ -3,7 +3,7 @@ id: mcq-core-001
 topic: General
 difficulty: Junior
 format: MCQ
-tags: [core, string]
+tags: ['string']
 ---
 Почему класс String в Java является неизменяемым (immutable)?
 

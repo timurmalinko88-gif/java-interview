@@ -7,7 +7,7 @@ time: 2
 frequency: 10%
 source: Custom
 prerequisites: ["Legacy Collections"]
-tags: [oop, spring-core, stream-api, jvm, multithreading, collections]
+tags: ['collections']
 ---
 
 # Dictionary Class

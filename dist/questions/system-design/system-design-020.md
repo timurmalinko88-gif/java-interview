@@ -7,7 +7,7 @@ time: 15
 frequency: 80%
 source: Custom
 prerequisites: ["Networking", "Proxies"]
-tags: [spring-core, system-design, patterns, stream-api, multithreading]
+tags: ['system-design']
 ---
 
 # Forward Proxy vs Reverse Proxy

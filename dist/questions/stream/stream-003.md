@@ -7,7 +7,7 @@ time: 5
 frequency: 95%
 source: Custom
 prerequisites: ["Core Java"]
-tags: [spring-core, oop, stream-api, multithreading]
+tags: ['stream-api']
 ---
 
 # How do Lambdas relate to Functional Interfaces?

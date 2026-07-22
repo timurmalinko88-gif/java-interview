@@ -7,7 +7,7 @@ time: 15
 frequency: 60%
 source: Custom
 prerequisites: ["Concurrency", "Locks", "ReadWriteLock"]
-tags: [oop, spring-core, system-design, stream-api, memory, multithreading, collections, exceptions]
+tags: ['multithreading']
 ---
 
 # In-Memory Cache with High Read/Write Ratio

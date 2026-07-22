@@ -7,7 +7,7 @@ time: 10
 frequency: 95%
 source: Custom
 prerequisites: ["Hashing", "Data Structures"]
-tags: [spring-core, databases, stream-api, memory, collections]
+tags: ['collections']
 ---
 
 # How HashMap works internally

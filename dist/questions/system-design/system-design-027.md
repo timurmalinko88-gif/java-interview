@@ -7,7 +7,7 @@ time: 20
 frequency: 80%
 source: Custom
 prerequisites: ["Microservices", "Message Brokers"]
-tags: [spring-core, system-design, stream-api, multithreading, collections]
+tags: ['system-design']
 ---
 
 # Asynchronous Communication

@@ -7,7 +7,7 @@ time: 5
 frequency: 95%
 source: Custom
 prerequisites: ["OOP", "Interfaces"]
-tags: [oop, spring-core, system-design, collections, spring-data]
+tags: []
 ---
 
 # What is the difference between an abstract class and an interface in Java?

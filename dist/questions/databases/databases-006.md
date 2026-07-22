@@ -7,7 +7,7 @@ time: 5
 frequency: 90%
 source: Custom
 prerequisites: ["SQL"]
-tags: [spring-core, system-design, databases, collections, exceptions, spring-data]
+tags: ['databases']
 ---
 
 # Explain the difference between DELETE, TRUNCATE, and DROP commands.

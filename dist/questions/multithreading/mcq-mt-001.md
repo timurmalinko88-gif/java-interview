@@ -3,7 +3,7 @@ id: mcq-mt-001
 topic: Multithreading
 difficulty: Junior
 format: MCQ
-tags: [multithreading, thread]
+tags: ['multithreading', 'thread']
 ---
 Какой метод интерфейса Runnable необходимо реализовать для определения логики потока?
 

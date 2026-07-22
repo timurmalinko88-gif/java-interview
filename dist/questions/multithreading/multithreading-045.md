@@ -7,7 +7,7 @@ time: 4
 frequency: 45%
 source: Custom
 prerequisites: ["Concurrency", "Thread.yield"]
-tags: [spring-core, databases, testing, jvm, multithreading]
+tags: ['multithreading']
 ---
 
 # `Thread.yield()`

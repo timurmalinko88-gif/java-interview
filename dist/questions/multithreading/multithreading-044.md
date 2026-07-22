@@ -7,7 +7,7 @@ time: 6
 frequency: 85%
 source: Custom
 prerequisites: ["Concurrency", "ExecutorService"]
-tags: [spring-core, memory, exceptions, multithreading, collections]
+tags: ['multithreading']
 ---
 
 # `shutdown()` vs `shutdownNow()`

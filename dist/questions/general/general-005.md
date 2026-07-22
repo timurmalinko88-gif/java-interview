@@ -7,7 +7,7 @@ time: 8
 frequency: 80%
 source: Custom
 prerequisites: ["Core Java", "Static Keyword", "Memory Management"]
-tags: [oop, spring-core, stream-api, jvm, memory, collections, exceptions]
+tags: ['exceptions']
 ---
 
 # Memory Management of Static Variables

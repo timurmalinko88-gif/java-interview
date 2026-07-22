@@ -7,7 +7,7 @@ time: 12
 frequency: 60%
 source: Custom
 prerequisites: ["Core Java", "Reflection"]
-tags: [oop, spring-core, system-design, testing, stream-api, jvm, collections, exceptions, spring-data]
+tags: ['exceptions']
 ---
 
 # Can you explain how Reflection works and its drawbacks?

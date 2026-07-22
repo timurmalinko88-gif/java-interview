@@ -3,7 +3,7 @@ id: mcq-oop-001
 topic: OOP
 difficulty: Junior
 format: MCQ
-tags: [oop, inheritance]
+tags: ['oop', 'inheritance']
 ---
 Поддерживает ли Java множественное наследование классов?
 

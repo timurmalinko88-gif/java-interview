@@ -7,7 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["JWT"]
-tags: [testing, spring-core]
+tags: ['testing']
 ---
 
 # JWT Structure

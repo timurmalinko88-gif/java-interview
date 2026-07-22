@@ -7,7 +7,7 @@ time: 5
 frequency: 60%
 source: Custom
 prerequisites: ["Stream API"]
-tags: [oop, spring-core, stream-api, memory, collections]
+tags: ['stream-api']
 ---
 
 # Collectors.mapping()

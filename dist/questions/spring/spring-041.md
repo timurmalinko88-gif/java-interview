@@ -7,7 +7,7 @@ time: 4
 frequency: 95%
 source: Custom
 prerequisites: ["Spring Framework"]
-tags: [oop, spring-core, system-design, memory, spring-mvc, collections, spring-boot]
+tags: ['spring-core', 'spring-mvc', 'spring-boot']
 ---
 
 # Spring Boot vs Spring Framework

@@ -7,7 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["Stream API"]
-tags: [oop, spring-core, stream-api, memory, multithreading, collections]
+tags: ['stream-api']
 ---
 
 # Using groupingBy

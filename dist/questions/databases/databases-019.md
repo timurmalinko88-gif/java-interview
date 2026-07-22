@@ -7,7 +7,7 @@ time: 4
 frequency: 75%
 source: Custom
 prerequisites: ["SQL"]
-tags: [databases, spring-core, collections]
+tags: ['databases']
 ---
 
 # What is a View in SQL?

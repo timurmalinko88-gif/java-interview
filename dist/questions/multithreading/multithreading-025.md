@@ -7,7 +7,7 @@ time: 10
 frequency: 65%
 source: Custom
 prerequisites: ["Concurrency", "ForkJoinPool", "ThreadPoolExecutor"]
-tags: [oop, spring-core, system-design, patterns, databases, stream-api, memory, multithreading, collections]
+tags: ['multithreading']
 ---
 
 # `ForkJoinPool` vs `ThreadPoolExecutor`

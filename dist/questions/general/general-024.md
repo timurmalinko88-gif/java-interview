@@ -7,7 +7,7 @@ time: 5
 frequency: 95%
 source: Custom
 prerequisites: ["Core Java", "Strings", "Memory Management"]
-tags: [oop, spring-core, system-design, stream-api, jvm, memory, multithreading, collections]
+tags: []
 ---
 
 # Why are Strings immutable in Java?

@@ -7,7 +7,7 @@ time: 5
 frequency: 40%
 source: Custom
 prerequisites: ["Concurrency"]
-tags: [spring-core, system-design, stream-api, multithreading, collections]
+tags: ['collections']
 ---
 
 # SynchronousQueue

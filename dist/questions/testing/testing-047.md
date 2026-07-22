@@ -7,7 +7,7 @@ time: 5
 frequency: 60%
 source: Custom
 prerequisites: ["QA"]
-tags: [testing, spring-core]
+tags: ['testing']
 ---
 
 # Load Testing vs Stress Testing

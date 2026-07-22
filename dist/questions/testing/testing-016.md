@@ -7,7 +7,7 @@ time: 5
 frequency: 95%
 source: Custom
 prerequisites: ["HTTP"]
-tags: [spring-core, testing, stream-api, collections]
+tags: ['testing']
 ---
 
 # HTTP Methods

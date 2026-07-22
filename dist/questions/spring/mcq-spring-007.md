@@ -3,7 +3,7 @@ id: mcq-spring-007
 topic: Spring
 difficulty: Middle
 format: MCQ
-tags: [spring-boot, actuator]
+tags: ['spring-boot']
 ---
 Зачем используется модуль Spring Boot Actuator?
 

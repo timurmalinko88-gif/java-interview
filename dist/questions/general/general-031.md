@@ -7,7 +7,7 @@ time: 15
 frequency: 60%
 source: Custom
 prerequisites: ["Core Java", "Reflection", "Performance"]
-tags: [oop, spring-core, system-design, testing, jvm, collections, exceptions, spring-data]
+tags: ['exceptions']
 ---
 
 # Java Reflection: Use Cases and Drawbacks

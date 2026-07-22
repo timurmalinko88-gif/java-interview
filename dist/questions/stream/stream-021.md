@@ -7,7 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["Stream API"]
-tags: [oop, spring-core, testing, stream-api, collections, exceptions]
+tags: ['stream-api']
 ---
 
 # Collectors.toMap and Duplicate Keys

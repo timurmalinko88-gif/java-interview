@@ -3,7 +3,7 @@ id: mcq-stream-001
 topic: Stream API
 difficulty: Middle
 format: MCQ
-tags: [stream-api, intermediate, terminal]
+tags: ['stream-api']
 ---
 Какая из следующих операций Stream API является терминальной (terminal)?
 

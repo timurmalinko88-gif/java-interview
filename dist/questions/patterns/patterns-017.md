@@ -7,7 +7,7 @@ time: 10
 frequency: 30%
 source: Custom
 prerequisites: ["OOP", "Design Patterns"]
-tags: [oop, spring-core, system-design, patterns, stream-api, multithreading]
+tags: ['patterns']
 ---
 
 # What is the Mediator Pattern?

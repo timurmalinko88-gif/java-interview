@@ -7,7 +7,7 @@ time: 8
 frequency: 75%
 source: Custom
 prerequisites: ["Core Java", "Enums"]
-tags: [oop, spring-core, patterns, jvm, collections]
+tags: []
 ---
 
 # What is an Enum in Java and how does it differ from a static final constant?

@@ -3,12 +3,12 @@ id: multithreading-004
 topic: Multithreading
 difficulty: Middle
 format: Code Review
-estimated_time_minutes: 10
-frequency: High
+time: 10
+frequency: 90%
 related_questions: [Difference between HashMap and ConcurrentHashMap, computeIfAbsent method]
 source: Custom
 prerequisites: [ConcurrentHashMap, Race Condition]
-tags: [oop, spring-core, system-design, patterns, stream-api, memory, multithreading, collections, exceptions]
+tags: ['multithreading']
 ---
 
 A developer implemented a thread-safe user cache based on `ConcurrentHashMap`. Look at the code below (Java 17). It compiles successfully. Find bugs and vulnerabilities when working in a multithreaded environment and suggest how to fix them.

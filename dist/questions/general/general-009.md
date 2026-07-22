@@ -7,7 +7,7 @@ time: 10
 frequency: 95%
 source: Custom
 prerequisites: ["Core Java", "Object Class", "Collections"]
-tags: [oop, spring-core, stream-api, memory, collections]
+tags: []
 ---
 
 # equals() and hashCode() Contract

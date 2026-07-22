@@ -7,7 +7,7 @@ time: 6
 frequency: 80%
 source: Custom
 prerequisites: ["Spring Beans"]
-tags: [oop, spring-core, spring-data]
+tags: ['spring-core', 'spring-data']
 ---
 
 # What is the difference between @Bean and @Component?

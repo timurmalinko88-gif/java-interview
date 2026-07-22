@@ -3,7 +3,7 @@ id: mcq-col-001
 topic: Collections
 difficulty: Junior
 format: MCQ
-tags: [collections, list]
+tags: ['collections', 'list']
 ---
 Какая реализация интерфейса List работает быстрее при вставке элементов в середину списка?
 

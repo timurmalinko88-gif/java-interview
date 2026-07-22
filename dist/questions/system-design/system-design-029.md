@@ -7,7 +7,7 @@ time: 15
 frequency: 60%
 source: Custom
 prerequisites: ["Databases", "Big Data"]
-tags: [oop, spring-core, system-design, databases, memory, exceptions]
+tags: ['system-design']
 ---
 
 # Data Lake vs Data Warehouse

@@ -7,7 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["Lambdas"]
-tags: [oop, spring-core, patterns, stream-api, exceptions]
+tags: ['stream-api']
 ---
 
 # Consumer vs Supplier

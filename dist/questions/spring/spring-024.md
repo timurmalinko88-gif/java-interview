@@ -7,7 +7,7 @@ time: 6
 frequency: 60%
 source: Custom
 prerequisites: ["Spring MVC"]
-tags: [oop, spring-core, patterns, stream-api, spring-mvc, collections]
+tags: ['spring-core', 'spring-mvc']
 ---
 
 # What is a Spring MVC Interceptor?

@@ -7,7 +7,7 @@ time: 7
 frequency: 65%
 source: Custom
 prerequisites: ["Spring AOP", "Proxies"]
-tags: [oop, spring-core, system-design, patterns, jvm, collections, exceptions, spring-boot]
+tags: ['spring-core', 'spring-boot']
 ---
 
 # How does Spring AOP proxying work? (JDK vs CGLIB)

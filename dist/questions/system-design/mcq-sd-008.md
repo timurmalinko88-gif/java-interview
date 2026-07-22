@@ -3,7 +3,7 @@ id: mcq-sd-008
 topic: System Design
 difficulty: Middle
 format: MCQ
-tags: [system-design, sql-vs-nosql]
+tags: ['system-design']
 ---
 Какое утверждение о реляционных (SQL) и нереляционных (NoSQL) базах данных верно?
 

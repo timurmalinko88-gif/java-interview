@@ -7,7 +7,7 @@ time: 20
 frequency: 65%
 source: Custom
 prerequisites: ["Caching", "Scalability"]
-tags: [spring-core, system-design, multithreading, collections]
+tags: ['system-design']
 ---
 
 # The Thundering Herd Problem

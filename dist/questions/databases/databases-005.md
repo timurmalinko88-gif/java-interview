@@ -7,7 +7,7 @@ time: 8
 frequency: 85%
 source: Custom
 prerequisites: ["SQL", "Transactions", "Concurrency"]
-tags: [spring-core, databases, stream-api, multithreading, collections, exceptions]
+tags: ['databases']
 ---
 
 # Explain Optimistic vs. Pessimistic Locking.

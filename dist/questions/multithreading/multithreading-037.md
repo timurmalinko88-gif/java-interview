@@ -7,7 +7,7 @@ time: 15
 frequency: 45%
 source: Custom
 prerequisites: ["Concurrency", "Java Memory Model"]
-tags: [oop, spring-core, system-design, databases, jvm, memory, multithreading]
+tags: ['multithreading']
 ---
 
 # "Happens-Before" Relationship

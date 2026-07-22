@@ -7,7 +7,7 @@ time: 5
 frequency: 80%
 source: Custom
 prerequisites: ["Concurrency", "Daemon Threads"]
-tags: [oop, spring-core, stream-api, jvm, memory, multithreading, collections]
+tags: ['multithreading']
 ---
 
 # Daemon Threads

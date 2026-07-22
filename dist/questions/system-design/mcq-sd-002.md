@@ -3,7 +3,7 @@ id: mcq-sd-002
 topic: System Design
 difficulty: Middle
 format: MCQ
-tags: [system-design, scaling]
+tags: ['system-design', 'scaling']
 ---
 В чем разница между горизонтальным (Scale Out) и вертикальным (Scale Up) масштабированием?
 

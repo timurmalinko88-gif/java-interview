@@ -3,7 +3,7 @@ id: mcq-core-002
 topic: General
 difficulty: Middle
 format: MCQ
-tags: [core, equals]
+tags: []
 ---
 Какое требование к контракту equals() и hashCode() является верным?
 

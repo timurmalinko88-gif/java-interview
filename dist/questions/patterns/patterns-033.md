@@ -7,7 +7,7 @@ time: 5
 frequency: 80%
 source: Custom
 prerequisites: ["Clean Code", "Anti-patterns"]
-tags: [testing, spring-core, system-design, patterns]
+tags: ['patterns']
 ---
 
 # Anti-pattern: Spaghetti Code

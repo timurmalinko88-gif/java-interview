@@ -3,12 +3,12 @@ id: multithreading-005
 topic: Multithreading
 difficulty: Senior
 format: System Design
-estimated_time_minutes: 25
-frequency: Medium
+time: 25
+frequency: 60%
 related_questions: [How Outbox / Saga patterns work, Database Deadlocks]
 source: Custom
 prerequisites: [Distributed transactions, Database locks, Message queues]
-tags: [spring-core, system-design, patterns, databases, memory, multithreading, collections]
+tags: ['multithreading']
 ---
 
 Design a Distributed Task Scheduler for a microservice architecture. The system must execute millions of delayed tasks (for example, send a push notification exactly 24 hours after an event).

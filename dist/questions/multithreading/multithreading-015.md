@@ -7,7 +7,7 @@ time: 8
 frequency: 65%
 source: Custom
 prerequisites: ["Concurrency", "Deadlocks"]
-tags: [oop, spring-core, multithreading]
+tags: ['multithreading']
 ---
 
 # Deadlock Code Review

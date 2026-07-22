@@ -7,7 +7,7 @@ time: 5
 frequency: 75%
 source: Custom
 prerequisites: ["Stream API"]
-tags: [oop, spring-core, patterns, stream-api, jvm, collections]
+tags: ['stream-api']
 ---
 
 # The peek() Operation

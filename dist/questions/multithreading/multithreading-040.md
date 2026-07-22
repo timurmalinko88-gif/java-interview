@@ -7,7 +7,7 @@ time: 12
 frequency: 30%
 source: Custom
 prerequisites: ["Concurrency", "Hardware Architecture", "False Sharing"]
-tags: [oop, spring-core, system-design, jvm, memory, multithreading]
+tags: ['multithreading']
 ---
 
 # False Sharing

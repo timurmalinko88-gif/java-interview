@@ -7,7 +7,7 @@ time: 25
 frequency: 75%
 source: Custom
 prerequisites: ["Microservices", "Databases"]
-tags: [spring-core, system-design, patterns, databases, memory, multithreading, collections]
+tags: ['system-design']
 ---
 
 # Two-Phase Commit (2PC) vs Saga Pattern
