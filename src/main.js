@@ -9,12 +9,13 @@ import { checkAdaptiveProgression } from './adaptive.js';
 import "./style.css";
 
 
+import { fetchQuestions } from './api.js';
 
 // --- app.js ---
 // Initialize and load dynamic questions indexes
 document.addEventListener('DOMContentLoaded', () => {
   // Load and initialize core engine
-  if (typeof window.fetchQuestions === 'function') window.fetchQuestions();
+  fetchQuestions();
 
   // Mock Interview listeners
   const mockInterviewBtn = document.getElementById('mock-interview-btn');
