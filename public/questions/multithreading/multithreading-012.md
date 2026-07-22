@@ -7,7 +7,7 @@ time: 7
 frequency: 75%
 source: Custom
 prerequisites: ["Concurrency", "volatile"]
-tags: [testing, oop, spring-core, multithreading]
+tags: ['multithreading']
 ---
 
 # `volatile` Keyword Misuse

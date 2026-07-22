@@ -3,7 +3,7 @@ id: mcq-sd-003
 topic: System Design
 difficulty: Senior
 format: MCQ
-tags: [system-design, api-gateway]
+tags: ['system-design']
 ---
 Какую из следующих задач ОБЫЧНО НЕ решает API Gateway в микросервисной архитектуре?
 

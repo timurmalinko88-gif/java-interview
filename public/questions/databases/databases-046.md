@@ -7,7 +7,7 @@ time: 4
 frequency: 85%
 source: Custom
 prerequisites: ["Transactions", "Locks"]
-tags: [databases, spring-core, multithreading, exceptions]
+tags: ['databases']
 ---
 
 # What is a Deadlock in a database?

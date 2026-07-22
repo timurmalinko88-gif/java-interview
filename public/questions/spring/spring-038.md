@@ -7,7 +7,7 @@ time: 4
 frequency: 60%
 source: Custom
 prerequisites: ["Spring Security"]
-tags: [oop, spring-core, patterns, stream-api, spring-mvc, multithreading, collections, spring-data]
+tags: ['spring-core', 'spring-mvc', 'spring-data']
 ---
 
 # How is the currently authenticated user stored?

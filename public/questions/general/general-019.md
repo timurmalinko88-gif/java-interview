@@ -7,7 +7,7 @@ time: 6
 frequency: 80%
 source: Custom
 prerequisites: ["Core Java", "Object class"]
-tags: [oop, spring-core, stream-api, memory, multithreading, collections]
+tags: []
 ---
 
 # Explain the Object class and its main methods

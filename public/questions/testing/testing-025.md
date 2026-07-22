@@ -7,7 +7,7 @@ time: 5
 frequency: 60%
 source: Custom
 prerequisites: ["JUnit 5"]
-tags: [testing, spring-core]
+tags: ['testing']
 ---
 
 # JUnit 5 Assumptions

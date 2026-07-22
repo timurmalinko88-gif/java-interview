@@ -3,7 +3,7 @@ id: mcq-col-002
 topic: Collections
 difficulty: Middle
 format: MCQ
-tags: [collections, map, hashmap]
+tags: ['collections', 'map']
 ---
 С какой версии Java в HashMap для разрешения коллизий (при достижении определенного порога) вместо связного списка используется красно-черное дерево?
 

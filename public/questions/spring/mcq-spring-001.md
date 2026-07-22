@@ -3,7 +3,7 @@ id: mcq-spring-001
 topic: Spring
 difficulty: Junior
 format: MCQ
-tags: [spring-boot, di]
+tags: ['spring-boot', 'di']
 ---
 Какая аннотация в Spring Boot используется для автоматического внедрения зависимостей (Dependency Injection)?
 

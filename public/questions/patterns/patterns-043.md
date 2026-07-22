@@ -7,7 +7,7 @@ time: 5
 frequency: 60%
 source: Custom
 prerequisites: ["Clean Code"]
-tags: [spring-core, patterns]
+tags: ['patterns']
 ---
 
 # Clean Code: Formatting and Structure

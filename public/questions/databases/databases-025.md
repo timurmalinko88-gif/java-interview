@@ -7,7 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["Hibernate", "JPA"]
-tags: [oop, spring-core, spring-data]
+tags: []
 ---
 
 # Explain Cascading operations in Hibernate/JPA.

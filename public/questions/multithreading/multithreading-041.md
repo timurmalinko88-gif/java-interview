@@ -7,7 +7,7 @@ time: 5
 frequency: 40%
 source: Custom
 prerequisites: ["Concurrency", "Exchanger"]
-tags: [oop, spring-core, system-design, testing, multithreading, collections]
+tags: ['multithreading']
 ---
 
 # `Exchanger`

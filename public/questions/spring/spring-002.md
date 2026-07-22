@@ -7,7 +7,7 @@ time: 5
 frequency: 90%
 source: Custom
 prerequisites: ["IoC", "DI"]
-tags: [oop, spring-core, patterns, testing, stream-api, collections]
+tags: ['spring-core']
 ---
 
 # What are the different types of Dependency Injection in Spring?

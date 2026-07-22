@@ -7,7 +7,7 @@ time: 12
 frequency: 75%
 source: Custom
 prerequisites: ["Concurrency", "ThreadLocal"]
-tags: [oop, spring-core, system-design, databases, stream-api, jvm, memory, multithreading, collections, exceptions]
+tags: ['multithreading']
 ---
 
 # `ThreadLocal` Use Cases and Risks

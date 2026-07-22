@@ -7,7 +7,7 @@ time: 8
 frequency: 70%
 source: Custom
 prerequisites: ["Spring Boot", "@SpringBootApplication"]
-tags: [oop, spring-core, spring-mvc, collections, spring-boot]
+tags: ['spring-core', 'spring-mvc', 'spring-boot']
 ---
 
 # How does Spring Boot Auto-configuration work under the hood?

@@ -3,7 +3,7 @@ id: mcq-jvm-001
 topic: JVM & Memory Management
 difficulty: Junior
 format: MCQ
-tags: [jvm, memory, stack]
+tags: ['jvm', 'memory']
 ---
 Где хранятся локальные переменные примитивных типов в Java?
 

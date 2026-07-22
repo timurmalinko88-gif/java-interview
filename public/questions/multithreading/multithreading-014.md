@@ -7,7 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["Concurrency", "Runnable", "Callable"]
-tags: [oop, spring-core, multithreading, exceptions]
+tags: ['multithreading']
 ---
 
 # `Runnable` vs `Callable`

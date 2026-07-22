@@ -7,7 +7,7 @@ time: 5
 frequency: 95%
 source: Custom
 prerequisites: ["Clean Code"]
-tags: [spring-core, oop, stream-api, patterns]
+tags: ['patterns']
 ---
 
 # Clean Code: Naming Conventions

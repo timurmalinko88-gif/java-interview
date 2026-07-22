@@ -7,7 +7,7 @@ time: 5
 frequency: 90%
 source: Custom
 prerequisites: ["Mockito"]
-tags: [testing, spring-core]
+tags: ['testing']
 ---
 
 # Mockito Argument Matchers

@@ -7,7 +7,7 @@ time: 5
 frequency: 80%
 source: Custom
 prerequisites: ["Lambdas"]
-tags: [oop, spring-core, stream-api, memory, collections]
+tags: ['stream-api']
 ---
 
 # Method References Syntax

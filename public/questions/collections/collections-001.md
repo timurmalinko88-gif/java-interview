@@ -7,7 +7,7 @@ time: 5
 frequency: 90%
 source: Custom
 prerequisites: ["Data Structures"]
-tags: [oop, spring-core, system-design, stream-api, memory, multithreading, collections]
+tags: ['collections']
 ---
 
 # Difference between ArrayList and LinkedList

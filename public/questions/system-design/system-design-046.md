@@ -7,7 +7,7 @@ time: 20
 frequency: 60%
 source: Custom
 prerequisites: ["Networking", "Resiliency"]
-tags: [spring-core, system-design, stream-api, memory, exceptions]
+tags: ['system-design']
 ---
 
 # Backpressure

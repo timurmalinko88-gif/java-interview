@@ -7,7 +7,7 @@ time: 4
 frequency: 70%
 source: Custom
 prerequisites: ["Database Design", "2NF"]
-tags: [databases, system-design, spring-core, collections]
+tags: ['databases']
 ---
 
 # Explain Third Normal Form (3NF).

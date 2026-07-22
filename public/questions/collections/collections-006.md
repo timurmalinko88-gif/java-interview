@@ -7,7 +7,7 @@ time: 10
 frequency: 85%
 source: Custom
 prerequisites: ["Hashing"]
-tags: [spring-core, oop, stream-api, collections]
+tags: ['collections']
 ---
 
 # HashSet Internal Implementation

@@ -7,7 +7,7 @@ time: 15
 frequency: 80%
 source: Custom
 prerequisites: ["Networking", "Caching"]
-tags: [spring-core, stream-api, system-design, patterns]
+tags: ['system-design']
 ---
 
 # Content Delivery Networks (CDN)

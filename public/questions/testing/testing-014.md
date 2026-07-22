@@ -7,7 +7,7 @@ time: 5
 frequency: 70%
 source: Custom
 prerequisites: ["QA"]
-tags: [testing, spring-core, patterns]
+tags: ['testing']
 ---
 
 # E2E Testing Downsides

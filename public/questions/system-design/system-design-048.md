@@ -7,7 +7,7 @@ time: 15
 frequency: 80%
 source: Custom
 prerequisites: ["Monitoring", "Performance"]
-tags: [spring-core, system-design, testing, stream-api, memory, collections]
+tags: ['system-design']
 ---
 
 # Long Tail Latency (p99)

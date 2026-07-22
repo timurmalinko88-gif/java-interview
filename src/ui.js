@@ -1,4 +1,4 @@
-import { debounce } from './utils.js';
+import { debounce, setDifficultyChipInactive } from './utils.js';
 import { state } from './state.js';
 import { isFlagged } from './collections.js';
 
@@ -103,11 +103,8 @@ function clearAllFilters() {
   document.getElementById('topic-filter').value = 'all';
   state.selectedDiffFilters = [];
   document.querySelectorAll('.diff-chip').forEach(el => {
-    el.classList.remove('bg-brand-500', 'text-white', 'border-brand-500');
     const diff = el.getAttribute('data-diff');
-    if (diff === 'Junior') el.classList.add('bg-emerald-500/10', 'text-emerald-600', 'dark:text-emerald-400');
-    if (diff === 'Middle') el.classList.add('bg-blue-500/10', 'text-blue-600', 'dark:text-blue-400');
-    if (diff === 'Senior') el.classList.add('bg-purple-500/10', 'text-purple-600', 'dark:text-purple-400');
+    setDifficultyChipInactive(el, diff);
   });
   document.querySelectorAll('.format-checkbox').forEach(el => el.checked = false);
   triggerFilterAction();

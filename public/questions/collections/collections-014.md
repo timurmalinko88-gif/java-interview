@@ -7,7 +7,7 @@ time: 5
 frequency: 70%
 source: Custom
 prerequisites: ["Data Structures"]
-tags: [oop, spring-core, databases, stream-api, memory, collections]
+tags: ['collections']
 ---
 
 # Queue vs Deque

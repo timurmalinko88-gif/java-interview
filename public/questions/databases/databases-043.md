@@ -7,7 +7,7 @@ time: 4
 frequency: 60%
 source: Custom
 prerequisites: ["ORM", "Java"]
-tags: [oop, spring-core, system-design, databases, stream-api, memory, collections, spring-data]
+tags: ['databases']
 ---
 
 # What is Object-Relational Impedance Mismatch?

@@ -3,7 +3,7 @@ id: mcq-oop-002
 topic: OOP
 difficulty: Middle
 format: MCQ
-tags: [oop, polymorphism]
+tags: ['oop', 'polymorphism']
 ---
 Какой принцип ООП нарушается, если подкласс изменяет ожидаемое поведение родительского класса?
 

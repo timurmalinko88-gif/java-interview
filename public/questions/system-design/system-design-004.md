@@ -7,7 +7,7 @@ time: 20
 frequency: 80%
 source: Custom
 prerequisites: ["Kafka", "RabbitMQ", "Message Brokers"]
-tags: [spring-core, system-design, stream-api, collections]
+tags: ['system-design']
 ---
 
 # Kafka vs RabbitMQ

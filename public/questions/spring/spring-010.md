@@ -7,7 +7,7 @@ time: 6
 frequency: 75%
 source: Custom
 prerequisites: ["Spring Core"]
-tags: [oop, spring-core, multithreading, collections, spring-data, spring-boot]
+tags: ['spring-core', 'spring-data', 'spring-boot']
 ---
 
 # How are properties injected in Spring? (@Value vs @ConfigurationProperties)

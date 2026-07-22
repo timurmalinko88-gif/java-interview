@@ -3,7 +3,7 @@ id: mcq-db-001
 topic: Databases
 difficulty: Middle
 format: MCQ
-tags: [db, sql, acid]
+tags: ['sql']
 ---
 Что означает буква "I" в аббревиатуре ACID (свойства транзакций баз данных)?
 

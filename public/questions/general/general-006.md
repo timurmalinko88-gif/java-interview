@@ -7,7 +7,7 @@ time: 10
 frequency: 75%
 source: Custom
 prerequisites: ["Core Java", "Strings", "Memory Profiling"]
-tags: [oop, spring-core, system-design, patterns, stream-api, memory, multithreading, collections]
+tags: []
 ---
 
 # String Pool and Memory Optimization

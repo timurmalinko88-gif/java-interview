@@ -7,7 +7,7 @@ time: 6
 frequency: 85%
 source: Custom
 prerequisites: ["Spring Core"]
-tags: [oop, spring-core, databases, memory, multithreading]
+tags: ['spring-core']
 ---
 
 # What is Spring AOP? Define Aspect, Advice, Pointcut, and JoinPoint.

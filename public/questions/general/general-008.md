@@ -7,7 +7,7 @@ time: 8
 frequency: 70%
 source: Custom
 prerequisites: ["Core Java", "Generics", "Type Erasure"]
-tags: [oop, spring-core, stream-api, jvm, memory, collections, exceptions]
+tags: ['exceptions']
 ---
 
 # Type Erasure and Heap Pollution

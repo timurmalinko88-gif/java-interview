@@ -7,7 +7,7 @@ time: 5
 frequency: 70%
 source: Custom
 prerequisites: ["Core Java", "Stream API"]
-tags: [oop, spring-core, stream-api, memory, collections, spring-data]
+tags: ['stream-api']
 ---
 
 # distinct() and Object Identity

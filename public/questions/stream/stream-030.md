@@ -7,7 +7,7 @@ time: 10
 frequency: 85%
 source: Custom
 prerequisites: ["Stream API", "Exceptions"]
-tags: [oop, spring-core, system-design, patterns, stream-api, multithreading, collections, exceptions]
+tags: ['stream-api']
 ---
 
 # Exception Handling in Streams

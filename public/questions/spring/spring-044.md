@@ -7,7 +7,7 @@ time: 4
 frequency: 85%
 source: Custom
 prerequisites: ["Spring Boot"]
-tags: [oop, spring-core, testing, spring-mvc, collections, exceptions, spring-data, spring-boot]
+tags: ['spring-core', 'spring-mvc', 'spring-data', 'spring-boot']
 ---
 
 # What are Spring Boot Starters?

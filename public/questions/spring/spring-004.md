@@ -7,7 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["Spring Beans"]
-tags: [spring-core, multithreading, patterns]
+tags: ['spring-core']
 ---
 
 # What are the different Bean Scopes in Spring?

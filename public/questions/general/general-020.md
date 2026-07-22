@@ -7,7 +7,7 @@ time: 15
 frequency: 70%
 source: Custom
 prerequisites: ["Core Java", "Generics"]
-tags: [oop, spring-core, stream-api, jvm, collections, exceptions]
+tags: ['exceptions']
 ---
 
 # How do Generics work in Java and what is Type Erasure?

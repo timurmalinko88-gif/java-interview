@@ -7,7 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["OOP", "Design Patterns"]
-tags: [oop, spring-core, system-design, patterns, collections]
+tags: ['patterns']
 ---
 
 # What is the Facade Pattern?

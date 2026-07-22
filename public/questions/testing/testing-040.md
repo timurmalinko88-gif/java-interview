@@ -7,7 +7,7 @@ time: 5
 frequency: 75%
 source: Custom
 prerequisites: ["Spring Boot", "Integration Testing"]
-tags: [spring-boot, testing, spring-core, databases]
+tags: ['testing']
 ---
 
 # Transactional Tests

@@ -7,7 +7,7 @@ time: 8
 frequency: 75%
 source: Custom
 prerequisites: ["Spring Security"]
-tags: [oop, spring-core, system-design, stream-api, collections]
+tags: ['spring-core']
 ---
 
 # Explain the Spring Security Authentication Architecture.

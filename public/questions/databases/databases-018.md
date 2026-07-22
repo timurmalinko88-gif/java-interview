@@ -7,7 +7,7 @@ time: 3
 frequency: 95%
 source: Custom
 prerequisites: ["SQL"]
-tags: [spring-core, memory, collections, databases]
+tags: ['databases']
 ---
 
 # What is a Foreign Key?

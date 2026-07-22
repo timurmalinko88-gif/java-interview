@@ -3,7 +3,7 @@ id: mcq-db-002
 topic: Databases
 difficulty: Senior
 format: MCQ
-tags: [db, sql, isolation]
+tags: ['sql']
 ---
 Какой уровень изоляции транзакций решает проблему "Фантомного чтения" (Phantom Read)?
 

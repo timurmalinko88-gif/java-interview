@@ -3,7 +3,7 @@ id: mcq-sd-004
 topic: System Design
 difficulty: Senior
 format: MCQ
-tags: [system-design, caching]
+tags: ['system-design', 'caching']
 ---
 Как называется стратегия кэширования, при которой приложение сначала пишет данные в кэш (например, Redis), а сам кэш асинхронно записывает их в базу данных?
 

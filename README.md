@@ -2,7 +2,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Questions-583-brightgreen.svg?style=for-the-badge&logo=java" alt="Total Questions">
-  <img src="https://img.shields.io/badge/Topics-11-blue.svg?style=for-the-badge&logo=codeforces" alt="Total Topics">
+  <img src="https://img.shields.io/badge/Topics-13-blue.svg?style=for-the-badge&logo=codeforces" alt="Total Topics">
   <img src="https://img.shields.io/badge/Simulator-Mock%20Interview-purple.svg?style=for-the-badge&logo=target" alt="Mock Interview Simulator">
   <img src="https://img.shields.io/badge/License-MIT-orange.svg?style=for-the-badge" alt="License">
   <img src="https://img.shields.io/badge/GitHub%20Pages-Active-success.svg?style=for-the-badge&logo=github" alt="GitHub Pages">
@@ -56,22 +56,24 @@ An interactive, high-performance Single Page Web Application (SPA), mock intervi
 
 ## 📊 Content Breakdown & Statistics
 
-The repository contains **583 pre-indexed questions** categorized across **11 core Java domains**:
+The repository contains **583 pre-indexed questions** categorized across **13 core Java domains**:
 
 ### Topic Breakdown
 
 | Icon | Category | # of Questions | Difficulty Range | Primary Topics Covered |
 | :--- | :--- | :---: | :---: | :--- |
-| 📦 | **Collections** | 50 | Junior – Senior | `ArrayList`, `LinkedList`, `HashMap`, `ConcurrentHashMap`, `PriorityQueue`, `Set`, `Deque` |
-| 🗄️ | **Databases** | 50 | Middle – Senior | SQL, ACID, Isolation Levels, Indexes, Execution Plans, JPA, Hibernate, N+1 Problem |
+| 📦 | **Collections** | 52 | Junior – Senior | `ArrayList`, `LinkedList`, `HashMap`, `ConcurrentHashMap`, `PriorityQueue`, `Set`, `Deque` |
+| 🗄️ | **Databases** | 52 | Middle – Senior | SQL, ACID, Isolation Levels, Indexes, Execution Plans, JPA, Hibernate, N+1 Problem |
 | ☕ | **General Java** | 50 | Junior – Middle | Core Syntax, `String` Pool, Generics, Exception Handling, Pass-by-Value, Equals & HashCode |
-| ⚙️ | **JVM & Memory** | 50 | Middle – Senior | JVM Memory Structure (`Heap`, `Stack`, `Metaspace`), GC Algorithms (G1, ZGC), JIT, ClassLoaders |
-| 🧵 | **Multithreading** | 50 | Middle – Senior | `Thread`, `Runnable`, `Callable`, `Executors`, `ReentrantLock`, `volatile`, Atomic, JMM, Deadlocks |
-| 🧱 | **OOP** | 50 | Junior – Senior | Encapsulation, Inheritance, Polymorphism, Abstraction, SOLID Principles, GRASP |
+| 🧩 | **Exceptions** | 2 | Junior – Middle | Exceptions handling |
+| ❓ | **General** | 3 | Junior – Middle | Miscellaneous topics |
+| ⚙️ | **JVM & Memory Management** | 52 | Middle – Senior | JVM Memory Structure (`Heap`, `Stack`, `Metaspace`), GC Algorithms (G1, ZGC), JIT, ClassLoaders |
+| 🧵 | **Multithreading** | 52 | Middle – Senior | `Thread`, `Runnable`, `Callable`, `Executors`, `ReentrantLock`, `volatile`, Atomic, JMM, Deadlocks |
+| 🧱 | **OOP** | 52 | Junior – Senior | Encapsulation, Inheritance, Polymorphism, Abstraction, SOLID Principles, GRASP |
 | 🎨 | **Patterns** | 50 | Middle – Senior | Singleton, Factory, Builder, Adapter, Proxy, Observer, Strategy, Chain of Responsibility |
-| 🍃 | **Spring Framework** | 50 | Middle – Senior | Spring Core, IoC/DI, Bean Lifecycle, Spring Boot, Spring Data JPA, Spring Security, AOP, REST |
-| 🌊 | **Stream API** | 50 | Junior – Middle | Functional Interfaces (`Predicate`, `Function`, `Consumer`, `Supplier`), Stream Operations, `Optional` |
-| 🏗️ | **System Design** | 50 | Middle – Senior | High Availability, Microservices, Load Balancing, Caching (Redis), Message Queues (Kafka), CAP Theorem |
+| 🍃 | **Spring** | 58 | Middle – Senior | Spring Core, IoC/DI, Bean Lifecycle, Spring Boot, Spring Data JPA, Spring Security, AOP, REST |
+| 🌊 | **Stream API** | 52 | Junior – Middle | Functional Interfaces (`Predicate`, `Function`, `Consumer`, `Supplier`), Stream Operations, `Optional` |
+| 🏗️ | **System Design** | 58 | Middle – Senior | High Availability, Microservices, Load Balancing, Caching (Redis), Message Queues (Kafka), CAP Theorem |
 | 🧪 | **Testing** | 50 | Junior – Middle | Unit Testing, Integration Testing, JUnit 5, Mockito, `@Mock`, `@InjectMocks`, TDD |
 
 ### Difficulty Distribution

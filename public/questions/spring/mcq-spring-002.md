@@ -3,7 +3,7 @@ id: mcq-spring-002
 topic: Spring
 difficulty: Middle
 format: MCQ
-tags: [spring-boot, scope]
+tags: ['spring-boot']
 ---
 Какой Scope у бинов в Spring установлен по умолчанию?
 

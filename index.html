@@ -11,6 +11,8 @@
     <meta name="twitter:title" content="Java Interview Trainer & Simulator">
     <meta name="twitter:description" content="Master your Java interviews with our interactive simulator. Practice Java questions, get personalized roadmaps, and track your progress.">
     <title>Java Interview Trainer & Simulator</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size=\"90\">☕</text></svg>" type="image/svg+xml">
+    <link rel="canonical" href="https://timurmalinko88-gif.github.io/java-interview/">
     
     <!-- External Libraries -->
     
@@ -139,7 +141,7 @@
                 
                 <!-- Search Input -->
                 <div class="relative">
-                    <input type="text" id="search-input" placeholder="Search questions..." 
+                    <input type="text" id="search-input" aria-label="Search questions" placeholder="Search questions..." 
                         class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 pl-10 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all">
                     <i aria-hidden="true" class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400 text-sm"></i>
                 </div>
@@ -166,7 +168,7 @@
                 <!-- Difficulty Selectors -->
                 <div class="space-y-1.5">
                     <p id="diff-label" class="text-xs font-bold uppercase tracking-wider text-slate-400">Difficulty Grade</p>
-                    <div class="flex flex-wrap gap-2">
+                    <div class="flex flex-wrap gap-2" role="group" aria-labelledby="diff-label">
                         <button data-diff="Junior" class="diff-chip flex-1 px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 hover:bg-emerald-500/20 transition-all duration-200">
                             Junior
                         </button>

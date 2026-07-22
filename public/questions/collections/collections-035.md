@@ -7,7 +7,7 @@ time: 10
 frequency: 25%
 source: Custom
 prerequisites: ["Concurrency"]
-tags: [oop, spring-core, system-design, stream-api, multithreading, collections]
+tags: ['collections']
 ---
 
 # DelayQueue

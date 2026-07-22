@@ -7,7 +7,7 @@ time: 5
 frequency: 70%
 source: Custom
 prerequisites: ["Clean Code", "Anti-patterns"]
-tags: [oop, spring-core, exceptions, patterns]
+tags: ['patterns']
 ---
 
 # Anti-pattern: Primitive Obsession

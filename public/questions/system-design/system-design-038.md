@@ -7,7 +7,7 @@ time: 15
 frequency: 80%
 source: Custom
 prerequisites: ["Load Balancing", "Architecture"]
-tags: [spring-core, system-design, patterns, memory, multithreading]
+tags: ['system-design']
 ---
 
 # Sticky Sessions

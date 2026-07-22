@@ -7,7 +7,7 @@ time: 5
 frequency: 80%
 source: Custom
 prerequisites: ["Core Java", "Keywords", "Exceptions", "Garbage Collection"]
-tags: [oop, spring-core, stream-api, jvm, memory, multithreading, collections, exceptions]
+tags: ['exceptions']
 ---
 
 # final, finally, and finalize

@@ -7,7 +7,7 @@ time: 3
 frequency: 85%
 source: Custom
 prerequisites: ["SQL"]
-tags: [databases, oop, spring-core, exceptions]
+tags: ['databases']
 ---
 
 # Explain DDL, DML, DCL, and TCL.

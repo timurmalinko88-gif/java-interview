@@ -7,7 +7,7 @@ time: 10
 frequency: 85%
 source: Custom
 prerequisites: ["OOP", "SOLID", "Inheritance"]
-tags: [oop, spring-core, patterns, testing, collections]
+tags: ['patterns']
 ---
 
 # Liskov Substitution Principle (LSP)

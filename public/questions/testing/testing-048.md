@@ -7,7 +7,7 @@ time: 5
 frequency: 50%
 source: Custom
 prerequisites: ["REST"]
-tags: [testing, spring-core, spring-mvc, system-design]
+tags: ['testing']
 ---
 
 # Richardson Maturity Model

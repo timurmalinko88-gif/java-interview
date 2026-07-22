@@ -7,7 +7,7 @@ time: 15
 frequency: 75%
 source: Custom
 prerequisites: ["Databases", "Concurrency"]
-tags: [spring-core, system-design, databases, stream-api, multithreading, exceptions]
+tags: ['system-design']
 ---
 
 # Database Deadlocks

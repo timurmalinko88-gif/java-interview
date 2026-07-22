@@ -7,7 +7,7 @@ time: 5
 frequency: 50%
 source: Custom
 prerequisites: ["HTTP"]
-tags: [spring-core, testing, stream-api, multithreading]
+tags: ['testing']
 ---
 
 # HTTP/2 Features

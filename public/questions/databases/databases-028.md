@@ -7,7 +7,7 @@ time: 3
 frequency: 80%
 source: Custom
 prerequisites: ["Transactions", "ACID"]
-tags: [spring-core, multithreading, collections, databases]
+tags: ['databases']
 ---
 
 # What is a Phantom Read?

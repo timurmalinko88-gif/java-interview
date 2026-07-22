@@ -7,7 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["Stream API"]
-tags: [spring-core, stream-api, memory, exceptions, collections]
+tags: ['stream-api']
 ---
 
 # Reusing Streams

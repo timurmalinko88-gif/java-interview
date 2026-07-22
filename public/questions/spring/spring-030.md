@@ -7,7 +7,7 @@ time: 8
 frequency: 85%
 source: Custom
 prerequisites: ["Spring Data JPA", "Hibernate"]
-tags: [oop, spring-core, patterns, databases, stream-api, memory, collections, spring-data]
+tags: ['spring-core', 'spring-data']
 ---
 
 # Explain the N+1 Select Problem and its solutions.

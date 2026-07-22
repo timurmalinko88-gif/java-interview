@@ -7,7 +7,7 @@ time: 10
 frequency: 90%
 source: Custom
 prerequisites: ["SQL", "Transactions", "ACID"]
-tags: [spring-core, databases, stream-api, memory, multithreading, collections]
+tags: ['databases']
 ---
 
 # Explain the different Transaction Isolation Levels and the anomalies they prevent.

@@ -7,7 +7,7 @@ time: 5
 frequency: 50%
 source: Custom
 prerequisites: ["Integration Testing"]
-tags: [testing, spring-core, collections]
+tags: ['testing']
 ---
 
 # WireMock

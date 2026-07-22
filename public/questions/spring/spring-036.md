@@ -7,7 +7,7 @@ time: 5
 frequency: 80%
 source: Custom
 prerequisites: ["Spring Framework"]
-tags: [oop, spring-core, spring-data]
+tags: ['spring-core', 'spring-data']
 ---
 
 # What is Spring Security? What are its core concepts?

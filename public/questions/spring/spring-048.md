@@ -7,7 +7,7 @@ time: 6
 frequency: 70%
 source: Custom
 prerequisites: ["Testing", "Spring Boot"]
-tags: [oop, spring-core, databases, testing, memory, spring-mvc, exceptions, spring-data, spring-boot]
+tags: ['spring-core', 'spring-mvc', 'spring-data', 'spring-boot']
 ---
 
 # What is Test Slicing? (@WebMvcTest, @DataJpaTest)

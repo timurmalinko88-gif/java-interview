@@ -7,7 +7,7 @@ time: 10
 frequency: 80%
 source: Custom
 prerequisites: ["Concurrency"]
-tags: [spring-core, stream-api, memory, multithreading, collections, exceptions]
+tags: ['collections']
 ---
 
 # CopyOnWriteArrayList

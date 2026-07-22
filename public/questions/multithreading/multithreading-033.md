@@ -7,7 +7,7 @@ time: 8
 frequency: 75%
 source: Custom
 prerequisites: ["Concurrency", "Parallel Streams", "Collections"]
-tags: [oop, spring-core, system-design, databases, stream-api, multithreading, collections, exceptions]
+tags: ['multithreading']
 ---
 
 # Parallel Streams and Thread Safety

@@ -7,7 +7,7 @@ time: 5
 frequency: 70%
 source: Custom
 prerequisites: ["Concurrency", "Thread"]
-tags: [oop, spring-core, databases, jvm, multithreading, exceptions]
+tags: ['multithreading']
 ---
 
 # Thread Lifecycle States

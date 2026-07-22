@@ -7,7 +7,7 @@ time: 15
 frequency: 60%
 source: Custom
 prerequisites: ["Trees"]
-tags: [spring-core, system-design, stream-api, memory, collections]
+tags: ['collections']
 ---
 
 # TreeMap Internal Implementation

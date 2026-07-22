@@ -7,7 +7,7 @@ time: 5
 frequency: 90%
 source: Custom
 prerequisites: ["Anti-patterns"]
-tags: [oop, spring-core, patterns, testing, memory, spring-data, spring-boot]
+tags: ['patterns']
 ---
 
 # Anti-pattern: Hardcoding

@@ -7,7 +7,7 @@ time: 3
 frequency: 50%
 source: Custom
 prerequisites: ["SQL", "Transactions"]
-tags: [databases, spring-core, collections, exceptions]
+tags: ['databases']
 ---
 
 # What is a SAVEPOINT in SQL?

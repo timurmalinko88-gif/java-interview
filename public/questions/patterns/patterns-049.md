@@ -7,7 +7,7 @@ time: 5
 frequency: 40%
 source: Custom
 prerequisites: ["OOP", "Anti-patterns", "Inheritance"]
-tags: [oop, spring-core, patterns]
+tags: ['patterns']
 ---
 
 # Anti-pattern: Yo-Yo Problem

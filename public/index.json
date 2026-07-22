@@ -13,12 +13,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "memory",
-        "multithreading",
         "collections"
       ]
     },
@@ -33,10 +27,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "databases",
-        "stream-api",
-        "memory",
         "collections"
       ]
     },
@@ -51,13 +41,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "jvm",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "collections"
       ]
     },
     {
@@ -71,11 +55,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "memory",
-        "multithreading",
         "collections"
       ]
     },
@@ -90,10 +69,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "databases",
-        "stream-api",
         "collections"
       ]
     },
@@ -108,9 +83,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "oop",
-        "stream-api",
         "collections"
       ]
     },
@@ -125,11 +97,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "collections",
-        "exceptions"
+        "collections"
       ]
     },
     {
@@ -143,11 +111,6 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "memory",
-        "multithreading",
         "collections"
       ]
     },
@@ -162,11 +125,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "stream-api",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "collections"
       ]
     },
     {
@@ -180,11 +139,6 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "multithreading",
         "collections"
       ]
     },
@@ -199,11 +153,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "collections",
-        "spring-data"
+        "collections"
       ]
     },
     {
@@ -217,10 +167,6 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "databases",
-        "stream-api",
         "collections"
       ]
     },
@@ -235,9 +181,6 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "stream-api",
         "collections"
       ]
     },
@@ -252,11 +195,6 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "databases",
-        "stream-api",
-        "memory",
         "collections"
       ]
     },
@@ -271,14 +209,7 @@
       "frequency": "Low",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "databases",
-        "stream-api",
-        "memory",
-        "collections",
-        "spring-data"
+        "collections"
       ]
     },
     {
@@ -292,12 +223,6 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "memory",
-        "multithreading",
         "collections"
       ]
     },
@@ -312,12 +237,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "stream-api",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "collections"
       ]
     },
     {
@@ -331,12 +251,6 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "stream-api",
-        "multithreading",
         "collections"
       ]
     },
@@ -351,11 +265,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "memory",
-        "multithreading",
         "collections"
       ]
     },
@@ -370,12 +279,6 @@
       "frequency": "Low",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "memory",
-        "multithreading",
         "collections"
       ]
     },
@@ -390,12 +293,6 @@
       "frequency": "Low",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "databases",
-        "stream-api",
-        "memory",
         "collections"
       ]
     },
@@ -410,10 +307,6 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "memory",
         "collections"
       ]
     },
@@ -428,15 +321,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "databases",
-        "stream-api",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "collections"
       ]
     },
     {
@@ -450,10 +335,6 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "memory",
         "collections"
       ]
     },
@@ -468,10 +349,6 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "stream-api",
-        "memory",
-        "exceptions",
         "collections"
       ]
     },
@@ -486,14 +363,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "stream-api",
-        "memory",
-        "collections",
-        "exceptions"
+        "collections"
       ]
     },
     {
@@ -507,12 +377,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "databases",
-        "stream-api",
-        "memory",
-        "collections",
-        "exceptions"
+        "collections"
       ]
     },
     {
@@ -526,10 +391,6 @@
       "frequency": "Low",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "testing",
-        "stream-api",
         "collections"
       ]
     },
@@ -544,11 +405,6 @@
       "frequency": "Low",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "testing",
-        "stream-api",
-        "multithreading",
         "collections"
       ]
     },
@@ -563,11 +419,6 @@
       "frequency": "Low",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "jvm",
-        "multithreading",
         "collections"
       ]
     },
@@ -582,9 +433,6 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "oop",
-        "stream-api",
         "collections"
       ]
     },
@@ -599,13 +447,7 @@
       "frequency": "Low",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "collections"
       ]
     },
     {
@@ -619,11 +461,6 @@
       "frequency": "Low",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "multithreading",
         "collections"
       ]
     },
@@ -638,10 +475,6 @@
       "frequency": "Low",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "multithreading",
         "collections"
       ]
     },
@@ -656,11 +489,6 @@
       "frequency": "Low",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "multithreading",
         "collections"
       ]
     },
@@ -675,9 +503,6 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "oop",
-        "stream-api",
         "collections"
       ]
     },
@@ -692,10 +517,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "multithreading",
         "collections"
       ]
     },
@@ -710,11 +531,6 @@
       "frequency": "Low",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "databases",
-        "stream-api",
         "collections"
       ]
     },
@@ -729,10 +545,6 @@
       "frequency": "Low",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "multithreading",
         "collections"
       ]
     },
@@ -747,9 +559,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "oop",
-        "stream-api",
         "collections"
       ]
     },
@@ -764,12 +573,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "collections"
       ]
     },
     {
@@ -783,12 +587,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "collections"
       ]
     },
     {
@@ -802,11 +601,6 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "memory",
-        "multithreading",
         "collections"
       ]
     },
@@ -821,12 +615,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "databases",
-        "stream-api",
-        "memory",
-        "collections",
-        "exceptions"
+        "collections"
       ]
     },
     {
@@ -840,10 +629,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "memory",
         "collections"
       ]
     },
@@ -858,12 +643,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "databases",
-        "stream-api",
-        "memory",
-        "multithreading",
         "collections"
       ]
     },
@@ -878,11 +657,6 @@
       "frequency": "Low",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "jvm",
-        "memory",
         "collections"
       ]
     },
@@ -897,10 +671,6 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "memory",
         "collections"
       ]
     },
@@ -915,13 +685,7 @@
       "frequency": "Low",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "collections"
       ]
     },
     {
@@ -935,11 +699,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "memory",
         "collections"
       ]
     },
@@ -970,8 +729,7 @@
       "related": [],
       "tags": [
         "collections",
-        "map",
-        "hashmap"
+        "map"
       ]
     },
     {
@@ -985,9 +743,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "databases",
-        "spring-core",
-        "multithreading"
+        "databases"
       ]
     },
     {
@@ -1001,14 +757,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "patterns",
-        "databases",
-        "stream-api",
-        "multithreading",
-        "collections",
-        "spring-data"
+        "databases"
       ]
     },
     {
@@ -1022,12 +771,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "databases",
-        "stream-api",
-        "memory",
-        "multithreading",
-        "collections"
+        "databases"
       ]
     },
     {
@@ -1041,9 +785,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "databases",
-        "spring-core",
-        "spring-data"
+        "databases"
       ]
     },
     {
@@ -1057,12 +799,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "databases",
-        "stream-api",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "databases"
       ]
     },
     {
@@ -1076,12 +813,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "databases",
-        "collections",
-        "exceptions",
-        "spring-data"
+        "databases"
       ]
     },
     {
@@ -1095,10 +827,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "databases",
-        "oop",
-        "spring-core",
-        "collections"
+        "databases"
       ]
     },
     {
@@ -1112,12 +841,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "databases",
-        "stream-api",
-        "memory",
-        "collections",
-        "exceptions"
+        "databases"
       ]
     },
     {
@@ -1131,9 +855,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "databases",
-        "spring-core",
-        "collections"
+        "databases"
       ]
     },
     {
@@ -1147,13 +869,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "patterns",
-        "databases",
-        "stream-api",
-        "collections",
-        "spring-data"
+        "databases"
       ]
     },
     {
@@ -1167,10 +883,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "databases",
-        "spring-core",
-        "collections",
-        "spring-data"
+        "databases"
       ]
     },
     {
@@ -1184,11 +897,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "databases",
-        "multithreading",
-        "collections"
+        "databases"
       ]
     },
     {
@@ -1201,12 +910,7 @@
       "time": "4 min",
       "frequency": "Medium",
       "related": [],
-      "tags": [
-        "spring-core",
-        "oop",
-        "stream-api",
-        "system-design"
-      ]
+      "tags": []
     },
     {
       "id": "databases-014",
@@ -1219,10 +923,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "databases",
-        "system-design",
-        "spring-core",
-        "collections"
+        "databases"
       ]
     },
     {
@@ -1236,11 +937,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "databases",
-        "stream-api",
-        "memory",
-        "collections"
+        "databases"
       ]
     },
     {
@@ -1253,12 +950,7 @@
       "time": "5 min",
       "frequency": "High",
       "related": [],
-      "tags": [
-        "system-design",
-        "spring-core",
-        "multithreading",
-        "exceptions"
-      ]
+      "tags": []
     },
     {
       "id": "databases-017",
@@ -1271,13 +963,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "databases",
-        "stream-api",
-        "memory",
-        "collections",
-        "spring-data"
+        "databases"
       ]
     },
     {
@@ -1291,9 +977,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "memory",
-        "collections",
         "databases"
       ]
     },
@@ -1308,9 +991,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "databases",
-        "spring-core",
-        "collections"
+        "databases"
       ]
     },
     {
@@ -1324,13 +1005,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "databases",
-        "stream-api",
-        "multithreading",
-        "collections"
+        "databases"
       ]
     },
     {
@@ -1344,10 +1019,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "databases",
-        "oop",
-        "spring-core",
-        "exceptions"
+        "databases"
       ]
     },
     {
@@ -1361,9 +1033,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "databases",
-        "spring-core",
-        "system-design"
+        "databases"
       ]
     },
     {
@@ -1377,9 +1047,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "memory",
-        "collections",
         "databases"
       ]
     },
@@ -1394,10 +1061,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "databases",
-        "testing",
-        "spring-core",
-        "collections"
+        "databases"
       ]
     },
     {
@@ -1410,11 +1074,7 @@
       "time": "5 min",
       "frequency": "High",
       "related": [],
-      "tags": [
-        "oop",
-        "spring-core",
-        "spring-data"
-      ]
+      "tags": []
     },
     {
       "id": "databases-026",
@@ -1427,9 +1087,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "multithreading",
-        "collections",
         "databases"
       ]
     },
@@ -1444,9 +1101,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "multithreading",
-        "collections",
         "databases"
       ]
     },
@@ -1461,9 +1115,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "multithreading",
-        "collections",
         "databases"
       ]
     },
@@ -1478,11 +1129,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "databases",
-        "multithreading",
-        "collections"
+        "databases"
       ]
     },
     {
@@ -1496,11 +1143,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "databases",
-        "stream-api",
-        "collections"
+        "databases"
       ]
     },
     {
@@ -1514,9 +1157,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "databases",
-        "spring-core",
-        "system-design"
+        "databases"
       ]
     },
     {
@@ -1530,8 +1171,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "memory",
         "databases"
       ]
     },
@@ -1546,8 +1185,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "databases",
-        "spring-core"
+        "databases"
       ]
     },
     {
@@ -1561,9 +1199,6 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "memory",
-        "collections",
         "databases"
       ]
     },
@@ -1578,13 +1213,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "databases",
-        "multithreading",
-        "spring-data"
+        "databases"
       ]
     },
     {
@@ -1598,14 +1227,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "databases",
-        "stream-api",
-        "multithreading",
-        "collections",
-        "spring-data"
+        "databases"
       ]
     },
     {
@@ -1619,15 +1241,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "patterns",
-        "databases",
-        "stream-api",
-        "multithreading",
-        "collections",
-        "spring-data",
-        "exceptions"
+        "databases"
       ]
     },
     {
@@ -1641,11 +1255,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "databases",
-        "multithreading",
-        "spring-data"
+        "databases"
       ]
     },
     {
@@ -1659,15 +1269,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "patterns",
-        "databases",
-        "stream-api",
-        "memory",
-        "collections",
-        "exceptions",
-        "spring-data"
+        "databases"
       ]
     },
     {
@@ -1681,12 +1283,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "databases",
-        "stream-api",
-        "collections",
-        "spring-data"
+        "databases"
       ]
     },
     {
@@ -1700,10 +1297,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "databases",
-        "spring-core",
-        "collections",
-        "exceptions"
+        "databases"
       ]
     },
     {
@@ -1717,10 +1311,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "databases",
-        "spring-core",
-        "collections",
-        "exceptions"
+        "databases"
       ]
     },
     {
@@ -1734,14 +1325,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "databases",
-        "stream-api",
-        "memory",
-        "collections",
-        "spring-data"
+        "databases"
       ]
     },
     {
@@ -1755,12 +1339,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "databases",
-        "memory",
-        "collections",
-        "spring-data"
+        "databases"
       ]
     },
     {
@@ -1774,13 +1353,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "patterns",
-        "databases",
-        "stream-api",
-        "exceptions",
-        "spring-data"
+        "databases"
       ]
     },
     {
@@ -1794,10 +1367,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "databases",
-        "spring-core",
-        "multithreading",
-        "exceptions"
+        "databases"
       ]
     },
     {
@@ -1811,11 +1381,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "patterns",
-        "databases",
-        "exceptions"
+        "databases"
       ]
     },
     {
@@ -1828,13 +1394,7 @@
       "time": "4 min",
       "frequency": "High",
       "related": [],
-      "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "collections",
-        "spring-data"
-      ]
+      "tags": []
     },
     {
       "id": "databases-049",
@@ -1847,13 +1407,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "databases",
-        "stream-api",
-        "memory",
-        "multithreading",
-        "collections"
+        "databases"
       ]
     },
     {
@@ -1866,12 +1420,7 @@
       "time": "4 min",
       "frequency": "High",
       "related": [],
-      "tags": [
-        "spring-boot",
-        "system-design",
-        "spring-core",
-        "collections"
-      ]
+      "tags": []
     },
     {
       "id": "mcq-db-001",
@@ -1884,9 +1433,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "db",
-        "sql",
-        "acid"
+        "sql"
       ]
     },
     {
@@ -1900,9 +1447,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "db",
-        "sql",
-        "isolation"
+        "sql"
       ]
     },
     {
@@ -1939,59 +1484,43 @@
     {
       "id": "general-001",
       "path": "questions/general/general-001.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Middle",
       "format": "Code Review",
       "title": "Find the bug in the following code and explain how to fix it:",
       "time": "10 min",
       "frequency": "Medium",
       "related": [],
-      "tags": [
-        "oop",
-        "spring-core",
-        "multithreading"
-      ]
+      "tags": []
     },
     {
       "id": "general-002",
       "path": "questions/general/general-002.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Junior",
       "format": "Open Answer",
       "title": "What is the difference between an abstract class and an interface in Java?",
       "time": "5 min",
       "frequency": "High",
       "related": [],
-      "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "collections",
-        "spring-data"
-      ]
+      "tags": []
     },
     {
       "id": "general-003",
       "path": "questions/general/general-003.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Senior",
       "format": "System Design",
       "title": "Design a URL Shortening Service (like bit.ly)",
       "time": "15 min",
       "frequency": "High",
       "related": [],
-      "tags": [
-        "spring-core",
-        "system-design",
-        "databases",
-        "stream-api",
-        "collections"
-      ]
+      "tags": []
     },
     {
       "id": "general-004",
       "path": "questions/general/general-004.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Junior",
       "format": "Open Answer",
       "title": "Checked vs Unchecked Exceptions",
@@ -1999,16 +1528,13 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "databases",
-        "spring-core",
-        "multithreading",
         "exceptions"
       ]
     },
     {
       "id": "general-005",
       "path": "questions/general/general-005.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Middle",
       "format": "Open Answer",
       "title": "Memory Management of Static Variables",
@@ -2016,40 +1542,25 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "jvm",
-        "memory",
-        "collections",
         "exceptions"
       ]
     },
     {
       "id": "general-006",
       "path": "questions/general/general-006.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Senior",
       "format": "Code Review",
       "title": "String Pool and Memory Optimization",
       "time": "10 min",
       "frequency": "Medium",
       "related": [],
-      "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "stream-api",
-        "memory",
-        "multithreading",
-        "collections"
-      ]
+      "tags": []
     },
     {
       "id": "general-007",
       "path": "questions/general/general-007.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Middle",
       "format": "System Design",
       "title": "Enums as Singletons",
@@ -2057,20 +1568,13 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "patterns",
-        "testing",
-        "jvm",
-        "multithreading",
-        "collections",
         "exceptions"
       ]
     },
     {
       "id": "general-008",
       "path": "questions/general/general-008.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Senior",
       "format": "Open Answer",
       "title": "Type Erasure and Heap Pollution",
@@ -2078,58 +1582,37 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "jvm",
-        "memory",
-        "collections",
         "exceptions"
       ]
     },
     {
       "id": "general-009",
       "path": "questions/general/general-009.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Middle",
       "format": "Code Review",
       "title": "equals() and hashCode() Contract",
       "time": "10 min",
       "frequency": "High",
       "related": [],
-      "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "memory",
-        "collections"
-      ]
+      "tags": []
     },
     {
       "id": "general-010",
       "path": "questions/general/general-010.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Senior",
       "format": "Open Answer",
       "title": "Performance Implications of Reflection",
       "time": "8 min",
       "frequency": "Medium",
       "related": [],
-      "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "jvm",
-        "memory",
-        "collections",
-        "spring-data"
-      ]
+      "tags": []
     },
     {
       "id": "general-011",
       "path": "questions/general/general-011.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Junior",
       "format": "Open Answer",
       "title": "Final, Finally, and Finalize",
@@ -2137,94 +1620,61 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "memory",
-        "multithreading",
-        "collections",
         "exceptions"
       ]
     },
     {
       "id": "general-012",
       "path": "questions/general/general-012.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Junior",
       "format": "Open Answer",
       "title": "Pass by Value vs Pass by Reference",
       "time": "6 min",
       "frequency": "High",
       "related": [],
-      "tags": [
-        "spring-core",
-        "oop",
-        "memory",
-        "collections"
-      ]
+      "tags": []
     },
     {
       "id": "general-013",
       "path": "questions/general/general-013.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Junior",
       "format": "Open Answer",
       "title": "StringBuilder vs StringBuffer",
       "time": "5 min",
       "frequency": "High",
       "related": [],
-      "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "memory",
-        "multithreading",
-        "collections"
-      ]
+      "tags": []
     },
     {
       "id": "general-014",
       "path": "questions/general/general-014.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Junior",
       "format": "Open Answer",
       "title": "Why is String immutable in Java?",
       "time": "5 min",
       "frequency": "High",
       "related": [],
-      "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "memory",
-        "multithreading",
-        "collections"
-      ]
+      "tags": []
     },
     {
       "id": "general-015",
       "path": "questions/general/general-015.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Junior",
       "format": "Open Answer",
       "title": "What is the difference between static and final variables?",
       "time": "5 min",
       "frequency": "High",
       "related": [],
-      "tags": [
-        "oop",
-        "spring-core",
-        "memory",
-        "multithreading",
-        "collections"
-      ]
+      "tags": []
     },
     {
       "id": "general-016",
       "path": "questions/general/general-016.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Middle",
       "format": "Open Answer",
       "title": "How does the try-with-resources statement work?",
@@ -2232,18 +1682,13 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "memory",
-        "multithreading",
-        "collections",
         "exceptions"
       ]
     },
     {
       "id": "general-017",
       "path": "questions/general/general-017.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Senior",
       "format": "Open Answer",
       "title": "Can you explain how Reflection works and its drawbacks?",
@@ -2251,56 +1696,37 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "testing",
-        "stream-api",
-        "jvm",
-        "collections",
-        "exceptions",
-        "spring-data"
+        "exceptions"
       ]
     },
     {
       "id": "general-018",
       "path": "questions/general/general-018.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Middle",
       "format": "Open Answer",
       "title": "What are the differences between an Abstract Class and an Interface in modern Java (Java 8+)?",
       "time": "10 min",
       "frequency": "High",
       "related": [],
-      "tags": [
-        "oop",
-        "spring-core",
-        "collections"
-      ]
+      "tags": []
     },
     {
       "id": "general-019",
       "path": "questions/general/general-019.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Junior",
       "format": "Open Answer",
       "title": "Explain the Object class and its main methods",
       "time": "6 min",
       "frequency": "High",
       "related": [],
-      "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "memory",
-        "multithreading",
-        "collections"
-      ]
+      "tags": []
     },
     {
       "id": "general-020",
       "path": "questions/general/general-020.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Senior",
       "format": "Open Answer",
       "title": "How do Generics work in Java and what is Type Erasure?",
@@ -2308,92 +1734,61 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "jvm",
-        "collections",
         "exceptions"
       ]
     },
     {
       "id": "general-021",
       "path": "questions/general/general-021.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Middle",
       "format": "Open Answer",
       "title": "What is an Enum in Java and how does it differ from a static final constant?",
       "time": "8 min",
       "frequency": "Medium",
       "related": [],
-      "tags": [
-        "oop",
-        "spring-core",
-        "patterns",
-        "jvm",
-        "collections"
-      ]
+      "tags": []
     },
     {
       "id": "general-022",
       "path": "questions/general/general-022.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Senior",
       "format": "Code Review",
       "title": "Can you explain the concept of covariant return types?",
       "time": "10 min",
       "frequency": "Low",
       "related": [],
-      "tags": [
-        "spring-core",
-        "oop",
-        "memory"
-      ]
+      "tags": []
     },
     {
       "id": "general-023",
       "path": "questions/general/general-023.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Middle",
       "format": "Code Review",
       "title": "Pass by value semantics: Modifying vs Reassigning",
       "time": "12 min",
       "frequency": "High",
       "related": [],
-      "tags": [
-        "oop",
-        "spring-core",
-        "testing",
-        "stream-api",
-        "memory",
-        "collections"
-      ]
+      "tags": []
     },
     {
       "id": "general-024",
       "path": "questions/general/general-024.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Junior",
       "format": "Open Answer",
       "title": "Why are Strings immutable in Java?",
       "time": "5 min",
       "frequency": "High",
       "related": [],
-      "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "jvm",
-        "memory",
-        "multithreading",
-        "collections"
-      ]
+      "tags": []
     },
     {
       "id": "general-025",
       "path": "questions/general/general-025.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Middle",
       "format": "Code Review",
       "title": "Checked vs Unchecked Exceptions",
@@ -2401,37 +1796,25 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "memory",
-        "multithreading",
         "exceptions"
       ]
     },
     {
       "id": "general-026",
       "path": "questions/general/general-026.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Middle",
       "format": "Open Answer",
       "title": "equals() and hashCode() Contract",
       "time": "8 min",
       "frequency": "High",
       "related": [],
-      "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "memory",
-        "collections"
-      ]
+      "tags": []
     },
     {
       "id": "general-027",
       "path": "questions/general/general-027.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Junior",
       "format": "Code Review",
       "title": "Static and Final Variables",
@@ -2439,17 +1822,13 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "memory",
-        "multithreading",
         "exceptions"
       ]
     },
     {
       "id": "general-028",
       "path": "questions/general/general-028.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Senior",
       "format": "Open Answer",
       "title": "Generics and Type Erasure",
@@ -2457,36 +1836,25 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "patterns",
-        "jvm",
-        "exceptions",
-        "collections"
+        "exceptions"
       ]
     },
     {
       "id": "general-029",
       "path": "questions/general/general-029.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Junior",
       "format": "Open Answer",
       "title": "Primitives vs Wrapper Classes",
       "time": "5 min",
       "frequency": "High",
       "related": [],
-      "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "memory",
-        "collections"
-      ]
+      "tags": []
     },
     {
       "id": "general-030",
       "path": "questions/general/general-030.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Middle",
       "format": "System Design",
       "title": "Designing with Enums",
@@ -2494,20 +1862,13 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "jvm",
-        "memory",
-        "multithreading",
         "exceptions"
       ]
     },
     {
       "id": "general-031",
       "path": "questions/general/general-031.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Senior",
       "format": "Open Answer",
       "title": "Java Reflection: Use Cases and Drawbacks",
@@ -2515,38 +1876,25 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "testing",
-        "jvm",
-        "collections",
-        "exceptions",
-        "spring-data"
+        "exceptions"
       ]
     },
     {
       "id": "general-032",
       "path": "questions/general/general-032.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Junior",
       "format": "Code Review",
       "title": "Pass by Value vs Pass by Reference",
       "time": "5 min",
       "frequency": "High",
       "related": [],
-      "tags": [
-        "oop",
-        "spring-core",
-        "patterns",
-        "testing",
-        "memory"
-      ]
+      "tags": []
     },
     {
       "id": "general-033",
       "path": "questions/general/general-033.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Middle",
       "format": "Open Answer",
       "title": "final, finally, and finalize",
@@ -2554,20 +1902,13 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "jvm",
-        "memory",
-        "multithreading",
-        "collections",
         "exceptions"
       ]
     },
     {
       "id": "general-034",
       "path": "questions/general/general-034.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Middle",
       "format": "Open Answer",
       "title": "Type Erasure in Java Generics",
@@ -2575,17 +1916,13 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "jvm",
-        "collections",
         "exceptions"
       ]
     },
     {
       "id": "general-035",
       "path": "questions/general/general-035.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Junior",
       "format": "Code Review",
       "title": "Checked vs Unchecked Exceptions",
@@ -2593,16 +1930,13 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "multithreading",
         "exceptions"
       ]
     },
     {
       "id": "general-036",
       "path": "questions/general/general-036.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Senior",
       "format": "System Design",
       "title": "Reflection Usage and Performance Implications",
@@ -2610,78 +1944,49 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "jvm",
-        "memory",
-        "multithreading",
-        "collections",
         "exceptions"
       ]
     },
     {
       "id": "general-037",
       "path": "questions/general/general-037.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Middle",
       "format": "Open Answer",
       "title": "equals() and hashCode() Contract",
       "time": "5 min",
       "frequency": "High",
       "related": [],
-      "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "memory",
-        "collections"
-      ]
+      "tags": []
     },
     {
       "id": "general-038",
       "path": "questions/general/general-038.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Middle",
       "format": "Code Review",
       "title": "Singleton Pattern using Enums",
       "time": "5 min",
       "frequency": "Medium",
       "related": [],
-      "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "jvm",
-        "multithreading",
-        "collections"
-      ]
+      "tags": []
     },
     {
       "id": "general-039",
       "path": "questions/general/general-039.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Junior",
       "format": "Open Answer",
       "title": "String Immutability and the String Pool",
       "time": "5 min",
       "frequency": "High",
       "related": [],
-      "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "jvm",
-        "memory",
-        "multithreading"
-      ]
+      "tags": []
     },
     {
       "id": "general-040",
       "path": "questions/general/general-040.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Middle",
       "format": "Code Review",
       "title": "Static vs Final Modifiers",
@@ -2689,58 +1994,37 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "databases",
-        "multithreading",
-        "collections",
         "exceptions"
       ]
     },
     {
       "id": "general-041",
       "path": "questions/general/general-041.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Junior",
       "format": "System Design",
       "title": "Primitive vs Wrapper Types in Data Structures",
       "time": "10 min",
       "frequency": "High",
       "related": [],
-      "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "jvm",
-        "memory",
-        "collections"
-      ]
+      "tags": []
     },
     {
       "id": "general-042",
       "path": "questions/general/general-042.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Junior",
       "format": "Open Answer",
       "title": "JVM vs JRE vs JDK",
       "time": "5 min",
       "frequency": "High",
       "related": [],
-      "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "jvm",
-        "memory",
-        "multithreading",
-        "collections"
-      ]
+      "tags": []
     },
     {
       "id": "general-043",
       "path": "questions/general/general-043.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Middle",
       "format": "Code Review",
       "title": "Try-with-Resources and AutoCloseable",
@@ -2748,19 +2032,13 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "jvm",
-        "memory",
-        "multithreading",
         "exceptions"
       ]
     },
     {
       "id": "general-044",
       "path": "questions/general/general-044.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Junior",
       "format": "Open Answer",
       "title": "Explain the Exception Hierarchy in Java",
@@ -2768,40 +2046,25 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "databases",
-        "jvm",
-        "memory",
         "exceptions"
       ]
     },
     {
       "id": "general-045",
       "path": "questions/general/general-045.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Junior",
       "format": "Open Answer",
       "title": "String Immutability and String Pool",
       "time": "5 min",
       "frequency": "High",
       "related": [],
-      "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "stream-api",
-        "jvm",
-        "memory",
-        "multithreading",
-        "collections"
-      ]
+      "tags": []
     },
     {
       "id": "general-046",
       "path": "questions/general/general-046.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Middle",
       "format": "Code Review",
       "title": "Review Static and Final Usage",
@@ -2809,57 +2072,37 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "memory",
-        "multithreading",
-        "collections",
         "exceptions"
       ]
     },
     {
       "id": "general-047",
       "path": "questions/general/general-047.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Senior",
       "format": "Open Answer",
       "title": "Generics Type Erasure",
       "time": "10 min",
       "frequency": "Medium",
       "related": [],
-      "tags": [
-        "oop",
-        "spring-core",
-        "collections",
-        "jvm"
-      ]
+      "tags": []
     },
     {
       "id": "general-048",
       "path": "questions/general/general-048.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Senior",
       "format": "Open Answer",
       "title": "Java Reflection Performance and Security",
       "time": "15 min",
       "frequency": "Medium",
       "related": [],
-      "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "testing",
-        "jvm",
-        "collections",
-        "spring-data"
-      ]
+      "tags": []
     },
     {
       "id": "general-049",
       "path": "questions/general/general-049.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Middle",
       "format": "Code Review",
       "title": "Review Enum Instantiation",
@@ -2867,32 +2110,20 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "patterns",
-        "stream-api",
-        "multithreading",
-        "collections",
         "exceptions"
       ]
     },
     {
       "id": "general-050",
       "path": "questions/general/general-050.md",
-      "topic": "General",
+      "topic": "General Java",
       "difficulty": "Middle",
       "format": "Open Answer",
       "title": "equals() and hashCode() Contract",
       "time": "10 min",
       "frequency": "High",
       "related": [],
-      "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "memory",
-        "collections"
-      ]
+      "tags": []
     },
     {
       "id": "mcq-core-001",
@@ -2905,7 +2136,6 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "core",
         "string"
       ]
     },
@@ -2919,10 +2149,7 @@
       "time": "10 min",
       "frequency": "Medium",
       "related": [],
-      "tags": [
-        "core",
-        "equals"
-      ]
+      "tags": []
     },
     {
       "id": "mcq-core-003",
@@ -2935,7 +2162,6 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "core",
         "generics"
       ]
     },
@@ -2953,15 +2179,8 @@
         "jvm-003"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
         "jvm",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "memory"
       ]
     },
     {
@@ -2977,15 +2196,8 @@
         "jvm-001"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
         "jvm",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "memory"
       ]
     },
     {
@@ -3002,15 +2214,8 @@
         "jvm-002"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "patterns",
-        "stream-api",
         "jvm",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "memory"
       ]
     },
     {
@@ -3026,14 +2231,8 @@
         "jvm-002"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
         "jvm",
-        "memory",
-        "collections",
-        "exceptions"
+        "memory"
       ]
     },
     {
@@ -3049,16 +2248,8 @@
         "jvm-004"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "databases",
-        "stream-api",
         "jvm",
-        "memory",
-        "multithreading",
-        "collections"
+        "memory"
       ]
     },
     {
@@ -3072,13 +2263,8 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
         "jvm",
-        "memory",
-        "collections",
-        "exceptions"
+        "memory"
       ]
     },
     {
@@ -3092,14 +2278,8 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
         "jvm",
-        "memory",
-        "multithreading",
-        "collections"
+        "memory"
       ]
     },
     {
@@ -3113,15 +2293,8 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "stream-api",
         "jvm",
-        "memory",
-        "multithreading",
-        "collections"
+        "memory"
       ]
     },
     {
@@ -3135,17 +2308,8 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "databases",
-        "testing",
-        "stream-api",
         "jvm",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "memory"
       ]
     },
     {
@@ -3159,17 +2323,8 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "databases",
-        "stream-api",
         "jvm",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "memory"
       ]
     },
     {
@@ -3186,16 +2341,8 @@
         "core-004"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "databases",
-        "stream-api",
         "jvm",
-        "memory",
-        "collections",
-        "exceptions"
+        "memory"
       ]
     },
     {
@@ -3211,13 +2358,8 @@
         "jvm-015"
       ],
       "tags": [
-        "spring-core",
-        "system-design",
-        "stream-api",
         "jvm",
-        "memory",
-        "multithreading",
-        "collections"
+        "memory"
       ]
     },
     {
@@ -3233,17 +2375,8 @@
         "core-010"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
         "jvm",
-        "memory",
-        "spring-mvc",
-        "multithreading",
-        "collections",
-        "spring-data",
-        "spring-boot",
-        "exceptions"
+        "memory"
       ]
     },
     {
@@ -3259,15 +2392,8 @@
         "jvm-011"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "stream-api",
         "jvm",
-        "memory",
-        "collections",
-        "exceptions"
+        "memory"
       ]
     },
     {
@@ -3284,14 +2410,8 @@
         "jvm-012"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
         "jvm",
-        "memory",
-        "multithreading",
-        "collections"
+        "memory"
       ]
     },
     {
@@ -3308,16 +2428,8 @@
         "core-005"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "testing",
-        "stream-api",
         "jvm",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "memory"
       ]
     },
     {
@@ -3334,16 +2446,8 @@
         "io-002"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "stream-api",
         "jvm",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "memory"
       ]
     },
     {
@@ -3359,14 +2463,8 @@
         "jvm-020"
       ],
       "tags": [
-        "spring-core",
-        "system-design",
-        "testing",
-        "stream-api",
         "jvm",
-        "memory",
-        "multithreading",
-        "collections"
+        "memory"
       ]
     },
     {
@@ -3383,15 +2481,8 @@
         "conc-003"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
         "jvm",
-        "memory",
-        "spring-mvc",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "memory"
       ]
     },
     {
@@ -3408,15 +2499,8 @@
         "sys-011"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "databases",
-        "stream-api",
         "jvm",
-        "memory",
-        "multithreading",
-        "collections"
+        "memory"
       ]
     },
     {
@@ -3430,15 +2514,8 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
         "jvm",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "memory"
       ]
     },
     {
@@ -3452,15 +2529,8 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "stream-api",
         "jvm",
-        "memory",
-        "multithreading",
-        "collections"
+        "memory"
       ]
     },
     {
@@ -3474,15 +2544,8 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
         "jvm",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "memory"
       ]
     },
     {
@@ -3496,16 +2559,8 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "stream-api",
         "jvm",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "memory"
       ]
     },
     {
@@ -3519,15 +2574,8 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "stream-api",
         "jvm",
-        "memory",
-        "multithreading",
-        "collections"
+        "memory"
       ]
     },
     {
@@ -3541,12 +2589,8 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
         "jvm",
-        "memory",
-        "exceptions",
-        "multithreading",
-        "collections"
+        "memory"
       ]
     },
     {
@@ -3560,17 +2604,8 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "databases",
-        "stream-api",
         "jvm",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "memory"
       ]
     },
     {
@@ -3584,17 +2619,8 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "databases",
-        "stream-api",
         "jvm",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "memory"
       ]
     },
     {
@@ -3608,17 +2634,8 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "databases",
-        "stream-api",
         "jvm",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "memory"
       ]
     },
     {
@@ -3632,15 +2649,8 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "databases",
-        "stream-api",
         "jvm",
-        "memory",
-        "multithreading"
+        "memory"
       ]
     },
     {
@@ -3654,16 +2664,8 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "databases",
-        "stream-api",
         "jvm",
-        "memory",
-        "spring-mvc",
-        "multithreading",
-        "collections"
+        "memory"
       ]
     },
     {
@@ -3677,14 +2679,8 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
         "jvm",
-        "memory",
-        "multithreading",
-        "collections"
+        "memory"
       ]
     },
     {
@@ -3698,16 +2694,8 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "databases",
-        "stream-api",
         "jvm",
-        "memory",
-        "multithreading",
-        "collections"
+        "memory"
       ]
     },
     {
@@ -3724,14 +2712,8 @@
         "jvm-028"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
         "jvm",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "memory"
       ]
     },
     {
@@ -3747,14 +2729,8 @@
         "jvm-030"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "databases",
         "jvm",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "memory"
       ]
     },
     {
@@ -3771,17 +2747,8 @@
         "jvm-031"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "databases",
-        "testing",
-        "stream-api",
         "jvm",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "memory"
       ]
     },
     {
@@ -3798,16 +2765,8 @@
         "jvm-031"
       ],
       "tags": [
-        "spring-core",
-        "system-design",
-        "patterns",
-        "stream-api",
         "jvm",
-        "memory",
-        "spring-mvc",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "memory"
       ]
     },
     {
@@ -3824,16 +2783,8 @@
         "jvm-030"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "databases",
-        "stream-api",
         "jvm",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "memory"
       ]
     },
     {
@@ -3849,14 +2800,8 @@
         "jvm-026"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "databases",
-        "stream-api",
         "jvm",
-        "memory",
-        "collections"
+        "memory"
       ]
     },
     {
@@ -3872,14 +2817,8 @@
         "jvm-033"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
         "jvm",
-        "memory",
-        "multithreading",
-        "collections"
+        "memory"
       ]
     },
     {
@@ -3895,18 +2834,8 @@
         "jvm-049"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "databases",
-        "stream-api",
         "jvm",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions",
-        "spring-boot"
+        "memory"
       ]
     },
     {
@@ -3922,14 +2851,8 @@
         "jvm-039"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
         "jvm",
-        "memory",
-        "multithreading",
-        "spring-data"
+        "memory"
       ]
     },
     {
@@ -3945,16 +2868,8 @@
         "jvm-038"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "stream-api",
         "jvm",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "memory"
       ]
     },
     {
@@ -3970,14 +2885,8 @@
         "jvm-030"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "databases",
-        "stream-api",
         "jvm",
-        "memory",
-        "multithreading",
-        "collections"
+        "memory"
       ]
     },
     {
@@ -3994,14 +2903,8 @@
         "jvm-033"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
         "jvm",
-        "memory",
-        "multithreading",
-        "collections"
+        "memory"
       ]
     },
     {
@@ -4018,16 +2921,8 @@
         "jvm-035"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "testing",
-        "stream-api",
         "jvm",
-        "memory",
-        "collections",
-        "spring-boot"
+        "memory"
       ]
     },
     {
@@ -4043,16 +2938,8 @@
         "jvm-040"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "stream-api",
         "jvm",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "memory"
       ]
     },
     {
@@ -4068,14 +2955,8 @@
         "jvm-026"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
         "jvm",
-        "memory",
-        "multithreading",
-        "collections"
+        "memory"
       ]
     },
     {
@@ -4092,17 +2973,8 @@
         "jvm-041"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "testing",
-        "stream-api",
         "jvm",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "memory"
       ]
     },
     {
@@ -4119,16 +2991,8 @@
         "jvm-030"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "databases",
-        "stream-api",
         "jvm",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "memory"
       ]
     },
     {
@@ -4143,8 +3007,7 @@
       "related": [],
       "tags": [
         "jvm",
-        "memory",
-        "stack"
+        "memory"
       ]
     },
     {
@@ -4159,8 +3022,7 @@
       "related": [],
       "tags": [
         "jvm",
-        "gc",
-        "g1"
+        "gc"
       ]
     },
     {
@@ -4207,8 +3069,6 @@
         "What is happens-before"
       ],
       "tags": [
-        "spring-core",
-        "memory",
         "multithreading"
       ]
     },
@@ -4226,13 +3086,7 @@
         "Thread lifecycle"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "multithreading"
       ]
     },
     {
@@ -4249,12 +3103,7 @@
         "Custom thread pool configuration"
       ],
       "tags": [
-        "spring-core",
-        "databases",
-        "stream-api",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "multithreading"
       ]
     },
     {
@@ -4271,15 +3120,7 @@
         "computeIfAbsent method"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "stream-api",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "multithreading"
       ]
     },
     {
@@ -4296,13 +3137,7 @@
         "Database Deadlocks"
       ],
       "tags": [
-        "spring-core",
-        "system-design",
-        "patterns",
-        "databases",
-        "memory",
-        "multithreading",
-        "collections"
+        "multithreading"
       ]
     },
     {
@@ -4316,9 +3151,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "system-design",
-        "oop",
-        "spring-core",
         "multithreading"
       ]
     },
@@ -4333,9 +3165,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "multithreading",
-        "patterns"
+        "multithreading"
       ]
     },
     {
@@ -4349,11 +3179,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "multithreading"
       ]
     },
     {
@@ -4367,12 +3193,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "patterns",
-        "stream-api",
-        "multithreading",
-        "collections"
+        "multithreading"
       ]
     },
     {
@@ -4386,13 +3207,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "testing",
-        "multithreading",
-        "collections"
+        "multithreading"
       ]
     },
     {
@@ -4406,9 +3221,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "oop",
-        "memory",
         "multithreading"
       ]
     },
@@ -4423,9 +3235,6 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "testing",
-        "oop",
-        "spring-core",
         "multithreading"
       ]
     },
@@ -4440,14 +3249,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "multithreading"
       ]
     },
     {
@@ -4461,10 +3263,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "multithreading",
-        "exceptions"
+        "multithreading"
       ]
     },
     {
@@ -4478,8 +3277,6 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
         "multithreading"
       ]
     },
@@ -4494,12 +3291,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "databases",
-        "jvm",
-        "multithreading",
-        "exceptions"
+        "multithreading"
       ]
     },
     {
@@ -4513,12 +3305,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "multithreading"
       ]
     },
     {
@@ -4532,12 +3319,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "patterns",
-        "memory",
-        "multithreading",
-        "exceptions"
+        "multithreading"
       ]
     },
     {
@@ -4551,9 +3333,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "multithreading",
-        "collections"
+        "multithreading"
       ]
     },
     {
@@ -4567,12 +3347,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "jvm",
-        "memory",
-        "multithreading",
-        "exceptions"
+        "multithreading"
       ]
     },
     {
@@ -4586,16 +3361,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "databases",
-        "stream-api",
-        "jvm",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "multithreading"
       ]
     },
     {
@@ -4609,10 +3375,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "memory",
-        "multithreading",
-        "patterns"
+        "multithreading"
       ]
     },
     {
@@ -4626,10 +3389,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "multithreading",
-        "exceptions"
+        "multithreading"
       ]
     },
     {
@@ -4643,11 +3403,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "memory",
-        "multithreading",
-        "exceptions"
+        "multithreading"
       ]
     },
     {
@@ -4661,15 +3417,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "databases",
-        "stream-api",
-        "memory",
-        "multithreading",
-        "collections"
+        "multithreading"
       ]
     },
     {
@@ -4683,13 +3431,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "jvm",
-        "memory",
-        "multithreading",
-        "collections"
+        "multithreading"
       ]
     },
     {
@@ -4703,12 +3445,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "multithreading"
       ]
     },
     {
@@ -4722,13 +3459,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "multithreading"
       ]
     },
     {
@@ -4742,11 +3473,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "memory",
-        "multithreading",
-        "exceptions"
+        "multithreading"
       ]
     },
     {
@@ -4760,11 +3487,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "databases",
-        "jvm",
-        "memory",
         "multithreading"
       ]
     },
@@ -4779,11 +3501,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "stream-api",
-        "memory",
-        "multithreading",
-        "collections"
+        "multithreading"
       ]
     },
     {
@@ -4797,13 +3515,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "patterns",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "multithreading"
       ]
     },
     {
@@ -4817,14 +3529,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "databases",
-        "stream-api",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "multithreading"
       ]
     },
     {
@@ -4838,10 +3543,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "multithreading",
-        "exceptions"
+        "multithreading"
       ]
     },
     {
@@ -4855,10 +3557,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "databases",
-        "spring-core",
-        "multithreading",
-        "exceptions"
+        "multithreading"
       ]
     },
     {
@@ -4872,8 +3571,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
         "multithreading"
       ]
     },
@@ -4888,12 +3585,6 @@
       "frequency": "Low",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "databases",
-        "jvm",
-        "memory",
         "multithreading"
       ]
     },
@@ -4908,10 +3599,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "oop",
-        "multithreading",
-        "collections"
+        "multithreading"
       ]
     },
     {
@@ -4925,10 +3613,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "multithreading",
-        "collections"
+        "multithreading"
       ]
     },
     {
@@ -4942,11 +3627,6 @@
       "frequency": "Low",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "jvm",
-        "memory",
         "multithreading"
       ]
     },
@@ -4961,12 +3641,7 @@
       "frequency": "Low",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "testing",
-        "multithreading",
-        "collections"
+        "multithreading"
       ]
     },
     {
@@ -4980,11 +3655,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "stream-api",
-        "jvm",
-        "multithreading",
-        "collections"
+        "multithreading"
       ]
     },
     {
@@ -4998,11 +3669,6 @@
       "frequency": "Low",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "databases",
-        "testing",
         "multithreading"
       ]
     },
@@ -5017,11 +3683,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "memory",
-        "exceptions",
-        "multithreading",
-        "collections"
+        "multithreading"
       ]
     },
     {
@@ -5035,10 +3697,6 @@
       "frequency": "Low",
       "related": [],
       "tags": [
-        "spring-core",
-        "databases",
-        "testing",
-        "jvm",
         "multithreading"
       ]
     },
@@ -5053,9 +3711,6 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "memory",
         "multithreading"
       ]
     },
@@ -5070,11 +3725,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "testing",
-        "multithreading",
-        "exceptions"
+        "multithreading"
       ]
     },
     {
@@ -5088,15 +3739,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "jvm",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "multithreading"
       ]
     },
     {
@@ -5110,12 +3753,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "memory",
-        "multithreading",
-        "collections"
+        "multithreading"
       ]
     },
     {
@@ -5129,11 +3767,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "memory",
-        "multithreading",
-        "exceptions"
+        "multithreading"
       ]
     },
     {
@@ -5180,10 +3814,7 @@
         "Разница между интерфейсом и абстрактным классом"
       ],
       "tags": [
-        "system-design",
-        "oop",
-        "spring-core",
-        "multithreading"
+        "oop"
       ]
     },
     {
@@ -5200,10 +3831,7 @@
         "Может ли переопределенный метод выбрасывать новые Exception?"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "exceptions",
-        "jvm"
+        "oop"
       ]
     },
     {
@@ -5220,12 +3848,7 @@
         "Разница между final и sealed"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "multithreading",
-        "exceptions"
+        "oop"
       ]
     },
     {
@@ -5242,14 +3865,7 @@
         "Наследование vs Композиция"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "stream-api",
-        "memory",
-        "collections",
-        "exceptions"
+        "oop"
       ]
     },
     {
@@ -5266,15 +3882,7 @@
         "Как Spring инжектит коллекции бинов?"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "testing",
-        "stream-api",
-        "collections",
-        "exceptions",
-        "spring-boot"
+        "oop"
       ]
     },
     {
@@ -5290,12 +3898,7 @@
         "oop-001"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "testing",
-        "multithreading"
+        "oop"
       ]
     },
     {
@@ -5312,14 +3915,7 @@
         "collections-004"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "testing",
-        "stream-api",
-        "memory",
-        "collections",
-        "exceptions",
-        "spring-data"
+        "oop"
       ]
     },
     {
@@ -5335,13 +3931,7 @@
         "core-005"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "memory",
-        "multithreading",
-        "collections"
+        "oop"
       ]
     },
     {
@@ -5357,14 +3947,7 @@
         "design-012"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "databases",
-        "stream-api",
-        "collections",
-        "exceptions"
+        "oop"
       ]
     },
     {
@@ -5380,15 +3963,7 @@
         "arch-005"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "databases",
-        "stream-api",
-        "collections",
-        "exceptions",
-        "spring-data"
+        "oop"
       ]
     },
     {
@@ -5404,9 +3979,7 @@
         "oop-003"
       ],
       "tags": [
-        "spring-core",
-        "oop",
-        "memory"
+        "oop"
       ]
     },
     {
@@ -5422,12 +3995,7 @@
         "oop-021"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "memory",
-        "collections"
+        "oop"
       ]
     },
     {
@@ -5443,13 +4011,7 @@
         "oop-035"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "oop"
       ]
     },
     {
@@ -5465,9 +4027,7 @@
         "oop-040"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "patterns"
+        "oop"
       ]
     },
     {
@@ -5483,14 +4043,7 @@
         "sys-010"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "testing",
-        "memory",
-        "multithreading",
-        "spring-data"
+        "oop"
       ]
     },
     {
@@ -5507,10 +4060,7 @@
         "core-012"
       ],
       "tags": [
-        "spring-core",
-        "oop",
-        "memory",
-        "jvm"
+        "oop"
       ]
     },
     {
@@ -5526,13 +4076,7 @@
         "oop-012"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "stream-api",
-        "memory",
-        "collections"
+        "oop"
       ]
     },
     {
@@ -5548,10 +4092,7 @@
         "oop-008"
       ],
       "tags": [
-        "system-design",
-        "oop",
-        "spring-core",
-        "collections"
+        "oop"
       ]
     },
     {
@@ -5567,13 +4108,7 @@
         "core-041"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "memory",
-        "multithreading",
-        "collections"
+        "oop"
       ]
     },
     {
@@ -5590,12 +4125,7 @@
         "arch-005"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "memory",
-        "collections",
-        "spring-data"
+        "oop"
       ]
     },
     {
@@ -5612,12 +4142,7 @@
         "oop-023"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "databases",
-        "jvm",
-        "memory",
-        "multithreading"
+        "oop"
       ]
     },
     {
@@ -5633,11 +4158,7 @@
         "oop-021"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "collections",
-        "exceptions"
+        "oop"
       ]
     },
     {
@@ -5654,13 +4175,7 @@
         "oop-024"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "testing",
-        "multithreading",
-        "spring-data"
+        "oop"
       ]
     },
     {
@@ -5676,13 +4191,7 @@
         "oop-022"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "memory",
-        "collections",
-        "exceptions"
+        "oop"
       ]
     },
     {
@@ -5698,14 +4207,7 @@
         "oop-023"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "databases",
-        "memory",
-        "multithreading",
-        "collections"
+        "oop"
       ]
     },
     {
@@ -5721,11 +4223,7 @@
         "oop-015"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "memory",
-        "collections"
+        "oop"
       ]
     },
     {
@@ -5741,11 +4239,7 @@
         "oop-012"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "memory",
-        "collections",
-        "spring-data"
+        "oop"
       ]
     },
     {
@@ -5761,14 +4255,7 @@
         "oop-045"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "databases",
-        "jvm",
-        "collections",
-        "exceptions"
+        "oop"
       ]
     },
     {
@@ -5784,14 +4271,7 @@
         "oop-022"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "memory",
-        "collections",
-        "exceptions",
-        "spring-data"
+        "oop"
       ]
     },
     {
@@ -5807,15 +4287,7 @@
         "sys-014"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "databases",
-        "stream-api",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "oop"
       ]
     },
     {
@@ -5829,11 +4301,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "spring-data"
+        "oop"
       ]
     },
     {
@@ -5847,13 +4315,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "memory",
-        "collections",
-        "exceptions"
+        "oop"
       ]
     },
     {
@@ -5867,13 +4329,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "memory",
-        "collections",
-        "exceptions"
+        "oop"
       ]
     },
     {
@@ -5887,13 +4343,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "patterns",
-        "stream-api",
-        "memory",
-        "collections",
-        "spring-data"
+        "oop"
       ]
     },
     {
@@ -5907,13 +4357,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "stream-api",
-        "multithreading",
-        "collections"
+        "oop"
       ]
     },
     {
@@ -5930,11 +4374,7 @@
         "core-045"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "multithreading",
-        "collections"
+        "oop"
       ]
     },
     {
@@ -5951,11 +4391,7 @@
         "collections-011"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "collections"
+        "oop"
       ]
     },
     {
@@ -5972,10 +4408,7 @@
         "core-088"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "spring-data"
+        "oop"
       ]
     },
     {
@@ -5992,15 +4425,7 @@
         "design-004"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "stream-api",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "oop"
       ]
     },
     {
@@ -6017,15 +4442,7 @@
         "arch-007"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "databases",
-        "jvm",
-        "memory",
-        "multithreading",
-        "collections"
+        "oop"
       ]
     },
     {
@@ -6042,10 +4459,7 @@
         "oop-025"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns"
+        "oop"
       ]
     },
     {
@@ -6061,11 +4475,7 @@
         "oop-012"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "memory",
-        "collections"
+        "oop"
       ]
     },
     {
@@ -6081,15 +4491,7 @@
         "oop-035"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "testing",
-        "stream-api",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "oop"
       ]
     },
     {
@@ -6105,12 +4507,7 @@
         "oop-022"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "collections",
-        "exceptions"
+        "oop"
       ]
     },
     {
@@ -6126,16 +4523,7 @@
         "sys-015"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "databases",
-        "memory",
-        "multithreading",
-        "collections",
-        "spring-data",
-        "exceptions"
+        "oop"
       ]
     },
     {
@@ -6152,11 +4540,7 @@
         "core-012"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "memory",
-        "collections"
+        "oop"
       ]
     },
     {
@@ -6173,12 +4557,7 @@
         "collections-005"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "memory",
-        "collections",
-        "spring-data"
+        "oop"
       ]
     },
     {
@@ -6195,11 +4574,7 @@
         "oop-033"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "memory"
+        "oop"
       ]
     },
     {
@@ -6216,13 +4591,7 @@
         "oop-044"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "memory",
-        "collections",
-        "exceptions"
+        "oop"
       ]
     },
     {
@@ -6239,14 +4608,7 @@
         "arch-008"
       ],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "databases",
-        "memory",
-        "collections",
-        "spring-data"
+        "oop"
       ]
     },
     {
@@ -6260,13 +4622,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "testing",
-        "multithreading",
-        "collections"
+        "patterns"
       ]
     },
     {
@@ -6280,11 +4636,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "patterns",
-        "memory",
-        "multithreading"
+        "patterns"
       ]
     },
     {
@@ -6298,9 +4650,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
         "patterns"
       ]
     },
@@ -6315,9 +4664,6 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
         "patterns"
       ]
     },
@@ -6332,13 +4678,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "stream-api",
-        "collections",
-        "exceptions"
+        "patterns"
       ]
     },
     {
@@ -6352,9 +4692,6 @@
       "frequency": "Low",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
         "patterns"
       ]
     },
@@ -6369,9 +4706,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
         "patterns"
       ]
     },
@@ -6386,12 +4720,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "memory",
-        "collections"
+        "patterns"
       ]
     },
     {
@@ -6405,9 +4734,6 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
         "patterns"
       ]
     },
@@ -6422,12 +4748,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "stream-api",
-        "memory"
+        "patterns"
       ]
     },
     {
@@ -6441,11 +4762,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "collections"
+        "patterns"
       ]
     },
     {
@@ -6459,12 +4776,7 @@
       "frequency": "Low",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "stream-api",
-        "memory"
+        "patterns"
       ]
     },
     {
@@ -6478,9 +4790,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
         "patterns"
       ]
     },
@@ -6495,12 +4804,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "stream-api",
-        "exceptions"
+        "patterns"
       ]
     },
     {
@@ -6514,13 +4818,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "memory",
-        "multithreading",
-        "collections"
+        "patterns"
       ]
     },
     {
@@ -6534,13 +4832,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "stream-api",
-        "memory",
-        "collections"
+        "patterns"
       ]
     },
     {
@@ -6554,12 +4846,7 @@
       "frequency": "Low",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "stream-api",
-        "multithreading"
+        "patterns"
       ]
     },
     {
@@ -6573,9 +4860,6 @@
       "frequency": "Low",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
         "patterns"
       ]
     },
@@ -6590,12 +4874,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "memory",
-        "collections"
+        "patterns"
       ]
     },
     {
@@ -6609,9 +4888,6 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
         "patterns"
       ]
     },
@@ -6626,11 +4902,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "memory"
+        "patterns"
       ]
     },
     {
@@ -6644,9 +4916,6 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
         "patterns"
       ]
     },
@@ -6661,9 +4930,6 @@
       "frequency": "Low",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
         "patterns"
       ]
     },
@@ -6678,12 +4944,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "patterns",
-        "testing",
-        "exceptions",
-        "spring-data"
+        "patterns"
       ]
     },
     {
@@ -6697,9 +4958,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "testing",
-        "oop",
-        "spring-core",
         "patterns"
       ]
     },
@@ -6714,11 +4972,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "patterns",
-        "testing",
-        "collections"
+        "patterns"
       ]
     },
     {
@@ -6732,9 +4986,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "exceptions",
         "patterns"
       ]
     },
@@ -6749,9 +5000,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
         "patterns"
       ]
     },
@@ -6766,12 +5014,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "patterns",
-        "databases",
-        "stream-api",
-        "memory",
-        "multithreading"
+        "patterns"
       ]
     },
     {
@@ -6785,9 +5028,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
         "patterns"
       ]
     },
@@ -6802,8 +5042,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "testing",
-        "spring-core",
         "patterns"
       ]
     },
@@ -6818,12 +5056,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "testing",
-        "collections"
+        "patterns"
       ]
     },
     {
@@ -6837,9 +5070,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "testing",
-        "spring-core",
-        "system-design",
         "patterns"
       ]
     },
@@ -6854,11 +5084,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "patterns",
-        "databases",
-        "stream-api"
+        "patterns"
       ]
     },
     {
@@ -6872,14 +5098,7 @@
       "frequency": "Low",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "databases",
-        "stream-api",
-        "memory",
-        "spring-mvc"
+        "patterns"
       ]
     },
     {
@@ -6893,9 +5112,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "testing",
-        "spring-core",
-        "exceptions",
         "patterns"
       ]
     },
@@ -6910,9 +5126,6 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "databases",
-        "spring-core",
-        "system-design",
         "patterns"
       ]
     },
@@ -6927,8 +5140,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "memory",
         "patterns"
       ]
     },
@@ -6943,9 +5154,6 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
         "patterns"
       ]
     },
@@ -6960,9 +5168,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "oop",
-        "stream-api",
         "patterns"
       ]
     },
@@ -6977,9 +5182,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "multithreading",
         "patterns"
       ]
     },
@@ -6994,9 +5196,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "oop",
-        "memory",
         "patterns"
       ]
     },
@@ -7011,7 +5210,6 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
         "patterns"
       ]
     },
@@ -7026,8 +5224,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
         "patterns"
       ]
     },
@@ -7042,11 +5238,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "testing"
+        "patterns"
       ]
     },
     {
@@ -7060,14 +5252,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "databases",
-        "testing",
-        "memory",
-        "collections"
+        "patterns"
       ]
     },
     {
@@ -7081,9 +5266,6 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "exceptions",
         "patterns"
       ]
     },
@@ -7098,13 +5280,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "patterns",
-        "testing",
-        "memory",
-        "spring-data",
-        "spring-boot"
+        "patterns"
       ]
     },
     {
@@ -7118,8 +5294,6 @@
       "frequency": "Low",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
         "patterns"
       ]
     },
@@ -7134,11 +5308,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "patterns",
-        "databases",
-        "exceptions"
+        "patterns"
       ]
     },
     {
@@ -7167,8 +5337,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-boot",
-        "scope"
+        "spring-boot"
       ]
     },
     {
@@ -7182,8 +5351,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-boot",
-        "annotations"
+        "spring-boot"
       ]
     },
     {
@@ -7212,8 +5380,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-boot",
-        "rest"
+        "spring-boot"
       ]
     },
     {
@@ -7227,8 +5394,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-boot",
-        "transaction"
+        "spring-boot"
       ]
     },
     {
@@ -7242,8 +5408,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-boot",
-        "actuator"
+        "spring-boot"
       ]
     },
     {
@@ -7257,8 +5422,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-boot",
-        "jpa"
+        "spring-boot"
       ]
     },
     {
@@ -7272,11 +5436,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
         "spring-core",
-        "system-design",
-        "patterns",
-        "testing",
         "spring-data"
       ]
     },
@@ -7291,12 +5451,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "patterns",
-        "testing",
-        "stream-api",
-        "collections"
+        "spring-core"
       ]
     },
     {
@@ -7310,14 +5465,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "spring-core"
       ]
     },
     {
@@ -7331,9 +5479,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "multithreading",
-        "patterns"
+        "spring-core"
       ]
     },
     {
@@ -7347,10 +5493,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "collections",
-        "patterns"
+        "spring-core"
       ]
     },
     {
@@ -7364,14 +5507,8 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
         "spring-core",
-        "system-design",
-        "databases",
-        "stream-api",
         "spring-mvc",
-        "collections",
-        "exceptions",
         "spring-data"
       ]
     },
@@ -7386,8 +5523,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "exceptions"
+        "spring-core"
       ]
     },
     {
@@ -7401,7 +5537,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
         "spring-core",
         "spring-data"
       ]
@@ -7417,9 +5552,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "patterns"
+        "spring-core"
       ]
     },
     {
@@ -7433,10 +5566,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
         "spring-core",
-        "multithreading",
-        "collections",
         "spring-data",
         "spring-boot"
       ]
@@ -7452,11 +5582,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "databases",
-        "memory",
-        "multithreading"
+        "spring-core"
       ]
     },
     {
@@ -7470,11 +5596,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "databases",
-        "exceptions",
-        "multithreading",
-        "collections"
+        "spring-core"
       ]
     },
     {
@@ -7488,13 +5610,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "databases",
-        "jvm",
-        "collections"
+        "spring-core"
       ]
     },
     {
@@ -7508,13 +5624,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
         "spring-core",
-        "system-design",
-        "patterns",
-        "jvm",
-        "collections",
-        "exceptions",
         "spring-boot"
       ]
     },
@@ -7529,13 +5639,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "databases",
-        "memory",
-        "collections"
+        "spring-core"
       ]
     },
     {
@@ -7550,12 +5654,7 @@
       "related": [],
       "tags": [
         "spring-core",
-        "system-design",
-        "patterns",
-        "stream-api",
-        "spring-mvc",
-        "collections",
-        "exceptions"
+        "spring-mvc"
       ]
     },
     {
@@ -7569,12 +5668,8 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
         "spring-core",
-        "stream-api",
-        "spring-mvc",
-        "multithreading",
-        "collections"
+        "spring-mvc"
       ]
     },
     {
@@ -7588,7 +5683,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
         "spring-core",
         "spring-mvc"
       ]
@@ -7604,11 +5698,8 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
         "spring-core",
-        "spring-mvc",
-        "multithreading",
-        "exceptions"
+        "spring-mvc"
       ]
     },
     {
@@ -7623,9 +5714,7 @@
       "related": [],
       "tags": [
         "spring-core",
-        "stream-api",
-        "spring-mvc",
-        "collections"
+        "spring-mvc"
       ]
     },
     {
@@ -7639,11 +5728,8 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
         "spring-core",
-        "stream-api",
-        "spring-mvc",
-        "collections"
+        "spring-mvc"
       ]
     },
     {
@@ -7657,12 +5743,8 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
         "spring-core",
-        "patterns",
-        "stream-api",
         "spring-mvc",
-        "collections",
         "spring-data"
       ]
     },
@@ -7677,11 +5759,8 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
         "spring-core",
-        "patterns",
         "spring-mvc",
-        "multithreading",
         "spring-boot"
       ]
     },
@@ -7696,12 +5775,8 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
         "spring-core",
-        "patterns",
-        "stream-api",
-        "spring-mvc",
-        "collections"
+        "spring-mvc"
       ]
     },
     {
@@ -7715,12 +5790,8 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
         "spring-core",
-        "stream-api",
-        "spring-mvc",
-        "multithreading",
-        "collections"
+        "spring-mvc"
       ]
     },
     {
@@ -7734,11 +5805,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
         "spring-core",
-        "databases",
-        "stream-api",
-        "collections",
         "spring-data"
       ]
     },
@@ -7753,12 +5820,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
         "spring-core",
-        "system-design",
-        "stream-api",
-        "multithreading",
-        "collections",
         "spring-data"
       ]
     },
@@ -7773,10 +5835,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
         "spring-core",
-        "databases",
-        "collections",
         "spring-data"
       ]
     },
@@ -7791,10 +5850,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
         "spring-core",
-        "databases",
-        "collections",
         "spring-data"
       ]
     },
@@ -7809,13 +5865,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
         "spring-core",
-        "patterns",
-        "databases",
-        "stream-api",
-        "memory",
-        "collections",
         "spring-data"
       ]
     },
@@ -7830,12 +5880,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "patterns",
-        "databases",
-        "multithreading",
-        "exceptions"
+        "spring-core"
       ]
     },
     {
@@ -7849,10 +5894,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "memory",
-        "exceptions",
-        "databases"
+        "spring-core"
       ]
     },
     {
@@ -7866,9 +5908,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "databases",
-        "spring-core",
-        "multithreading"
+        "spring-core"
       ]
     },
     {
@@ -7882,10 +5922,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
         "spring-core",
-        "databases",
-        "exceptions",
         "spring-data"
       ]
     },
@@ -7901,12 +5938,7 @@
       "related": [],
       "tags": [
         "spring-core",
-        "databases",
-        "memory",
-        "multithreading",
-        "collections",
-        "spring-data",
-        "exceptions"
+        "spring-data"
       ]
     },
     {
@@ -7920,7 +5952,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
         "spring-core",
         "spring-data"
       ]
@@ -7936,11 +5967,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "collections"
+        "spring-core"
       ]
     },
     {
@@ -7954,13 +5981,8 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
         "spring-core",
-        "patterns",
-        "stream-api",
         "spring-mvc",
-        "multithreading",
-        "collections",
         "spring-data"
       ]
     },
@@ -7976,11 +5998,6 @@
       "related": [],
       "tags": [
         "spring-core",
-        "patterns",
-        "stream-api",
-        "multithreading",
-        "collections",
-        "exceptions",
         "spring-boot"
       ]
     },
@@ -7995,13 +6012,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "patterns",
-        "stream-api",
-        "memory",
-        "multithreading",
-        "exceptions"
+        "spring-core"
       ]
     },
     {
@@ -8015,12 +6026,8 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
         "spring-core",
-        "system-design",
-        "memory",
         "spring-mvc",
-        "collections",
         "spring-boot"
       ]
     },
@@ -8035,12 +6042,8 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
         "spring-core",
-        "system-design",
-        "memory",
         "spring-mvc",
-        "collections",
         "spring-boot"
       ]
     },
@@ -8055,10 +6058,8 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
         "spring-core",
         "spring-mvc",
-        "collections",
         "spring-boot"
       ]
     },
@@ -8073,12 +6074,8 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
         "spring-core",
-        "testing",
         "spring-mvc",
-        "collections",
-        "exceptions",
         "spring-data",
         "spring-boot"
       ]
@@ -8095,12 +6092,7 @@
       "related": [],
       "tags": [
         "spring-core",
-        "system-design",
-        "stream-api",
-        "jvm",
-        "memory",
         "spring-mvc",
-        "collections",
         "spring-boot"
       ]
     },
@@ -8115,13 +6107,8 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
         "spring-core",
-        "testing",
-        "stream-api",
         "spring-mvc",
-        "collections",
-        "exceptions",
         "spring-data",
         "spring-boot"
       ]
@@ -8137,13 +6124,8 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
         "spring-core",
-        "patterns",
-        "testing",
-        "memory",
         "spring-mvc",
-        "collections",
         "spring-boot"
       ]
     },
@@ -8158,13 +6140,8 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
         "spring-core",
-        "databases",
-        "testing",
-        "memory",
         "spring-mvc",
-        "exceptions",
         "spring-data",
         "spring-boot"
       ]
@@ -8180,13 +6157,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
         "spring-core",
-        "system-design",
-        "patterns",
-        "multithreading",
-        "collections",
-        "exceptions",
         "spring-boot"
       ]
     },
@@ -8201,11 +6172,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
         "spring-core",
-        "testing",
-        "collections",
-        "exceptions",
         "spring-boot"
       ]
     },
@@ -8220,9 +6187,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "stream-api",
-        "intermediate",
-        "terminal"
+        "stream-api"
       ]
     },
     {
@@ -8236,8 +6201,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "stream-api",
-        "parallel"
+        "stream-api"
       ]
     },
     {
@@ -8251,13 +6215,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "stream-api",
-        "multithreading",
-        "collections"
+        "stream-api"
       ]
     },
     {
@@ -8271,10 +6229,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "oop",
-        "stream-api",
-        "collections"
+        "stream-api"
       ]
     },
     {
@@ -8288,10 +6243,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "oop",
-        "stream-api",
-        "multithreading"
+        "stream-api"
       ]
     },
     {
@@ -8305,12 +6257,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "stream-api"
       ]
     },
     {
@@ -8324,11 +6271,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "memory",
-        "collections"
+        "stream-api"
       ]
     },
     {
@@ -8342,9 +6285,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "stream-api",
-        "collections"
+        "stream-api"
       ]
     },
     {
@@ -8358,12 +6299,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "testing",
-        "stream-api",
-        "multithreading",
-        "collections"
+        "stream-api"
       ]
     },
     {
@@ -8377,13 +6313,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "databases",
-        "stream-api",
-        "memory",
-        "multithreading",
-        "collections"
+        "stream-api"
       ]
     },
     {
@@ -8397,16 +6327,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "patterns",
-        "databases",
-        "stream-api",
-        "memory",
-        "multithreading",
-        "collections",
-        "spring-data",
-        "exceptions"
+        "stream-api"
       ]
     },
     {
@@ -8420,11 +6341,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "stream-api",
-        "memory",
-        "multithreading",
-        "collections"
+        "stream-api"
       ]
     },
     {
@@ -8438,10 +6355,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "stream-api",
-        "collections",
-        "spring-data"
+        "stream-api"
       ]
     },
     {
@@ -8455,12 +6369,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "memory",
-        "collections"
+        "stream-api"
       ]
     },
     {
@@ -8474,12 +6383,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "memory",
-        "multithreading",
-        "collections"
+        "stream-api"
       ]
     },
     {
@@ -8493,10 +6397,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "oop",
-        "stream-api",
-        "collections"
+        "stream-api"
       ]
     },
     {
@@ -8510,7 +6411,6 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
         "stream-api"
       ]
     },
@@ -8525,12 +6425,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "patterns",
-        "stream-api",
-        "jvm",
-        "collections"
+        "stream-api"
       ]
     },
     {
@@ -8544,12 +6439,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "collections",
-        "exceptions",
-        "spring-data"
+        "stream-api"
       ]
     },
     {
@@ -8563,12 +6453,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "memory",
-        "collections",
-        "exceptions"
+        "stream-api"
       ]
     },
     {
@@ -8582,10 +6467,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "oop",
-        "stream-api",
-        "patterns"
+        "stream-api"
       ]
     },
     {
@@ -8599,11 +6481,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "stream-api",
-        "memory",
-        "exceptions",
-        "collections"
+        "stream-api"
       ]
     },
     {
@@ -8617,12 +6495,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "testing",
-        "stream-api",
-        "collections",
-        "exceptions"
+        "stream-api"
       ]
     },
     {
@@ -8636,10 +6509,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "stream-api",
-        "collections",
-        "exceptions"
+        "stream-api"
       ]
     },
     {
@@ -8653,13 +6523,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "patterns",
-        "stream-api",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "stream-api"
       ]
     },
     {
@@ -8673,12 +6537,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "memory",
-        "collections",
-        "exceptions"
+        "stream-api"
       ]
     },
     {
@@ -8692,11 +6551,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "memory",
-        "collections"
+        "stream-api"
       ]
     },
     {
@@ -8710,10 +6565,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "oop",
-        "stream-api",
-        "collections"
+        "stream-api"
       ]
     },
     {
@@ -8727,11 +6579,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "patterns",
-        "stream-api",
-        "exceptions",
-        "collections"
+        "stream-api"
       ]
     },
     {
@@ -8745,9 +6593,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "stream-api",
-        "system-design"
+        "stream-api"
       ]
     },
     {
@@ -8761,12 +6607,7 @@
       "frequency": "Low",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "memory",
-        "multithreading",
-        "collections"
+        "stream-api"
       ]
     },
     {
@@ -8780,14 +6621,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "stream-api",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "stream-api"
       ]
     },
     {
@@ -8801,13 +6635,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "databases",
-        "stream-api",
-        "collections"
+        "stream-api"
       ]
     },
     {
@@ -8821,10 +6649,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "oop",
-        "stream-api",
-        "collections"
+        "stream-api"
       ]
     },
     {
@@ -8838,12 +6663,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "patterns",
-        "stream-api",
-        "memory",
-        "collections"
+        "stream-api"
       ]
     },
     {
@@ -8857,12 +6677,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "patterns",
-        "stream-api",
-        "collections",
-        "exceptions"
+        "stream-api"
       ]
     },
     {
@@ -8876,11 +6691,7 @@
       "frequency": "Low",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "multithreading",
-        "collections"
+        "stream-api"
       ]
     },
     {
@@ -8894,11 +6705,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "collections"
+        "stream-api"
       ]
     },
     {
@@ -8912,11 +6719,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "patterns",
-        "stream-api",
-        "exceptions"
+        "stream-api"
       ]
     },
     {
@@ -8930,11 +6733,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "collections"
+        "stream-api"
       ]
     },
     {
@@ -8948,12 +6747,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "patterns",
-        "stream-api",
-        "memory",
-        "collections"
+        "stream-api"
       ]
     },
     {
@@ -8967,10 +6761,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "oop",
-        "stream-api",
-        "memory"
+        "stream-api"
       ]
     },
     {
@@ -8984,11 +6775,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "memory",
-        "collections"
+        "stream-api"
       ]
     },
     {
@@ -9002,11 +6789,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "databases",
-        "stream-api",
-        "collections"
+        "stream-api"
       ]
     },
     {
@@ -9020,12 +6803,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "stream-api",
-        "memory",
-        "collections",
-        "spring-data"
+        "stream-api"
       ]
     },
     {
@@ -9039,10 +6817,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "oop",
-        "stream-api",
-        "collections"
+        "stream-api"
       ]
     },
     {
@@ -9056,13 +6831,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "memory",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "stream-api"
       ]
     },
     {
@@ -9076,11 +6845,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "databases",
-        "stream-api",
-        "exceptions"
+        "stream-api"
       ]
     },
     {
@@ -9094,12 +6859,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "patterns",
-        "stream-api",
-        "collections",
-        "exceptions"
+        "stream-api"
       ]
     },
     {
@@ -9113,10 +6873,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "oop",
-        "stream-api",
-        "collections"
+        "stream-api"
       ]
     },
     {
@@ -9130,13 +6887,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "testing",
-        "stream-api",
-        "memory",
-        "collections",
-        "exceptions"
+        "stream-api"
       ]
     },
     {
@@ -9150,13 +6901,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "databases",
-        "stream-api",
-        "jvm",
-        "multithreading",
-        "collections"
+        "stream-api"
       ]
     },
     {
@@ -9170,8 +6915,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "system-design",
-        "cap"
+        "system-design"
       ]
     },
     {
@@ -9200,8 +6944,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "system-design",
-        "api-gateway"
+        "system-design"
       ]
     },
     {
@@ -9230,8 +6973,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "system-design",
-        "load-balancer"
+        "system-design"
       ]
     },
     {
@@ -9245,8 +6987,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "system-design",
-        "message-broker"
+        "system-design"
       ]
     },
     {
@@ -9260,8 +7001,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "system-design",
-        "saga"
+        "system-design"
       ]
     },
     {
@@ -9275,8 +7015,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "system-design",
-        "sql-vs-nosql"
+        "system-design"
       ]
     },
     {
@@ -9290,12 +7029,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "databases",
-        "memory",
-        "multithreading",
-        "exceptions"
+        "system-design"
       ]
     },
     {
@@ -9309,9 +7043,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "databases",
-        "spring-core",
-        "spring-mvc",
         "system-design"
       ]
     },
@@ -9326,13 +7057,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "patterns",
-        "testing",
-        "databases",
-        "stream-api",
-        "collections"
+        "system-design"
       ]
     },
     {
@@ -9346,10 +7071,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "collections"
+        "system-design"
       ]
     },
     {
@@ -9363,11 +7085,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "patterns",
-        "memory"
+        "system-design"
       ]
     },
     {
@@ -9381,8 +7099,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "memory",
         "system-design"
       ]
     },
@@ -9397,11 +7113,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "databases",
-        "stream-api",
-        "collections"
+        "system-design"
       ]
     },
     {
@@ -9415,11 +7127,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "memory",
-        "exceptions"
+        "system-design"
       ]
     },
     {
@@ -9433,11 +7141,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "patterns",
-        "memory",
-        "multithreading"
+        "system-design"
       ]
     },
     {
@@ -9451,11 +7155,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "multithreading",
-        "collections"
+        "system-design"
       ]
     },
     {
@@ -9469,10 +7169,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "stream-api",
-        "system-design",
-        "patterns"
+        "system-design"
       ]
     },
     {
@@ -9486,12 +7183,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "databases",
-        "memory",
-        "multithreading",
-        "exceptions"
+        "system-design"
       ]
     },
     {
@@ -9505,10 +7197,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "collections"
+        "system-design"
       ]
     },
     {
@@ -9522,13 +7211,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "patterns",
-        "testing",
-        "multithreading",
-        "collections",
-        "exceptions"
+        "system-design"
       ]
     },
     {
@@ -9542,11 +7225,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "patterns",
-        "stream-api",
-        "collections"
+        "system-design"
       ]
     },
     {
@@ -9560,13 +7239,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "patterns",
-        "databases",
-        "memory",
-        "multithreading",
-        "collections"
+        "system-design"
       ]
     },
     {
@@ -9580,12 +7253,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "patterns",
-        "databases",
-        "multithreading",
-        "spring-data"
+        "system-design"
       ]
     },
     {
@@ -9599,12 +7267,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "patterns",
-        "databases",
-        "multithreading",
-        "collections"
+        "system-design"
       ]
     },
     {
@@ -9618,12 +7281,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "databases",
-        "memory",
-        "multithreading"
+        "system-design"
       ]
     },
     {
@@ -9637,11 +7295,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "patterns",
-        "stream-api",
-        "multithreading"
+        "system-design"
       ]
     },
     {
@@ -9655,10 +7309,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "memory",
-        "system-design",
-        "databases"
+        "system-design"
       ]
     },
     {
@@ -9672,12 +7323,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "memory",
-        "multithreading"
+        "system-design"
       ]
     },
     {
@@ -9691,8 +7337,6 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "databases",
-        "spring-core",
         "system-design"
       ]
     },
@@ -9707,12 +7351,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "testing",
-        "stream-api",
-        "memory",
-        "collections"
+        "system-design"
       ]
     },
     {
@@ -9726,9 +7365,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "system-design",
-        "spring-core",
-        "collections"
+        "system-design"
       ]
     },
     {
@@ -9742,11 +7379,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "patterns",
-        "stream-api",
-        "collections"
+        "system-design"
       ]
     },
     {
@@ -9760,11 +7393,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "multithreading",
-        "collections"
+        "system-design"
       ]
     },
     {
@@ -9778,9 +7407,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "system-design",
-        "spring-core",
-        "collections"
+        "system-design"
       ]
     },
     {
@@ -9794,12 +7421,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "databases",
-        "memory",
-        "exceptions"
+        "system-design"
       ]
     },
     {
@@ -9813,9 +7435,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "system-design",
-        "spring-core",
-        "multithreading"
+        "system-design"
       ]
     },
     {
@@ -9829,12 +7449,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "memory",
-        "multithreading",
-        "collections"
+        "system-design"
       ]
     },
     {
@@ -9848,11 +7463,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "multithreading",
-        "collections"
+        "system-design"
       ]
     },
     {
@@ -9866,12 +7477,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "databases",
-        "spring-mvc",
-        "collections",
-        "exceptions"
+        "system-design"
       ]
     },
     {
@@ -9885,11 +7491,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "databases",
-        "stream-api",
-        "collections"
+        "system-design"
       ]
     },
     {
@@ -9903,10 +7505,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "multithreading",
-        "collections"
+        "system-design"
       ]
     },
     {
@@ -9920,11 +7519,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "patterns",
-        "multithreading",
-        "collections"
+        "system-design"
       ]
     },
     {
@@ -9938,10 +7533,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "databases",
-        "system-design",
-        "spring-core",
-        "collections"
+        "system-design"
       ]
     },
     {
@@ -9955,11 +7547,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "patterns",
-        "memory",
-        "multithreading"
+        "system-design"
       ]
     },
     {
@@ -9973,10 +7561,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "memory",
-        "system-design",
-        "databases"
+        "system-design"
       ]
     },
     {
@@ -9990,10 +7575,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "system-design",
-        "oop",
-        "spring-core",
-        "multithreading"
+        "system-design"
       ]
     },
     {
@@ -10007,10 +7589,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "memory",
-        "system-design",
-        "patterns"
+        "system-design"
       ]
     },
     {
@@ -10024,9 +7603,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "exceptions"
+        "system-design"
       ]
     },
     {
@@ -10040,8 +7617,6 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "memory",
         "system-design"
       ]
     },
@@ -10056,12 +7631,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "databases",
-        "stream-api",
-        "multithreading",
-        "exceptions"
+        "system-design"
       ]
     },
     {
@@ -10075,13 +7645,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "patterns",
-        "testing",
-        "memory",
-        "collections",
-        "exceptions"
+        "system-design"
       ]
     },
     {
@@ -10095,11 +7659,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "stream-api",
-        "memory",
-        "exceptions"
+        "system-design"
       ]
     },
     {
@@ -10113,11 +7673,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "testing",
-        "stream-api",
-        "collections"
+        "system-design"
       ]
     },
     {
@@ -10131,12 +7687,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "testing",
-        "stream-api",
-        "memory",
-        "collections"
+        "system-design"
       ]
     },
     {
@@ -10150,10 +7701,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "databases",
-        "system-design",
-        "spring-core",
-        "multithreading"
+        "system-design"
       ]
     },
     {
@@ -10167,13 +7715,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "patterns",
-        "databases",
-        "stream-api",
-        "multithreading",
-        "collections"
+        "system-design"
       ]
     },
     {
@@ -10187,14 +7729,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "testing",
-        "stream-api",
-        "jvm",
-        "multithreading",
-        "exceptions"
+        "testing"
       ]
     },
     {
@@ -10208,11 +7743,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "testing",
-        "collections",
-        "spring-data"
+        "testing"
       ]
     },
     {
@@ -10226,13 +7757,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "testing",
-        "databases",
-        "memory",
-        "collections",
-        "exceptions"
+        "testing"
       ]
     },
     {
@@ -10246,11 +7771,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "system-design",
-        "patterns",
-        "testing",
-        "exceptions"
+        "testing"
       ]
     },
     {
@@ -10264,12 +7785,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "system-design",
-        "databases",
-        "testing",
-        "multithreading"
+        "testing"
       ]
     },
     {
@@ -10283,9 +7799,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "testing",
-        "spring-core",
-        "multithreading"
+        "testing"
       ]
     },
     {
@@ -10299,9 +7813,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "testing",
-        "memory"
+        "testing"
       ]
     },
     {
@@ -10315,8 +7827,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "testing",
-        "spring-core"
+        "testing"
       ]
     },
     {
@@ -10330,11 +7841,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "databases",
-        "testing",
-        "collections"
+        "testing"
       ]
     },
     {
@@ -10348,9 +7855,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "testing",
-        "memory"
+        "testing"
       ]
     },
     {
@@ -10364,9 +7869,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "testing",
-        "stream-api"
+        "testing"
       ]
     },
     {
@@ -10380,10 +7883,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "testing",
-        "oop",
-        "spring-core",
-        "system-design"
+        "testing"
       ]
     },
     {
@@ -10397,10 +7897,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "testing",
-        "memory",
-        "system-design"
+        "testing"
       ]
     },
     {
@@ -10414,9 +7911,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "testing",
-        "spring-core",
-        "patterns"
+        "testing"
       ]
     },
     {
@@ -10430,9 +7925,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "testing",
-        "spring-core",
-        "system-design"
+        "testing"
       ]
     },
     {
@@ -10446,10 +7939,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "testing",
-        "stream-api",
-        "collections"
+        "testing"
       ]
     },
     {
@@ -10463,10 +7953,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "testing",
-        "oop",
-        "spring-core",
-        "exceptions"
+        "testing"
       ]
     },
     {
@@ -10480,10 +7967,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "spring-core",
-        "testing",
-        "stream-api",
-        "exceptions"
+        "testing"
       ]
     },
     {
@@ -10497,8 +7981,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "testing",
-        "spring-core"
+        "testing"
       ]
     },
     {
@@ -10512,9 +7995,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "testing",
-        "spring-core",
-        "collections"
+        "testing"
       ]
     },
     {
@@ -10528,9 +8009,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "testing",
-        "spring-core",
-        "multithreading"
+        "testing"
       ]
     },
     {
@@ -10544,10 +8023,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "testing",
-        "memory",
-        "collections"
+        "testing"
       ]
     },
     {
@@ -10561,8 +8037,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "testing",
-        "spring-core"
+        "testing"
       ]
     },
     {
@@ -10576,9 +8051,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "testing",
-        "oop",
-        "spring-core"
+        "testing"
       ]
     },
     {
@@ -10592,8 +8065,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "testing",
-        "spring-core"
+        "testing"
       ]
     },
     {
@@ -10607,9 +8079,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "testing",
-        "spring-core",
-        "spring-mvc"
+        "testing"
       ]
     },
     {
@@ -10623,11 +8093,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "oop",
-        "spring-core",
-        "testing",
-        "stream-api",
-        "exceptions"
+        "testing"
       ]
     },
     {
@@ -10641,8 +8107,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "testing",
-        "spring-core"
+        "testing"
       ]
     },
     {
@@ -10656,10 +8121,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "testing",
-        "system-design",
-        "spring-core",
-        "collections"
+        "testing"
       ]
     },
     {
@@ -10673,9 +8135,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "testing",
-        "spring-core",
-        "exceptions"
+        "testing"
       ]
     },
     {
@@ -10689,10 +8149,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "testing",
-        "memory",
-        "spring-boot"
+        "testing"
       ]
     },
     {
@@ -10706,10 +8163,7 @@
       "frequency": "Low",
       "related": [],
       "tags": [
-        "testing",
-        "oop",
-        "spring-core",
-        "multithreading"
+        "testing"
       ]
     },
     {
@@ -10723,9 +8177,7 @@
       "frequency": "Low",
       "related": [],
       "tags": [
-        "testing",
-        "spring-core",
-        "system-design"
+        "testing"
       ]
     },
     {
@@ -10739,9 +8191,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "testing",
-        "spring-core",
-        "multithreading"
+        "testing"
       ]
     },
     {
@@ -10755,10 +8205,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "testing",
-        "system-design",
-        "spring-core",
-        "collections"
+        "testing"
       ]
     },
     {
@@ -10772,9 +8219,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "testing",
-        "stream-api"
+        "testing"
       ]
     },
     {
@@ -10788,10 +8233,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "testing",
-        "stream-api",
-        "multithreading"
+        "testing"
       ]
     },
     {
@@ -10805,8 +8247,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "testing",
-        "spring-core"
+        "testing"
       ]
     },
     {
@@ -10820,11 +8261,7 @@
       "frequency": "Low",
       "related": [],
       "tags": [
-        "spring-core",
-        "patterns",
-        "testing",
-        "stream-api",
-        "collections"
+        "testing"
       ]
     },
     {
@@ -10838,10 +8275,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-boot",
-        "testing",
-        "spring-core",
-        "databases"
+        "testing"
       ]
     },
     {
@@ -10855,9 +8289,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "testing",
-        "spring-core",
-        "collections"
+        "testing"
       ]
     },
     {
@@ -10871,10 +8303,7 @@
       "frequency": "Low",
       "related": [],
       "tags": [
-        "testing",
-        "oop",
-        "spring-core",
-        "collections"
+        "testing"
       ]
     },
     {
@@ -10888,9 +8317,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "testing",
-        "spring-core",
-        "collections"
+        "testing"
       ]
     },
     {
@@ -10904,9 +8331,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "testing",
-        "spring-core",
-        "system-design"
+        "testing"
       ]
     },
     {
@@ -10920,9 +8345,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "spring-core",
-        "testing",
-        "memory"
+        "testing"
       ]
     },
     {
@@ -10936,9 +8359,7 @@
       "frequency": "Low",
       "related": [],
       "tags": [
-        "testing",
-        "oop",
-        "spring-core"
+        "testing"
       ]
     },
     {
@@ -10952,8 +8373,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "testing",
-        "spring-core"
+        "testing"
       ]
     },
     {
@@ -10967,10 +8387,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "testing",
-        "spring-core",
-        "spring-mvc",
-        "system-design"
+        "testing"
       ]
     },
     {
@@ -10984,8 +8401,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "testing",
-        "spring-core"
+        "testing"
       ]
     },
     {
@@ -10999,10 +8415,7 @@
       "frequency": "Low",
       "related": [],
       "tags": [
-        "testing",
-        "oop",
-        "spring-core",
-        "exceptions"
+        "testing"
       ]
     }
   ]

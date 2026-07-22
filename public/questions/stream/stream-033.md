@@ -7,7 +7,7 @@ time: 5
 frequency: 80%
 source: Custom
 prerequisites: ["Stream API"]
-tags: [oop, spring-core, patterns, stream-api, memory, collections]
+tags: ['stream-api']
 ---
 
 # Stream to Array

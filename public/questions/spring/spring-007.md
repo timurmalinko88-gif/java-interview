@@ -7,7 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["DI"]
-tags: [spring-core, exceptions]
+tags: ['spring-core']
 ---
 
 # How does @Autowired work, and how do you resolve ambiguity?

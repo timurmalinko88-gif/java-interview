@@ -7,7 +7,7 @@ time: 3
 frequency: 55%
 source: Custom
 prerequisites: ["Concurrency", "Thread Priority"]
-tags: [spring-core, stream-api, jvm, multithreading, collections]
+tags: ['multithreading']
 ---
 
 # Thread Priority

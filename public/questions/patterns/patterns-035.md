@@ -7,7 +7,7 @@ time: 5
 frequency: 30%
 source: Custom
 prerequisites: ["OOP", "Anti-patterns"]
-tags: [oop, spring-core, system-design, patterns, databases, stream-api, memory, spring-mvc]
+tags: ['patterns']
 ---
 
 # Anti-pattern: Poltergeist

@@ -3,7 +3,7 @@ id: mcq-jvm-002
 topic: JVM & Memory Management
 difficulty: Middle
 format: MCQ
-tags: [jvm, gc, g1]
+tags: ['jvm', 'gc']
 ---
 Какой сборщик мусора используется по умолчанию начиная с Java 9?
 

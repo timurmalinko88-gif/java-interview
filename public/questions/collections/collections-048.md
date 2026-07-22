@@ -7,7 +7,7 @@ time: 5
 frequency: 70%
 source: Custom
 prerequisites: ["Trees"]
-tags: [oop, spring-core, stream-api, memory, collections]
+tags: ['collections']
 ---
 
 # PriorityQueue Custom Comparator

@@ -7,7 +7,7 @@ time: 5
 frequency: 95%
 source: Custom
 prerequisites: ["SQL", "Relational Databases"]
-tags: [databases, spring-core, multithreading]
+tags: ['databases']
 ---
 
 # What are the ACID properties in a database?

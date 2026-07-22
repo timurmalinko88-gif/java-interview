@@ -7,7 +7,7 @@ time: 10
 frequency: 80%
 source: Custom
 prerequisites: ["Interfaces"]
-tags: [oop, spring-core, stream-api, collections, spring-data]
+tags: ['collections']
 ---
 
 # Comparable vs Comparator

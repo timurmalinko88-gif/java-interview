@@ -7,7 +7,7 @@ time: 15
 frequency: 70%
 source: Custom
 prerequisites: ["Core Java", "Enums", "Design Patterns"]
-tags: [oop, spring-core, system-design, patterns, jvm, memory, multithreading, exceptions]
+tags: ['exceptions']
 ---
 
 # Designing with Enums

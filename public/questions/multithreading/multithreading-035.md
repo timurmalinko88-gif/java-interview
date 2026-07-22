@@ -7,7 +7,7 @@ time: 5
 frequency: 80%
 source: Custom
 prerequisites: ["Concurrency", "Thread.join"]
-tags: [databases, spring-core, multithreading, exceptions]
+tags: ['multithreading']
 ---
 
 # `Thread.join()`

@@ -7,7 +7,7 @@ time: 5
 frequency: 30%
 source: Custom
 prerequisites: ["JUnit 5"]
-tags: [spring-core, patterns, testing, stream-api, collections]
+tags: ['testing']
 ---
 
 # JUnit 5 @TestFactory

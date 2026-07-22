@@ -7,7 +7,7 @@ time: 10
 frequency: 60%
 source: Custom
 prerequisites: ["Hashing", "Linked Lists"]
-tags: [spring-core, system-design, stream-api, collections]
+tags: ['collections']
 ---
 
 # LinkedHashMap Insertion Order

@@ -7,7 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["Arrays"]
-tags: [spring-core, databases, stream-api, memory, collections, exceptions]
+tags: ['collections']
 ---
 
 # Arrays.asList vs List.of

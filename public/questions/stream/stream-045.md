@@ -7,7 +7,7 @@ time: 5
 frequency: 90%
 source: Custom
 prerequisites: ["Lambdas"]
-tags: [spring-core, system-design, stream-api, memory, multithreading, collections, exceptions]
+tags: ['stream-api']
 ---
 
 # Effectively Final Variables

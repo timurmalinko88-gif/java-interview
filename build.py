@@ -114,6 +114,8 @@ def build_index():
         folder_name = os.path.basename(os.path.dirname(filepath))
         if folder_name.startswith('general-'):
             topic = folder_name.replace('general-', '').replace('-', ' ').title()
+        elif question_id.startswith('general-'):
+            topic = 'General Java'
         elif question_id.startswith('jvm-'):
             topic = 'JVM & Memory Management'
         elif question_id.startswith('oop-') or question_id in {'q1'}:

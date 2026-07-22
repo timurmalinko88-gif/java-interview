@@ -7,7 +7,7 @@ time: 5
 frequency: 90%
 source: Custom
 prerequisites: ["Data Structures"]
-tags: [oop, spring-core, databases, stream-api, collections]
+tags: ['collections']
 ---
 
 # Set vs List

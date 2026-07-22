@@ -3,7 +3,7 @@ id: mcq-sd-007
 topic: System Design
 difficulty: Senior
 format: MCQ
-tags: [system-design, saga]
+tags: ['system-design']
 ---
 Какой паттерн решает проблему распределенных транзакций между несколькими микросервисами?
 

@@ -7,7 +7,7 @@ time: 10
 frequency: 70%
 source: Custom
 prerequisites: ["Concurrency", "Queues"]
-tags: [oop, spring-core, system-design, patterns, stream-api, multithreading, collections]
+tags: ['collections']
 ---
 
 # BlockingQueue

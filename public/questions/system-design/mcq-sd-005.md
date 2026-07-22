@@ -3,7 +3,7 @@ id: mcq-sd-005
 topic: System Design
 difficulty: Middle
 format: MCQ
-tags: [system-design, load-balancer]
+tags: ['system-design']
 ---
 Какой алгоритм балансировки нагрузки отправляет новый запрос на сервер с наименьшим количеством активных соединений?
 

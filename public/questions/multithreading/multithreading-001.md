@@ -3,12 +3,12 @@ id: multithreading-001
 topic: Multithreading
 difficulty: Junior
 format: Open Answer
-estimated_time_minutes: 5
-frequency: High
+time: 5
+frequency: 90%
 related_questions: [Difference between volatile and synchronized, What is happens-before]
 source: Custom
 prerequisites: [Basic understanding of threads, volatile keyword]
-tags: [spring-core, memory, multithreading]
+tags: ['multithreading']
 ---
 
 You have a user profile view counter implemented as follows:

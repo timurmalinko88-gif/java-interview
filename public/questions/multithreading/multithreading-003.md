@@ -3,12 +3,12 @@ id: multithreading-003
 topic: Multithreading
 difficulty: Middle
 format: Open Answer
-estimated_time_minutes: 10
-frequency: Medium
+time: 10
+frequency: 60%
 related_questions: [Difference between CPU-bound and IO-bound, Custom thread pool configuration]
 source: Custom
 prerequisites: [CompletableFuture, ForkJoinPool, Stream API]
-tags: [spring-core, databases, stream-api, multithreading, collections, exceptions]
+tags: ['multithreading']
 ---
 
 You need to make 20 independent HTTP requests to a third-party weather API, collect their results into a list, and return it to the user.

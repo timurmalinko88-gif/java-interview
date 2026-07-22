@@ -3,7 +3,7 @@ id: mcq-spring-005
 topic: Spring
 difficulty: Middle
 format: MCQ
-tags: [spring-boot, rest]
+tags: ['spring-boot']
 ---
 В чем отличие аннотации @RestController от @Controller в Spring MVC?
 

@@ -7,7 +7,7 @@ time: 20
 frequency: 60%
 source: Custom
 prerequisites: ["Distributed Systems", "Consensus Algorithms"]
-tags: [oop, spring-core, system-design, databases, memory, multithreading]
+tags: ['system-design']
 ---
 
 # Leader Election in Distributed Systems

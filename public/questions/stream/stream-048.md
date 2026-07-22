@@ -7,7 +7,7 @@ time: 5
 frequency: 50%
 source: Custom
 prerequisites: ["Stream API"]
-tags: [spring-core, oop, stream-api, collections]
+tags: ['stream-api']
 ---
 
 # summarizingInt vs mapToInt.summaryStatistics

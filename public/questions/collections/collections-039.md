@@ -7,7 +7,7 @@ time: 10
 frequency: 20%
 source: Custom
 prerequisites: ["Iterators", "Java 8 Features"]
-tags: [spring-core, system-design, stream-api, multithreading, collections]
+tags: ['collections']
 ---
 
 # Spliterator

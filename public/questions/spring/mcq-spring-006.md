@@ -3,7 +3,7 @@ id: mcq-spring-006
 topic: Spring
 difficulty: Senior
 format: MCQ
-tags: [spring-boot, transaction]
+tags: ['spring-boot']
 ---
 Что произойдет, если метод, аннотированный @Transactional, будет вызван из другого метода того же класса (внутри этого же бина)?
 

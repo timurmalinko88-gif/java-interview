@@ -7,7 +7,7 @@ time: 5
 frequency: 80%
 source: Custom
 prerequisites: ["Concurrency", "wait", "notify"]
-tags: [oop, spring-core, memory, multithreading, exceptions]
+tags: ['multithreading']
 ---
 
 # `IllegalMonitorStateException`

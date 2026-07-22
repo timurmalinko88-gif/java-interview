@@ -7,7 +7,7 @@ time: 25
 frequency: 70%
 source: Custom
 prerequisites: ["Hashing", "Distributed Systems"]
-tags: [spring-core, system-design, stream-api, multithreading, collections]
+tags: ['system-design']
 ---
 
 # Consistent Hashing

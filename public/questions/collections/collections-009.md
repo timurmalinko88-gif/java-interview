@@ -7,7 +7,7 @@ time: 10
 frequency: 85%
 source: Custom
 prerequisites: ["Concurrency"]
-tags: [spring-core, stream-api, multithreading, collections, exceptions]
+tags: ['collections']
 ---
 
 # Fail-Fast vs Fail-Safe Iterators

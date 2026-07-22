@@ -7,7 +7,7 @@ time: 5
 frequency: 70%
 source: Custom
 prerequisites: ["Web Protocols"]
-tags: [testing, spring-core, system-design]
+tags: ['testing']
 ---
 
 # API Gateway

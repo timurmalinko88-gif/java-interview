@@ -7,7 +7,7 @@ time: 20
 frequency: 70%
 source: Custom
 prerequisites: ["API Design", "Rate Limiting"]
-tags: [spring-core, memory, system-design]
+tags: ['system-design']
 ---
 
 # Rate Limiting Algorithms (Leaky Bucket vs Sliding Window)

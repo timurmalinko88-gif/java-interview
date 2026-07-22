@@ -7,7 +7,7 @@ time: 5
 frequency: 80%
 source: Custom
 prerequisites: ["Interfaces"]
-tags: [oop, spring-core, stream-api, multithreading, collections]
+tags: ['collections']
 ---
 
 # Collection vs Collections

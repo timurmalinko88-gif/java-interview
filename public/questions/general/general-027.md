@@ -7,7 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["Core Java", "Static", "Final"]
-tags: [oop, spring-core, memory, multithreading, exceptions]
+tags: ['exceptions']
 ---
 
 # Static and Final Variables

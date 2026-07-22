@@ -3,7 +3,7 @@ id: mcq-sd-006
 topic: System Design
 difficulty: Senior
 format: MCQ
-tags: [system-design, message-broker]
+tags: ['system-design']
 ---
 В контексте очередей сообщений (например, Kafka или RabbitMQ), что означает гарантия доставки "At-least-once"?
 

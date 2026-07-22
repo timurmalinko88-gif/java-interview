@@ -1,5 +1,5 @@
 import "./style.css";
-import { debounce } from './utils.js';
+import { debounce, setDifficultyChipInactive, setDifficultyChipActive } from './utils.js';
 import { state, loadPersistence, savePersistence } from './state.js';
 import { buildSidebarList, triggerFilterAction, clearAllFilters, loadQuestion, syncActionButtons, updateStatsUI, showToast, renderAnswerContent, hideAnswerSection } from './ui.js';
 import { openMockSetup, closeMockSetup, startMockInterview, exitMockInterview, finishMockInterview, evaluateMockQuestion, revealMockAnswer } from './mock.js';
@@ -178,15 +178,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (idx > -1) {
         state.selectedDiffFilters.splice(idx, 1);
         // Restore visual inactive style
-        el.classList.remove('bg-brand-500', 'text-white', 'border-brand-500');
-        if (difficulty === 'Junior') el.classList.add('bg-emerald-500/10', 'text-emerald-600', 'dark:text-emerald-400');
-        if (difficulty === 'Middle') el.classList.add('bg-blue-500/10', 'text-blue-600', 'dark:text-blue-400');
-        if (difficulty === 'Senior') el.classList.add('bg-purple-500/10', 'text-purple-600', 'dark:text-purple-400');
+        setDifficultyChipInactive(el, difficulty);
       } else {
         state.selectedDiffFilters.push(difficulty);
         // Render active highlight styles depending on selection
-        el.classList.remove('bg-emerald-500/10', 'bg-blue-500/10', 'bg-purple-500/10', 'text-emerald-600', 'text-blue-600', 'text-purple-600', 'dark:text-emerald-400', 'dark:text-blue-400', 'dark:text-purple-400');
-        el.classList.add('bg-brand-500', 'text-white', 'border-brand-500');
+        setDifficultyChipActive(el);
       }
       triggerFilterAction();
     });

@@ -7,7 +7,7 @@ time: 5
 frequency: 65%
 source: Custom
 prerequisites: ["Stream API"]
-tags: [spring-core, stream-api, system-design]
+tags: ['stream-api']
 ---
 
 # takeWhile vs dropWhile

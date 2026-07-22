@@ -7,7 +7,7 @@ time: 5
 frequency: 95%
 source: Custom
 prerequisites: ["OOP", "Design Patterns"]
-tags: [oop, spring-core, system-design, patterns, testing, multithreading, collections]
+tags: ['patterns']
 ---
 
 # What is the Singleton pattern and what are its pros and cons?

@@ -7,7 +7,7 @@ time: 5
 frequency: 70%
 source: Custom
 prerequisites: ["HTTP"]
-tags: [testing, spring-core, collections]
+tags: ['testing']
 ---
 
 # CORS

@@ -7,7 +7,7 @@ time: 20
 frequency: 70%
 source: Custom
 prerequisites: ["Databases", "Architecture"]
-tags: [spring-core, system-design, patterns, databases, stream-api, multithreading, collections]
+tags: ['system-design']
 ---
 
 # Change Data Capture (CDC)

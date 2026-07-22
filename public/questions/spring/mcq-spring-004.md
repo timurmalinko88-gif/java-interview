@@ -3,7 +3,7 @@ id: mcq-spring-004
 topic: Spring
 difficulty: Senior
 format: MCQ
-tags: [spring-boot, aop]
+tags: ['spring-boot', 'aop']
 ---
 Как Spring AOP реализует создание прокси-объектов по умолчанию?
 

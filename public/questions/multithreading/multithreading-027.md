@@ -7,7 +7,7 @@ time: 7
 frequency: 85%
 source: Custom
 prerequisites: ["Concurrency", "ReentrantLock", "synchronized"]
-tags: [oop, spring-core, memory, multithreading, collections, exceptions]
+tags: ['multithreading']
 ---
 
 # `ReentrantLock` vs `synchronized`
