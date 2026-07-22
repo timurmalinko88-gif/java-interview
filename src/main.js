@@ -266,6 +266,22 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 300);
     });
   }
+  
+  // Reset Progress logic
+  const resetProgBtn = document.getElementById('reset-progress-btn');
+  if (resetProgBtn) {
+    resetProgBtn.addEventListener("click", () => {
+        if (confirm("Вы уверены, что хотите сбросить весь прогресс (XP, ранги, оценки вопросов и закладки)? Это действие необратимо.")) {
+            // Clear local storage keys
+            localStorage.removeItem('java_trainer_mastered');
+            localStorage.removeItem('java_trainer_flagged');
+            localStorage.removeItem('java_trainer_sr');
+            
+            // Reload page to start fresh
+            window.location.reload();
+        }
+    });
+  }
 
   // Hotkeys Feature
   document.addEventListener('keydown', async e => {
