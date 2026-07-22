@@ -1484,7 +1484,7 @@
     {
       "id": "general-001",
       "path": "questions/general/general-001.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Middle",
       "format": "Code Review",
       "title": "Find the bug in the following code and explain how to fix it:",
@@ -1496,7 +1496,7 @@
     {
       "id": "general-002",
       "path": "questions/general/general-002.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Junior",
       "format": "Open Answer",
       "title": "What is the difference between an abstract class and an interface in Java?",
@@ -1508,7 +1508,7 @@
     {
       "id": "general-003",
       "path": "questions/general/general-003.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Senior",
       "format": "System Design",
       "title": "Design a URL Shortening Service (like bit.ly)",
@@ -1520,7 +1520,7 @@
     {
       "id": "general-004",
       "path": "questions/general/general-004.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Junior",
       "format": "Open Answer",
       "title": "Checked vs Unchecked Exceptions",
@@ -1534,7 +1534,7 @@
     {
       "id": "general-005",
       "path": "questions/general/general-005.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Middle",
       "format": "Open Answer",
       "title": "Memory Management of Static Variables",
@@ -1548,7 +1548,7 @@
     {
       "id": "general-006",
       "path": "questions/general/general-006.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Senior",
       "format": "Code Review",
       "title": "String Pool and Memory Optimization",
@@ -1560,7 +1560,7 @@
     {
       "id": "general-007",
       "path": "questions/general/general-007.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Middle",
       "format": "System Design",
       "title": "Enums as Singletons",
@@ -1574,7 +1574,7 @@
     {
       "id": "general-008",
       "path": "questions/general/general-008.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Senior",
       "format": "Open Answer",
       "title": "Type Erasure and Heap Pollution",
@@ -1588,7 +1588,7 @@
     {
       "id": "general-009",
       "path": "questions/general/general-009.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Middle",
       "format": "Code Review",
       "title": "equals() and hashCode() Contract",
@@ -1600,7 +1600,7 @@
     {
       "id": "general-010",
       "path": "questions/general/general-010.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Senior",
       "format": "Open Answer",
       "title": "Performance Implications of Reflection",
@@ -1612,7 +1612,7 @@
     {
       "id": "general-011",
       "path": "questions/general/general-011.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Junior",
       "format": "Open Answer",
       "title": "Final, Finally, and Finalize",
@@ -1626,7 +1626,7 @@
     {
       "id": "general-012",
       "path": "questions/general/general-012.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Junior",
       "format": "Open Answer",
       "title": "Pass by Value vs Pass by Reference",
@@ -1638,7 +1638,7 @@
     {
       "id": "general-013",
       "path": "questions/general/general-013.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Junior",
       "format": "Open Answer",
       "title": "StringBuilder vs StringBuffer",
@@ -1650,7 +1650,7 @@
     {
       "id": "general-014",
       "path": "questions/general/general-014.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Junior",
       "format": "Open Answer",
       "title": "Why is String immutable in Java?",
@@ -1662,7 +1662,7 @@
     {
       "id": "general-015",
       "path": "questions/general/general-015.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Junior",
       "format": "Open Answer",
       "title": "What is the difference between static and final variables?",
@@ -1674,7 +1674,7 @@
     {
       "id": "general-016",
       "path": "questions/general/general-016.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Middle",
       "format": "Open Answer",
       "title": "How does the try-with-resources statement work?",
@@ -1688,7 +1688,7 @@
     {
       "id": "general-017",
       "path": "questions/general/general-017.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Senior",
       "format": "Open Answer",
       "title": "Can you explain how Reflection works and its drawbacks?",
@@ -1702,7 +1702,7 @@
     {
       "id": "general-018",
       "path": "questions/general/general-018.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Middle",
       "format": "Open Answer",
       "title": "What are the differences between an Abstract Class and an Interface in modern Java (Java 8+)?",
@@ -1714,7 +1714,7 @@
     {
       "id": "general-019",
       "path": "questions/general/general-019.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Junior",
       "format": "Open Answer",
       "title": "Explain the Object class and its main methods",
@@ -1726,7 +1726,7 @@
     {
       "id": "general-020",
       "path": "questions/general/general-020.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Senior",
       "format": "Open Answer",
       "title": "How do Generics work in Java and what is Type Erasure?",
@@ -1740,7 +1740,7 @@
     {
       "id": "general-021",
       "path": "questions/general/general-021.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Middle",
       "format": "Open Answer",
       "title": "What is an Enum in Java and how does it differ from a static final constant?",
@@ -1752,7 +1752,7 @@
     {
       "id": "general-022",
       "path": "questions/general/general-022.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Senior",
       "format": "Code Review",
       "title": "Can you explain the concept of covariant return types?",
@@ -1764,7 +1764,7 @@
     {
       "id": "general-023",
       "path": "questions/general/general-023.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Middle",
       "format": "Code Review",
       "title": "Pass by value semantics: Modifying vs Reassigning",
@@ -1776,7 +1776,7 @@
     {
       "id": "general-024",
       "path": "questions/general/general-024.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Junior",
       "format": "Open Answer",
       "title": "Why are Strings immutable in Java?",
@@ -1788,7 +1788,7 @@
     {
       "id": "general-025",
       "path": "questions/general/general-025.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Middle",
       "format": "Code Review",
       "title": "Checked vs Unchecked Exceptions",
@@ -1802,7 +1802,7 @@
     {
       "id": "general-026",
       "path": "questions/general/general-026.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Middle",
       "format": "Open Answer",
       "title": "equals() and hashCode() Contract",
@@ -1814,7 +1814,7 @@
     {
       "id": "general-027",
       "path": "questions/general/general-027.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Junior",
       "format": "Code Review",
       "title": "Static and Final Variables",
@@ -1828,7 +1828,7 @@
     {
       "id": "general-028",
       "path": "questions/general/general-028.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Senior",
       "format": "Open Answer",
       "title": "Generics and Type Erasure",
@@ -1842,7 +1842,7 @@
     {
       "id": "general-029",
       "path": "questions/general/general-029.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Junior",
       "format": "Open Answer",
       "title": "Primitives vs Wrapper Classes",
@@ -1854,7 +1854,7 @@
     {
       "id": "general-030",
       "path": "questions/general/general-030.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Middle",
       "format": "System Design",
       "title": "Designing with Enums",
@@ -1868,7 +1868,7 @@
     {
       "id": "general-031",
       "path": "questions/general/general-031.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Senior",
       "format": "Open Answer",
       "title": "Java Reflection: Use Cases and Drawbacks",
@@ -1882,7 +1882,7 @@
     {
       "id": "general-032",
       "path": "questions/general/general-032.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Junior",
       "format": "Code Review",
       "title": "Pass by Value vs Pass by Reference",
@@ -1894,7 +1894,7 @@
     {
       "id": "general-033",
       "path": "questions/general/general-033.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Middle",
       "format": "Open Answer",
       "title": "final, finally, and finalize",
@@ -1908,7 +1908,7 @@
     {
       "id": "general-034",
       "path": "questions/general/general-034.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Middle",
       "format": "Open Answer",
       "title": "Type Erasure in Java Generics",
@@ -1922,7 +1922,7 @@
     {
       "id": "general-035",
       "path": "questions/general/general-035.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Junior",
       "format": "Code Review",
       "title": "Checked vs Unchecked Exceptions",
@@ -1936,7 +1936,7 @@
     {
       "id": "general-036",
       "path": "questions/general/general-036.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Senior",
       "format": "System Design",
       "title": "Reflection Usage and Performance Implications",
@@ -1950,7 +1950,7 @@
     {
       "id": "general-037",
       "path": "questions/general/general-037.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Middle",
       "format": "Open Answer",
       "title": "equals() and hashCode() Contract",
@@ -1962,7 +1962,7 @@
     {
       "id": "general-038",
       "path": "questions/general/general-038.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Middle",
       "format": "Code Review",
       "title": "Singleton Pattern using Enums",
@@ -1974,7 +1974,7 @@
     {
       "id": "general-039",
       "path": "questions/general/general-039.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Junior",
       "format": "Open Answer",
       "title": "String Immutability and the String Pool",
@@ -1986,7 +1986,7 @@
     {
       "id": "general-040",
       "path": "questions/general/general-040.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Middle",
       "format": "Code Review",
       "title": "Static vs Final Modifiers",
@@ -2000,7 +2000,7 @@
     {
       "id": "general-041",
       "path": "questions/general/general-041.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Junior",
       "format": "System Design",
       "title": "Primitive vs Wrapper Types in Data Structures",
@@ -2012,7 +2012,7 @@
     {
       "id": "general-042",
       "path": "questions/general/general-042.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Junior",
       "format": "Open Answer",
       "title": "JVM vs JRE vs JDK",
@@ -2024,7 +2024,7 @@
     {
       "id": "general-043",
       "path": "questions/general/general-043.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Middle",
       "format": "Code Review",
       "title": "Try-with-Resources and AutoCloseable",
@@ -2038,7 +2038,7 @@
     {
       "id": "general-044",
       "path": "questions/general/general-044.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Junior",
       "format": "Open Answer",
       "title": "Explain the Exception Hierarchy in Java",
@@ -2052,7 +2052,7 @@
     {
       "id": "general-045",
       "path": "questions/general/general-045.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Junior",
       "format": "Open Answer",
       "title": "String Immutability and String Pool",
@@ -2064,7 +2064,7 @@
     {
       "id": "general-046",
       "path": "questions/general/general-046.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Middle",
       "format": "Code Review",
       "title": "Review Static and Final Usage",
@@ -2078,7 +2078,7 @@
     {
       "id": "general-047",
       "path": "questions/general/general-047.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Senior",
       "format": "Open Answer",
       "title": "Generics Type Erasure",
@@ -2090,7 +2090,7 @@
     {
       "id": "general-048",
       "path": "questions/general/general-048.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Senior",
       "format": "Open Answer",
       "title": "Java Reflection Performance and Security",
@@ -2102,7 +2102,7 @@
     {
       "id": "general-049",
       "path": "questions/general/general-049.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Middle",
       "format": "Code Review",
       "title": "Review Enum Instantiation",
@@ -2116,7 +2116,7 @@
     {
       "id": "general-050",
       "path": "questions/general/general-050.md",
-      "topic": "General Java",
+      "topic": "General",
       "difficulty": "Middle",
       "format": "Open Answer",
       "title": "equals() and hashCode() Contract",
