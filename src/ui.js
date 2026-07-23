@@ -307,6 +307,13 @@ async function loadQuestion(indexOrQuestion) {
   // Reset action bookmark/completed status indicators
   syncActionButtons(q.id);
 
+  // Set YouTube Video Link dynamically
+  const youtubeBtn = document.getElementById('btn-youtube');
+  if (youtubeBtn) {
+    const query = encodeURIComponent(`Java Interview ${q.title || q.id} explanation`);
+    youtubeBtn.href = `https://www.youtube.com/results?search_query=${query}`;
+  }
+
   // Hide the answer sections
   const answerSection = document.getElementById('answer-section');
   answerSection.classList.add('hidden');
