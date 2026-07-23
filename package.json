@@ -1,7 +1,7 @@
 {
   "name": "java-prep",
   "version": "1.0.0",
-  "description": "<p align=\"center\">   <img src=\"https://img.shields.io/badge/Questions-550-brightgreen.svg?style=for-the-badge&logo=java\" alt=\"Total Questions\">   <img src=\"https://img.shields.io/badge/Topics-11-blue.svg?style=for-the-badge&logo=codeforces\" alt=\"Total Topics\">   <img src=\"https://img.shields.io/badge/Simulator-Mock%20Interview-purple.svg?style=for-the-badge&logo=target\" alt=\"Mock Interview Simulator\">   <img src=\"https://img.shields.io/badge/License-MIT-orange.svg?style=for-the-badge\" alt=\"License\">   <img src=\"https://img.shields.io/badge/GitHub%20Pages-Active-success.svg?style=for-the-badge&logo=github\" alt=\"GitHub Pages\"> </p>",
+  "description": "Interactive Java Interview Prep Hub, Mock Simulator & Leitner Spaced Repetition Platform (663 Questions, 17 Topics)",
   "main": "adaptive.js",
   "directories": {
     "doc": "docs"
@@ -9,15 +9,27 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/timurmalinko88-gif/java-interview.git"
   },
-  "keywords": [],
+  "keywords": [
+    "java",
+    "interview-prep",
+    "mock-interview",
+    "system-design",
+    "spring-boot",
+    "leitner-srs",
+    "spaced-repetition",
+    "java-21",
+    "vite"
+  ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "type": "commonjs",
   "bugs": {
     "url": "https://github.com/timurmalinko88-gif/java-interview/issues"
