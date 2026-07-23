@@ -50,7 +50,7 @@ function buildSidebarList() {
     const isActive = idx === state.currentIndex;
 
     // Color configuration for difficulties
-    let diffStyle = 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400';
+    let diffStyle = 'bg-success-500/10 text-success-600 dark:text-success-400';
     if (q.difficulty === 'Middle') diffStyle = 'bg-brand-500/10 text-brand-600 dark:text-brand-400';
     if (q.difficulty === 'Senior') diffStyle = 'bg-purple-500/10 text-purple-600 dark:text-purple-400';
     const button = document.createElement('button');
@@ -69,8 +69,8 @@ function buildSidebarList() {
                     </span>
                 </div>
                 <div class="flex items-center space-x-1">
-                    ${isMastered ? '<i class="fa-solid fa-circle-check text-emerald-500 text-xs"></i>' : ''}
-                    ${flagged ? '<i class="fa-solid fa-bookmark text-amber-500 text-xs"></i>' : ''}
+                    ${isMastered ? '<i class="fa-solid fa-circle-check text-success-500 text-xs"></i>' : ''}
+                    ${flagged ? '<i class="fa-solid fa-bookmark text-warning-500 text-xs"></i>' : ''}
                     ${state.srData[q.id] && new Date(state.srData[q.id].nextReviewDate) <= new Date() ? '<span class="px-1 py-0.5 bg-rose-500/10 text-rose-500 rounded text-[9px] font-bold uppercase tracking-wider animate-pulse">Due</span>' : ''}
                 </div>
             </div>
@@ -168,8 +168,8 @@ function updateStatsUI() {
   
   const ranks = [
     { name: "Intern", minXp: 0, icon: "fa-shield-halved", color: "text-brand-500" },
-    { name: "Junior", minXp: 500, icon: "fa-medal", color: "text-emerald-500" },
-    { name: "Middle", minXp: 1500, icon: "fa-fire", color: "text-amber-500" },
+    { name: "Junior", minXp: 500, icon: "fa-medal", color: "text-success-500" },
+    { name: "Middle", minXp: 1500, icon: "fa-fire", color: "text-warning-500" },
     { name: "Senior", minXp: 3000, icon: "fa-star", color: "text-purple-500" },
     { name: "Staff Engineer", minXp: 5000, icon: "fa-crown", color: "text-rose-500" }
   ];
@@ -280,7 +280,7 @@ async function loadQuestion(indexOrQuestion) {
   diffEl.textContent = q.difficulty;
   diffEl.className = 'px-2.5 py-1 rounded-lg text-xs font-bold uppercase tracking-wider ';
   if (q.difficulty === 'Junior') {
-    diffEl.classList.add('bg-emerald-500/10', 'text-emerald-600', 'dark:text-emerald-400');
+    diffEl.classList.add('bg-success-500/10', 'text-success-600', 'dark:text-success-400');
   } else if (q.difficulty === 'Middle') {
     diffEl.classList.add('bg-brand-500/10', 'text-brand-600', 'dark:text-brand-400');
   } else {
@@ -295,7 +295,7 @@ async function loadQuestion(indexOrQuestion) {
   const extraMetaContainer = document.getElementById('extra-metadata');
   extraMetaContainer.innerHTML = '';
   if (q.time) {
-    extraMetaContainer.innerHTML += `<span class="flex items-center gap-1 bg-slate-50 dark:bg-darkCard/50 px-2 py-1 rounded"><i class="fa-regular fa-clock text-amber-500"></i> ${q.time}</span>`;
+    extraMetaContainer.innerHTML += `<span class="flex items-center gap-1 bg-slate-50 dark:bg-darkCard/50 px-2 py-1 rounded"><i class="fa-regular fa-clock text-warning-500"></i> ${q.time}</span>`;
   }
   if (q.frequency) {
     extraMetaContainer.innerHTML += `<span class="flex items-center gap-1 bg-slate-50 dark:bg-darkCard/50 px-2 py-1 rounded"><i class="fa-solid fa-fire-flame-curved text-brand-500"></i> Frequency: ${q.frequency}</span>`;
@@ -406,19 +406,19 @@ function syncActionButtons(activeId) {
   const flagged = isFlagged(activeId);
   const flagBtn = document.getElementById('flag-btn');
   if (flagged) {
-    flagBtn.classList.add('bg-amber-500/10', 'text-amber-500', 'border-amber-500/30');
+    flagBtn.classList.add('bg-warning-500/10', 'text-warning-500', 'border-warning-500/30');
     flagBtn.classList.remove('text-slate-400');
   } else {
-    flagBtn.classList.remove('bg-amber-500/10', 'text-amber-500', 'border-amber-500/30');
+    flagBtn.classList.remove('bg-warning-500/10', 'text-warning-500', 'border-warning-500/30');
     flagBtn.classList.add('text-slate-400');
   }
   const isMastered = state.masteredIds.includes(activeId);
   const masteredBtn = document.getElementById('mastered-btn');
   if (isMastered) {
-    masteredBtn.classList.add('bg-emerald-500/10', 'text-emerald-500', 'border-emerald-500/30');
+    masteredBtn.classList.add('bg-success-500/10', 'text-success-500', 'border-success-500/30');
     masteredBtn.classList.remove('text-slate-400');
   } else {
-    masteredBtn.classList.remove('bg-emerald-500/10', 'text-emerald-500', 'border-emerald-500/30');
+    masteredBtn.classList.remove('bg-success-500/10', 'text-success-500', 'border-success-500/30');
     masteredBtn.classList.add('text-slate-400');
   }
 }
@@ -434,7 +434,7 @@ function renderNoQuestionsFoundState() {
             </div>
             <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Nothing Found</h3>
             <p class="text-sm text-slate-400 max-w-sm">Reset filters to see the full list of preparation questions.</p>
-            <button id="btn-empty-reset"  class="mt-4 bg-brand-500 hover:bg-brand-600 text-white font-bold text-xs px-4 py-2 rounded-xl transition-all">
+            <button id="btn-empty-reset"  class="mt-4 bg-brand-500 hover:bg-brand-600 text-white font-bold text-xs px-4 py-2 rounded-md transition-all">
                 Reset фильтры
             </button>
         </div>
@@ -453,9 +453,9 @@ function showToast(message, type = 'success') {
   const msgSpan = document.getElementById('toast-message');
   msgSpan.textContent = message;
   if (type === 'success') {
-    icon.className = "fa-solid fa-circle-check text-emerald-500";
+    icon.className = "fa-solid fa-circle-check text-success-500";
   } else if (type === 'bookmark') {
-    icon.className = "fa-solid fa-bookmark text-amber-500";
+    icon.className = "fa-solid fa-bookmark text-warning-500";
   } else {
     icon.className = "fa-solid fa-info-circle text-brand-500";
   }
@@ -521,14 +521,14 @@ function showLevelUpAnimation(rankInfo) {
     overlay.className = 'fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm transition-opacity duration-500 opacity-0';
     
     overlay.innerHTML = `
-        <div class="bg-white dark:bg-darkBg rounded-3xl p-10 flex flex-col items-center text-center shadow-2xl transform scale-90 transition-transform duration-500 border border-slate-200 dark:border-slate-800">
-            <div class="w-24 h-24 mb-6 rounded-full bg-gradient-to-tr from-brand-400 to-amber-400 flex items-center justify-center text-5xl text-white shadow-lg shadow-brand-500/40 animate-bounce">
+        <div class="bg-white dark:bg-darkBg rounded-md p-10 flex flex-col items-center text-center shadow-md transform scale-90 transition-transform duration-500 border border-slate-200 dark:border-slate-800">
+            <div class="w-24 h-24 mb-6 rounded-full bg-gradient-to-tr from-brand-400 to-warning-400 flex items-center justify-center text-5xl text-white shadow-lg shadow-brand-500/40 animate-bounce">
                 <i class="fa-solid ${rankInfo.icon}"></i>
             </div>
-            <h2 class="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-amber-500 mb-2">LEVEL UP!</h2>
+            <h2 class="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-warning-500 mb-2">LEVEL UP!</h2>
             <p class="text-slate-600 dark:text-slate-400 text-lg">You are now a <span class="font-bold ${rankInfo.color}">${rankInfo.name}</span></p>
             <p class="text-sm text-slate-500 mt-4 max-w-xs">Keep up the great work! Consistent studying leads to interview success.</p>
-            <button class="mt-8 bg-brand-500 hover:bg-brand-600 text-white px-8 py-3 rounded-xl font-bold shadow-md shadow-brand-500/20 transition-colors">Continue</button>
+            <button class="mt-8 bg-brand-500 hover:bg-brand-600 text-white px-8 py-3 rounded-md font-bold shadow-md shadow-brand-500/20 transition-colors">Continue</button>
         </div>
     `;
     

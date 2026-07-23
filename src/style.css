@@ -110,9 +110,20 @@ dialog::backdrop {
 
 /* Accessibility Focus-Visible */
 *:focus-visible {
-    outline: 2px solid #3b82f6; /* Deep Electric Blue / Cobalt */
+    outline: 2px solid #006FEE; /* Electric Bespoke Blue */
     outline-offset: 2px;
     border-radius: 4px;
+}
+
+/* Product Aesthetic Dot Grid Background */
+body {
+    background-color: #FAFAFA;
+    background-image: radial-gradient(#EAEAEA 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+html.dark body {
+    background-color: #0A0A0A;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
 }
 
 /* 3D Card Flip Animations for SRS / Leitner */

@@ -9,33 +9,45 @@ module.exports = {
     extend: {
       colors: {
         brand: {
-          50: '#eff6ff',
-          100: '#dbeafe',
-          200: '#bfdbfe',
-          300: '#93c5fd',
-          400: '#60a5fa',
-          500: '#3b82f6', // Deep Electric Blue / Cobalt
-          600: '#2563eb',
-          700: '#1d4ed8',
-          800: '#1e40af',
-          900: '#1e3a8a',
+          50: '#f0f4ff',
+          100: '#e0eaff',
+          200: '#c2d6ff',
+          300: '#a3c2ff',
+          400: '#85aeff',
+          500: '#006FEE', // Electric Bespoke Blue
+          600: '#005bc4',
+          700: '#004799',
+          800: '#00336e',
+          900: '#001f42',
         },
-        accent: {
-          50: '#fffbeb',
-          100: '#fef3c7',
-          200: '#fde68a',
-          300: '#fcd34d',
-          400: '#fbbf24',
-          500: '#f59e0b', // Warm Java Coffee Amber
-          600: '#d97706',
-          700: '#b45309',
-          800: '#92400e',
-          900: '#78350f',
+        success: {
+          50: '#e8faf0',
+          100: '#d1f4e0',
+          200: '#a3e9c2',
+          300: '#75dfa3',
+          400: '#47d485',
+          500: '#17C964', // Neon Product Green
+          600: '#12a150',
+          700: '#0d793c',
+          800: '#095028',
+          900: '#042814',
         },
-        darkBg: '#0b0f17', // Midnight Obsidian
-        darkCard: '#151c2c', // Slate Glass
-        lightBg: '#f8fafc',
-        lightCard: '#ffffff'
+        warning: {
+          50: '#fef1e9',
+          100: '#fde3d3',
+          200: '#fbc6a7',
+          300: '#f8aa7b',
+          400: '#f68e4f',
+          500: '#F26D21', // Sharp Orange
+          600: '#c2571a',
+          700: '#914114',
+          800: '#612b0d',
+          900: '#301607',
+        },
+        darkBg: '#0A0A0A', // Pure Deep Dark
+        darkCard: '#111111', // Slightly elevated Dark
+        lightBg: '#FAFAFA',
+        lightCard: '#FFFFFF'
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
