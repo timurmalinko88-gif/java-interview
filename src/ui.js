@@ -459,12 +459,12 @@ function showToast(message, type = 'success') {
   } else {
     icon.className = "fa-solid fa-info-circle text-blue-500";
   }
-  toast.classList.remove('opacity-0', 'translate-y-2');
+  toast.classList.remove('opacity-0', 'translate-y-8');
   toast.classList.add('opacity-100', 'translate-y-0');
   setTimeout(() => {
     toast.classList.remove('opacity-100', 'translate-y-0');
-    toast.classList.add('opacity-0', 'translate-y-2');
-  }, 2500);
+    toast.classList.add('opacity-0', 'translate-y-8');
+  }, 3000);
 }
 
 // Mock Interview Engine State

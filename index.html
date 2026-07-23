@@ -261,10 +261,11 @@
                 
                 <!-- Scrollable Container -->
                 <div id="questions-container" class="overflow-y-auto divide-y divide-slate-100 dark:divide-slate-800/60 flex-1">
-                    <!-- Dynamic rendering of question buttons goes here -->
-                    <div class="p-6 text-center text-slate-400 text-sm">
-                        <i aria-hidden="true" class="fa-solid fa-spinner fa-spin text-brand-500 text-lg mb-2 block"></i>
-                        Loading questions...
+                    <div class="p-6 space-y-4" aria-busy="true" aria-label="Loading questions">
+                        <div class="h-14 bg-slate-200 dark:bg-slate-800 animate-skeleton rounded-xl"></div>
+                        <div class="h-14 bg-slate-200 dark:bg-slate-800 animate-skeleton rounded-xl opacity-80"></div>
+                        <div class="h-14 bg-slate-200 dark:bg-slate-800 animate-skeleton rounded-xl opacity-60"></div>
+                        <div class="h-14 bg-slate-200 dark:bg-slate-800 animate-skeleton rounded-xl opacity-40"></div>
                     </div>
                 </div>
             </div>
@@ -476,9 +477,11 @@
     </main>
 
     <!-- Toasts feedback notifications dynamically injected -->
-    <div id="toast" role="status" aria-live="polite" class="fixed bottom-6 right-6 z-50 bg-slate-900 text-white border border-slate-800 rounded-xl px-4 py-3 shadow-2xl flex items-center space-x-3 pointer-events-none opacity-0 transform translate-y-2 transition-all duration-300">
-        <i id="toast-icon" aria-hidden="true" class="fa-solid fa-check text-emerald-500"></i>
-        <span id="toast-message" class="text-sm font-semibold"></span>
+    <div id="toast" role="status" aria-live="polite" class="fixed bottom-6 right-6 z-50 bg-white/95 dark:bg-[#151c2c]/95 backdrop-blur-md text-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-800/80 rounded-2xl px-5 py-4 shadow-2xl flex items-center space-x-3 pointer-events-none opacity-0 transform translate-y-8 transition-all duration-500 ease-out">
+        <div class="bg-slate-100 dark:bg-slate-800/50 p-2 rounded-xl flex items-center justify-center">
+            <i id="toast-icon" aria-hidden="true" class="fa-solid fa-check text-emerald-500 text-lg"></i>
+        </div>
+        <span id="toast-message" class="text-sm font-bold tracking-wide"></span>
     </div>
 
     <!-- Mock Interview Setup Modal -->
