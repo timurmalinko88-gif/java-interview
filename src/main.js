@@ -169,9 +169,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('search-input');
   if (searchInput) searchInput.addEventListener("input", debounce(triggerFilterAction, 200));
   const topicFilter = document.getElementById('topic-filter');
-  if (topicFilter) topicFilter.addEventListener("change", triggerFilterAction);
+  if (topicFilter) {
+    topicFilter.addEventListener("change", (e) => {
+      // If user selects a specific topic, reset roadmap to avoid empty results
+      if (e.target.value !== 'all' && roadmapFilter) {
+        roadmapFilter.value = 'none';
+      }
+      triggerFilterAction();
+    });
+  }
   const roadmapFilter = document.getElementById('roadmap-filter');
-  if (roadmapFilter) roadmapFilter.addEventListener("change", triggerFilterAction);
+  if (roadmapFilter) {
+    roadmapFilter.addEventListener("change", (e) => {
+      // If a user selects a roadmap, reset the Topic and Search to avoid empty results
+      if (e.target.value !== 'none') {
+        if (topicFilter) topicFilter.value = 'all';
+        if (searchInput) searchInput.value = '';
+      }
+      triggerFilterAction();
+    });
+  }
   document.querySelectorAll('.format-checkbox').forEach(el => {
     el.addEventListener("change", triggerFilterAction);
   });
