@@ -3,6 +3,35 @@ export // --- stats.js ---
 // Helper function to map topics to icons and gradients
 function getTopicStyles(topic) {
   const t = topic.toLowerCase();
+  
+  // New Categories
+  if (t.includes('ai') || t.includes('llm') || t.includes('rag')) return {
+    icon: 'fa-brain',
+    gradient: 'from-purple-600 to-indigo-600',
+    shadow: 'shadow-purple-500/20'
+  };
+  if (t.includes('kafka') || t.includes('messaging')) return {
+    icon: 'fa-comments',
+    gradient: 'from-amber-500 to-orange-500',
+    shadow: 'shadow-orange-500/20'
+  };
+  if (t.includes('modern java') || t.includes('java 21')) return {
+    icon: 'fa-atom',
+    gradient: 'from-cyan-500 to-blue-500',
+    shadow: 'shadow-cyan-500/20'
+  };
+  if (t.includes('live coding') || t.includes('refactoring')) return {
+    icon: 'fa-laptop-code',
+    gradient: 'from-emerald-500 to-teal-500',
+    shadow: 'shadow-emerald-500/20'
+  };
+  if (t.includes('behavioral') || t.includes('hr') || t.includes('star')) return {
+    icon: 'fa-user-tie',
+    gradient: 'from-rose-500 to-pink-500',
+    shadow: 'shadow-rose-500/20'
+  };
+
+  // Existing Categories
   if (t.includes('jvm') || t.includes('memory')) return {
     icon: 'fa-server',
     gradient: 'from-blue-500 to-indigo-500',

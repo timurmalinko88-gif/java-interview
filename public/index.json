@@ -1,7 +1,522 @@
 {
   "version": "1.0",
-  "total": 583,
+  "total": 663,
   "questions": [
+    {
+      "id": "ai-001",
+      "path": "questions/ai-integration/ai-001.md",
+      "topic": "AI & LLM Integration",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Spring AI architecture vs LangChain4j",
+      "time": "10 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "ai",
+        "llm",
+        "spring-ai"
+      ]
+    },
+    {
+      "id": "ai-002",
+      "path": "questions/ai-integration/ai-002.md",
+      "topic": "AI & LLM Integration",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "RAG architecture in Java",
+      "time": "10 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "ai",
+        "llm",
+        "spring-ai",
+        "rag"
+      ]
+    },
+    {
+      "id": "ai-003",
+      "path": "questions/ai-integration/ai-003.md",
+      "topic": "AI & LLM Integration",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "pgvector in PostgreSQL with Spring Data",
+      "time": "10 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "ai",
+        "llm",
+        "postgresql",
+        "pgvector",
+        "spring-data"
+      ]
+    },
+    {
+      "id": "ai-004",
+      "path": "questions/ai-integration/ai-004.md",
+      "topic": "AI & LLM Integration",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Vector DBs (Qdrant/Milvus) integration",
+      "time": "10 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "ai",
+        "llm",
+        "qdrant",
+        "milvus",
+        "vector-db"
+      ]
+    },
+    {
+      "id": "ai-005",
+      "path": "questions/ai-integration/ai-005.md",
+      "topic": "AI & LLM Integration",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Document Loaders & Splitters (Token/Character)",
+      "time": "10 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "ai",
+        "llm",
+        "rag",
+        "document-loaders"
+      ]
+    },
+    {
+      "id": "ai-006",
+      "path": "questions/ai-integration/ai-006.md",
+      "topic": "AI & LLM Integration",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Local Embeddings models (Ollama)",
+      "time": "10 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "ai",
+        "llm",
+        "ollama",
+        "embeddings",
+        "local-ai"
+      ]
+    },
+    {
+      "id": "ai-007",
+      "path": "questions/ai-integration/ai-007.md",
+      "topic": "AI & LLM Integration",
+      "difficulty": "Hard",
+      "format": "Open Answer",
+      "title": "Function Calling (@Tool) in LangChain4j",
+      "time": "15 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "ai",
+        "llm",
+        "langchain4j",
+        "function-calling",
+        "agents"
+      ]
+    },
+    {
+      "id": "ai-008",
+      "path": "questions/ai-integration/ai-008.md",
+      "topic": "AI & LLM Integration",
+      "difficulty": "Hard",
+      "format": "Open Answer",
+      "title": "AI Agents & ReAct in Java",
+      "time": "15 min",
+      "frequency": "Medium",
+      "related": [],
+      "tags": [
+        "ai",
+        "llm",
+        "agents",
+        "react",
+        "langchain4j"
+      ]
+    },
+    {
+      "id": "ai-009",
+      "path": "questions/ai-integration/ai-009.md",
+      "topic": "AI & LLM Integration",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Structured Output (BeanOutputConverter)",
+      "time": "10 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "ai",
+        "llm",
+        "spring-ai",
+        "structured-output"
+      ]
+    },
+    {
+      "id": "ai-010",
+      "path": "questions/ai-integration/ai-010.md",
+      "topic": "AI & LLM Integration",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "ChatMemory & persistence",
+      "time": "10 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "ai",
+        "llm",
+        "chat-memory",
+        "langchain4j",
+        "spring-ai"
+      ]
+    },
+    {
+      "id": "ai-011",
+      "path": "questions/ai-integration/ai-011.md",
+      "topic": "AI & LLM Integration",
+      "difficulty": "Hard",
+      "format": "Open Answer",
+      "title": "Model Context Protocol (MCP) in Java",
+      "time": "15 min",
+      "frequency": "Low",
+      "related": [],
+      "tags": [
+        "ai",
+        "llm",
+        "mcp",
+        "model-context-protocol",
+        "spring-ai"
+      ]
+    },
+    {
+      "id": "ai-012",
+      "path": "questions/ai-integration/ai-012.md",
+      "topic": "AI & LLM Integration",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Streaming responses (Flux/SSE)",
+      "time": "10 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "ai",
+        "llm",
+        "streaming",
+        "flux",
+        "sse",
+        "spring-ai"
+      ]
+    },
+    {
+      "id": "ai-013",
+      "path": "questions/ai-integration/ai-013.md",
+      "topic": "AI & LLM Integration",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Guardrails & Prompt Injection protection",
+      "time": "10 min",
+      "frequency": "Medium",
+      "related": [],
+      "tags": [
+        "ai",
+        "llm",
+        "security",
+        "guardrails",
+        "prompt-injection"
+      ]
+    },
+    {
+      "id": "ai-014",
+      "path": "questions/ai-integration/ai-014.md",
+      "topic": "AI & LLM Integration",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Prompt Caching & Tokens",
+      "time": "10 min",
+      "frequency": "Medium",
+      "related": [],
+      "tags": [
+        "ai",
+        "llm",
+        "tokens",
+        "caching",
+        "performance"
+      ]
+    },
+    {
+      "id": "ai-015",
+      "path": "questions/ai-integration/ai-015.md",
+      "topic": "AI & LLM Integration",
+      "difficulty": "Hard",
+      "format": "Open Answer",
+      "title": "RAG Evaluation metrics",
+      "time": "15 min",
+      "frequency": "Low",
+      "related": [],
+      "tags": [
+        "ai",
+        "llm",
+        "rag",
+        "evaluation",
+        "metrics"
+      ]
+    },
+    {
+      "id": "ai-016",
+      "path": "questions/ai-integration/ai-016.md",
+      "topic": "AI & LLM Integration",
+      "difficulty": "Hard",
+      "format": "Open Answer",
+      "title": "HyDE & Multi-Query Retrieval",
+      "time": "15 min",
+      "frequency": "Low",
+      "related": [],
+      "tags": [
+        "ai",
+        "llm",
+        "rag",
+        "hyde",
+        "advanced-retrieval"
+      ]
+    },
+    {
+      "id": "ai-017",
+      "path": "questions/ai-integration/ai-017.md",
+      "topic": "AI & LLM Integration",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Testing AI components (Testcontainers)",
+      "time": "10 min",
+      "frequency": "Medium",
+      "related": [],
+      "tags": [
+        "ai",
+        "llm",
+        "testing",
+        "testcontainers",
+        "spring-ai"
+      ]
+    },
+    {
+      "id": "ai-018",
+      "path": "questions/ai-integration/ai-018.md",
+      "topic": "AI & LLM Integration",
+      "difficulty": "Hard",
+      "format": "Open Answer",
+      "title": "Reranking in RAG",
+      "time": "15 min",
+      "frequency": "Low",
+      "related": [],
+      "tags": [
+        "ai",
+        "llm",
+        "rag",
+        "reranking",
+        "cross-encoder"
+      ]
+    },
+    {
+      "id": "ai-019",
+      "path": "questions/ai-integration/ai-019.md",
+      "topic": "AI & LLM Integration",
+      "difficulty": "Easy",
+      "format": "Open Answer",
+      "title": "Spring AI auto-configurations",
+      "time": "5 min",
+      "frequency": "Medium",
+      "related": [],
+      "tags": [
+        "ai",
+        "llm",
+        "spring-ai",
+        "spring-boot",
+        "auto-configuration"
+      ]
+    },
+    {
+      "id": "ai-020",
+      "path": "questions/ai-integration/ai-020.md",
+      "topic": "AI & LLM Integration",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Corporate AI assistant use-case",
+      "time": "15 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "ai",
+        "llm",
+        "use-case",
+        "system-design"
+      ]
+    },
+    {
+      "id": "hr-001",
+      "path": "questions/behavioral/hr-001.md",
+      "topic": "Behavioral & STAR",
+      "difficulty": "General",
+      "format": "HR Interview",
+      "title": "The STAR Method Guide & Template",
+      "time": "15 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "hr",
+        "behavioral",
+        "soft-skills"
+      ]
+    },
+    {
+      "id": "hr-002",
+      "path": "questions/behavioral/hr-002.md",
+      "topic": "Behavioral & STAR",
+      "difficulty": "General",
+      "format": "HR Interview",
+      "title": "2-minute Self-Presentation (Elevator Pitch)",
+      "time": "15 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "hr",
+        "behavioral",
+        "soft-skills"
+      ]
+    },
+    {
+      "id": "hr-003",
+      "path": "questions/behavioral/hr-003.md",
+      "topic": "Behavioral & STAR",
+      "difficulty": "General",
+      "format": "HR Interview",
+      "title": "Why are you leaving your current job?",
+      "time": "15 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "hr",
+        "behavioral",
+        "soft-skills"
+      ]
+    },
+    {
+      "id": "hr-004",
+      "path": "questions/behavioral/hr-004.md",
+      "topic": "Behavioral & STAR",
+      "difficulty": "General",
+      "format": "HR Interview",
+      "title": "Biggest production failure/bug you caused",
+      "time": "15 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "hr",
+        "behavioral",
+        "soft-skills"
+      ]
+    },
+    {
+      "id": "hr-005",
+      "path": "questions/behavioral/hr-005.md",
+      "topic": "Behavioral & STAR",
+      "difficulty": "General",
+      "format": "HR Interview",
+      "title": "Resolving technical conflicts with a Tech Lead",
+      "time": "15 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "hr",
+        "behavioral",
+        "soft-skills"
+      ]
+    },
+    {
+      "id": "hr-006",
+      "path": "questions/behavioral/hr-006.md",
+      "topic": "Behavioral & STAR",
+      "difficulty": "General",
+      "format": "HR Interview",
+      "title": "Dealing with vague requirements and deadlines",
+      "time": "15 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "hr",
+        "behavioral",
+        "soft-skills"
+      ]
+    },
+    {
+      "id": "hr-007",
+      "path": "questions/behavioral/hr-007.md",
+      "topic": "Behavioral & STAR",
+      "difficulty": "General",
+      "format": "HR Interview",
+      "title": "Justifying tech debt & refactoring to business",
+      "time": "15 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "hr",
+        "behavioral",
+        "soft-skills"
+      ]
+    },
+    {
+      "id": "hr-008",
+      "path": "questions/behavioral/hr-008.md",
+      "topic": "Behavioral & STAR",
+      "difficulty": "General",
+      "format": "HR Interview",
+      "title": "Salary Negotiation strategies",
+      "time": "15 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "hr",
+        "behavioral",
+        "soft-skills"
+      ]
+    },
+    {
+      "id": "hr-009",
+      "path": "questions/behavioral/hr-009.md",
+      "topic": "Behavioral & STAR",
+      "difficulty": "General",
+      "format": "HR Interview",
+      "title": "Questions the candidate MUST ask the interviewer",
+      "time": "15 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "hr",
+        "behavioral",
+        "soft-skills"
+      ]
+    },
+    {
+      "id": "hr-010",
+      "path": "questions/behavioral/hr-010.md",
+      "topic": "Behavioral & STAR",
+      "difficulty": "General",
+      "format": "HR Interview",
+      "title": "English Tech Interview glossary & phrases",
+      "time": "15 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "hr",
+        "behavioral",
+        "soft-skills"
+      ]
+    },
     {
       "id": "collections-001",
       "path": "questions/collections/collections-001.md",
@@ -3023,6 +3538,796 @@
       "tags": [
         "jvm",
         "gc"
+      ]
+    },
+    {
+      "id": "live-001",
+      "path": "questions/live-coding/live-001.md",
+      "topic": "Live Coding & Refactoring",
+      "difficulty": "Senior",
+      "format": "Live Coding",
+      "title": "Memory Leak in HashMap (bad hashCode)",
+      "time": "20 min",
+      "frequency": "Medium",
+      "related": [],
+      "tags": [
+        "live-coding",
+        "refactoring",
+        "bugs"
+      ]
+    },
+    {
+      "id": "live-002",
+      "path": "questions/live-coding/live-002.md",
+      "topic": "Live Coding & Refactoring",
+      "difficulty": "Senior",
+      "format": "Live Coding",
+      "title": "Race Condition in Money Transfer",
+      "time": "20 min",
+      "frequency": "Medium",
+      "related": [],
+      "tags": [
+        "live-coding",
+        "refactoring",
+        "bugs"
+      ]
+    },
+    {
+      "id": "live-003",
+      "path": "questions/live-coding/live-003.md",
+      "topic": "Live Coding & Refactoring",
+      "difficulty": "Senior",
+      "format": "Live Coding",
+      "title": "Spring @Transactional Self-Invocation",
+      "time": "20 min",
+      "frequency": "Medium",
+      "related": [],
+      "tags": [
+        "live-coding",
+        "refactoring",
+        "bugs"
+      ]
+    },
+    {
+      "id": "live-004",
+      "path": "questions/live-coding/live-004.md",
+      "topic": "Live Coding & Refactoring",
+      "difficulty": "Senior",
+      "format": "Live Coding",
+      "title": "Hibernate N+1 & LazyInitializationException",
+      "time": "20 min",
+      "frequency": "Medium",
+      "related": [],
+      "tags": [
+        "live-coding",
+        "refactoring",
+        "bugs"
+      ]
+    },
+    {
+      "id": "live-005",
+      "path": "questions/live-coding/live-005.md",
+      "topic": "Live Coding & Refactoring",
+      "difficulty": "Senior",
+      "format": "Live Coding",
+      "title": "Custom Rate Limiter (Token Bucket)",
+      "time": "20 min",
+      "frequency": "Medium",
+      "related": [],
+      "tags": [
+        "live-coding",
+        "refactoring",
+        "bugs"
+      ]
+    },
+    {
+      "id": "live-006",
+      "path": "questions/live-coding/live-006.md",
+      "topic": "Live Coding & Refactoring",
+      "difficulty": "Senior",
+      "format": "Live Coding",
+      "title": "In-Memory LRU Cache with TTL",
+      "time": "20 min",
+      "frequency": "Medium",
+      "related": [],
+      "tags": [
+        "live-coding",
+        "refactoring",
+        "bugs"
+      ]
+    },
+    {
+      "id": "live-007",
+      "path": "questions/live-coding/live-007.md",
+      "topic": "Live Coding & Refactoring",
+      "difficulty": "Senior",
+      "format": "Live Coding",
+      "title": "Refactoring nested if-else to Pattern Matching & Optional",
+      "time": "20 min",
+      "frequency": "Medium",
+      "related": [],
+      "tags": [
+        "live-coding",
+        "refactoring",
+        "bugs"
+      ]
+    },
+    {
+      "id": "live-008",
+      "path": "questions/live-coding/live-008.md",
+      "topic": "Live Coding & Refactoring",
+      "difficulty": "Senior",
+      "format": "Live Coding",
+      "title": "Deadlock detection and fix",
+      "time": "20 min",
+      "frequency": "Medium",
+      "related": [],
+      "tags": [
+        "live-coding",
+        "refactoring",
+        "bugs"
+      ]
+    },
+    {
+      "id": "live-009",
+      "path": "questions/live-coding/live-009.md",
+      "topic": "Live Coding & Refactoring",
+      "difficulty": "Senior",
+      "format": "Live Coding",
+      "title": "CompletableFuture timeout & fallback chain",
+      "time": "20 min",
+      "frequency": "Medium",
+      "related": [],
+      "tags": [
+        "live-coding",
+        "refactoring",
+        "bugs"
+      ]
+    },
+    {
+      "id": "live-010",
+      "path": "questions/live-coding/live-010.md",
+      "topic": "Live Coding & Refactoring",
+      "difficulty": "Senior",
+      "format": "Live Coding",
+      "title": "Custom AOP Annotation @LogExecutionTime",
+      "time": "20 min",
+      "frequency": "Medium",
+      "related": [],
+      "tags": [
+        "live-coding",
+        "refactoring",
+        "bugs"
+      ]
+    },
+    {
+      "id": "live-011",
+      "path": "questions/live-coding/live-011.md",
+      "topic": "Live Coding & Refactoring",
+      "difficulty": "Senior",
+      "format": "Live Coding",
+      "title": "Stream API side-effects antipatterns",
+      "time": "20 min",
+      "frequency": "Medium",
+      "related": [],
+      "tags": [
+        "live-coding",
+        "refactoring",
+        "bugs"
+      ]
+    },
+    {
+      "id": "live-012",
+      "path": "questions/live-coding/live-012.md",
+      "topic": "Live Coding & Refactoring",
+      "difficulty": "Senior",
+      "format": "Live Coding",
+      "title": "Thread-safe Connection Pool on BlockingQueue",
+      "time": "20 min",
+      "frequency": "Medium",
+      "related": [],
+      "tags": [
+        "live-coding",
+        "refactoring",
+        "bugs"
+      ]
+    },
+    {
+      "id": "live-013",
+      "path": "questions/live-coding/live-013.md",
+      "topic": "Live Coding & Refactoring",
+      "difficulty": "Senior",
+      "format": "Live Coding",
+      "title": "Recursive JSON parsing algorithm",
+      "time": "20 min",
+      "frequency": "Medium",
+      "related": [],
+      "tags": [
+        "live-coding",
+        "refactoring",
+        "bugs"
+      ]
+    },
+    {
+      "id": "live-014",
+      "path": "questions/live-coding/live-014.md",
+      "topic": "Live Coding & Refactoring",
+      "difficulty": "Senior",
+      "format": "Live Coding",
+      "title": "Producer-Consumer with wait/notify vs ReentrantLock",
+      "time": "20 min",
+      "frequency": "Medium",
+      "related": [],
+      "tags": [
+        "live-coding",
+        "refactoring",
+        "bugs"
+      ]
+    },
+    {
+      "id": "live-015",
+      "path": "questions/live-coding/live-015.md",
+      "topic": "Live Coding & Refactoring",
+      "difficulty": "Senior",
+      "format": "Live Coding",
+      "title": "Custom Spring Security JWT Filter",
+      "time": "20 min",
+      "frequency": "Medium",
+      "related": [],
+      "tags": [
+        "live-coding",
+        "refactoring",
+        "bugs"
+      ]
+    },
+    {
+      "id": "kafka-001",
+      "path": "questions/messaging/kafka-001.md",
+      "topic": "Kafka & Messaging",
+      "difficulty": "Senior",
+      "format": "Open Answer",
+      "title": "Transactional Outbox Pattern (Debezium vs Spring)",
+      "time": "15 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "kafka",
+        "messaging",
+        "architecture"
+      ]
+    },
+    {
+      "id": "kafka-002",
+      "path": "questions/messaging/kafka-002.md",
+      "topic": "Kafka & Messaging",
+      "difficulty": "Senior",
+      "format": "Open Answer",
+      "title": "Consumer Group Rebalance (Sticky/Cooperative)",
+      "time": "15 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "kafka",
+        "messaging",
+        "architecture"
+      ]
+    },
+    {
+      "id": "kafka-003",
+      "path": "questions/messaging/kafka-003.md",
+      "topic": "Kafka & Messaging",
+      "difficulty": "Senior",
+      "format": "Open Answer",
+      "title": "Dead Letter Queue (DLQ) & Non-Blocking Retries",
+      "time": "15 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "kafka",
+        "messaging",
+        "architecture"
+      ]
+    },
+    {
+      "id": "kafka-004",
+      "path": "questions/messaging/kafka-004.md",
+      "topic": "Kafka & Messaging",
+      "difficulty": "Senior",
+      "format": "Open Answer",
+      "title": "Idempotent Producer & Exactly-Once Semantics",
+      "time": "15 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "kafka",
+        "messaging",
+        "architecture"
+      ]
+    },
+    {
+      "id": "kafka-005",
+      "path": "questions/messaging/kafka-005.md",
+      "topic": "Kafka & Messaging",
+      "difficulty": "Senior",
+      "format": "Open Answer",
+      "title": "Consumer Lag (causes, metrics, fixes)",
+      "time": "15 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "kafka",
+        "messaging",
+        "architecture"
+      ]
+    },
+    {
+      "id": "kafka-006",
+      "path": "questions/messaging/kafka-006.md",
+      "topic": "Kafka & Messaging",
+      "difficulty": "Senior",
+      "format": "Open Answer",
+      "title": "Manual Offset Commit risks (ACK_IMMEDIATE)",
+      "time": "15 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "kafka",
+        "messaging",
+        "architecture"
+      ]
+    },
+    {
+      "id": "kafka-007",
+      "path": "questions/messaging/kafka-007.md",
+      "topic": "Kafka & Messaging",
+      "difficulty": "Senior",
+      "format": "Open Answer",
+      "title": "Partitioning Strategy & Hot Partitions",
+      "time": "15 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "kafka",
+        "messaging",
+        "architecture"
+      ]
+    },
+    {
+      "id": "kafka-008",
+      "path": "questions/messaging/kafka-008.md",
+      "topic": "Kafka & Messaging",
+      "difficulty": "Senior",
+      "format": "Open Answer",
+      "title": "Producer Performance tuning (batch.size, linger.ms)",
+      "time": "15 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "kafka",
+        "messaging",
+        "architecture"
+      ]
+    },
+    {
+      "id": "kafka-009",
+      "path": "questions/messaging/kafka-009.md",
+      "topic": "Kafka & Messaging",
+      "difficulty": "Senior",
+      "format": "Open Answer",
+      "title": "Schema Registry (Avro) & Compatibility",
+      "time": "15 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "kafka",
+        "messaging",
+        "architecture"
+      ]
+    },
+    {
+      "id": "kafka-010",
+      "path": "questions/messaging/kafka-010.md",
+      "topic": "Kafka & Messaging",
+      "difficulty": "Senior",
+      "format": "Open Answer",
+      "title": "Compacted Topics & State Stores",
+      "time": "15 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "kafka",
+        "messaging",
+        "architecture"
+      ]
+    },
+    {
+      "id": "kafka-011",
+      "path": "questions/messaging/kafka-011.md",
+      "topic": "Kafka & Messaging",
+      "difficulty": "Senior",
+      "format": "Open Answer",
+      "title": "Event Sourcing & CQRS with Kafka",
+      "time": "15 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "kafka",
+        "messaging",
+        "architecture"
+      ]
+    },
+    {
+      "id": "kafka-012",
+      "path": "questions/messaging/kafka-012.md",
+      "topic": "Kafka & Messaging",
+      "difficulty": "Senior",
+      "format": "Open Answer",
+      "title": "Kafka Streams vs Spring Cloud Stream",
+      "time": "15 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "kafka",
+        "messaging",
+        "architecture"
+      ]
+    },
+    {
+      "id": "kafka-013",
+      "path": "questions/messaging/kafka-013.md",
+      "topic": "Kafka & Messaging",
+      "difficulty": "Senior",
+      "format": "Open Answer",
+      "title": "Delivery Guarantees configs (At-least-once, etc)",
+      "time": "15 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "kafka",
+        "messaging",
+        "architecture"
+      ]
+    },
+    {
+      "id": "kafka-014",
+      "path": "questions/messaging/kafka-014.md",
+      "topic": "Kafka & Messaging",
+      "difficulty": "Senior",
+      "format": "Open Answer",
+      "title": "Testing with Testcontainers Kafka",
+      "time": "15 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "kafka",
+        "messaging",
+        "architecture"
+      ]
+    },
+    {
+      "id": "kafka-015",
+      "path": "questions/messaging/kafka-015.md",
+      "topic": "Kafka & Messaging",
+      "difficulty": "Senior",
+      "format": "Open Answer",
+      "title": "Kafka Security (SSL/SASL/ACL)",
+      "time": "15 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "kafka",
+        "messaging",
+        "architecture"
+      ]
+    },
+    {
+      "id": "kafka-016",
+      "path": "questions/messaging/kafka-016.md",
+      "topic": "Kafka & Messaging",
+      "difficulty": "Senior",
+      "format": "Open Answer",
+      "title": "Idempotent Consumer (Redis/DB unique constraints)",
+      "time": "15 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "kafka",
+        "messaging",
+        "architecture"
+      ]
+    },
+    {
+      "id": "kafka-017",
+      "path": "questions/messaging/kafka-017.md",
+      "topic": "Kafka & Messaging",
+      "difficulty": "Senior",
+      "format": "Open Answer",
+      "title": "In-Sync Replicas (ISR) & min.insync.replicas",
+      "time": "15 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "kafka",
+        "messaging",
+        "architecture"
+      ]
+    },
+    {
+      "id": "kafka-018",
+      "path": "questions/messaging/kafka-018.md",
+      "topic": "Kafka & Messaging",
+      "difficulty": "Senior",
+      "format": "Open Answer",
+      "title": "Kafka vs RabbitMQ vs AWS SQS",
+      "time": "15 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "kafka",
+        "messaging",
+        "architecture"
+      ]
+    },
+    {
+      "id": "kafka-019",
+      "path": "questions/messaging/kafka-019.md",
+      "topic": "Kafka & Messaging",
+      "difficulty": "Senior",
+      "format": "Open Answer",
+      "title": "Saga Pattern (Orchestration vs Choreography)",
+      "time": "15 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "kafka",
+        "messaging",
+        "architecture"
+      ]
+    },
+    {
+      "id": "kafka-020",
+      "path": "questions/messaging/kafka-020.md",
+      "topic": "Kafka & Messaging",
+      "difficulty": "Senior",
+      "format": "Open Answer",
+      "title": "Troubleshooting Poison Pill messages",
+      "time": "15 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "kafka",
+        "messaging",
+        "architecture"
+      ]
+    },
+    {
+      "id": "java21-001",
+      "path": "questions/modern-java/java21-001.md",
+      "topic": "Modern Java 21+",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Virtual Threads vs OS Threads",
+      "time": "10 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "java21",
+        "virtual-threads",
+        "core"
+      ]
+    },
+    {
+      "id": "java21-002",
+      "path": "questions/modern-java/java21-002.md",
+      "topic": "Modern Java 21+",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Thread Pinning (synchronized vs ReentrantLock)",
+      "time": "10 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "java21",
+        "virtual-threads",
+        "core"
+      ]
+    },
+    {
+      "id": "java21-003",
+      "path": "questions/modern-java/java21-003.md",
+      "topic": "Modern Java 21+",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Structured Concurrency (StructuredTaskScope)",
+      "time": "10 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "java21",
+        "virtual-threads",
+        "core"
+      ]
+    },
+    {
+      "id": "java21-004",
+      "path": "questions/modern-java/java21-004.md",
+      "topic": "Modern Java 21+",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Scoped Values vs ThreadLocal",
+      "time": "10 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "java21",
+        "virtual-threads",
+        "core"
+      ]
+    },
+    {
+      "id": "java21-005",
+      "path": "questions/modern-java/java21-005.md",
+      "topic": "Modern Java 21+",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Pattern Matching for switch",
+      "time": "10 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "java21",
+        "pattern-matching",
+        "core"
+      ]
+    },
+    {
+      "id": "java21-006",
+      "path": "questions/modern-java/java21-006.md",
+      "topic": "Modern Java 21+",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Record Patterns & Nested Destructuring",
+      "time": "10 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "java21",
+        "core"
+      ]
+    },
+    {
+      "id": "java21-007",
+      "path": "questions/modern-java/java21-007.md",
+      "topic": "Modern Java 21+",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Sequenced Collections API",
+      "time": "10 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "java21",
+        "core"
+      ]
+    },
+    {
+      "id": "java21-008",
+      "path": "questions/modern-java/java21-008.md",
+      "topic": "Modern Java 21+",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Foreign Function & Memory API (Project Panama)",
+      "time": "10 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "java21",
+        "core"
+      ]
+    },
+    {
+      "id": "java21-009",
+      "path": "questions/modern-java/java21-009.md",
+      "topic": "Modern Java 21+",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Generational ZGC in Java 21",
+      "time": "10 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "java21",
+        "core"
+      ]
+    },
+    {
+      "id": "java21-010",
+      "path": "questions/modern-java/java21-010.md",
+      "topic": "Modern Java 21+",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Spring Boot 3 Performance on Virtual Threads",
+      "time": "10 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "java21",
+        "core"
+      ]
+    },
+    {
+      "id": "java21-011",
+      "path": "questions/modern-java/java21-011.md",
+      "topic": "Modern Java 21+",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Unnamed Variables & Patterns (_)",
+      "time": "10 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "java21",
+        "core"
+      ]
+    },
+    {
+      "id": "java21-012",
+      "path": "questions/modern-java/java21-012.md",
+      "topic": "Modern Java 21+",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Implicitly Declared Classes & Main Methods",
+      "time": "10 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "java21",
+        "core"
+      ]
+    },
+    {
+      "id": "java21-013",
+      "path": "questions/modern-java/java21-013.md",
+      "topic": "Modern Java 21+",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Migration Caveats to Java 21",
+      "time": "10 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "java21",
+        "core"
+      ]
+    },
+    {
+      "id": "java21-014",
+      "path": "questions/modern-java/java21-014.md",
+      "topic": "Modern Java 21+",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "WebFlux vs Spring MVC + Virtual Threads",
+      "time": "10 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "java21",
+        "core"
+      ]
+    },
+    {
+      "id": "java21-015",
+      "path": "questions/modern-java/java21-015.md",
+      "topic": "Modern Java 21+",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "String Templates (Preview) & Multi-line Text Blocks",
+      "time": "10 min",
+      "frequency": "High",
+      "related": [],
+      "tags": [
+        "java21",
+        "core"
       ]
     },
     {

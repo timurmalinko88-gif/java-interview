@@ -1,6 +1,7 @@
 import { setDifficultyChipInactive } from './utils.js';
 import { state } from './state.js';
 import { isFlagged } from './collections.js';
+import { ROADMAPS } from './roadmaps.js';
 
 export // --- ui.js ---
 // Build the left sidebar navigation items
@@ -93,9 +94,11 @@ export // Filter actions triggered on inputs change
 function triggerFilterAction() {
   const searchValue = document.getElementById('search-input').value.toLowerCase().trim();
   const topicValue = document.getElementById('topic-filter').value;
+  const roadmapValue = document.getElementById('roadmap-filter') ? document.getElementById('roadmap-filter').value : 'none';
 
   // Checkboxes for format
   const checkedFormats = Array.from(document.querySelectorAll('.format-checkbox:checked')).map(el => el.value);
+  
   state.filteredQuestions = state.questionsList.filter(q => {
     // Search Matches
     const searchMatches = q.question && q.question.toLowerCase().includes(searchValue) || q.id && q.id.toLowerCase().includes(searchValue) || q.loadedQuestion && q.loadedQuestion.toLowerCase().includes(searchValue) || q.loadedAnswer && q.loadedAnswer.toLowerCase().includes(searchValue);
@@ -108,7 +111,18 @@ function triggerFilterAction() {
 
     // Format Matches
     const formatMatches = checkedFormats.length === 0 || checkedFormats.includes(q.format);
-    return searchMatches && topicMatches && diffMatches && formatMatches;
+
+    // Roadmap Matches
+    let roadmapMatches = true;
+    if (roadmapValue !== 'none' && ROADMAPS[roadmapValue]) {
+      const rm = ROADMAPS[roadmapValue];
+      // Check if question matches roadmap difficulties and tags
+      const matchDiff = rm.filters.difficulties.includes(q.difficulty);
+      const matchTag = rm.filters.tags.some(tag => (q.tags || []).includes(tag)) || rm.filters.tags.some(tag => (q.topic || '').toLowerCase().includes(tag));
+      roadmapMatches = matchDiff && matchTag;
+    }
+
+    return searchMatches && topicMatches && diffMatches && formatMatches && roadmapMatches;
   });
 
   // Reset cursor if out of bounds
@@ -130,6 +144,9 @@ export // Reset global filter selections
 function clearAllFilters() {
   document.getElementById('search-input').value = '';
   document.getElementById('topic-filter').value = 'all';
+  if (document.getElementById('roadmap-filter')) {
+      document.getElementById('roadmap-filter').value = 'none';
+  }
   state.selectedDiffFilters = [];
   document.querySelectorAll('.diff-chip').forEach(el => {
     const diff = el.getAttribute('data-diff');

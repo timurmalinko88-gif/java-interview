@@ -154,22 +154,43 @@
                     <i aria-hidden="true" class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400 text-sm"></i>
                 </div>
 
+                <!-- Roadmap Selector -->
+                <div class="space-y-1.5 mb-4">
+                    <label for="roadmap-filter" class="text-xs font-bold uppercase tracking-wider text-brand-500">Learning Tracks (Roadmaps)</label>
+                    <select id="roadmap-filter" class="w-full bg-brand-50 dark:bg-brand-900/20 border border-brand-200 dark:border-brand-800 rounded-xl px-3 py-2.5 text-sm font-semibold text-brand-700 dark:text-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all">
+                        <option value="none">--- Select a Learning Track ---</option>
+                        <option value="junior">Junior Express (50 Questions)</option>
+                        <option value="middle">Middle Spring & Microservices (150 Questions)</option>
+                        <option value="senior">Senior Architect Track (100 Questions)</option>
+                        <option value="ai">AI & Modern Java 21 Track (40 Questions)</option>
+                    </select>
+                </div>
+
                 <!-- Topic Selector -->
                 <div class="space-y-1.5">
                     <label for="topic-filter" class="text-xs font-bold uppercase tracking-wider text-slate-400">Topic</label>
                     <select id="topic-filter" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all">
                         <option value="all">All Topics</option>
-                        <option value="General">General Java Questions</option>
-                        <option value="OOP">OOP & Patterns</option>
-                        <option value="JVM & Memory Management">JVM & Garbage Collection</option>
-                        <option value="Multithreading">Multithreading</option>
-                        <option value="Collections">Collections Framework</option>
-                        <option value="Stream API">Stream API & Lambdas</option>
-                        <option value="Spring">Spring Framework</option>
-                        <option value="Databases">Databases & SQL</option>
-                        <option value="System Design">System Design</option>
-                        <option value="Patterns">Design Patterns & SOLID</option>
-                        <option value="Testing">Testing & Web Protocols</option>
+                        <optgroup label="2025-2026 Focus">
+                            <option value="AI & LLM Integration">AI, LLM & RAG (Spring AI)</option>
+                            <option value="Kafka & Messaging">Kafka & Advanced Messaging</option>
+                            <option value="Modern Java 21+">Modern Java 21+ (Loom, Pattern Matching)</option>
+                            <option value="Live Coding & Refactoring">Live Coding & Bug Hunting</option>
+                            <option value="Behavioral & STAR">HR, Soft Skills & STAR Method</option>
+                        </optgroup>
+                        <optgroup label="Core Java & Ecosystem">
+                            <option value="General">General Java Questions</option>
+                            <option value="OOP">OOP & Patterns</option>
+                            <option value="JVM & Memory Management">JVM & Garbage Collection</option>
+                            <option value="Multithreading">Multithreading</option>
+                            <option value="Collections">Collections Framework</option>
+                            <option value="Stream API">Stream API & Lambdas</option>
+                            <option value="Spring">Spring Framework</option>
+                            <option value="Databases">Databases & SQL</option>
+                            <option value="System Design">System Design</option>
+                            <option value="Patterns">Design Patterns & SOLID</option>
+                            <option value="Testing">Testing & Web Protocols</option>
+                        </optgroup>
                     </select>
                 </div>
 

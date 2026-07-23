@@ -170,6 +170,8 @@ document.addEventListener('DOMContentLoaded', () => {
   if (searchInput) searchInput.addEventListener("input", debounce(triggerFilterAction, 200));
   const topicFilter = document.getElementById('topic-filter');
   if (topicFilter) topicFilter.addEventListener("change", triggerFilterAction);
+  const roadmapFilter = document.getElementById('roadmap-filter');
+  if (roadmapFilter) roadmapFilter.addEventListener("change", triggerFilterAction);
   document.querySelectorAll('.format-checkbox').forEach(el => {
     el.addEventListener("change", triggerFilterAction);
   });
