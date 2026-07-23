@@ -144,29 +144,3 @@ dialog::backdrop {
     transform: rotateY(180deg);
 }
 
-/* Enhanced Skeleton Loader */
-@keyframes skeleton-loading {
-    0% {
-        background-color: #e2e8f0;
-    }
-    50% {
-        background-color: #cbd5e1;
-    }
-    100% {
-        background-color: #e2e8f0;
-    }
-}
-.dark @keyframes skeleton-loading {
-    0% {
-        background-color: #1e293b;
-    }
-    50% {
-        background-color: #334155;
-    }
-    100% {
-        background-color: #1e293b;
-    }
-}
-.animate-skeleton {
-    animation: skeleton-loading 1.5s infinite ease-in-out;
-}
