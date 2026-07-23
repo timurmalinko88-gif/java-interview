@@ -4,76 +4,77 @@ path: questions/messaging/kafka-013.md
 topic: Kafka & Messaging
 difficulty: Senior
 format: Open Answer
-title: Delivery Guarantees configs (At-least-once, etc)
+title: Delivery Guarantees Configs (At-least-once, etc)
 time: 15 min
 frequency: High
-tags: [kafka, messaging, architecture]
+tags: [kafka, messaging, architecture, guarantees]
 ---
 
-# Delivery Guarantees Configs in Kafka
+# Delivery Guarantees Configs (At-least-once, etc)
+Explain the three types of message delivery guarantees (At-most-once, At-least-once, Exactly-once). How do you configure a Kafka Producer and Consumer to achieve "At-least-once" delivery?
 
-Message delivery guarantees define the contract between the messaging system and the application regarding message loss and duplication. Understanding how to configure Kafka for specific guarantees is essential for building reliable systems.
+---ANSWER---
 
-There are three primary delivery guarantees:
+In distributed systems, failures like network drops, broker crashes, and application panics are inevitable. Message delivery guarantees describe how a messaging system handles these failures.
 
-1.  **At-most-once:** Messages may be lost, but are never redelivered (no duplicates).
-2.  **At-least-once:** Messages are never lost, but may be redelivered (duplicates possible).
-3.  **Exactly-once (EOS):** Messages are never lost and are processed exactly one time.
+**The Three Guarantees:**
+1.  **At-Most-Once (Fire and Forget):** A message is sent, and no verification is done. If it gets lost, it's lost forever. It guarantees you will never process a duplicate, but you might lose data.
+2.  **At-Least-Once:** A message is sent, and the sender waits for an acknowledgment. If it fails or times out, it retries. This guarantees no data is lost, but a network glitch during the acknowledgment might result in the consumer receiving the same message twice.
+3.  **Exactly-Once:** The holy grail. Messages are never lost, and despite retries, the consumer processes the effect of the message exactly one time.
 
-Achieving these guarantees requires tuning configurations on *both* the Producer and the Consumer.
+**Configuring for At-Least-Once Delivery:**
+At-least-once is the industry standard for most robust microservices. It requires specific configurations on both the Producer and the Consumer.
 
----
+**Producer Configuration:**
+The producer must guarantee the message is safely stored on multiple broker disks before considering it successful.
+*   `acks=all` (or `-1`): This is the most critical setting. It tells the broker not to send an acknowledgment back to the producer until the leader partition *and* all In-Sync Replicas (ISRs) have written the message to their logs. If the leader crashes immediately after, a replica already has the data and will take over.
+*   `retries=Integer.MAX_VALUE`: If the producer doesn't receive the ack (due to timeout or transient error), it must retry.
+*   *(Optional but Recommended)* `enable.idempotence=true`: While strictly used to prevent producer duplicates, it pairs with `acks=all` to ensure safe retries.
 
-## 1. At-Most-Once (Fire and Forget)
+**Consumer Configuration:**
+The consumer must only commit its offset (telling Kafka "I am done with this message") *after* it has fully processed the message and saved the results to its own database.
+*   `enable.auto.commit=false`: You must turn off auto-commit. If left on, Kafka might commit the offset in the background while your processing thread is still working. If the consumer crashes, the offset is already committed, but the work wasn't done, resulting in data loss (At-Most-Once).
+*   **Manual Commit:** The consumer code must manually call `commitSync()` or `commitAsync()` only at the very end of the business logic transaction. 
 
-Use this for high-throughput telemetry, metrics, or logging where occasional data loss is acceptable, but low latency is critical.
+By combining `acks=all` on the producer and manual offset commits on the consumer, you guarantee that a message is never lost, though your consumer must be designed to be idempotent (able to handle duplicates safely) because retries might occur.
 
-### Producer Configuration
-*   **`acks = 0`**: The producer sends the message and immediately considers it successful without waiting for any acknowledgment from the broker. If the network drops or the broker crashes, the message is lost.
-*   **`retries = 0`**: If an error occurs, the producer will not attempt to resend the message.
+### Examples
+```java
+// At-Least-Once Producer Config
+Properties pProps = new Properties();
+pProps.put(ProducerConfig.ACKS_CONFIG, "all"); 
+pProps.put(ProducerConfig.RETRIES_CONFIG, Integer.MAX_VALUE);
+// ensure min.insync.replicas is set to > 1 on the broker topic config!
 
-### Consumer Configuration
-*   **`enable.auto.commit = true`**: (Default). The consumer will periodically commit offsets in the background.
-*   *Why it can cause At-most-once:* If the consumer fetches a batch of messages, the background thread commits the offsets, and then the application crashes *before* processing those messages, upon restart, the consumer will fetch from the newly committed offset, skipping the unprocessed messages.
-*   *(Alternatively: Manual commit `ACK_IMMEDIATE` before processing).*
+// At-Least-Once Consumer Pattern
+Properties cProps = new Properties();
+cProps.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, "false"); 
+KafkaConsumer<String, String> consumer = new KafkaConsumer<>(cProps);
 
----
+while (true) {
+    ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
+    for (ConsumerRecord<String, String> record : records) {
+        try {
+            // 1. Do business logic (e.g., save to DB)
+            processAndSaveToDatabase(record.value()); 
+        } catch (Exception e) {
+            // Handle error, maybe break loop, DO NOT commit
+            throw e; 
+        }
+    }
+    // 2. Only commit AFTER successful processing
+    consumer.commitSync(); 
+}
+```
 
-## 2. At-Least-Once (The Standard)
+### Life Analogy
+Imagine sending a package via a courier.
+*   **At-Most-Once:** You leave the package on your porch. The courier might pick it up, or a thief might steal it. You never check.
+*   **At-Least-Once:** You hand the package to the courier and demand a signed receipt (`acks=all`). If they don't give you a receipt, you give them a duplicate package (`retries`). The receiver only signs for it after opening the box and verifying the contents (`enable.auto.commit=false`). They might get two boxes if the first receipt got lost in the mail, but they will definitely get at least one.
+*   **Exactly-Once:** The courier takes the box, puts a unique tracking ID on it, and the receiver's security guard checks the ID. If a duplicate box arrives, the guard throws it away.
 
-Use this for financial transactions, orders, and most business events. It guarantees no data loss, but your downstream systems **must be idempotent** to handle potential duplicate messages safely.
-
-### Producer Configuration
-*   **`acks = all` (or `-1`)**: The producer will wait for acknowledgment not just from the partition leader, but from all In-Sync Replicas (ISRs). This guarantees the message is safely replicated across multiple brokers.
-*   **`retries = Integer.MAX_VALUE`**: The producer will retry indefinitely on transient errors (like network blips).
-*   **`min.insync.replicas = 2` (Broker/Topic level config):** Ensures that `acks=all` actually implies at least two brokers have the data.
-
-### Consumer Configuration
-*   **`enable.auto.commit = false`**: Disable background commits.
-*   **Manual Commit AFTER Processing:** You must process the message (e.g., save to DB) and *only then* call `consumer.commitSync()` or `commitAsync()`.
-*   *Why it causes At-least-once:* If processing succeeds but the consumer crashes before committing the offset, the replacement consumer will fetch the same message again. Your application logic must handle this duplicate.
-
----
-
-## 3. Exactly-Once Semantics (EOS)
-
-Use this when you cannot tolerate duplicates and downstream systems cannot be easily made idempotent (e.g., incrementing a counter, or processing streams in Kafka Streams).
-
-### Producer Configuration
-*   **`enable.idempotence = true`**: Prevents the producer from introducing duplicates if it retries a send operation. The broker identifies and discards duplicate retries using a Producer ID and sequence numbers.
-*   **`transactional.id = "my-app-id"`**: Required for producing to multiple partitions atomically.
-*   **(Implied):** Enabling idempotence automatically enforces `acks=all` and `retries > 0`.
-
-### Consumer Configuration
-*   **`isolation.level = read_committed`**: This is crucial. By default, consumers read all messages (`read_uncommitted`). By changing this, the consumer will only read messages that are part of successfully committed transactions. It will ignore messages belonging to aborted transactions or open transactions.
-*   **Processing Framework:** True EOS in Kafka is typically achieved using the **Kafka Transactions API**, where reading offsets, processing data, and producing new events are wrapped in a single atomic transaction. This is built into **Kafka Streams** (enabled simply by setting `processing.guarantee=exactly_once_v2`).
-
----
-
-## Summary Matrix
-
-| Guarantee | Producer `acks` | Producer Retries | Consumer Commit Timing | Consumer `isolation.level` |
-| :--- | :--- | :--- | :--- | :--- |
-| **At-most-once** | `0` | `0` | Auto-commit (or manual before processing) | `read_uncommitted` |
-| **At-least-once** | `all` | `> 0` | Manual **AFTER** processing | `read_uncommitted` |
-| **Exactly-once** | `all` + Idempotence | `> 0` | Part of a Kafka Transaction | `read_committed` |
+### Key Points
+- At-Least-Once guarantees no data loss, but allows duplicates.
+- Producer needs `acks=all` and retries enabled.
+- Consumer needs `enable.auto.commit=false` and must manually commit offsets *after* processing.
+- Consumers must be idempotent to handle the inevitable duplicate messages safely.

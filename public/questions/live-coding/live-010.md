@@ -10,73 +10,78 @@ frequency: Medium
 tags: [live-coding, refactoring, bugs]
 ---
 
-### Problem
+# Custom AOP Annotation @LogExecutionTime
+We have several service methods scattered across our application where developers have manually copy-pasted `System.currentTimeMillis()` at the start and end of the methods to log execution time. This clutters the business logic heavily.
 
-You want to measure the execution time of various methods across a Spring Boot application without scattering `System.currentTimeMillis()` everywhere. 
+Can you refactor this by creating a custom `@LogExecutionTime` annotation and a Spring AOP Aspect to handle the time logging automatically?
 
-### Challenge
-Implement a custom annotation `@LogExecutionTime` and the corresponding Spring AOP Aspect to log the time taken by methods annotated with it.
+---ANSWER---
 
----
+Cross-cutting concerns like logging, security, and transaction management should not be tangled with business logic. Aspect-Oriented Programming (AOP) allows us to extract these concerns into separate classes called Aspects.
 
-### Solution
+In Spring, we can define an Aspect using `@Aspect` and `@Component`. We can then use the `@Around` advice to intercept method execution. An `@Around` advice gives us full control: we can execute code before the method, proceed with the actual method execution using `ProceedingJoinPoint`, and execute code after it completes.
 
-**Explanation:**
-We need to define a runtime retention annotation. Then, we write an Aspect class marked with `@Aspect` and `@Component`. Inside the Aspect, we use an `@Around` advice pointcut targeting methods annotated with our custom annotation. We use `ProceedingJoinPoint` to execute the method and measure the elapsed time.
+By combining an `@Around` advice with a custom annotation, we create a clean, reusable declarative mechanism. Any method annotated with `@LogExecutionTime` will automatically be proxied by Spring, and the execution time will be logged without dirtying the business code.
 
-**Refactored Code:**
-
-**1. Create the Annotation:**
+### Examples
 ```java
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+// BUGGY CODE (Cluttered business logic):
+@Service
+public class ReportService {
+    public void generateReport() {
+        long start = System.currentTimeMillis();
+        try {
+            // ... actual business logic ...
+            Thread.sleep(1000); 
+        } catch (InterruptedException e) { }
+        long executionTime = System.currentTimeMillis() - start;
+        System.out.println("generateReport executed in " + executionTime + "ms");
+    }
+}
 
+// REFACTORED CODE:
+// 1. Create the Annotation
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface LogExecutionTime {
 }
-```
 
-**2. Create the Aspect:**
-```java
-import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.Around;
-import org.aspectj.lang.annotation.Aspect;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
-
+// 2. Create the Aspect
 @Aspect
 @Component
 public class LoggingAspect {
 
-    private static final Logger logger = LoggerFactory.getLogger(LoggingAspect.class);
-
     @Around("@annotation(LogExecutionTime)")
     public Object logExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable {
         long start = System.currentTimeMillis();
-        
-        // Execute the actual method
+
+        // Proceed with actual method execution
         Object proceed = joinPoint.proceed();
-        
+
         long executionTime = System.currentTimeMillis() - start;
         
-        logger.info("{} executed in {} ms", joinPoint.getSignature().toShortString(), executionTime);
+        System.out.println(joinPoint.getSignature().getName() + " executed in " + executionTime + "ms");
         
         return proceed;
     }
 }
-```
 
-**Usage:**
-```java
+// 3. Clean Business Logic
 @Service
-public class MyService {
+public class ReportService {
+    
     @LogExecutionTime
-    public void serve() throws InterruptedException {
-        Thread.sleep(100);
+    public void generateReport() {
+        // ... purely business logic ...
     }
 }
 ```
+
+### Life Analogy
+Imagine working at a factory assembly line. Originally, every worker had to start a stopwatch, do their job, stop the stopwatch, and write down the time. It distracted them from assembling parts. 
+AOP is like hiring a dedicated timekeeper who stands beside the conveyor belt with a clipboard. Now, the workers just assemble the parts (business logic), and the timekeeper automatically records how long they took (cross-cutting concern).
+
+### Key Points
+- AOP is ideal for separating cross-cutting concerns from core business logic.
+- `@Around` advice is the most powerful AOP advice, allowing you to wrap a method call completely.
+- `joinPoint.proceed()` must be called in an `@Around` advice to trigger the actual target method.

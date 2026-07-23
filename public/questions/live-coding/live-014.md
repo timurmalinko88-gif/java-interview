@@ -10,75 +10,57 @@ frequency: Medium
 tags: [live-coding, refactoring, bugs]
 ---
 
-### Problem
+# Producer-Consumer with wait/notify vs ReentrantLock
+We have a Producer-Consumer implementation using the legacy `Object.wait()` and `Object.notifyAll()` methods on a shared `LinkedList`. It works, but it's inefficient because `notifyAll()` wakes up *all* threads (both producers and consumers), leading to high context-switching overhead (the "thundering herd" problem).
 
-The classic Producer-Consumer problem using old `wait()` and `notifyAll()` is prone to errors, such as thread wakeups when they shouldn't be. 
+Can you refactor this using `java.util.concurrent.locks.ReentrantLock` and its `Condition` variables to explicitly signal only producers when the queue is empty, and only consumers when the queue is full?
 
-**Legacy Code:**
+---ANSWER---
 
+The intrinsic monitor lock (using `synchronized` and `wait/notify`) only provides a single wait-set per object. This means `notifyAll()` blindly wakes up every thread waiting on that object. If a Producer puts an item in the queue, it should ideally only wake up a Consumer. Waking up other Producers is a waste of CPU cycles, as they will just find the queue is still full and go back to sleep.
+
+`ReentrantLock` solves this by allowing multiple `Condition` variables per lock. We can create one condition for `notFull` (where Producers wait) and one for `notEmpty` (where Consumers wait).
+When a Producer adds an item, it signals specifically the `notEmpty` condition. Only a waiting Consumer wakes up. This targeted signaling is much more efficient under high contention.
+
+*(Note: In real-world code, just use `BlockingQueue`. This exercise tests understanding of low-level concurrency constructs).*
+
+### Examples
 ```java
-import java.util.LinkedList;
-import java.util.Queue;
-
-public class Broker {
-    private final Queue<Integer> queue = new LinkedList<>();
-    private final int CAPACITY = 10;
-
-    public synchronized void produce(int item) throws InterruptedException {
-        while (queue.size() == CAPACITY) {
-            wait();
-        }
-        queue.add(item);
-        notifyAll();
+// BUGGY CODE (Inefficient single wait-set):
+public synchronized void produce(int val) throws InterruptedException {
+    while (queue.size() == MAX) {
+        wait();
     }
-
-    public synchronized int consume() throws InterruptedException {
-        while (queue.isEmpty()) {
-            wait();
-        }
-        int item = queue.poll();
-        notifyAll();
-        return item;
-    }
+    queue.add(val);
+    notifyAll(); // Wakes up BOTH producers and consumers unnecessarily
 }
-```
 
-### Challenge
-Refactor this code to use `ReentrantLock` and `Condition` variables for more granular and efficient thread signaling (signaling only producers when consuming, and only consumers when producing).
-
----
-
-### Solution
-
-**Explanation:**
-Using a single intrinsic lock (`synchronized`) and `notifyAll()` wakes up *all* waiting threads (both producers and consumers), which is inefficient (Thundering Herd problem). By using `ReentrantLock` and two `Condition` variables (`notFull` and `notEmpty`), we can precisely signal only the necessary threads.
-
-**Refactored Code:**
-
-```java
+// REFACTORED CODE (Targeted signaling with Conditions):
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class Broker {
+public class BoundedBuffer {
     private final Queue<Integer> queue = new LinkedList<>();
-    private final int CAPACITY = 10;
+    private final int MAX = 10;
     
-    private final ReentrantLock lock = new ReentrantLock();
-    private final Condition notFull = lock.newCondition();
-    private final Condition notEmpty = lock.newCondition();
+    private final Lock lock = new ReentrantLock();
+    // Two separate wait-sets!
+    private final Condition notFull  = lock.newCondition(); 
+    private final Condition notEmpty = lock.newCondition(); 
 
-    public void produce(int item) throws InterruptedException {
+    public void produce(int val) throws InterruptedException {
         lock.lock();
         try {
-            while (queue.size() == CAPACITY) {
-                notFull.await(); // wait until there is space
+            while (queue.size() == MAX) {
+                notFull.await(); // Wait here if full
             }
-            queue.add(item);
-            notEmpty.signal(); // wake up one consumer
+            queue.add(val);
+            notEmpty.signal(); // Signal ONLY a waiting consumer
         } finally {
-            lock.unlock();
+            lock.unlock(); // Always unlock in a finally block!
         }
     }
 
@@ -86,14 +68,23 @@ public class Broker {
         lock.lock();
         try {
             while (queue.isEmpty()) {
-                notEmpty.await(); // wait until there is data
+                notEmpty.await(); // Wait here if empty
             }
-            int item = queue.poll();
-            notFull.signal(); // wake up one producer
-            return item;
+            int val = queue.poll();
+            notFull.signal(); // Signal ONLY a waiting producer
+            return val;
         } finally {
             lock.unlock();
         }
     }
 }
 ```
+
+### Life Analogy
+Using `notifyAll()` is like a restaurant manager yelling "ORDER READY!" through a megaphone into a crowded lobby of both chefs and delivery drivers. Everyone stops what they're doing to check, but only one driver actually needs it.
+Using `Condition` variables is like the manager having two separate pagers: one just for chefs and one just for drivers. When food is ready, they page exactly one driver. The chefs keep working undisturbed.
+
+### Key Points
+- `ReentrantLock` provides more flexibility than `synchronized` blocks.
+- Multiple `Condition` variables allow you to partition wait-sets, preventing the "thundering herd" problem.
+- Always release a `ReentrantLock` in a `finally` block to prevent deadlocks in case of an exception.

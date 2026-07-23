@@ -8,14 +8,15 @@
       "topic": "AI & LLM Integration",
       "difficulty": "Middle",
       "format": "Open Answer",
-      "title": "Spring AI architecture vs LangChain4j",
+      "title": "Spring AI vs LangChain4j Architecture",
       "time": "10 min",
       "frequency": "High",
       "related": [],
       "tags": [
         "ai",
         "llm",
-        "spring-ai"
+        "spring-ai",
+        "langchain4j"
       ]
     },
     {
@@ -24,15 +25,15 @@
       "topic": "AI & LLM Integration",
       "difficulty": "Middle",
       "format": "Open Answer",
-      "title": "RAG architecture in Java",
+      "title": "RAG Architecture in Java",
       "time": "10 min",
       "frequency": "High",
       "related": [],
       "tags": [
         "ai",
         "llm",
-        "spring-ai",
-        "rag"
+        "rag",
+        "architecture"
       ]
     },
     {
@@ -48,8 +49,8 @@
       "tags": [
         "ai",
         "llm",
-        "postgresql",
         "pgvector",
+        "postgresql",
         "spring-data"
       ]
     },
@@ -59,16 +60,16 @@
       "topic": "AI & LLM Integration",
       "difficulty": "Middle",
       "format": "Open Answer",
-      "title": "Vector DBs (Qdrant/Milvus) integration",
+      "title": "Vector DBs (Qdrant/Milvus) Integration",
       "time": "10 min",
       "frequency": "High",
       "related": [],
       "tags": [
         "ai",
         "llm",
+        "vector-db",
         "qdrant",
-        "milvus",
-        "vector-db"
+        "milvus"
       ]
     },
     {
@@ -77,7 +78,7 @@
       "topic": "AI & LLM Integration",
       "difficulty": "Middle",
       "format": "Open Answer",
-      "title": "Document Loaders & Splitters (Token/Character)",
+      "title": "Document Loaders & Splitters",
       "time": "10 min",
       "frequency": "High",
       "related": [],
@@ -85,7 +86,9 @@
         "ai",
         "llm",
         "rag",
-        "document-loaders"
+        "chunking",
+        "langchain4j",
+        "spring-ai"
       ]
     },
     {
@@ -103,25 +106,25 @@
         "llm",
         "ollama",
         "embeddings",
-        "local-ai"
+        "local"
       ]
     },
     {
       "id": "ai-007",
       "path": "questions/ai-integration/ai-007.md",
       "topic": "AI & LLM Integration",
-      "difficulty": "Hard",
+      "difficulty": "Middle",
       "format": "Open Answer",
       "title": "Function Calling (@Tool) in LangChain4j",
-      "time": "15 min",
+      "time": "10 min",
       "frequency": "High",
       "related": [],
       "tags": [
         "ai",
         "llm",
-        "langchain4j",
         "function-calling",
-        "agents"
+        "langchain4j",
+        "tools"
       ]
     },
     {
@@ -156,6 +159,7 @@
         "ai",
         "llm",
         "spring-ai",
+        "json",
         "structured-output"
       ]
     },
@@ -165,7 +169,7 @@
       "topic": "AI & LLM Integration",
       "difficulty": "Middle",
       "format": "Open Answer",
-      "title": "ChatMemory & persistence",
+      "title": "ChatMemory & Persistence",
       "time": "10 min",
       "frequency": "High",
       "related": [],
@@ -173,8 +177,8 @@
         "ai",
         "llm",
         "chat-memory",
-        "langchain4j",
-        "spring-ai"
+        "persistence",
+        "langchain4j"
       ]
     },
     {
@@ -184,15 +188,15 @@
       "difficulty": "Hard",
       "format": "Open Answer",
       "title": "Model Context Protocol (MCP) in Java",
-      "time": "15 min",
+      "time": "10 min",
       "frequency": "Low",
       "related": [],
       "tags": [
         "ai",
         "llm",
         "mcp",
-        "model-context-protocol",
-        "spring-ai"
+        "context",
+        "integration"
       ]
     },
     {
@@ -218,10 +222,10 @@
       "id": "ai-013",
       "path": "questions/ai-integration/ai-013.md",
       "topic": "AI & LLM Integration",
-      "difficulty": "Middle",
+      "difficulty": "Hard",
       "format": "Open Answer",
-      "title": "Guardrails & Prompt Injection protection",
-      "time": "10 min",
+      "title": "Guardrails & Prompt Injection",
+      "time": "15 min",
       "frequency": "Medium",
       "related": [],
       "tags": [
@@ -240,7 +244,7 @@
       "format": "Open Answer",
       "title": "Prompt Caching & Tokens",
       "time": "10 min",
-      "frequency": "Medium",
+      "frequency": "Low",
       "related": [],
       "tags": [
         "ai",
@@ -256,7 +260,7 @@
       "topic": "AI & LLM Integration",
       "difficulty": "Hard",
       "format": "Open Answer",
-      "title": "RAG Evaluation metrics",
+      "title": "RAG Evaluation Metrics",
       "time": "15 min",
       "frequency": "Low",
       "related": [],
@@ -265,7 +269,7 @@
         "llm",
         "rag",
         "evaluation",
-        "metrics"
+        "testing"
       ]
     },
     {
@@ -283,7 +287,7 @@
         "llm",
         "rag",
         "hyde",
-        "advanced-retrieval"
+        "multi-query"
       ]
     },
     {
@@ -294,14 +298,14 @@
       "format": "Open Answer",
       "title": "Testing AI components (Testcontainers)",
       "time": "10 min",
-      "frequency": "Medium",
+      "frequency": "High",
       "related": [],
       "tags": [
         "ai",
         "llm",
         "testing",
         "testcontainers",
-        "spring-ai"
+        "spring-boot"
       ]
     },
     {
@@ -319,18 +323,18 @@
         "llm",
         "rag",
         "reranking",
-        "cross-encoder"
+        "cohere"
       ]
     },
     {
       "id": "ai-019",
       "path": "questions/ai-integration/ai-019.md",
       "topic": "AI & LLM Integration",
-      "difficulty": "Easy",
+      "difficulty": "Middle",
       "format": "Open Answer",
       "title": "Spring AI auto-configurations",
-      "time": "5 min",
-      "frequency": "Medium",
+      "time": "10 min",
+      "frequency": "High",
       "related": [],
       "tags": [
         "ai",
@@ -344,17 +348,19 @@
       "id": "ai-020",
       "path": "questions/ai-integration/ai-020.md",
       "topic": "AI & LLM Integration",
-      "difficulty": "Middle",
+      "difficulty": "Hard",
       "format": "Open Answer",
       "title": "Corporate AI assistant use-case",
-      "time": "15 min",
-      "frequency": "High",
+      "time": "20 min",
+      "frequency": "Medium",
       "related": [],
       "tags": [
         "ai",
         "llm",
-        "use-case",
-        "system-design"
+        "architecture",
+        "system-design",
+        "agent",
+        "rag"
       ]
     },
     {
@@ -3578,7 +3584,7 @@
       "topic": "Live Coding & Refactoring",
       "difficulty": "Senior",
       "format": "Live Coding",
-      "title": "Spring @Transactional Self-Invocation",
+      "title": "Spring @Transactional self-invocation",
       "time": "20 min",
       "frequency": "Medium",
       "related": [],
@@ -3857,7 +3863,8 @@
       "tags": [
         "kafka",
         "messaging",
-        "architecture"
+        "architecture",
+        "operations"
       ]
     },
     {
@@ -3866,14 +3873,15 @@
       "topic": "Kafka & Messaging",
       "difficulty": "Senior",
       "format": "Open Answer",
-      "title": "Manual Offset Commit risks (ACK_IMMEDIATE)",
+      "title": "Manual Offset Commit Risks (ACK_IMMEDIATE)",
       "time": "15 min",
       "frequency": "High",
       "related": [],
       "tags": [
         "kafka",
         "messaging",
-        "architecture"
+        "architecture",
+        "consumers"
       ]
     },
     {
@@ -3898,14 +3906,15 @@
       "topic": "Kafka & Messaging",
       "difficulty": "Senior",
       "format": "Open Answer",
-      "title": "Producer Performance tuning (batch.size, linger.ms)",
+      "title": "Producer Performance Tuning (batch.size, linger.ms)",
       "time": "15 min",
       "frequency": "High",
       "related": [],
       "tags": [
         "kafka",
         "messaging",
-        "architecture"
+        "architecture",
+        "performance"
       ]
     },
     {
@@ -3948,12 +3957,14 @@
       "format": "Open Answer",
       "title": "Event Sourcing & CQRS with Kafka",
       "time": "15 min",
-      "frequency": "High",
+      "frequency": "Medium",
       "related": [],
       "tags": [
         "kafka",
         "messaging",
-        "architecture"
+        "architecture",
+        "cqrs",
+        "events"
       ]
     },
     {
@@ -3964,12 +3975,13 @@
       "format": "Open Answer",
       "title": "Kafka Streams vs Spring Cloud Stream",
       "time": "15 min",
-      "frequency": "High",
+      "frequency": "Medium",
       "related": [],
       "tags": [
         "kafka",
         "messaging",
-        "architecture"
+        "architecture",
+        "streams"
       ]
     },
     {
@@ -3978,14 +3990,15 @@
       "topic": "Kafka & Messaging",
       "difficulty": "Senior",
       "format": "Open Answer",
-      "title": "Delivery Guarantees configs (At-least-once, etc)",
+      "title": "Delivery Guarantees Configs (At-least-once, etc)",
       "time": "15 min",
       "frequency": "High",
       "related": [],
       "tags": [
         "kafka",
         "messaging",
-        "architecture"
+        "architecture",
+        "guarantees"
       ]
     },
     {
@@ -4000,7 +4013,7 @@
       "related": [],
       "tags": [
         "kafka",
-        "messaging",
+        "testing",
         "architecture"
       ]
     },
@@ -4012,11 +4025,11 @@
       "format": "Open Answer",
       "title": "Kafka Security (SSL/SASL/ACL)",
       "time": "15 min",
-      "frequency": "High",
+      "frequency": "Medium",
       "related": [],
       "tags": [
         "kafka",
-        "messaging",
+        "security",
         "architecture"
       ]
     },
@@ -4033,7 +4046,8 @@
       "tags": [
         "kafka",
         "messaging",
-        "architecture"
+        "architecture",
+        "patterns"
       ]
     },
     {
@@ -4049,7 +4063,8 @@
       "tags": [
         "kafka",
         "messaging",
-        "architecture"
+        "architecture",
+        "reliability"
       ]
     },
     {
@@ -4064,8 +4079,10 @@
       "related": [],
       "tags": [
         "kafka",
-        "messaging",
-        "architecture"
+        "rabbitmq",
+        "sqs",
+        "architecture",
+        "system-design"
       ]
     },
     {
@@ -4081,7 +4098,9 @@
       "tags": [
         "kafka",
         "messaging",
-        "architecture"
+        "architecture",
+        "microservices",
+        "sagas"
       ]
     },
     {
@@ -4090,14 +4109,15 @@
       "topic": "Kafka & Messaging",
       "difficulty": "Senior",
       "format": "Open Answer",
-      "title": "Troubleshooting Poison Pill messages",
+      "title": "Troubleshooting Poison Pill Messages",
       "time": "15 min",
       "frequency": "High",
       "related": [],
       "tags": [
         "kafka",
-        "messaging",
-        "architecture"
+        "operations",
+        "debugging",
+        "troubleshooting"
       ]
     },
     {
@@ -4122,14 +4142,14 @@
       "topic": "Modern Java 21+",
       "difficulty": "Middle",
       "format": "Open Answer",
-      "title": "Thread Pinning (synchronized vs ReentrantLock)",
+      "title": "Thread Pinning",
       "time": "10 min",
       "frequency": "High",
       "related": [],
       "tags": [
         "java21",
         "virtual-threads",
-        "core"
+        "concurrency"
       ]
     },
     {
@@ -4138,14 +4158,14 @@
       "topic": "Modern Java 21+",
       "difficulty": "Middle",
       "format": "Open Answer",
-      "title": "Structured Concurrency (StructuredTaskScope)",
+      "title": "Structured Concurrency",
       "time": "10 min",
       "frequency": "High",
       "related": [],
       "tags": [
         "java21",
-        "virtual-threads",
-        "core"
+        "concurrency",
+        "structured-task-scope"
       ]
     },
     {
@@ -4160,8 +4180,8 @@
       "related": [],
       "tags": [
         "java21",
-        "virtual-threads",
-        "core"
+        "scoped-values",
+        "virtual-threads"
       ]
     },
     {
@@ -4177,7 +4197,7 @@
       "tags": [
         "java21",
         "pattern-matching",
-        "core"
+        "switch"
       ]
     },
     {
@@ -4192,7 +4212,8 @@
       "related": [],
       "tags": [
         "java21",
-        "core"
+        "records",
+        "pattern-matching"
       ]
     },
     {
@@ -4207,6 +4228,7 @@
       "related": [],
       "tags": [
         "java21",
+        "collections",
         "core"
       ]
     },
@@ -4214,30 +4236,34 @@
       "id": "java21-008",
       "path": "questions/modern-java/java21-008.md",
       "topic": "Modern Java 21+",
-      "difficulty": "Middle",
+      "difficulty": "High",
       "format": "Open Answer",
       "title": "Foreign Function & Memory API (Project Panama)",
-      "time": "10 min",
-      "frequency": "High",
+      "time": "15 min",
+      "frequency": "Medium",
       "related": [],
       "tags": [
         "java21",
-        "core"
+        "project-panama",
+        "jni",
+        "native"
       ]
     },
     {
       "id": "java21-009",
       "path": "questions/modern-java/java21-009.md",
       "topic": "Modern Java 21+",
-      "difficulty": "Middle",
+      "difficulty": "High",
       "format": "Open Answer",
-      "title": "Generational ZGC in Java 21",
+      "title": "Generational ZGC",
       "time": "10 min",
-      "frequency": "High",
+      "frequency": "Medium",
       "related": [],
       "tags": [
         "java21",
-        "core"
+        "garbage-collection",
+        "zgc",
+        "performance"
       ]
     },
     {
@@ -4246,27 +4272,29 @@
       "topic": "Modern Java 21+",
       "difficulty": "Middle",
       "format": "Open Answer",
-      "title": "Spring Boot 3 Performance on Virtual Threads",
+      "title": "Spring Boot 3 & Virtual Threads",
       "time": "10 min",
       "frequency": "High",
       "related": [],
       "tags": [
         "java21",
-        "core"
+        "spring-boot",
+        "virtual-threads"
       ]
     },
     {
       "id": "java21-011",
       "path": "questions/modern-java/java21-011.md",
       "topic": "Modern Java 21+",
-      "difficulty": "Middle",
+      "difficulty": "Easy",
       "format": "Open Answer",
-      "title": "Unnamed Variables & Patterns (_)",
-      "time": "10 min",
-      "frequency": "High",
+      "title": "Unnamed Variables & Patterns",
+      "time": "5 min",
+      "frequency": "Low",
       "related": [],
       "tags": [
         "java21",
+        "syntax",
         "core"
       ]
     },
@@ -4274,60 +4302,65 @@
       "id": "java21-012",
       "path": "questions/modern-java/java21-012.md",
       "topic": "Modern Java 21+",
-      "difficulty": "Middle",
+      "difficulty": "Easy",
       "format": "Open Answer",
       "title": "Implicitly Declared Classes & Main Methods",
-      "time": "10 min",
-      "frequency": "High",
+      "time": "5 min",
+      "frequency": "Low",
       "related": [],
       "tags": [
         "java21",
-        "core"
+        "syntax",
+        "beginners"
       ]
     },
     {
       "id": "java21-013",
       "path": "questions/modern-java/java21-013.md",
       "topic": "Modern Java 21+",
-      "difficulty": "Middle",
+      "difficulty": "Hard",
       "format": "Open Answer",
       "title": "Migration Caveats to Java 21",
-      "time": "10 min",
-      "frequency": "High",
+      "time": "15 min",
+      "frequency": "Medium",
       "related": [],
       "tags": [
         "java21",
-        "core"
+        "migration",
+        "architecture"
       ]
     },
     {
       "id": "java21-014",
       "path": "questions/modern-java/java21-014.md",
       "topic": "Modern Java 21+",
-      "difficulty": "Middle",
+      "difficulty": "Hard",
       "format": "Open Answer",
       "title": "WebFlux vs Spring MVC + Virtual Threads",
-      "time": "10 min",
+      "time": "15 min",
       "frequency": "High",
       "related": [],
       "tags": [
         "java21",
-        "core"
+        "spring-boot",
+        "webflux",
+        "architecture"
       ]
     },
     {
       "id": "java21-015",
       "path": "questions/modern-java/java21-015.md",
       "topic": "Modern Java 21+",
-      "difficulty": "Middle",
+      "difficulty": "Easy",
       "format": "Open Answer",
-      "title": "String Templates (Preview) & Multi-line Text Blocks",
-      "time": "10 min",
-      "frequency": "High",
+      "title": "String Templates & Text Blocks",
+      "time": "5 min",
+      "frequency": "Low",
       "related": [],
       "tags": [
         "java21",
-        "core"
+        "strings",
+        "syntax"
       ]
     },
     {
