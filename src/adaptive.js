@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
     optionsContainer.innerHTML = '';
     q.options.forEach((opt, idx) => {
       const btn = document.createElement('button');
-      btn.className = "w-full text-left p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors font-medium text-slate-700 dark:text-slate-300";
+      btn.className = "w-full text-left p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-darkCard hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors font-medium text-slate-700 dark:text-slate-300";
       btn.innerText = opt;
       btn.addEventListener('click', () => {
         if (idx !== q.correctIndex) q.testedTags.forEach(tag => failedTags.add(tag));
@@ -187,14 +187,14 @@ document.addEventListener('DOMContentLoaded', () => {
         groupDiv.className = 'mb-8';
         const groupTitle = document.createElement('h3');
         groupTitle.className = 'text-lg font-bold text-slate-800 dark:text-slate-200 mb-4 flex items-center space-x-2';
-        groupTitle.innerHTML = `<i class="fa-solid fa-folder-open text-amber-500"></i><span>${topic}</span><span class="text-sm font-normal text-slate-400 bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded-full">${qList.length}</span>`;
+        groupTitle.innerHTML = `<i class="fa-solid fa-folder-open text-amber-500"></i><span>${topic}</span><span class="text-sm font-normal text-slate-400 bg-slate-100 dark:bg-darkCard px-2 py-0.5 rounded-full">${qList.length}</span>`;
         groupDiv.appendChild(groupTitle);
         const listDiv = document.createElement('div');
         listDiv.className = 'space-y-3';
         qList.forEach(q => {
           const isMastered = mArray.includes(q.id);
           const qDiv = document.createElement('div');
-          qDiv.className = `p-4 rounded-xl border flex justify-between items-center transition-all ${isMastered ? 'border-emerald-500/30 bg-emerald-500/5' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 hover:border-brand-500/30 hover:shadow-md'}`;
+          qDiv.className = `p-4 rounded-xl border flex justify-between items-center transition-all ${isMastered ? 'border-emerald-500/30 bg-emerald-500/5' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-darkCard hover:border-brand-500/30 hover:shadow-md'}`;
           const left = document.createElement('div');
           left.className = 'flex items-center space-x-3';
           if (isMastered) {

@@ -81,12 +81,12 @@
             <!-- Gamification Bar -->
             <div class="hidden md:flex items-center space-x-4 text-sm">
                 <!-- XP -->
-                <div class="flex items-center space-x-2 bg-slate-50 dark:bg-slate-800/50 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700/50 transition-all hover:border-amber-500/50">
+                <div class="flex items-center space-x-2 bg-slate-50 dark:bg-darkCard/50 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700/50 transition-all hover:border-amber-500/50">
                     <i aria-hidden="true" class="fa-solid fa-star text-amber-500 animate-pulse"></i>
                     <span id="stats-xp" class="font-bold text-amber-600 dark:text-amber-400">0 XP</span>
                 </div>
                 <!-- Rank with Progress -->
-                <div class="relative flex items-center bg-slate-50 dark:bg-slate-800/50 rounded-xl border border-slate-200 dark:border-slate-700/50 overflow-hidden transition-all hover:border-brand-500/50 min-w-[140px] h-9">
+                <div class="relative flex items-center bg-slate-50 dark:bg-darkCard/50 rounded-xl border border-slate-200 dark:border-slate-700/50 overflow-hidden transition-all hover:border-brand-500/50 min-w-[140px] h-9">
                     <!-- Progress Bar Background -->
                     <div id="rank-progress-bar" class="absolute left-0 top-0 bottom-0 bg-brand-500/15 dark:bg-brand-500/20 w-0 transition-all duration-1000"></div>
                     
@@ -126,7 +126,7 @@
                 </button>
 
                 <!-- My Stats Button -->
-                <button id="my-stats-btn" class="flex items-center space-x-1 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 px-3 py-1.5 rounded-lg text-sm font-semibold transition-all-300">
+                <button id="my-stats-btn" class="flex items-center space-x-1 bg-slate-100 hover:bg-slate-200 dark:bg-darkCard dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 px-3 py-1.5 rounded-lg text-sm font-semibold transition-all-300">
                     <i aria-hidden="true" class="fa-solid fa-chart-pie"></i>
                     <span class="hidden lg:inline">My Stats</span>
                 </button>
@@ -140,7 +140,7 @@
         </div>
         
         <!-- Global Progress Bar -->
-        <div class="w-full bg-slate-100 dark:bg-slate-800/50 h-1">
+        <div class="w-full bg-slate-100 dark:bg-darkCard/50 h-1">
             <div id="global-progress" class="bg-gradient-to-r from-brand-500 to-amber-500 h-full w-0 transition-all duration-500"></div>
         </div>
     </header>
@@ -164,7 +164,7 @@
                 <!-- Search Input -->
                 <div class="relative">
                     <input type="text" id="search-input" aria-label="Search questions" placeholder="Search questions..." 
-                        class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 pl-10 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all">
+                        class="w-full bg-slate-50 dark:bg-darkBg border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 pl-10 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all">
                     <i aria-hidden="true" class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400 text-sm"></i>
                 </div>
 
@@ -183,7 +183,7 @@
                 <!-- Topic Selector -->
                 <div class="space-y-1.5">
                     <label for="topic-filter" class="text-xs font-bold uppercase tracking-wider text-slate-400">Topic</label>
-                    <select id="topic-filter" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all">
+                    <select id="topic-filter" class="w-full bg-slate-50 dark:bg-darkBg border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all">
                         <option value="all">All Topics</option>
                         <optgroup label="2025-2026 Focus">
                             <option value="AI & LLM Integration">AI, LLM & RAG (Spring AI)</option>
@@ -215,7 +215,7 @@
                         <button data-diff="Junior" class="diff-chip flex-1 px-3 py-1.5 rounded-lg text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 hover:bg-emerald-500/20 transition-all duration-200">
                             Junior
                         </button>
-                        <button data-diff="Middle" class="diff-chip flex-1 px-3 py-1.5 rounded-lg text-xs font-semibold bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20 hover:bg-blue-500/20 transition-all duration-200">
+                        <button data-diff="Middle" class="diff-chip flex-1 px-3 py-1.5 rounded-lg text-xs font-semibold bg-brand-500/10 text-brand-600 dark:text-brand-400 border border-brand-500/20 hover:bg-brand-500/20 transition-all duration-200">
                             Middle
                         </button>
                         <button data-diff="Senior" class="diff-chip flex-1 px-3 py-1.5 rounded-lg text-xs font-semibold bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20 hover:bg-purple-500/20 transition-all duration-200">
@@ -228,11 +228,11 @@
                 <div class="space-y-1.5">
                     <p id="format-label" class="text-xs font-bold uppercase tracking-wider text-slate-400">Question Format</p>
                     <div class="grid grid-cols-2 gap-2 text-xs">
-                        <label class="flex items-center space-x-2 bg-slate-50 dark:bg-slate-900 p-2 rounded-lg border border-slate-200 dark:border-slate-800 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800">
+                        <label class="flex items-center space-x-2 bg-slate-50 dark:bg-darkBg p-2 rounded-lg border border-slate-200 dark:border-slate-800 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800">
                             <input type="checkbox" value="Open Answer" class="format-checkbox rounded text-brand-500 focus:ring-brand-500 bg-transparent border-slate-300 dark:border-slate-700">
                             <span>Theory</span>
                         </label>
-                        <label class="flex items-center space-x-2 bg-slate-50 dark:bg-slate-900 p-2 rounded-lg border border-slate-200 dark:border-slate-800 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800">
+                        <label class="flex items-center space-x-2 bg-slate-50 dark:bg-darkBg p-2 rounded-lg border border-slate-200 dark:border-slate-800 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800">
                             <input type="checkbox" value="Code Review" class="format-checkbox rounded text-brand-500 focus:ring-brand-500 bg-transparent border-slate-300 dark:border-slate-700">
                             <span>Code Review</span>
                         </label>
@@ -242,10 +242,10 @@
 
             <!-- 2. Interactive Questions List Container -->
             <div class="bg-white dark:bg-darkCard rounded-2xl border border-slate-200 dark:border-slate-800 shadow-md flex flex-col flex-1 overflow-hidden transition-colors duration-300 max-h-[480px] lg:max-h-none">
-                <div class="p-4 border-b border-slate-200 dark:border-slate-800 flex flex-col space-y-3 bg-slate-50/50 dark:bg-slate-900/50">
+                <div class="p-4 border-b border-slate-200 dark:border-slate-800 flex flex-col space-y-3 bg-slate-50/50 dark:bg-darkBg/50">
                     <div class="flex justify-between items-center">
                         <span class="font-bold text-sm text-slate-700 dark:text-slate-300">Questions List</span>
-                        <span id="question-list-count" class="text-xs bg-slate-200 dark:bg-slate-800 px-2 py-0.5 rounded-full font-semibold text-slate-500">0</span>
+                        <span id="question-list-count" class="text-xs bg-slate-200 dark:bg-darkCard px-2 py-0.5 rounded-full font-semibold text-slate-500">0</span>
                     </div>
                     <!-- Topic Micro Progress Bar -->
                     <div id="topic-micro-progress" class="hidden flex-col space-y-1">
@@ -262,16 +262,16 @@
                 <!-- Scrollable Container -->
                 <div id="questions-container" class="overflow-y-auto divide-y divide-slate-100 dark:divide-slate-800/60 flex-1">
                     <div class="p-6 space-y-4" aria-busy="true" aria-label="Loading questions">
-                        <div class="h-14 bg-slate-200 dark:bg-slate-800 animate-pulse rounded-xl"></div>
-                        <div class="h-14 bg-slate-200 dark:bg-slate-800 animate-pulse rounded-xl opacity-80"></div>
-                        <div class="h-14 bg-slate-200 dark:bg-slate-800 animate-pulse rounded-xl opacity-60"></div>
-                        <div class="h-14 bg-slate-200 dark:bg-slate-800 animate-pulse rounded-xl opacity-40"></div>
+                        <div class="h-14 bg-slate-200 dark:bg-darkCard animate-pulse rounded-xl"></div>
+                        <div class="h-14 bg-slate-200 dark:bg-darkCard animate-pulse rounded-xl opacity-80"></div>
+                        <div class="h-14 bg-slate-200 dark:bg-darkCard animate-pulse rounded-xl opacity-60"></div>
+                        <div class="h-14 bg-slate-200 dark:bg-darkCard animate-pulse rounded-xl opacity-40"></div>
                     </div>
                 </div>
             </div>
 
             <!-- Premium Feature Teaser -->
-            <button id="mock-interview-btn" class="w-full bg-gradient-to-r from-brand-500 to-indigo-600 text-white rounded-xl p-4 flex items-center justify-between hover:scale-[1.02] hover:shadow-lg hover:shadow-brand-500/20 transition-all-300 group">
+            <button id="mock-interview-btn" class="w-full bg-gradient-to-r from-brand-500 to-brand-600 text-white rounded-xl p-4 flex items-center justify-between hover:scale-[1.02] hover:shadow-lg hover:shadow-brand-500/20 transition-all-300 group">
                 <div class="flex items-center space-x-3">
                     <div class="bg-white/20 p-2 rounded-lg group-hover:animate-pulse">
                         <i aria-hidden="true" class="fa-solid fa-gamepad"></i>
@@ -295,7 +295,7 @@
                 <div class="absolute -top-12 -right-12 w-48 h-48 bg-gradient-to-br from-brand-500/10 to-transparent rounded-full blur-2xl pointer-events-none"></div>
 
                 <!-- Mock Interview Header Bar (Shown during mock mode) -->
-                <div id="mock-status-bar" class="hidden bg-gradient-to-r from-brand-500/10 via-indigo-500/10 to-brand-500/10 border border-brand-500/20 rounded-xl p-3 flex items-center justify-between">
+                <div id="mock-status-bar" class="hidden bg-gradient-to-r from-brand-500/10 via-brand-500/10 to-brand-500/10 border border-brand-500/20 rounded-xl p-3 flex items-center justify-between">
                     <div class="flex items-center space-x-2">
                         <span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-ping"></span>
                         <span class="text-xs font-bold text-brand-600 dark:text-brand-400 uppercase tracking-wider">Mock Interview Live</span>
@@ -319,15 +319,15 @@
                             Junior
                         </span>
                         <!-- ID Badge -->
-                        <span id="active-id" class="px-2.5 py-1 rounded-lg text-xs font-mono font-bold bg-indigo-100 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-700/50">
+                        <span id="active-id" class="px-2.5 py-1 rounded-lg text-xs font-mono font-bold bg-brand-100 dark:bg-brand-900/30 text-brand-700 dark:text-brand-400 border border-brand-200 dark:border-brand-700/50">
                             #ID
                         </span>
                         <!-- Topic Badge -->
-                        <span id="active-topic" class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700/50">
+                        <span id="active-topic" class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-darkCard text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700/50">
                             JVM & Memory
                         </span>
                         <!-- Format Badge -->
-                        <span id="active-format" class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700/50">
+                        <span id="active-format" class="px-2.5 py-1 rounded-lg text-xs font-semibold bg-slate-100 dark:bg-darkCard text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700/50">
                             Open Answer
                         </span>
                     </div>
@@ -371,13 +371,13 @@
                                 <span class="w-1.5 h-4 bg-amber-500 rounded-full"></span>
                                 <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Code Snippet (Java)</h3>
                             </div>
-                            <button id="copy-code-btn" class="text-xs text-slate-400 hover:text-white bg-slate-100 dark:bg-slate-800 hover:bg-brand-500 dark:hover:bg-brand-500 px-2.5 py-1 rounded-md flex items-center space-x-1.5 transition-all-300">
+                            <button id="copy-code-btn" class="text-xs text-slate-400 hover:text-white bg-slate-100 dark:bg-darkCard hover:bg-brand-500 dark:hover:bg-brand-500 px-2.5 py-1 rounded-md flex items-center space-x-1.5 transition-all-300">
                                 <i aria-hidden="true" class="fa-solid fa-copy"></i>
                                 <span>Copy</span>
                             </button>
                         </div>
                         <div class="relative rounded-xl overflow-hidden shadow-inner group">
-                            <pre class="!my-0 !pt-11 !pb-4 !px-4 !bg-slate-900 overflow-x-auto"><code id="code-content" class="language-java font-mono text-sm"></code></pre>
+                            <pre class="!my-0 !pt-11 !pb-4 !px-4 !bg-darkBg overflow-x-auto"><code id="code-content" class="language-java font-mono text-sm"></code></pre>
                         </div>
                     </div>
 
@@ -421,7 +421,7 @@
                                 <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
                             </button>
                         </div>
-                        <span id="counter" class="text-xs font-semibold tracking-wider text-slate-400 bg-slate-100 dark:bg-slate-800/60 px-3 py-1.5 rounded-lg">
+                        <span id="counter" class="text-xs font-semibold tracking-wider text-slate-400 bg-slate-100 dark:bg-darkCard/60 px-3 py-1.5 rounded-lg">
                             0 / 0
                         </span>
                     </div>
@@ -478,7 +478,7 @@
 
     <!-- Toasts feedback notifications dynamically injected -->
     <div id="toast" role="status" aria-live="polite" class="fixed bottom-6 right-6 z-50 bg-white/95 dark:bg-[#151c2c]/95 backdrop-blur-md text-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-800/80 rounded-2xl px-5 py-4 shadow-2xl flex items-center space-x-3 pointer-events-none opacity-0 transform translate-y-8 transition-all duration-500 ease-out">
-        <div class="bg-slate-100 dark:bg-slate-800/50 p-2 rounded-xl flex items-center justify-center">
+        <div class="bg-slate-100 dark:bg-darkCard/50 p-2 rounded-xl flex items-center justify-center">
             <i id="toast-icon" aria-hidden="true" class="fa-solid fa-check text-emerald-500 text-lg"></i>
         </div>
         <span id="toast-message" class="text-sm font-bold tracking-wide"></span>
@@ -492,7 +492,7 @@
             </button>
 
             <div class="flex items-center space-x-3">
-                <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-brand-500 to-indigo-600 flex items-center justify-center text-white text-xl shadow-lg shadow-brand-500/20">
+                <div class="w-12 h-12 rounded-xl bg-gradient-to-tr from-brand-500 to-brand-600 flex items-center justify-center text-white text-xl shadow-lg shadow-brand-500/20">
                     <i aria-hidden="true" class="fa-solid fa-gamepad"></i>
                 </div>
                 <div>
@@ -544,7 +544,7 @@
                 <!-- Duration -->
                 <div>
                     <label for="mock-time-select" class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Interview Time Limit</label>
-                    <select id="mock-time-select" class="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-3 text-xs font-semibold focus:outline-none focus:border-brand-500 text-slate-800 dark:text-slate-200">
+                    <select id="mock-time-select" class="w-full bg-slate-50 dark:bg-darkBg border border-slate-200 dark:border-slate-800 rounded-xl p-3 text-xs font-semibold focus:outline-none focus:border-brand-500 text-slate-800 dark:text-slate-200">
                         <option value="15">⚡ 15 Minutes (Express)</option>
                         <option value="30" selected>⏱️ 30 Minutes (Standard)</option>
                         <option value="45">⌛ 45 Minutes (In-Depth)</option>
@@ -554,7 +554,7 @@
             </div>
 
             <!-- Start Button -->
-            <button id="start-mock-btn" class="w-full bg-gradient-to-r from-brand-500 to-indigo-600 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-brand-500/25 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center space-x-2">
+            <button id="start-mock-btn" class="w-full bg-gradient-to-r from-brand-500 to-brand-600 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-brand-500/25 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center space-x-2">
                 <span>Start Simulation</span>
                 <i aria-hidden="true" class="fa-solid fa-play text-xs"></i>
             </button>
@@ -574,15 +574,15 @@
 
             <!-- Score Summary Cards -->
             <div class="grid grid-cols-3 gap-3 text-center">
-                <div class="bg-slate-50 dark:bg-slate-900/60 p-3 rounded-xl border border-slate-100 dark:border-slate-800">
+                <div class="bg-slate-50 dark:bg-darkBg/60 p-3 rounded-xl border border-slate-100 dark:border-slate-800">
                     <span class="text-[10px] text-slate-400 uppercase font-bold block">Score</span>
                     <span id="mock-result-score" class="text-lg font-extrabold text-brand-500">0%</span>
                 </div>
-                <div class="bg-slate-50 dark:bg-slate-900/60 p-3 rounded-xl border border-slate-100 dark:border-slate-800">
+                <div class="bg-slate-50 dark:bg-darkBg/60 p-3 rounded-xl border border-slate-100 dark:border-slate-800">
                     <span class="text-[10px] text-slate-400 uppercase font-bold block">XP Gained</span>
                     <span id="mock-result-xp" class="text-lg font-extrabold text-amber-500">+0 XP</span>
                 </div>
-                <div class="bg-slate-50 dark:bg-slate-900/60 p-3 rounded-xl border border-slate-100 dark:border-slate-800">
+                <div class="bg-slate-50 dark:bg-darkBg/60 p-3 rounded-xl border border-slate-100 dark:border-slate-800">
                     <span class="text-[10px] text-slate-400 uppercase font-bold block">Verdict</span>
                     <span id="mock-result-verdict" class="text-xs font-bold text-emerald-500 block mt-1">PASSED</span>
                 </div>
@@ -635,9 +635,9 @@
                 <div id="adaptive-step-2" class="hidden space-y-6">
                     <div class="flex justify-between items-center text-sm font-semibold text-slate-500 dark:text-slate-400">
                         <span id="quiz-progress-text">Question 1 of 8</span>
-                        <span class="px-2 py-1 bg-slate-100 dark:bg-slate-800 rounded-md" id="quiz-level-badge">Middle</span>
+                        <span class="px-2 py-1 bg-slate-100 dark:bg-darkCard rounded-md" id="quiz-level-badge">Middle</span>
                     </div>
-                    <div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
+                    <div class="w-full bg-slate-100 dark:bg-darkCard rounded-full h-2">
                         <div id="quiz-progress-bar" class="bg-emerald-500 h-2 rounded-full transition-all" style="width: 10%"></div>
                     </div>
                     
@@ -664,7 +664,7 @@
 
     <!-- Adaptive Roadmap Modal -->
     <dialog id="adaptive-roadmap-modal" class="bg-transparent m-auto p-0 transition-opacity opacity-0">
-        <div class="bg-slate-50 dark:bg-slate-900 rounded-2xl w-full max-w-4xl max-h-[90vh] flex flex-col shadow-2xl border border-slate-200 dark:border-slate-800 m-4 overflow-hidden">
+        <div class="bg-slate-50 dark:bg-darkBg rounded-2xl w-full max-w-4xl max-h-[90vh] flex flex-col shadow-2xl border border-slate-200 dark:border-slate-800 m-4 overflow-hidden">
             <div class="p-6 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center bg-white dark:bg-darkCard shrink-0">
                 <div class="flex items-center space-x-3">
                     <div class="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 text-lg">
@@ -702,7 +702,7 @@
     <!-- Statistics Dashboard Modal -->
     <dialog id="stats-dashboard-modal" class="bg-transparent m-auto p-0 transition-opacity opacity-0">
         <div class="bg-white dark:bg-darkCard rounded-2xl w-full max-w-3xl max-h-[90vh] flex flex-col shadow-2xl border border-slate-200 dark:border-slate-800 m-4 overflow-hidden">
-            <div class="p-6 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center bg-slate-50 dark:bg-slate-900/50 shrink-0">
+            <div class="p-6 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center bg-slate-50 dark:bg-darkBg/50 shrink-0">
                 <div class="flex items-center space-x-3">
                     <div class="w-10 h-10 rounded-full bg-brand-500/10 flex items-center justify-center text-brand-500 text-lg">
                         <i aria-hidden="true" class="fa-solid fa-chart-pie"></i>
@@ -731,7 +731,7 @@
                 </div>
             </div>
             
-            <div class="p-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50 flex justify-end">
+            <div class="p-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-darkBg/50 flex justify-end">
                 <button id="reset-progress-btn" class="px-4 py-2 text-sm font-semibold text-rose-500 hover:text-white hover:bg-rose-500 rounded-lg transition-colors border border-rose-500/30">
                     <i aria-hidden="true" class="fa-solid fa-trash-can mr-1"></i> Reset Progress
                 </button>

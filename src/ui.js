@@ -51,10 +51,10 @@ function buildSidebarList() {
 
     // Color configuration for difficulties
     let diffStyle = 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400';
-    if (q.difficulty === 'Middle') diffStyle = 'bg-blue-500/10 text-blue-600 dark:text-blue-400';
+    if (q.difficulty === 'Middle') diffStyle = 'bg-brand-500/10 text-brand-600 dark:text-brand-400';
     if (q.difficulty === 'Senior') diffStyle = 'bg-purple-500/10 text-purple-600 dark:text-purple-400';
     const button = document.createElement('button');
-    button.className = `w-full text-left p-4 transition-all duration-200 border-l-4 flex flex-col space-y-2 ${isActive ? 'bg-slate-100 dark:bg-slate-800/80 border-brand-500' : 'border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/30'}`;
+    button.className = `w-full text-left p-4 transition-all duration-200 border-l-4 flex flex-col space-y-2 ${isActive ? 'bg-slate-100 dark:bg-darkCard/80 border-brand-500' : 'border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/30'}`;
 
     // Extract short question label
     const shortQuestionText = q.title || q.question || q.id;
@@ -64,7 +64,7 @@ function buildSidebarList() {
                     <span class="text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wider ${diffStyle}">
                         ${q.difficulty}
                     </span>
-                    <span class="text-[10px] font-semibold text-slate-400 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded">
+                    <span class="text-[10px] font-semibold text-slate-400 bg-slate-100 dark:bg-darkCard px-1.5 py-0.5 rounded">
                         ${q.topic}
                     </span>
                 </div>
@@ -282,7 +282,7 @@ async function loadQuestion(indexOrQuestion) {
   if (q.difficulty === 'Junior') {
     diffEl.classList.add('bg-emerald-500/10', 'text-emerald-600', 'dark:text-emerald-400');
   } else if (q.difficulty === 'Middle') {
-    diffEl.classList.add('bg-blue-500/10', 'text-blue-600', 'dark:text-blue-400');
+    diffEl.classList.add('bg-brand-500/10', 'text-brand-600', 'dark:text-brand-400');
   } else {
     diffEl.classList.add('bg-purple-500/10', 'text-purple-600', 'dark:text-purple-400');
   }
@@ -295,13 +295,13 @@ async function loadQuestion(indexOrQuestion) {
   const extraMetaContainer = document.getElementById('extra-metadata');
   extraMetaContainer.innerHTML = '';
   if (q.time) {
-    extraMetaContainer.innerHTML += `<span class="flex items-center gap-1 bg-slate-50 dark:bg-slate-800/50 px-2 py-1 rounded"><i class="fa-regular fa-clock text-amber-500"></i> ${q.time}</span>`;
+    extraMetaContainer.innerHTML += `<span class="flex items-center gap-1 bg-slate-50 dark:bg-darkCard/50 px-2 py-1 rounded"><i class="fa-regular fa-clock text-amber-500"></i> ${q.time}</span>`;
   }
   if (q.frequency) {
-    extraMetaContainer.innerHTML += `<span class="flex items-center gap-1 bg-slate-50 dark:bg-slate-800/50 px-2 py-1 rounded"><i class="fa-solid fa-fire-flame-curved text-brand-500"></i> Frequency: ${q.frequency}</span>`;
+    extraMetaContainer.innerHTML += `<span class="flex items-center gap-1 bg-slate-50 dark:bg-darkCard/50 px-2 py-1 rounded"><i class="fa-solid fa-fire-flame-curved text-brand-500"></i> Frequency: ${q.frequency}</span>`;
   }
   if (q.related && q.related.length > 0) {
-    extraMetaContainer.innerHTML += `<span class="flex items-center gap-1 bg-slate-50 dark:bg-slate-800/50 px-2 py-1 rounded"><i class="fa-solid fa-link text-blue-500"></i> ${Array.isArray(q.related) ? q.related.join(', ') : q.related}</span>`;
+    extraMetaContainer.innerHTML += `<span class="flex items-center gap-1 bg-slate-50 dark:bg-darkCard/50 px-2 py-1 rounded"><i class="fa-solid fa-link text-brand-500"></i> ${Array.isArray(q.related) ? q.related.join(', ') : q.related}</span>`;
   }
 
   // Reset action bookmark/completed status indicators
@@ -429,7 +429,7 @@ function renderNoQuestionsFoundState() {
   const card = document.getElementById('main-content-card');
   card.innerHTML = `
         <div class="flex-1 flex flex-col items-center justify-center text-center p-8">
-            <div class="w-16 h-16 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-400 mb-4 text-2xl">
+            <div class="w-16 h-16 rounded-full bg-slate-100 dark:bg-darkCard flex items-center justify-center text-slate-400 mb-4 text-2xl">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </div>
             <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Nothing Found</h3>
@@ -457,7 +457,7 @@ function showToast(message, type = 'success') {
   } else if (type === 'bookmark') {
     icon.className = "fa-solid fa-bookmark text-amber-500";
   } else {
-    icon.className = "fa-solid fa-info-circle text-blue-500";
+    icon.className = "fa-solid fa-info-circle text-brand-500";
   }
   toast.classList.remove('opacity-0', 'translate-y-8');
   toast.classList.add('opacity-100', 'translate-y-0');
@@ -521,7 +521,7 @@ function showLevelUpAnimation(rankInfo) {
     overlay.className = 'fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm transition-opacity duration-500 opacity-0';
     
     overlay.innerHTML = `
-        <div class="bg-white dark:bg-slate-900 rounded-3xl p-10 flex flex-col items-center text-center shadow-2xl transform scale-90 transition-transform duration-500 border border-slate-200 dark:border-slate-800">
+        <div class="bg-white dark:bg-darkBg rounded-3xl p-10 flex flex-col items-center text-center shadow-2xl transform scale-90 transition-transform duration-500 border border-slate-200 dark:border-slate-800">
             <div class="w-24 h-24 mb-6 rounded-full bg-gradient-to-tr from-brand-400 to-amber-400 flex items-center justify-center text-5xl text-white shadow-lg shadow-brand-500/40 animate-bounce">
                 <i class="fa-solid ${rankInfo.icon}"></i>
             </div>

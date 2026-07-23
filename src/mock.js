@@ -174,7 +174,7 @@ export function finishMockInterview() {
     const stat = topicStats[topic];
     const pct = Math.round(stat.earned / stat.total * 100);
     const row = document.createElement('div');
-    row.className = "flex items-center justify-between p-2 rounded-lg bg-slate-50 dark:bg-slate-900 text-xs";
+    row.className = "flex items-center justify-between p-2 rounded-lg bg-slate-50 dark:bg-darkBg text-xs";
     row.innerHTML = `
             <span class="font-semibold text-slate-700 dark:text-slate-300">${topic}</span>
             <span class="font-bold ${pct >= 70 ? 'text-emerald-500' : 'text-amber-500'}">${pct}% (${stat.earned}/${stat.total} XP)</span>

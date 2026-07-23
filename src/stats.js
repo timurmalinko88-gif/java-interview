@@ -7,7 +7,7 @@ function getTopicStyles(topic) {
   // New Categories
   if (t.includes('ai') || t.includes('llm') || t.includes('rag')) return {
     icon: 'fa-brain',
-    gradient: 'from-purple-600 to-indigo-600',
+    gradient: 'from-purple-600 to-brand-600',
     shadow: 'shadow-purple-500/20'
   };
   if (t.includes('kafka') || t.includes('messaging')) return {
@@ -17,7 +17,7 @@ function getTopicStyles(topic) {
   };
   if (t.includes('modern java') || t.includes('java 21')) return {
     icon: 'fa-atom',
-    gradient: 'from-cyan-500 to-blue-500',
+    gradient: 'from-cyan-500 to-brand-500',
     shadow: 'shadow-cyan-500/20'
   };
   if (t.includes('live coding') || t.includes('refactoring')) return {
@@ -34,8 +34,8 @@ function getTopicStyles(topic) {
   // Existing Categories
   if (t.includes('jvm') || t.includes('memory')) return {
     icon: 'fa-server',
-    gradient: 'from-blue-500 to-indigo-500',
-    shadow: 'shadow-blue-500/20'
+    gradient: 'from-brand-500 to-brand-500',
+    shadow: 'shadow-brand-500/20'
   };
   if (t.includes('spring') || t.includes('boot')) return {
     icon: 'fa-leaf',
@@ -59,7 +59,7 @@ function getTopicStyles(topic) {
   };
   if (t.includes('stream') || t.includes('api')) return {
     icon: 'fa-water',
-    gradient: 'from-cyan-400 to-blue-500',
+    gradient: 'from-cyan-400 to-brand-500',
     shadow: 'shadow-cyan-500/20'
   };
   if (t.includes('collection')) return {
@@ -74,8 +74,8 @@ function getTopicStyles(topic) {
   };
   if (t.includes('database') || t.includes('sql')) return {
     icon: 'fa-database',
-    gradient: 'from-indigo-400 to-purple-500',
-    shadow: 'shadow-indigo-500/20'
+    gradient: 'from-brand-400 to-purple-500',
+    shadow: 'shadow-brand-500/20'
   };
   if (t.includes('system') || t.includes('design')) return {
     icon: 'fa-sitemap',
@@ -127,7 +127,7 @@ export function updateStatsDashboard() {
     // Define card structure
     const card = document.createElement('div');
     // Glassmorphism styling with subtle border and hover glow
-    card.className = "group relative bg-white/50 dark:bg-slate-800/40 backdrop-blur-md border border-slate-200 dark:border-slate-700/50 rounded-2xl p-5 hover:bg-white dark:hover:bg-slate-800 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 overflow-hidden";
+    card.className = "group relative bg-white/50 dark:bg-darkCard/40 backdrop-blur-md border border-slate-200 dark:border-slate-700/50 rounded-2xl p-5 hover:bg-white dark:hover:bg-slate-800 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 overflow-hidden";
     card.innerHTML = `
             <!-- Background Glow Effect on Hover -->
             <div class="absolute -right-4 -top-4 w-24 h-24 bg-gradient-to-br ${styles.gradient} rounded-full blur-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
@@ -147,7 +147,7 @@ export function updateStatsDashboard() {
                 </div>
             </div>
             
-            <div class="relative z-10 w-full bg-slate-100 dark:bg-slate-900/80 rounded-full h-2.5 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5">
+            <div class="relative z-10 w-full bg-slate-100 dark:bg-darkBg/80 rounded-full h-2.5 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5">
                 <div class="bg-gradient-to-r ${styles.gradient} h-full rounded-full transition-all duration-1000 ease-out shadow-sm" style="width: 0%"></div>
             </div>
         `;
@@ -165,7 +165,7 @@ export function updateStatsDashboard() {
   const summary = document.getElementById('stats-summary-cards');
   if (summary) {
     summary.innerHTML = `
-            <div class="relative overflow-hidden bg-gradient-to-br from-brand-600 to-indigo-700 text-white p-6 rounded-2xl shadow-xl shadow-brand-500/20 col-span-full flex flex-col md:flex-row items-center justify-between">
+            <div class="relative overflow-hidden bg-gradient-to-br from-brand-600 to-brand-700 text-white p-6 rounded-2xl shadow-xl shadow-brand-500/20 col-span-full flex flex-col md:flex-row items-center justify-between">
                 <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-white/10 blur-2xl rounded-full"></div>
                 <div class="absolute -left-10 -top-10 w-32 h-32 bg-brand-400/20 blur-xl rounded-full"></div>
                 
