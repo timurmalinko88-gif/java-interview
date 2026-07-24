@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         state.selectedDiffFilters.push(difficulty);
         // Render active highlight styles depending on selection
-        setDifficultyChipActive(el);
+        setDifficultyChipActive(el, difficulty);
       }
       triggerFilterAction();
     });
