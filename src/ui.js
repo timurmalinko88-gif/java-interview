@@ -99,7 +99,21 @@ function triggerFilterAction() {
   // Checkboxes for format
   const checkedFormats = Array.from(document.querySelectorAll('.format-checkbox:checked')).map(el => el.value);
   
-  state.filteredQuestions = state.questionsList.filter(q => {
+  let baseQuestions = state.questionsList;
+
+  if (roadmapValue !== 'none' && ROADMAPS[roadmapValue]) {
+    const rm = ROADMAPS[roadmapValue];
+    baseQuestions = baseQuestions.filter(q => {
+      const matchDiff = rm.filters.difficulties.includes(q.difficulty);
+      const matchTag = rm.filters.tags.some(tag => (q.tags || []).includes(tag)) || rm.filters.tags.some(tag => (q.topic || '').toLowerCase().includes(tag));
+      return matchDiff && matchTag;
+    });
+    if (rm.limit && baseQuestions.length > rm.limit) {
+      baseQuestions = baseQuestions.slice(0, rm.limit);
+    }
+  }
+
+  state.filteredQuestions = baseQuestions.filter(q => {
     // Search Matches
     const searchMatches = q.question && q.question.toLowerCase().includes(searchValue) || q.id && q.id.toLowerCase().includes(searchValue) || q.loadedQuestion && q.loadedQuestion.toLowerCase().includes(searchValue) || q.loadedAnswer && q.loadedAnswer.toLowerCase().includes(searchValue);
 
@@ -112,17 +126,7 @@ function triggerFilterAction() {
     // Format Matches
     const formatMatches = checkedFormats.length === 0 || checkedFormats.includes(q.format);
 
-    // Roadmap Matches
-    let roadmapMatches = true;
-    if (roadmapValue !== 'none' && ROADMAPS[roadmapValue]) {
-      const rm = ROADMAPS[roadmapValue];
-      // Check if question matches roadmap difficulties and tags
-      const matchDiff = rm.filters.difficulties.includes(q.difficulty);
-      const matchTag = rm.filters.tags.some(tag => (q.tags || []).includes(tag)) || rm.filters.tags.some(tag => (q.topic || '').toLowerCase().includes(tag));
-      roadmapMatches = matchDiff && matchTag;
-    }
-
-    return searchMatches && topicMatches && diffMatches && formatMatches && roadmapMatches;
+    return searchMatches && topicMatches && diffMatches && formatMatches;
   });
 
   // Reset cursor if out of bounds
