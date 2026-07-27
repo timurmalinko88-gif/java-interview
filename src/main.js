@@ -41,11 +41,11 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.mock-grade-btn').forEach(btn => {
     btn.addEventListener("click", () => {
       document.querySelectorAll('.mock-grade-btn').forEach(b => {
-        b.classList.remove('bg-brand-500/10', 'border-brand-500', 'text-brand-600', 'dark:text-brand-400');
+        b.classList.remove('bg-roast-500/10', 'border-roast-500', 'text-roast-500', 'dark:text-roast-500');
         b.classList.add('border-slate-200', 'dark:border-slate-800', 'text-slate-600', 'dark:text-slate-400');
       });
       btn.classList.remove('border-slate-200', 'dark:border-slate-800', 'text-slate-600', 'dark:text-slate-400');
-      btn.classList.add('bg-brand-500/10', 'border-brand-500', 'text-brand-600', 'dark:text-brand-400');
+      btn.classList.add('bg-roast-500/10', 'border-roast-500', 'text-roast-500', 'dark:text-roast-500');
       state.mockSelectedGrade = btn.getAttribute('data-mock-grade');
     });
   });
@@ -54,11 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.mock-company-btn').forEach(btn => {
     btn.addEventListener("click", () => {
       document.querySelectorAll('.mock-company-btn').forEach(b => {
-        b.classList.remove('bg-brand-500/10', 'border-brand-500', 'text-brand-600', 'dark:text-brand-400');
+        b.classList.remove('bg-roast-500/10', 'border-roast-500', 'text-roast-500', 'dark:text-roast-500');
         b.classList.add('border-slate-200', 'dark:border-slate-800', 'text-slate-600', 'dark:text-slate-400');
       });
       btn.classList.remove('border-slate-200', 'dark:border-slate-800', 'text-slate-600', 'dark:text-slate-400');
-      btn.classList.add('bg-brand-500/10', 'border-brand-500', 'text-brand-600', 'dark:text-brand-400');
+      btn.classList.add('bg-roast-500/10', 'border-roast-500', 'text-roast-500', 'dark:text-roast-500');
       state.mockSelectedCompany = btn.getAttribute('data-mock-company');
     });
   });

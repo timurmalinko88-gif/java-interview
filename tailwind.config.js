@@ -8,46 +8,39 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        brand: {
-          50: '#f0f4ff',
-          100: '#e0eaff',
-          200: '#c2d6ff',
-          300: '#a3c2ff',
-          400: '#85aeff',
-          500: '#006FEE', // Electric Bespoke Blue
-          600: '#005bc4',
-          700: '#004799',
-          800: '#00336e',
-          900: '#001f42',
+        ink: {
+          950: '#0E1116',
         },
-        success: {
-          50: '#e8faf0',
-          100: '#d1f4e0',
-          200: '#a3e9c2',
-          300: '#75dfa3',
-          400: '#47d485',
-          500: '#17C964', // Neon Product Green
-          600: '#12a150',
-          700: '#0d793c',
-          800: '#095028',
-          900: '#042814',
+        panel: {
+          900: '#171B22',
+          700: '#1D2229',
         },
-        warning: {
-          50: '#fef1e9',
-          100: '#fde3d3',
-          200: '#fbc6a7',
-          300: '#f8aa7b',
-          400: '#f68e4f',
-          500: '#F26D21', // Sharp Orange
-          600: '#c2571a',
-          700: '#914114',
-          800: '#612b0d',
-          900: '#301607',
+        paper: {
+          50: '#F6F4EF',
         },
-        darkBg: '#0A0A0A', // Pure Deep Dark
-        darkCard: '#111111', // Slightly elevated Dark
-        lightBg: '#FAFAFA',
-        lightCard: '#FFFFFF'
+        roast: {
+          50: 'rgba(193,127,43,0.08)',
+          500: '#C17F2B',
+          600: '#A66A22',
+        },
+        pine: {
+          500: '#4E8B6B',
+          600: '#3E6F55',
+        },
+        plum: {
+          500: '#8672B8',
+          600: '#6E5A9E',
+        },
+        darkBg: '#0E1116',
+        darkCard: '#171B22',
+        lightBg: '#F6F4EF',
+        lightCard: '#FFFFFF',
+        'border-light': '#E5E1D8',
+      },
+      borderRadius: {
+        'md': '6px',
+        'lg': '10px',
+        'xl': '12px',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],

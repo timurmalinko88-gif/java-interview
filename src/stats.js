@@ -35,7 +35,7 @@ function getTopicStyles(topic) {
   if (t.includes('jvm') || t.includes('memory')) return {
     icon: 'fa-server',
     gradient: 'from-brand-500 to-brand-500',
-    shadow: 'shadow-brand-500/20'
+    shadow: ''
   };
   if (t.includes('spring') || t.includes('boot')) return {
     icon: 'fa-leaf',
@@ -75,7 +75,7 @@ function getTopicStyles(topic) {
   if (t.includes('database') || t.includes('sql')) return {
     icon: 'fa-database',
     gradient: 'from-brand-400 to-purple-500',
-    shadow: 'shadow-brand-500/20'
+    shadow: ''
   };
   if (t.includes('system') || t.includes('design')) return {
     icon: 'fa-sitemap',
@@ -124,67 +124,60 @@ export function updateStatsDashboard() {
     const percent = Math.round(stats.mastered / stats.total * 100);
     const styles = getTopicStyles(topic);
 
-    // Define card structure
+    // Define card structure (Neutral styling without random colorful gradients)
     const card = document.createElement('div');
-    // Glassmorphism styling with subtle border and hover glow
-    card.className = "group relative bg-white/50 dark:bg-darkCard/40 backdrop-blur-md border border-slate-200 dark:border-slate-700/50 rounded-2xl p-5 hover:bg-white dark:hover:bg-slate-800 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 overflow-hidden";
+    card.className = "bg-white dark:bg-panel-900 border border-slate-200 dark:border-slate-800 rounded-lg p-5 flex flex-col justify-between";
     card.innerHTML = `
-            <!-- Background Glow Effect on Hover -->
-            <div class="absolute -right-4 -top-4 w-24 h-24 bg-gradient-to-br ${styles.gradient} rounded-full blur-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
-            
-            <div class="relative z-10 flex items-start space-x-4 mb-4">
-                <div class="w-12 h-12 shrink-0 rounded-xl bg-gradient-to-br ${styles.gradient} shadow-lg ${styles.shadow} flex items-center justify-center text-white text-xl">
+            <div class="flex items-start space-x-4 mb-4">
+                <div class="w-10 h-10 shrink-0 rounded-lg bg-slate-100 dark:bg-panel-700 text-slate-500 dark:text-slate-400 flex items-center justify-center text-lg">
                     <i class="fa-solid ${styles.icon}"></i>
                 </div>
                 <div class="flex-1 min-w-0">
-                    <h4 class="font-bold text-slate-800 dark:text-white truncate" title="${topic}">${topic}</h4>
-                    <p class="text-xs font-semibold text-slate-500 dark:text-slate-400 mt-0.5">
-                        <span class="text-slate-700 dark:text-slate-300">${stats.mastered}</span> / ${stats.total} Mastered
+                    <h4 class="font-bold text-slate-800 dark:text-slate-200 truncate" title="${topic}">${topic}</h4>
+                    <p class="text-xs font-medium text-slate-500 dark:text-slate-400 mt-0.5">
+                        <span class="text-slate-700 dark:text-slate-300 font-semibold">${stats.mastered}</span> / ${stats.total} Mastered
                     </p>
                 </div>
-                <div class="font-black text-lg text-slate-300 dark:text-slate-600 group-hover:text-slate-400 dark:group-hover:text-slate-400 transition-colors">
+                <div class="font-bold text-sm text-slate-500 dark:text-slate-400">
                     ${percent}%
                 </div>
             </div>
             
-            <div class="relative z-10 w-full bg-slate-100 dark:bg-darkBg/80 rounded-full h-2.5 overflow-hidden ring-1 ring-slate-900/5 dark:ring-white/5">
-                <div class="bg-gradient-to-r ${styles.gradient} h-full rounded-full transition-all duration-1000 ease-out shadow-sm" style="width: 0%"></div>
+            <div class="w-full bg-slate-100 dark:bg-panel-700 rounded-full h-2 overflow-hidden">
+                <div class="bg-roast-500 h-full rounded-full transition-all duration-700 ease-out" style="width: 0%"></div>
             </div>
         `;
     container.appendChild(card);
 
     // Animate the bar width after appending
     setTimeout(() => {
-      const bar = card.querySelector('div.bg-gradient-to-r');
+      const bar = card.querySelector('div.bg-roast-500');
       if (bar) bar.style.width = `${percent}%`;
     }, 50);
   });
 
-  // Overall summary header
+  // Overall summary header (Flat panel, no gradient or glow)
   const overallPercent = Math.round(totalMastered / state.questionsList.length * 100);
   const summary = document.getElementById('stats-summary-cards');
   if (summary) {
     summary.innerHTML = `
-            <div class="relative overflow-hidden bg-gradient-to-br from-brand-600 to-brand-700 text-white p-6 rounded-2xl shadow-xl shadow-brand-500/20 col-span-full flex flex-col md:flex-row items-center justify-between">
-                <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-white/10 blur-2xl rounded-full"></div>
-                <div class="absolute -left-10 -top-10 w-32 h-32 bg-brand-400/20 blur-xl rounded-full"></div>
-                
-                <div class="relative z-10 flex items-center space-x-6">
-                    <div class="w-20 h-20 shrink-0 relative flex items-center justify-center">
+            <div class="bg-roast-500/10 border border-roast-500/30 rounded-lg p-5 text-roast-700 dark:text-roast-300 col-span-full flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="flex items-center space-x-5">
+                    <div class="w-16 h-16 shrink-0 relative flex items-center justify-center">
                         <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
-                            <path class="text-white/20" stroke-width="3" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
-                            <path class="text-white drop-shadow-md" stroke-width="3" stroke-dasharray="${overallPercent}, 100" stroke="currentColor" fill="none" stroke-linecap="round" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                            <path class="text-slate-300 dark:text-slate-700" stroke-width="3.5" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                            <path class="text-roast-500" stroke-width="3.5" stroke-dasharray="${overallPercent}, 100" stroke="currentColor" fill="none" stroke-linecap="round" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
                         </svg>
-                        <div class="absolute inset-0 flex items-center justify-center font-bold text-xl">${overallPercent}%</div>
+                        <div class="absolute inset-0 flex items-center justify-center font-bold text-sm text-slate-800 dark:text-slate-200">${overallPercent}%</div>
                     </div>
                     <div>
-                        <h3 class="text-brand-100 font-semibold tracking-wide uppercase text-sm mb-1">Overall Progress</h3>
-                        <div class="text-3xl font-extrabold">${totalMastered} <span class="text-lg font-medium text-brand-200">/ ${state.questionsList.length}</span></div>
+                        <h3 class="text-slate-500 dark:text-slate-400 font-medium text-xs uppercase tracking-wide mb-1">Overall Progress</h3>
+                        <div class="text-2xl font-extrabold text-slate-900 dark:text-white">${totalMastered} <span class="text-sm font-medium text-slate-500">/ ${state.questionsList.length}</span></div>
                     </div>
                 </div>
                 
-                <div class="relative z-10 mt-6 md:mt-0 text-right">
-                    <p class="text-brand-100 max-w-xs text-sm">You are making great progress! Focus on your weakest topics to level up faster.</p>
+                <div class="text-right">
+                    <p class="text-slate-600 dark:text-slate-400 max-w-xs text-xs leading-relaxed">You are making great progress! Focus on your weakest topics to level up faster.</p>
                 </div>
             </div>
         `;

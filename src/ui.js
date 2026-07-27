@@ -50,11 +50,11 @@ function buildSidebarList() {
     const isActive = idx === state.currentIndex;
 
     // Color configuration for difficulties
-    let diffStyle = 'bg-success-500/10 text-success-600 dark:text-success-400';
-    if (q.difficulty === 'Middle') diffStyle = 'bg-brand-500/10 text-brand-600 dark:text-brand-400';
+    let diffStyle = 'bg-pine-500/10 text-success-600 dark:text-success-400';
+    if (q.difficulty === 'Middle') diffStyle = 'bg-roast-500/10 text-roast-500 dark:text-roast-500';
     if (q.difficulty === 'Senior') diffStyle = 'bg-purple-500/10 text-purple-600 dark:text-purple-400';
     const button = document.createElement('button');
-    button.className = `w-full text-left p-4 transition-all duration-200 border-l-4 flex flex-col space-y-2 ${isActive ? 'bg-slate-100 dark:bg-darkCard/80 border-brand-500' : 'border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/30'}`;
+    button.className = `w-full text-left p-4 transition-all duration-200 border-l-4 flex flex-col space-y-2 ${isActive ? 'bg-slate-100 dark:bg-panel-900/80 border-roast-500' : 'border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/30'}`;
 
     // Extract short question label
     const shortQuestionText = q.title || q.question || q.id;
@@ -64,17 +64,17 @@ function buildSidebarList() {
                     <span class="text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wider ${diffStyle}">
                         ${q.difficulty}
                     </span>
-                    <span class="text-[10px] font-semibold text-slate-400 bg-slate-100 dark:bg-darkCard px-1.5 py-0.5 rounded">
+                    <span class="text-[10px] font-semibold text-slate-400 bg-slate-100 dark:bg-panel-900 px-1.5 py-0.5 rounded">
                         ${q.topic}
                     </span>
                 </div>
                 <div class="flex items-center space-x-1">
-                    ${isMastered ? '<i class="fa-solid fa-circle-check text-success-500 text-xs"></i>' : ''}
-                    ${flagged ? '<i class="fa-solid fa-bookmark text-warning-500 text-xs"></i>' : ''}
+                    ${isMastered ? '<i class="fa-solid fa-circle-check text-pine-500 text-xs"></i>' : ''}
+                    ${flagged ? '<i class="fa-solid fa-bookmark text-roast-500 text-xs"></i>' : ''}
                     ${state.srData[q.id] && new Date(state.srData[q.id].nextReviewDate) <= new Date() ? '<span class="px-1 py-0.5 bg-rose-500/10 text-rose-500 rounded text-[9px] font-bold uppercase tracking-wider animate-pulse">Due</span>' : ''}
                 </div>
             </div>
-            <h4 class="text-xs font-bold leading-snug line-clamp-2 ${isActive ? 'text-brand-500' : 'text-slate-700 dark:text-slate-300'}">
+            <h4 class="text-xs font-bold leading-snug line-clamp-2 ${isActive ? 'text-roast-500' : 'text-slate-700 dark:text-slate-300'}">
                 ${shortQuestionText}
             </h4>
         `;
@@ -171,10 +171,10 @@ function updateStatsUI() {
   const xp = masteredCount * 10;
   
   const ranks = [
-    { name: "Intern", minXp: 0, icon: "fa-shield-halved", color: "text-brand-500" },
-    { name: "Junior", minXp: 500, icon: "fa-medal", color: "text-success-500" },
-    { name: "Middle", minXp: 1500, icon: "fa-fire", color: "text-warning-500" },
-    { name: "Senior", minXp: 3000, icon: "fa-star", color: "text-purple-500" },
+    { name: "Intern", minXp: 0, icon: "fa-shield-halved", color: "text-roast-500" },
+    { name: "Junior", minXp: 500, icon: "fa-medal", color: "text-pine-500" },
+    { name: "Middle", minXp: 1500, icon: "fa-fire", color: "text-roast-500" },
+    { name: "Senior", minXp: 3000, icon: "fa-star", color: "text-plum-500" },
     { name: "Staff Engineer", minXp: 5000, icon: "fa-crown", color: "text-rose-500" }
   ];
   
@@ -284,9 +284,9 @@ async function loadQuestion(indexOrQuestion) {
   diffEl.textContent = q.difficulty;
   diffEl.className = 'px-2.5 py-1 rounded-lg text-xs font-bold uppercase tracking-wider ';
   if (q.difficulty === 'Junior') {
-    diffEl.classList.add('bg-success-500/10', 'text-success-600', 'dark:text-success-400');
+    diffEl.classList.add('bg-pine-500/10', 'text-success-600', 'dark:text-success-400');
   } else if (q.difficulty === 'Middle') {
-    diffEl.classList.add('bg-brand-500/10', 'text-brand-600', 'dark:text-brand-400');
+    diffEl.classList.add('bg-roast-500/10', 'text-roast-500', 'dark:text-roast-500');
   } else {
     diffEl.classList.add('bg-purple-500/10', 'text-purple-600', 'dark:text-purple-400');
   }
@@ -299,13 +299,13 @@ async function loadQuestion(indexOrQuestion) {
   const extraMetaContainer = document.getElementById('extra-metadata');
   extraMetaContainer.innerHTML = '';
   if (q.time) {
-    extraMetaContainer.innerHTML += `<span class="flex items-center gap-1 bg-slate-50 dark:bg-darkCard/50 px-2 py-1 rounded"><i class="fa-regular fa-clock text-warning-500"></i> ${q.time}</span>`;
+    extraMetaContainer.innerHTML += `<span class="bg-slate-100 dark:bg-panel-900/60 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 text-xs px-2.5 py-1 rounded-md flex items-center gap-1"><i class="fa-regular fa-clock text-slate-400"></i> ${q.time}</span>`;
   }
   if (q.frequency) {
-    extraMetaContainer.innerHTML += `<span class="flex items-center gap-1 bg-slate-50 dark:bg-darkCard/50 px-2 py-1 rounded"><i class="fa-solid fa-fire-flame-curved text-brand-500"></i> Frequency: ${q.frequency}</span>`;
+    extraMetaContainer.innerHTML += `<span class="bg-slate-100 dark:bg-panel-900/60 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 text-xs px-2.5 py-1 rounded-md flex items-center gap-1"><i class="fa-solid fa-circle text-roast-500 text-[8px]"></i> Frequency: ${q.frequency}</span>`;
   }
   if (q.related && q.related.length > 0) {
-    extraMetaContainer.innerHTML += `<span class="flex items-center gap-1 bg-slate-50 dark:bg-darkCard/50 px-2 py-1 rounded"><i class="fa-solid fa-link text-brand-500"></i> ${Array.isArray(q.related) ? q.related.join(', ') : q.related}</span>`;
+    extraMetaContainer.innerHTML += `<span class="bg-slate-100 dark:bg-panel-900/60 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 text-xs px-2.5 py-1 rounded-md flex items-center gap-1"><i class="fa-solid fa-link text-slate-400"></i> ${Array.isArray(q.related) ? q.related.join(', ') : q.related}</span>`;
   }
 
   // Reset action bookmark/completed status indicators
@@ -335,7 +335,7 @@ async function loadQuestion(indexOrQuestion) {
   const questionTextEl = document.getElementById('question-text');
   questionTextEl.innerHTML = `
         <div class="flex items-center space-x-2 text-slate-400 py-4 animate-pulse">
-            <i class="fa-solid fa-spinner fa-spin text-brand-500"></i>
+            <i class="fa-solid fa-spinner fa-spin text-roast-500"></i>
             <span>Loading question content...</span>
         </div>
     `;
@@ -410,19 +410,19 @@ function syncActionButtons(activeId) {
   const flagged = isFlagged(activeId);
   const flagBtn = document.getElementById('flag-btn');
   if (flagged) {
-    flagBtn.classList.add('bg-warning-500/10', 'text-warning-500', 'border-warning-500/30');
+    flagBtn.classList.add('bg-warning-500/10', 'text-roast-500', 'border-warning-500/30');
     flagBtn.classList.remove('text-slate-400');
   } else {
-    flagBtn.classList.remove('bg-warning-500/10', 'text-warning-500', 'border-warning-500/30');
+    flagBtn.classList.remove('bg-warning-500/10', 'text-roast-500', 'border-warning-500/30');
     flagBtn.classList.add('text-slate-400');
   }
   const isMastered = state.masteredIds.includes(activeId);
   const masteredBtn = document.getElementById('mastered-btn');
   if (isMastered) {
-    masteredBtn.classList.add('bg-success-500/10', 'text-success-500', 'border-success-500/30');
+    masteredBtn.classList.add('bg-pine-500/10', 'text-pine-500', 'border-pine-500/30');
     masteredBtn.classList.remove('text-slate-400');
   } else {
-    masteredBtn.classList.remove('bg-success-500/10', 'text-success-500', 'border-success-500/30');
+    masteredBtn.classList.remove('bg-pine-500/10', 'text-pine-500', 'border-pine-500/30');
     masteredBtn.classList.add('text-slate-400');
   }
 }
@@ -433,12 +433,12 @@ function renderNoQuestionsFoundState() {
   const card = document.getElementById('main-content-card');
   card.innerHTML = `
         <div class="flex-1 flex flex-col items-center justify-center text-center p-8">
-            <div class="w-16 h-16 rounded-full bg-slate-100 dark:bg-darkCard flex items-center justify-center text-slate-400 mb-4 text-2xl">
+            <div class="w-16 h-16 rounded-full bg-slate-100 dark:bg-panel-900 flex items-center justify-center text-slate-400 mb-4 text-2xl">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </div>
             <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Nothing Found</h3>
             <p class="text-sm text-slate-400 max-w-sm">Reset filters to see the full list of preparation questions.</p>
-            <button id="btn-empty-reset"  class="mt-4 bg-brand-500 hover:bg-brand-600 text-white font-bold text-xs px-4 py-2 rounded-md transition-all">
+            <button id="btn-empty-reset"  class="mt-4 bg-roast-500 hover:bg-roast-600 text-white font-bold text-xs px-4 py-2 rounded-md transition-all">
                 Reset фильтры
             </button>
         </div>
@@ -457,11 +457,11 @@ function showToast(message, type = 'success') {
   const msgSpan = document.getElementById('toast-message');
   msgSpan.textContent = message;
   if (type === 'success') {
-    icon.className = "fa-solid fa-circle-check text-success-500";
+    icon.className = "fa-solid fa-circle-check text-pine-500";
   } else if (type === 'bookmark') {
-    icon.className = "fa-solid fa-bookmark text-warning-500";
+    icon.className = "fa-solid fa-bookmark text-roast-500";
   } else {
-    icon.className = "fa-solid fa-info-circle text-brand-500";
+    icon.className = "fa-solid fa-info-circle text-roast-500";
   }
   toast.classList.remove('opacity-0', 'translate-y-8');
   toast.classList.add('opacity-100', 'translate-y-0');
@@ -525,14 +525,14 @@ function showLevelUpAnimation(rankInfo) {
     overlay.className = 'fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm transition-opacity duration-500 opacity-0';
     
     overlay.innerHTML = `
-        <div class="bg-white dark:bg-darkBg rounded-md p-10 flex flex-col items-center text-center shadow-md transform scale-90 transition-transform duration-500 border border-slate-200 dark:border-slate-800">
-            <div class="w-24 h-24 mb-6 rounded-full bg-gradient-to-tr from-brand-400 to-warning-400 flex items-center justify-center text-5xl text-white shadow-lg shadow-brand-500/40 animate-bounce">
+        <div class="bg-white dark:bg-ink-950 rounded-md p-10 flex flex-col items-center text-center shadow-md transform scale-90 transition-transform duration-500 border border-slate-200 dark:border-slate-800">
+            <div class="w-24 h-24 mb-6 rounded-full bg-gradient-to-tr from-brand-400 to-warning-400 flex items-center justify-center text-5xl text-white shadow-lg  animate-bounce">
                 <i class="fa-solid ${rankInfo.icon}"></i>
             </div>
             <h2 class="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-warning-500 mb-2">LEVEL UP!</h2>
             <p class="text-slate-600 dark:text-slate-400 text-lg">You are now a <span class="font-bold ${rankInfo.color}">${rankInfo.name}</span></p>
             <p class="text-sm text-slate-500 mt-4 max-w-xs">Keep up the great work! Consistent studying leads to interview success.</p>
-            <button class="mt-8 bg-brand-500 hover:bg-brand-600 text-white px-8 py-3 rounded-md font-bold shadow-md shadow-brand-500/20 transition-colors">Continue</button>
+            <button class="mt-8 bg-roast-500 hover:bg-roast-600 text-white px-8 py-3 rounded-md font-bold shadow-md  transition-colors">Continue</button>
         </div>
     `;
     
