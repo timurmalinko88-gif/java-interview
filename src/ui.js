@@ -410,10 +410,10 @@ function syncActionButtons(activeId) {
   const flagged = isFlagged(activeId);
   const flagBtn = document.getElementById('flag-btn');
   if (flagged) {
-    flagBtn.classList.add('bg-warning-500/10', 'text-roast-500', 'border-warning-500/30');
+    flagBtn.classList.add('bg-roast-500/10', 'text-roast-500', 'border-roast-500/30');
     flagBtn.classList.remove('text-slate-400');
   } else {
-    flagBtn.classList.remove('bg-warning-500/10', 'text-roast-500', 'border-warning-500/30');
+    flagBtn.classList.remove('bg-roast-500/10', 'text-roast-500', 'border-roast-500/30');
     flagBtn.classList.add('text-slate-400');
   }
   const isMastered = state.masteredIds.includes(activeId);
@@ -526,10 +526,10 @@ function showLevelUpAnimation(rankInfo) {
     
     overlay.innerHTML = `
         <div class="bg-white dark:bg-ink-950 rounded-md p-10 flex flex-col items-center text-center shadow-md transform scale-90 transition-transform duration-500 border border-slate-200 dark:border-slate-800">
-            <div class="w-24 h-24 mb-6 rounded-full bg-gradient-to-tr from-brand-400 to-warning-400 flex items-center justify-center text-5xl text-white shadow-lg  animate-bounce">
+            <div class="w-24 h-24 mb-6 rounded-full bg-roast-500 flex items-center justify-center text-5xl text-white shadow-lg  animate-bounce">
                 <i class="fa-solid ${rankInfo.icon}"></i>
             </div>
-            <h2 class="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-warning-500 mb-2">LEVEL UP!</h2>
+            <h2 class="text-3xl font-black text-roast-500 mb-2">LEVEL UP!</h2>
             <p class="text-slate-600 dark:text-slate-400 text-lg">You are now a <span class="font-bold ${rankInfo.color}">${rankInfo.name}</span></p>
             <p class="text-sm text-slate-500 mt-4 max-w-xs">Keep up the great work! Consistent studying leads to interview success.</p>
             <button class="mt-8 bg-roast-500 hover:bg-roast-600 text-white px-8 py-3 rounded-md font-bold shadow-md  transition-colors">Continue</button>
