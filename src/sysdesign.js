@@ -88,7 +88,7 @@ export function renderSysDesignList(searchQuery = '') {
         `).join('');
 
         return `
-            <div class="bg-white dark:bg-panel-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+            <div class="bg-white dark:bg-panel-900 border border-slate-200 dark:border-slate-800 rounded-xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
                 <div>
                     <!-- Badges -->
                     <div class="flex items-center justify-between gap-2 mb-3">
@@ -413,7 +413,7 @@ function renderSvgCanvas(scenario, activeStep) {
 
     // --- Assemble Full SVG ---
     canvasContainer.innerHTML = `
-        <div class="relative w-full rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-inner bg-slate-50/70 dark:bg-ink-950/80" style="aspect-ratio: ${W} / ${H};">
+        <div class="relative w-full rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-inner bg-slate-50/70 dark:bg-ink-950/80" style="aspect-ratio: ${W} / ${H};">
             <svg viewBox="0 0 ${W} ${H}" class="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                     <marker id="arr-off" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
