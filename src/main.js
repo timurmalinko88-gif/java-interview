@@ -263,16 +263,36 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Theme initialization (Light Theme is default)
+  const savedTheme = localStorage.getItem('java_trainer_theme');
+  const isDarkMode = savedTheme === 'dark';
+  
+  if (isDarkMode) {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  }
+  
+  const darkHljs = document.getElementById('hljs-dark-theme');
+  const lightHljs = document.getElementById('hljs-light-theme');
+  if (darkHljs && lightHljs) {
+    darkHljs.disabled = !isDarkMode;
+    lightHljs.disabled = isDarkMode;
+  }
+
   // Theme toggle triggers
   const themeToggleBtn = document.getElementById('theme-toggle');
   if (themeToggleBtn) {
     themeToggleBtn.addEventListener("click", () => {
       const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('java_trainer_theme', isDark ? 'dark' : 'light');
 
       // Toggle Highlight styles
-      document.getElementById('hljs-dark-theme').disabled = !isDark;
-      document.getElementById('hljs-light-theme').disabled = isDark;
-      showToast(isDark ? "Темная тема включена" : "Светлая тема включена", "info");
+      const dHljs = document.getElementById('hljs-dark-theme');
+      const lHljs = document.getElementById('hljs-light-theme');
+      if (dHljs) dHljs.disabled = !isDark;
+      if (lHljs) lHljs.disabled = isDark;
+      showToast(isDark ? "Dark theme enabled" : "Light theme enabled", "info");
     });
   }
 
