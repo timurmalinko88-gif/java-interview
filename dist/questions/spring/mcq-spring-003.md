@@ -5,6 +5,9 @@ difficulty: Middle
 format: MCQ
 tags: ['spring-boot']
 ---
+
+# What does the @SpringBootApplication annotation combine?
+
 What does the @SpringBootApplication annotation combine?
 
 A. @Configuration, @EnableAutoConfiguration, @ComponentScan

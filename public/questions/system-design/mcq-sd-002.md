@@ -5,6 +5,9 @@ difficulty: Middle
 format: MCQ
 tags: ['system-design', 'scaling']
 ---
+
+# What is the difference between horizontal (Scale Out) and vertical (Scale Up) scaling?
+
 What is the difference between horizontal (Scale Out) and vertical (Scale Up) scaling?
 
 A. Vertical means adding new machines to a cluster, horizontal means replacing the processor or adding RAM

@@ -5,6 +5,9 @@ difficulty: Middle
 format: MCQ
 tags: [exceptions, try-with-resources]
 ---
+
+# Starting from which Java version is the try-with-resources statement available?
+
 Starting from which Java version is the try-with-resources statement available?
 
 A. Java 6

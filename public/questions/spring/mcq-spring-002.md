@@ -5,6 +5,9 @@ difficulty: Middle
 format: MCQ
 tags: ['spring-boot']
 ---
+
+# What is the default Scope for beans in Spring?
+
 What is the default Scope for beans in Spring?
 
 A. Prototype

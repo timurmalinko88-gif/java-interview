@@ -11,6 +11,8 @@ prerequisites: [Thread class, Runnable interface]
 tags: ['multithreading']
 ---
 
+# On a project, a developer implemented asynchronous email notifications: for every user registration, they create a new thread:
+
 On a project, a developer implemented asynchronous email notifications: for every user registration, they create a new thread:
 
 ```java

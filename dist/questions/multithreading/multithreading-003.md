@@ -11,6 +11,8 @@ prerequisites: [CompletableFuture, ForkJoinPool, Stream API]
 tags: ['multithreading']
 ---
 
+# You need to make 20 independent HTTP requests to a third-party weather API, collect their results into a list, and return it to the user.
+
 You need to make 20 independent HTTP requests to a third-party weather API, collect their results into a list, and return it to the user.
 
 You have two options for parallel execution:

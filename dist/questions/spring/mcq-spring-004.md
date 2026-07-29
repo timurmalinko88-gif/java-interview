@@ -5,6 +5,9 @@ difficulty: Senior
 format: MCQ
 tags: ['spring-boot', 'aop']
 ---
+
+# How does Spring AOP implement the creation of proxy objects by default?
+
 How does Spring AOP implement the creation of proxy objects by default?
 
 A. By modifying the bytecode of the original classes (CGLIB)

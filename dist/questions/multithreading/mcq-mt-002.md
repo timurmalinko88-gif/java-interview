@@ -5,6 +5,9 @@ difficulty: Middle
 format: MCQ
 tags: ['multithreading', 'volatile']
 ---
+
+# What problem does the volatile keyword solve?
+
 What problem does the volatile keyword solve?
 
 A. Provides atomicity for complex operations (e.g., increment)

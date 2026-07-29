@@ -5,6 +5,9 @@ difficulty: Junior
 format: MCQ
 tags: ['string']
 ---
+
+# Why is the String class immutable in Java?
+
 Why is the String class immutable in Java?
 
 A. To ensure thread safety

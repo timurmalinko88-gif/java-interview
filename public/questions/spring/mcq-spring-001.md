@@ -5,6 +5,9 @@ difficulty: Junior
 format: MCQ
 tags: ['spring-boot', 'di']
 ---
+
+# Which annotation in Spring Boot is used for automatic Dependency Injection?
+
 Which annotation in Spring Boot is used for automatic Dependency Injection?
 
 A. @InjectDependency

@@ -5,6 +5,9 @@ difficulty: Middle
 format: MCQ
 tags: ['spring-boot']
 ---
+
+# What is the difference between the @RestController and @Controller annotations in Spring MVC?
+
 What is the difference between the @RestController and @Controller annotations in Spring MVC?
 
 A. @RestController returns JSON by default, automatically adding @ResponseBody to all methods

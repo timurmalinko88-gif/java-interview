@@ -5,6 +5,9 @@ difficulty: Middle
 format: MCQ
 tags: ['system-design']
 ---
+
+# Which statement about relational (SQL) and non-relational (NoSQL) databases is true?
+
 Which statement about relational (SQL) and non-relational (NoSQL) databases is true?
 
 A. SQL databases scale horizontally better compared to NoSQL (e.g., Cassandra)

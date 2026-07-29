@@ -5,6 +5,9 @@ difficulty: Middle
 format: MCQ
 tags: ['spring-boot']
 ---
+
+# What is the Spring Boot Actuator module used for?
+
 What is the Spring Boot Actuator module used for?
 
 A. To generate swagger documentation

@@ -5,6 +5,9 @@ difficulty: Junior
 format: MCQ
 tags: ['jvm', 'memory']
 ---
+
+# Where are primitive type local variables stored in Java?
+
 Where are primitive type local variables stored in Java?
 
 A. Heap

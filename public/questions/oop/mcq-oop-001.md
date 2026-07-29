@@ -5,6 +5,9 @@ difficulty: Junior
 format: MCQ
 tags: ['oop', 'inheritance']
 ---
+
+# Does Java support multiple inheritance of classes?
+
 Does Java support multiple inheritance of classes?
 
 A. Yes, using the extends keyword

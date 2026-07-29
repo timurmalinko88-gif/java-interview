@@ -5,6 +5,9 @@ difficulty: Middle
 format: MCQ
 tags: ['generics']
 ---
+
+# What is Type Erasure in Java Generics?
+
 What is Type Erasure in Java Generics?
 
 A. Removal of unused generic classes by the garbage collector

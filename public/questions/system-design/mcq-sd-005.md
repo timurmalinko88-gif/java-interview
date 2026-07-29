@@ -5,6 +5,9 @@ difficulty: Middle
 format: MCQ
 tags: ['system-design']
 ---
+
+# Which load balancing algorithm sends a new request to the server with the fewest active connections?
+
 Which load balancing algorithm sends a new request to the server with the fewest active connections?
 
 A. Round Robin

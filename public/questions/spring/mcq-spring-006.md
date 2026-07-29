@@ -5,6 +5,9 @@ difficulty: Senior
 format: MCQ
 tags: ['spring-boot']
 ---
+
+# What happens if a method annotated with @Transactional is called from another method of the same class (inside the same bean)?
+
 What happens if a method annotated with @Transactional is called from another method of the same class (inside the same bean)?
 
 A. The transaction will open as usual

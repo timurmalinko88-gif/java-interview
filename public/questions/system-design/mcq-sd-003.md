@@ -5,6 +5,9 @@ difficulty: Senior
 format: MCQ
 tags: ['system-design']
 ---
+
+# Which of the following tasks is USUALLY NOT solved by an API Gateway in a microservice architecture?
+
 Which of the following tasks is USUALLY NOT solved by an API Gateway in a microservice architecture?
 
 A. Authentication and authorization

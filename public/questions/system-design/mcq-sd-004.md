@@ -5,6 +5,9 @@ difficulty: Senior
 format: MCQ
 tags: ['system-design', 'caching']
 ---
+
+# What is the caching strategy where the application first writes data to the cache (e.g., Redis), and the cache itself asynchronously writes it to the database?
+
 What is the caching strategy where the application first writes data to the cache (e.g., Redis), and the cache itself asynchronously writes it to the database?
 
 A. Cache Aside

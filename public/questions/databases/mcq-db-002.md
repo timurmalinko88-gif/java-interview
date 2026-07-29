@@ -5,6 +5,9 @@ difficulty: Senior
 format: MCQ
 tags: ['sql']
 ---
+
+# Which transaction isolation level solves the "Phantom Read" problem?
+
 Which transaction isolation level solves the "Phantom Read" problem?
 
 A. READ UNCOMMITTED

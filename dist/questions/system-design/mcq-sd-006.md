@@ -5,6 +5,9 @@ difficulty: Senior
 format: MCQ
 tags: ['system-design']
 ---
+
+# In the context of message queues (e.g., Kafka or RabbitMQ), what does the "At-least-once" delivery guarantee mean?
+
 In the context of message queues (e.g., Kafka or RabbitMQ), what does the "At-least-once" delivery guarantee mean?
 
 A. The message will be delivered exactly once without duplicates

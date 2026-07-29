@@ -5,6 +5,9 @@ difficulty: Senior
 format: MCQ
 tags: ['stream-api']
 ---
+
+# In which thread pool are parallelStream() executed by default?
+
 In which thread pool are parallelStream() executed by default?
 
 A. CachedThreadPool

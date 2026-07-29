@@ -5,6 +5,9 @@ difficulty: Junior
 format: MCQ
 tags: ['multithreading', 'thread']
 ---
+
+# Which method of the Runnable interface must be implemented to define thread logic?
+
 Which method of the Runnable interface must be implemented to define thread logic?
 
 A. start()

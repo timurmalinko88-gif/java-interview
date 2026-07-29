@@ -11,6 +11,8 @@ prerequisites: [Basic understanding of threads, volatile keyword]
 tags: ['multithreading']
 ---
 
+# You have a user profile view counter implemented as follows:
+
 You have a user profile view counter implemented as follows:
 
 ```java

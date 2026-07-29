@@ -6,6 +6,8 @@ level: Middle
 tags: []
 ---
 
+# Find the bug in the following code and explain how to fix it:
+
 Find the bug in the following code and explain how to fix it:
 
 ```java
@@ -54,4 +56,6 @@ public class Counter {
 ### Life Analogy
 Imagine two people trying to increment a manual tally counter at the exact same moment. If both press the button simultaneously, the internal gear only clicks forward once instead of twice, causing one person's count to be lost. `AtomicInteger` acts like a turnstile that guarantees only one person can click the counter at a time.
 
-
+### Key Points
+- Understand core underlying principles and performance trade-offs.
+- Apply best practices in enterprise production code.

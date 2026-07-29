@@ -5,6 +5,9 @@ difficulty: Junior
 format: MCQ
 tags: ['collections', 'list']
 ---
+
+# Which implementation of the List interface works faster when inserting elements into the middle of the list?
+
 Which implementation of the List interface works faster when inserting elements into the middle of the list?
 
 A. ArrayList

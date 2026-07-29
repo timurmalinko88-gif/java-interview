@@ -5,6 +5,9 @@ difficulty: Junior
 format: MCQ
 tags: [exceptions, checked, unchecked]
 ---
+
+# Which class is the base class for all checked exceptions?
+
 Which class is the base class for all checked exceptions?
 
 A. Error

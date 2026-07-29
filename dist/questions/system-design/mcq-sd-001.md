@@ -5,6 +5,9 @@ difficulty: Middle
 format: MCQ
 tags: ['system-design']
 ---
+
+# According to the CAP theorem, a distributed system can guarantee no more than two of three properties. What are these properties?
+
 According to the CAP theorem, a distributed system can guarantee no more than two of three properties. What are these properties?
 
 A. Consistency, Availability, Partition Tolerance

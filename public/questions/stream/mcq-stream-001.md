@@ -5,6 +5,9 @@ difficulty: Middle
 format: MCQ
 tags: ['stream-api']
 ---
+
+# Which of the following Stream API operations is terminal?
+
 Which of the following Stream API operations is terminal?
 
 A. map()

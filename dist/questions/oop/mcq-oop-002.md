@@ -5,6 +5,9 @@ difficulty: Middle
 format: MCQ
 tags: ['oop', 'polymorphism']
 ---
+
+# Which OOP principle is violated if a subclass changes the expected behavior of the parent class?
+
 Which OOP principle is violated if a subclass changes the expected behavior of the parent class?
 
 A. Single Responsibility Principle

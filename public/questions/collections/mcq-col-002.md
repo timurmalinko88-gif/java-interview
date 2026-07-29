@@ -5,6 +5,9 @@ difficulty: Middle
 format: MCQ
 tags: ['collections', 'map']
 ---
+
+# Starting from which Java version does HashMap use a red-black tree instead of a linked list to resolve collisions (upon reaching a certain threshold)?
+
 Starting from which Java version does HashMap use a red-black tree instead of a linked list to resolve collisions (upon reaching a certain threshold)?
 
 A. Java 6

@@ -5,6 +5,9 @@ difficulty: Middle
 format: MCQ
 tags: []
 ---
+
+# Which requirement for the equals() and hashCode() contract is correct?
+
 Which requirement for the equals() and hashCode() contract is correct?
 
 A. If the hash codes of two objects are equal, the objects are always equal according to equals

@@ -5,6 +5,9 @@ difficulty: Middle
 format: MCQ
 tags: ['sql']
 ---
+
+# What does the letter "I" stand for in the acronym ACID (database transaction properties)?
+
 What does the letter "I" stand for in the acronym ACID (database transaction properties)?
 
 A. Integration

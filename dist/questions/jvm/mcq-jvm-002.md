@@ -5,6 +5,9 @@ difficulty: Middle
 format: MCQ
 tags: ['jvm', 'gc']
 ---
+
+# Which garbage collector is used by default starting from Java 9?
+
 Which garbage collector is used by default starting from Java 9?
 
 A. Parallel GC

@@ -5,6 +5,9 @@ difficulty: Junior
 format: MCQ
 tags: ['spring-boot']
 ---
+
+# Which Spring Data JPA interface is used for basic CRUD operations and pagination if you want to inherit all default methods?
+
 Which Spring Data JPA interface is used for basic CRUD operations and pagination if you want to inherit all default methods?
 
 A. CrudRepository
