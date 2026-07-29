@@ -249,22 +249,78 @@ function renderSimulationStep() {
 }
 
 /**
- * Renders State-of-the-Art SVG Canvas Diagram with Orthogonal Curved Connection Pipes & Particle Streams
+ * Pure-SVG Architecture Diagram Renderer
+ * All elements (nodes, connections, particles) rendered in a single SVG coordinate system
+ * to guarantee pixel-perfect alignment and smooth animation.
  */
 function renderSvgCanvas(scenario, activeStep) {
     const canvasContainer = document.getElementById('sysdesign-canvas');
     if (!canvasContainer) return;
 
-    const viewBoxWidth = 740;
-    const viewBoxHeight = 340;
-    const nodeW = 120;
-    const nodeH = 80;
+    const W = 740;
+    const H = 340;
+    const NW = 120;
+    const NH = 80;
 
     const nodeMap = new Map();
     scenario.nodes.forEach(n => nodeMap.set(n.id, n));
 
-    // Render Connections as Orthogonal Curved Paths
-    let pathsSvg = '';
+    // Helper: get center of a node
+    const cx = n => n.x + NW / 2;
+    const cy = n => n.y + NH / 2;
+
+    // Helper: compute connection anchor points (exit side of 'from', entry side of 'to')
+    function getAnchors(from, to) {
+        const fcx = cx(from), fcy = cy(from);
+        const tcx = cx(to), tcy = cy(to);
+        const dx = tcx - fcx;
+        const dy = tcy - fcy;
+
+        let x1, y1, x2, y2;
+        if (Math.abs(dx) >= Math.abs(dy)) {
+            if (dx >= 0) {
+                x1 = from.x + NW; y1 = fcy;
+                x2 = to.x;        y2 = tcy;
+            } else {
+                x1 = from.x;      y1 = fcy;
+                x2 = to.x + NW;   y2 = tcy;
+            }
+        } else {
+            if (dy >= 0) {
+                x1 = fcx;  y1 = from.y + NH;
+                x2 = tcx;  y2 = to.y;
+            } else {
+                x1 = fcx;  y1 = from.y;
+                x2 = tcx;  y2 = to.y + NH;
+            }
+        }
+        return { x1, y1, x2, y2 };
+    }
+
+    // Helper: build a smooth cubic bezier path between two anchor points
+    function buildSmoothPath(x1, y1, x2, y2) {
+        const dx = x2 - x1;
+        const dy = y2 - y1;
+
+        if (Math.abs(dy) < 3) {
+            return `M ${x1} ${y1} L ${x2} ${y2}`;
+        }
+        if (Math.abs(dx) < 3) {
+            return `M ${x1} ${y1} L ${x2} ${y2}`;
+        }
+
+        // Smooth cubic bezier: horizontal exit, then curve to destination
+        const tension = Math.min(Math.abs(dx), Math.abs(dy)) * 0.55;
+        const cp1x = x1 + (Math.abs(dx) > Math.abs(dy) ? tension : 0);
+        const cp1y = y1 + (Math.abs(dy) > Math.abs(dx) ? (dy > 0 ? tension : -tension) : 0);
+        const cp2x = x2 - (Math.abs(dx) > Math.abs(dy) ? tension : 0);
+        const cp2y = y2 - (Math.abs(dy) > Math.abs(dx) ? (dy > 0 ? tension : -tension) : 0);
+
+        return `M ${x1} ${y1} C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${x2} ${y2}`;
+    }
+
+    // --- Draw Connections ---
+    let connectionsSvg = '';
     let activePathD = '';
 
     (scenario.connections || []).forEach(conn => {
@@ -272,124 +328,108 @@ function renderSvgCanvas(scenario, activeStep) {
         const to = nodeMap.get(conn.to);
         if (!from || !to) return;
 
-        // Calculate anchor points (center of node edges)
-        const fromCx = from.x + nodeW / 2;
-        const fromCy = from.y + nodeH / 2;
-        const toCx = to.x + nodeW / 2;
-        const toCy = to.y + nodeH / 2;
+        const { x1, y1, x2, y2 } = getAnchors(from, to);
+        const pathD = buildSmoothPath(x1, y1, x2, y2);
 
-        // Determine exit/entry sides based on relative position
-        let x1, y1, x2, y2;
-        const dx = toCx - fromCx;
-        const dy = toCy - fromCy;
-
-        if (Math.abs(dx) >= Math.abs(dy)) {
-            // Horizontal-dominant: exit right, enter left
-            if (dx >= 0) {
-                x1 = from.x + nodeW; y1 = fromCy;
-                x2 = to.x;           y2 = toCy;
-            } else {
-                x1 = from.x;         y1 = fromCy;
-                x2 = to.x + nodeW;   y2 = toCy;
-            }
-        } else {
-            // Vertical-dominant: exit bottom, enter top (or vice versa)
-            if (dy >= 0) {
-                x1 = fromCx; y1 = from.y + nodeH;
-                x2 = toCx;   y2 = to.y;
-            } else {
-                x1 = fromCx; y1 = from.y;
-                x2 = toCx;   y2 = to.y + nodeH;
-            }
-        }
-
-        let pathD = '';
-        if (Math.abs(y1 - y2) < 5) {
-            pathD = `M ${x1} ${y1} L ${x2} ${y2}`;
-        } else if (Math.abs(x1 - x2) < 5) {
-            pathD = `M ${x1} ${y1} L ${x2} ${y2}`;
-        } else {
-            // Orthogonal L-shaped elbow
-            const midX = x1 + (x2 - x1) / 2;
-            pathD = `M ${x1} ${y1} H ${midX} V ${y2} H ${x2}`;
-        }
-
-        // Check if this connection matches active step path
-        const isActiveConn = activeStep.activePath && 
-            activeStep.activePath.includes(conn.from) && 
+        const isActive = activeStep.activePath &&
+            activeStep.activePath.includes(conn.from) &&
             activeStep.activePath.includes(conn.to);
 
-        if (isActiveConn) {
+        if (isActive) {
             activePathD = pathD;
-            pathsSvg += `
-                <path d="${pathD}" fill="none" stroke="#f97316" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-active)" />
-            `;
+            connectionsSvg += `<path d="${pathD}" fill="none" stroke="#f97316" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arr-on)" opacity="1" />`;
         } else {
-            pathsSvg += `
-                <path d="${pathD}" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.45" marker-end="url(#arrow-default)" />
-            `;
+            connectionsSvg += `<path d="${pathD}" fill="none" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round" marker-end="url(#arr-off)" opacity="0.6" />`;
         }
     });
 
-    // Particle Motion Animation along Active Path
+    // --- Animated Particle ---
     let particleSvg = '';
     if (activePathD) {
         particleSvg = `
-            <path id="active-flow-path" d="${activePathD}" fill="none" stroke="none" />
-            <circle r="5" fill="#f97316">
-                <animateMotion dur="1.2s" repeatCount="indefinite" rotate="auto">
-                    <mpath href="#active-flow-path" />
+            <path id="sd-motion-path" d="${activePathD}" fill="none" stroke="none" />
+            <circle r="4.5" fill="#f97316" opacity="0.95">
+                <animateMotion dur="1.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.42 0 0.58 1">
+                    <mpath href="#sd-motion-path" />
                 </animateMotion>
             </circle>
-            <circle r="10" fill="#f97316" opacity="0.2">
-                <animateMotion dur="1.2s" repeatCount="indefinite" rotate="auto">
-                    <mpath href="#active-flow-path" />
+            <circle r="10" fill="#f97316" opacity="0.15">
+                <animateMotion dur="1.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.42 0 0.58 1">
+                    <mpath href="#sd-motion-path" />
                 </animateMotion>
-            </circle>
-        `;
+            </circle>`;
     }
 
-    // Render Node Elements (Vertical Layout: Icon top, Label bottom, centered)
-    const nodesHtml = scenario.nodes.map(n => {
+    // --- Draw Nodes as foreignObject inside SVG ---
+    let nodesSvg = '';
+    scenario.nodes.forEach(n => {
         const isActive = n.id === activeStep.activeNode;
-        const activeClass = isActive ? 
-            'border-roast-500 bg-roast-500/10 shadow-xl ring-2 ring-roast-500/50 scale-[1.03] z-20' : 
-            'border-slate-200 dark:border-slate-700/60 bg-white dark:bg-panel-900 opacity-90 hover:opacity-100 z-10';
+        const isDark = document.documentElement.classList.contains('dark');
 
-        const badgeHtml = (isActive && activeStep.badge) ? `
-            <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-full bg-roast-500 text-[#2B1904] text-[9px] font-extrabold shadow-lg whitespace-nowrap z-30" style="animation: bounce 0.6s ease-in-out infinite alternate;">
-                ${activeStep.badge}
+        // Node box styles
+        const bg = isActive ? (isDark ? '#3b1a04' : '#fff7ed') : (isDark ? '#1e293b' : '#ffffff');
+        const borderColor = isActive ? '#f97316' : (isDark ? '#334155' : '#e2e8f0');
+        const borderWidth = isActive ? 2.5 : 1;
+        const iconBg = isActive ? '#f97316' : (isDark ? '#1e293b' : '#f1f5f9');
+        const iconColor = isActive ? '#2B1904' : (isDark ? '#94a3b8' : '#64748b');
+        const textColor = isDark ? '#f8fafc' : '#0f172a';
+        const shadowFilter = isActive ? 'url(#glow)' : '';
+
+        // Active glow ring
+        if (isActive) {
+            nodesSvg += `<rect x="${n.x - 3}" y="${n.y - 3}" width="${NW + 6}" height="${NH + 6}" rx="18" fill="none" stroke="#f97316" stroke-width="1.5" opacity="0.35">
+                <animate attributeName="opacity" values="0.35;0.15;0.35" dur="1.5s" repeatCount="indefinite" />
+            </rect>`;
+        }
+
+        // Node rectangle
+        nodesSvg += `<rect x="${n.x}" y="${n.y}" width="${NW}" height="${NH}" rx="16" fill="${bg}" stroke="${borderColor}" stroke-width="${borderWidth}" filter="${shadowFilter}" />`;
+
+        // Badge (above node)
+        if (isActive && activeStep.badge) {
+            const badgeText = activeStep.badge;
+            const badgeW = Math.min(badgeText.length * 5.5 + 16, 180);
+            const badgeX = n.x + NW / 2 - badgeW / 2;
+            const badgeY = n.y - 16;
+            nodesSvg += `<rect x="${badgeX}" y="${badgeY}" width="${badgeW}" height="16" rx="8" fill="#f97316" />`;
+            nodesSvg += `<text x="${n.x + NW / 2}" y="${badgeY + 11.5}" text-anchor="middle" font-size="8" font-weight="800" fill="#2B1904" font-family="ui-monospace, monospace">${badgeText}</text>`;
+        }
+
+        // Icon circle
+        const iconCx = n.x + NW / 2;
+        const iconCy = n.y + 26;
+        nodesSvg += `<rect x="${iconCx - 15}" y="${iconCy - 15}" width="30" height="30" rx="8" fill="${iconBg}" />`;
+
+        // Use foreignObject for FA icon
+        nodesSvg += `<foreignObject x="${iconCx - 10}" y="${iconCy - 10}" width="20" height="20">
+            <div xmlns="http://www.w3.org/1999/xhtml" style="width:20px;height:20px;display:flex;align-items:center;justify-content:center;color:${iconColor};font-size:12px;">
+                <i class="fa-solid ${n.icon}"></i>
             </div>
-        ` : '';
+        </foreignObject>`;
 
-        return `
-            <div class="absolute rounded-2xl border ${activeClass} transition-all duration-300 flex flex-col items-center justify-center text-center w-[120px] h-[80px] shadow-sm select-none" style="left: ${n.x}px; top: ${n.y}px;">
-                ${badgeHtml}
-                <div class="w-9 h-9 rounded-xl ${isActive ? 'bg-roast-500 text-[#2B1904]' : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400'} flex items-center justify-center text-sm mb-1">
-                    <i class="fa-solid ${n.icon}"></i>
-                </div>
-                <span class="text-[10px] font-bold text-slate-900 dark:text-white leading-tight px-1.5 max-w-full" title="${n.label}">${n.label}</span>
-            </div>
-        `;
-    }).join('');
+        // Label text
+        nodesSvg += `<text x="${n.x + NW / 2}" y="${n.y + NH - 10}" text-anchor="middle" font-size="10" font-weight="700" fill="${textColor}" font-family="Inter, system-ui, sans-serif">${n.label}</text>`;
+    });
 
+    // --- Assemble Full SVG ---
     canvasContainer.innerHTML = `
-        <div class="relative w-full h-[340px] bg-slate-50/70 dark:bg-ink-950/80 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-inner">
-            <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 ${viewBoxWidth} ${viewBoxHeight}">
+        <div class="relative w-full rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-inner bg-slate-50/70 dark:bg-ink-950/80" style="aspect-ratio: ${W} / ${H};">
+            <svg viewBox="0 0 ${W} ${H}" class="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
                 <defs>
-                    <marker id="arrow-default" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
-                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8" />
+                    <marker id="arr-off" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
+                        <path d="M 0 1 L 8 5 L 0 9 z" fill="#cbd5e1" />
                     </marker>
-                    <marker id="arrow-active" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#f97316" />
+                    <marker id="arr-on" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                        <path d="M 0 1 L 8 5 L 0 9 z" fill="#f97316" />
                     </marker>
+                    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                        <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#f97316" flood-opacity="0.3" />
+                    </filter>
                 </defs>
-                ${pathsSvg}
+                ${connectionsSvg}
                 ${particleSvg}
+                ${nodesSvg}
             </svg>
-            <div class="absolute inset-0 pointer-events-auto">
-                ${nodesHtml}
-            </div>
         </div>
     `;
 }
