@@ -3000,7 +3000,7 @@
       "topic": "JVM & Memory Management",
       "difficulty": "Senior",
       "format": "System Design",
-      "title": "Heap sizing — leave headroom for ZGC concurrent work",
+      "title": "You are architecting the GC strategy for a **real-time order-matching engine** at a financial exchange. The service processes 500,000 orders/second, has a 99.9th-percentile latency SLA of **< 5 ms**, runs on a 128 GB heap, and must sustain operation for weeks without restart. A junior engineer proposes using **G1GC** because \"it's the default and well-understood.\" A platform engineer counters with **ZGC**.",
       "time": "35 min",
       "frequency": "Medium",
       "related": [],
@@ -3188,7 +3188,7 @@
       "topic": "JVM & Memory Management",
       "difficulty": "Middle",
       "format": "Open Answer",
-      "title": "Sizing the Heap dynamically based on the container limit (NOT hardcoded absolute values)",
+      "title": "Explain how modern JVMs interact with container boundaries (Docker/Kubernetes cgroups). What is the difference between a JVM-level OutOfMemoryError and an OS-level Linux Kernel OOM-Killed event? How do you prevent containerized Java apps from being killed by the OS, and what JVM flags are critical in this scenario?",
       "time": "15 min",
       "frequency": "High",
       "related": [
@@ -3344,7 +3344,7 @@
       "topic": "JVM & Memory Management",
       "difficulty": "Middle",
       "format": "Open Answer",
-      "title": "Stage 1: Build the application",
+      "title": "What is Application Class Data Sharing (AppCDS) in modern JVMs, and how does it optimize the startup time and memory footprint (RSS) of Java microservices containerized in Kubernetes? Describe the architectural steps required to generate and utilize an AppCDS archive inside a multi-stage Docker build.",
       "time": "15 min",
       "frequency": "Medium",
       "related": [
@@ -3362,7 +3362,7 @@
       "topic": "JVM & Memory Management",
       "difficulty": "Senior",
       "format": "System Design",
-      "title": "Start continuous recording on JVM start",
+      "title": "You are designing a continuous profiling platform for a highly distributed, high-throughput microservice architecture. Analyze the architectural trade-offs between JDK Flight Recorder (JFR) and async-profiler for CPU and allocation profiling under heavy production load.",
       "time": "25 min",
       "frequency": "High",
       "related": [
@@ -3414,7 +3414,7 @@
       "topic": "JVM & Memory Management",
       "difficulty": "Middle",
       "format": "Open Answer",
-      "title": "Sizing command for String Deduplication under ZGC",
+      "title": "Compare JVM-level String Deduplication (`-XX:+UseStringDeduplication`) with explicit String Interning (`String.intern()`) as memory optimization strategies on modern HotSpot JVMs (Java 11/17/21).",
       "time": "15 min",
       "frequency": "Medium",
       "related": [
@@ -4052,7 +4052,7 @@
       "topic": "Modern Java 21+",
       "difficulty": "Middle",
       "format": "Open Answer",
-      "title": "Thread Pinning: synchronized vs ReentrantLock",
+      "title": "Thread Pinning",
       "time": "10 min",
       "frequency": "High",
       "related": [],
@@ -4068,7 +4068,7 @@
       "topic": "Modern Java 21+",
       "difficulty": "Middle",
       "format": "Open Answer",
-      "title": "Structured Concurrency and StructuredTaskScope",
+      "title": "Structured Concurrency",
       "time": "10 min",
       "frequency": "High",
       "related": [],
@@ -4165,7 +4165,7 @@
       "topic": "Modern Java 21+",
       "difficulty": "Senior",
       "format": "Open Answer",
-      "title": "Generational ZGC (Z Garbage Collector)",
+      "title": "Generational ZGC",
       "time": "10 min",
       "frequency": "Medium",
       "related": [],
@@ -5155,7 +5155,7 @@
       "topic": "OOP",
       "difficulty": "Junior",
       "format": "Code Review",
-      "title": "The Disappearing User",
+      "title": "Question: The Disappearing User",
       "time": "15 min",
       "frequency": "High",
       "related": [
@@ -5172,7 +5172,7 @@
       "topic": "OOP",
       "difficulty": "Middle",
       "format": "Code Review",
-      "title": "The Leaky Immutable Object",
+      "title": "Question: The Leaky Immutable Object",
       "time": "15 min",
       "frequency": "Medium",
       "related": [
@@ -5188,7 +5188,7 @@
       "topic": "OOP",
       "difficulty": "Middle",
       "format": "System Design",
-      "title": "Multi-Channel Notification Router",
+      "title": "Question: Multi-Channel Notification Router",
       "time": "20 min",
       "frequency": "Medium",
       "related": [
@@ -5204,7 +5204,7 @@
       "topic": "OOP",
       "difficulty": "Senior",
       "format": "System Design",
-      "title": "Resilient Payment State Machine",
+      "title": "Question: Resilient Payment State Machine",
       "time": "30 min",
       "frequency": "Low",
       "related": [
@@ -5300,7 +5300,7 @@
       "topic": "OOP",
       "difficulty": "Junior",
       "format": "Open Answer",
-      "title": "Static vs Dynamic Binding in Java",
+      "title": "Question: Static vs Dynamic Binding in Java",
       "time": "10 min",
       "frequency": "High",
       "related": [
@@ -5333,7 +5333,7 @@
       "topic": "OOP",
       "difficulty": "Middle",
       "format": "Code Review",
-      "title": "The Rectangle-Square Dilemma",
+      "title": "Question: The Rectangle-Square Dilemma",
       "time": "20 min",
       "frequency": "High",
       "related": [
@@ -5349,7 +5349,7 @@
       "topic": "OOP",
       "difficulty": "Middle",
       "format": "Open Answer",
-      "title": "Defensive Copying and Encapsulation",
+      "title": "Question: Defensive Copying and Encapsulation",
       "time": "15 min",
       "frequency": "Medium",
       "related": [
@@ -5365,7 +5365,7 @@
       "topic": "OOP",
       "difficulty": "Senior",
       "format": "System Design",
-      "title": "Domain Models in Distributed Systems",
+      "title": "Question: Domain Models in Distributed Systems",
       "time": "35 min",
       "frequency": "High",
       "related": [
