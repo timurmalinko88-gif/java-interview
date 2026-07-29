@@ -29,13 +29,12 @@ Given an integer array `nums` and an integer `k`, return the `k` most frequent e
 Step 1: Count element frequencies using a `HashMap<Integer, Integer>`.
 
 Step 2: Find top `k` frequencies.
-- **Option A (Sorting Map Entries)**: Takes $O(U \log U)$ time where $U$ is unique element count.
-- **Option B (Min-Heap / PriorityQueue of size K)**: Maintain a Min-Heap ordered by frequency. When heap size exceeds `k`, pop the smallest frequency element (`minHeap.poll()`). At the end, the heap contains the $K$ most frequent elements! Time complexity: $O(N \log K)$.
-- **Option C (Bucket Sort)**: Create array of lists indexed by frequency $1...N$. Time complexity: $O(N)$.
+- **Option A (Sorting Map Entries)**: Takes O(U \log U) time where $U$ is unique element count.
+- **Option B (Min-Heap / PriorityQueue of size K)**: Maintain a Min-Heap ordered by frequency. When heap size exceeds `k`, pop the smallest frequency element (`minHeap.poll()`). At the end, the heap contains the $K$ most frequent elements! Time complexity: O(N \log K).
+- **Option C (Bucket Sort)**: Create array of lists indexed by frequency $1...N$. Time complexity: O(N).
 
 The **Min-Heap (PriorityQueue)** approach is the standard industrial pattern asked in Java interviews because it tests `PriorityQueue` comparator syntax.
 
----
 
 ### ⚙️ Step-by-Step Visual Walkthrough
 
@@ -45,22 +44,20 @@ Consider `nums = [1, 1, 1, 2, 2, 3]`, `k = 2`.
    `{1: 3, 2: 2, 3: 1}`
 
 2. **Min-Heap Processing** (ordered by frequency ascending):
-   - Add `1` (freq 3) $\rightarrow$ Heap: `[1]`
-   - Add `2` (freq 2) $\rightarrow$ Heap: `[2 (freq 2), 1 (freq 3)]`
-   - Add `3` (freq 1) $\rightarrow$ Heap size becomes `3 > k (2)`.
-   - Poll top of min-heap $\rightarrow$ `3` (smallest freq 1) removed!
+   - Add `1` (freq 3) → Heap: `[1]`
+   - Add `2` (freq 2) → Heap: `[2 (freq 2), 1 (freq 3)]`
+   - Add `3` (freq 1) → Heap size becomes `3 > k (2)`.
+   - Poll top of min-heap → `3` (smallest freq 1) removed!
    - Heap contains `[2, 1]`.
 
-3. Extract result array $\rightarrow$ `[2, 1]`.
+3. Extract result array → `[2, 1]`.
 
----
 
 ### ⚠️ Edge Cases & Pitfalls
 
-- **Min-Heap vs Max-Heap**: Use a **Min-Heap** bounded to size `k` to achieve $O(N \log K)$ instead of a Max-Heap holding all elements ($O(N \log N)$).
+- **Min-Heap vs Max-Heap**: Use a **Min-Heap** bounded to size `k` to achieve O(N \log K) instead of a Max-Heap holding all elements (O(N \log N)).
 - **Comparator Definition**: `PriorityQueue<Integer> minHeap = new PriorityQueue<>((a, b) -> countMap.get(a) - countMap.get(b));`
 
----
 
 ### 💻 Production Java Solution
 
@@ -98,11 +95,10 @@ public class TopKFrequentElements {
 }
 ```
 
----
 
 ### ⏱️ Time & Space Complexity
 
-- **Time Complexity**: $O(N \log K)$
-  Building frequency map takes $O(N)$. Inserting into Min-Heap bounded to size $K$ takes $O(\log K)$ for each of the $U \le N$ unique elements. Total $O(N \log K)$.
-- **Space Complexity**: $O(N)$
+- **Time Complexity**: O(N \log K)
+  Building frequency map takes O(N). Inserting into Min-Heap bounded to size $K$ takes O(\log K) for each of the $U \le N$ unique elements. Total O(N \log K).
+- **Space Complexity**: O(N)
   Map stores up to $N$ unique elements.

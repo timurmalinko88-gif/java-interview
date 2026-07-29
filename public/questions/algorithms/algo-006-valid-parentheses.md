@@ -37,29 +37,26 @@ The canonical data structure for LIFO processing is a **Stack**:
 - When encountering a closing bracket, compare it with `stack.pop()`. If stack is empty or top does not match, return `false`.
 - After string iteration, return `stack.isEmpty()`.
 
----
 
 ### ⚙️ Step-by-Step Visual Walkthrough
 
 Consider `s = "({[]})"`.
 
-1. `ch = '('` $\rightarrow$ push `')'` $\rightarrow$ Stack: `[')']`
-2. `ch = '{'` $\rightarrow$ push `'}'` $\rightarrow$ Stack: `[')', '}']`
-3. `ch = '['` $\rightarrow$ push `']'` $\rightarrow$ Stack: `[')', '}', ']']`
-4. `ch = ']'` $\rightarrow$ `stack.pop()` returns `']'` == `ch`. Stack: `[')', '}']`
-5. `ch = '}'` $\rightarrow$ `stack.pop()` returns `'}'` == `ch`. Stack: `[')']`
-6. `ch = ')'` $\rightarrow$ `stack.pop()` returns `')'` == `ch`. Stack: `[]`
-7. Loop finished. `stack.isEmpty() == true` $\rightarrow$ Return `true`.
+1. `ch = '('` → push `')'` → Stack: `[')']`
+2. `ch = '{'` → push `'}'` → Stack: `[')', '}']`
+3. `ch = '['` → push `']'` → Stack: `[')', '}', ']']`
+4. `ch = ']'` → `stack.pop()` returns `']'` == `ch`. Stack: `[')', '}']`
+5. `ch = '}'` → `stack.pop()` returns `'}'` == `ch`. Stack: `[')']`
+6. `ch = ')'` → `stack.pop()` returns `')'` == `ch`. Stack: `[]`
+7. Loop finished. `stack.isEmpty() == true` → Return `true`.
 
----
 
 ### ⚠️ Edge Cases & Pitfalls
 
 - **Odd Length Strings**: Any string with odd length (e.g. `length % 2 != 0`) cannot be valid. Return `false` immediately as early exit.
-- **Starting with Closing Bracket**: `s = "]"` $\rightarrow$ stack will be empty when popping. Handle `stack.isEmpty()` check.
-- **Unclosed Open Brackets**: `s = "(("` $\rightarrow$ after loop stack is not empty. Always check `stack.isEmpty()`.
+- **Starting with Closing Bracket**: `s = "]"` → stack will be empty when popping. Handle `stack.isEmpty()` check.
+- **Unclosed Open Brackets**: `s = "(("` → after loop stack is not empty. Always check `stack.isEmpty()`.
 
----
 
 ### 💻 Production Java Solution
 
@@ -95,11 +92,10 @@ public class ValidParentheses {
 }
 ```
 
----
 
 ### ⏱️ Time & Space Complexity
 
-- **Time Complexity**: $O(N)$
-  Single pass through string of length $N$. `push` and `pop` on `ArrayDeque` take $O(1)$ time.
-- **Space Complexity**: $O(N)$
+- **Time Complexity**: O(N)
+  Single pass through string of length $N$. `push` and `pop` on `ArrayDeque` take O(1) time.
+- **Space Complexity**: O(N)
   In the worst case (e.g. `"((((("`), stack stores $N$ elements.

@@ -31,7 +31,6 @@ The fundamental data structure for level-by-level processing is a **Queue (BFS -
 - Process the queue level by level by taking snapshot `int levelSize = queue.size()` at the start of each outer iteration.
 - Loop `levelSize` times to pop nodes belonging to the current level, record their values into a list, and offer their `left` and `right` children into the queue for the next level.
 
----
 
 ### ⚙️ Step-by-Step Visual Walkthrough
 
@@ -62,14 +61,12 @@ Consider tree: `[3, 9, 20, null, null, 15, 7]`
    - Pop `15`, pop `7`. No children. Queue becomes `[]`.
    - Result: `[[3], [9, 20], [15, 7]]`.
 
----
 
 ### ⚠️ Edge Cases & Pitfalls
 
 - **Empty Tree**: If `root == null`, return an empty list `[]`.
 - **Mixing Up Queue Size**: Taking `int levelSize = queue.size()` BEFORE the inner loop is mandatory! If you call `queue.size()` dynamically inside the inner loop condition, pushing children will inflate the loop count and mix up levels.
 
----
 
 ### 💻 Production Java Solution
 
@@ -117,11 +114,10 @@ public class LevelOrderTraversal {
 }
 ```
 
----
 
 ### ⏱️ Time & Space Complexity
 
-- **Time Complexity**: $O(N)$
+- **Time Complexity**: O(N)
   Every node in the binary tree is visited exactly once.
-- **Space Complexity**: $O(N)$
+- **Space Complexity**: O(N)
   Queue holds at most the maximum width of the tree (for a complete binary tree, bottom level contains $N/2$ nodes).

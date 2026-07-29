@@ -34,9 +34,8 @@ $$\text{dp}[n] = \text{dp}[n-1] + \text{dp}[n-2]$$
 
 This is the exact recurrence relation of the **Fibonacci Sequence**:
 - Base cases: $\text{dp}[1] = 1$, $\text{dp}[2] = 2$.
-- To achieve $O(1)$ space, we only need to keep track of the last two calculated values (`prev1` and `prev2`) rather than maintaining a full array.
+- To achieve O(1) space, we only need to keep track of the last two calculated values (`prev1` and `prev2`) rather than maintaining a full array.
 
----
 
 ### ⚙️ Step-by-Step Visual Walkthrough
 
@@ -48,14 +47,12 @@ Consider `n = 5`.
 - Step 4: $2 + 3 = 5$ ways
 - Step 5: $3 + 5 = 8$ ways
 
----
 
 ### ⚠️ Edge Cases & Pitfalls
 
 - **Small n**: `n = 1` or `n = 2` must return `1` or `2` directly without entering the loop.
-- **Naive Recursion**: Naive recursive Fibonacci `climbStairs(n-1) + climbStairs(n-2)` takes exponential $O(2^N)$ time and will throw `Time Limit Exceeded`. Dynamic Programming optimizes this to linear $O(N)$ time.
+- **Naive Recursion**: Naive recursive Fibonacci `climbStairs(n-1) + climbStairs(n-2)` takes exponential O(2^N) time and will throw `Time Limit Exceeded`. Dynamic Programming optimizes this to linear O(N) time.
 
----
 
 ### 💻 Production Java Solution
 
@@ -81,11 +78,10 @@ public class ClimbingStairs {
 }
 ```
 
----
 
 ### ⏱️ Time & Space Complexity
 
-- **Time Complexity**: $O(N)$
+- **Time Complexity**: O(N)
   Single loop running from `3` to `n`.
-- **Space Complexity**: $O(1)$
+- **Space Complexity**: O(1)
   Only three integer variables are stored.

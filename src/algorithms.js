@@ -278,12 +278,29 @@ export function renderAlgoList(store) {
 }
 
 /**
+ * Cleans LaTeX formatting and markdown hr dividers from section text
+ */
+function cleanMarkdownText(text) {
+    if (!text) return '';
+    return text
+        .replace(/\$\\rightarrow\$/g, '→')
+        .replace(/\\rightarrow/g, '→')
+        .replace(/\$\\implies\$/g, '⇒')
+        .replace(/\\implies/g, '⇒')
+        .replace(/\$\\le\$/g, '≤')
+        .replace(/\$\\ge\$/g, '≥')
+        .replace(/\$O\(([^)]+)\)\$/g, 'O($1)')
+        .replace(/^[ \t]*---[ \t]*$/gm, '');
+}
+
+/**
  * Parses markdown answer body into structured step-by-step sections
  */
 function parseAnswerSections(answerBody) {
     if (!answerBody) return [];
     
-    const rawSections = answerBody.split(/(?=^###\s+)/m);
+    const cleanedBody = cleanMarkdownText(answerBody);
+    const rawSections = cleanedBody.split(/(?=^###\s+)/m);
     const sections = [];
 
     rawSections.forEach(sec => {
@@ -344,7 +361,8 @@ export async function openAlgoModal(question, path, store) {
         const answerBody = parts[1] ? parts[1].trim() : '';
 
         // Render Markdown for Prompt
-        const promptHtml = typeof marked !== 'undefined' ? marked.parse(questionPrompt) : questionPrompt;
+        const cleanedPrompt = cleanMarkdownText(questionPrompt);
+        const promptHtml = typeof marked !== 'undefined' ? marked.parse(cleanedPrompt) : cleanedPrompt;
 
         // Parse Answer into Steps
         const sections = parseAnswerSections(answerBody);

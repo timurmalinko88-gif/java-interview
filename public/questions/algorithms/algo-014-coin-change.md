@@ -42,7 +42,6 @@ This is a classic **Unbounded Knapsack / Bottom-Up 1D Dynamic Programming** prob
   If `i - c >= 0`:
   $$\text{dp}[i] = \min(\text{dp}[i], 1 + \text{dp}[i - c])$$
 
----
 
 ### ⚙️ Step-by-Step Visual Walkthrough
 
@@ -63,7 +62,6 @@ Consider `coins = [1, 2, 5]`, `amount = 11`.
 4. By amount `i = 11`:
    - `dp[11] = 1 + dp[6] = 1 + (1 + dp[1]) = 3` (coins `5 + 5 + 1`).
 
----
 
 ### ⚠️ Edge Cases & Pitfalls
 
@@ -71,7 +69,6 @@ Consider `coins = [1, 2, 5]`, `amount = 11`.
 - **Impossible Amount**: If `dp[amount] > amount`, return `-1`.
 - **Integer Overflow**: Filling `dp` with `Integer.MAX_VALUE` can cause `1 + dp[i - coin]` to wrap around into negative numbers. Use `amount + 1` instead of `Integer.MAX_VALUE` as the sentinel "infinity" value.
 
----
 
 ### 💻 Production Java Solution
 
@@ -103,11 +100,10 @@ public class CoinChange {
 }
 ```
 
----
 
 ### ⏱️ Time & Space Complexity
 
-- **Time Complexity**: $O(\text{amount} \times N)$
+- **Time Complexity**: O(\text{amount} \times N)
   Outer loop runs `amount` times, inner loop iterates over $N$ coin denominations.
-- **Space Complexity**: $O(\text{amount})$
+- **Space Complexity**: O(\text{amount})
   DP table of size `amount + 1`.

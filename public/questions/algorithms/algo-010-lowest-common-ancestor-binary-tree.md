@@ -40,7 +40,6 @@ If `root == null`, `root == p`, or `root == q`, return `root`.
 1. If both `left != null` and `right != null`, it means `p` is in one subtree and `q` is in the other subtree. Therefore, `root` **is the Lowest Common Ancestor**! Return `root`.
 2. If only one side returns non-null (e.g. `left != null`), it means both `p` and `q` are located in that subtree. Return `left != null ? left : right`.
 
----
 
 ### ⚙️ Step-by-Step Visual Walkthrough
 
@@ -59,16 +58,14 @@ Find LCA of `p = 5` and `q = 1`:
 2. DFS left child `5`: `root == p` matches! Return `5`.
 3. DFS right child `1`: `root == q` matches! Return `1`.
 4. At `root = 3`: `left = 5` (non-null) and `right = 1` (non-null).
-5. Both sides non-null $\rightarrow$ `3` is the LCA! Return `3`.
+5. Both sides non-null → `3` is the LCA! Return `3`.
 
----
 
 ### ⚠️ Edge Cases & Pitfalls
 
 - **One Node is Ancestor of the Other**: e.g., LCA of `5` and `4`. When DFS hits `5`, it immediately returns `5` without needing to traverse deeper down to `4`. When node `3` evaluates left branch `5` and right branch `null`, it returns `5`, which is the correct LCA.
 - **Root is Null**: Handled cleanly by `if (root == null) return null;`.
 
----
 
 ### 💻 Production Java Solution
 
@@ -95,11 +92,10 @@ public class LowestCommonAncestor {
 }
 ```
 
----
 
 ### ⏱️ Time & Space Complexity
 
-- **Time Complexity**: $O(N)$
+- **Time Complexity**: O(N)
   In worst case, every node in the binary tree is visited once.
-- **Space Complexity**: $O(H)$
-  Call stack memory depends on tree height $H$ ($O(\log N)$ for balanced tree, $O(N)$ for skewed tree).
+- **Space Complexity**: O(H)
+  Call stack memory depends on tree height $H$ (O(\log N) for balanced tree, O(N) for skewed tree).

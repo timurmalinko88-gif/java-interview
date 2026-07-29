@@ -36,10 +36,9 @@ Think of the grid as an undirected graph where each cell `(r, c)` containing `'1
 1. Iterate over every cell `(r, c)` in the grid.
 2. If `grid[r][c] == '1'`, we have discovered a new island!
    - Increment `islandCount++`.
-   - Trigger a **DFS** or **BFS** traversal starting from `(r, c)` to visit and sink all connected land cells by changing `'1'` $\rightarrow$ `'0'` (or marking them visited).
+   - Trigger a **DFS** or **BFS** traversal starting from `(r, c)` to visit and sink all connected land cells by changing `'1'` → `'0'` (or marking them visited).
 3. Continue scanning remaining cells.
 
----
 
 ### ⚙️ Step-by-Step Visual Walkthrough
 
@@ -72,7 +71,6 @@ Consider grid:
 
 Final result: `3` islands.
 
----
 
 ### ⚠️ Edge Cases & Pitfalls
 
@@ -80,7 +78,6 @@ Final result: `3` islands.
 - **Character Grid vs Integer Grid**: Note that grid contains `char` values `'1'` and `'0'`, not primitive `int` `1` and `0`. Comparing `grid[r][c] == 1` instead of `'1'` is a common bug.
 - **In-place Sinking**: Sinking visited land to `'0'` saves memory by eliminating the need for a boolean `visited[][]` array.
 
----
 
 ### 💻 Production Java Solution
 
@@ -125,11 +122,10 @@ public class NumberOfIslands {
 }
 ```
 
----
 
 ### ⏱️ Time & Space Complexity
 
-- **Time Complexity**: $O(M \times N)$
+- **Time Complexity**: O(M \times N)
   Every cell in the $M \times N$ grid is inspected once by the outer loop and visited at most once by DFS.
-- **Space Complexity**: $O(M \times N)$
+- **Space Complexity**: O(M \times N)
   In the worst-case scenario (entire grid filled with land `'1'`), the call stack depth reaches $M \times N$.

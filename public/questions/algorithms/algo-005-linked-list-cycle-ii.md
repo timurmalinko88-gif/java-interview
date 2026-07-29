@@ -21,14 +21,14 @@ Do not modify the linked list.
 ### Constraints:
 - The number of nodes in the list is in the range `[0, 10^4]`.
 - `-10^5 <= Node.val <= 10^5`
-- Solve using **$O(1)$ extra memory**.
+- Solve using **O(1) extra memory**.
 
 ---ANSWER---
 
 ### 💡 Intuition & Pattern Recognition
 
-A simple `HashSet<ListNode>` detects the cycle entry node in $O(N)$ space by storing visited nodes.
-To solve it with **$O(1)$ extra space**, we use **Floyd's Tortoise and Hare Algorithm (Fast & Slow Pointers)**.
+A simple `HashSet<ListNode>` detects the cycle entry node in O(N) space by storing visited nodes.
+To solve it with **O(1) extra space**, we use **Floyd's Tortoise and Hare Algorithm (Fast & Slow Pointers)**.
 
 **Mathematical Proof of Cycle Entry:**
 1. Let distance from `head` to cycle entry be $A$.
@@ -38,11 +38,10 @@ To solve it with **$O(1)$ extra space**, we use **Floyd's Tortoise and Hare Algo
   - Distance travelled by `slow` = $A + B$
   - Distance travelled by `fast` = $A + B + C + B = A + 2B + C$
 - Since `fast` moves at twice the speed of `slow`:
-  $$2(A + B) = A + 2B + C \implies 2A + 2B = A + 2B + C \implies A = C$$
+  $$2(A + B) = A + 2B + C ⇒ 2A + 2B = A + 2B + C ⇒ A = C$$
 
 **Conclusion:** The distance from `head` to cycle entry ($A$) is **exactly equal** to the distance from the intersection point to cycle entry ($C$)!
 
----
 
 ### ⚙️ Step-by-Step Visual Walkthrough
 
@@ -58,15 +57,13 @@ To solve it with **$O(1)$ extra space**, we use **Floyd's Tortoise and Hare Algo
    - Advance both `slow` and `fast` **one step at a time**.
    - The node where they meet again is the **exact cycle entry node**!
 
----
 
 ### ⚠️ Edge Cases & Pitfalls
 
 - **Empty List or Single Node**: `head == null` or `head.next == null` cannot contain a cycle. Return `null`.
 - **No Cycle in List**: `fast` will reach `null`. Handle `fast != null && fast.next != null` check to prevent `NullPointerException`.
-- **Modifying Node Values**: Do not modify node values or pointers; interviewers require $O(1)$ read-only traversal.
+- **Modifying Node Values**: Do not modify node values or pointers; interviewers require O(1) read-only traversal.
 
----
 
 ### 💻 Production Java Solution
 
@@ -114,11 +111,10 @@ public class LinkedListCycleII {
 }
 ```
 
----
 
 ### ⏱️ Time & Space Complexity
 
-- **Time Complexity**: $O(N)$
-  Phase 1 takes $O(N)$ steps to intersect. Phase 2 takes $O(A) \le O(N)$ steps. Total time is linear $O(N)$.
-- **Space Complexity**: $O(1)$
+- **Time Complexity**: O(N)
+  Phase 1 takes O(N) steps to intersect. Phase 2 takes $O(A) \le O(N)$ steps. Total time is linear O(N).
+- **Space Complexity**: O(1)
   Only two pointer references are maintained.

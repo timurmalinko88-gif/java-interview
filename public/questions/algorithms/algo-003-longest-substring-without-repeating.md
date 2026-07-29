@@ -24,7 +24,7 @@ Given a string `s`, find the length of the **longest substring** without repeati
 
 ### 💡 Intuition & Pattern Recognition
 
-A brute-force approach checks every substring ($O(N^2)$ substrings, $O(N)$ validation $\rightarrow O(N^3)$ total).
+A brute-force approach checks every substring (O(N^2) substrings, O(N) validation $→ O(N^3)$ total).
 
 When searching for a contiguous subarray or substring that satisfies a dynamic constraint (e.g. all unique characters), the optimal pattern is **Sliding Window**:
 - Maintain a window `[left, right]`.
@@ -32,7 +32,6 @@ When searching for a contiguous subarray or substring that satisfies a dynamic c
 - If a duplicate character is encountered, shrink the window by jumping `left = Math.max(left, map.get(ch) + 1)` directly past the duplicate.
 - Update `maxLength = Math.max(maxLength, right - left + 1)`.
 
----
 
 ### ⚙️ Step-by-Step Visual Walkthrough
 
@@ -59,7 +58,6 @@ Consider `s = "abcabcbb"`.
 
 5. Continuing through string yields `maxLength = 3`.
 
----
 
 ### ⚠️ Edge Cases & Pitfalls
 
@@ -67,7 +65,6 @@ Consider `s = "abcabcbb"`.
 - **String with All Same Characters**: `s = "bbbbb"` should return `1`.
 - **Stale Index in Map**: Always use `left = Math.max(left, map.get(ch) + 1)`! If a character's stored index is outside the current window (`< left`), updating `left` without `Math.max` would illegally move `left` backward.
 
----
 
 ### 💻 Production Java Solution
 
@@ -102,11 +99,10 @@ public class LongestSubstringWithoutRepeating {
 }
 ```
 
----
 
 ### ⏱️ Time & Space Complexity
 
-- **Time Complexity**: $O(N)$
+- **Time Complexity**: O(N)
   The `right` pointer moves from `0` to `N - 1`. Each character is processed once.
 - **Space Complexity**: $O(\min(N, M))$
   Where $M$ is the size of the character set (ASCII = 128 or Unicode).

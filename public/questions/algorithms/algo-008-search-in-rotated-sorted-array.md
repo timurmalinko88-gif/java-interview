@@ -18,7 +18,7 @@ There is an integer array `nums` sorted in ascending order (with distinct values
 
 Given the array `nums` after rotation and an integer `target`, return the index of `target` if it is in `nums`, or `-1` if it is not in `nums`.
 
-You must write an algorithm with **$O(\log N)$ runtime complexity**.
+You must write an algorithm with **O(\log N) runtime complexity**.
 
 ### Constraints:
 - `1 <= nums.length <= 5000`
@@ -42,7 +42,6 @@ Calculate `mid = left + (right - left) / 2`.
    - If yes, narrow search to that half.
    - If no, search the opposite half.
 
----
 
 ### ⚙️ Step-by-Step Visual Walkthrough
 
@@ -50,27 +49,25 @@ Consider `nums = [4, 5, 6, 7, 0, 1, 2]`, `target = 0`.
 
 1. `left = 0 (4)`, `right = 6 (2)`.
    - `mid = 3 (7)`.
-   - `nums[left] (4) <= nums[mid] (7)` $\rightarrow$ Left half `[4, 5, 6, 7]` is sorted!
+   - `nums[left] (4) <= nums[mid] (7)` → Left half `[4, 5, 6, 7]` is sorted!
    - Is `target (0)` inside `[4..7]`? No (`target < 4`).
    - Therefore, `target` must be in the right half! Set `left = mid + 1 = 4`.
 
 2. `left = 4 (0)`, `right = 6 (2)`.
    - `mid = 5 (1)`.
-   - `nums[left] (0) <= nums[mid] (1)` $\rightarrow$ Left half `[0, 1]` is sorted!
+   - `nums[left] (0) <= nums[mid] (1)` → Left half `[0, 1]` is sorted!
    - Is `target (0)` inside `[0..1]`? Yes (`0 >= 0 && 0 <= 1`).
    - Search left half! Set `right = mid - 1 = 4`.
 
 3. `left = 4`, `right = 4`.
-   - `mid = 4`. `nums[mid] == 0 == target` $\rightarrow$ Return index `4`.
+   - `mid = 4`. `nums[mid] == 0 == target` → Return index `4`.
 
----
 
 ### ⚠️ Edge Cases & Pitfalls
 
 - **Avoid Integer Overflow**: Calculate midpoint as `mid = left + (right - left) / 2` instead of `(left + right) / 2`.
-- **Duplicates in Array**: If array had non-unique elements (LeetCode 81), `nums[left] == nums[mid]` would obscure which side is sorted, degrading worst-case to $O(N)$. For distinct values, it remains guaranteed $O(\log N)$.
+- **Duplicates in Array**: If array had non-unique elements (LeetCode 81), `nums[left] == nums[mid]` would obscure which side is sorted, degrading worst-case to O(N). For distinct values, it remains guaranteed O(\log N).
 
----
 
 ### 💻 Production Java Solution
 
@@ -112,11 +109,10 @@ public class SearchRotatedArray {
 }
 ```
 
----
 
 ### ⏱️ Time & Space Complexity
 
-- **Time Complexity**: $O(\log N)$
+- **Time Complexity**: O(\log N)
   Each step halves the search space.
-- **Space Complexity**: $O(1)$
+- **Space Complexity**: O(1)
   Iterative implementation uses constant memory.

@@ -23,15 +23,15 @@ Return the indices of the two numbers, `index1` and `index2`, added by one as an
 - `-1000 <= numbers[i] <= 1000`
 - `numbers` is sorted in non-decreasing order.
 - Exactly one valid solution exists. You may not use the same element twice.
-- Your solution must use only $O(1)$ extra space.
+- Your solution must use only O(1) extra space.
 
 ---ANSWER---
 
 ### 💡 Intuition & Pattern Recognition
 
 Why is a standard `HashMap` suboptimal here?
-In the classic *Two Sum* problem, the input array is unsorted, requiring a `HashMap` to achieve $O(N)$ time at the cost of $O(N)$ auxiliary space.
-However, here the input array is **already sorted**, and we are strictly required to use **$O(1)$ extra space**.
+In the classic *Two Sum* problem, the input array is unsorted, requiring a `HashMap` to achieve O(N) time at the cost of O(N) auxiliary space.
+However, here the input array is **already sorted**, and we are strictly required to use **O(1) extra space**.
 
 When an array is sorted and we need to find a pair satisfying a sum condition, the primary pattern is **Two Pointers**:
 - Place `left` pointer at the start (smallest element).
@@ -42,7 +42,6 @@ When an array is sorted and we need to find a pair satisfying a sum condition, t
 2. If `currentSum < target`, the sum is too small. Increase the sum by advancing `left++` (towards larger numbers).
 3. If `currentSum > target`, the sum is too large. Decrease the sum by retreating `right--` (towards smaller numbers).
 
----
 
 ### ⚙️ Step-by-Step Visual Walkthrough
 
@@ -54,19 +53,18 @@ Consider `numbers = [2, 7, 11, 15]`, `target = 9`.
 
 2. **Iteration 1**:
    - `sum = 2 + 15 = 17`
-   - `17 > 9` $\rightarrow$ Sum is too large. Decrement `right--`.
+   - `17 > 9` → Sum is too large. Decrement `right--`.
    - `right` becomes `2` (value `11`).
 
 3. **Iteration 2**:
    - `sum = 2 + 11 = 13`
-   - `13 > 9` $\rightarrow$ Sum is still too large. Decrement `right--`.
+   - `13 > 9` → Sum is still too large. Decrement `right--`.
    - `right` becomes `1` (value `7`).
 
 4. **Iteration 3**:
    - `sum = 2 + 7 = 9`
-   - `9 == 9` $\rightarrow$ Match found! Return 1-based indices: `[left + 1, right + 1]` $\rightarrow$ `[1, 2]`.
+   - `9 == 9` → Match found! Return 1-based indices: `[left + 1, right + 1]` → `[1, 2]`.
 
----
 
 ### ⚠️ Edge Cases & Pitfalls
 
@@ -74,7 +72,6 @@ Consider `numbers = [2, 7, 11, 15]`, `target = 9`.
 - **Negative Numbers**: Sorted arrays can contain negative values (e.g., `[-3, -1, 0, 4]`). Two pointers handle negative numbers seamlessly because relative ordering is preserved.
 - **Integer Overflow**: In edge cases where array elements approach `Integer.MAX_VALUE`, `numbers[left] + numbers[right]` might overflow. Casting to `long` during sum calculation avoids silent bugs.
 
----
 
 ### 💻 Production Java Solution
 
@@ -102,11 +99,10 @@ public class TwoSumII {
 }
 ```
 
----
 
 ### ⏱️ Time & Space Complexity
 
-- **Time Complexity**: $O(N)$
+- **Time Complexity**: O(N)
   Each step shrinks the distance between `left` and `right` by 1. In the worst case, we traverse the array once.
-- **Space Complexity**: $O(1)$
+- **Space Complexity**: O(1)
   Only two pointer variables are allocated. No additional data structures are used.
