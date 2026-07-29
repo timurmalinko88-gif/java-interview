@@ -195,8 +195,8 @@ function renderSimulationStep() {
     if (detailsContainer) {
         const componentsHtml = currentScenario.components.map(c => `
             <tr class="border-b border-slate-100 dark:border-slate-800 text-xs">
-                <td class="py-2 px-3 font-bold text-slate-800 dark:text-slate-200 whitespace-nowrap">${c.name}</td>
-                <td class="py-2 px-3 text-slate-600 dark:text-slate-400">${c.role}</td>
+                <td class="py-2.5 px-3 font-bold text-slate-800 dark:text-slate-200 whitespace-nowrap">${c.name}</td>
+                <td class="py-2.5 px-3 text-slate-600 dark:text-slate-400">${c.role}</td>
             </tr>
         `).join('');
 
@@ -249,68 +249,120 @@ function renderSimulationStep() {
 }
 
 /**
- * Renders SVG Canvas Diagram with Connected Nodes & Animated Data Stream Packet
+ * Renders State-of-the-Art SVG Canvas Diagram with Orthogonal Curved Connection Pipes & Particle Streams
  */
 function renderSvgCanvas(scenario, activeStep) {
     const canvasContainer = document.getElementById('sysdesign-canvas');
     if (!canvasContainer) return;
 
-    const width = 680;
-    const height = 320;
+    const viewBoxWidth = 740;
+    const viewBoxHeight = 310;
+    const nodeW = 130;
+    const nodeH = 56;
 
-    // Draw connecting lines
-    let linesSvg = '';
     const nodeMap = new Map();
     scenario.nodes.forEach(n => nodeMap.set(n.id, n));
 
-    for (let i = 0; i < scenario.nodes.length - 1; i++) {
-        const from = scenario.nodes[i];
-        const to = scenario.nodes[i + 1];
-        linesSvg += `<line x1="${from.x + 50}" y1="${from.y + 25}" x2="${to.x + 50}" y2="${to.y + 25}" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4" opacity="0.4" />`;
-    }
+    // Render Connections as Orthogonal Curved Paths
+    let pathsSvg = '';
+    let activePathD = '';
 
-    // Active path animated packet line
-    let activePathSvg = '';
-    if (activeStep.activePath && activeStep.activePath.length >= 2) {
-        const pFrom = nodeMap.get(activeStep.activePath[0]);
-        const pTo = nodeMap.get(activeStep.activePath[activeStep.activePath.length - 1]);
-        if (pFrom && pTo) {
-            const x1 = pFrom.x + 50;
-            const y1 = pFrom.y + 25;
-            const x2 = pTo.x + 50;
-            const y2 = pTo.y + 25;
-            activePathSvg = `
-                <line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#f97316" stroke-width="3" stroke-linecap="round" />
-                <circle cx="${x1}" cy="${y1}" r="6" fill="#f97316">
-                    <animate attributeName="cx" from="${x1}" to="${x2}" dur="1.5s" repeatCount="indefinite" />
-                    <animate attributeName="cy" from="${y1}" to="${y2}" dur="1.5s" repeatCount="indefinite" />
-                </circle>
+    (scenario.connections || []).forEach(conn => {
+        const from = nodeMap.get(conn.from);
+        const to = nodeMap.get(conn.to);
+        if (!from || !to) return;
+
+        // Calculate anchor points (center-right of from -> center-left of to)
+        let x1 = from.x + nodeW;
+        let y1 = from.y + nodeH / 2;
+        let x2 = to.x;
+        let y2 = to.y + nodeH / 2;
+
+        let pathD = '';
+        if (Math.abs(y1 - y2) < 5) {
+            // Straight horizontal line
+            pathD = `M ${x1} ${y1} L ${x2} ${y2}`;
+        } else {
+            // Orthogonal curved elbow path
+            const midX = x1 + (x2 - x1) / 2;
+            pathD = `M ${x1} ${y1} H ${midX} V ${y2} H ${x2}`;
+        }
+
+        // Check if this connection matches active step path
+        const isActiveConn = activeStep.activePath && 
+            activeStep.activePath.includes(conn.from) && 
+            activeStep.activePath.includes(conn.to);
+
+        if (isActiveConn) {
+            activePathD = pathD;
+            pathsSvg += `
+                <path d="${pathD}" fill="none" stroke="#f97316" stroke-width="3" stroke-linecap="round" marker-end="url(#arrow-active)" />
+            `;
+        } else {
+            pathsSvg += `
+                <path d="${pathD}" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4,4" opacity="0.5" marker-end="url(#arrow-default)" />
             `;
         }
+    });
+
+    // Particle Motion Animation along Active Path
+    let particleSvg = '';
+    if (activePathD) {
+        particleSvg = `
+            <path id="active-flow-path" d="${activePathD}" fill="none" stroke="none" />
+            <circle r="5" fill="#f97316" class="shadow-lg">
+                <animateMotion dur="1.2s" repeatCount="indefinite" rotate="auto">
+                    <mpath href="#active-flow-path" />
+                </animateMotion>
+            </circle>
+            <circle r="9" fill="#f97316" opacity="0.3">
+                <animateMotion dur="1.2s" repeatCount="indefinite" rotate="auto">
+                    <mpath href="#active-flow-path" />
+                </animateMotion>
+            </circle>
+        `;
     }
 
-    // Draw Node Boxes
+    // Render Node Elements
     const nodesHtml = scenario.nodes.map(n => {
         const isActive = n.id === activeStep.activeNode;
         const activeClass = isActive ? 
-            'border-roast-500 bg-roast-500/10 shadow-lg ring-2 ring-roast-500/40 scale-105' : 
-            'border-slate-200 dark:border-slate-800 bg-white dark:bg-panel-900 opacity-80';
+            'border-roast-500 bg-roast-500/10 shadow-xl ring-2 ring-roast-500/50 scale-105 z-20' : 
+            'border-slate-200 dark:border-slate-800 bg-white dark:bg-panel-900 opacity-90 hover:opacity-100 z-10';
+
+        const badgeHtml = (isActive && activeStep.badge) ? `
+            <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-2.5 py-0.5 rounded-full bg-roast-500 text-[#2B1904] text-[9px] font-extrabold shadow-md whitespace-nowrap animate-bounce">
+                ${activeStep.badge}
+            </div>
+        ` : '';
 
         return `
-            <div class="absolute p-3 rounded-xl border ${activeClass} transition-all duration-300 flex flex-col items-center justify-center w-28 text-center" style="left: ${n.x}px; top: ${n.y}px;">
-                <div class="w-8 h-8 rounded-lg ${isActive ? 'bg-roast-500 text-[#2B1904]' : 'bg-slate-100 dark:bg-slate-800 text-slate-500'} flex items-center justify-center mb-1 text-sm">
+            <div class="absolute p-2.5 rounded-2xl border ${activeClass} transition-all duration-300 flex items-center space-x-2.5 w-[130px] h-[56px] shadow-sm select-none" style="left: ${n.x}px; top: ${n.y}px;">
+                ${badgeHtml}
+                <div class="w-8 h-8 rounded-xl ${isActive ? 'bg-roast-500 text-[#2B1904]' : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400'} flex items-center justify-center text-xs flex-shrink-0">
                     <i class="fa-solid ${n.icon}"></i>
                 </div>
-                <span class="text-[11px] font-bold text-slate-900 dark:text-white leading-tight">${n.label}</span>
+                <div class="flex flex-col min-w-0">
+                    <span class="text-[11px] font-bold text-slate-900 dark:text-white leading-tight truncate" title="${n.label}">${n.label}</span>
+                    <span class="text-[9px] font-mono text-slate-400 uppercase tracking-tight">${n.type}</span>
+                </div>
             </div>
         `;
     }).join('');
 
     canvasContainer.innerHTML = `
-        <div class="relative w-full h-[320px] bg-slate-50 dark:bg-ink-950 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-inner flex items-center justify-center">
-            <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 ${width} ${height}">
-                ${linesSvg}
-                ${activePathSvg}
+        <div class="relative w-full h-[310px] bg-slate-50/70 dark:bg-ink-950/80 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-inner flex items-center justify-center">
+            <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 ${viewBoxWidth} ${viewBoxHeight}">
+                <defs>
+                    <marker id="arrow-default" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8" />
+                    </marker>
+                    <marker id="arrow-active" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                        <path d="M 0 0 L 10 5 L 0 10 z" fill="#f97316" />
+                    </marker>
+                </defs>
+                ${pathsSvg}
+                ${particleSvg}
             </svg>
             <div class="absolute inset-0 pointer-events-auto">
                 ${nodesHtml}

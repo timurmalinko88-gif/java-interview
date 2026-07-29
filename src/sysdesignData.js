@@ -1,5 +1,5 @@
 /**
- * System Architecture Scenarios & Data Model
+ * System Architecture Scenarios & Data Model (4-Layer Grid Topology)
  */
 
 export const SYS_DESIGN_SCENARIOS = [
@@ -17,14 +17,20 @@ export const SYS_DESIGN_SCENARIOS = [
             { name: 'Redis Cluster', role: 'Stores atomic token bucket counters with TTL per client IP/User ID.' },
             { name: 'Lua Engine', role: 'Executes atomic check-and-decrement logic inside Redis without race conditions.' },
             { name: 'Backend Service', role: 'Executes core business logic for allowed requests.' },
-            { name: 'Client App', role: 'Receives 200 OK for allowed requests or 429 Too Many Requests when rate limited.' }
+            { name: 'Primary DB', role: 'Stores primary transactional business entities.' }
         ],
         nodes: [
-            { id: 'client', label: 'Client App', type: 'client', x: 50, y: 150, icon: 'fa-laptop' },
-            { id: 'gateway', label: 'API Gateway', type: 'gateway', x: 220, y: 150, icon: 'fa-shield-halved' },
-            { id: 'redis', label: 'Redis Cluster (Lua)', type: 'cache', x: 390, y: 70, icon: 'fa-database' },
-            { id: 'backend', label: 'Backend Microservice', type: 'service', x: 390, y: 230, icon: 'fa-server' },
-            { id: 'db', label: 'Primary DB', type: 'db', x: 560, y: 230, icon: 'fa-hard-drive' }
+            { id: 'client', label: 'Client App', type: 'client', x: 40, y: 130, icon: 'fa-laptop' },
+            { id: 'gateway', label: 'API Gateway', type: 'gateway', x: 220, y: 130, icon: 'fa-shield-halved' },
+            { id: 'redis', label: 'Redis (Lua)', type: 'cache', x: 400, y: 40, icon: 'fa-database' },
+            { id: 'backend', label: 'Backend Microservice', type: 'service', x: 400, y: 220, icon: 'fa-server' },
+            { id: 'db', label: 'Primary DB', type: 'db', x: 580, y: 220, icon: 'fa-hard-drive' }
+        ],
+        connections: [
+            { from: 'client', to: 'gateway' },
+            { from: 'gateway', to: 'redis' },
+            { from: 'gateway', to: 'backend' },
+            { from: 'backend', to: 'db' }
         ],
         steps: [
             {
@@ -32,39 +38,44 @@ export const SYS_DESIGN_SCENARIOS = [
                 title: 'HTTP Request Ingestion',
                 activeNode: 'gateway',
                 activePath: ['client', 'gateway'],
-                description: 'Client sends an HTTP request GET /api/v1/resource to the API Gateway with X-User-ID header.',
-                log: '[API Gateway] Intercepted request from User #84920. Extracting rate limit key: "rate:user:84920".'
+                badge: 'GET /api/v1/order',
+                description: 'Client sends an HTTP request GET /api/v1/order to API Gateway with X-User-ID: 84920 header.',
+                log: '[API Gateway] Intercepted request from User #84920. Key: "rate:user:84920".'
             },
             {
                 step: 2,
                 title: 'Atomic Redis Lua Token Evaluation',
                 activeNode: 'redis',
                 activePath: ['gateway', 'redis'],
-                description: 'Gateway executes atomic Lua script in Redis. Checks current tokens vs last refill timestamp.',
-                log: '[Redis Cluster] Running Lua script. Current tokens: 4/10. Refill rate: 2 tokens/sec. Token available!'
+                badge: 'EVAL Lua (Token Check)',
+                description: 'Gateway executes atomic Lua script in Redis. Checks tokens vs refill timestamp.',
+                log: '[Redis Cluster] Running Lua script. Tokens: 4/10. Refill rate: 2 tokens/sec. Token available!'
             },
             {
                 step: 3,
                 title: 'Token Decrement & Forwarding',
                 activeNode: 'backend',
                 activePath: ['gateway', 'backend'],
-                description: 'Token count decremented to 3. Gateway forwards request to downstream microservice.',
-                log: '[API Gateway] Rate check PASSED. Forwarding request downstream to Order-Service.'
+                badge: 'Token -1 -> Forward',
+                description: 'Token count decremented to 3. Gateway forwards request downstream to Order-Service.',
+                log: '[API Gateway] Rate check PASSED. Tokens remaining: 3. Forwarding to Order-Service.'
             },
             {
                 step: 4,
                 title: 'Business Execution & DB Access',
                 activeNode: 'db',
                 activePath: ['backend', 'db'],
+                badge: '200 OK (3ms)',
                 description: 'Backend microservice processes request and fetches data from Primary Database.',
                 log: '[Order-Service] Queried PostgreSQL DB (3ms). Returning 200 OK payload.'
             },
             {
                 step: 5,
                 title: 'Rate Limit Exhaustion (429 Scenario)',
-                activeNode: 'client',
+                activeNode: 'gateway',
                 activePath: ['gateway', 'client'],
-                description: 'When tokens count hits 0, Gateway rejects request immediately with 429 Too Many Requests.',
+                badge: '429 Too Many Requests',
+                description: 'When token count hits 0, Gateway rejects request immediately with 429 Too Many Requests.',
                 log: '[API Gateway] Tokens = 0. Request REJECTED. Returning 429 Too Many Requests (Retry-After: 2s).'
             }
         ],
@@ -117,11 +128,18 @@ public class RedisRateLimiter {
             { name: 'Dead Letter Queue (DLQ)', role: 'Holds persistently failing poison pill messages for manual inspection.' }
         ],
         nodes: [
-            { id: 'producer', label: 'Order Producer', type: 'service', x: 50, y: 150, icon: 'fa-paper-plane' },
-            { id: 'maintopic', label: 'Topic: orders', type: 'queue', x: 220, y: 70, icon: 'fa-layer-group' },
-            { id: 'consumer', label: 'Order Consumer', type: 'service', x: 390, y: 150, icon: 'fa-gears' },
-            { id: 'retrytopic', label: 'Topic: orders-retry-1m', type: 'queue', x: 390, y: 270, icon: 'fa-clock' },
-            { id: 'dlq', label: 'Topic: orders-dlq', type: 'queue', x: 560, y: 270, icon: 'fa-skull' }
+            { id: 'producer', label: 'Order Producer', type: 'service', x: 40, y: 130, icon: 'fa-paper-plane' },
+            { id: 'maintopic', label: 'Topic: orders', type: 'queue', x: 220, y: 40, icon: 'fa-layer-group' },
+            { id: 'consumer', label: 'Order Consumer', type: 'service', x: 400, y: 130, icon: 'fa-gears' },
+            { id: 'retrytopic', label: 'Topic: orders-retry', type: 'queue', x: 220, y: 220, icon: 'fa-clock' },
+            { id: 'dlq', label: 'Topic: orders-dlq', type: 'queue', x: 580, y: 220, icon: 'fa-skull' }
+        ],
+        connections: [
+            { from: 'producer', to: 'maintopic' },
+            { from: 'maintopic', to: 'consumer' },
+            { from: 'consumer', to: 'retrytopic' },
+            { from: 'retrytopic', to: 'consumer' },
+            { from: 'consumer', to: 'dlq' }
         ],
         steps: [
             {
@@ -129,6 +147,7 @@ public class RedisRateLimiter {
                 title: 'Event Publication to Main Topic',
                 activeNode: 'maintopic',
                 activePath: ['producer', 'maintopic'],
+                badge: 'Publish OrderCreated',
                 description: 'Producer publishes OrderCreatedEvent to partition 0 of main topic "orders".',
                 log: '[Kafka Producer] Published event OrderId=#9821 to topic "orders" [Partition 0, Offset 1042].'
             },
@@ -137,6 +156,7 @@ public class RedisRateLimiter {
                 title: 'Consumer Execution & Transient Failure',
                 activeNode: 'consumer',
                 activePath: ['maintopic', 'consumer'],
+                badge: '504 Connection Timeout',
                 description: 'Order Consumer fetches event. Downstream Payment Gateway times out (504 Gateway Timeout).',
                 log: '[Order Consumer] Processing OrderId=#9821 failed! Payment API Connection Refused (Attempt 1/3).'
             },
@@ -145,6 +165,7 @@ public class RedisRateLimiter {
                 title: 'Non-Blocking Forward to Retry Topic',
                 activeNode: 'retrytopic',
                 activePath: ['consumer', 'retrytopic'],
+                badge: 'Commit & Forward Retry',
                 description: 'Consumer commits main partition offset immediately and routes message to "orders-retry-1m". Main topic stays unblocked!',
                 log: '[Kafka Consumer] Offset 1042 COMMITTED. Forwarded OrderId=#9821 to "orders-retry-1m" (Backoff: 60s).'
             },
@@ -153,6 +174,7 @@ public class RedisRateLimiter {
                 title: 'Delayed Retry Attempt',
                 activeNode: 'consumer',
                 activePath: ['retrytopic', 'consumer'],
+                badge: 'Retry Attempt 3/3',
                 description: 'Retry Consumer picks up event after 1-minute delay. Retries payment processing.',
                 log: '[Retry Consumer] Re-processing OrderId=#9821 after 60s backoff. Connection still failing.'
             },
@@ -161,6 +183,7 @@ public class RedisRateLimiter {
                 title: 'DLQ Escrow for Poison Pills',
                 activeNode: 'dlq',
                 activePath: ['consumer', 'dlq'],
+                badge: 'Escrowed in DLQ',
                 description: 'After 3 failed retries, message is moved to "orders-dlq" for alerting and admin re-drive.',
                 log: '[Kafka Container] Max retries (3) exceeded! Moved OrderId=#9821 to "orders-dlq". Alert triggered to Slack.'
             }
@@ -212,11 +235,17 @@ public class KafkaRetryConfig {
             { name: 'PostgreSQL DB', role: 'Primary database protected from query spikes.' }
         ],
         nodes: [
-            { id: 'client', label: '10k Concurrent Clients', type: 'client', x: 50, y: 150, icon: 'fa-users' },
-            { id: 'app', label: 'App Pod Cluster', type: 'service', x: 220, y: 150, icon: 'fa-cubes' },
-            { id: 'redis', label: 'Redis Cache (TTL 60s)', type: 'cache', x: 390, y: 70, icon: 'fa-bolt' },
-            { id: 'lock', label: 'Distributed Lock', type: 'lock', x: 390, y: 230, icon: 'fa-lock' },
-            { id: 'db', label: 'PostgreSQL DB', type: 'db', x: 560, y: 230, icon: 'fa-database' }
+            { id: 'client', label: '10k Concurrent Clients', type: 'client', x: 40, y: 130, icon: 'fa-users' },
+            { id: 'app', label: 'App Pod Cluster', type: 'service', x: 220, y: 130, icon: 'fa-cubes' },
+            { id: 'redis', label: 'Redis (TTL 60s)', type: 'cache', x: 400, y: 40, icon: 'fa-bolt' },
+            { id: 'lock', label: 'Distributed Lock', type: 'lock', x: 400, y: 220, icon: 'fa-lock' },
+            { id: 'db', label: 'PostgreSQL DB', type: 'db', x: 580, y: 220, icon: 'fa-database' }
+        ],
+        connections: [
+            { from: 'client', to: 'app' },
+            { from: 'app', to: 'redis' },
+            { from: 'app', to: 'lock' },
+            { from: 'app', to: 'db' }
         ],
         steps: [
             {
@@ -224,6 +253,7 @@ public class KafkaRetryConfig {
                 title: 'Hot Key Expiration Spike',
                 activeNode: 'redis',
                 activePath: ['client', 'app', 'redis'],
+                badge: 'TTL EXPIRED (Cache Miss)',
                 description: 'Hot key "top-products" (viewed by 10,000 users/sec) expires in Redis.',
                 log: '[Redis] Key "top-products" TTL EXPIRED. 10,000 concurrent threads detect Cache Miss.'
             },
@@ -232,6 +262,7 @@ public class KafkaRetryConfig {
                 title: 'Distributed Mutex Lock Acquisition',
                 activeNode: 'lock',
                 activePath: ['app', 'lock'],
+                badge: 'Acquire Lock (Pod #1)',
                 description: 'App Pod #1 acquires Redis lock "lock:top-products". Pods #2..#1000 wait or read stale data.',
                 log: '[App Pod #1] SET lock:top-products NX PX 3000 -> SUCCESS. Pod #1 selected to recalculate cache.'
             },
@@ -240,6 +271,7 @@ public class KafkaRetryConfig {
                 title: 'Single DB Query Execution',
                 activeNode: 'db',
                 activePath: ['app', 'db'],
+                badge: 'Single Query (DB CPU 5%)',
                 description: 'Only Pod #1 queries PostgreSQL database. Primary DB CPU stays low at 5%!',
                 log: '[App Pod #1] Executing query: SELECT * FROM products ORDER BY sales DESC LIMIT 20 (DB load normal).'
             },
@@ -248,6 +280,7 @@ public class KafkaRetryConfig {
                 title: 'Cache Update & Lock Release',
                 activeNode: 'redis',
                 activePath: ['app', 'redis'],
+                badge: 'SET top-products (TTL 60s)',
                 description: 'Pod #1 writes fresh data to Redis with new 60s TTL and releases distributed lock.',
                 log: '[App Pod #1] SET top-products payload (TTL 60s). Lock "lock:top-products" RELEASED.'
             },
@@ -256,6 +289,7 @@ public class KafkaRetryConfig {
                 title: 'Probabilistic Early Refresh (XFetch)',
                 activeNode: 'app',
                 activePath: ['redis', 'app'],
+                badge: 'XFetch Background Early Refresh',
                 description: 'Before TTL expires, pods probabilistically compute refresh: -beta * log(rand()). Cache is refreshed in background before expiring!',
                 log: '[XFetch Algorithm] Computed delta * beta > TTL. Background thread refreshed cache 2s before expiry.'
             }
@@ -321,11 +355,17 @@ public class ProductService {
             { name: 'Shard 2 DB (100k..200k)', role: 'Database cluster hosting users 100,001 to 200,000.' }
         ],
         nodes: [
-            { id: 'client', label: 'Client (user_id=84920)', type: 'client', x: 50, y: 150, icon: 'fa-user' },
-            { id: 'proxy', label: 'Sharding Proxy', type: 'gateway', x: 220, y: 150, icon: 'fa-network-wired' },
-            { id: 'ring', label: 'Consistent Hash Ring', type: 'cache', x: 390, y: 70, icon: 'fa-circle-nodes' },
-            { id: 'shard1', label: 'Shard Node #1', type: 'db', x: 560, y: 70, icon: 'fa-database' },
-            { id: 'shard2', label: 'Shard Node #2', type: 'db', x: 560, y: 230, icon: 'fa-database' }
+            { id: 'client', label: 'Client (user_id=84920)', type: 'client', x: 40, y: 130, icon: 'fa-user' },
+            { id: 'proxy', label: 'Sharding Proxy', type: 'gateway', x: 220, y: 130, icon: 'fa-network-wired' },
+            { id: 'ring', label: 'Hash Ring Engine', type: 'cache', x: 400, y: 40, icon: 'fa-circle-nodes' },
+            { id: 'shard1', label: 'Shard Node #1', type: 'db', x: 580, y: 40, icon: 'fa-database' },
+            { id: 'shard2', label: 'Shard Node #2', type: 'db', x: 580, y: 220, icon: 'fa-database' }
+        ],
+        connections: [
+            { from: 'client', to: 'proxy' },
+            { from: 'proxy', to: 'ring' },
+            { from: 'proxy', to: 'shard2' },
+            { from: 'ring', to: 'shard1' }
         ],
         steps: [
             {
@@ -333,6 +373,7 @@ public class ProductService {
                 title: 'SQL Query & Shard Key Extraction',
                 activeNode: 'proxy',
                 activePath: ['client', 'proxy'],
+                badge: 'Extract user_id=84920',
                 description: 'Client executes query "SELECT * FROM users WHERE user_id = 84920". Proxy extracts shard key 84920.',
                 log: '[Sharding Proxy] Received query. Extracted Shard Key: user_id = 84920.'
             },
@@ -341,6 +382,7 @@ public class ProductService {
                 title: 'Consistent Hash Calculation',
                 activeNode: 'ring',
                 activePath: ['proxy', 'ring'],
+                badge: 'Hash -> Virtual Node Shard2',
                 description: 'Proxy computes MurmurHash3("84920") = 0x7F4A2109 and looks up position on Consistent Hash Ring.',
                 log: '[Consistent Hash Ring] Hash: 0x7F4A2109 -> Clockwise traversal points to Virtual Node Shard2_V3.'
             },
@@ -349,6 +391,7 @@ public class ProductService {
                 title: 'Direct Shard Query Routing',
                 activeNode: 'shard2',
                 activePath: ['proxy', 'shard2'],
+                badge: 'Query Shard #2 (2ms)',
                 description: 'Proxy routes SQL query directly to Shard Node #2 without querying Shard Node #1.',
                 log: '[Sharding Proxy] Routing query to Shard Node #2 (10.0.2.15:5432). Response time: 2ms.'
             },
@@ -357,6 +400,7 @@ public class ProductService {
                 title: 'Adding New Shard (Zero Downtime)',
                 activeNode: 'shard1',
                 activePath: ['ring', 'shard1'],
+                badge: 'Remap 25% Keys (Zero Downtime)',
                 description: 'When Shard #3 is added to Hash Ring, only 1/N keys (25%) are remapped without full database migration.',
                 log: '[Hash Ring Migration] Shard #3 registered. Only 25% of hash range reassigned. Zero downtime!'
             }
@@ -411,14 +455,20 @@ public class ConsistentHashRing<T> {
             { name: 'WebSocket Gateway', role: 'Maintains bi-directional persistent connections with active drivers.' },
             { name: 'Geo Location Service', role: 'Converts GPS coordinates into 6-character GeoHash grid strings.' },
             { name: 'Redis GEO Index', role: 'Stores driver locations in in-memory Sorted Sets with 2D spatial encoding.' },
-            { name: 'Driver App Pods', role: 'Streams driver location ping every 4 seconds.' }
+            { name: 'Driver App Ping', role: 'Streams driver location ping every 4 seconds.' }
         ],
         nodes: [
-            { id: 'passenger', label: 'Passenger App', type: 'client', x: 50, y: 150, icon: 'fa-mobile-screen' },
-            { id: 'ws', label: 'WebSocket Gateway', type: 'gateway', x: 220, y: 150, icon: 'fa-plug' },
-            { id: 'geoservice', label: 'Geo Location Service', type: 'service', x: 390, y: 150, icon: 'fa-map-location-dot' },
-            { id: 'redisgeo', label: 'Redis GEO (Sorted Set)', type: 'cache', x: 560, y: 70, icon: 'fa-location-crosshairs' },
-            { id: 'driver', label: 'Driver App Ping', type: 'client', x: 560, y: 230, icon: 'fa-car' }
+            { id: 'passenger', label: 'Passenger App', type: 'client', x: 40, y: 130, icon: 'fa-mobile-screen' },
+            { id: 'ws', label: 'WebSocket Gateway', type: 'gateway', x: 220, y: 130, icon: 'fa-plug' },
+            { id: 'geoservice', label: 'Geo Location Service', type: 'service', x: 400, y: 130, icon: 'fa-map-location-dot' },
+            { id: 'redisgeo', label: 'Redis GEO Index', type: 'cache', x: 580, y: 40, icon: 'fa-location-crosshairs' },
+            { id: 'driver', label: 'Driver App Stream', type: 'client', x: 580, y: 220, icon: 'fa-car' }
+        ],
+        connections: [
+            { from: 'driver', to: 'ws' },
+            { from: 'passenger', to: 'ws' },
+            { from: 'ws', to: 'geoservice' },
+            { from: 'geoservice', to: 'redisgeo' }
         ],
         steps: [
             {
@@ -426,6 +476,7 @@ public class ConsistentHashRing<T> {
                 title: 'Driver Location Stream Ping',
                 activeNode: 'ws',
                 activePath: ['driver', 'ws'],
+                badge: 'Ping (37.7749, -122.4194)',
                 description: 'Driver App streams current GPS coordinates (lat: 37.7749, lon: -122.4194) over WebSocket every 4s.',
                 log: '[WebSocket Gateway] Driver #4021 ping: (37.7749, -122.4194). Forwarding to Geo Service.'
             },
@@ -434,6 +485,7 @@ public class ConsistentHashRing<T> {
                 title: 'GeoHash Cell Encoding',
                 activeNode: 'geoservice',
                 activePath: ['ws', 'geoservice'],
+                badge: 'GeoHash: "dp9q8v"',
                 description: 'Geo Service converts coordinates to 6-char GeoHash string "dp9q8v" representing a ~1.2km x 0.6km grid box.',
                 log: '[Geo Location Service] Encoded coordinates (37.7749, -122.4194) -> GeoHash cell: "dp9q8v".'
             },
@@ -442,14 +494,16 @@ public class ConsistentHashRing<T> {
                 title: 'In-Memory Spatial Index Update',
                 activeNode: 'redisgeo',
                 activePath: ['geoservice', 'redisgeo'],
+                badge: 'GEOADD driver_locations (<1ms)',
                 description: 'Service executes GEOADD driver_locations -122.4194 37.7749 driver_4021 in Redis.',
                 log: '[Redis GEO] Executed GEOADD driver_locations. Spatial index updated in <1ms.'
             },
             {
                 step: 4,
                 title: 'Radius Query (8 Neighbor Cells)',
-                activeNode: 'passenger',
-                activePath: ['passenger', 'ws', 'geoservice', 'redisgeo'],
+                activeNode: 'geoservice',
+                activePath: ['passenger', 'ws', 'geoservice'],
+                badge: 'GEORADIUS 2km',
                 description: 'Passenger requests ride. Geo Service queries Redis GEORADIUS for 8 neighboring cells within 2km.',
                 log: '[Geo Service] GEORADIUSBYMEMBER driver_locations passenger_coords 2 km WITHDIST ASC.'
             },
@@ -458,6 +512,7 @@ public class ConsistentHashRing<T> {
                 title: 'Sub-5ms Driver Match Response',
                 activeNode: 'passenger',
                 activePath: ['geoservice', 'passenger'],
+                badge: '5 Drivers Match (4ms)',
                 description: 'Returns 5 nearest drivers (Driver #4021: 0.3km away). Total end-to-end latency: 4ms.',
                 log: '[Passenger App] Found 5 drivers nearby! Closest: Driver #4021 (300m away).'
             }
