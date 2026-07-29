@@ -22,9 +22,9 @@ export const SYS_DESIGN_SCENARIOS = [
         nodes: [
             { id: 'client', label: 'Client App', type: 'client', x: 40, y: 130, icon: 'fa-laptop' },
             { id: 'gateway', label: 'API Gateway', type: 'gateway', x: 220, y: 130, icon: 'fa-shield-halved' },
-            { id: 'redis', label: 'Redis (Lua)', type: 'cache', x: 400, y: 40, icon: 'fa-database' },
-            { id: 'backend', label: 'Backend Microservice', type: 'service', x: 400, y: 220, icon: 'fa-server' },
-            { id: 'db', label: 'Primary DB', type: 'db', x: 580, y: 220, icon: 'fa-hard-drive' }
+            { id: 'redis', label: 'Redis (Lua)', type: 'cache', x: 400, y: 30, icon: 'fa-database' },
+            { id: 'backend', label: 'Backend Service', type: 'service', x: 400, y: 230, icon: 'fa-server' },
+            { id: 'db', label: 'Primary DB', type: 'db', x: 580, y: 230, icon: 'fa-hard-drive' }
         ],
         connections: [
             { from: 'client', to: 'gateway' },
@@ -129,10 +129,10 @@ public class RedisRateLimiter {
         ],
         nodes: [
             { id: 'producer', label: 'Order Producer', type: 'service', x: 40, y: 130, icon: 'fa-paper-plane' },
-            { id: 'maintopic', label: 'Topic: orders', type: 'queue', x: 220, y: 40, icon: 'fa-layer-group' },
+            { id: 'maintopic', label: 'Topic: orders', type: 'queue', x: 220, y: 30, icon: 'fa-layer-group' },
             { id: 'consumer', label: 'Order Consumer', type: 'service', x: 400, y: 130, icon: 'fa-gears' },
-            { id: 'retrytopic', label: 'Topic: orders-retry', type: 'queue', x: 220, y: 220, icon: 'fa-clock' },
-            { id: 'dlq', label: 'Topic: orders-dlq', type: 'queue', x: 580, y: 220, icon: 'fa-skull' }
+            { id: 'retrytopic', label: 'Retry Topic', type: 'queue', x: 220, y: 230, icon: 'fa-clock' },
+            { id: 'dlq', label: 'DLQ Topic', type: 'queue', x: 580, y: 230, icon: 'fa-skull' }
         ],
         connections: [
             { from: 'producer', to: 'maintopic' },
@@ -235,11 +235,11 @@ public class KafkaRetryConfig {
             { name: 'PostgreSQL DB', role: 'Primary database protected from query spikes.' }
         ],
         nodes: [
-            { id: 'client', label: '10k Concurrent Clients', type: 'client', x: 40, y: 130, icon: 'fa-users' },
-            { id: 'app', label: 'App Pod Cluster', type: 'service', x: 220, y: 130, icon: 'fa-cubes' },
-            { id: 'redis', label: 'Redis (TTL 60s)', type: 'cache', x: 400, y: 40, icon: 'fa-bolt' },
-            { id: 'lock', label: 'Distributed Lock', type: 'lock', x: 400, y: 220, icon: 'fa-lock' },
-            { id: 'db', label: 'PostgreSQL DB', type: 'db', x: 580, y: 220, icon: 'fa-database' }
+            { id: 'client', label: '10k Clients', type: 'client', x: 40, y: 130, icon: 'fa-users' },
+            { id: 'app', label: 'App Pods', type: 'service', x: 220, y: 130, icon: 'fa-cubes' },
+            { id: 'redis', label: 'Redis Cache', type: 'cache', x: 400, y: 30, icon: 'fa-bolt' },
+            { id: 'lock', label: 'Mutex Lock', type: 'lock', x: 400, y: 230, icon: 'fa-lock' },
+            { id: 'db', label: 'PostgreSQL', type: 'db', x: 580, y: 230, icon: 'fa-database' }
         ],
         connections: [
             { from: 'client', to: 'app' },
@@ -355,11 +355,11 @@ public class ProductService {
             { name: 'Shard 2 DB (100k..200k)', role: 'Database cluster hosting users 100,001 to 200,000.' }
         ],
         nodes: [
-            { id: 'client', label: 'Client (user_id=84920)', type: 'client', x: 40, y: 130, icon: 'fa-user' },
-            { id: 'proxy', label: 'Sharding Proxy', type: 'gateway', x: 220, y: 130, icon: 'fa-network-wired' },
-            { id: 'ring', label: 'Hash Ring Engine', type: 'cache', x: 400, y: 40, icon: 'fa-circle-nodes' },
-            { id: 'shard1', label: 'Shard Node #1', type: 'db', x: 580, y: 40, icon: 'fa-database' },
-            { id: 'shard2', label: 'Shard Node #2', type: 'db', x: 580, y: 220, icon: 'fa-database' }
+            { id: 'client', label: 'Client App', type: 'client', x: 40, y: 130, icon: 'fa-user' },
+            { id: 'proxy', label: 'Shard Proxy', type: 'gateway', x: 220, y: 130, icon: 'fa-network-wired' },
+            { id: 'ring', label: 'Hash Ring', type: 'cache', x: 400, y: 30, icon: 'fa-circle-nodes' },
+            { id: 'shard1', label: 'Shard #1', type: 'db', x: 580, y: 30, icon: 'fa-database' },
+            { id: 'shard2', label: 'Shard #2', type: 'db', x: 580, y: 230, icon: 'fa-database' }
         ],
         connections: [
             { from: 'client', to: 'proxy' },
@@ -459,10 +459,10 @@ public class ConsistentHashRing<T> {
         ],
         nodes: [
             { id: 'passenger', label: 'Passenger App', type: 'client', x: 40, y: 130, icon: 'fa-mobile-screen' },
-            { id: 'ws', label: 'WebSocket Gateway', type: 'gateway', x: 220, y: 130, icon: 'fa-plug' },
-            { id: 'geoservice', label: 'Geo Location Service', type: 'service', x: 400, y: 130, icon: 'fa-map-location-dot' },
-            { id: 'redisgeo', label: 'Redis GEO Index', type: 'cache', x: 580, y: 40, icon: 'fa-location-crosshairs' },
-            { id: 'driver', label: 'Driver App Stream', type: 'client', x: 580, y: 220, icon: 'fa-car' }
+            { id: 'ws', label: 'WS Gateway', type: 'gateway', x: 220, y: 130, icon: 'fa-plug' },
+            { id: 'geoservice', label: 'Geo Service', type: 'service', x: 400, y: 130, icon: 'fa-map-location-dot' },
+            { id: 'redisgeo', label: 'Redis GEO', type: 'cache', x: 580, y: 30, icon: 'fa-location-crosshairs' },
+            { id: 'driver', label: 'Driver App', type: 'client', x: 580, y: 230, icon: 'fa-car' }
         ],
         connections: [
             { from: 'driver', to: 'ws' },

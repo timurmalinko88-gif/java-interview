@@ -256,9 +256,9 @@ function renderSvgCanvas(scenario, activeStep) {
     if (!canvasContainer) return;
 
     const viewBoxWidth = 740;
-    const viewBoxHeight = 310;
-    const nodeW = 130;
-    const nodeH = 56;
+    const viewBoxHeight = 340;
+    const nodeW = 120;
+    const nodeH = 80;
 
     const nodeMap = new Map();
     scenario.nodes.forEach(n => nodeMap.set(n.id, n));
@@ -272,18 +272,44 @@ function renderSvgCanvas(scenario, activeStep) {
         const to = nodeMap.get(conn.to);
         if (!from || !to) return;
 
-        // Calculate anchor points (center-right of from -> center-left of to)
-        let x1 = from.x + nodeW;
-        let y1 = from.y + nodeH / 2;
-        let x2 = to.x;
-        let y2 = to.y + nodeH / 2;
+        // Calculate anchor points (center of node edges)
+        const fromCx = from.x + nodeW / 2;
+        const fromCy = from.y + nodeH / 2;
+        const toCx = to.x + nodeW / 2;
+        const toCy = to.y + nodeH / 2;
+
+        // Determine exit/entry sides based on relative position
+        let x1, y1, x2, y2;
+        const dx = toCx - fromCx;
+        const dy = toCy - fromCy;
+
+        if (Math.abs(dx) >= Math.abs(dy)) {
+            // Horizontal-dominant: exit right, enter left
+            if (dx >= 0) {
+                x1 = from.x + nodeW; y1 = fromCy;
+                x2 = to.x;           y2 = toCy;
+            } else {
+                x1 = from.x;         y1 = fromCy;
+                x2 = to.x + nodeW;   y2 = toCy;
+            }
+        } else {
+            // Vertical-dominant: exit bottom, enter top (or vice versa)
+            if (dy >= 0) {
+                x1 = fromCx; y1 = from.y + nodeH;
+                x2 = toCx;   y2 = to.y;
+            } else {
+                x1 = fromCx; y1 = from.y;
+                x2 = toCx;   y2 = to.y + nodeH;
+            }
+        }
 
         let pathD = '';
         if (Math.abs(y1 - y2) < 5) {
-            // Straight horizontal line
+            pathD = `M ${x1} ${y1} L ${x2} ${y2}`;
+        } else if (Math.abs(x1 - x2) < 5) {
             pathD = `M ${x1} ${y1} L ${x2} ${y2}`;
         } else {
-            // Orthogonal curved elbow path
+            // Orthogonal L-shaped elbow
             const midX = x1 + (x2 - x1) / 2;
             pathD = `M ${x1} ${y1} H ${midX} V ${y2} H ${x2}`;
         }
@@ -300,7 +326,7 @@ function renderSvgCanvas(scenario, activeStep) {
             `;
         } else {
             pathsSvg += `
-                <path d="${pathD}" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4,4" opacity="0.5" marker-end="url(#arrow-default)" />
+                <path d="${pathD}" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.45" marker-end="url(#arrow-default)" />
             `;
         }
     });
@@ -310,12 +336,12 @@ function renderSvgCanvas(scenario, activeStep) {
     if (activePathD) {
         particleSvg = `
             <path id="active-flow-path" d="${activePathD}" fill="none" stroke="none" />
-            <circle r="5" fill="#f97316" class="shadow-lg">
+            <circle r="5" fill="#f97316">
                 <animateMotion dur="1.2s" repeatCount="indefinite" rotate="auto">
                     <mpath href="#active-flow-path" />
                 </animateMotion>
             </circle>
-            <circle r="9" fill="#f97316" opacity="0.3">
+            <circle r="10" fill="#f97316" opacity="0.2">
                 <animateMotion dur="1.2s" repeatCount="indefinite" rotate="auto">
                     <mpath href="#active-flow-path" />
                 </animateMotion>
@@ -323,38 +349,35 @@ function renderSvgCanvas(scenario, activeStep) {
         `;
     }
 
-    // Render Node Elements
+    // Render Node Elements (Vertical Layout: Icon top, Label bottom, centered)
     const nodesHtml = scenario.nodes.map(n => {
         const isActive = n.id === activeStep.activeNode;
         const activeClass = isActive ? 
-            'border-roast-500 bg-roast-500/10 shadow-xl ring-2 ring-roast-500/50 scale-105 z-20' : 
-            'border-slate-200 dark:border-slate-800 bg-white dark:bg-panel-900 opacity-90 hover:opacity-100 z-10';
+            'border-roast-500 bg-roast-500/10 shadow-xl ring-2 ring-roast-500/50 scale-[1.03] z-20' : 
+            'border-slate-200 dark:border-slate-700/60 bg-white dark:bg-panel-900 opacity-90 hover:opacity-100 z-10';
 
         const badgeHtml = (isActive && activeStep.badge) ? `
-            <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-2.5 py-0.5 rounded-full bg-roast-500 text-[#2B1904] text-[9px] font-extrabold shadow-md whitespace-nowrap animate-bounce">
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-full bg-roast-500 text-[#2B1904] text-[9px] font-extrabold shadow-lg whitespace-nowrap z-30" style="animation: bounce 0.6s ease-in-out infinite alternate;">
                 ${activeStep.badge}
             </div>
         ` : '';
 
         return `
-            <div class="absolute p-2.5 rounded-2xl border ${activeClass} transition-all duration-300 flex items-center space-x-2.5 w-[130px] h-[56px] shadow-sm select-none" style="left: ${n.x}px; top: ${n.y}px;">
+            <div class="absolute rounded-2xl border ${activeClass} transition-all duration-300 flex flex-col items-center justify-center text-center w-[120px] h-[80px] shadow-sm select-none" style="left: ${n.x}px; top: ${n.y}px;">
                 ${badgeHtml}
-                <div class="w-8 h-8 rounded-xl ${isActive ? 'bg-roast-500 text-[#2B1904]' : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400'} flex items-center justify-center text-xs flex-shrink-0">
+                <div class="w-9 h-9 rounded-xl ${isActive ? 'bg-roast-500 text-[#2B1904]' : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400'} flex items-center justify-center text-sm mb-1">
                     <i class="fa-solid ${n.icon}"></i>
                 </div>
-                <div class="flex flex-col min-w-0">
-                    <span class="text-[11px] font-bold text-slate-900 dark:text-white leading-tight truncate" title="${n.label}">${n.label}</span>
-                    <span class="text-[9px] font-mono text-slate-400 uppercase tracking-tight">${n.type}</span>
-                </div>
+                <span class="text-[10px] font-bold text-slate-900 dark:text-white leading-tight px-1.5 max-w-full" title="${n.label}">${n.label}</span>
             </div>
         `;
     }).join('');
 
     canvasContainer.innerHTML = `
-        <div class="relative w-full h-[310px] bg-slate-50/70 dark:bg-ink-950/80 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-inner flex items-center justify-center">
+        <div class="relative w-full h-[340px] bg-slate-50/70 dark:bg-ink-950/80 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden shadow-inner">
             <svg class="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 ${viewBoxWidth} ${viewBoxHeight}">
                 <defs>
-                    <marker id="arrow-default" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+                    <marker id="arrow-default" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto">
                         <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8" />
                     </marker>
                     <marker id="arrow-active" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
