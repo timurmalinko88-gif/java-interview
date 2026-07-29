@@ -1,8 +1,8 @@
 # 🚀 Java Interview Prep Hub & Mock Simulator
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Questions-663-brightgreen.svg?style=for-the-badge&logo=java" alt="Total Questions">
-  <img src="https://img.shields.io/badge/Topics-17-blue.svg?style=for-the-badge&logo=codeforces" alt="Total Topics">
+  <img src="https://img.shields.io/badge/Questions-671-brightgreen.svg?style=for-the-badge&logo=java" alt="Total Questions">
+  <img src="https://img.shields.io/badge/Topics-18-blue.svg?style=for-the-badge&logo=codeforces" alt="Total Topics">
   <img src="https://img.shields.io/badge/Learning%20Tracks-4%20Roadmaps-orange.svg?style=for-the-badge&logo=compass" alt="Learning Tracks">
   <img src="https://img.shields.io/badge/Simulator-Mock%20Interview-purple.svg?style=for-the-badge&logo=target" alt="Mock Interview Simulator">
   <img src="https://img.shields.io/badge/License-MIT-orange.svg?style=for-the-badge" alt="License">
@@ -24,8 +24,18 @@ An interactive, high-performance Single Page Web Application (SPA), mock intervi
 - **AI & Modern Java 21 Track** (40 Questions): Cutting-edge track covering Virtual Threads, Scoped Values, Spring AI, Vector DBs, and LLM integrations.
 - **My Roadmap Drawer**: Diagnostic adaptive quiz that analyzes knowledge gaps and constructs a personalized learning track.
 
+### 🖥️ Interactive System Architecture Screen
+- **SVG Flow Simulator**: Visual canvas of production Java microservice topology with animated data-flow streams.
+- **4-Layer Architecture Grid**: Client → API Gateway → Services → Data layer rendered as an orthogonal graph with glowing particle animations.
+- **Production Java Code Samples**: Each architecture node links to annotated code snippets for hands-on learning.
+
+### 🧮 Algorithm Breakdown Module *(New)*
+- **15 Classic Algorithms**: Step-by-step visual breakdown of sorting, searching, graph traversal and dynamic programming.
+- **Interactive Accordion Steps**: Drill-down explanations with complexity analysis (Big-O) and Java code.
+- **Interview-Ready Format**: Each algorithm includes common pitfalls, interview tips, and edge-case analysis.
+
 ### 🎥 Dynamic YouTube Video Explanations
-- **One-Click Video Tutorials**: Integrated YouTube search shortcut button on every question card (`btn-youtube`).
+- **One-Click Video Tutorials**: Integrated YouTube search shortcut button on every question card.
 - **Targeted Search Queries**: Automatically queries curated Java video tutorials and code walkthroughs for deeper comprehension.
 
 ### 🤖 2025-2026 Modern Tech Stack Focus
@@ -52,18 +62,19 @@ An interactive, high-performance Single Page Web Application (SPA), mock intervi
 
 ## 📊 Content Breakdown & Statistics
 
-The repository contains **663 pre-indexed questions** categorized across **17 domains**:
+The repository contains **671 pre-indexed questions** categorized across **18 domains**:
 
 ### Topic Breakdown
 
 | Icon | Category | # of Questions | Difficulty Range | Primary Topics Covered |
 | :--- | :--- | :---: | :---: | :--- |
 | 🤖 | **AI & LLM Integration** | 20 | Middle – Senior | Spring AI, RAG, Embeddings, PgVector, Function Calling, Prompt Engineering |
+| 🧮 | **Algorithm Breakdown** | 15 | Junior – Senior | Sorting, Searching, Graph Traversal, Dynamic Programming, Big-O Complexity |
 | 🗣️ | **Behavioral & STAR** | 10 | General | HR Questions, Conflict Resolution, STAR Methodology, System Trade-offs |
 | 📦 | **Collections** | 52 | Junior – Senior | `ArrayList`, `LinkedList`, `HashMap`, `ConcurrentHashMap`, `PriorityQueue`, `Set`, `Deque` |
 | 🗄️ | **Databases** | 52 | Middle – Senior | SQL, ACID, Isolation Levels, Indexes, Execution Plans, JPA, Hibernate, N+1 Problem |
 | 🚨 | **Exceptions** | 2 | Junior – Middle | Exception Hierarchy, Checked vs Unchecked, `try-with-resources`, Custom Exceptions |
-| ☕ | **General Java** | 53 | Junior – Middle | Core Syntax, `String` Pool, Generics, Exception Handling, Pass-by-Value, Equals & HashCode |
+| ☕ | **General Java** | 46 | Junior – Middle | Core Syntax, `String` Pool, Generics, Exception Handling, Pass-by-Value, Equals & HashCode |
 | ⚙️ | **JVM & Memory** | 52 | Middle – Senior | JVM Memory Structure (`Heap`, `Stack`, `Metaspace`), GC Algorithms (G1, ZGC), JIT, ClassLoaders |
 | 📨 | **Kafka & Messaging** | 20 | Middle – Senior | Kafka Partitioning, Consumer Groups, Exactly-Once, Idempotency, DLQ, Transactions |
 | 💻 | **Live Coding & Refactoring** | 15 | Middle – Senior | Bug Hunting, Code Refactoring, Algorithm Optimization, Memory Leak Detection |
@@ -78,17 +89,17 @@ The repository contains **663 pre-indexed questions** categorized across **17 do
 
 ### Difficulty Distribution
 
-- 🟢 **Junior**: 186 questions (28.1%)
-- 🟡 **Middle**: 278 questions (41.9%)
-- 🔴 **Senior / Hard**: 184 questions (27.8%)
-- ⚪ **General**: 15 questions (2.2%)
+- 🟢 **Junior**: 190 questions (28.3%)
+- 🟡 **Middle**: 295 questions (44.0%)
+- 🔴 **Senior**: 186 questions (27.7%)
 
 ### Format Breakdown
 
-- 📝 **Open Answer**: 445 questions
-- 🔍 **Code Review / Bug Hunting**: 104 questions
+- 📝 **Open Answer**: 441 questions
+- 🔍 **Code Review / Bug Hunting**: 101 questions
 - 🏗️ **System Design**: 56 questions
 - ❓ **Multiple Choice (MCQ)**: 33 questions
+- 🧮 **Algorithm Breakdown**: 15 questions
 - 💻 **Live Coding**: 15 questions
 - 🗣️ **HR / Behavioral**: 10 questions
 
@@ -99,49 +110,84 @@ The repository contains **663 pre-indexed questions** categorized across **17 do
 ```text
 java-interview/
 ├── public/                     # Static distribution & question files
-│   ├── questions/              # 663 Markdown question files in category subfolders
-│   └── index.json              # Pre-compiled JSON catalog of questions
-├── src/                        # Modular JavaScript source code
+│   ├── questions/              # 671 Markdown question files in 18 category subfolders
+│   │   ├── ai-integration/     # Spring AI, RAG, Embeddings (20 files)
+│   │   ├── algorithms/         # Algorithm Breakdown: sorting, graphs, DP (15 files)
+│   │   ├── behavioral/         # HR & STAR methodology (10 files)
+│   │   ├── collections/        # Java Collections & Data Structures (52 files)
+│   │   ├── databases/          # SQL, JPA, Hibernate, Transactions (52 files)
+│   │   ├── exceptions/         # Exception handling (2 files)
+│   │   ├── general/            # Core Java fundamentals (46 files)
+│   │   ├── jvm/                # JVM, Memory, GC, ClassLoaders (52 files)
+│   │   ├── live-coding/        # Bug hunting & refactoring (15 files)
+│   │   ├── messaging/          # Kafka & Message Queues (20 files)
+│   │   ├── modern-java/        # Java 21+, Virtual Threads (15 files)
+│   │   ├── multithreading/     # Concurrency, JMM, Locks (52 files)
+│   │   ├── oop/                # OOP principles, SOLID (52 files)
+│   │   ├── patterns/           # Design Patterns (50 files)
+│   │   ├── spring/             # Spring Core, Boot, Security (58 files)
+│   │   ├── stream/             # Stream API & Functional (52 files)
+│   │   ├── system-design/      # Microservices, Caching, Scaling (58 files)
+│   │   └── testing/            # JUnit 5, Mockito, TDD (50 files)
+│   ├── index.json              # Auto-generated question catalog (671 entries)
+│   ├── quiz.json               # Adaptive quiz questions
+│   └── og-image.png            # Open Graph preview image (1200×630)
+├── src/                        # Modular ES Module JavaScript source
 │   ├── adaptive.js             # Adaptive quiz & personalized roadmap engine
-│   ├── main.js                 # SPA initialization & event wiring
+│   ├── api.js                  # Question content fetching helper
+│   ├── collections.js          # Question sorting & grouping utilities
+│   ├── main.js                 # SPA initialization & global event wiring
 │   ├── mock.js                 # Mock interview simulator logic
-│   └── ui.js                   # UI rendering & state management
+│   ├── roadmaps.js             # Learning track filtering logic
+│   ├── spacedRepetition.js     # Leitner box spaced repetition algorithm
+│   ├── state.js                # Global state store & LocalStorage sync
+│   ├── stats.js                # XP calculation, rank tiers, statistics modal
+│   ├── style.css               # Tailwind directives & glassmorphic custom CSS
+│   ├── ui.js                   # DOM rendering, sidebar, cards, theme toggle
+│   └── utils.js                # Debounce, formatting, string helpers
 ├── .github/workflows/
 │   └── deploy.yml              # CI/CD workflow for automated GitHub Pages deployment
-├── build.py                    # Python build script to parse frontmatter & generate index.json
-├── index.html                  # Single-Page Web Application (HTML5, Tailwind CSS, Vanilla JS)
-├── .gitignore                  # Git exclusion rules for OS & Python artifacts
+├── build.py                    # Python 3 build script: scans MD → generates index.json
+├── index.html                  # SPA HTML entry point (Open Graph meta-tags, Tailwind CSS)
+├── vite.config.js              # Vite build configuration
+├── tailwind.config.js          # Tailwind CSS configuration
+├── package.json                # npm dependencies & build scripts
+├── AGENTS.md                   # AI agent instruction guide (architecture & workflows)
+├── .gitignore                  # Git exclusion rules
 ├── .nojekyll                   # Bypasses Jekyll processing on GitHub Pages
 ├── LICENSE                     # MIT Open Source License
-└── README.md                   # Repository documentation
+└── README.md                   # Repository documentation (this file)
 ```
 
 ---
 
 ## 🚀 Quick Start & Local Development
 
-No complex setup or build steps required. The application runs natively in any modern web browser.
-
-### 1. Clone the Repository
 ```bash
+# 1. Clone the repository
 git clone https://github.com/timurmalinko88-gif/java-interview.git
 cd java-interview
+
+# 2. Install dependencies
+npm install
+
+# 3. Start local dev server (with hot reload)
+npm run dev
 ```
 
-### 2. Start a Local HTTP Server
-Launch a local server using Python's built-in HTTP module:
+Then navigate to **[http://localhost:5173](http://localhost:5173)** in your browser.
 
+### Alternative: Python HTTP Server (no build step)
 ```bash
-# Python 3
 python -m http.server 8000
+# Open: http://localhost:8000
 ```
-Then navigate to: **[http://localhost:8000](http://localhost:8000)** in your browser.
 
 ---
 
 ## 🔄 Building / Re-indexing (`build.py`)
 
-If you add new questions or modify Markdown files in `public/questions/`, update `public/index.json` by running the build script:
+If you add new questions or modify Markdown files in `public/questions/`, regenerate `public/index.json`:
 
 ```bash
 python build.py
@@ -149,9 +195,43 @@ python build.py
 
 The script automatically:
 1. Scans `public/questions/**/*.md` recursively.
-2. Parses frontmatter metadata (handles YAML delimited by `---` or key-value headers).
+2. Parses frontmatter metadata (YAML delimited by `---`).
 3. Assigns IDs, topics, difficulty levels, estimated times, and formats.
 4. Generates a clean, optimized `public/index.json`.
+
+Verify the result:
+```bash
+python -c "import json; d=json.load(open('public/index.json')); print('Total:', d['total'])"
+```
+
+---
+
+## 🔧 Adding New Questions
+
+1. Create a `.md` file in the appropriate `public/questions/<category>/` folder.
+2. Follow the frontmatter format:
+
+```markdown
+---
+id: category-001
+topic: Collections
+difficulty: Junior
+format: Open Answer
+time: 5
+frequency: 85%
+---
+
+# Question Title
+
+Your question text here.
+
+---ANSWER---
+
+Your detailed answer here, with code examples, analogies, and key takeaways.
+```
+
+3. Run `python build.py` to re-index.
+4. Commit & push — GitHub Actions will auto-deploy.
 
 ---
 

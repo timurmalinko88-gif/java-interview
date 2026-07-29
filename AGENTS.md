@@ -10,9 +10,9 @@ Welcome, AI Agent! This document is the single source of truth for the **Java In
 - **Live Site (GitHub Pages)**: `https://timurmalinko88-gif.github.io/java-interview/`
 - **Purpose**: High-performance Single Page Application (SPA), mock interview simulator, and knowledge hub for Java developer technical interviews (from Junior to Senior & Architect levels).
 - **Core Metrics**:
-  - **663 Questions** across **17 Domains** (Core Java, JVM, Multithreading, Spring Boot, System Design, Kafka, Java 21+, AI/LLM Integration, etc.).
+  - **671 Questions** across **18 Domains** (Core Java, JVM, Multithreading, Spring Boot, System Design, Kafka, Java 21+, AI/LLM Integration, Algorithm Breakdown, etc.).
   - **4 Curated Learning Tracks (Roadmaps)**: Junior Express, Middle Spring & Microservices, Senior Architect, AI & Modern Java 21+.
-  - **Interactive Features**: Mock Interview Simulator (with timed evaluation & Scorecards), Spaced Repetition System (Leitner box), XP & 7-tier Rank Gamification, YouTube search integration, and Dark/Light UI themes.
+  - **Interactive Features**: Mock Interview Simulator (with timed evaluation & Scorecards), Spaced Repetition System (Leitner box), XP & 7-tier Rank Gamification, YouTube search integration, Interactive System Architecture SVG Canvas, Algorithm Breakdown module, and Dark/Light UI themes.
 
 ---
 
@@ -47,13 +47,14 @@ Welcome, AI Agent! This document is the single source of truth for the **Java In
 ```text
 java-interview/
 ├── public/                     # Static assets served as-is by Vite & GitHub Pages
-│   ├── questions/              # 663 Markdown question files organized in subfolders
+│   ├── questions/              # 671 Markdown question files organized in 18 subfolders
 │   │   ├── ai-integration/     # Spring AI, RAG, PgVector, Prompt Engineering (20 files)
+│   │   ├── algorithms/         # Algorithm Breakdown: sorting, graphs, DP (15 files)
 │   │   ├── behavioral/         # HR & STAR methodology (10 files)
 │   │   ├── collections/        # Java Collections & Data Structures (52 files)
 │   │   ├── databases/          # SQL, Transactions, JPA, Hibernate (52 files)
 │   │   ├── exceptions/         # Exception hierarchy & handling (2 files)
-│   │   ├── general/            # Core Java syntax & fundamentals (53 files)
+│   │   ├── general/            # Core Java syntax & fundamentals (46 files)
 │   │   ├── jvm/                # JVM, Memory, GC, ClassLoaders (52 files)
 │   │   ├── live-coding/        # Bug hunting & code refactoring (15 files)
 │   │   ├── messaging/          # Kafka, Message Queues, DLQ (20 files)
@@ -65,7 +66,7 @@ java-interview/
 │   │   ├── stream/             # Stream API & Functional Interfaces (52 files)
 │   │   ├── system-design/      # Microservices, Caching, Scaling (58 files)
 │   │   └── testing/            # JUnit 5, Mockito, Integration Testing (50 files)
-│   ├── index.json              # Generated catalog of all 550+ / 663 questions
+│   ├── index.json              # Auto-generated catalog of all 671 questions
 │   ├── quiz.json               # Diagnostic questions for adaptive learning quiz
 │   └── og-image.png            # Open Graph preview image (1200x630) for link sharing
 ├── src/                        # Modular JavaScript source files
@@ -129,9 +130,9 @@ Think of `ArrayList` like a row of lockers next to each other...
 
 ### Frontmatter Metadata Fields:
 - `id` (required): Unique string ID (e.g. `collections-001`, `java21-005`, `kafka-012`).
-- `topic` (required): Category string matching one of the 17 topics.
-- `difficulty` (required): `Junior`, `Middle`, `Senior`, or `General`.
-- `format` (required): `Open Answer`, `Code Review`, `System Design`, `MCQ`, `Live Coding`, or `HR Interview`.
+- `topic` (required): Category string matching one of the 18 topics.
+- `difficulty` (required): `Junior`, `Middle`, or `Senior`.
+- `format` (required): `Open Answer`, `Code Review`, `System Design`, `MCQ`, `Live Coding`, `Algo Breakdown`, or `HR Interview`.
 - `time`: Estimated time in minutes.
 - `frequency`: Expected frequency percentage in real interviews (e.g. `85%`).
 
