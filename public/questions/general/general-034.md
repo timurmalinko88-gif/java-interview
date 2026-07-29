@@ -7,7 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["Generics", "Core Java"]
-tags: ['exceptions']
+tags: ['general']
 ---
 
 # Type Erasure in Java Generics

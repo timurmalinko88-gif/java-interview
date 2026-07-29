@@ -24,6 +24,11 @@ They are important because:
 2. They promote interface-driven design.
 3. They allow for easier substitution of implementations (e.g., swapping a real database service for a mock one during testing).
 
+
+### In-Depth Framework Concepts:
+- **Injection Types**: **Constructor Injection** (Recommended - enables immutability, easier unit testing, detects circular dependencies at startup), **Setter Injection** (for optional dependencies), and **Field Injection** (Disapproved - uses reflection, hides dependencies).
+- **BeanFactory vs. ApplicationContext**: `BeanFactory` provides basic DI container capabilities (lazy loading). `ApplicationContext` inherits from `BeanFactory` and adds Enterprise features (AOP, i18n Event Publication, Web ApplicationContext).
+
 ### Life Analogy
 Imagine you are building a car. Without DI, the car object has to build its own engine and tires inside its constructor. With DI, a factory (the Spring container) builds the engine and tires separately and simply hands (injects) them to the car when assembling it.
 

@@ -7,7 +7,7 @@ time: 5
 frequency: 80%
 source: Custom
 prerequisites: ["Static", "Final"]
-tags: ['exceptions']
+tags: ['general']
 ---
 
 # Static vs Final Modifiers

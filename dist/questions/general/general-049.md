@@ -7,7 +7,7 @@ time: 5
 frequency: 80%
 source: Custom
 prerequisites: ["Core Java", "Enums"]
-tags: ['exceptions']
+tags: ['general']
 ---
 
 # Review Enum Instantiation

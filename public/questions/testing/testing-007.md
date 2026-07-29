@@ -7,7 +7,7 @@ time: 5
 frequency: 80%
 source: Custom
 prerequisites: ["OAuth2"]
-tags: ['testing']
+tags: ['testing', 'networking', 'web']
 ---
 
 # OAuth2 Authorization Code Flow

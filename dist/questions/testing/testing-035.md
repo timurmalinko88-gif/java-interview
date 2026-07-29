@@ -7,7 +7,7 @@ time: 10
 frequency: 85%
 source: Custom
 prerequisites: ["Security"]
-tags: ['testing']
+tags: ['testing', 'networking', 'web']
 ---
 
 # JWT vs Sessions

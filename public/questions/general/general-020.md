@@ -7,7 +7,7 @@ time: 15
 frequency: 70%
 source: Custom
 prerequisites: ["Core Java", "Generics"]
-tags: ['exceptions']
+tags: ['general']
 ---
 
 # How do Generics work in Java and what is Type Erasure?

@@ -7,7 +7,7 @@ time: 5
 frequency: 80%
 source: Custom
 prerequisites: ["HTTP", "WebSockets"]
-tags: ['testing']
+tags: ['testing', 'networking', 'web']
 ---
 
 # WebSockets vs HTTP

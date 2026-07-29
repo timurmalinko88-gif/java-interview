@@ -7,7 +7,7 @@ time: 5
 frequency: 95%
 source: Custom
 prerequisites: ["HTTP"]
-tags: ['testing']
+tags: ['testing', 'networking', 'web']
 ---
 
 # HTTP Methods

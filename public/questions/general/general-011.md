@@ -7,7 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["Core Java", "Keywords"]
-tags: ['exceptions']
+tags: ['general']
 ---
 
 # Final, Finally, and Finalize

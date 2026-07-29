@@ -31,6 +31,11 @@ JUnit 5 represents a complete rewrite of the JUnit framework. Unlike JUnit 4, wh
 
 JUnit 5 also introduces new features like `@DisplayName`, `@Nested` classes, parameterized tests natively, and better support for Java 8 features (like lambdas for assertions: `assertAll`, `assertThrows`).
 
+
+### Architectural Differences:
+- **@ExtendWith vs @RunWith**: JUnit 4 used `@RunWith(SpringRunner.class)` which allowed only a single runner. JUnit 5 uses `@ExtendWith(SpringExtension.class)` allowing multiple composable extensions.
+- **Extension API**: Replaces JUnit 4 `@Rule` and `ClassRule` with a unified lifecycle callback model.
+
 ### Life Analogy
 Think of JUnit 4 as a Swiss Army knife — all tools in one block. JUnit 5 is like a modular toolbox where the foundation (Platform), the new modern tools (Jupiter), and a compatibility layer for old tools (Vintage) are separated but work together.
 

@@ -7,7 +7,7 @@ time: 10
 frequency: 85%
 source: Custom
 prerequisites: ["HTTP"]
-tags: ['testing']
+tags: ['testing', 'networking', 'web']
 ---
 
 # REST vs SOAP

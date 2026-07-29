@@ -7,7 +7,7 @@ time: 8
 frequency: 80%
 source: Custom
 prerequisites: ["Core Java", "Static Keyword", "Memory Management"]
-tags: ['exceptions']
+tags: ['general']
 ---
 
 # Memory Management of Static Variables

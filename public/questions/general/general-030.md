@@ -7,7 +7,7 @@ time: 15
 frequency: 70%
 source: Custom
 prerequisites: ["Core Java", "Enums", "Design Patterns"]
-tags: ['exceptions']
+tags: ['general']
 ---
 
 # Designing with Enums

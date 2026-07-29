@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "total": 663,
+  "total": 656,
   "questions": [
     {
       "id": "ai-001",
@@ -2063,7 +2063,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "exceptions"
+        "general"
       ]
     },
     {
@@ -2141,7 +2141,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "exceptions"
+        "general"
       ]
     },
     {
@@ -2255,7 +2255,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "exceptions"
+        "general"
       ]
     },
     {
@@ -2307,32 +2307,6 @@
       "tags": []
     },
     {
-      "id": "general-025",
-      "path": "questions/general/general-025.md",
-      "topic": "General",
-      "difficulty": "Middle",
-      "format": "Code Review",
-      "title": "Checked vs Unchecked Exceptions",
-      "time": "10 min",
-      "frequency": "High",
-      "related": [],
-      "tags": [
-        "exceptions"
-      ]
-    },
-    {
-      "id": "general-026",
-      "path": "questions/general/general-026.md",
-      "topic": "General",
-      "difficulty": "Middle",
-      "format": "Open Answer",
-      "title": "equals() and hashCode() Contract",
-      "time": "8 min",
-      "frequency": "High",
-      "related": [],
-      "tags": []
-    },
-    {
       "id": "general-027",
       "path": "questions/general/general-027.md",
       "topic": "General",
@@ -2343,7 +2317,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "exceptions"
+        "general"
       ]
     },
     {
@@ -2357,7 +2331,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "exceptions"
+        "general"
       ]
     },
     {
@@ -2383,7 +2357,7 @@
       "frequency": "Medium",
       "related": [],
       "tags": [
-        "exceptions"
+        "general"
       ]
     },
     {
@@ -2401,32 +2375,6 @@
       ]
     },
     {
-      "id": "general-032",
-      "path": "questions/general/general-032.md",
-      "topic": "General",
-      "difficulty": "Junior",
-      "format": "Code Review",
-      "title": "Pass by Value vs Pass by Reference",
-      "time": "5 min",
-      "frequency": "High",
-      "related": [],
-      "tags": []
-    },
-    {
-      "id": "general-033",
-      "path": "questions/general/general-033.md",
-      "topic": "General",
-      "difficulty": "Middle",
-      "format": "Open Answer",
-      "title": "final, finally, and finalize",
-      "time": "5 min",
-      "frequency": "High",
-      "related": [],
-      "tags": [
-        "exceptions"
-      ]
-    },
-    {
       "id": "general-034",
       "path": "questions/general/general-034.md",
       "topic": "General",
@@ -2437,21 +2385,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "exceptions"
-      ]
-    },
-    {
-      "id": "general-035",
-      "path": "questions/general/general-035.md",
-      "topic": "General",
-      "difficulty": "Junior",
-      "format": "Code Review",
-      "title": "Checked vs Unchecked Exceptions",
-      "time": "5 min",
-      "frequency": "High",
-      "related": [],
-      "tags": [
-        "exceptions"
+        "general"
       ]
     },
     {
@@ -2467,18 +2401,6 @@
       "tags": [
         "exceptions"
       ]
-    },
-    {
-      "id": "general-037",
-      "path": "questions/general/general-037.md",
-      "topic": "General",
-      "difficulty": "Middle",
-      "format": "Open Answer",
-      "title": "equals() and hashCode() Contract",
-      "time": "5 min",
-      "frequency": "High",
-      "related": [],
-      "tags": []
     },
     {
       "id": "general-038",
@@ -2515,7 +2437,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "exceptions"
+        "general"
       ]
     },
     {
@@ -2593,7 +2515,7 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "exceptions"
+        "general"
       ]
     },
     {
@@ -2631,20 +2553,8 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "exceptions"
+        "general"
       ]
-    },
-    {
-      "id": "general-050",
-      "path": "questions/general/general-050.md",
-      "topic": "General",
-      "difficulty": "Middle",
-      "format": "Open Answer",
-      "title": "equals() and hashCode() Contract",
-      "time": "10 min",
-      "frequency": "High",
-      "related": [],
-      "tags": []
     },
     {
       "id": "mcq-core-001",
@@ -3090,7 +3000,7 @@
       "topic": "JVM & Memory Management",
       "difficulty": "Senior",
       "format": "System Design",
-      "title": "You are architecting the GC strategy for a **real-time order-matching engine** at a financial exchange. The service processes 500,000 orders/second, has a 99.9th-percentile latency SLA of **< 5 ms**, runs on a 128 GB heap, and must sustain operation for weeks without restart. A junior engineer proposes using **G1GC** because \"it's the default and well-understood.\" A platform engineer counters with **ZGC**.",
+      "title": "Heap sizing — leave headroom for ZGC concurrent work",
       "time": "35 min",
       "frequency": "Medium",
       "related": [],
@@ -3278,7 +3188,7 @@
       "topic": "JVM & Memory Management",
       "difficulty": "Middle",
       "format": "Open Answer",
-      "title": "Explain how modern JVMs interact with container boundaries (Docker/Kubernetes cgroups). What is the difference between a JVM-level OutOfMemoryError and an OS-level Linux Kernel OOM-Killed event? How do you prevent containerized Java apps from being killed by the OS, and what JVM flags are critical in this scenario?",
+      "title": "Sizing the Heap dynamically based on the container limit (NOT hardcoded absolute values)",
       "time": "15 min",
       "frequency": "High",
       "related": [
@@ -3434,7 +3344,7 @@
       "topic": "JVM & Memory Management",
       "difficulty": "Middle",
       "format": "Open Answer",
-      "title": "What is Application Class Data Sharing (AppCDS) in modern JVMs, and how does it optimize the startup time and memory footprint (RSS) of Java microservices containerized in Kubernetes? Describe the architectural steps required to generate and utilize an AppCDS archive inside a multi-stage Docker build.",
+      "title": "Stage 1: Build the application",
       "time": "15 min",
       "frequency": "Medium",
       "related": [
@@ -3452,7 +3362,7 @@
       "topic": "JVM & Memory Management",
       "difficulty": "Senior",
       "format": "System Design",
-      "title": "You are designing a continuous profiling platform for a highly distributed, high-throughput microservice architecture. Analyze the architectural trade-offs between JDK Flight Recorder (JFR) and async-profiler for CPU and allocation profiling under heavy production load.",
+      "title": "Start continuous recording on JVM start",
       "time": "25 min",
       "frequency": "High",
       "related": [
@@ -3504,7 +3414,7 @@
       "topic": "JVM & Memory Management",
       "difficulty": "Middle",
       "format": "Open Answer",
-      "title": "Compare JVM-level String Deduplication (`-XX:+UseStringDeduplication`) with explicit String Interning (`String.intern()`) as memory optimization strategies on modern HotSpot JVMs (Java 11/17/21).",
+      "title": "Sizing command for String Deduplication under ZGC",
       "time": "15 min",
       "frequency": "Medium",
       "related": [
@@ -4142,7 +4052,7 @@
       "topic": "Modern Java 21+",
       "difficulty": "Middle",
       "format": "Open Answer",
-      "title": "Thread Pinning",
+      "title": "Thread Pinning: synchronized vs ReentrantLock",
       "time": "10 min",
       "frequency": "High",
       "related": [],
@@ -4158,7 +4068,7 @@
       "topic": "Modern Java 21+",
       "difficulty": "Middle",
       "format": "Open Answer",
-      "title": "Structured Concurrency",
+      "title": "Structured Concurrency and StructuredTaskScope",
       "time": "10 min",
       "frequency": "High",
       "related": [],
@@ -4255,7 +4165,7 @@
       "topic": "Modern Java 21+",
       "difficulty": "Senior",
       "format": "Open Answer",
-      "title": "Generational ZGC",
+      "title": "Generational ZGC (Z Garbage Collector)",
       "time": "10 min",
       "frequency": "Medium",
       "related": [],
@@ -5229,7 +5139,7 @@
       "topic": "OOP",
       "difficulty": "Junior",
       "format": "Open Answer",
-      "title": "Question: The Fragile Base Class",
+      "title": "Composition vs Inheritance (The Fragile Base Class Problem)",
       "time": "10 min",
       "frequency": "High",
       "related": [
@@ -5245,7 +5155,7 @@
       "topic": "OOP",
       "difficulty": "Junior",
       "format": "Code Review",
-      "title": "Question: The Disappearing User",
+      "title": "The Disappearing User",
       "time": "15 min",
       "frequency": "High",
       "related": [
@@ -5262,7 +5172,7 @@
       "topic": "OOP",
       "difficulty": "Middle",
       "format": "Code Review",
-      "title": "Question: The Leaky Immutable Object",
+      "title": "The Leaky Immutable Object",
       "time": "15 min",
       "frequency": "Medium",
       "related": [
@@ -5278,7 +5188,7 @@
       "topic": "OOP",
       "difficulty": "Middle",
       "format": "System Design",
-      "title": "Question: Multi-Channel Notification Router",
+      "title": "Multi-Channel Notification Router",
       "time": "20 min",
       "frequency": "Medium",
       "related": [
@@ -5294,7 +5204,7 @@
       "topic": "OOP",
       "difficulty": "Senior",
       "format": "System Design",
-      "title": "Question: Resilient Payment State Machine",
+      "title": "Resilient Payment State Machine",
       "time": "30 min",
       "frequency": "Low",
       "related": [
@@ -5390,7 +5300,7 @@
       "topic": "OOP",
       "difficulty": "Junior",
       "format": "Open Answer",
-      "title": "Question: Static vs Dynamic Binding in Java",
+      "title": "Static vs Dynamic Binding in Java",
       "time": "10 min",
       "frequency": "High",
       "related": [
@@ -5407,7 +5317,7 @@
       "topic": "OOP",
       "difficulty": "Junior",
       "format": "Code Review",
-      "title": "Question: The Fragile Base Class",
+      "title": "The Fragile Base Class: Composition vs Inheritance",
       "time": "15 min",
       "frequency": "Medium",
       "related": [
@@ -5423,7 +5333,7 @@
       "topic": "OOP",
       "difficulty": "Middle",
       "format": "Code Review",
-      "title": "Question: The Rectangle-Square Dilemma",
+      "title": "The Rectangle-Square Dilemma",
       "time": "20 min",
       "frequency": "High",
       "related": [
@@ -5439,7 +5349,7 @@
       "topic": "OOP",
       "difficulty": "Middle",
       "format": "Open Answer",
-      "title": "Question: Defensive Copying and Encapsulation",
+      "title": "Defensive Copying and Encapsulation",
       "time": "15 min",
       "frequency": "Medium",
       "related": [
@@ -5455,7 +5365,7 @@
       "topic": "OOP",
       "difficulty": "Senior",
       "format": "System Design",
-      "title": "Question: Domain Models in Distributed Systems",
+      "title": "Domain Models in Distributed Systems",
       "time": "35 min",
       "frequency": "High",
       "related": [
@@ -9123,7 +9033,9 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "testing"
+        "testing",
+        "networking",
+        "web"
       ]
     },
     {
@@ -9137,7 +9049,9 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "testing"
+        "testing",
+        "networking",
+        "web"
       ]
     },
     {
@@ -9151,7 +9065,9 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "testing"
+        "testing",
+        "networking",
+        "web"
       ]
     },
     {
@@ -9277,7 +9193,9 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "testing"
+        "testing",
+        "networking",
+        "web"
       ]
     },
     {
@@ -9543,7 +9461,9 @@
       "frequency": "High",
       "related": [],
       "tags": [
-        "testing"
+        "testing",
+        "networking",
+        "web"
       ]
     },
     {

@@ -7,7 +7,7 @@ time: 5
 frequency: 85%
 source: Custom
 prerequisites: ["Core Java", "Static", "Final"]
-tags: ['exceptions']
+tags: ['general']
 ---
 
 # Static and Final Variables

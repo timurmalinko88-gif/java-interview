@@ -28,6 +28,16 @@ Cons:
 - Makes unit testing difficult because it can introduce hidden dependencies and global state.
 - Difficult to implement correctly in a multithreaded environment.
 
+
+### Recommended Java Approach: Enum Singleton
+```java
+public enum EnumSingleton {
+    INSTANCE;
+    public void doSomething() { ... }
+}
+```
+**Why Enum is Preferred**: Guarantees 100% thread-safety, serialization safety (JVM handles deserialization natively), and protection against Reflection attacks (`Constructor.newInstance()` throws `IllegalArgumentException` for enums).
+
 ### Life Analogy
 Think of a country's government. A country can have only one official government at a time. The government acts as a global point of access for laws and state management.
 

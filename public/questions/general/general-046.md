@@ -7,7 +7,7 @@ time: 10
 frequency: 80%
 source: Custom
 prerequisites: ["Core Java", "Static", "Final"]
-tags: ['exceptions']
+tags: ['general']
 ---
 
 # Review Static and Final Usage

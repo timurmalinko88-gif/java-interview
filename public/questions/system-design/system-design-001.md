@@ -25,6 +25,12 @@ In a distributed system, network partitions (P) are inevitable. Therefore, when 
 - **CP Systems** (e.g., HBase, MongoDB, Redis in some configs): Wait for a response from the partitioned node to ensure consistency, which may result in a timeout/error (sacrificing availability).
 - **AP Systems** (e.g., Cassandra, DynamoDB): Return the most recent available version of the data, which might be stale (sacrificing consistency for availability).
 
+
+### Real-World Database System Classifications:
+- **MongoDB**: Default **CP** (with `majority` write concern), but configurable towards AP depending on replica set settings.
+- **Redis Cluster**: Primarily **AP** with eventual consistency; node partitioning can lose writes during failovers.
+- **Cassandra**: **AP** by default, but configurable to **CP** dynamically per-query using `QUORUM` consistency levels.
+
 ### Life Analogy
 Imagine a business with two clerks managing a ledger in different rooms (Partition Tolerance). If the phone line between them breaks, and a customer asks Clerk A for a balance, Clerk A can either refuse to answer until the phone works (Consistency) or give the last known balance (Availability). They can't do both.
 

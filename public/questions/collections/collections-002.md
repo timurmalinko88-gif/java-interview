@@ -29,6 +29,12 @@ When you call `get(key)`:
 2. It traverses the linked list (or tree) at that bucket, using `equals()` to find the exact key.
 3. If a match is found, it returns the value; otherwise, `null`.
 
+
+### Additional Key Technical Details:
+- **Load Factor & Resizing**: Default `loadFactor` is `0.75`. When `size > capacity * loadFactor`, array capacity doubles (e.g. from 16 to 32) and all elements are rehashed.
+- **Treeify Thresholds**: Tree conversion requires **both** bucket size `>= 8` AND total array capacity `>= 64` (`MIN_TREEIFY_CAPACITY`). If capacity is `< 64`, array resizing is preferred over treeification.
+- **Bit Spreader Hash Function**: Uses `(h = key.hashCode()) ^ (h >>> 16)` to mix higher bits into lower bits, reducing collisions for power-of-two table sizes.
+
 ### Life Analogy
 Think of a post office with many numbered bins (buckets). When a package (key-value pair) arrives, the clerk looks at the zip code (hash code), does some math, and tosses it into a specific bin. If two packages end up in the same bin (collision), they are just stacked together. To find a package, the clerk calculates the bin number, goes to that bin, and checks the exact name (`equals()`) on the packages in the stack.
 
