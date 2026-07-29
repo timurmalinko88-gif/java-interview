@@ -57,30 +57,34 @@ html.dark select, html.dark option, html.dark optgroup {
     animation: subtle-pulse 1.5s infinite ease-in-out;
 }
 
-/* Custom terminal style for code blocks */
-pre {
+/* Custom terminal style for code blocks (standalone & inside .prose markdown) */
+pre, .prose pre {
     position: relative;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-    border-radius: 0.375rem;
-    background: #F6F4EF;
-    border: 1px solid #E5E1D8;
-    box-shadow: none;
-}
-.prose pre {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
+    padding: 1rem 1.25rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
-}
-.dark pre {
-    background: #1D2229;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0.375rem;
+    background-color: #F6F4EF !important;
+    color: #1c1917 !important;
+    border: 1px solid #E5E1D8 !important;
     box-shadow: none;
+}
+
+pre code, .prose pre code {
+    color: #1c1917 !important;
+    background-color: transparent !important;
+}
+
+.dark pre, .dark .prose pre {
+    background-color: #1D2229 !important;
+    color: #F6F4EF !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    box-shadow: none;
+}
+
+.dark pre code, .dark .prose pre code {
+    color: #F6F4EF !important;
+    background-color: transparent !important;
 }
 
 /* Native Dialog Styling */
