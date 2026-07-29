@@ -30,7 +30,7 @@ What is database sharding? Discuss the common strategies for distributing data a
    - *Cons*: The lookup table can become a single point of failure or bottleneck.
 
 **Challenges of Sharding:**
-- **Joins across shards**: Standard SQL joins don't work across separate servers. Must be handled in application logic.
+- **Joins across shards**: Native single-query SQL JOINs do not scale effectively across separate physical database shards without requiring application-side join logic or database federation layers (e.g. Citus, Vitess, PostgreSQL FDW). Must be handled in application logic.
 - **Transactions**: Distributed transactions (e.g., Two-Phase Commit) are slow and complex.
 - **Resharding**: Moving data when a shard gets too full or when adding new servers is a massive operational headache.
 

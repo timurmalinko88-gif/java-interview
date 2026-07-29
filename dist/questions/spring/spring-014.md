@@ -32,6 +32,11 @@ Spring uses two different types of proxying mechanisms:
 -   **Limitation:** It cannot proxy `final` classes or `final` methods, because they cannot be overridden in Java.
 -   *Note: In modern Spring Boot, CGLIB proxying is the default even if interfaces are present (via `proxyTargetClass=true`), to prevent `ClassCastException` issues.*
 
+
+### CGLIB Subclass Proxy Nuances:
+- **Double Constructor Execution**: Because CGLIB generates a dynamic subclass of the target bean, the target constructor is invoked twice (once for target bean, once for proxy object).
+- **Final & Private Methods**: `final` classes or `final`/`private` methods cannot be proxied by CGLIB because Java bytecode prohibits subclassing/overriding them.
+
 ### Life Analogy
 -   **JDK Proxy:** An interpreter at the UN. They must adhere to a strict set of predefined conversational rules (the Interface). 
 -   **CGLIB Proxy:** A body double in a movie. They look exactly like the actor (Subclass) and perform all the same actions, but they can't perform actions the actor absolutely refuses to let anyone else do (Final methods).

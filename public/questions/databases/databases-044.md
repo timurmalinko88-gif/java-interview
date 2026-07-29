@@ -27,6 +27,11 @@ Dirty Checking is the mechanism Hibernate uses to avoid sending unnecessary SQL 
 
 Because of dirty checking, you **do not** need to explicitly call `em.merge()` or `session.update()` on an entity that is already in the Managed state.
 
+
+### Important Operational Nuances:
+1. **Managed Entities Only**: Dirty checking only works for entities in the **Persistent/Managed** state within an active `EntityManager`/Session. Detached or transient entities are ignored by dirty checking.
+2. **SQL Generation & @DynamicUpdate**: By default, Hibernate issues an `UPDATE` statement containing **all** table columns even if only one column changed. Use `@DynamicUpdate` on the entity class to dynamically generate SQL containing only modified columns.
+
 ### Life Analogy
 Imagine checking into a hotel room (Loaded Entity). The hotel takes a photo of the minibar (Snapshot).
 During your stay, you drink a soda (Modify property).

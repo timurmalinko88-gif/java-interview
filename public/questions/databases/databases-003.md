@@ -48,6 +48,12 @@ Transaction isolation levels define the degree to which a transaction is isolate
     - **Allows:** Nothing (highest consistency).
     - **Use Case:** Financial transactions or critical operations where absolute consistency is required, but it significantly reduces concurrency and increases the risk of deadlocks.
 
+
+> [!IMPORTANT]
+> **MySQL/InnoDB & PostgreSQL Implementation Nuances (Senior Level):**
+> - **Standard SQL vs MySQL InnoDB**: Standard SQL specifies that `REPEATABLE READ` allows Phantom Reads. However, **MySQL InnoDB prevents Phantom Reads even in REPEATABLE READ** by default using **Next-Key Locking** (Record Lock + Gap Lock) for locking reads (`FOR UPDATE`/`LOCK IN SHARE MODE`), and MVCC read views for consistent non-locking reads.
+> - **PostgreSQL**: PostgreSQL's `REPEATABLE READ` uses MVCC (snapshot isolation) which prevents non-repeatable reads and most phantom reads, but can throw serialization failures if concurrent transactions conflict.
+
 ### Life Analogy
 Imagine reading a shared draft document while someone else is editing it.
 - **READ UNCOMMITTED:** You read their sentences as they type them, even before they hit "save" (Dirty Read risk if they delete it).

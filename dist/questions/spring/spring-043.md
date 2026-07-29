@@ -17,17 +17,20 @@ Explain the internal mechanism of Spring Boot Auto-configuration. How does `@Ena
 
 The magic of Auto-configuration is driven by the `@EnableAutoConfiguration` annotation and a specific file located within Spring Boot's dependency JARs.
 
-**The Mechanism:**
+**The Mechanism (Spring Boot 3.0+ Standards):**
 
-1.  **The Trigger:** When the application starts, `@EnableAutoConfiguration` acts as a trigger.
-2.  **`spring.factories` (or `org.springframework.boot.autoconfigure.AutoConfiguration.imports` in Boot 2.7+):** 
-    Spring Boot looks inside its own internal JARs (specifically `spring-boot-autoconfigure.jar`) for a file located at `META-INF/spring.factories` (or the newer `.imports` file). This file contains a massive list of fully qualified class names of **Auto-Configuration classes** (e.g., `DataSourceAutoConfiguration`, `WebMvcAutoConfiguration`).
+1.  **The Trigger:** When the application starts, `@EnableAutoConfiguration` (included in `@SpringBootApplication`) acts as the entry trigger.
+2.  **Auto-Configuration Imports (`.imports` file):** 
+    Spring Boot looks inside its dependency JARs (specifically `spring-boot-autoconfigure.jar`) for the file at:
+    `META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports`
+    *(Note: The legacy `META-INF/spring.factories` file was deprecated in Spring Boot 2.7 and removed in Spring Boot 3.0).*
+    This file lists fully qualified class names of auto-configuration classes annotated with `@AutoConfiguration` (e.g. `DataSourceAutoConfiguration`, `WebMvcAutoConfiguration`).
 3.  **Conditional Evaluation (`@Conditional`):** 
-    Spring Boot doesn't just blindly load all these classes. Every Auto-Configuration class is heavily annotated with `@Conditional` annotations. These act as guard clauses.
-    -   `@ConditionalOnClass`: Only run this config if a specific class is present on the classpath (e.g., only configure Tomcat if `Tomcat.class` is found).
-    -   `@ConditionalOnMissingBean`: Only run this config if the developer hasn't already defined their own bean of this type (e.g., only configure a default `DataSource` if the user hasn't explicitly created one).
-    -   `@ConditionalOnProperty`: Only run this if a specific property in `application.yml` is set.
-4.  **Application:** If the conditions pass, the Auto-Configuration class executes and registers its beans into the ApplicationContext.
+    Auto-configuration classes run conditionally:
+    -   `@ConditionalOnClass`: Executes only if specific classes (e.g. `Tomcat.class`) exist on the classpath.
+    -   `@ConditionalOnMissingBean`: Executes only if the user has not declared a custom bean of that type.
+    -   `@ConditionalOnProperty`: Executes only if specific `application.yml` properties match.
+
 
 **In Summary:** It's not "magic." It's a massive, pre-written `if-else` tree checking the classpath and user configurations to decide which default beans to load.
 

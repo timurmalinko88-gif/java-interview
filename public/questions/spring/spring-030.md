@@ -46,6 +46,10 @@ Total queries: 1 (for parents) + 100 (for children) = 101 queries. This crushes 
 
 *(Note: Simply changing `@OneToMany(fetch = FetchType.EAGER)` is considered a bad practice, as it causes performance issues globally everywhere the entity is used).*
 
+
+> [!WARNING]
+> **Cartesian Product Pitfall with JOIN FETCH**: When using `JOIN FETCH` on collection associations (e.g. `Post` with `List<Comment>`), the database produces a Cartesian Product result set (N x M rows). Hibernate must deduplicate these rows in memory, which can lead to high memory consumption and `MultipleBagFetchException` if multiple collection joins are attempted in a single query.
+
 ### Life Analogy
 You are a manager who needs the weekly reports from 10 employees.
 -   **N+1 Problem:** You go to the office (1 trip), walk to employee 1, ask for the report, walk back to your desk. Then walk to employee 2, ask for the report, walk back. You do this 10 times (N trips).
