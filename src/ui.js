@@ -247,7 +247,7 @@ function parseMarkdown(text) {
   if (codeMatch) result.code = codeMatch[1];
 
   // Extract Analogy
-  const analogyMatch = rawAnswer.match(/###\s*Life Analogy\s*\n([\s\S]*?)(?=###|$)/i);
+  const analogyMatch = rawAnswer.match(/###?\s*(?:Life\s+|Real-World\s+|Intuitive\s+)?[^\n]*Analogy[^\n]*\n([\s\S]*?)(?=###?|$)/i);
   if (analogyMatch) {
     result.analogy = analogyMatch[1].trim();
     rawAnswer = rawAnswer.replace(analogyMatch[0], '');

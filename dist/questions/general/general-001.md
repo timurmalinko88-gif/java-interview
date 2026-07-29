@@ -51,3 +51,7 @@ public class Counter {
 ```
 *Alternative:* add the `synchronized` keyword to the `increment()` method, but this might run slower with a large number of threads.
 
+### Life Analogy
+Imagine two people trying to increment a manual tally counter at the exact same moment. If both press the button simultaneously, the internal gear only clicks forward once instead of twice, causing one person's count to be lost. `AtomicInteger` acts like a turnstile that guarantees only one person can click the counter at a time.
+
+
