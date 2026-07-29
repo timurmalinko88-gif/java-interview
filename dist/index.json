@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "total": 671,
+  "total": 706,
   "questions": [
     {
       "id": "ai-001",
@@ -750,6 +750,724 @@
         "Sorting",
         "Intervals",
         "LeetCode 56"
+      ]
+    },
+    {
+      "id": "algo-016",
+      "path": "questions/algorithms/algo-016-container-with-most-water.md",
+      "topic": "Algorithm Breakdown",
+      "difficulty": "Middle",
+      "format": "Algo Breakdown",
+      "title": "LeetCode 11: Container With Most Water",
+      "time": "10 min",
+      "frequency": "High",
+      "pattern": "Two Pointers",
+      "time_complexity": "O(N)",
+      "space_complexity": "O(1)",
+      "leetcode_id": "11",
+      "related": [],
+      "tags": [
+        "Arrays",
+        "Two Pointers",
+        "LeetCode 11"
+      ]
+    },
+    {
+      "id": "algo-017",
+      "path": "questions/algorithms/algo-017-trapping-rain-water.md",
+      "topic": "Algorithm Breakdown",
+      "difficulty": "Senior",
+      "format": "Algo Breakdown",
+      "title": "LeetCode 42: Trapping Rain Water",
+      "time": "15 min",
+      "frequency": "High",
+      "pattern": "Two Pointers",
+      "time_complexity": "O(N)",
+      "space_complexity": "O(1)",
+      "leetcode_id": "42",
+      "related": [],
+      "tags": [
+        "Arrays",
+        "Two Pointers",
+        "Monotonic Stack",
+        "LeetCode 42"
+      ]
+    },
+    {
+      "id": "algo-018",
+      "path": "questions/algorithms/algo-018-minimum-window-substring.md",
+      "topic": "Algorithm Breakdown",
+      "difficulty": "Senior",
+      "format": "Algo Breakdown",
+      "title": "LeetCode 76: Minimum Window Substring",
+      "time": "15 min",
+      "frequency": "High",
+      "pattern": "Sliding Window",
+      "time_complexity": "O(N + M)",
+      "space_complexity": "O(1)",
+      "leetcode_id": "76",
+      "related": [],
+      "tags": [
+        "Strings",
+        "Sliding Window",
+        "LeetCode 76"
+      ]
+    },
+    {
+      "id": "algo-019",
+      "path": "questions/algorithms/algo-019-longest-repeating-character-replacement.md",
+      "topic": "Algorithm Breakdown",
+      "difficulty": "Middle",
+      "format": "Algo Breakdown",
+      "title": "LeetCode 424: Longest Repeating Character Replacement",
+      "time": "12 min",
+      "frequency": "High",
+      "pattern": "Sliding Window",
+      "time_complexity": "O(N)",
+      "space_complexity": "O(1)",
+      "leetcode_id": "424",
+      "related": [],
+      "tags": [
+        "Strings",
+        "Sliding Window",
+        "LeetCode 424"
+      ]
+    },
+    {
+      "id": "algo-020",
+      "path": "questions/algorithms/algo-020-product-of-array-except-self.md",
+      "topic": "Algorithm Breakdown",
+      "difficulty": "Middle",
+      "format": "Algo Breakdown",
+      "title": "LeetCode 238: Product of Array Except Self",
+      "time": "10 min",
+      "frequency": "High",
+      "pattern": "Prefix Array",
+      "time_complexity": "O(N)",
+      "space_complexity": "O(1)",
+      "leetcode_id": "238",
+      "related": [],
+      "tags": [
+        "Arrays",
+        "Prefix Array",
+        "LeetCode 238"
+      ]
+    },
+    {
+      "id": "algo-021",
+      "path": "questions/algorithms/algo-021-maximum-product-subarray.md",
+      "topic": "Algorithm Breakdown",
+      "difficulty": "Middle",
+      "format": "Algo Breakdown",
+      "title": "LeetCode 152: Maximum Product Subarray",
+      "time": "12 min",
+      "frequency": "High",
+      "pattern": "Dynamic Programming",
+      "time_complexity": "O(N)",
+      "space_complexity": "O(1)",
+      "leetcode_id": "152",
+      "related": [],
+      "tags": [
+        "Arrays",
+        "Dynamic Programming",
+        "LeetCode 152"
+      ]
+    },
+    {
+      "id": "algo-022",
+      "path": "questions/algorithms/algo-022-maximum-subarray.md",
+      "topic": "Algorithm Breakdown",
+      "difficulty": "Junior",
+      "format": "Algo Breakdown",
+      "title": "LeetCode 53: Maximum Subarray",
+      "time": "8 min",
+      "frequency": "High",
+      "pattern": "Dynamic Programming",
+      "time_complexity": "O(N)",
+      "space_complexity": "O(1)",
+      "leetcode_id": "53",
+      "related": [],
+      "tags": [
+        "Arrays",
+        "Kadane's Algorithm",
+        "Dynamic Programming",
+        "LeetCode 53"
+      ]
+    },
+    {
+      "id": "algo-023",
+      "path": "questions/algorithms/algo-023-longest-increasing-subsequence.md",
+      "topic": "Algorithm Breakdown",
+      "difficulty": "Middle",
+      "format": "Algo Breakdown",
+      "title": "LeetCode 300: Longest Increasing Subsequence",
+      "time": "12 min",
+      "frequency": "High",
+      "pattern": "Dynamic Programming",
+      "time_complexity": "O(N log N)",
+      "space_complexity": "O(N)",
+      "leetcode_id": "300",
+      "related": [],
+      "tags": [
+        "Arrays",
+        "Dynamic Programming",
+        "Binary Search",
+        "LeetCode 300"
+      ]
+    },
+    {
+      "id": "algo-024",
+      "path": "questions/algorithms/algo-024-word-break.md",
+      "topic": "Algorithm Breakdown",
+      "difficulty": "Middle",
+      "format": "Algo Breakdown",
+      "title": "LeetCode 139: Word Break",
+      "time": "12 min",
+      "frequency": "High",
+      "pattern": "Dynamic Programming",
+      "time_complexity": "O(N^2)",
+      "space_complexity": "O(N)",
+      "leetcode_id": "139",
+      "related": [],
+      "tags": [
+        "Strings",
+        "Dynamic Programming",
+        "LeetCode 139"
+      ]
+    },
+    {
+      "id": "algo-025",
+      "path": "questions/algorithms/algo-025-longest-common-subsequence.md",
+      "topic": "Algorithm Breakdown",
+      "difficulty": "Middle",
+      "format": "Algo Breakdown",
+      "title": "LeetCode 1143: Longest Common Subsequence",
+      "time": "12 min",
+      "frequency": "High",
+      "pattern": "Dynamic Programming",
+      "time_complexity": "O(M * N)",
+      "space_complexity": "O(M * N)",
+      "leetcode_id": "1143",
+      "related": [],
+      "tags": [
+        "Strings",
+        "2D Dynamic Programming",
+        "LeetCode 1143"
+      ]
+    },
+    {
+      "id": "algo-026",
+      "path": "questions/algorithms/algo-026-partition-equal-subset-sum.md",
+      "topic": "Algorithm Breakdown",
+      "difficulty": "Middle",
+      "format": "Algo Breakdown",
+      "title": "LeetCode 416: Partition Equal Subset Sum",
+      "time": "12 min",
+      "frequency": "High",
+      "pattern": "Dynamic Programming",
+      "time_complexity": "O(N * Target)",
+      "space_complexity": "O(Target)",
+      "leetcode_id": "416",
+      "related": [],
+      "tags": [
+        "Arrays",
+        "Dynamic Programming",
+        "0/1 Knapsack",
+        "LeetCode 416"
+      ]
+    },
+    {
+      "id": "algo-027",
+      "path": "questions/algorithms/algo-027-reverse-linked-list.md",
+      "topic": "Algorithm Breakdown",
+      "difficulty": "Junior",
+      "format": "Algo Breakdown",
+      "title": "LeetCode 206: Reverse Linked List",
+      "time": "5 min",
+      "frequency": "High",
+      "pattern": "Linked List",
+      "time_complexity": "O(N)",
+      "space_complexity": "O(1)",
+      "leetcode_id": "206",
+      "related": [],
+      "tags": [
+        "Linked List",
+        "Two Pointers",
+        "LeetCode 206"
+      ]
+    },
+    {
+      "id": "algo-028",
+      "path": "questions/algorithms/algo-028-merge-two-sorted-lists.md",
+      "topic": "Algorithm Breakdown",
+      "difficulty": "Junior",
+      "format": "Algo Breakdown",
+      "title": "LeetCode 21: Merge Two Sorted Lists",
+      "time": "6 min",
+      "frequency": "High",
+      "pattern": "Linked List",
+      "time_complexity": "O(N + M)",
+      "space_complexity": "O(1)",
+      "leetcode_id": "21",
+      "related": [],
+      "tags": [
+        "Linked List",
+        "Two Pointers",
+        "LeetCode 21"
+      ]
+    },
+    {
+      "id": "algo-029",
+      "path": "questions/algorithms/algo-029-reorder-list.md",
+      "topic": "Algorithm Breakdown",
+      "difficulty": "Middle",
+      "format": "Algo Breakdown",
+      "title": "LeetCode 143: Reorder List",
+      "time": "12 min",
+      "frequency": "High",
+      "pattern": "Linked List",
+      "time_complexity": "O(N)",
+      "space_complexity": "O(1)",
+      "leetcode_id": "143",
+      "related": [],
+      "tags": [
+        "Linked List",
+        "Two Pointers",
+        "LeetCode 143"
+      ]
+    },
+    {
+      "id": "algo-030",
+      "path": "questions/algorithms/algo-030-remove-nth-node-from-end-of-list.md",
+      "topic": "Algorithm Breakdown",
+      "difficulty": "Middle",
+      "format": "Algo Breakdown",
+      "title": "LeetCode 19: Remove Nth Node From End of List",
+      "time": "10 min",
+      "frequency": "High",
+      "pattern": "Linked List",
+      "time_complexity": "O(N)",
+      "space_complexity": "O(1)",
+      "leetcode_id": "19",
+      "related": [],
+      "tags": [
+        "Linked List",
+        "Two Pointers",
+        "LeetCode 19"
+      ]
+    },
+    {
+      "id": "algo-031",
+      "path": "questions/algorithms/algo-031-merge-k-sorted-lists.md",
+      "topic": "Algorithm Breakdown",
+      "difficulty": "Senior",
+      "format": "Algo Breakdown",
+      "title": "LeetCode 23: Merge k Sorted Lists",
+      "time": "15 min",
+      "frequency": "High",
+      "pattern": "Heap / Priority Queue",
+      "time_complexity": "O(N log K)",
+      "space_complexity": "O(K)",
+      "leetcode_id": "23",
+      "related": [],
+      "tags": [
+        "Linked List",
+        "Heap",
+        "PriorityQueue",
+        "LeetCode 23"
+      ]
+    },
+    {
+      "id": "algo-032",
+      "path": "questions/algorithms/algo-032-binary-tree-maximum-path-sum.md",
+      "topic": "Algorithm Breakdown",
+      "difficulty": "Senior",
+      "format": "Algo Breakdown",
+      "title": "LeetCode 124: Binary Tree Maximum Path Sum",
+      "time": "15 min",
+      "frequency": "High",
+      "pattern": "Tree DFS",
+      "time_complexity": "O(N)",
+      "space_complexity": "O(H)",
+      "leetcode_id": "124",
+      "related": [],
+      "tags": [
+        "Tree",
+        "DFS",
+        "Recursion",
+        "LeetCode 124"
+      ]
+    },
+    {
+      "id": "algo-033",
+      "path": "questions/algorithms/algo-033-serialize-and-deserialize-binary-tree.md",
+      "topic": "Algorithm Breakdown",
+      "difficulty": "Senior",
+      "format": "Algo Breakdown",
+      "title": "LeetCode 297: Serialize and Deserialize Binary Tree",
+      "time": "15 min",
+      "frequency": "High",
+      "pattern": "BFS / DFS",
+      "time_complexity": "O(N)",
+      "space_complexity": "O(N)",
+      "leetcode_id": "297",
+      "related": [],
+      "tags": [
+        "Tree",
+        "DFS",
+        "Design",
+        "LeetCode 297"
+      ]
+    },
+    {
+      "id": "algo-034",
+      "path": "questions/algorithms/algo-034-kth-smallest-element-in-a-bst.md",
+      "topic": "Algorithm Breakdown",
+      "difficulty": "Middle",
+      "format": "Algo Breakdown",
+      "title": "LeetCode 230: Kth Smallest Element in a BST",
+      "time": "10 min",
+      "frequency": "High",
+      "pattern": "Tree DFS",
+      "time_complexity": "O(H + K)",
+      "space_complexity": "O(H)",
+      "leetcode_id": "230",
+      "related": [],
+      "tags": [
+        "Tree",
+        "BST",
+        "Inorder Traversal",
+        "LeetCode 230"
+      ]
+    },
+    {
+      "id": "algo-035",
+      "path": "questions/algorithms/algo-035-validate-binary-search-tree.md",
+      "topic": "Algorithm Breakdown",
+      "difficulty": "Middle",
+      "format": "Algo Breakdown",
+      "title": "LeetCode 98: Validate Binary Search Tree",
+      "time": "10 min",
+      "frequency": "High",
+      "pattern": "Tree DFS",
+      "time_complexity": "O(N)",
+      "space_complexity": "O(H)",
+      "leetcode_id": "98",
+      "related": [],
+      "tags": [
+        "Tree",
+        "BST",
+        "DFS",
+        "LeetCode 98"
+      ]
+    },
+    {
+      "id": "algo-036",
+      "path": "questions/algorithms/algo-036-implement-trie-prefix-tree.md",
+      "topic": "Algorithm Breakdown",
+      "difficulty": "Middle",
+      "format": "Algo Breakdown",
+      "title": "LeetCode 208: Implement Trie (Prefix Tree)",
+      "time": "12 min",
+      "frequency": "High",
+      "pattern": "Trie",
+      "time_complexity": "O(L) per operation",
+      "space_complexity": "O(Alphabet * L * N)",
+      "leetcode_id": "208",
+      "related": [],
+      "tags": [
+        "Trie",
+        "Design",
+        "LeetCode 208"
+      ]
+    },
+    {
+      "id": "algo-037",
+      "path": "questions/algorithms/algo-037-design-add-and-search-words-data-structure.md",
+      "topic": "Algorithm Breakdown",
+      "difficulty": "Middle",
+      "format": "Algo Breakdown",
+      "title": "LeetCode 211: Design Add and Search Words Data Structure",
+      "time": "12 min",
+      "frequency": "High",
+      "pattern": "Trie",
+      "time_complexity": "O(L) insert / O(26^L) search with dots",
+      "space_complexity": "O(Trie size)",
+      "leetcode_id": "211",
+      "related": [],
+      "tags": [
+        "Trie",
+        "DFS",
+        "Design",
+        "LeetCode 211"
+      ]
+    },
+    {
+      "id": "algo-038",
+      "path": "questions/algorithms/algo-038-word-search-ii.md",
+      "topic": "Algorithm Breakdown",
+      "difficulty": "Senior",
+      "format": "Algo Breakdown",
+      "title": "LeetCode 212: Word Search II",
+      "time": "15 min",
+      "frequency": "High",
+      "pattern": "Trie",
+      "time_complexity": "O(M * N * 3^L)",
+      "space_complexity": "O(Words Total Chars)",
+      "leetcode_id": "212",
+      "related": [],
+      "tags": [
+        "Trie",
+        "Backtracking",
+        "Matrix",
+        "LeetCode 212"
+      ]
+    },
+    {
+      "id": "algo-039",
+      "path": "questions/algorithms/algo-039-course-schedule.md",
+      "topic": "Algorithm Breakdown",
+      "difficulty": "Middle",
+      "format": "Algo Breakdown",
+      "title": "LeetCode 207: Course Schedule",
+      "time": "12 min",
+      "frequency": "High",
+      "pattern": "Graph Topological Sort",
+      "time_complexity": "O(V + E)",
+      "space_complexity": "O(V + E)",
+      "leetcode_id": "207",
+      "related": [],
+      "tags": [
+        "Graph",
+        "Topological Sort",
+        "BFS",
+        "LeetCode 207"
+      ]
+    },
+    {
+      "id": "algo-040",
+      "path": "questions/algorithms/algo-040-course-schedule-ii.md",
+      "topic": "Algorithm Breakdown",
+      "difficulty": "Middle",
+      "format": "Algo Breakdown",
+      "title": "LeetCode 210: Course Schedule II",
+      "time": "12 min",
+      "frequency": "High",
+      "pattern": "Graph Topological Sort",
+      "time_complexity": "O(V + E)",
+      "space_complexity": "O(V + E)",
+      "leetcode_id": "210",
+      "related": [],
+      "tags": [
+        "Graph",
+        "Topological Sort",
+        "BFS",
+        "LeetCode 210"
+      ]
+    },
+    {
+      "id": "algo-041",
+      "path": "questions/algorithms/algo-041-clone-graph.md",
+      "topic": "Algorithm Breakdown",
+      "difficulty": "Middle",
+      "format": "Algo Breakdown",
+      "title": "LeetCode 133: Clone Graph",
+      "time": "10 min",
+      "frequency": "High",
+      "pattern": "BFS / DFS",
+      "time_complexity": "O(V + E)",
+      "space_complexity": "O(V)",
+      "leetcode_id": "133",
+      "related": [],
+      "tags": [
+        "Graph",
+        "BFS",
+        "DFS",
+        "LeetCode 133"
+      ]
+    },
+    {
+      "id": "algo-042",
+      "path": "questions/algorithms/algo-042-alien-dictionary.md",
+      "topic": "Algorithm Breakdown",
+      "difficulty": "Senior",
+      "format": "Algo Breakdown",
+      "title": "LeetCode 269: Alien Dictionary",
+      "time": "15 min",
+      "frequency": "High",
+      "pattern": "Graph Topological Sort",
+      "time_complexity": "O(C)",
+      "space_complexity": "O(1)",
+      "leetcode_id": "269",
+      "related": [],
+      "tags": [
+        "Graph",
+        "Topological Sort",
+        "LeetCode 269"
+      ]
+    },
+    {
+      "id": "algo-043",
+      "path": "questions/algorithms/algo-043-pacific-atlantic-water-flow.md",
+      "topic": "Algorithm Breakdown",
+      "difficulty": "Middle",
+      "format": "Algo Breakdown",
+      "title": "LeetCode 417: Pacific Atlantic Water Flow",
+      "time": "12 min",
+      "frequency": "High",
+      "pattern": "BFS / DFS",
+      "time_complexity": "O(M * N)",
+      "space_complexity": "O(M * N)",
+      "leetcode_id": "417",
+      "related": [],
+      "tags": [
+        "Graph",
+        "BFS",
+        "DFS",
+        "LeetCode 417"
+      ]
+    },
+    {
+      "id": "algo-044",
+      "path": "questions/algorithms/algo-044-insert-interval.md",
+      "topic": "Algorithm Breakdown",
+      "difficulty": "Middle",
+      "format": "Algo Breakdown",
+      "title": "LeetCode 57: Insert Interval",
+      "time": "10 min",
+      "frequency": "High",
+      "pattern": "Intervals",
+      "time_complexity": "O(N)",
+      "space_complexity": "O(N)",
+      "leetcode_id": "57",
+      "related": [],
+      "tags": [
+        "Intervals",
+        "Arrays",
+        "LeetCode 57"
+      ]
+    },
+    {
+      "id": "algo-045",
+      "path": "questions/algorithms/algo-045-non-overlapping-intervals.md",
+      "topic": "Algorithm Breakdown",
+      "difficulty": "Middle",
+      "format": "Algo Breakdown",
+      "title": "LeetCode 435: Non-overlapping Intervals",
+      "time": "10 min",
+      "frequency": "High",
+      "pattern": "Intervals",
+      "time_complexity": "O(N log N)",
+      "space_complexity": "O(1)",
+      "leetcode_id": "435",
+      "related": [],
+      "tags": [
+        "Intervals",
+        "Greedy",
+        "LeetCode 435"
+      ]
+    },
+    {
+      "id": "algo-046",
+      "path": "questions/algorithms/algo-046-meeting-rooms-ii.md",
+      "topic": "Algorithm Breakdown",
+      "difficulty": "Middle",
+      "format": "Algo Breakdown",
+      "title": "LeetCode 253: Meeting Rooms II",
+      "time": "10 min",
+      "frequency": "High",
+      "pattern": "Intervals",
+      "time_complexity": "O(N log N)",
+      "space_complexity": "O(N)",
+      "leetcode_id": "253",
+      "related": [],
+      "tags": [
+        "Intervals",
+        "Min-Heap",
+        "LeetCode 253"
+      ]
+    },
+    {
+      "id": "algo-047",
+      "path": "questions/algorithms/algo-047-find-median-from-data-stream.md",
+      "topic": "Algorithm Breakdown",
+      "difficulty": "Senior",
+      "format": "Algo Breakdown",
+      "title": "LeetCode 295: Find Median from Data Stream",
+      "time": "15 min",
+      "frequency": "High",
+      "pattern": "Two Heaps",
+      "time_complexity": "O(log N) add / O(1) find",
+      "space_complexity": "O(N)",
+      "leetcode_id": "295",
+      "related": [],
+      "tags": [
+        "Heap",
+        "Two Heaps",
+        "Design",
+        "LeetCode 295"
+      ]
+    },
+    {
+      "id": "algo-048",
+      "path": "questions/algorithms/algo-048-largest-rectangle-in-histogram.md",
+      "topic": "Algorithm Breakdown",
+      "difficulty": "Senior",
+      "format": "Algo Breakdown",
+      "title": "LeetCode 84: Largest Rectangle in Histogram",
+      "time": "15 min",
+      "frequency": "High",
+      "pattern": "Monotonic Stack",
+      "time_complexity": "O(N)",
+      "space_complexity": "O(N)",
+      "leetcode_id": "84",
+      "related": [],
+      "tags": [
+        "Arrays",
+        "Monotonic Stack",
+        "LeetCode 84"
+      ]
+    },
+    {
+      "id": "algo-049",
+      "path": "questions/algorithms/algo-049-best-time-to-buy-and-sell-stock.md",
+      "topic": "Algorithm Breakdown",
+      "difficulty": "Junior",
+      "format": "Algo Breakdown",
+      "title": "LeetCode 121: Best Time to Buy and Sell Stock",
+      "time": "5 min",
+      "frequency": "High",
+      "pattern": "Two Pointers",
+      "time_complexity": "O(N)",
+      "space_complexity": "O(1)",
+      "leetcode_id": "121",
+      "related": [],
+      "tags": [
+        "Arrays",
+        "Two Pointers",
+        "Dynamic Programming",
+        "LeetCode 121"
+      ]
+    },
+    {
+      "id": "algo-050",
+      "path": "questions/algorithms/algo-050-word-search.md",
+      "topic": "Algorithm Breakdown",
+      "difficulty": "Middle",
+      "format": "Algo Breakdown",
+      "title": "LeetCode 79: Word Search",
+      "time": "12 min",
+      "frequency": "High",
+      "pattern": "Backtracking",
+      "time_complexity": "O(N * M * 3^L)",
+      "space_complexity": "O(L)",
+      "leetcode_id": "79",
+      "related": [],
+      "tags": [
+        "Matrix",
+        "Backtracking",
+        "DFS",
+        "LeetCode 79"
       ]
     },
     {
