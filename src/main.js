@@ -25,6 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
   if (questionsTabBtn) {
     questionsTabBtn.addEventListener('click', () => switchView('questions'));
   }
+  const algoTabBtn = document.getElementById('algo-tab-btn');
+  if (algoTabBtn) {
+    algoTabBtn.addEventListener('click', () => switchView('algo'));
+  }
 
   // Load and initialize core engine
   fetchQuestions();

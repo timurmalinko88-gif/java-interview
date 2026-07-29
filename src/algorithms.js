@@ -57,7 +57,9 @@ export function switchView(viewName) {
 
     if (viewName === 'algo') {
         algoView.classList.remove('hidden');
+        algoView.style.display = 'block';
         questionsView.classList.add('hidden');
+        questionsView.style.display = 'none';
         
         if (algoTabBtn) {
             algoTabBtn.classList.add('border-roast-500', 'text-roast-500', 'bg-roast-500/10');
@@ -71,7 +73,9 @@ export function switchView(viewName) {
         renderAlgoList();
     } else {
         algoView.classList.add('hidden');
+        algoView.style.display = 'none';
         questionsView.classList.remove('hidden');
+        questionsView.style.display = '';
 
         if (questionsTabBtn) {
             questionsTabBtn.classList.add('border-roast-500', 'text-roast-500', 'bg-roast-500/10');
