@@ -2,13 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Firefox Scrollbar Support */
+/* Firefox Scrollbar & Native Dark Theme Support */
 html {
     scrollbar-width: thin;
     scrollbar-color: #cbd5e1 transparent;
+    color-scheme: light;
 }
 html.dark {
     scrollbar-color: #334155 transparent;
+    color-scheme: dark;
+}
+
+/* Explicit Select & Option Styling */
+select, option, optgroup {
+    background-color: #F6F4EF;
+    color: #0E1116;
+}
+html.dark select, html.dark option, html.dark optgroup {
+    background-color: #171B22;
+    color: #F6F4EF;
 }
 
 /* Smooth transitions */
