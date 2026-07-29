@@ -9,6 +9,7 @@ import { evaluateSR } from './spacedRepetition.js';
 import { toggleFlag } from './collections.js';
 import { fetchQuestions } from './api.js';
 import { initAlgoView, renderAlgoList, switchView } from './algorithms.js';
+import { initSysDesignView } from './sysdesign.js';
 
 // --- app.js ---
 // Initialize and load dynamic questions indexes
@@ -17,9 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
     marked.use({ breaks: true });
   }
 
-  // Initialize Algorithm Breakdown View
+  // Initialize Algorithm Breakdown & System Architecture Views
   initAlgoView({ state });
+  initSysDesignView();
   window.renderAlgoListGlobal = () => renderAlgoList({ state });
+  window.switchViewGlobal = switchView;
 
   const questionsTabBtn = document.getElementById('questions-tab-btn');
   if (questionsTabBtn) {
@@ -28,6 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const algoTabBtn = document.getElementById('algo-tab-btn');
   if (algoTabBtn) {
     algoTabBtn.addEventListener('click', () => switchView('algo'));
+  }
+  const sysdesignTabBtn = document.getElementById('sysdesign-tab-btn');
+  if (sysdesignTabBtn) {
+    sysdesignTabBtn.addEventListener('click', () => switchView('sysdesign'));
   }
 
   // Load and initialize core engine

@@ -50,40 +50,51 @@ export function initAlgoView(store, renderCardCallback) {
 export function switchView(viewName) {
     const algoView = document.getElementById('algo-view');
     const questionsView = document.getElementById('questions-view');
+    const sysdesignView = document.getElementById('sysdesign-view');
+
     const algoTabBtn = document.getElementById('algo-tab-btn');
     const questionsTabBtn = document.getElementById('questions-tab-btn');
+    const sysdesignTabBtn = document.getElementById('sysdesign-tab-btn');
 
-    if (!algoView || !questionsView) return;
+    if (!algoView || !questionsView || !sysdesignView) return;
+
+    // Reset all views
+    questionsView.classList.add('hidden');
+    questionsView.style.display = 'none';
+    algoView.classList.add('hidden');
+    algoView.style.display = 'none';
+    sysdesignView.classList.add('hidden');
+    sysdesignView.style.display = 'none';
+
+    // Reset all tab buttons
+    [questionsTabBtn, algoTabBtn, sysdesignTabBtn].forEach(btn => {
+        if (btn) {
+            btn.classList.remove('border-roast-500', 'text-roast-500', 'bg-roast-500/10');
+            btn.classList.add('border-transparent', 'text-slate-400');
+        }
+    });
 
     if (viewName === 'algo') {
         algoView.classList.remove('hidden');
         algoView.style.display = 'block';
-        questionsView.classList.add('hidden');
-        questionsView.style.display = 'none';
-        
         if (algoTabBtn) {
             algoTabBtn.classList.add('border-roast-500', 'text-roast-500', 'bg-roast-500/10');
             algoTabBtn.classList.remove('border-transparent', 'text-slate-400');
         }
-        if (questionsTabBtn) {
-            questionsTabBtn.classList.remove('border-roast-500', 'text-roast-500', 'bg-roast-500/10');
-            questionsTabBtn.classList.add('border-transparent', 'text-slate-400');
-        }
-
         renderAlgoList();
+    } else if (viewName === 'sysdesign') {
+        sysdesignView.classList.remove('hidden');
+        sysdesignView.style.display = 'block';
+        if (sysdesignTabBtn) {
+            sysdesignTabBtn.classList.add('border-roast-500', 'text-roast-500', 'bg-roast-500/10');
+            sysdesignTabBtn.classList.remove('border-transparent', 'text-slate-400');
+        }
     } else {
-        algoView.classList.add('hidden');
-        algoView.style.display = 'none';
         questionsView.classList.remove('hidden');
         questionsView.style.display = '';
-
         if (questionsTabBtn) {
             questionsTabBtn.classList.add('border-roast-500', 'text-roast-500', 'bg-roast-500/10');
             questionsTabBtn.classList.remove('border-transparent', 'text-slate-400');
-        }
-        if (algoTabBtn) {
-            algoTabBtn.classList.remove('border-roast-500', 'text-roast-500', 'bg-roast-500/10');
-            algoTabBtn.classList.add('border-transparent', 'text-slate-400');
         }
     }
 }
