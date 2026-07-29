@@ -278,6 +278,32 @@ export function renderAlgoList(store) {
 }
 
 /**
+ * Parses markdown answer body into structured step-by-step sections
+ */
+function parseAnswerSections(answerBody) {
+    if (!answerBody) return [];
+    
+    const rawSections = answerBody.split(/(?=^###\s+)/m);
+    const sections = [];
+
+    rawSections.forEach(sec => {
+        const trimmed = sec.trim();
+        if (!trimmed) return;
+
+        const match = trimmed.match(/^###\s+(.*)/);
+        if (match) {
+            const title = match[1].trim();
+            const content = trimmed.replace(/^###\s+.*(\r?\n)?/, '').trim();
+            sections.push({ title, content });
+        } else {
+            sections.push({ title: 'Overview & Solution', content: trimmed });
+        }
+    });
+
+    return sections;
+}
+
+/**
  * Opens the interactive Step-by-Step Algo Breakdown Modal
  */
 export async function openAlgoModal(question, path, store) {
@@ -317,13 +343,45 @@ export async function openAlgoModal(question, path, store) {
         const questionPrompt = parts[0].replace(/^---[\s\S]*?---\s*/, '').trim();
         const answerBody = parts[1] ? parts[1].trim() : '';
 
-        // Render Markdown
+        // Render Markdown for Prompt
         const promptHtml = typeof marked !== 'undefined' ? marked.parse(questionPrompt) : questionPrompt;
-        const answerHtml = typeof marked !== 'undefined' ? marked.parse(answerBody) : answerBody;
+
+        // Parse Answer into Steps
+        const sections = parseAnswerSections(answerBody);
+
+        let sectionsHtml = '';
+        if (sections.length > 0) {
+            sectionsHtml = sections.map((sec, idx) => {
+                const secHtml = typeof marked !== 'undefined' ? marked.parse(sec.content) : sec.content;
+                // Leave first step (Intuition) open by default or all closed for self-testing
+                const isOpen = idx === 0 ? 'open' : '';
+
+                return `
+                    <details class="algo-step-details group bg-white dark:bg-panel-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm transition-all" ${isOpen}>
+                        <summary class="flex items-center justify-between p-4 cursor-pointer font-bold text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-ink-950 transition-colors select-none">
+                            <span class="flex items-center space-x-2 text-sm sm:text-base">
+                                <span class="w-6 h-6 rounded-full bg-roast-500/10 text-roast-500 text-xs flex items-center justify-center font-mono font-bold">${idx + 1}</span>
+                                <span>${sec.title}</span>
+                            </span>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-[11px] font-semibold text-slate-400 group-open:hidden">Click to reveal</span>
+                                <i class="fa-solid fa-chevron-down text-slate-400 text-xs group-open:rotate-180 transition-transform duration-300"></i>
+                            </div>
+                        </summary>
+                        <div class="p-5 border-t border-slate-100 dark:border-slate-800 text-sm leading-relaxed text-slate-700 dark:text-slate-300 markdown-body">
+                            ${secHtml}
+                        </div>
+                    </details>
+                `;
+            }).join('');
+        } else {
+            const answerHtml = typeof marked !== 'undefined' ? marked.parse(answerBody) : answerBody;
+            sectionsHtml = `<div class="bg-white dark:bg-panel-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 markdown-body">${answerHtml}</div>`;
+        }
 
         modalBody.innerHTML = `
             <div class="space-y-6">
-                <!-- Problem Statement Card -->
+                <!-- Problem Statement Card (Always Visible) -->
                 <div class="bg-slate-50 dark:bg-ink-950 p-5 rounded-xl border border-slate-200 dark:border-slate-800 text-sm leading-relaxed text-slate-700 dark:text-slate-300 markdown-body">
                     <h4 class="font-bold text-slate-900 dark:text-white text-base mb-2 flex items-center space-x-2">
                         <i class="fa-solid fa-file-lines text-roast-500"></i>
@@ -332,9 +390,23 @@ export async function openAlgoModal(question, path, store) {
                     <div>${promptHtml}</div>
                 </div>
 
-                <!-- Deep Dive Solution & Breakdown -->
-                <div class="bg-white dark:bg-panel-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 space-y-4 markdown-body">
-                    <div>${answerHtml}</div>
+                <!-- Interactive Step Breakdown Header & Toggle -->
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between px-1">
+                        <div class="flex items-center space-x-2 text-xs font-semibold text-slate-500">
+                            <i class="fa-solid fa-lightbulb text-amber-500 animate-pulse"></i>
+                            <span>Step-by-step solution: Click sections to reveal hints & code</span>
+                        </div>
+                        <button id="toggle-all-algo-steps" class="text-xs font-bold text-roast-500 hover:underline flex items-center space-x-1">
+                            <i class="fa-solid fa-layer-group"></i>
+                            <span id="toggle-all-text">Expand All Steps</span>
+                        </button>
+                    </div>
+
+                    <!-- Accordion Details List -->
+                    <div class="space-y-3" id="algo-sections-container">
+                        ${sectionsHtml}
+                    </div>
                 </div>
             </div>
         `;
@@ -343,6 +415,26 @@ export async function openAlgoModal(question, path, store) {
         if (typeof hljs !== 'undefined') {
             modalBody.querySelectorAll('pre code').forEach((block) => {
                 hljs.highlightElement(block);
+            });
+        }
+
+        // Toggle All Steps Button
+        const toggleBtn = document.getElementById('toggle-all-algo-steps');
+        const toggleText = document.getElementById('toggle-all-text');
+        if (toggleBtn) {
+            let allExpanded = false;
+            toggleBtn.addEventListener('click', () => {
+                allExpanded = !allExpanded;
+                modalBody.querySelectorAll('.algo-step-details').forEach(details => {
+                    if (allExpanded) {
+                        details.setAttribute('open', '');
+                    } else {
+                        details.removeAttribute('open');
+                    }
+                });
+                if (toggleText) {
+                    toggleText.textContent = allExpanded ? 'Collapse All Steps' : 'Expand All Steps';
+                }
             });
         }
     } catch (err) {
