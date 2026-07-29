@@ -381,8 +381,8 @@ export async function openAlgoModal(question, path, store) {
         if (sections.length > 0) {
             sectionsHtml = sections.map((sec, idx) => {
                 const secHtml = typeof marked !== 'undefined' ? marked.parse(sec.content) : sec.content;
-                // Leave first step (Intuition) open by default or all closed for self-testing
-                const isOpen = idx === 0 ? 'open' : '';
+                // All steps closed by default for self-evaluation
+                const isOpen = '';
 
                 return `
                     <details class="algo-step-details group bg-white dark:bg-panel-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm transition-all" ${isOpen}>
