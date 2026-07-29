@@ -2,8 +2,16 @@ import { state, savePersistence } from './state.js';
 import { syncActionButtons, buildSidebarList, showToast } from './ui.js';
 
 export function isFlagged(questionId) {
-    if (!state.flaggedIds || typeof state.flaggedIds !== 'object') return false;
-    return Object.values(state.flaggedIds).some(folder => folder.includes(questionId));
+    if (!state.flaggedIds) return false;
+    if (Array.isArray(state.flaggedIds)) {
+        return state.flaggedIds.includes(questionId);
+    }
+    if (typeof state.flaggedIds === 'object') {
+        return Object.values(state.flaggedIds).some(folder => 
+            Array.isArray(folder) ? folder.includes(questionId) : folder === questionId
+        );
+    }
+    return false;
 }
 
 export function toggleFlag(questionId, folderName = "Favorites") {

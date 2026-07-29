@@ -5,6 +5,7 @@
 
 import { fetchQuestionContent } from './api.js';
 import { isFlagged, toggleFlag } from './collections.js';
+import { state } from './state.js';
 
 let currentPatternFilter = 'all';
 let currentDifficultyFilter = 'all';
@@ -51,33 +52,35 @@ export function switchView(viewName) {
     const questionsView = document.getElementById('questions-view');
     const algoTabBtn = document.getElementById('algo-tab-btn');
     const questionsTabBtn = document.getElementById('questions-tab-btn');
-    const sidebar = document.querySelector('aside');
+
+    if (!algoView || !questionsView) return;
 
     if (viewName === 'algo') {
         algoView.classList.remove('hidden');
         questionsView.classList.add('hidden');
-        if (sidebar) sidebar.classList.add('hidden', 'lg:hidden');
         
-        algoTabBtn.classList.add('border-roast-500', 'text-roast-500', 'bg-roast-500/10');
-        algoTabBtn.classList.remove('border-transparent', 'text-slate-400');
-        
+        if (algoTabBtn) {
+            algoTabBtn.classList.add('border-roast-500', 'text-roast-500', 'bg-roast-500/10');
+            algoTabBtn.classList.remove('border-transparent', 'text-slate-400');
+        }
         if (questionsTabBtn) {
             questionsTabBtn.classList.remove('border-roast-500', 'text-roast-500', 'bg-roast-500/10');
             questionsTabBtn.classList.add('border-transparent', 'text-slate-400');
         }
 
-        window.renderAlgoListGlobal && window.renderAlgoListGlobal();
+        renderAlgoList();
     } else {
         algoView.classList.add('hidden');
         questionsView.classList.remove('hidden');
-        if (sidebar) sidebar.classList.remove('hidden', 'lg:hidden');
 
         if (questionsTabBtn) {
             questionsTabBtn.classList.add('border-roast-500', 'text-roast-500', 'bg-roast-500/10');
             questionsTabBtn.classList.remove('border-transparent', 'text-slate-400');
         }
-        algoTabBtn.classList.remove('border-roast-500', 'text-roast-500', 'bg-roast-500/10');
-        algoTabBtn.classList.add('border-transparent', 'text-slate-400');
+        if (algoTabBtn) {
+            algoTabBtn.classList.remove('border-roast-500', 'text-roast-500', 'bg-roast-500/10');
+            algoTabBtn.classList.add('border-transparent', 'text-slate-400');
+        }
     }
 }
 
@@ -89,10 +92,13 @@ export function renderAlgoList(store) {
     const patternFilterContainer = document.getElementById('algo-pattern-filters');
     const totalCountEl = document.getElementById('algo-total-count');
 
-    if (!gridContainer || !store.state.questionsList) return;
+    if (!gridContainer) return;
+
+    const questionsList = (store && store.state && store.state.questionsList) || state.questionsList || [];
+    const masteredIds = (store && store.state && store.state.masteredIds) || state.masteredIds || [];
 
     // Filter questions that are algorithm breakdowns
-    const algoQuestions = store.state.questionsList.filter(q => 
+    const algoQuestions = questionsList.filter(q => 
         q.format === 'Algo Breakdown' || q.topic === 'Algorithm Breakdown' || (q.path && q.path.includes('algorithms/'))
     );
 
@@ -186,7 +192,7 @@ export function renderAlgoList(store) {
 
     // Render Cards
     gridContainer.innerHTML = filtered.map(q => {
-        const isMastered = (store.state.masteredIds || []).includes(q.id);
+        const isMastered = masteredIds.includes(q.id);
         const flagged = isFlagged(q.id);
 
         let diffClass = 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20';
@@ -252,7 +258,7 @@ export function renderAlgoList(store) {
         btn.addEventListener('click', async (e) => {
             const questionId = btn.dataset.id;
             const path = btn.dataset.path;
-            const questionObj = store.state.questionsList.find(q => q.id === questionId);
+            const questionObj = questionsList.find(q => q.id === questionId);
             openAlgoModal(questionObj, path, store);
         });
     });
