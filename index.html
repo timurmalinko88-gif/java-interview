@@ -70,98 +70,91 @@
  <!-- Visually hidden H1 for SEO and A11y -->
  <h1 class="sr-only">Java Interview Trainer & Simulator</h1>
 
- <!-- Top Modern Navigation Bar -->
- <header class="border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-panel-900 sticky top-0 z-50 transition-colors duration-300">
- <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
- <!-- Brand Logo -->
- <div class="flex items-center space-x-3">
- <div class="w-10 h-10 rounded-md bg-roast-500 flex items-center justify-center text-[#2B1904]">
- <i aria-hidden="true" class="fa-solid fa-mug-hot text-xl"></i>
- </div>
- <div>
- <span class="font-mono font-bold text-lg leading-none tracking-tight text-slate-900 dark:text-white">Java Interview</span>
- <span class="text-xs text-roast-500 font-semibold font-mono tracking-tight">Trainer & Simulator</span>
- </div>
- </div>
+  <!-- Top Modern Navigation Bar -->
+  <header class="border-b border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-panel-900/95 backdrop-blur-md sticky top-0 z-50 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-3">
+      
+      <!-- Left: Brand Logo & View Navigation Switcher -->
+      <div class="flex items-center space-x-3 lg:space-x-6">
+        <!-- Brand Logo -->
+        <div class="flex items-center space-x-2.5 flex-shrink-0">
+          <div class="w-9 h-9 rounded-lg bg-roast-500 flex items-center justify-center text-[#2B1904] shadow-sm">
+            <i aria-hidden="true" class="fa-solid fa-mug-hot text-lg"></i>
+          </div>
+          <div class="hidden sm:flex flex-col">
+            <span class="font-mono font-bold text-base leading-none tracking-tight text-slate-900 dark:text-white">Java Interview</span>
+            <span class="text-[10px] text-roast-500 font-semibold font-mono tracking-tight">Trainer & Simulator</span>
+          </div>
+        </div>
 
- <!-- Gamification Bar -->
- <div class="hidden md:flex items-center space-x-4 text-sm">
- <!-- XP -->
- <div class="flex items-center space-x-2 bg-slate-100 dark:bg-panel-900/60 px-2.5 py-1 rounded-md border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 text-xs">
- <i aria-hidden="true" class="fa-solid fa-star text-roast-500 animate-pulse"></i>
- <span id="stats-xp" class="font-bold text-roast-500">0 XP</span>
- </div>
- <!-- Rank with Progress -->
- <div class="relative flex items-center bg-slate-100 dark:bg-panel-900/60 rounded-md border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 text-xs min-w-[140px] h-9">
- <!-- Progress Bar Background -->
- <div id="rank-progress-bar" class="absolute left-0 top-0 bottom-0 bg-roast-500/15 dark:bg-roast-500/20 w-0 transition-all duration-1000"></div>
- 
- <div class="relative z-10 flex items-center space-x-2 px-3 w-full">
- <i aria-hidden="true" id="rank-icon" class="fa-solid fa-shield-halved text-roast-500"></i>
- <div class="flex flex-col justify-center">
- <span id="stats-rank" class="font-bold text-roast-500 tracking-wide uppercase text-[10px] leading-tight">Intern</span>
- <span id="rank-xp-text" class="text-[9px] text-slate-500 dark:text-slate-400 font-semibold leading-tight">0 / 500 XP</span>
- </div>
- </div>
- </div>
- <!-- Progress -->
- <div class="flex items-center space-x-2 px-2" title="Overall Completion">
- <i aria-hidden="true" class="fa-solid fa-graduation-cap text-slate-400"></i>
- <span id="stats-progress" class="font-bold text-slate-600 dark:text-slate-300 text-xs">0%</span>
- </div>
- </div>
+        <!-- View Switcher Tabs -->
+        <nav class="flex items-center space-x-1 border border-slate-200 dark:border-slate-800 p-1 rounded-xl bg-slate-100/60 dark:bg-ink-950/80">
+          <button id="questions-tab-btn" class="flex items-center space-x-2 px-3 py-1.5 rounded-lg text-xs font-bold whitespace-nowrap transition-all border border-roast-500 text-roast-500 bg-roast-500/10">
+            <i aria-hidden="true" class="fa-solid fa-book-open text-xs"></i>
+            <span>Questions</span>
+          </button>
+          <button id="algo-tab-btn" class="flex items-center space-x-2 px-3 py-1.5 rounded-lg text-xs font-bold whitespace-nowrap transition-all border border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-800/50">
+            <i aria-hidden="true" class="fa-solid fa-code text-xs"></i>
+            <span>Algo Breakdown</span>
+          </button>
+        </nav>
+      </div>
 
- <!-- View Switcher Tabs -->
- <div class="flex items-center space-x-1 border border-slate-200 dark:border-slate-800 p-1 rounded-lg bg-slate-100/50 dark:bg-panel-900/60">
- <button id="questions-tab-btn" class="flex items-center space-x-1.5 px-3 py-1 rounded-md text-xs font-bold transition-all border border-roast-500 text-roast-500 bg-roast-500/10">
- <i aria-hidden="true" class="fa-solid fa-book-open text-xs"></i>
- <span>Questions</span>
- </button>
- <button id="algo-tab-btn" class="flex items-center space-x-1.5 px-3 py-1 rounded-md text-xs font-bold transition-all border border-transparent text-slate-400 hover:text-slate-200">
- <i aria-hidden="true" class="fa-solid fa-code text-xs"></i>
- <span>Algo Breakdown</span>
- </button>
- </div>
+      <!-- Right: Stats & Action Controls -->
+      <div class="flex items-center space-x-2 sm:space-x-3">
+        <!-- Gamification Bar (Compact) -->
+        <div class="hidden xl:flex items-center space-x-3 text-xs bg-slate-100 dark:bg-ink-950/60 px-3 py-1.5 rounded-xl border border-slate-200 dark:border-slate-800">
+          <div class="flex items-center space-x-1.5">
+            <i aria-hidden="true" class="fa-solid fa-star text-roast-500 text-xs"></i>
+            <span id="stats-xp" class="font-bold text-roast-500">0 XP</span>
+          </div>
+          <span class="text-slate-300 dark:text-slate-700">|</span>
+          <div class="flex items-center space-x-1.5">
+            <i aria-hidden="true" id="rank-icon" class="fa-solid fa-shield-halved text-roast-500"></i>
+            <span id="stats-rank" class="font-bold text-slate-700 dark:text-slate-300 uppercase text-[10px]">Intern</span>
+            <span id="rank-xp-text" class="hidden">0 / 500 XP</span>
+          </div>
+          <span class="text-slate-300 dark:text-slate-700">|</span>
+          <div class="flex items-center space-x-1 text-slate-500" title="Overall Completion">
+            <i aria-hidden="true" class="fa-solid fa-graduation-cap text-slate-400 text-xs"></i>
+            <span id="stats-progress" class="font-bold text-slate-700 dark:text-slate-300">0%</span>
+          </div>
+        </div>
 
- <!-- System Utilities -->
- <div class="flex items-center space-x-3">
- <!-- Adaptive Learning Mode -->
- <button id="adaptive-btn" class="flex items-center space-x-1 bg-transparent border border-slate-300 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-roast-500 hover:text-roast-500 px-3 py-1.5 rounded-md text-sm font-semibold transition-colors">
- <i aria-hidden="true" class="fa-solid fa-graduation-cap"></i>
- <span class="hidden sm:inline">Adaptive Plan</span>
- </button>
- 
- <!-- My Roadmap Button (hidden by default) -->
- <button id="my-roadmap-btn" class="hidden items-center space-x-1 border border-slate-300 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-roast-500 hover:text-roast-500 px-3 py-1.5 rounded-md text-sm font-semibold transition-colors">
- <i aria-hidden="true" class="fa-solid fa-map"></i>
- <span class="hidden sm:inline">My Roadmap</span>
- </button>
+        <!-- System Utility Action Buttons -->
+        <button id="adaptive-btn" class="flex items-center space-x-1.5 border border-slate-200 dark:border-slate-800 hover:border-roast-500 hover:text-roast-500 px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all text-slate-600 dark:text-slate-300 bg-white dark:bg-panel-900">
+          <i aria-hidden="true" class="fa-solid fa-graduation-cap"></i>
+          <span class="hidden md:inline">Adaptive Plan</span>
+        </button>
+        
+        <button id="my-roadmap-btn" class="hidden items-center space-x-1.5 border border-slate-200 dark:border-slate-800 hover:border-roast-500 hover:text-roast-500 px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all text-slate-600 dark:text-slate-300 bg-white dark:bg-panel-900">
+          <i aria-hidden="true" class="fa-solid fa-map"></i>
+          <span class="hidden md:inline">My Roadmap</span>
+        </button>
 
- <!-- Spaced Repetition Mode / Blitz -->
- <button id="blitz-btn" class="flex items-center space-x-1 bg-roast-500 hover:bg-roast-600 text-[#2B1904] px-3 py-1.5 rounded-md text-sm font-semibold transition-colors">
- <i aria-hidden="true" class="fa-solid fa-bolt"></i>
- <span class="hidden sm:inline">Blitz Quiz</span>
- </button>
+        <button id="blitz-btn" class="flex items-center space-x-1.5 bg-roast-500 hover:bg-roast-600 text-[#2B1904] px-3.5 py-1.5 rounded-xl text-xs font-extrabold whitespace-nowrap transition-all shadow-sm">
+          <i aria-hidden="true" class="fa-solid fa-bolt"></i>
+          <span class="hidden sm:inline">Blitz Quiz</span>
+        </button>
 
- <!-- My Stats Button -->
- <button id="my-stats-btn" class="flex items-center space-x-1 bg-transparent border border-slate-300 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:border-roast-500 hover:text-roast-500 px-3 py-1.5 rounded-md text-sm font-semibold transition-colors">
- <i aria-hidden="true" class="fa-solid fa-chart-pie"></i>
- <span class="hidden lg:inline">My Stats</span>
- </button>
+        <button id="my-stats-btn" class="flex items-center space-x-1.5 border border-slate-200 dark:border-slate-800 hover:border-roast-500 hover:text-roast-500 px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all text-slate-600 dark:text-slate-300 bg-white dark:bg-panel-900" title="My Stats">
+          <i aria-hidden="true" class="fa-solid fa-chart-pie"></i>
+          <span class="hidden lg:inline">Stats</span>
+        </button>
 
- <!-- Dark Mode Toggle Button -->
- <button id="theme-toggle" aria-label="Toggle theme" class="w-10 h-10 rounded-md border border-slate-300 dark:border-slate-700 text-slate-500 dark:text-slate-400 hover:border-roast-500 flex items-center justify-center transition-colors">
- <i aria-hidden="true" class="fa-solid fa-sun hidden dark:block text-roast-500"></i>
- <i aria-hidden="true" class="fa-solid fa-moon dark:hidden text-slate-700"></i>
- </button>
- </div>
- </div>
- 
- <!-- Global Progress Bar -->
- <div class="w-full bg-slate-100 dark:bg-panel-900 h-1">
- <div id="global-progress" class="bg-roast-500 h-full w-0 transition-all duration-500"></div>
- </div>
- </header>
+        <button id="theme-toggle" aria-label="Toggle theme" class="w-9 h-9 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:border-roast-500 flex items-center justify-center transition-colors flex-shrink-0">
+          <i aria-hidden="true" class="fa-solid fa-sun hidden dark:block text-roast-500"></i>
+          <i aria-hidden="true" class="fa-solid fa-moon dark:hidden text-slate-700"></i>
+        </button>
+      </div>
+
+    </div>
+    
+    <!-- Global Progress Bar -->
+    <div class="w-full bg-slate-100 dark:bg-panel-900 h-1">
+      <div id="global-progress" class="bg-roast-500 h-full w-0 transition-all duration-500"></div>
+    </div>
+  </header>
 
   <!-- Content Wrapper -->
   <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col relative">
