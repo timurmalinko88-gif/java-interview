@@ -114,6 +114,8 @@ def build_index():
         folder_name = os.path.basename(os.path.dirname(filepath))
         if folder_name.startswith('general-'):
             topic = folder_name.replace('general-', '').replace('-', ' ').title()
+        elif question_id.startswith('algo-') or folder_name == 'algorithms':
+            topic = 'Algorithm Breakdown'
         elif question_id.startswith('general-'):
             topic = 'General'
         elif question_id.startswith('jvm-'):
@@ -182,6 +184,10 @@ def build_index():
             'title': title if title else os.path.splitext(os.path.basename(filepath))[0],
             'time': time_val,
             'frequency': freq_val,
+            'pattern': metadata.get('pattern', ''),
+            'time_complexity': metadata.get('time_complexity', metadata.get('timecomplexity', '')),
+            'space_complexity': metadata.get('space_complexity', metadata.get('spacecomplexity', '')),
+            'leetcode_id': metadata.get('leetcode_id', ''),
             'related': metadata.get('related_questions', metadata.get('related', [])),
             'tags': metadata.get('tags', [])
         })

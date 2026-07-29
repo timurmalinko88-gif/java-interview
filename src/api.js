@@ -22,5 +22,16 @@ export async function fetchQuestions() {
     loadPersistence();
     updateStatsUI(); // Initialize XP and Rank
     buildSidebarList();
+    if (typeof window.renderAlgoListGlobal === 'function') {
+        window.renderAlgoListGlobal();
+    }
     await loadQuestion(0);
+}
+
+export async function fetchQuestionContent(path) {
+    const response = await fetch(path);
+    if (!response.ok) {
+        throw new Error(`Failed to fetch question at ${path}`);
+    }
+    return await response.text();
 }

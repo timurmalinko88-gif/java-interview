@@ -59,9 +59,9 @@
  }
  }
  </script>
-  <script type="module" crossorigin src="/java-interview/assets/index-C3ZnyPvR.js"></script>
+  <script type="module" crossorigin src="/java-interview/assets/index-D_J3zCZu.js"></script>
   <link rel="modulepreload" crossorigin href="/java-interview/assets/rolldown-runtime-BX80bFGj.js">
-  <link rel="stylesheet" crossorigin href="/java-interview/assets/index-LwhZPfUX.css">
+  <link rel="stylesheet" crossorigin href="/java-interview/assets/index-JsEkeSEs.css">
 <link rel="manifest" href="/java-interview/manifest.webmanifest"></head>
 <body class="bg-lightBg dark:bg-ink-950 text-slate-800 dark:text-slate-200 min-h-screen flex flex-col font-sans transition-colors duration-300">
  <!-- Ambient glowing background for glassmorphism -->
@@ -114,6 +114,18 @@
  </div>
  </div>
 
+ <!-- View Switcher Tabs -->
+ <div class="flex items-center space-x-1 border border-slate-200 dark:border-slate-800 p-1 rounded-lg bg-slate-100/50 dark:bg-panel-900/60">
+ <button id="questions-tab-btn" class="flex items-center space-x-1.5 px-3 py-1 rounded-md text-xs font-bold transition-all border border-roast-500 text-roast-500 bg-roast-500/10">
+ <i aria-hidden="true" class="fa-solid fa-book-open text-xs"></i>
+ <span>Questions</span>
+ </button>
+ <button id="algo-tab-btn" class="flex items-center space-x-1.5 px-3 py-1 rounded-md text-xs font-bold transition-all border border-transparent text-slate-400 hover:text-slate-200">
+ <i aria-hidden="true" class="fa-solid fa-code text-xs"></i>
+ <span>Algo Breakdown</span>
+ </button>
+ </div>
+
  <!-- System Utilities -->
  <div class="flex items-center space-x-3">
  <!-- Adaptive Learning Mode -->
@@ -154,11 +166,14 @@
  </div>
  </header>
 
- <!-- Content Wrapper -->
- <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col lg:flex-row gap-6 relative">
- 
- <!-- Sidebar: Navigation & Filters -->
- <aside class="w-full lg:w-80 flex-shrink-0 flex flex-col space-y-4 lg:sticky lg:top-24 lg:h-[calc(100vh-8rem)] pb-6 lg:pb-0">
+  <!-- Content Wrapper -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col relative">
+  
+  <!-- Questions View Container -->
+  <div id="questions-view" class="flex flex-col lg:flex-row gap-6 w-full">
+  
+  <!-- Sidebar: Navigation & Filters -->
+  <aside class="w-full lg:w-80 flex-shrink-0 flex flex-col space-y-4 lg:sticky lg:top-24 lg:h-[calc(100vh-8rem)] pb-6 lg:pb-0">
  
  <!-- Filters Card -->
  <div class="bg-white dark:bg-panel-900 p-5 rounded-lg border border-slate-200 dark:border-slate-800 shadow-sm space-y-4 transition-colors duration-300">
@@ -475,8 +490,75 @@
  <strong class="text-slate-800 dark:text-slate-200 font-bold">Study Tip:</strong> Read the question and take at least 1 minute to mentally formulate your answer or solve the code before viewing the correct answer. Use the vivid associations in the "Analogy" section for easy memorization.
  </div>
  </div>
- </section>
- </main>
+  </div> <!-- End #questions-view -->
+
+  <!-- Algorithm Breakdown View Container -->
+  <div id="algo-view" class="w-full space-y-6 hidden">
+    <!-- Algo Header Banner -->
+    <div class="bg-gradient-to-r from-slate-900 via-panel-900 to-slate-900 text-white p-6 sm:p-8 rounded-2xl border border-slate-800 shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+      <div>
+        <div class="flex items-center space-x-2 mb-2">
+          <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-roast-500 text-[#2B1904]">LeetCode Q&A Engine</span>
+          <span id="algo-total-count" class="text-xs text-slate-400 font-mono">15 Algorithms</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Algorithmic Pattern Breakdown</h2>
+        <p class="text-slate-400 text-sm mt-1 max-w-2xl">Master the top 14 interview-proven patterns with conceptual step-by-step breakdowns, visual dry-runs, and production Java code without live coding stress.</p>
+      </div>
+
+      <!-- Search & Filter Controls -->
+      <div class="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto">
+        <div class="relative w-full sm:w-64">
+          <input type="text" id="algo-search-input" placeholder="Search algo or pattern..." class="w-full bg-panel-900/80 border border-slate-700 rounded-xl px-4 py-2 pl-9 text-xs text-white focus:outline-none focus:ring-2 focus:ring-roast-500">
+          <i aria-hidden="true" class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-400 text-xs"></i>
+        </div>
+        <select id="algo-diff-filter" class="bg-panel-900/80 border border-slate-700 text-xs text-white rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-roast-500">
+          <option value="all">All Difficulties</option>
+          <option value="Junior">Junior (Easy)</option>
+          <option value="Middle">Middle (Medium)</option>
+          <option value="Senior">Senior (Hard)</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Pattern Pills Filter Bar -->
+    <div class="flex items-center space-x-2 overflow-x-auto pb-2 scrollbar-none" id="algo-pattern-filters">
+      <!-- Injected dynamically by algorithms.js -->
+    </div>
+
+    <!-- Algorithm Cards Grid -->
+    <div id="algo-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- Injected dynamically by algorithms.js -->
+    </div>
+  </div>
+  </main>
+
+  <!-- Algorithm Breakdown Step Modal -->
+  <dialog id="algo-modal" class="bg-white dark:bg-panel-900 text-slate-800 dark:text-slate-200 rounded-2xl border border-slate-200 dark:border-slate-800 p-0 shadow-2xl max-w-4xl w-full backdrop:bg-slate-950/70">
+    <div class="flex flex-col max-h-[90vh]">
+      <!-- Modal Header -->
+      <div class="p-5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50/50 dark:bg-ink-950/50">
+        <div>
+          <div class="flex items-center space-x-2 mb-1">
+            <span id="algo-modal-pattern" class="px-2.5 py-0.5 rounded-md text-[10px] font-bold bg-roast-500/10 border border-roast-500/20 text-roast-500">Two Pointers</span>
+            <span id="algo-modal-diff" class="px-2.5 py-0.5 rounded-md text-[10px] font-bold bg-emerald-500/10 border border-emerald-500/20 text-emerald-500">Middle</span>
+            <span class="text-xs text-slate-400 font-mono">Time: <strong id="algo-modal-time-comp" class="text-slate-700 dark:text-slate-200">O(N)</strong></span>
+            <span class="text-xs text-slate-400 font-mono">Space: <strong id="algo-modal-space-comp" class="text-slate-700 dark:text-slate-200">O(1)</strong></span>
+          </div>
+          <h3 id="algo-modal-title" class="font-bold text-lg text-slate-900 dark:text-white">Algorithm Title</h3>
+        </div>
+        <form method="dialog">
+          <button class="w-8 h-8 rounded-lg border border-slate-300 dark:border-slate-700 hover:border-roast-500 flex items-center justify-center text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
+            <i aria-hidden="true" class="fa-solid fa-xmark"></i>
+          </button>
+        </form>
+      </div>
+
+      <!-- Modal Scrollable Content -->
+      <div id="algo-modal-body" class="p-6 overflow-y-auto space-y-6">
+        <!-- Loaded dynamically -->
+      </div>
+    </div>
+  </dialog>
 
  <!-- Toasts feedback notifications dynamically injected -->
  <div id="toast" role="status" aria-live="polite" class="fixed bottom-6 right-6 z-50 bg-white/95 dark:bg-[#151c2c]/95 text-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-800/80 rounded-lg px-5 py-4 shadow-md flex items-center space-x-3 pointer-events-none opacity-0 transform translate-y-8 transition-all duration-500 ease-out">

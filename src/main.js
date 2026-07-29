@@ -7,17 +7,23 @@ import { updateStatsDashboard } from './stats.js';
 import { checkAdaptiveProgression } from './adaptive.js';
 import { evaluateSR } from './spacedRepetition.js';
 import { toggleFlag } from './collections.js';
-
-import "./style.css";
-
-
 import { fetchQuestions } from './api.js';
+import { initAlgoView, renderAlgoList, switchView } from './algorithms.js';
 
 // --- app.js ---
 // Initialize and load dynamic questions indexes
 document.addEventListener('DOMContentLoaded', () => {
   if (typeof marked !== 'undefined') {
     marked.use({ breaks: true });
+  }
+
+  // Initialize Algorithm Breakdown View
+  initAlgoView({ state });
+  window.renderAlgoListGlobal = () => renderAlgoList({ state });
+
+  const questionsTabBtn = document.getElementById('questions-tab-btn');
+  if (questionsTabBtn) {
+    questionsTabBtn.addEventListener('click', () => switchView('questions'));
   }
 
   // Load and initialize core engine
