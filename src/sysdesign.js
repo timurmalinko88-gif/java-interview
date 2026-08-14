@@ -77,25 +77,25 @@ export function renderSysDesignList(searchQuery = '') {
     }
 
     gridContainer.innerHTML = filtered.map(s => {
-        let diffClass = 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20';
-        if (s.difficulty === 'Senior') diffClass = 'bg-amber-500/10 text-amber-500 border-amber-500/20';
-        if (s.difficulty === 'Architect') diffClass = 'bg-rose-500/10 text-rose-500 border-rose-500/20';
+        let diffClass = 'bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:border-emerald-800/40';
+        if (s.difficulty === 'Senior') diffClass = 'bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-950/40 dark:text-blue-300 dark:border-blue-800/40';
+        if (s.difficulty === 'Architect') diffClass = 'bg-purple-50 text-purple-700 border-purple-200 dark:bg-purple-950/40 dark:text-purple-300 dark:border-purple-800/40';
 
         const tagBadges = s.tags.slice(0, 3).map(t => `
-            <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 font-semibold border border-slate-200 dark:border-slate-700/60">
+            <span class="px-2 py-0.5 rounded-[6px] text-[10px] font-mono bg-paper-50 dark:bg-panel-700 text-slate-600 dark:text-slate-300 font-medium border border-mist-50 dark:border-slate-800">
                 ${t}
             </span>
         `).join('');
 
         return `
-            <div class="bg-white dark:bg-panel-900 border border-slate-200 dark:border-slate-800 rounded-xl p-6 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+            <div class="bg-white dark:bg-panel-900 border border-mist-50 dark:border-slate-800 rounded-[12px] p-6 shadow-soft hover:shadow-attio transition-all flex flex-col justify-between group">
                 <div>
                     <!-- Badges -->
                     <div class="flex items-center justify-between gap-2 mb-3">
-                        <span class="px-2.5 py-0.5 rounded-md border text-[11px] font-bold ${diffClass}">
+                        <span class="px-2.5 py-0.5 rounded-[7px] border text-[11px] font-semibold ${diffClass}">
                             ${s.difficulty}
                         </span>
-                        <span class="px-2.5 py-0.5 rounded-md border border-roast-500/20 bg-roast-500/10 text-roast-500 text-[11px] font-bold">
+                        <span class="px-2.5 py-0.5 rounded-[7px] border border-roast-500/20 bg-roast-500/10 text-roast-500 text-[11px] font-semibold">
                             ${s.category}
                         </span>
                     </div>
@@ -117,12 +117,12 @@ export function renderSysDesignList(searchQuery = '') {
                 </div>
 
                 <!-- Action Button -->
-                <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                <div class="pt-4 border-t border-mist-50 dark:border-slate-800/80 flex items-center justify-between">
                     <span class="text-xs text-slate-400 font-mono flex items-center space-x-1">
                         <i class="fa-solid fa-diagram-project text-roast-500 text-xs"></i>
                         <span>${s.steps.length} Simulation Steps</span>
                     </span>
-                    <button class="open-sysdesign-btn bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-roast-500 dark:hover:bg-roast-500 dark:hover:text-[#2B1904] px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center space-x-2 shadow-sm" data-id="${s.id}">
+                    <button class="open-sysdesign-btn bg-ink-800 dark:bg-panel-700 text-white hover:bg-roast-500 dark:hover:bg-roast-500 px-4 py-2 rounded-[10px] text-xs font-semibold transition-all flex items-center space-x-2 shadow-sm" data-id="${s.id}">
                         <i class="fa-solid fa-play text-[10px]"></i>
                         <span>Explore & Simulate</span>
                     </button>

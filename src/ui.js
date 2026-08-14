@@ -50,35 +50,35 @@ function buildSidebarList() {
     const flagged = isFlagged(q.id);
     const isActive = idx === state.currentIndex;
 
-    // Color configuration for difficulties
-    let diffStyle = 'bg-pine-500/10 text-success-600 dark:text-success-400';
-    if (q.difficulty === 'Middle') diffStyle = 'bg-roast-500/10 text-roast-500 dark:text-roast-500';
-    if (q.difficulty === 'Senior') diffStyle = 'bg-purple-500/10 text-purple-600 dark:text-purple-400';
+    // Attio difficulty badge styling
+    let diffStyle = 'bg-emerald-50 text-emerald-700 border border-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:border-emerald-800/40';
+    if (q.difficulty === 'Middle') diffStyle = 'bg-blue-50 text-blue-700 border border-blue-200 dark:bg-blue-950/40 dark:text-blue-300 dark:border-blue-800/40';
+    if (q.difficulty === 'Senior') diffStyle = 'bg-purple-50 text-purple-700 border border-purple-200 dark:bg-purple-950/40 dark:text-purple-300 dark:border-purple-800/40';
     const button = document.createElement('button');
-    button.className = `w-full text-left p-4 transition-all duration-200 border-l-4 flex flex-col space-y-2 ${isActive ? 'bg-slate-100 dark:bg-panel-900/80 border-roast-500' : 'border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/30'}`;
+    button.className = `w-full text-left p-3.5 transition-all duration-200 border-l-[3px] flex flex-col space-y-1.5 rounded-r-[8px] ${isActive ? 'bg-white dark:bg-panel-900 border-l-roast-500 shadow-attio-subtle font-medium' : 'border-transparent hover:bg-paper-50/80 dark:hover:bg-panel-700/40'}`;
 
     // Extract short question label
     const shortQuestionText = q.title || q.question || q.id;
     button.innerHTML = `
             <div class="flex items-center justify-between w-full">
                 <div class="flex items-center space-x-1.5">
-                    <span class="text-[10px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wider ${diffStyle}">
+                    <span class="text-[10px] font-semibold px-2 py-0.5 rounded-[7px] uppercase tracking-wider ${diffStyle}">
                         ${q.difficulty}
                     </span>
-                    <span class="text-[10px] font-semibold text-slate-400 bg-slate-100 dark:bg-panel-900 px-1.5 py-0.5 rounded">
+                    <span class="text-[10px] font-medium text-slate-500 dark:text-slate-400 bg-paper-50 dark:bg-panel-900 border border-mist-50 dark:border-slate-800 px-2 py-0.5 rounded-[7px]">
                         ${q.topic}
                     </span>
                 </div>
-                <div class="flex items-center space-x-1">
+                <div class="flex items-center space-x-1.5">
                     ${isMastered ? '<i class="fa-solid fa-circle-check text-pine-500 text-xs"></i>' : ''}
                     ${flagged ? '<i class="fa-solid fa-bookmark text-roast-500 text-xs"></i>' : ''}
-                    ${state.srData[q.id] && new Date(state.srData[q.id].nextReviewDate) <= new Date() ? '<span class="px-1 py-0.5 bg-rose-500/10 text-rose-500 rounded text-[9px] font-bold uppercase tracking-wider animate-pulse">Due</span>' : ''}
+                    ${state.srData[q.id] && new Date(state.srData[q.id].nextReviewDate) <= new Date() ? '<span class="px-1.5 py-0.5 bg-rose-500/10 text-rose-500 border border-rose-500/20 rounded-[7px] text-[9px] font-semibold uppercase tracking-wider animate-pulse">Due</span>' : ''}
                 </div>
             </div>
-            <h4 class="text-xs font-bold leading-snug line-clamp-2 ${isActive ? 'text-roast-500' : 'text-slate-700 dark:text-slate-300'}">
+            <h4 class="text-xs font-semibold leading-snug line-clamp-2 ${isActive ? 'text-roast-500' : 'text-slate-900 dark:text-slate-200'}">
                 ${shortQuestionText}
             </h4>
-        `;
+    `;
     button.addEventListener("click", async () => {
       state.currentIndex = idx;
       state.isAnswerVisible = false;
@@ -316,13 +316,13 @@ async function loadQuestion(indexOrQuestion) {
   // Update Header Meta Immediately for maximum responsiveness
   const diffEl = document.getElementById('active-difficulty');
   diffEl.textContent = q.difficulty;
-  diffEl.className = 'px-2.5 py-1 rounded-lg text-xs font-bold uppercase tracking-wider ';
+  diffEl.className = 'px-2.5 py-0.5 rounded-[7px] text-[11px] font-semibold uppercase tracking-wider border ';
   if (q.difficulty === 'Junior') {
-    diffEl.classList.add('bg-pine-500/10', 'text-success-600', 'dark:text-success-400');
+    diffEl.classList.add('bg-emerald-50', 'text-emerald-700', 'border-emerald-200', 'dark:bg-emerald-950/40', 'dark:text-emerald-300', 'dark:border-emerald-800/40');
   } else if (q.difficulty === 'Middle') {
-    diffEl.classList.add('bg-roast-500/10', 'text-roast-500', 'dark:text-roast-500');
+    diffEl.classList.add('bg-blue-50', 'text-blue-700', 'border-blue-200', 'dark:bg-blue-950/40', 'dark:text-blue-300', 'dark:border-blue-800/40');
   } else {
-    diffEl.classList.add('bg-purple-500/10', 'text-purple-600', 'dark:text-purple-400');
+    diffEl.classList.add('bg-purple-50', 'text-purple-700', 'border-purple-200', 'dark:bg-purple-950/40', 'dark:text-purple-300', 'dark:border-purple-800/40');
   }
   document.getElementById('active-topic').textContent = q.topic;
   document.getElementById('active-id').textContent = '#' + q.id;
@@ -333,13 +333,13 @@ async function loadQuestion(indexOrQuestion) {
   const extraMetaContainer = document.getElementById('extra-metadata');
   extraMetaContainer.innerHTML = '';
   if (q.time) {
-    extraMetaContainer.innerHTML += `<span class="bg-slate-100 dark:bg-panel-900/60 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 text-xs px-2.5 py-1 rounded-md flex items-center gap-1"><i class="fa-regular fa-clock text-slate-400"></i> ${q.time}</span>`;
+    extraMetaContainer.innerHTML += `<span class="bg-paper-50 dark:bg-panel-900 border border-mist-50 dark:border-slate-800 text-slate-600 dark:text-slate-400 text-xs px-2.5 py-1 rounded-[7px] flex items-center gap-1.5 font-medium"><i class="fa-regular fa-clock text-slate-400"></i> ${q.time}</span>`;
   }
   if (q.frequency) {
-    extraMetaContainer.innerHTML += `<span class="bg-slate-100 dark:bg-panel-900/60 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 text-xs px-2.5 py-1 rounded-md flex items-center gap-1"><i class="fa-solid fa-circle text-roast-500 text-[8px]"></i> Frequency: ${q.frequency}</span>`;
+    extraMetaContainer.innerHTML += `<span class="bg-paper-50 dark:bg-panel-900 border border-mist-50 dark:border-slate-800 text-slate-600 dark:text-slate-400 text-xs px-2.5 py-1 rounded-[7px] flex items-center gap-1.5 font-medium"><i class="fa-solid fa-circle text-roast-500 text-[8px]"></i> Frequency: ${q.frequency}</span>`;
   }
   if (q.related && q.related.length > 0) {
-    extraMetaContainer.innerHTML += `<span class="bg-slate-100 dark:bg-panel-900/60 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 text-xs px-2.5 py-1 rounded-md flex items-center gap-1"><i class="fa-solid fa-link text-slate-400"></i> ${Array.isArray(q.related) ? q.related.join(', ') : q.related}</span>`;
+    extraMetaContainer.innerHTML += `<span class="bg-paper-50 dark:bg-panel-900 border border-mist-50 dark:border-slate-800 text-slate-600 dark:text-slate-400 text-xs px-2.5 py-1 rounded-[7px] flex items-center gap-1.5 font-medium"><i class="fa-solid fa-link text-slate-400"></i> ${Array.isArray(q.related) ? q.related.join(', ') : q.related}</span>`;
   }
 
   // Reset action bookmark/completed status indicators

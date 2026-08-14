@@ -124,18 +124,18 @@ export function renderAlgoList(store) {
         
         const patterns = Array.from(patternsSet).sort();
         let pillsHtml = `
-            <button class="algo-pill-btn active px-3.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap border transition-all shadow-sm bg-roast-500 text-[#2B1904] border-roast-500 hover:scale-[1.02] flex items-center" data-pattern="all">
+            <button class="algo-pill-btn active px-3.5 py-1.5 rounded-[7px] text-xs font-semibold whitespace-nowrap border transition-all shadow-sm bg-roast-500 text-white border-roast-500 hover:opacity-95 flex items-center" data-pattern="all">
                 <span>All Patterns</span>
-                <span class="ml-1.5 px-1.5 py-0.5 rounded-md bg-black/15 text-[#2B1904] text-[10px] font-extrabold">${algoQuestions.length}</span>
+                <span class="ml-1.5 px-1.5 py-0.5 rounded-[5px] bg-white/20 text-white text-[10px] font-bold">${algoQuestions.length}</span>
             </button>
         `;
 
         patterns.forEach(p => {
             const count = algoQuestions.filter(q => q.pattern === p).length;
             pillsHtml += `
-                <button class="algo-pill-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap border transition-all shadow-sm border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 bg-white dark:bg-panel-900 hover:border-roast-500 hover:text-roast-500 hover:scale-[1.02] flex items-center" data-pattern="${p}">
+                <button class="algo-pill-btn px-3.5 py-1.5 rounded-[7px] text-xs font-semibold whitespace-nowrap border transition-all shadow-sm border-mist-50 dark:border-slate-800 text-slate-600 dark:text-slate-300 bg-white dark:bg-panel-900 hover:border-roast-500 hover:text-roast-500 flex items-center" data-pattern="${p}">
                     <span>${p}</span>
-                    <span class="pill-badge ml-1.5 px-1.5 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 text-[10px] font-extrabold">${count}</span>
+                    <span class="pill-badge ml-1.5 px-1.5 py-0.5 rounded-[5px] bg-paper-50 dark:bg-panel-700 text-slate-500 dark:text-slate-400 text-[10px] font-bold">${count}</span>
                 </button>
             `;
         });
@@ -146,20 +146,20 @@ export function renderAlgoList(store) {
         patternFilterContainer.querySelectorAll('.algo-pill-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 patternFilterContainer.querySelectorAll('.algo-pill-btn').forEach(b => {
-                    b.classList.remove('bg-roast-500', 'text-[#2B1904]', 'border-roast-500');
-                    b.classList.add('border-slate-200', 'dark:border-slate-800', 'text-slate-600', 'dark:text-slate-300', 'bg-white', 'dark:bg-panel-900');
+                    b.classList.remove('bg-roast-500', 'text-white', 'border-roast-500');
+                    b.classList.add('border-mist-50', 'dark:border-slate-800', 'text-slate-600', 'dark:text-slate-300', 'bg-white', 'dark:bg-panel-900');
                     const badge = b.querySelector('.pill-badge');
                     if (badge) {
-                        badge.className = 'pill-badge ml-2 px-1.5 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 text-[10px] font-extrabold';
+                        badge.className = 'pill-badge ml-2 px-1.5 py-0.5 rounded-[5px] bg-paper-50 dark:bg-panel-700 text-slate-500 dark:text-slate-400 text-[10px] font-bold';
                     }
                 });
                 
                 const target = e.currentTarget;
-                target.classList.remove('border-slate-200', 'dark:border-slate-800', 'text-slate-600', 'dark:text-slate-300', 'bg-white', 'dark:bg-panel-900');
-                target.classList.add('bg-roast-500', 'text-[#2B1904]', 'border-roast-500');
+                target.classList.remove('border-mist-50', 'dark:border-slate-800', 'text-slate-600', 'dark:text-slate-300', 'bg-white', 'dark:bg-panel-900');
+                target.classList.add('bg-roast-500', 'text-white', 'border-roast-500');
                 const activeBadge = target.querySelector('.pill-badge');
                 if (activeBadge) {
-                    activeBadge.className = 'pill-badge ml-2 px-1.5 py-0.5 rounded-md bg-black/15 text-[#2B1904] text-[10px] font-extrabold';
+                    activeBadge.className = 'pill-badge ml-2 px-1.5 py-0.5 rounded-[5px] bg-white/20 text-white text-[10px] font-bold';
                 }
 
                 currentPatternFilter = target.dataset.pattern;
@@ -220,26 +220,26 @@ export function renderAlgoList(store) {
         const isMastered = masteredIds.includes(q.id);
         const flagged = isFlagged(q.id);
 
-        let diffClass = 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20';
-        if (q.difficulty === 'Middle') diffClass = 'bg-amber-500/10 text-amber-500 border-amber-500/20';
-        if (q.difficulty === 'Senior') diffClass = 'bg-rose-500/10 text-rose-500 border-rose-500/20';
+        let diffClass = 'bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:border-emerald-800/40';
+        if (q.difficulty === 'Middle') diffClass = 'bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-950/40 dark:text-blue-300 dark:border-blue-800/40';
+        if (q.difficulty === 'Senior') diffClass = 'bg-purple-50 text-purple-700 border-purple-200 dark:bg-purple-950/40 dark:text-purple-300 dark:border-purple-800/40';
 
         return `
-            <div class="bg-white dark:bg-panel-900 border ${isMastered ? 'border-emerald-500/50 dark:border-emerald-500/30' : 'border-slate-200 dark:border-slate-800'} rounded-xl p-5 shadow-sm hover:shadow-md transition-all flex flex-col justify-between relative group">
+            <div class="bg-white dark:bg-panel-900 border ${isMastered ? 'border-emerald-500/50 dark:border-emerald-500/30' : 'border-mist-50 dark:border-slate-800'} rounded-[12px] p-5 shadow-soft hover:shadow-attio transition-all flex flex-col justify-between relative group">
                 <div>
                     <!-- Header Badges -->
                     <div class="flex items-center justify-between gap-2 mb-3">
                         <div class="flex items-center space-x-2">
-                            <span class="px-2.5 py-0.5 rounded-md border text-[11px] font-bold ${diffClass}">
+                            <span class="px-2.5 py-0.5 rounded-[7px] border text-[11px] font-semibold ${diffClass}">
                                 ${q.difficulty}
                             </span>
-                            <span class="px-2.5 py-0.5 rounded-md border border-roast-500/20 bg-roast-500/10 text-roast-500 text-[11px] font-bold">
+                            <span class="px-2.5 py-0.5 rounded-[7px] border border-roast-500/20 bg-roast-500/10 text-roast-500 text-[11px] font-semibold">
                                 ${q.pattern || 'Algorithmic'}
                             </span>
                         </div>
                         <div class="flex items-center space-x-1.5 text-xs text-slate-400">
-                            ${q.leetcode_id ? `<span class="font-mono text-[10px] bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded font-semibold text-slate-500">LC #${q.leetcode_id}</span>` : ''}
-                            <button class="flag-algo-btn ${flagged ? 'text-amber-500' : 'text-slate-300 hover:text-amber-500'} transition-colors p-1" data-id="${q.id}" title="Bookmark">
+                            ${q.leetcode_id ? `<span class="font-mono text-[10px] bg-paper-50 dark:bg-panel-700 border border-mist-50 dark:border-slate-800 px-1.5 py-0.5 rounded-[5px] font-semibold text-slate-600 dark:text-slate-300">LC #${q.leetcode_id}</span>` : ''}
+                            <button class="flag-algo-btn ${flagged ? 'text-roast-500' : 'text-slate-300 hover:text-roast-500'} transition-colors p-1" data-id="${q.id}" title="Bookmark">
                                 <i class="fa-solid fa-bookmark"></i>
                             </button>
                         </div>
@@ -264,12 +264,12 @@ export function renderAlgoList(store) {
                 </div>
 
                 <!-- Footer Action -->
-                <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                <div class="pt-3 border-t border-mist-50 dark:border-slate-800/80 flex items-center justify-between">
                     <span class="text-xs text-slate-400 font-semibold flex items-center space-x-1">
                         <i class="fa-solid fa-fire text-amber-500 text-[10px]"></i>
                         <span>Freq: ${q.frequency || 'High'}</span>
                     </span>
-                    <button class="open-algo-breakdown-btn bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-roast-500 dark:hover:bg-roast-500 dark:hover:text-[#2B1904] px-3.5 py-1.5 rounded-lg text-xs font-bold transition-colors flex items-center space-x-1.5" data-id="${q.id}" data-path="${q.path}">
+                    <button class="open-algo-breakdown-btn bg-ink-800 dark:bg-panel-700 text-white hover:bg-roast-500 dark:hover:bg-roast-500 px-3.5 py-1.5 rounded-[10px] text-xs font-semibold transition-colors flex items-center space-x-1.5" data-id="${q.id}" data-path="${q.path}">
                         <span>Breakdown</span>
                         <i class="fa-solid fa-arrow-right text-[10px]"></i>
                     </button>
