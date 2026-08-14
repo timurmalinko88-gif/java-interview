@@ -45,6 +45,11 @@ module.exports = {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace']
+      },
+      boxShadow: {
+        'soft': '0 4px 20px -2px rgba(0, 0, 0, 0.05)',
+        'soft-dark': '0 4px 20px -2px rgba(0, 0, 0, 0.4)',
+        'glow': '0 0 15px rgba(193, 127, 43, 0.3)',
       }
     }
   },
