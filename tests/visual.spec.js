@@ -26,6 +26,7 @@ test.describe('Visual and UI/UX Inspection Suite', () => {
   test.beforeEach(async ({ page }) => {
     errors = [];
     page.on('pageerror', (err) => errors.push(err.message));
+    page.on('console', (msg) => console.log('PAGE LOG:', msg.text()));
   });
 
   test('Desktop (1440x900) - Questions View, Answer Reveal, Modals and Dark Mode', async ({ page }) => {
