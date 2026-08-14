@@ -139,6 +139,10 @@ document.addEventListener('DOMContentLoaded', () => {
         state.isAnswerVisible = false;
         await loadQuestion(state.currentIndex);
         buildSidebarList();
+        if (window.innerWidth < 1024) {
+          const card = document.getElementById('main-content-card');
+          if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       }
     });
   }
@@ -150,6 +154,10 @@ document.addEventListener('DOMContentLoaded', () => {
         state.isAnswerVisible = false;
         await loadQuestion(state.currentIndex);
         buildSidebarList();
+        if (window.innerWidth < 1024) {
+          const card = document.getElementById('main-content-card');
+          if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       }
     });
   }

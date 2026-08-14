@@ -59,8 +59,8 @@
  }
  }
  </script>
-  <script type="module" crossorigin src="/java-interview/assets/index-CowQ0FcM.js"></script>
-  <link rel="stylesheet" crossorigin href="/java-interview/assets/index-B9Jf_fcf.css">
+  <script type="module" crossorigin src="/java-interview/assets/index-BtkhMiTT.js"></script>
+  <link rel="stylesheet" crossorigin href="/java-interview/assets/index-7RDRBA6T.css">
 <link rel="manifest" href="/java-interview/manifest.webmanifest"></head>
 <body class="bg-lightBg dark:bg-ink-950 text-slate-800 dark:text-slate-200 min-h-screen flex flex-col font-sans transition-colors duration-300">
  <!-- Ambient glowing background for glassmorphism -->
@@ -73,15 +73,15 @@
  <h1 class="sr-only">Java Interview Trainer & Simulator</h1>
 
    <!-- Top Modern Navigation Bar -->
-   <header class="border-b border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-panel-900/95 backdrop-blur-md sticky top-0 z-50 transition-colors duration-300">
-    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-2">
+    <header class="border-b border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-panel-900/95 backdrop-blur-md sticky top-0 z-50 transition-colors duration-300">
+     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-1 sm:gap-2">
       
       <!-- Left: Brand Logo & View Navigation Switcher -->
-      <div class="flex items-center space-x-2 sm:space-x-4">
+      <div class="flex items-center space-x-1.5 sm:space-x-4 shrink-0">
         <!-- Brand Logo -->
-        <div class="flex items-center space-x-2 flex-shrink-0">
-          <div class="w-9 h-9 rounded-md bg-roast-500 flex items-center justify-center text-[#2B1904] shadow-sm">
-            <i aria-hidden="true" class="fa-solid fa-mug-hot text-lg"></i>
+        <div class="flex items-center space-x-1.5 sm:space-x-2 shrink-0">
+          <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-md bg-roast-500 flex items-center justify-center text-[#2B1904] shadow-sm">
+            <i aria-hidden="true" class="fa-solid fa-mug-hot text-base sm:text-lg"></i>
           </div>
           <div class="hidden xl:flex flex-col">
             <span class="font-mono font-bold text-base leading-none tracking-tight text-slate-900 dark:text-white">Java Interview</span>
@@ -90,16 +90,16 @@
         </div>
 
         <!-- View Switcher Tabs (All 3 tabs guaranteed 100% visible!) -->
-        <nav class="flex items-center space-x-1 border border-slate-200 dark:border-slate-800 p-1 rounded-md bg-slate-100/60 dark:bg-ink-950/80 flex-shrink-0">
-          <button id="questions-tab-btn" title="Questions" class="flex items-center space-x-1.5 px-2.5 sm:px-3 py-1.5 rounded-md text-xs font-bold whitespace-nowrap transition-all border border-roast-500 text-roast-500 bg-roast-500/10 flex-shrink-0">
+        <nav class="flex items-center space-x-0.5 sm:space-x-1 border border-slate-200 dark:border-slate-800 p-0.5 sm:p-1 rounded-md bg-slate-100/60 dark:bg-ink-950/80 shrink-0">
+          <button id="questions-tab-btn" title="Questions" class="flex items-center space-x-1 sm:space-x-1.5 px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-xs font-bold whitespace-nowrap transition-all border border-roast-500 text-roast-500 bg-roast-500/10 shrink-0">
             <i aria-hidden="true" class="fa-solid fa-book-open text-xs"></i>
             <span class="hidden sm:inline">Questions</span>
           </button>
-          <button id="algo-tab-btn" title="Algorithms" class="flex items-center space-x-1.5 px-2.5 sm:px-3 py-1.5 rounded-md text-xs font-bold whitespace-nowrap transition-all border border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 flex-shrink-0">
+          <button id="algo-tab-btn" title="Algorithms" class="flex items-center space-x-1 sm:space-x-1.5 px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-xs font-bold whitespace-nowrap transition-all border border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 shrink-0">
             <i aria-hidden="true" class="fa-solid fa-code text-xs"></i>
             <span class="hidden sm:inline">Algorithms</span>
           </button>
-          <button id="sysdesign-tab-btn" title="System Design" class="flex items-center space-x-1.5 px-2.5 sm:px-3 py-1.5 rounded-md text-xs font-bold whitespace-nowrap transition-all border border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 flex-shrink-0">
+          <button id="sysdesign-tab-btn" title="System Design" class="flex items-center space-x-1 sm:space-x-1.5 px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-xs font-bold whitespace-nowrap transition-all border border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 shrink-0">
             <i aria-hidden="true" class="fa-solid fa-diagram-project text-xs"></i>
             <span class="hidden sm:inline">System Design</span>
           </button>
@@ -107,7 +107,7 @@
       </div>
 
       <!-- Right: Stats & Action Controls -->
-      <div class="flex items-center space-x-1.5 sm:space-x-2 flex-shrink-0">
+      <div class="flex items-center space-x-1 sm:space-x-2 shrink-0">
         <!-- Hidden elements kept for JS ID reference safety -->
         <span id="stats-xp" class="hidden">0 XP</span>
         <span id="stats-rank" class="hidden">Intern</span>
@@ -115,7 +115,7 @@
         <span id="stats-progress" class="hidden">0%</span>
 
         <!-- System Utility Action Buttons -->
-        <button id="adaptive-btn" title="Adaptive Plan" class="flex items-center justify-center space-x-1.5 border border-slate-200 dark:border-slate-800 hover:border-roast-500 hover:text-roast-500 px-2.5 sm:px-3 py-1.5 rounded-md text-xs font-bold whitespace-nowrap transition-all text-slate-600 dark:text-slate-300 bg-white dark:bg-panel-900">
+        <button id="adaptive-btn" title="Adaptive Plan" class="hidden md:flex items-center justify-center space-x-1.5 border border-slate-200 dark:border-slate-800 hover:border-roast-500 hover:text-roast-500 px-2.5 sm:px-3 py-1.5 rounded-md text-xs font-bold whitespace-nowrap transition-all text-slate-600 dark:text-slate-300 bg-white dark:bg-panel-900">
           <i aria-hidden="true" class="fa-solid fa-graduation-cap"></i>
           <span class="hidden xl:inline">Adaptive Plan</span>
         </button>
@@ -125,21 +125,21 @@
           <span class="hidden xl:inline">My Roadmap</span>
         </button>
 
-        <button id="blitz-btn" title="Blitz Quiz" class="flex items-center justify-center space-x-1.5 bg-roast-500 hover:bg-roast-600 text-[#2B1904] px-2.5 sm:px-3.5 py-1.5 rounded-md text-xs font-extrabold whitespace-nowrap transition-all shadow-sm">
+        <button id="blitz-btn" title="Blitz Quiz" class="flex items-center justify-center space-x-1 sm:space-x-1.5 bg-roast-500 hover:bg-roast-600 text-[#2B1904] px-2 sm:px-3.5 py-1.5 rounded-md text-xs font-extrabold whitespace-nowrap transition-all shadow-sm">
           <i aria-hidden="true" class="fa-solid fa-bolt"></i>
           <span class="hidden xl:inline">Blitz Quiz</span>
         </button>
 
-        <button id="my-stats-btn" title="My Stats" class="flex items-center justify-center space-x-1.5 border border-slate-200 dark:border-slate-800 hover:border-roast-500 hover:text-roast-500 px-2.5 sm:px-3 py-1.5 rounded-md text-xs font-bold whitespace-nowrap transition-all text-slate-600 dark:text-slate-300 bg-white dark:bg-panel-900">
+        <button id="my-stats-btn" title="My Stats" class="flex items-center justify-center space-x-1 sm:space-x-1.5 border border-slate-200 dark:border-slate-800 hover:border-roast-500 hover:text-roast-500 px-2 sm:px-3 py-1.5 rounded-md text-xs font-bold whitespace-nowrap transition-all text-slate-600 dark:text-slate-300 bg-white dark:bg-panel-900">
           <i aria-hidden="true" class="fa-solid fa-chart-pie"></i>
           <span class="hidden xl:inline">Stats</span>
         </button>
 
-        <button id="shortcuts-btn" aria-label="Keyboard shortcuts" title="Keyboard Shortcuts (?)" class="w-9 h-9 rounded-md border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:border-roast-500 flex items-center justify-center transition-colors flex-shrink-0">
+        <button id="shortcuts-btn" aria-label="Keyboard shortcuts" title="Keyboard Shortcuts (?)" class="hidden sm:flex w-9 h-9 rounded-md border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:border-roast-500 items-center justify-center transition-colors shrink-0">
           <i aria-hidden="true" class="fa-solid fa-keyboard"></i>
         </button>
 
-        <button id="theme-toggle" aria-label="Toggle theme" title="Toggle Theme" class="w-9 h-9 rounded-md border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:border-roast-500 flex items-center justify-center transition-colors flex-shrink-0">
+        <button id="theme-toggle" aria-label="Toggle theme" title="Toggle Theme" class="w-8 h-8 sm:w-9 sm:h-9 rounded-md border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:border-roast-500 flex items-center justify-center transition-colors shrink-0">
           <i aria-hidden="true" class="fa-solid fa-sun hidden dark:block text-roast-500"></i>
           <i aria-hidden="true" class="fa-solid fa-moon dark:hidden text-slate-700"></i>
         </button>
@@ -154,7 +154,7 @@
   </header>
 
   <!-- Content Wrapper -->
-  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col relative">
+  <main class="flex-1 max-w-7xl w-full mx-auto px-2 sm:px-6 lg:px-8 py-4 sm:py-6 flex flex-col relative overflow-x-hidden">
   
   <!-- Questions View Container -->
   <div id="questions-view" class="flex flex-col lg:flex-row gap-6 w-full">

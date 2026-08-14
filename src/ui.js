@@ -84,6 +84,10 @@ function buildSidebarList() {
       state.isAnswerVisible = false;
       await loadQuestion(idx);
       buildSidebarList();
+      if (window.innerWidth < 1024) {
+        const card = document.getElementById('main-content-card');
+        if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     });
     fragment.appendChild(button);
   });
