@@ -74,8 +74,9 @@ pre, .prose pre {
     color: #1c1917 !important;
     border: 1px solid #E5E1D8 !important;
     box-shadow: none;
-    max-width: 100%;
-    overflow-x: auto;
+    max-width: 100% !important;
+    width: 100%;
+    overflow-x: auto !important;
     box-sizing: border-box;
 }
 
@@ -83,7 +84,9 @@ pre code, .prose pre code {
     color: #1c1917 !important;
     background-color: transparent !important;
     max-width: 100%;
-    display: inline-block;
+    display: block;
+    overflow-x: auto;
+    white-space: pre;
 }
 
 .dark pre, .dark .prose pre {

@@ -100,4 +100,26 @@ test.describe('Visual and UI/UX Inspection Suite', () => {
 
     expect(errors.length).toBe(0);
   });
+
+  test('Tablet / Laptop (1024x768 & 1180x820) - Question ai-020 with long code lines does not clip right edge', async ({ page }) => {
+    await page.setViewportSize({ width: 1024, height: 768 });
+    await page.goto('/#q=ai-020');
+    await page.waitForLoadState('networkidle');
+    await page.waitForTimeout(500);
+
+    // Verify card is within viewport width
+    const cardBounds = await page.locator('#main-content-card').boundingBox();
+    expect(cardBounds.x + cardBounds.width).toBeLessThanOrEqual(1024);
+
+    // Verify Mastered button is fully visible
+    const masteredBounds = await page.locator('#mastered-btn').boundingBox();
+    expect(masteredBounds.x + masteredBounds.width).toBeLessThanOrEqual(cardBounds.x + cardBounds.width);
+
+    // Verify YouTube button is fully visible
+    const youtubeBounds = await page.locator('#btn-youtube').boundingBox();
+    expect(youtubeBounds.x + youtubeBounds.width).toBeLessThanOrEqual(cardBounds.x + cardBounds.width);
+
+    await page.screenshot({ path: path.join(SCREENSHOT_DIR, 'laptop_ai020_fixed.png') });
+    expect(errors.length).toBe(0);
+  });
 });
