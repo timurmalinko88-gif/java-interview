@@ -55,27 +55,27 @@ function buildSidebarList() {
     if (q.difficulty === 'Middle') diffStyle = 'bg-blue-50 text-blue-700 border border-blue-200 dark:bg-blue-950/40 dark:text-blue-300 dark:border-blue-800/40';
     if (q.difficulty === 'Senior') diffStyle = 'bg-purple-50 text-purple-700 border border-purple-200 dark:bg-purple-950/40 dark:text-purple-300 dark:border-purple-800/40';
     const button = document.createElement('button');
-    button.className = `w-full text-left p-3.5 transition-all duration-200 border-l-[3px] flex flex-col space-y-1.5 rounded-r-[8px] ${isActive ? 'bg-white dark:bg-panel-900 border-l-roast-500 shadow-attio-subtle font-medium' : 'border-transparent hover:bg-paper-50/80 dark:hover:bg-panel-700/40'}`;
+    button.className = `w-full text-left p-3.5 transition-all duration-200 border-l-[3px] flex flex-col space-y-1.5 rounded-r-[7px] ${isActive ? 'bg-white dark:bg-panel-900 border-l-roast-500 shadow-attio-subtle font-medium' : 'border-transparent hover:bg-paper-50/80 dark:hover:bg-panel-700/40'}`;
 
     // Extract short question label
     const shortQuestionText = q.title || q.question || q.id;
     button.innerHTML = `
             <div class="flex items-center justify-between w-full">
                 <div class="flex items-center space-x-1.5">
-                    <span class="text-[10px] font-semibold px-2 py-0.5 rounded-[7px] uppercase tracking-wider ${diffStyle}">
+                    <span class="text-[10px] font-medium px-2 py-0.5 rounded-[7px] uppercase tracking-wider ${diffStyle}">
                         ${q.difficulty}
                     </span>
-                    <span class="text-[10px] font-medium text-slate-500 dark:text-slate-400 bg-paper-50 dark:bg-panel-900 border border-mist-50 dark:border-slate-800 px-2 py-0.5 rounded-[7px]">
+                    <span class="text-[10px] font-medium text-slate-500 dark:text-slate-400 bg-paper-50 dark:bg-panel-900 border border-slate-200 dark:border-slate-800 px-2 py-0.5 rounded-[7px]">
                         ${q.topic}
                     </span>
                 </div>
                 <div class="flex items-center space-x-1.5">
                     ${isMastered ? '<i class="fa-solid fa-circle-check text-pine-500 text-xs"></i>' : ''}
                     ${flagged ? '<i class="fa-solid fa-bookmark text-roast-500 text-xs"></i>' : ''}
-                    ${state.srData[q.id] && new Date(state.srData[q.id].nextReviewDate) <= new Date() ? '<span class="px-1.5 py-0.5 bg-rose-500/10 text-rose-500 border border-rose-500/20 rounded-[7px] text-[9px] font-semibold uppercase tracking-wider animate-pulse">Due</span>' : ''}
+                    ${state.srData[q.id] && new Date(state.srData[q.id].nextReviewDate) <= new Date() ? '<span class="px-1.5 py-0.5 bg-rose-500/10 text-rose-500 border border-rose-500/20 rounded-[7px] text-[9px] font-medium uppercase tracking-wider animate-pulse">Due</span>' : ''}
                 </div>
             </div>
-            <h4 class="text-xs font-semibold leading-snug line-clamp-2 ${isActive ? 'text-roast-500' : 'text-slate-900 dark:text-slate-200'}">
+            <h4 class="text-xs font-medium leading-snug line-clamp-2 ${isActive ? 'text-roast-500' : 'text-slate-900 dark:text-slate-200'}">
                 ${shortQuestionText}
             </h4>
     `;
@@ -181,9 +181,9 @@ export function clearAllFilters() {
   state.statusFilter = 'all';
   document.querySelectorAll('.status-chip').forEach(btn => {
     if (btn.getAttribute('data-status') === 'all') {
-      btn.className = 'status-chip active px-2.5 py-1 rounded-md font-bold bg-roast-500 text-white transition-all';
+      btn.className = 'status-chip active px-2.5 py-1 rounded-[7px] font-medium bg-roast-500 text-white transition-all shrink-0';
     } else {
-      btn.className = 'status-chip px-2.5 py-1 rounded-md font-bold text-slate-500 bg-slate-100 dark:bg-panel-900 hover:text-roast-500 transition-all flex items-center gap-1';
+      btn.className = 'status-chip px-2.5 py-1 rounded-[7px] font-medium text-slate-600 dark:text-slate-400 bg-paper-50 dark:bg-panel-900 border border-slate-200 dark:border-slate-800 hover:text-roast-500 hover:border-roast-500/50 transition-all flex items-center gap-1 shrink-0';
     }
   });
   document.querySelectorAll('.diff-chip').forEach(el => {
@@ -316,7 +316,7 @@ async function loadQuestion(indexOrQuestion) {
   // Update Header Meta Immediately for maximum responsiveness
   const diffEl = document.getElementById('active-difficulty');
   diffEl.textContent = q.difficulty;
-  diffEl.className = 'px-2.5 py-0.5 rounded-[7px] text-[11px] font-semibold uppercase tracking-wider border ';
+  diffEl.className = 'px-2.5 py-0.5 rounded-[7px] text-[11px] font-medium uppercase tracking-wider border ';
   if (q.difficulty === 'Junior') {
     diffEl.classList.add('bg-emerald-50', 'text-emerald-700', 'border-emerald-200', 'dark:bg-emerald-950/40', 'dark:text-emerald-300', 'dark:border-emerald-800/40');
   } else if (q.difficulty === 'Middle') {
@@ -333,13 +333,13 @@ async function loadQuestion(indexOrQuestion) {
   const extraMetaContainer = document.getElementById('extra-metadata');
   extraMetaContainer.innerHTML = '';
   if (q.time) {
-    extraMetaContainer.innerHTML += `<span class="bg-paper-50 dark:bg-panel-900 border border-mist-50 dark:border-slate-800 text-slate-600 dark:text-slate-400 text-xs px-2.5 py-1 rounded-[7px] flex items-center gap-1.5 font-medium"><i class="fa-regular fa-clock text-slate-400"></i> ${q.time}</span>`;
+    extraMetaContainer.innerHTML += `<span class="bg-paper-50 dark:bg-panel-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 text-xs px-2.5 py-1 rounded-[7px] flex items-center gap-1.5 font-medium"><i class="fa-regular fa-clock text-slate-400"></i> ${q.time}</span>`;
   }
   if (q.frequency) {
-    extraMetaContainer.innerHTML += `<span class="bg-paper-50 dark:bg-panel-900 border border-mist-50 dark:border-slate-800 text-slate-600 dark:text-slate-400 text-xs px-2.5 py-1 rounded-[7px] flex items-center gap-1.5 font-medium"><i class="fa-solid fa-circle text-roast-500 text-[8px]"></i> Frequency: ${q.frequency}</span>`;
+    extraMetaContainer.innerHTML += `<span class="bg-paper-50 dark:bg-panel-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 text-xs px-2.5 py-1 rounded-[7px] flex items-center gap-1.5 font-medium"><i class="fa-solid fa-circle text-roast-500 text-[8px]"></i> Frequency: ${q.frequency}</span>`;
   }
   if (q.related && q.related.length > 0) {
-    extraMetaContainer.innerHTML += `<span class="bg-paper-50 dark:bg-panel-900 border border-mist-50 dark:border-slate-800 text-slate-600 dark:text-slate-400 text-xs px-2.5 py-1 rounded-[7px] flex items-center gap-1.5 font-medium"><i class="fa-solid fa-link text-slate-400"></i> ${Array.isArray(q.related) ? q.related.join(', ') : q.related}</span>`;
+    extraMetaContainer.innerHTML += `<span class="bg-paper-50 dark:bg-panel-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 text-xs px-2.5 py-1 rounded-[7px] flex items-center gap-1.5 font-medium"><i class="fa-solid fa-link text-slate-400"></i> ${Array.isArray(q.related) ? q.related.join(', ') : q.related}</span>`;
   }
 
   // Reset action bookmark/completed status indicators
@@ -416,6 +416,11 @@ async function loadQuestion(indexOrQuestion) {
 
   // Render Markdown Question Content
   questionTextEl.innerHTML = marked.parse(q.loadedQuestion || "No question content.");
+  if (typeof hljs !== 'undefined') {
+    questionTextEl.querySelectorAll('pre code').forEach((block) => {
+      hljs.highlightElement(block);
+    });
+  }
 
   // Display code section if Java source is present
   const codeSec = document.getElementById('code-section');
@@ -478,7 +483,7 @@ function renderNoQuestionsFoundState() {
             </div>
             <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Nothing Found</h3>
             <p class="text-sm text-slate-400 max-w-sm">Reset filters to see the full list of preparation questions.</p>
-            <button id="btn-empty-reset" class="mt-4 bg-roast-500 hover:bg-roast-600 text-white font-bold text-xs px-4 py-2 rounded-md transition-all">
+            <button id="btn-empty-reset" class="mt-4 bg-roast-500 hover:bg-roast-600 text-white font-medium text-xs px-4 py-2 rounded-[10px] shadow-sm transition-all">
                 Reset Filters
             </button>
         </div>
@@ -526,7 +531,13 @@ export function renderAnswerContent() {
   const ansBtnText = document.getElementById('btn-answer-text');
   const ansBtnIcon = document.getElementById('btn-answer-icon');
   answerSection.classList.remove('hidden');
-  document.getElementById('answer-content').innerHTML = marked.parse(q.loadedAnswer || "No answer content.");
+  const answerContentEl = document.getElementById('answer-content');
+  answerContentEl.innerHTML = marked.parse(q.loadedAnswer || "No answer content.");
+  if (typeof hljs !== 'undefined') {
+    answerContentEl.querySelectorAll('pre code').forEach((block) => {
+      hljs.highlightElement(block);
+    });
+  }
   
   if (!state.isMockMode) {
     const srEvalBar = document.getElementById('sr-eval-bar');
@@ -566,14 +577,14 @@ function showLevelUpAnimation(rankInfo) {
     overlay.className = 'fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm transition-opacity duration-500 opacity-0';
     
     overlay.innerHTML = `
-        <div class="bg-white dark:bg-ink-950 rounded-md p-10 flex flex-col items-center text-center shadow-md transform scale-90 transition-transform duration-500 border border-slate-200 dark:border-slate-800">
-            <div class="w-24 h-24 mb-6 rounded-full bg-roast-500 flex items-center justify-center text-5xl text-white shadow-lg  animate-bounce">
+        <div class="bg-white/95 dark:bg-panel-900/95 glass-panel rounded-[10px] p-8 sm:p-10 flex flex-col items-center text-center shadow-attio-elevated transform scale-90 transition-transform duration-500 border border-slate-200 dark:border-slate-800">
+            <div class="w-24 h-24 mb-6 rounded-full bg-roast-500 flex items-center justify-center text-5xl text-white shadow-lg animate-bounce">
                 <i class="fa-solid ${rankInfo.icon}"></i>
             </div>
             <h2 class="text-3xl font-black text-roast-500 mb-2">LEVEL UP!</h2>
-            <p class="text-slate-600 dark:text-slate-400 text-lg">You are now a <span class="font-bold ${rankInfo.color}">${rankInfo.name}</span></p>
-            <p class="text-sm text-slate-500 mt-4 max-w-xs">Keep up the great work! Consistent studying leads to interview success.</p>
-            <button class="mt-8 bg-roast-500 hover:bg-roast-600 text-white px-8 py-3 rounded-md font-bold shadow-md  transition-colors">Continue</button>
+            <p class="text-slate-600 dark:text-slate-400 text-lg font-medium">You are now a <span class="font-bold ${rankInfo.color}">${rankInfo.name}</span></p>
+            <p class="text-sm text-slate-500 mt-4 max-w-xs font-normal">Keep up the great work! Consistent studying leads to interview success.</p>
+            <button class="mt-8 bg-roast-500 hover:bg-roast-600 text-white px-8 py-3 rounded-[10px] font-medium shadow-sm transition-colors">Continue</button>
         </div>
     `;
     

@@ -59,8 +59,8 @@
  }
  }
  </script>
-  <script type="module" crossorigin src="/java-interview/assets/index-DE3zxoDI.js"></script>
-  <link rel="stylesheet" crossorigin href="/java-interview/assets/index-Rt6HvwC0.css">
+  <script type="module" crossorigin src="/java-interview/assets/index-BLRcNBZM.js"></script>
+  <link rel="stylesheet" crossorigin href="/java-interview/assets/index-XkhzU8L9.css">
 <link rel="manifest" href="/java-interview/manifest.webmanifest"></head>
 <body class="bg-lightBg dark:bg-ink-950 text-slate-800 dark:text-slate-200 min-h-screen flex flex-col font-sans transition-colors duration-300">
  <!-- Ambient glowing background for glassmorphism -->
@@ -80,7 +80,7 @@
       <div class="flex items-center space-x-1.5 sm:space-x-4 shrink-0">
         <!-- Brand Logo -->
         <div class="flex items-center space-x-1.5 sm:space-x-2 shrink-0">
-          <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-md bg-roast-500 flex items-center justify-center text-[#2B1904] shadow-sm">
+          <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-[10px] bg-roast-500 flex items-center justify-center text-white shadow-sm">
             <i aria-hidden="true" class="fa-solid fa-mug-hot text-base sm:text-lg"></i>
           </div>
           <div class="hidden xl:flex flex-col">
@@ -90,16 +90,16 @@
         </div>
 
         <!-- View Switcher Tabs (All 3 tabs guaranteed 100% visible!) -->
-        <nav class="flex items-center space-x-0.5 sm:space-x-1 border border-slate-200 dark:border-slate-800 p-0.5 sm:p-1 rounded-md bg-slate-100/60 dark:bg-ink-950/80 shrink-0">
-          <button id="questions-tab-btn" title="Questions" class="flex items-center space-x-1 sm:space-x-1.5 px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-xs font-bold whitespace-nowrap transition-all border border-roast-500 text-roast-500 bg-roast-500/10 shrink-0">
+        <nav class="flex items-center space-x-0.5 sm:space-x-1 border border-mist-50 dark:border-slate-800 p-0.5 sm:p-1 rounded-[10px] bg-paper-50/60 dark:bg-ink-950/80 shrink-0">
+          <button id="questions-tab-btn" title="Questions" class="flex items-center space-x-1 sm:space-x-1.5 px-2 sm:px-3 py-1 sm:py-1.5 rounded-[10px] text-xs font-medium whitespace-nowrap transition-all border border-roast-500 text-roast-500 bg-roast-500/10 shrink-0">
             <i aria-hidden="true" class="fa-solid fa-book-open text-xs"></i>
             <span class="hidden sm:inline">Questions</span>
           </button>
-          <button id="algo-tab-btn" title="Algorithms" class="flex items-center space-x-1 sm:space-x-1.5 px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-xs font-bold whitespace-nowrap transition-all border border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 shrink-0">
+          <button id="algo-tab-btn" title="Algorithms" class="flex items-center space-x-1 sm:space-x-1.5 px-2 sm:px-3 py-1 sm:py-1.5 rounded-[10px] text-xs font-medium whitespace-nowrap transition-all border border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-paper-50 dark:hover:bg-panel-700/60 shrink-0">
             <i aria-hidden="true" class="fa-solid fa-code text-xs"></i>
             <span class="hidden sm:inline">Algorithms</span>
           </button>
-          <button id="sysdesign-tab-btn" title="System Design" class="flex items-center space-x-1 sm:space-x-1.5 px-2 sm:px-3 py-1 sm:py-1.5 rounded-md text-xs font-bold whitespace-nowrap transition-all border border-transparent text-slate-400 hover:text-slate-200 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 shrink-0">
+          <button id="sysdesign-tab-btn" title="System Design" class="flex items-center space-x-1 sm:space-x-1.5 px-2 sm:px-3 py-1 sm:py-1.5 rounded-[10px] text-xs font-medium whitespace-nowrap transition-all border border-transparent text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-paper-50 dark:hover:bg-panel-700/60 shrink-0">
             <i aria-hidden="true" class="fa-solid fa-diagram-project text-xs"></i>
             <span class="hidden sm:inline">System Design</span>
           </button>
@@ -115,31 +115,31 @@
         <span id="stats-progress" class="hidden">0%</span>
 
         <!-- System Utility Action Buttons -->
-        <button id="adaptive-btn" title="Adaptive Plan" class="hidden md:flex items-center justify-center space-x-1.5 border border-slate-200 dark:border-slate-800 hover:border-roast-500 hover:text-roast-500 px-2.5 sm:px-3 py-1.5 rounded-md text-xs font-bold whitespace-nowrap transition-all text-slate-600 dark:text-slate-300 bg-white dark:bg-panel-900">
+        <button id="adaptive-btn" title="Adaptive Plan" class="hidden md:flex items-center justify-center space-x-1.5 border border-mist-50 dark:border-slate-800 hover:border-roast-500 hover:text-roast-500 px-2.5 sm:px-3 py-1.5 rounded-[10px] text-xs font-medium whitespace-nowrap transition-all text-slate-600 dark:text-slate-300 bg-white dark:bg-panel-900 shadow-xs">
           <i aria-hidden="true" class="fa-solid fa-graduation-cap"></i>
           <span class="hidden xl:inline">Adaptive Plan</span>
         </button>
         
-        <button id="my-roadmap-btn" title="My Roadmap" class="hidden items-center justify-center space-x-1.5 border border-slate-200 dark:border-slate-800 hover:border-roast-500 hover:text-roast-500 px-2.5 sm:px-3 py-1.5 rounded-md text-xs font-bold whitespace-nowrap transition-all text-slate-600 dark:text-slate-300 bg-white dark:bg-panel-900">
+        <button id="my-roadmap-btn" title="My Roadmap" class="hidden items-center justify-center space-x-1.5 border border-mist-50 dark:border-slate-800 hover:border-roast-500 hover:text-roast-500 px-2.5 sm:px-3 py-1.5 rounded-[10px] text-xs font-medium whitespace-nowrap transition-all text-slate-600 dark:text-slate-300 bg-white dark:bg-panel-900 shadow-xs">
           <i aria-hidden="true" class="fa-solid fa-map"></i>
           <span class="hidden xl:inline">My Roadmap</span>
         </button>
 
-        <button id="blitz-btn" title="Blitz Quiz" class="flex items-center justify-center space-x-1 sm:space-x-1.5 bg-roast-500 hover:bg-roast-600 text-[#2B1904] px-2 sm:px-3.5 py-1.5 rounded-md text-xs font-extrabold whitespace-nowrap transition-all shadow-sm">
+        <button id="blitz-btn" title="Blitz Quiz" class="flex items-center justify-center space-x-1 sm:space-x-1.5 bg-roast-500 hover:bg-roast-600 text-white px-2 sm:px-3.5 py-1.5 rounded-[10px] text-xs font-medium whitespace-nowrap transition-all shadow-sm">
           <i aria-hidden="true" class="fa-solid fa-bolt"></i>
           <span class="hidden xl:inline">Blitz Quiz</span>
         </button>
 
-        <button id="my-stats-btn" title="My Stats" class="flex items-center justify-center space-x-1 sm:space-x-1.5 border border-slate-200 dark:border-slate-800 hover:border-roast-500 hover:text-roast-500 px-2 sm:px-3 py-1.5 rounded-md text-xs font-bold whitespace-nowrap transition-all text-slate-600 dark:text-slate-300 bg-white dark:bg-panel-900">
+        <button id="my-stats-btn" title="My Stats" class="flex items-center justify-center space-x-1 sm:space-x-1.5 border border-mist-50 dark:border-slate-800 hover:border-roast-500 hover:text-roast-500 px-2 sm:px-3 py-1.5 rounded-[10px] text-xs font-medium whitespace-nowrap transition-all text-slate-600 dark:text-slate-300 bg-white dark:bg-panel-900 shadow-xs">
           <i aria-hidden="true" class="fa-solid fa-chart-pie"></i>
           <span class="hidden xl:inline">Stats</span>
         </button>
 
-        <button id="shortcuts-btn" aria-label="Keyboard shortcuts" title="Keyboard Shortcuts (?)" class="hidden sm:flex w-9 h-9 rounded-md border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:border-roast-500 items-center justify-center transition-colors shrink-0">
+        <button id="shortcuts-btn" aria-label="Keyboard shortcuts" title="Keyboard Shortcuts (?)" class="hidden sm:flex w-9 h-9 rounded-[10px] border border-mist-50 dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:border-roast-500 hover:text-roast-500 items-center justify-center transition-colors shrink-0 bg-white dark:bg-panel-900 shadow-xs">
           <i aria-hidden="true" class="fa-solid fa-keyboard"></i>
         </button>
 
-        <button id="theme-toggle" aria-label="Toggle theme" title="Toggle Theme" class="w-8 h-8 sm:w-9 sm:h-9 rounded-md border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:border-roast-500 flex items-center justify-center transition-colors shrink-0">
+        <button id="theme-toggle" aria-label="Toggle theme" title="Toggle Theme" class="w-8 h-8 sm:w-9 sm:h-9 rounded-[10px] border border-mist-50 dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:border-roast-500 flex items-center justify-center transition-colors shrink-0 bg-white dark:bg-panel-900 shadow-xs">
           <i aria-hidden="true" class="fa-solid fa-sun hidden dark:block text-roast-500"></i>
           <i aria-hidden="true" class="fa-solid fa-moon dark:hidden text-slate-700"></i>
         </button>
@@ -162,205 +162,204 @@
   <!-- Sidebar: Navigation & Filters -->
   <aside class="w-full lg:w-80 flex-shrink-0 flex flex-col space-y-4 lg:sticky lg:top-24 lg:h-[calc(100vh-8rem)] pb-6 lg:pb-0">
  
- <!-- Filters Card -->
- <div class="bg-white dark:bg-panel-900 p-5 rounded-lg border border-slate-200 dark:border-slate-800 shadow-sm space-y-4 transition-colors duration-300">
- <div class="flex items-center justify-between">
- <h2 class="font-bold text-slate-900 dark:text-white flex items-center space-x-2">
- <i aria-hidden="true" class="fa-solid fa-sliders text-roast-500"></i>
- <span>Filters</span>
- </h2>
- <button id="clear-filters" class="text-xs text-roast-500 hover:underline hidden">Reset</button>
- </div>
- 
- <!-- Search Input -->
- <div class="relative">
- <input type="text" id="search-input" aria-label="Search questions" placeholder="Search questions..." 
- class="w-full bg-slate-50 dark:bg-ink-950 border border-slate-200 dark:border-slate-800 rounded-md px-4 py-2.5 pl-10 text-sm focus:outline-none focus:ring-2 focus:ring-roast-500 focus:border-transparent transition-all">
- <i aria-hidden="true" class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400 text-sm"></i>
- </div>
+  <!-- Filters Card -->
+  <div class="bg-white dark:bg-panel-900 p-5 rounded-[10px] border border-slate-200 dark:border-slate-800 shadow-soft space-y-4 transition-colors duration-300">
+  <div class="flex items-center justify-between">
+  <h2 class="font-semibold text-slate-900 dark:text-white flex items-center space-x-2 text-sm">
+  <i aria-hidden="true" class="fa-solid fa-sliders text-roast-500"></i>
+  <span>Filters</span>
+  </h2>
+  <button id="clear-filters" class="text-xs text-roast-500 font-medium hover:underline hidden">Reset</button>
+  </div>
+  
+  <!-- Search Input -->
+  <div class="relative">
+  <input type="text" id="search-input" aria-label="Search questions" placeholder="Search questions..." 
+  class="w-full bg-slate-50 dark:bg-ink-950 border border-slate-200 dark:border-slate-800 rounded-[10px] px-4 py-2.5 pl-10 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-roast-500 focus:border-transparent transition-all">
+  <i aria-hidden="true" class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400 text-sm"></i>
+  </div>
 
- <!-- Roadmap Selector -->
-            <div class="space-y-1.5 mb-4">
-                <label for="roadmap-filter" class="text-[13px] font-medium text-slate-500 dark:text-slate-400">Learning Tracks (Roadmaps)</label>
-                <select id="roadmap-filter" class="w-full bg-paper-50 dark:bg-panel-900 text-slate-800 dark:text-slate-200 border border-border-light dark:border-slate-800 rounded-md px-3 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-roast-500 transition-colors">
-                    <option value="none">--- Select a Learning Track ---</option>
-                    <option value="junior">Junior Express</option>
-                    <option value="middle">Middle Spring & Microservices</option>
-                    <option value="senior">Senior Architect Track</option>
-                    <option value="ai">AI & Modern Java 21 Track</option>
-                </select>
-            </div>
+  <!-- Roadmap Selector -->
+             <div class="space-y-1.5 mb-4">
+                 <label for="roadmap-filter" class="text-[13px] font-medium text-slate-500 dark:text-slate-400">Learning Tracks (Roadmaps)</label>
+                 <select id="roadmap-filter" class="w-full bg-white dark:bg-panel-900 text-slate-800 dark:text-slate-200 border border-mist-50 dark:border-slate-800 rounded-[10px] px-3 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-roast-500 transition-colors">
+                     <option value="none">--- Select a Learning Track ---</option>
+                     <option value="junior">Junior Express</option>
+                     <option value="middle">Middle Spring & Microservices</option>
+                     <option value="senior">Senior Architect Track</option>
+                     <option value="ai">AI & Modern Java 21 Track</option>
+                 </select>
+             </div>
 
- <!-- Topic Selector -->
- <div class="space-y-1.5">
-                 <label for="topic-filter" class="text-[13px] font-medium text-slate-500 dark:text-slate-400">Topic</label>
-                 <select id="topic-filter" class="w-full bg-paper-50 dark:bg-panel-900 text-slate-800 dark:text-slate-200 border border-border-light dark:border-slate-800 rounded-md px-3 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-roast-500 transition-colors">
-  <option value="all">All Topics</option>
-  <optgroup label="2025-2026 Focus">
-  <option value="AI & LLM Integration">AI, LLM & RAG (Spring AI)</option>
-  <option value="Kafka & Messaging">Kafka & Advanced Messaging</option>
-  <option value="Modern Java 21+">Modern Java 21+ (Loom, Pattern Matching)</option>
-  <option value="Live Coding">Live Coding & Bug Hunting</option>
-  <option value="Algorithm Breakdown">Algorithm Breakdown</option>
-  </optgroup>
-  <optgroup label="Core & Architecture">
-  <option value="General">Core Java Syntax</option>
-  <option value="Collections">Collections & Data Structures</option>
-  <option value="Stream API">Stream API & Lambdas</option>
-  <option value="Multithreading">Multithreading & Concurrency</option>
-  <option value="JVM & Memory Management">JVM, Memory & GC</option>
-  <option value="OOP">OOP & Design Principles</option>
-  <option value="Patterns">Design Patterns</option>
-  <option value="Exceptions">Exception Handling</option>
-  <option value="Spring">Spring Core, Boot & Data</option>
-  <option value="Databases">SQL, JPA & Hibernate</option>
-  <option value="System Design">System Design & Microservices</option>
-  <option value="Testing">JUnit 5, Mockito & TDD</option>
-  <option value="Behavioral">HR & Behavioral (STAR)</option>
-  </optgroup>
-  </select>
- </div>
- 
- <!-- Difficulty Grade Chips -->
- <div class="space-y-1.5">
- <p class="text-[13px] font-medium text-slate-500 dark:text-slate-400">Difficulty Grade</p>
- <div class="grid grid-cols-3 gap-2 text-xs">
- <button data-diff="Junior" class="diff-chip p-2 rounded-md border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:border-pine-500 transition-colors font-medium">Junior</button>
- <button data-diff="Middle" class="diff-chip p-2 rounded-md border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:border-roast-500 transition-colors font-medium">Middle</button>
- <button data-diff="Senior" class="diff-chip p-2 rounded-md border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:border-plum-500 transition-colors font-medium">Senior</button>
- </div>
- </div>
+  <!-- Topic Selector -->
+  <div class="space-y-1.5">
+                  <label for="topic-filter" class="text-[13px] font-medium text-slate-500 dark:text-slate-400">Topic</label>
+                  <select id="topic-filter" class="w-full bg-white dark:bg-panel-900 text-slate-800 dark:text-slate-200 border border-mist-50 dark:border-slate-800 rounded-[10px] px-3 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-roast-500 transition-colors">
+   <option value="all">All Topics</option>
+   <optgroup label="2025-2026 Focus">
+   <option value="AI & LLM Integration">AI, LLM & RAG (Spring AI)</option>
+   <option value="Kafka & Messaging">Kafka & Advanced Messaging</option>
+   <option value="Modern Java 21+">Modern Java 21+ (Loom, Pattern Matching)</option>
+   <option value="Live Coding">Live Coding & Bug Hunting</option>
+   <option value="Algorithm Breakdown">Algorithm Breakdown</option>
+   </optgroup>
+   <optgroup label="Core & Architecture">
+   <option value="General">Core Java Syntax</option>
+   <option value="Collections">Collections & Data Structures</option>
+   <option value="Stream API">Stream API & Lambdas</option>
+   <option value="Multithreading">Multithreading & Concurrency</option>
+   <option value="JVM & Memory Management">JVM, Memory & GC</option>
+   <option value="OOP">OOP & Design Principles</option>
+   <option value="Patterns">Design Patterns</option>
+   <option value="Exceptions">Exception Handling</option>
+   <option value="Spring">Spring Core, Boot & Data</option>
+   <option value="Databases">SQL, JPA & Hibernate</option>
+   <option value="System Design">System Design & Microservices</option>
+   <option value="Testing">JUnit 5, Mockito & TDD</option>
+   <option value="Behavioral">HR & Behavioral (STAR)</option>
+   </optgroup>
+   </select>
+  </div>
+  
+  <!-- Difficulty Grade Chips -->
+  <div class="space-y-1.5">
+  <p class="text-[13px] font-medium text-slate-500 dark:text-slate-400">Difficulty Grade</p>
+  <div class="grid grid-cols-3 gap-2 text-xs">
+  <button data-diff="Junior" class="diff-chip p-2 rounded-[7px] border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:border-pine-500 transition-colors font-medium">Junior</button>
+  <button data-diff="Middle" class="diff-chip p-2 rounded-[7px] border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:border-roast-500 transition-colors font-medium">Middle</button>
+  <button data-diff="Senior" class="diff-chip p-2 rounded-[7px] border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 hover:border-plum-500 transition-colors font-medium">Senior</button>
+  </div>
+  </div>
 
- <!-- Format Filter Checkboxes -->
- <div class="space-y-1.5">
- <p id="format-label" class="text-xs font-bold uppercase tracking-wider text-slate-400">Question Format</p>
- <div class="grid grid-cols-2 gap-2 text-xs">
- <label class="flex items-center space-x-2 bg-slate-50 dark:bg-ink-950 p-2 rounded-lg border border-slate-200 dark:border-slate-800 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800">
- <input type="checkbox" value="Open Answer" class="format-checkbox rounded text-roast-500 focus:ring-roast-500 bg-transparent border-slate-300 dark:border-slate-700">
- <span>Theory</span>
- </label>
- <label class="flex items-center space-x-2 bg-slate-50 dark:bg-ink-950 p-2 rounded-lg border border-slate-200 dark:border-slate-800 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800">
- <input type="checkbox" value="Code Review" class="format-checkbox rounded text-roast-500 focus:ring-roast-500 bg-transparent border-slate-300 dark:border-slate-700">
- <span>Code Review</span>
- </label>
- </div>
- </div>
- </div>
+  <!-- Format Filter Checkboxes -->
+  <div class="space-y-1.5">
+  <p id="format-label" class="text-xs font-semibold uppercase tracking-wider text-slate-400">Question Format</p>
+  <div class="grid grid-cols-2 gap-2 text-xs">
+  <label class="flex items-center space-x-2 bg-slate-50 dark:bg-ink-950 p-2 rounded-[7px] border border-slate-200 dark:border-slate-800 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">
+  <input type="checkbox" value="Open Answer" class="format-checkbox rounded-[4px] text-roast-500 focus:ring-roast-500 bg-transparent border-slate-300 dark:border-slate-700">
+  <span>Theory</span>
+  </label>
+  <label class="flex items-center space-x-2 bg-slate-50 dark:bg-ink-950 p-2 rounded-[7px] border border-slate-200 dark:border-slate-800 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-800 font-medium">
+  <input type="checkbox" value="Code Review" class="format-checkbox rounded-[4px] text-roast-500 focus:ring-roast-500 bg-transparent border-slate-300 dark:border-slate-700">
+  <span>Code Review</span>
+  </label>
+  </div>
+  </div>
+  </div>
 
- <!-- 2. Interactive Questions List Container -->
- <div class="bg-white/90 dark:bg-panel-900/90 glass-panel shadow-soft rounded-lg border border-slate-200 dark:border-slate-800 flex flex-col flex-1 overflow-hidden transition-colors duration-300 max-h-[480px] lg:max-h-none">
- <div class="p-3.5 border-b border-slate-200 dark:border-slate-800 flex flex-col space-y-2.5 bg-slate-50/50 dark:bg-ink-950/50">
- <div class="flex justify-between items-center">
- <span class="font-bold text-sm text-slate-700 dark:text-slate-300">Questions List</span>
- <span id="question-list-count" class="text-xs bg-slate-200 dark:bg-panel-900 px-2 py-0.5 rounded-full font-semibold text-slate-500">0</span>
- </div>
- 
- <!-- Quick Status Filter Pills -->
- <div class="flex items-center gap-1 overflow-x-auto text-[11px]">
-   <button data-status="all" class="status-chip active px-2.5 py-1 rounded-md font-bold bg-roast-500 text-white transition-all shrink-0">All</button>
-   <button data-status="flagged" class="status-chip px-2.5 py-1 rounded-md font-bold text-slate-500 bg-slate-100 dark:bg-panel-900 hover:text-roast-500 transition-all flex items-center gap-1 shrink-0"><i aria-hidden="true" class="fa-solid fa-bookmark text-[10px]"></i> Saved</button>
-   <button data-status="mastered" class="status-chip px-2.5 py-1 rounded-md font-bold text-slate-500 bg-slate-100 dark:bg-panel-900 hover:text-pine-500 transition-all flex items-center gap-1 shrink-0"><i aria-hidden="true" class="fa-solid fa-check text-[10px]"></i> Mastered</button>
-   <button data-status="due" class="status-chip px-2.5 py-1 rounded-md font-bold text-slate-500 bg-slate-100 dark:bg-panel-900 hover:text-amber-500 transition-all flex items-center gap-1 shrink-0"><i aria-hidden="true" class="fa-solid fa-clock-rotate-left text-[10px]"></i> Review</button>
- </div>
- <!-- Topic Micro Progress Bar -->
- <div id="topic-micro-progress" class="hidden flex-col space-y-1">
- <div class="flex justify-between text-[10px] font-semibold text-slate-500">
- <span id="topic-micro-title">Topic Mastery</span>
- <span id="topic-micro-percent">0%</span>
- </div>
- <div class="w-full bg-slate-200 dark:bg-slate-700/50 h-1.5 rounded-full overflow-hidden">
- <div id="topic-micro-bar" class="bg-roast-500 h-full w-0 transition-all duration-500"></div>
- </div>
- </div>
- </div>
- 
- <!-- Scrollable Container -->
- <div id="questions-container" class="overflow-y-auto divide-y divide-slate-100 dark:divide-slate-800/60 flex-1">
- <div class="p-6 space-y-4" aria-busy="true" aria-label="Loading questions">
- <div class="h-14 bg-slate-200 dark:bg-panel-900 animate-pulse rounded-md"></div>
- <div class="h-14 bg-slate-200 dark:bg-panel-900 animate-pulse rounded-md opacity-80"></div>
- <div class="h-14 bg-slate-200 dark:bg-panel-900 animate-pulse rounded-md opacity-60"></div>
- <div class="h-14 bg-slate-200 dark:bg-panel-900 animate-pulse rounded-md opacity-40"></div>
- </div>
- </div>
- </div>
+  <!-- 2. Interactive Questions List Container -->
+  <div class="bg-white/90 dark:bg-panel-900/90 glass-panel shadow-soft rounded-[10px] border border-slate-200 dark:border-slate-800 flex flex-col flex-1 overflow-hidden transition-colors duration-300 max-h-[480px] lg:max-h-none">
+  <div class="p-3.5 border-b border-slate-200 dark:border-slate-800 flex flex-col space-y-2.5 bg-slate-50/50 dark:bg-ink-950/50">
+  <div class="flex justify-between items-center">
+  <span class="font-semibold text-sm text-slate-700 dark:text-slate-300">Questions List</span>
+  <span id="question-list-count" class="text-xs bg-slate-200 dark:bg-panel-900 px-2 py-0.5 rounded-[7px] font-medium text-slate-600 dark:text-slate-400">0</span>
+  </div>
+  
+  <!-- Quick Status Filter Pills -->
+  <div class="flex items-center gap-1 overflow-x-auto text-[11px]">
+    <button data-status="all" class="status-chip active px-2.5 py-1 rounded-[7px] font-medium bg-roast-500 text-white transition-all shrink-0">All</button>
+    <button data-status="flagged" class="status-chip px-2.5 py-1 rounded-[7px] font-medium text-slate-600 dark:text-slate-400 bg-paper-50 dark:bg-panel-900 border border-slate-200 dark:border-slate-800 hover:text-roast-500 hover:border-roast-500/50 transition-all flex items-center gap-1 shrink-0"><i aria-hidden="true" class="fa-solid fa-bookmark text-[10px]"></i> Saved</button>
+    <button data-status="mastered" class="status-chip px-2.5 py-1 rounded-[7px] font-medium text-slate-600 dark:text-slate-400 bg-paper-50 dark:bg-panel-900 border border-slate-200 dark:border-slate-800 hover:text-pine-500 hover:border-pine-500/50 transition-all flex items-center gap-1 shrink-0"><i aria-hidden="true" class="fa-solid fa-check text-[10px]"></i> Mastered</button>
+    <button data-status="due" class="status-chip px-2.5 py-1 rounded-[7px] font-medium text-slate-600 dark:text-slate-400 bg-paper-50 dark:bg-panel-900 border border-slate-200 dark:border-slate-800 hover:text-amber-500 hover:border-amber-500/50 transition-all flex items-center gap-1 shrink-0"><i aria-hidden="true" class="fa-solid fa-clock-rotate-left text-[10px]"></i> Review</button>
+  </div>
+  <!-- Topic Micro Progress Bar -->
+  <div id="topic-micro-progress" class="hidden flex-col space-y-1">
+  <div class="flex justify-between text-[10px] font-medium text-slate-500 dark:text-slate-400">
+  <span id="topic-micro-title">Topic Mastery</span>
+  <span id="topic-micro-percent">0%</span>
+  </div>
+  <div class="w-full bg-slate-200 dark:bg-slate-700/50 h-1.5 rounded-full overflow-hidden">
+  <div id="topic-micro-bar" class="bg-roast-500 h-full w-0 transition-all duration-500"></div>
+  </div>
+  </div>
+  </div>
+  
+  <!-- Scrollable Container -->
+  <div id="questions-container" class="overflow-y-auto divide-y divide-slate-100 dark:divide-slate-800/60 flex-1">
+  <div class="p-6 space-y-4" aria-busy="true" aria-label="Loading questions">
+  <div class="h-14 bg-slate-200 dark:bg-panel-900 animate-pulse rounded-[7px]"></div>
+  <div class="h-14 bg-slate-200 dark:bg-panel-900 animate-pulse rounded-[7px] opacity-80"></div>
+  <div class="h-14 bg-slate-200 dark:bg-panel-900 animate-pulse rounded-[7px] opacity-60"></div>
+  <div class="h-14 bg-slate-200 dark:bg-panel-900 animate-pulse rounded-[7px] opacity-40"></div>
+  </div>
+  </div>
+  </div>
 
- <!-- Premium Feature Teaser -->
- <button id="mock-interview-btn" class="w-full bg-roast-500 text-white rounded-md p-4 flex items-center justify-between hover:scale-[1.02] hover:shadow-lg hover: transition-all-300 group">
- <div class="flex items-center space-x-3">
- <div class="bg-white/20 p-2 rounded-lg group-hover:animate-pulse">
- <i aria-hidden="true" class="fa-solid fa-gamepad"></i>
- </div>
- <div class="text-left">
- <h3 class="font-bold text-sm leading-tight">Mock Interview</h3>
- <p class="text-[10px] text-white/80">Simulator & Timer</p>
- </div>
- </div>
- <i aria-hidden="true" class="fa-solid fa-chevron-right text-white/60"></i>
- </button>
- </aside>
+  <!-- Premium Feature Teaser -->
+  <button id="mock-interview-btn" class="w-full bg-roast-500 hover:bg-roast-600 text-white rounded-[10px] p-4 flex items-center justify-between hover:scale-[1.01] hover:shadow-lg transition-all duration-300 group">
+  <div class="flex items-center space-x-3">
+  <div class="bg-white/20 p-2 rounded-[7px] group-hover:animate-pulse">
+  <i aria-hidden="true" class="fa-solid fa-gamepad"></i>
+  </div>
+  <div class="text-left">
+  <h3 class="font-semibold text-sm leading-tight">Mock Interview</h3>
+  <p class="text-[10px] text-white/80">Simulator & Timer</p>
+  </div>
+  </div>
+  <i aria-hidden="true" class="fa-solid fa-chevron-right text-white/60"></i>
+  </button>
+  </aside>
 
- <!-- Main Panel: Active Question Renderer -->
- <section class="flex-1 min-w-0 max-w-full flex flex-col space-y-4">
- 
- <!-- Question Content Card -->
- <div id="main-content-card" class="bg-white dark:bg-panel-900 rounded-lg border border-slate-200 dark:border-slate-800 shadow-soft hover:shadow-md p-4 sm:p-6 flex flex-col space-y-6 transition-all duration-300 relative min-w-0 max-w-full w-full">
- 
- <!-- Card Background Subtle Design Details -->
- <!-- Mock Interview Header Bar (Shown during mock mode) -->
- <div id="mock-status-bar" class="hidden bg-roast-500/10 border border-roast-500/20 rounded-md p-3 flex items-center justify-between">
- <div class="flex items-center space-x-2">
- <span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-ping"></span>
- <span class="text-xs font-bold text-roast-500 dark:text-roast-500 uppercase tracking-wider">Mock Interview Live</span>
- </div>
- <div class="flex items-center space-x-4">
- <div class="flex items-center space-x-1.5 text-xs font-bold text-slate-700 dark:text-slate-200">
- <i aria-hidden="true" class="fa-solid fa-clock text-roast-500"></i>
- <span id="mock-timer-display">30:00</span>
- </div>
- <button id="exit-mock-btn" class="text-[10px] font-bold text-slate-400 hover:text-red-500 uppercase tracking-wider">
- Exit
- </button>
- </div>
- </div>
+  <!-- Main Panel: Active Question Renderer -->
+  <section class="flex-1 min-w-0 max-w-full flex flex-col space-y-4">
+  
+  <!-- Question Content Card -->
+  <div id="main-content-card" class="bg-white dark:bg-panel-900 rounded-[10px] border border-slate-200 dark:border-slate-800 shadow-soft hover:shadow-md p-4 sm:p-6 flex flex-col space-y-6 transition-all duration-300 relative min-w-0 max-w-full w-full">
+  
+  <!-- Card Background Subtle Design Details -->
+  <!-- Mock Interview Header Bar (Shown during mock mode) -->
+  <div id="mock-status-bar" class="hidden bg-roast-500/10 border border-roast-500/20 rounded-[10px] p-3 flex items-center justify-between">
+  <div class="flex items-center space-x-2">
+  <span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-ping"></span>
+  <span class="text-xs font-semibold text-roast-500 dark:text-roast-500 uppercase tracking-wider">Mock Interview Live</span>
+  </div>
+  <div class="flex items-center space-x-4">
+  <div class="flex items-center space-x-1.5 text-xs font-medium text-slate-700 dark:text-slate-200">
+  <i aria-hidden="true" class="fa-solid fa-clock text-roast-500"></i>
+  <span id="mock-timer-display">30:00</span>
+  </div>
+  <button id="exit-mock-btn" class="text-[10px] font-semibold text-slate-400 hover:text-red-500 uppercase tracking-wider">
+  Exit
+  </button>
+  </div>
+  </div>
 
- <!-- Active Question Header Metadata -->
-                <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-100 dark:border-slate-800/80 min-w-0">
-                    <div class="flex flex-wrap items-center gap-2 text-[13px] text-slate-500 dark:text-slate-400">
-                        <span id="active-difficulty" class="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-wide text-roast-500 font-semibold">
-                            <svg width="10" height="10" viewBox="0 0 10 10" class="text-roast-500"><path d="M5 0 L10 5 L5 10 L0 5 Z" fill="currentColor"/></svg>
-                            Junior
-                        </span>
-                        <span>·</span>
-                        <span id="active-id" class="font-mono text-slate-400">#ID</span>
-                        <span>·</span>
-                        <span id="active-topic" class="text-slate-600 dark:text-slate-300">JVM & Memory</span>
-                        <span>·</span>
-                        <span id="active-format" class="font-mono text-slate-500">Open Answer</span>
-                    </div>
+  <!-- Active Question Header Metadata -->
+                 <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-100 dark:border-slate-800/80 min-w-0">
+                     <div class="flex flex-wrap items-center gap-2 text-[13px] text-slate-500 dark:text-slate-400">
+                         <span id="active-difficulty" class="px-2.5 py-0.5 rounded-[7px] text-[11px] font-medium uppercase tracking-wider border bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:border-emerald-800/40">
+                             Junior
+                         </span>
+                         <span>·</span>
+                         <span id="active-id" class="font-mono text-xs text-slate-400">#ID</span>
+                         <span>·</span>
+                         <span id="active-topic" class="text-xs font-medium text-slate-600 dark:text-slate-300 bg-paper-50 dark:bg-panel-900 border border-slate-200 dark:border-slate-800 px-2 py-0.5 rounded-[7px]">JVM & Memory</span>
+                         <span>·</span>
+                         <span id="active-format" class="font-mono text-xs text-slate-500">Open Answer</span>
+                     </div>
 
-                    <!-- Extra Metadata Badges (Hidden by default, shown if exists) -->
-                    <div id="extra-metadata" class="flex flex-wrap items-center gap-2 text-xs font-medium text-slate-500 dark:text-slate-400">
-                        <!-- Injected dynamically -->
-                    </div>
+                     <!-- Extra Metadata Badges (Hidden by default, shown if exists) -->
+                     <div id="extra-metadata" class="flex flex-wrap items-center gap-2 text-xs font-medium text-slate-500 dark:text-slate-400">
+                         <!-- Injected dynamically -->
+                     </div>
 
-                    <!-- Bookmark, Mastery & Share Controls -->
-                    <div class="flex items-center space-x-1.5 sm:space-x-2 shrink-0">
-                        <!-- Share Question Link -->
-                        <button id="share-link-btn" aria-label="Copy direct question link" title="Copy Question Link" class="w-9 h-9 rounded-md border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-roast-500 hover:text-roast-500 flex items-center justify-center text-slate-400 transition-colors">
-                            <i aria-hidden="true" class="fa-solid fa-link text-sm"></i>
-                        </button>
-                        <!-- Bookmark flag -->
-                        <button id="flag-btn" aria-label="Bookmark" title="Bookmark" class="w-9 h-9 rounded-md border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-roast-500 hover:text-roast-500 flex items-center justify-center text-slate-400 transition-colors">
-                            <i aria-hidden="true" class="fa-solid fa-bookmark text-sm"></i>
-                        </button>
-                        <!-- Mastered checkbox indicator -->
-                        <button id="mastered-btn" title="Mark as Mastered" class="h-9 px-2.5 sm:px-3 rounded-md border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 hover:border-pine-500 hover:text-pine-500 flex items-center space-x-1.5 text-slate-400 transition-colors shrink-0">
-                            <i aria-hidden="true" class="fa-solid fa-circle-check text-sm"></i>
-                            <span class="text-xs font-semibold">Mastered</span>
-                        </button>
-                    </div>
-                </div>
+                     <!-- Bookmark, Mastery & Share Controls -->
+                     <div class="flex items-center space-x-1.5 sm:space-x-2 shrink-0">
+                         <!-- Share Question Link -->
+                         <button id="share-link-btn" aria-label="Copy direct question link" title="Copy Question Link" class="w-9 h-9 rounded-[10px] border border-slate-200 dark:border-slate-800 bg-white dark:bg-panel-900 hover:bg-paper-50 dark:hover:bg-panel-700/60 hover:border-roast-500 hover:text-roast-500 flex items-center justify-center text-slate-500 dark:text-slate-400 transition-all">
+                             <i aria-hidden="true" class="fa-solid fa-link text-sm"></i>
+                         </button>
+                         <!-- Bookmark flag -->
+                         <button id="flag-btn" aria-label="Bookmark" title="Bookmark" class="w-9 h-9 rounded-[10px] border border-slate-200 dark:border-slate-800 bg-white dark:bg-panel-900 hover:bg-paper-50 dark:hover:bg-panel-700/60 hover:border-roast-500 hover:text-roast-500 flex items-center justify-center text-slate-500 dark:text-slate-400 transition-all">
+                             <i aria-hidden="true" class="fa-solid fa-bookmark text-sm"></i>
+                         </button>
+                         <!-- Mastered checkbox indicator -->
+                         <button id="mastered-btn" title="Mark as Mastered" class="h-9 px-2.5 sm:px-3 rounded-[10px] border border-slate-200 dark:border-slate-800 bg-white dark:bg-panel-900 hover:bg-paper-50 dark:hover:bg-panel-700/60 hover:border-pine-500 hover:text-pine-500 flex items-center space-x-1.5 text-slate-500 dark:text-slate-400 font-medium transition-all shrink-0">
+                             <i aria-hidden="true" class="fa-solid fa-circle-check text-sm"></i>
+                             <span class="text-xs font-medium">Mastered</span>
+                         </button>
+                     </div>
+                 </div>
 
  <!-- Main Content Renderers -->
  <div class="flex-1 space-y-6 min-w-0 max-w-full">
@@ -384,13 +383,13 @@
                         </div>
                         <div class="flex items-center space-x-2">
                             <span class="font-mono text-[10px] text-slate-500 uppercase">java</span>
-                            <button id="copy-code-btn" class="text-xs text-slate-500 hover:text-slate-800 dark:hover:text-white bg-slate-100 dark:bg-panel-700 hover:bg-slate-200 dark:hover:bg-slate-800 px-2.5 py-1 rounded-md transition-colors">
+                            <button id="copy-code-btn" class="text-xs font-medium text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white bg-paper-50 dark:bg-panel-700 hover:bg-slate-200 dark:hover:bg-slate-800 px-2.5 py-1 rounded-[10px] border border-slate-200 dark:border-slate-800 transition-all">
                                 <i aria-hidden="true" class="fa-solid fa-copy"></i>
                                 <span>Copy</span>
                             </button>
                         </div>
                     </div>
-                    <div class="relative rounded-md overflow-hidden border border-slate-200 dark:border-slate-800/80 min-w-0 max-w-full">
+                    <div class="relative rounded-[10px] overflow-hidden border border-slate-200 dark:border-slate-800 min-w-0 max-w-full">
                         <pre class="!my-0 !p-4 bg-paper-50 dark:bg-panel-700 text-slate-800 dark:text-slate-200 overflow-x-auto min-w-0 max-w-full"><code id="code-content" class="language-java font-mono text-xs sm:text-sm"></code></pre>
                     </div>
                 </div>
@@ -403,8 +402,8 @@
                         <span class="text-[13px] font-medium text-slate-500 dark:text-slate-400">Ответ</span>
                     </div>
                     <!-- Inner Card with Pine Border-L Indicator -->
-                    <div class="bg-white dark:bg-panel-900/40 border-l-2 border-pine-500 rounded-md p-5 sm:p-6 min-w-0">
-                        <div id="answer-content" class="prose prose-slate dark:prose-invert max-w-none text-slate-700 dark:text-slate-200 leading-relaxed text-base break-words min-w-0">
+                    <div class="bg-white dark:bg-panel-900/40 border-l-[3px] border-l-pine-500 border border-slate-200 dark:border-slate-800 rounded-[10px] p-5 sm:p-6 min-w-0 shadow-sm">
+                        <div id="answer-content" class="prose prose-slate dark:prose-invert max-w-none text-slate-700 dark:text-slate-200 leading-relaxed text-sm sm:text-base break-words min-w-0">
                             <!-- Injected by JS -->
                         </div>
                     </div>
@@ -414,7 +413,7 @@
                         <div class="flex items-center space-x-2">
                             <span class="text-[13px] font-medium text-slate-500 dark:text-slate-400">Аналогия</span>
                         </div>
-                        <div class="bg-white dark:bg-panel-900/30 border-l-2 border-slate-400 dark:border-slate-600 rounded-md p-5 text-slate-600 dark:text-slate-400 italic text-sm leading-relaxed min-w-0">
+                        <div class="bg-paper-50/60 dark:bg-panel-900/30 border-l-[3px] border-l-roast-500 border border-slate-200 dark:border-slate-800 rounded-[10px] p-5 text-slate-600 dark:text-slate-300 text-sm leading-relaxed min-w-0">
                             <p id="analogy-content"></p>
                         </div>
                     </div>
@@ -426,159 +425,159 @@
  <!-- Prev / Next & Counter Info -->
  <div class="flex items-center space-x-4 w-full sm:w-auto justify-between sm:justify-start shrink-0">
  <div class="flex space-x-2">
- <button id="btn-prev" aria-label="Previous question" class="w-10 h-10 rounded-md border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-center transition-all-300 text-slate-500 dark:text-slate-400 hover:scale-95 disabled:opacity-40 disabled:pointer-events-none" title="Previous question">
+ <button id="btn-prev" aria-label="Previous question" class="w-10 h-10 rounded-[10px] border border-slate-200 dark:border-slate-800 bg-white dark:bg-panel-900 hover:bg-paper-50 dark:hover:bg-panel-700/60 hover:border-roast-500 hover:text-roast-500 flex items-center justify-center transition-all text-slate-600 dark:text-slate-400 disabled:opacity-40 disabled:pointer-events-none" title="Previous question">
  <i aria-hidden="true" class="fa-solid fa-arrow-left"></i>
  </button>
- <button id="btn-next" aria-label="Next question" class="w-10 h-10 rounded-md border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-center transition-all-300 text-slate-500 dark:text-slate-400 hover:scale-95 disabled:opacity-40 disabled:pointer-events-none" title="Next question">
+ <button id="btn-next" aria-label="Next question" class="w-10 h-10 rounded-[10px] border border-slate-200 dark:border-slate-800 bg-white dark:bg-panel-900 hover:bg-paper-50 dark:hover:bg-panel-700/60 hover:border-roast-500 hover:text-roast-500 flex items-center justify-center transition-all text-slate-600 dark:text-slate-400 disabled:opacity-40 disabled:pointer-events-none" title="Next question">
  <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
  </button>
  </div>
- <span id="counter" class="text-xs font-semibold tracking-wider text-slate-400 bg-slate-100 dark:bg-panel-900 px-3 py-1.5 rounded-lg">
+ <span id="counter" class="text-xs font-medium tracking-wider text-slate-500 dark:text-slate-400 bg-paper-50 dark:bg-panel-900 border border-slate-200 dark:border-slate-800 px-3 py-2 rounded-[10px]">
  0 / 0
  </span>
  </div>
 
  <!-- Toggle Answer / Learn State -->
- <div class="flex flex-wrap items-center gap-2 sm:gap-3 w-full sm:w-auto justify-end shrink-0">
- <button id="btn-answer" class="flex-1 sm:flex-initial flex items-center justify-center space-x-1.5 sm:space-x-2 bg-roast-500 hover:bg-roast-600 text-[#2B1904] font-bold px-4 sm:px-6 py-2.5 sm:py-3 rounded-md shadow-sm transition-colors text-sm sm:text-base whitespace-nowrap">
- <i id="btn-answer-icon" aria-hidden="true" class="fa-solid fa-eye"></i>
- <span id="btn-answer-text">Show Answer</span>
- </button>
- <a id="btn-youtube" target="_blank" href="#" class="flex-1 sm:flex-initial flex items-center justify-center space-x-1.5 sm:space-x-2 bg-[#FF0000] hover:bg-[#CC0000] text-white font-bold px-4 sm:px-6 py-2.5 sm:py-3 rounded-md shadow-lg shadow-red-500/20 hover:shadow-red-500/35 transition-all-300 active:scale-95 text-sm sm:text-base whitespace-nowrap">
- <i aria-hidden="true" class="fa-brands fa-youtube text-lg"></i>
- <span>Watch Video</span>
- </a>
+  <div class="flex flex-wrap items-center gap-2 sm:gap-3 w-full sm:w-auto justify-end shrink-0">
+  <button id="btn-answer" class="flex-1 sm:flex-initial flex items-center justify-center space-x-1.5 sm:space-x-2 bg-roast-500 hover:bg-roast-600 text-white font-medium px-4 sm:px-6 py-2.5 sm:py-3 rounded-[10px] shadow-sm transition-colors text-sm sm:text-base whitespace-nowrap">
+  <i id="btn-answer-icon" aria-hidden="true" class="fa-solid fa-eye"></i>
+  <span id="btn-answer-text">Show Answer</span>
+  </button>
+  <a id="btn-youtube" target="_blank" href="#" class="flex-1 sm:flex-initial flex items-center justify-center space-x-1.5 sm:space-x-2 bg-[#FF0000] hover:bg-[#CC0000] text-white font-medium px-4 sm:px-6 py-2.5 sm:py-3 rounded-[10px] shadow-sm hover:shadow-md transition-all text-sm sm:text-base whitespace-nowrap">
+  <i aria-hidden="true" class="fa-brands fa-youtube text-lg"></i>
+  <span>Watch Video</span>
+  </a>
 
- <!-- Mock Evaluation Controls -->
- <div id="mock-eval-bar" class="hidden flex flex-wrap items-center gap-2 w-full sm:w-auto">
- <button id="eval-missed-btn" class="flex-1 sm:flex-initial px-3.5 py-2.5 rounded-md bg-red-500/10 hover:bg-red-500/20 text-red-600 dark:text-red-400 border border-red-500/20 font-bold text-xs flex items-center justify-center space-x-1 transition-all">
- <span>🔴 Missed (0 XP)</span>
- </button>
- <button id="eval-partial-btn" class="flex-1 sm:flex-initial px-3.5 py-2.5 rounded-md bg-roast-500/10 hover:bg-roast-500/20 text-roast-500 dark:text-roast-500 border border-roast-500/20 font-bold text-xs flex items-center justify-center space-x-1 transition-all">
- <span>🟡 Partial (+5 XP)</span>
- </button>
- <button id="eval-nailed-btn" class="flex-1 sm:flex-initial px-3.5 py-2.5 rounded-md bg-pine-500/10 hover:bg-pine-500/20 text-pine-500 dark:text-pine-500 border border-pine-500/20 font-bold text-xs flex items-center justify-center space-x-1 transition-all">
- <span>🟢 Nailed It (+10 XP)</span>
- </button>
- </div>
-
- <!-- Spaced Repetition Evaluation Controls -->
- <div id="sr-eval-bar" class="hidden flex flex-wrap items-center gap-2 w-full sm:w-auto">
- <button id="sr-hard-btn" class="flex-1 sm:flex-initial px-3.5 py-2.5 rounded-md bg-rose-500/10 hover:bg-rose-500/20 text-rose-600 dark:text-rose-400 border border-rose-500/20 font-bold text-xs flex items-center justify-center transition-all">
- Hard
- </button>
- <button id="sr-medium-btn" class="flex-1 sm:flex-initial px-3.5 py-2.5 rounded-md bg-roast-500/10 hover:bg-roast-500/20 text-roast-500 dark:text-roast-500 border border-roast-500/20 font-bold text-xs flex items-center justify-center transition-all">
- Good
- </button>
- <button id="sr-easy-btn" class="flex-1 sm:flex-initial px-3.5 py-2.5 rounded-md bg-pine-500/10 hover:bg-pine-500/20 text-pine-500 dark:text-pine-500 border border-pine-500/20 font-bold text-xs flex items-center justify-center transition-all">
- Easy
- </button>
- </div>
- </div>
- </div>
- </div>
- 
- <!-- Quick Tips Panel -->
- <div class="bg-roast-500/10 rounded-lg border border-roast-500/20 p-4 flex items-start space-x-3">
- <i aria-hidden="true" class="fa-solid fa-graduation-cap text-roast-500 mt-0.5 text-lg"></i>
- <div class="text-xs leading-relaxed text-slate-600 dark:text-slate-400">
- <strong class="text-slate-800 dark:text-slate-200 font-bold">Study Tip:</strong> Read the question and take at least 1 minute to mentally formulate your answer or solve the code before viewing the correct answer. Use the vivid associations in the "Analogy" section for easy memorization.
- </div>
- </div>
-  </section> <!-- End Main Section -->
-  </div> <!-- End #questions-view -->
-
-  <!-- Algorithm Breakdown View Container -->
-  <div id="algo-view" class="w-full space-y-6 hidden">
-    <!-- Algo Header Banner -->
-    <div class="bg-white dark:bg-gradient-to-r dark:from-slate-900 dark:via-panel-900 dark:to-slate-900 text-slate-900 dark:text-white p-6 sm:p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm dark:shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-4 transition-colors duration-300">
-      <div>
-        <div class="flex items-center space-x-2 mb-2">
-          <span class="px-2.5 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider bg-roast-500 text-[#2B1904]">LeetCode Q&A Engine</span>
-          <span id="algo-total-count" class="text-xs text-slate-500 dark:text-slate-400 font-mono">50 Algorithms</span>
-        </div>
-        <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">Algorithmic Pattern Breakdown</h2>
-        <p class="text-slate-600 dark:text-slate-400 text-sm mt-1 max-w-2xl">Master the top 14 interview-proven patterns with conceptual step-by-step breakdowns, visual dry-runs, and production Java code without live coding stress.</p>
-      </div>
-
-      <!-- Search & Filter Controls -->
-      <div class="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto">
-        <div class="relative w-full sm:w-64">
-          <input type="text" id="algo-search-input" placeholder="Search algo or pattern..." class="w-full bg-slate-50 dark:bg-panel-900/80 border border-slate-200 dark:border-slate-700 rounded-md px-4 py-2 pl-9 text-xs text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-roast-500 transition-colors">
-          <i aria-hidden="true" class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-400 text-xs"></i>
-        </div>
-        <select id="algo-diff-filter" class="bg-slate-50 dark:bg-panel-900/80 border border-slate-200 dark:border-slate-700 text-xs text-slate-900 dark:text-white rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-roast-500 transition-colors">
-          <option value="all" class="bg-white dark:bg-panel-900 text-slate-900 dark:text-white">All Difficulties</option>
-          <option value="Junior" class="bg-white dark:bg-panel-900 text-slate-900 dark:text-white">Junior (Easy)</option>
-          <option value="Middle" class="bg-white dark:bg-panel-900 text-slate-900 dark:text-white">Middle (Medium)</option>
-          <option value="Senior" class="bg-white dark:bg-panel-900 text-slate-900 dark:text-white">Senior (Hard)</option>
-        </select>
-      </div>
-    </div>
-
-    <!-- Pattern Pills Filter Bar (Multi-row Wrapping Grid) -->
-    <div class="flex flex-wrap items-center gap-2 py-2" id="algo-pattern-filters">
-      <!-- Injected dynamically by algorithms.js -->
-    </div>
-
-    <!-- Algorithm Cards Grid -->
-    <div id="algo-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-      <!-- Injected dynamically by algorithms.js -->
-    </div>
+  <!-- Mock Evaluation Controls -->
+  <div id="mock-eval-bar" class="hidden flex flex-wrap items-center gap-2 w-full sm:w-auto">
+  <button id="eval-missed-btn" class="flex-1 sm:flex-initial px-3.5 py-2.5 rounded-[10px] bg-red-500/10 hover:bg-red-500/20 text-red-600 dark:text-red-400 border border-red-500/20 font-medium text-xs flex items-center justify-center space-x-1 transition-all">
+  <span>🔴 Missed (0 XP)</span>
+  </button>
+  <button id="eval-partial-btn" class="flex-1 sm:flex-initial px-3.5 py-2.5 rounded-[10px] bg-roast-500/10 hover:bg-roast-500/20 text-roast-500 dark:text-roast-500 border border-roast-500/20 font-medium text-xs flex items-center justify-center space-x-1 transition-all">
+  <span>🟡 Partial (+5 XP)</span>
+  </button>
+  <button id="eval-nailed-btn" class="flex-1 sm:flex-initial px-3.5 py-2.5 rounded-[10px] bg-pine-500/10 hover:bg-pine-500/20 text-pine-500 dark:text-pine-500 border border-pine-500/20 font-medium text-xs flex items-center justify-center space-x-1 transition-all">
+  <span>🟢 Nailed It (+10 XP)</span>
+  </button>
   </div>
 
-  <!-- System Architecture View Container -->
-  <div id="sysdesign-view" class="w-full space-y-6 hidden">
-    <!-- System Design Header Banner -->
-    <div class="bg-white dark:bg-gradient-to-r dark:from-slate-900 dark:via-panel-900 dark:to-slate-900 text-slate-900 dark:text-white p-6 sm:p-8 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm dark:shadow-xl flex flex-col md:flex-row items-start md:items-center justify-between gap-4 transition-colors duration-300">
-      <div>
-        <div class="flex items-center space-x-2 mb-2">
-          <span class="px-2.5 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider bg-roast-500 text-[#2B1904]">System Architecture Simulator</span>
-          <span id="sysdesign-total-count" class="text-xs text-slate-500 dark:text-slate-400 font-mono">5 Architectures</span>
-        </div>
-        <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">Distributed Systems & Architecture Diagrams</h2>
-        <p class="text-slate-600 dark:text-slate-400 text-sm mt-1 max-w-2xl">Master high-scalability System Design with interactive animated data flows, step-by-step request simulation, and production Java patterns.</p>
-      </div>
-
-      <!-- Search & Filter Controls -->
-      <div class="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto">
-        <div class="relative w-full sm:w-64">
-          <input type="text" id="sysdesign-search-input" placeholder="Search architecture or pattern..." class="w-full bg-slate-50 dark:bg-panel-900/80 border border-slate-200 dark:border-slate-700 rounded-xl px-4 py-2 pl-9 text-xs text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-roast-500 transition-colors">
-          <i aria-hidden="true" class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-400 text-xs"></i>
-        </div>
-        <select id="sysdesign-cat-filter" class="bg-slate-50 dark:bg-panel-900/80 border border-slate-200 dark:border-slate-700 text-xs text-slate-900 dark:text-white rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-roast-500 transition-colors">
-          <option value="all">All Categories</option>
-          <option value="Microservices & Security">Microservices & Security</option>
-          <option value="Event-Driven & Messaging">Event-Driven & Messaging</option>
-          <option value="Caching & Database">Caching & Database</option>
-          <option value="Databases & Scaling">Databases & Scaling</option>
-          <option value="Geo-Spatial & Real-Time">Geo-Spatial & Real-Time</option>
-        </select>
-      </div>
-    </div>
-
-    <!-- System Design Architecture Cards Grid -->
-    <div id="sysdesign-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-      <!-- Injected dynamically by sysdesign.js -->
-    </div>
+  <!-- Spaced Repetition Evaluation Controls -->
+  <div id="sr-eval-bar" class="hidden flex flex-wrap items-center gap-2 w-full sm:w-auto">
+  <button id="sr-hard-btn" class="flex-1 sm:flex-initial px-3.5 py-2.5 rounded-[10px] bg-rose-500/10 hover:bg-rose-500/20 text-rose-600 dark:text-rose-400 border border-rose-500/20 font-medium text-xs flex items-center justify-center transition-all">
+  Hard
+  </button>
+  <button id="sr-medium-btn" class="flex-1 sm:flex-initial px-3.5 py-2.5 rounded-[10px] bg-roast-500/10 hover:bg-roast-500/20 text-roast-500 dark:text-roast-500 border border-roast-500/20 font-medium text-xs flex items-center justify-center transition-all">
+  Good
+  </button>
+  <button id="sr-easy-btn" class="flex-1 sm:flex-initial px-3.5 py-2.5 rounded-[10px] bg-pine-500/10 hover:bg-pine-500/20 text-pine-500 dark:text-pine-500 border border-pine-500/20 font-medium text-xs flex items-center justify-center transition-all">
+  Easy
+  </button>
   </div>
+  </div>
+  </div>
+  </div>
+  
+  <!-- Quick Tips Panel -->
+  <div class="bg-paper-50 dark:bg-ink-950 rounded-[12px] border border-mist-50 dark:border-slate-800 p-4 flex items-start space-x-3">
+  <i aria-hidden="true" class="fa-solid fa-graduation-cap text-roast-500 mt-0.5 text-lg"></i>
+  <div class="text-xs leading-relaxed text-slate-600 dark:text-slate-400">
+  <strong class="text-slate-900 dark:text-white font-semibold">Study Tip:</strong> Read the question and take at least 1 minute to mentally formulate your answer or solve the code before viewing the correct answer. Use the vivid associations in the "Analogy" section for easy memorization.
+  </div>
+  </div>
+   </section> <!-- End Main Section -->
+   </div> <!-- End #questions-view -->
+
+   <!-- Algorithm Breakdown View Container -->
+   <div id="algo-view" class="w-full space-y-6 hidden">
+     <!-- Algo Header Banner -->
+     <div class="bg-white dark:bg-panel-900 text-slate-900 dark:text-white p-6 sm:p-8 rounded-[14px] border border-mist-50 dark:border-slate-800 shadow-soft flex flex-col md:flex-row items-start md:items-center justify-between gap-4 transition-colors duration-300">
+       <div>
+         <div class="flex items-center space-x-2 mb-2">
+           <span class="px-2.5 py-0.5 rounded-[7px] text-[10px] font-semibold uppercase tracking-wider bg-roast-500 text-white">LeetCode Q&A Engine</span>
+           <span id="algo-total-count" class="text-xs text-slate-500 dark:text-slate-400 font-mono">50 Algorithms</span>
+         </div>
+         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">Algorithmic Pattern Breakdown</h2>
+         <p class="text-slate-600 dark:text-slate-400 text-sm mt-1 max-w-2xl">Master the top 14 interview-proven patterns with conceptual step-by-step breakdowns, visual dry-runs, and production Java code without live coding stress.</p>
+       </div>
+
+       <!-- Search & Filter Controls -->
+       <div class="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto">
+         <div class="relative w-full sm:w-64">
+           <input type="text" id="algo-search-input" placeholder="Search algo or pattern..." class="w-full bg-paper-50 dark:bg-ink-950 border border-mist-50 dark:border-slate-800 rounded-[10px] px-4 py-2 pl-9 text-xs text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-roast-500 transition-colors">
+           <i aria-hidden="true" class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-400 text-xs"></i>
+         </div>
+         <select id="algo-diff-filter" class="bg-paper-50 dark:bg-ink-950 border border-mist-50 dark:border-slate-800 text-xs text-slate-900 dark:text-white rounded-[10px] px-3 py-2 focus:outline-none focus:ring-2 focus:ring-roast-500 transition-colors">
+           <option value="all" class="bg-white dark:bg-panel-900 text-slate-900 dark:text-white">All Difficulties</option>
+           <option value="Junior" class="bg-white dark:bg-panel-900 text-slate-900 dark:text-white">Junior (Easy)</option>
+           <option value="Middle" class="bg-white dark:bg-panel-900 text-slate-900 dark:text-white">Middle (Medium)</option>
+           <option value="Senior" class="bg-white dark:bg-panel-900 text-slate-900 dark:text-white">Senior (Hard)</option>
+         </select>
+       </div>
+     </div>
+
+     <!-- Pattern Pills Filter Bar (Multi-row Wrapping Grid) -->
+     <div class="flex flex-wrap items-center gap-2 py-2" id="algo-pattern-filters">
+       <!-- Injected dynamically by algorithms.js -->
+     </div>
+
+     <!-- Algorithm Cards Grid -->
+     <div id="algo-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+       <!-- Injected dynamically by algorithms.js -->
+     </div>
+   </div>
+
+   <!-- System Architecture View Container -->
+   <div id="sysdesign-view" class="w-full space-y-6 hidden">
+     <!-- System Design Header Banner -->
+     <div class="bg-white dark:bg-panel-900 text-slate-900 dark:text-white p-6 sm:p-8 rounded-[14px] border border-mist-50 dark:border-slate-800 shadow-soft flex flex-col md:flex-row items-start md:items-center justify-between gap-4 transition-colors duration-300">
+       <div>
+         <div class="flex items-center space-x-2 mb-2">
+           <span class="px-2.5 py-0.5 rounded-[7px] text-[10px] font-semibold uppercase tracking-wider bg-roast-500 text-white">System Architecture Simulator</span>
+           <span id="sysdesign-total-count" class="text-xs text-slate-500 dark:text-slate-400 font-mono">5 Architectures</span>
+         </div>
+         <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">Distributed Systems & Architecture Diagrams</h2>
+         <p class="text-slate-600 dark:text-slate-400 text-sm mt-1 max-w-2xl">Master high-scalability System Design with interactive animated data flows, step-by-step request simulation, and production Java patterns.</p>
+       </div>
+
+       <!-- Search & Filter Controls -->
+       <div class="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto">
+         <div class="relative w-full sm:w-64">
+           <input type="text" id="sysdesign-search-input" placeholder="Search architecture or pattern..." class="w-full bg-paper-50 dark:bg-ink-950 border border-mist-50 dark:border-slate-800 rounded-[10px] px-4 py-2 pl-9 text-xs text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-roast-500 transition-colors">
+           <i aria-hidden="true" class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-400 text-xs"></i>
+         </div>
+         <select id="sysdesign-cat-filter" class="bg-paper-50 dark:bg-ink-950 border border-mist-50 dark:border-slate-800 text-xs text-slate-900 dark:text-white rounded-[10px] px-3 py-2 focus:outline-none focus:ring-2 focus:ring-roast-500 transition-colors">
+           <option value="all">All Categories</option>
+           <option value="Microservices & Security">Microservices & Security</option>
+           <option value="Event-Driven & Messaging">Event-Driven & Messaging</option>
+           <option value="Caching & Database">Caching & Database</option>
+           <option value="Databases & Scaling">Databases & Scaling</option>
+           <option value="Geo-Spatial & Real-Time">Geo-Spatial & Real-Time</option>
+         </select>
+       </div>
+     </div>
+
+     <!-- System Design Architecture Cards Grid -->
+     <div id="sysdesign-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+       <!-- Injected dynamically by sysdesign.js -->
+     </div>
+   </div>
   </main>
 
   <!-- System Architecture Interactive Simulation Modal -->
-  <dialog id="sysdesign-modal" class="bg-white/95 dark:bg-panel-900/95 glass-panel text-slate-800 dark:text-slate-200 rounded-2xl border border-slate-200 dark:border-slate-800 p-0 shadow-soft max-w-5xl w-full backdrop:bg-slate-950/70">
+  <dialog id="sysdesign-modal" class="bg-white/95 dark:bg-panel-900/95 glass-panel text-slate-800 dark:text-slate-200 rounded-[14px] border border-mist-50 dark:border-slate-800 p-0 shadow-attio-elevated max-w-5xl w-full backdrop:bg-slate-950/70">
     <div class="flex flex-col max-h-[92vh]">
       <!-- Modal Header -->
-      <div class="p-5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50/50 dark:bg-ink-950/50">
+      <div class="p-5 border-b border-mist-50 dark:border-slate-800 flex items-center justify-between bg-paper-50/60 dark:bg-ink-950/50">
         <div>
           <div class="flex items-center space-x-2 mb-1">
-            <span id="sysdesign-modal-category" class="px-2.5 py-0.5 rounded-md text-[10px] font-bold bg-roast-500/10 border border-roast-500/20 text-roast-500">Microservices & Security</span>
-            <span id="sysdesign-modal-diff" class="px-2.5 py-0.5 rounded-md text-[10px] font-bold bg-amber-500/10 border border-amber-500/20 text-amber-500">Senior</span>
+            <span id="sysdesign-modal-category" class="px-2.5 py-0.5 rounded-[7px] text-[11px] font-semibold bg-roast-500/10 border border-roast-500/20 text-roast-500">Microservices & Security</span>
+            <span id="sysdesign-modal-diff" class="px-2.5 py-0.5 rounded-[7px] text-[11px] font-semibold bg-blue-50 text-blue-700 border border-blue-200 dark:bg-blue-950/40 dark:text-blue-300 dark:border-blue-800/40">Senior</span>
           </div>
           <h3 id="sysdesign-modal-title" class="font-bold text-slate-900 dark:text-white text-lg sm:text-xl">System Architecture Simulation</h3>
         </div>
 
         <form method="dialog">
-          <button class="w-8 h-8 rounded-lg border border-slate-200 dark:border-slate-700 text-slate-400 hover:text-slate-700 dark:hover:text-white hover:border-slate-400 dark:hover:border-slate-500 flex items-center justify-center transition-colors">
+          <button class="w-8 h-8 rounded-[10px] border border-mist-50 dark:border-slate-800 text-slate-400 hover:text-slate-700 dark:hover:text-white hover:border-roast-500 flex items-center justify-center transition-colors">
             <i aria-hidden="true" class="fa-solid fa-xmark text-sm"></i>
           </button>
         </form>
@@ -587,27 +586,27 @@
       <!-- Modal Body -->
       <div class="p-6 overflow-y-auto space-y-6 flex-1">
         <!-- Simulation Control Bar -->
-        <div class="bg-slate-100 dark:bg-ink-950 p-4 rounded-xl border border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3">
+        <div class="bg-paper-50 dark:bg-ink-950 p-4 rounded-[12px] border border-mist-50 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3 shadow-attio-subtle">
           <div class="flex items-center space-x-2">
-            <button id="sysdesign-play-btn" class="px-3.5 py-1.5 rounded-lg bg-roast-500 hover:bg-roast-600 text-[#2B1904] font-extrabold text-xs flex items-center space-x-1.5 transition-all shadow-sm">
+            <button id="sysdesign-play-btn" class="px-3.5 py-1.5 rounded-[10px] bg-roast-500 hover:bg-roast-600 text-white font-medium text-xs flex items-center space-x-1.5 transition-all shadow-sm">
               <i id="sysdesign-play-icon" class="fa-solid fa-play text-xs"></i>
               <span id="sysdesign-play-text">Play Flow</span>
             </button>
-            <button id="sysdesign-prev-btn" class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 hover:border-roast-500 text-xs font-bold text-slate-700 dark:text-slate-300 bg-white dark:bg-panel-900 transition-all">
+            <button id="sysdesign-prev-btn" class="px-3 py-1.5 rounded-[10px] border border-mist-50 dark:border-slate-800 hover:border-roast-500 hover:text-roast-500 text-xs font-medium text-slate-700 dark:text-slate-300 bg-white dark:bg-panel-900 transition-all shadow-sm">
               <i class="fa-solid fa-backward text-xs"></i>
               <span class="hidden sm:inline ml-1">Prev</span>
             </button>
-            <button id="sysdesign-next-btn" class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 hover:border-roast-500 text-xs font-bold text-slate-700 dark:text-slate-300 bg-white dark:bg-panel-900 transition-all">
+            <button id="sysdesign-next-btn" class="px-3 py-1.5 rounded-[10px] border border-mist-50 dark:border-slate-800 hover:border-roast-500 hover:text-roast-500 text-xs font-medium text-slate-700 dark:text-slate-300 bg-white dark:bg-panel-900 transition-all shadow-sm">
               <span class="hidden sm:inline mr-1">Next</span>
               <i class="fa-solid fa-forward text-xs"></i>
             </button>
-            <button id="sysdesign-reset-btn" class="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-white transition-colors" title="Reset Simulation">
+            <button id="sysdesign-reset-btn" class="p-1.5 rounded-[10px] border border-mist-50 dark:border-slate-800 bg-white dark:bg-panel-900 text-slate-400 hover:text-slate-700 dark:hover:text-white hover:border-roast-500 transition-colors shadow-sm" title="Reset Simulation">
               <i class="fa-solid fa-rotate-left text-xs"></i>
             </button>
           </div>
 
           <div class="flex items-center space-x-2">
-            <span id="sysdesign-step-counter" class="px-2.5 py-1 rounded-md bg-white dark:bg-panel-900 border border-slate-200 dark:border-slate-800 text-xs font-mono font-bold text-roast-500">
+            <span id="sysdesign-step-counter" class="px-2.5 py-1 rounded-[7px] bg-white dark:bg-panel-900 border border-mist-50 dark:border-slate-800 text-xs font-mono font-semibold text-roast-500 shadow-sm">
               Step 1 of 5
             </span>
           </div>
@@ -620,7 +619,7 @@
 
         <!-- Current Step Info & Terminal Execution Log -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
-          <div class="bg-slate-50 dark:bg-ink-950 p-4 rounded-xl border border-slate-200 dark:border-slate-800 space-y-1.5">
+          <div class="bg-white dark:bg-panel-900 p-4 rounded-[12px] border border-mist-50 dark:border-slate-800 space-y-1.5 shadow-attio-subtle">
             <h4 id="sysdesign-step-title" class="font-bold text-slate-900 dark:text-white text-sm flex items-center space-x-2">
               <span>1. Request Processing</span>
             </h4>
@@ -629,7 +628,7 @@
             </p>
           </div>
 
-          <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 font-mono text-xs text-emerald-400 flex flex-col justify-between">
+          <div class="bg-slate-950 p-4 rounded-[12px] border border-slate-800 font-mono text-xs text-emerald-400 flex flex-col justify-between shadow-attio-subtle">
             <div class="flex items-center justify-between text-[10px] text-slate-500 border-b border-slate-800 pb-1.5 mb-2">
               <span class="flex items-center space-x-1">
                 <i class="fa-solid fa-terminal text-emerald-500"></i>
@@ -652,21 +651,27 @@
   </dialog>
 
   <!-- Algorithm Breakdown Step Modal -->
-  <dialog id="algo-modal" class="bg-white/95 dark:bg-panel-900/95 glass-panel text-slate-800 dark:text-slate-200 rounded-2xl border border-slate-200 dark:border-slate-800 p-0 shadow-soft max-w-4xl w-full backdrop:bg-slate-950/70">
+  <dialog id="algo-modal" class="bg-white/95 dark:bg-panel-900/95 glass-panel text-slate-800 dark:text-slate-200 rounded-[14px] border border-mist-50 dark:border-slate-800 p-0 shadow-attio-elevated max-w-4xl w-full backdrop:bg-slate-950/70">
     <div class="flex flex-col max-h-[90vh]">
       <!-- Modal Header -->
-      <div class="p-5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50/50 dark:bg-ink-950/50">
+      <div class="p-5 border-b border-mist-50 dark:border-slate-800 flex items-center justify-between bg-paper-50/60 dark:bg-ink-950/50">
         <div>
-          <div class="flex items-center space-x-2 mb-1">
-            <span id="algo-modal-pattern" class="px-2.5 py-0.5 rounded-md text-[10px] font-bold bg-roast-500/10 border border-roast-500/20 text-roast-500">Two Pointers</span>
-            <span id="algo-modal-diff" class="px-2.5 py-0.5 rounded-md text-[10px] font-bold bg-emerald-500/10 border border-emerald-500/20 text-emerald-500">Middle</span>
-            <span class="text-xs text-slate-400 font-mono">Time: <strong id="algo-modal-time-comp" class="text-slate-700 dark:text-slate-200">O(N)</strong></span>
-            <span class="text-xs text-slate-400 font-mono">Space: <strong id="algo-modal-space-comp" class="text-slate-700 dark:text-slate-200">O(1)</strong></span>
+          <div class="flex flex-wrap items-center gap-2 mb-1">
+            <span id="algo-modal-pattern" class="px-2.5 py-0.5 rounded-[7px] text-[11px] font-semibold bg-roast-500/10 border border-roast-500/20 text-roast-500">Two Pointers</span>
+            <span id="algo-modal-diff" class="px-2.5 py-0.5 rounded-[7px] text-[11px] font-semibold bg-blue-50 text-blue-700 border border-blue-200 dark:bg-blue-950/40 dark:text-blue-300 dark:border-blue-800/40">Middle</span>
+            <span class="inline-flex items-center space-x-1 px-2 py-0.5 rounded-[7px] border border-mist-50 dark:border-slate-800 bg-paper-50 dark:bg-panel-700/50 text-[11px] font-mono text-slate-600 dark:text-slate-300">
+              <i class="fa-regular fa-clock text-roast-500 text-[10px]"></i>
+              <span>Time: <strong id="algo-modal-time-comp" class="text-slate-900 dark:text-white font-semibold">O(N)</strong></span>
+            </span>
+            <span class="inline-flex items-center space-x-1 px-2 py-0.5 rounded-[7px] border border-mist-50 dark:border-slate-800 bg-paper-50 dark:bg-panel-700/50 text-[11px] font-mono text-slate-600 dark:text-slate-300">
+              <i class="fa-solid fa-microchip text-slate-400 text-[10px]"></i>
+              <span>Space: <strong id="algo-modal-space-comp" class="text-slate-900 dark:text-white font-semibold">O(1)</strong></span>
+            </span>
           </div>
           <h3 id="algo-modal-title" class="font-bold text-lg text-slate-900 dark:text-white">Algorithm Title</h3>
         </div>
         <form method="dialog">
-          <button class="w-8 h-8 rounded-lg border border-slate-300 dark:border-slate-700 hover:border-roast-500 flex items-center justify-center text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
+          <button class="w-8 h-8 rounded-[10px] border border-mist-50 dark:border-slate-800 text-slate-400 hover:text-slate-700 dark:hover:text-white hover:border-roast-500 flex items-center justify-center transition-colors">
             <i aria-hidden="true" class="fa-solid fa-xmark"></i>
           </button>
         </form>
@@ -679,331 +684,330 @@
     </div>
   </dialog>
 
- <!-- Toasts feedback notifications dynamically injected -->
- <div id="toast" role="status" aria-live="polite" class="fixed bottom-6 right-6 z-50 bg-white/95 dark:bg-[#151c2c]/95 text-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-800/80 rounded-lg px-5 py-4 shadow-md flex items-center space-x-3 pointer-events-none opacity-0 transform translate-y-8 transition-all duration-500 ease-out">
- <div class="bg-slate-100 dark:bg-panel-900 p-2 rounded-md flex items-center justify-center">
- <i id="toast-icon" aria-hidden="true" class="fa-solid fa-check text-pine-500 text-lg"></i>
- </div>
- <span id="toast-message" class="text-sm font-bold tracking-wide"></span>
- </div>
-
- <!-- Mock Interview Setup Modal -->
- <dialog id="mock-setup-modal" class="bg-transparent m-auto p-4">
- <div class="bg-white/95 dark:bg-panel-900/95 glass-panel rounded-lg border border-slate-200 dark:border-slate-800 shadow-soft max-w-md w-full p-6 space-y-6 relative">
- <button id="close-mock-setup-btn" aria-label="Close setup" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 text-lg">
- <i aria-hidden="true" class="fa-solid fa-xmark"></i>
- </button>
-
- <div class="flex items-center space-x-3">
- <div class="w-12 h-12 rounded-md bg-roast-500 flex items-center justify-center text-[#2B1904] text-xl font-bold">
- <i aria-hidden="true" class="fa-solid fa-gamepad"></i>
- </div>
- <div>
- <h2 class="font-bold text-lg text-slate-900 dark:text-white">Mock Interview Setup</h2>
- <p class="text-xs text-slate-400">Configure your simulated interview session</p>
- </div>
- </div>
-
- <!-- Options -->
- <div class="space-y-4">
- <!-- Target Grade -->
- <div>
- <p class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Target Grade</p>
- <div class="grid grid-cols-3 gap-2">
- <button type="button" data-mock-grade="Junior" class="mock-grade-btn p-3 rounded-md border text-center hover:border-roast-500 transition-all font-bold text-xs bg-roast-500/10 border-roast-500 text-roast-500 dark:text-roast-500">
- Junior<br><span class="text-[10px] font-normal opacity-80">10 questions</span>
- </button>
- <button type="button" data-mock-grade="Middle" class="mock-grade-btn p-3 rounded-md border border-slate-200 dark:border-slate-800 text-center hover:border-roast-500 transition-all font-bold text-xs text-slate-600 dark:text-slate-400">
- Middle<br><span class="text-[10px] font-normal opacity-80">12 questions</span>
- </button>
- <button type="button" data-mock-grade="Senior" class="mock-grade-btn p-3 rounded-md border border-slate-200 dark:border-slate-800 text-center hover:border-roast-500 transition-all font-bold text-xs text-slate-600 dark:text-slate-400">
- Senior<br><span class="text-[10px] font-normal opacity-80">15 questions</span>
- </button>
- </div>
- </div>
-
- <!-- Target Company -->
- <div>
- <p class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Target Company</p>
- <div class="grid grid-cols-2 gap-2">
- <button type="button" data-mock-company="Any" class="mock-company-btn p-3 rounded-md border text-center hover:border-roast-500 transition-all font-bold text-xs bg-roast-500/10 border-roast-500 text-roast-500 dark:text-roast-500 col-span-2">
- 🎲 Any (Mix)<br><span class="text-[10px] font-normal opacity-80">All questions without filters</span>
- </button>
- <button type="button" data-mock-company="Bank" class="mock-company-btn p-3 rounded-md border border-slate-200 dark:border-slate-800 text-center hover:border-roast-500 transition-all font-bold text-xs text-slate-600 dark:text-slate-400">
- 🏦 Bank / FinTech<br><span class="text-[10px] font-normal opacity-80">Concurrency, Memory, DB</span>
- </button>
- <button type="button" data-mock-company="Outsource" class="mock-company-btn p-3 rounded-md border border-slate-200 dark:border-slate-800 text-center hover:border-roast-500 transition-all font-bold text-xs text-slate-600 dark:text-slate-400">
- 🏢 Outsource<br><span class="text-[10px] font-normal opacity-80">Core, OOP, Patterns, API</span>
- </button>
- <button type="button" data-mock-company="BigTech" class="mock-company-btn p-3 rounded-md border border-slate-200 dark:border-slate-800 text-center hover:border-roast-500 transition-all font-bold text-xs text-slate-600 dark:text-slate-400">
- 🚀 BigTech<br><span class="text-[10px] font-normal opacity-80">System Design, High-Load</span>
- </button>
- <button type="button" data-mock-company="Startup" class="mock-company-btn p-3 rounded-md border border-slate-200 dark:border-slate-800 text-center hover:border-roast-500 transition-all font-bold text-xs text-slate-600 dark:text-slate-400">
- 🦄 Startup<br><span class="text-[10px] font-normal opacity-80">Spring Boot, REST, DB</span>
- </button>
- </div>
- </div>
-
- <!-- Duration -->
- <div>
- <label for="mock-time-select" class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Interview Time Limit</label>
- <select id="mock-time-select" class="w-full bg-slate-50 dark:bg-ink-950 border border-slate-200 dark:border-slate-800 rounded-md p-3 text-xs font-semibold focus:outline-none focus:border-roast-500 text-slate-800 dark:text-slate-200">
- <option value="15">⚡ 15 Minutes (Express)</option>
- <option value="30" selected>⏱️ 30 Minutes (Standard)</option>
- <option value="45">⌛ 45 Minutes (In-Depth)</option>
- <option value="0">♾️ No Timer (Relaxed)</option>
- </select>
- </div>
- </div>
-
- <!-- Start Button -->
- <button id="start-mock-btn" class="w-full bg-roast-500 text-white font-bold py-3.5 rounded-md shadow-lg  hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center space-x-2">
- <span>Start Simulation</span>
- <i aria-hidden="true" class="fa-solid fa-play text-xs"></i>
- </button>
- </div>
- </dialog>
-
- <!-- Mock Interview Results Modal -->
- <dialog id="mock-results-modal" class="bg-transparent m-auto p-4">
- <div class="bg-white/95 dark:bg-panel-900/95 glass-panel rounded-lg border border-slate-200 dark:border-slate-800 shadow-soft max-w-lg w-full p-6 space-y-6 relative">
- <div class="text-center space-y-2">
- <div id="mock-result-badge-icon" class="w-16 h-16 rounded-lg bg-pine-500/10 text-pine-500 flex items-center justify-center text-3xl mx-auto">
- <i aria-hidden="true" class="fa-solid fa-trophy"></i>
- </div>
- <h2 id="mock-result-title" class="font-extrabold text-2xl text-slate-900 dark:text-white">Interview Complete!</h2>
- <p id="mock-result-subtitle" class="text-xs text-slate-400">Here is your performance report card</p>
- </div>
-
- <!-- Score Summary Cards -->
- <div class="grid grid-cols-3 gap-3 text-center">
- <div class="bg-slate-50 dark:bg-ink-950 p-3 rounded-md border border-slate-100 dark:border-slate-800">
- <span class="text-[10px] text-slate-400 uppercase font-bold block">Score</span>
- <span id="mock-result-score" class="text-lg font-extrabold text-roast-500">0%</span>
- </div>
- <div class="bg-slate-50 dark:bg-ink-950 p-3 rounded-md border border-slate-100 dark:border-slate-800">
- <span class="text-[10px] text-slate-400 uppercase font-bold block">XP Gained</span>
- <span id="mock-result-xp" class="text-lg font-extrabold text-roast-500">+0 XP</span>
- </div>
- <div class="bg-slate-50 dark:bg-ink-950 p-3 rounded-md border border-slate-100 dark:border-slate-800">
- <span class="text-[10px] text-slate-400 uppercase font-bold block">Verdict</span>
- <span id="mock-result-verdict" class="text-xs font-bold text-pine-500 block mt-1">PASSED</span>
- </div>
- </div>
-
- <!-- Topic Performance Breakdown -->
- <div class="space-y-2">
- <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Topic Breakdown</h3>
- <div id="mock-result-topics" class="space-y-1.5 max-h-40 overflow-y-auto pr-1">
- <!-- Dynamic rendering -->
- </div>
- </div>
-
- <!-- Finish Button -->
- <button id="finish-mock-btn" class="w-full bg-roast-500 text-white font-bold py-3 rounded-md shadow-md hover:bg-roast-600 transition-all">
- Collect Rewards & Exit
- </button>
- </div>
- </dialog>
-
-
- <!-- Adaptive Quiz Modal -->
- <dialog id="adaptive-modal" class="bg-transparent m-auto p-0 transition-opacity opacity-0">
- <div class="bg-white/95 dark:bg-panel-900/95 glass-panel rounded-lg w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-soft border border-slate-200 dark:border-slate-800 m-4">
- <div class="p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center">
- <div class="flex items-center space-x-3">
- <div class="w-10 h-10 rounded-full bg-pine-500/10 flex items-center justify-center">
- <i aria-hidden="true" class="fa-solid fa-graduation-cap text-pine-500 text-lg"></i>
- </div>
- <h2 class="text-xl font-bold text-slate-900 dark:text-white">Adaptive Plan</h2>
- </div>
- <button id="close-adaptive-modal" aria-label="Close adaptive quiz" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
- <i aria-hidden="true" class="fa-solid fa-xmark text-xl"></i>
- </button>
- </div>
- 
- <div class="p-6" id="adaptive-quiz-container">
- <!-- Level Selection -->
- <div id="adaptive-step-1" class="space-y-6">
- <h3 class="text-lg font-semibold text-slate-800 dark:text-slate-200">Select your target level</h3>
- <p class="text-sm text-slate-500 dark:text-slate-400">We will conduct a quick test (about 8 questions) to identify your knowledge gaps and create a personalized study plan.</p>
- <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
- <button class="level-select-btn p-4 rounded-md border border-pine-500/30 bg-pine-500/10 hover:bg-pine-500/20 text-pine-500 font-bold transition-colors" data-level="Junior">Junior</button>
- <button class="level-select-btn p-4 rounded-md border border-roast-500/20 bg-roast-500/10 hover:bg-roast-500/10 text-roast-500 dark:text-roast-500 font-bold transition-colors" data-level="Middle">Middle</button>
- <button class="level-select-btn p-4 rounded-md border border-plum-500/30 bg-plum-500/10 hover:bg-plum-500/20 text-plum-500 font-bold transition-colors" data-level="Senior">Senior</button>
- </div>
- </div>
-
- <!-- Quiz Area -->
- <div id="adaptive-step-2" class="hidden space-y-6">
- <div class="flex justify-between items-center text-sm font-semibold text-slate-500 dark:text-slate-400">
- <span id="quiz-progress-text">Question 1 of 8</span>
- <span class="px-2 py-1 bg-slate-100 dark:bg-panel-900 rounded-md" id="quiz-level-badge">Middle</span>
- </div>
- <div class="w-full bg-slate-100 dark:bg-panel-900 rounded-full h-2">
- <div id="quiz-progress-bar" class="bg-pine-500 h-2 rounded-full transition-all" style="width: 10%"></div>
- </div>
- 
- <div class="mt-8">
- <h3 id="quiz-question-text" class="text-xl font-semibold text-slate-900 dark:text-white leading-tight">...</h3>
- <div id="quiz-options" class="mt-6 space-y-3">
- <!-- Options injected here -->
- </div>
- </div>
- </div>
-
- <!-- Results -->
- <div id="adaptive-step-3" class="hidden space-y-6 text-center py-6">
- <div class="w-20 h-20 mx-auto bg-pine-500/10 text-pine-500 rounded-full flex items-center justify-center text-4xl mb-4">
- <i aria-hidden="true" class="fa-solid fa-check"></i>
- </div>
- <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Quiz completed!</h3>
- <p class="text-slate-600 dark:text-slate-300" id="quiz-results-text">We have analyzed your answers and created a personalized plan.</p>
- <button id="apply-adaptive-plan" class="mt-6 w-full py-3 bg-pine-500 hover:bg-pine-600 text-white font-bold rounded-md shadow-lg shadow-success-500/20 transition-all hover:scale-[1.02]">Show my plan</button>
- </div>
- </div>
- </div>
- </dialog>
-
- <!-- Adaptive Roadmap Modal -->
- <dialog id="adaptive-roadmap-modal" class="bg-transparent m-auto p-0 transition-opacity opacity-0">
- <div class="bg-slate-50/95 dark:bg-ink-950/95 glass-panel rounded-lg w-full max-w-4xl max-h-[90vh] flex flex-col shadow-soft border border-slate-200 dark:border-slate-800 m-4 overflow-hidden">
- <div class="p-6 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center bg-white dark:bg-panel-900 shrink-0">
- <div class="flex items-center space-x-3">
- <div class="w-10 h-10 rounded-full bg-pine-500/10 flex items-center justify-center text-pine-500 text-lg">
- <i aria-hidden="true" class="fa-solid fa-map"></i>
- </div>
- <div>
- <h2 class="text-xl font-bold text-slate-900 dark:text-white">Your Adaptive Roadmap</h2>
- <p class="text-sm text-slate-500">Master these topics to complete your plan</p>
- </div>
- </div>
- <button id="close-roadmap-modal" aria-label="Close roadmap" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors w-8 h-8 flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800">
- <i aria-hidden="true" class="fa-solid fa-xmark text-xl"></i>
- </button>
- </div>
- 
- <div class="p-6 overflow-y-auto grow" id="roadmap-content">
- <!-- Grouped cards will be injected here by adaptive.js -->
- </div>
- </div>
- </dialog>
-
- <!-- Adaptive Success Modal -->
- <dialog id="adaptive-success-modal" class="bg-transparent m-auto p-0 transition-opacity opacity-0">
- <div class="bg-white/95 dark:bg-panel-900/95 glass-panel rounded-lg w-full max-w-md p-8 text-center shadow-soft border border-pine-500/30 m-4 transform scale-95 transition-transform">
- <div class="w-24 h-24 mx-auto bg-pine-500/20 text-pine-500 rounded-full flex items-center justify-center text-5xl mb-6 relative">
- <i aria-hidden="true" class="fa-solid fa-trophy absolute z-10"></i>
- <div class="absolute inset-0 bg-pine-500 rounded-full animate-ping opacity-20"></div>
- </div>
- <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white mb-2">Plan Completed!</h2>
- <p class="text-slate-600 dark:text-slate-300 mb-8">You have successfully mastered all the topics in your personalized adaptive plan. Great job!</p>
- <button id="close-success-modal" class="w-full py-3 bg-pine-500 hover:bg-pine-600 text-white font-bold rounded-md shadow-lg shadow-success-500/20 transition-all hover:scale-[1.02]">Awesome!</button>
- </div>
- </dialog>
-
- <!-- Statistics Dashboard Modal -->
- <dialog id="stats-dashboard-modal" class="bg-transparent m-auto p-0 transition-opacity opacity-0">
- <div class="bg-white/95 dark:bg-panel-900/95 glass-panel rounded-lg w-full max-w-3xl max-h-[90vh] flex flex-col shadow-soft border border-slate-200 dark:border-slate-800 m-4 overflow-hidden">
- <div class="p-6 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center bg-slate-50 dark:bg-ink-950/50 shrink-0">
- <div class="flex items-center space-x-3">
- <div class="w-10 h-10 rounded-full bg-roast-500/10 flex items-center justify-center text-roast-500 text-lg">
- <i aria-hidden="true" class="fa-solid fa-chart-pie"></i>
- </div>
- <div>
- <h2 class="text-xl font-bold text-slate-900 dark:text-white">My Statistics</h2>
- <p class="text-sm text-slate-500">Track your interview preparation progress</p>
- </div>
- </div>
- <button id="close-stats-modal" aria-label="Close statistics" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors w-8 h-8 flex items-center justify-center rounded-full hover:bg-slate-100 dark:hover:bg-slate-800">
- <i aria-hidden="true" class="fa-solid fa-xmark text-xl"></i>
- </button>
- </div>
- 
- <div class="p-6 overflow-y-auto grow">
- <div id="stats-summary-cards" class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
- <!-- Global summary injected here -->
- </div>
- 
- <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center space-x-2">
- <i aria-hidden="true" class="fa-solid fa-layer-group text-slate-400"></i>
- <span>Topic Mastery Breakdown</span>
- </h3>
- <div id="stats-topics-container" class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
- <!-- Progress bars injected here -->
- </div>
- </div>
- 
- <div class="p-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-ink-950/50 flex flex-wrap justify-between items-center gap-3">
-    <div class="flex items-center space-x-2">
-      <button id="export-progress-btn" title="Export progress to JSON" class="px-3 py-2 text-xs font-semibold border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md transition-colors flex items-center space-x-1.5">
-        <i aria-hidden="true" class="fa-solid fa-download text-roast-500"></i>
-        <span>Export Progress</span>
-      </button>
-      <label for="import-progress-input" title="Import progress from JSON" class="px-3 py-2 text-xs font-semibold border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md transition-colors flex items-center space-x-1.5 cursor-pointer">
-        <i aria-hidden="true" class="fa-solid fa-upload text-pine-500"></i>
-        <span>Import Progress</span>
-        <input type="file" id="import-progress-input" accept=".json" class="hidden">
-      </label>
+  <!-- Toasts feedback notifications dynamically injected -->
+  <div id="toast" role="status" aria-live="polite" class="fixed bottom-6 right-6 z-50 bg-white/95 dark:bg-panel-900/95 glass-panel text-slate-800 dark:text-slate-100 border border-slate-200 dark:border-slate-800 rounded-[10px] px-5 py-4 shadow-attio-elevated flex items-center space-x-3 pointer-events-none opacity-0 transform translate-y-8 transition-all duration-500 ease-out">
+    <div class="bg-paper-50 dark:bg-ink-950 p-2 rounded-[7px] border border-slate-200 dark:border-slate-800 flex items-center justify-center">
+      <i id="toast-icon" aria-hidden="true" class="fa-solid fa-check text-pine-500 text-base"></i>
     </div>
-    <button id="reset-progress-btn" class="px-3 py-2 text-xs font-semibold border border-rose-500/30 text-rose-500 hover:bg-rose-500/10 rounded-md transition-colors flex items-center space-x-1.5">
-      <i aria-hidden="true" class="fa-solid fa-trash-can"></i>
-      <span>Reset Progress</span>
-    </button>
+    <span id="toast-message" class="text-sm font-medium tracking-wide"></span>
   </div>
- </div>
- </dialog>
+
+  <!-- Mock Interview Setup Modal -->
+  <dialog id="mock-setup-modal" class="bg-transparent m-auto p-4">
+    <div class="bg-white/95 dark:bg-panel-900/95 glass-panel rounded-[14px] border border-mist-50 dark:border-slate-800 shadow-attio-elevated max-w-md w-full p-6 space-y-6 relative">
+      <button id="close-mock-setup-btn" aria-label="Close setup" class="absolute top-4 right-4 w-8 h-8 rounded-[10px] border border-mist-50 dark:border-slate-800 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:border-roast-500 flex items-center justify-center transition-colors">
+        <i aria-hidden="true" class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="flex items-center space-x-3">
+        <div class="w-12 h-12 rounded-[10px] bg-roast-500/10 border border-roast-500/20 text-roast-500 flex items-center justify-center text-xl font-bold">
+          <i aria-hidden="true" class="fa-solid fa-gamepad"></i>
+        </div>
+        <div>
+          <h2 class="font-bold text-lg text-slate-900 dark:text-white">Mock Interview Setup</h2>
+          <p class="text-xs text-slate-400">Configure your simulated interview session</p>
+        </div>
+      </div>
+
+      <!-- Options -->
+      <div class="space-y-4">
+        <!-- Target Grade -->
+        <div>
+          <p class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Target Grade</p>
+          <div class="grid grid-cols-3 gap-2">
+            <button type="button" data-mock-grade="Junior" class="mock-grade-btn p-3 rounded-[10px] border text-center hover:border-roast-500 transition-all font-bold text-xs bg-roast-500/10 border-roast-500 text-roast-500 dark:text-roast-500 shadow-xs">
+              Junior<br><span class="text-[10px] font-normal opacity-80">10 questions</span>
+            </button>
+            <button type="button" data-mock-grade="Middle" class="mock-grade-btn p-3 rounded-[10px] border border-mist-50 dark:border-slate-800 text-center hover:border-roast-500 transition-all font-bold text-xs text-slate-600 dark:text-slate-400 shadow-xs">
+              Middle<br><span class="text-[10px] font-normal opacity-80">12 questions</span>
+            </button>
+            <button type="button" data-mock-grade="Senior" class="mock-grade-btn p-3 rounded-[10px] border border-mist-50 dark:border-slate-800 text-center hover:border-roast-500 transition-all font-bold text-xs text-slate-600 dark:text-slate-400 shadow-xs">
+              Senior<br><span class="text-[10px] font-normal opacity-80">15 questions</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Target Company -->
+        <div>
+          <p class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Target Company</p>
+          <div class="grid grid-cols-2 gap-2">
+            <button type="button" data-mock-company="Any" class="mock-company-btn p-3 rounded-[10px] border text-center hover:border-roast-500 transition-all font-bold text-xs bg-roast-500/10 border-roast-500 text-roast-500 dark:text-roast-500 col-span-2 shadow-xs">
+              🎲 Any (Mix)<br><span class="text-[10px] font-normal opacity-80">All questions without filters</span>
+            </button>
+            <button type="button" data-mock-company="Bank" class="mock-company-btn p-3 rounded-[10px] border border-mist-50 dark:border-slate-800 text-center hover:border-roast-500 transition-all font-bold text-xs text-slate-600 dark:text-slate-400 shadow-xs">
+              🏦 Bank / FinTech<br><span class="text-[10px] font-normal opacity-80">Concurrency, Memory, DB</span>
+            </button>
+            <button type="button" data-mock-company="Outsource" class="mock-company-btn p-3 rounded-[10px] border border-mist-50 dark:border-slate-800 text-center hover:border-roast-500 transition-all font-bold text-xs text-slate-600 dark:text-slate-400 shadow-xs">
+              🏢 Outsource<br><span class="text-[10px] font-normal opacity-80">Core, OOP, Patterns, API</span>
+            </button>
+            <button type="button" data-mock-company="BigTech" class="mock-company-btn p-3 rounded-[10px] border border-mist-50 dark:border-slate-800 text-center hover:border-roast-500 transition-all font-bold text-xs text-slate-600 dark:text-slate-400 shadow-xs">
+              🚀 BigTech<br><span class="text-[10px] font-normal opacity-80">System Design, High-Load</span>
+            </button>
+            <button type="button" data-mock-company="Startup" class="mock-company-btn p-3 rounded-[10px] border border-mist-50 dark:border-slate-800 text-center hover:border-roast-500 transition-all font-bold text-xs text-slate-600 dark:text-slate-400 shadow-xs">
+              🦄 Startup<br><span class="text-[10px] font-normal opacity-80">Spring Boot, REST, DB</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Duration -->
+        <div>
+          <label for="mock-time-select" class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Interview Time Limit</label>
+          <select id="mock-time-select" class="w-full bg-paper-50 dark:bg-ink-950 border border-mist-50 dark:border-slate-800 rounded-[10px] p-3 text-xs font-semibold focus:outline-none focus:border-roast-500 text-slate-800 dark:text-slate-200">
+            <option value="15">⚡ 15 Minutes (Express)</option>
+            <option value="30" selected>⏱️ 30 Minutes (Standard)</option>
+            <option value="45">⌛ 45 Minutes (In-Depth)</option>
+            <option value="0">♾️ No Timer (Relaxed)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Start Button -->
+      <button id="start-mock-btn" class="w-full bg-ink-900 hover:bg-black text-white font-medium py-3 rounded-[10px] shadow-sm hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center space-x-2">
+        <span>Start Simulation</span>
+        <i aria-hidden="true" class="fa-solid fa-play text-xs"></i>
+      </button>
+    </div>
+  </dialog>
+
+  <!-- Mock Interview Results Modal -->
+  <dialog id="mock-results-modal" class="bg-transparent m-auto p-4">
+    <div class="bg-white/95 dark:bg-panel-900/95 glass-panel rounded-[14px] border border-mist-50 dark:border-slate-800 shadow-attio-elevated max-w-lg w-full p-6 space-y-6 relative">
+      <div class="text-center space-y-2">
+        <div id="mock-result-badge-icon" class="w-16 h-16 rounded-[12px] bg-pine-500/10 border border-pine-500/20 text-pine-500 flex items-center justify-center text-3xl mx-auto">
+          <i aria-hidden="true" class="fa-solid fa-trophy"></i>
+        </div>
+        <h2 id="mock-result-title" class="font-extrabold text-2xl text-slate-900 dark:text-white">Interview Complete!</h2>
+        <p id="mock-result-subtitle" class="text-xs text-slate-400">Here is your performance report card</p>
+      </div>
+
+      <!-- Score Summary Cards -->
+      <div class="grid grid-cols-3 gap-3 text-center">
+        <div class="bg-paper-50 dark:bg-ink-950 p-3.5 rounded-[10px] border border-mist-50 dark:border-slate-800 shadow-xs">
+          <span class="text-[10px] text-slate-400 uppercase font-bold block">Score</span>
+          <span id="mock-result-score" class="text-lg font-extrabold text-roast-500">0%</span>
+        </div>
+        <div class="bg-paper-50 dark:bg-ink-950 p-3.5 rounded-[10px] border border-mist-50 dark:border-slate-800 shadow-xs">
+          <span class="text-[10px] text-slate-400 uppercase font-bold block">XP Gained</span>
+          <span id="mock-result-xp" class="text-lg font-extrabold text-roast-500">+0 XP</span>
+        </div>
+        <div class="bg-paper-50 dark:bg-ink-950 p-3.5 rounded-[10px] border border-mist-50 dark:border-slate-800 shadow-xs">
+          <span class="text-[10px] text-slate-400 uppercase font-bold block">Verdict</span>
+          <span id="mock-result-verdict" class="text-xs font-bold text-pine-500 block mt-1">PASSED</span>
+        </div>
+      </div>
+
+      <!-- Topic Performance Breakdown -->
+      <div class="space-y-2">
+        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Topic Breakdown</h3>
+        <div id="mock-result-topics" class="space-y-1.5 max-h-40 overflow-y-auto pr-1">
+          <!-- Dynamic rendering -->
+        </div>
+      </div>
+
+      <!-- Finish Button -->
+      <button id="finish-mock-btn" class="w-full bg-ink-900 hover:bg-black text-white font-medium py-3 rounded-[10px] shadow-sm transition-all">
+        Collect Rewards & Exit
+      </button>
+    </div>
+  </dialog>
+
+  <!-- Adaptive Quiz Modal -->
+  <dialog id="adaptive-modal" class="bg-transparent m-auto p-0 transition-opacity opacity-0">
+    <div class="bg-white/95 dark:bg-panel-900/95 glass-panel rounded-[14px] w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-attio-elevated border border-mist-50 dark:border-slate-800 m-4">
+      <div class="p-6 border-b border-mist-50 dark:border-slate-800 bg-paper-50/60 dark:bg-ink-950/50 flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-[10px] bg-pine-500/10 border border-pine-500/20 flex items-center justify-center">
+            <i aria-hidden="true" class="fa-solid fa-graduation-cap text-pine-500 text-lg"></i>
+          </div>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-white">Adaptive Plan</h2>
+        </div>
+        <button id="close-adaptive-modal" aria-label="Close adaptive quiz" class="w-8 h-8 rounded-[10px] border border-mist-50 dark:border-slate-800 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:border-roast-500 flex items-center justify-center transition-colors">
+          <i aria-hidden="true" class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+      
+      <div class="p-6" id="adaptive-quiz-container">
+        <!-- Level Selection -->
+        <div id="adaptive-step-1" class="space-y-6">
+          <h3 class="text-lg font-semibold text-slate-800 dark:text-slate-200">Select your target level</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400">We will conduct a quick test (about 8 questions) to identify your knowledge gaps and create a personalized study plan.</p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <button class="level-select-btn p-4 rounded-[10px] border border-pine-500/30 bg-pine-500/10 hover:bg-pine-500/20 text-pine-500 font-semibold transition-colors" data-level="Junior">Junior</button>
+            <button class="level-select-btn p-4 rounded-[10px] border border-roast-500/20 bg-roast-500/10 hover:bg-roast-500/20 text-roast-500 dark:text-roast-500 font-semibold transition-colors" data-level="Middle">Middle</button>
+            <button class="level-select-btn p-4 rounded-[10px] border border-plum-500/30 bg-plum-500/10 hover:bg-plum-500/20 text-plum-500 font-semibold transition-colors" data-level="Senior">Senior</button>
+          </div>
+        </div>
+
+        <!-- Quiz Area -->
+        <div id="adaptive-step-2" class="hidden space-y-6">
+          <div class="flex justify-between items-center text-sm font-semibold text-slate-500 dark:text-slate-400">
+            <span id="quiz-progress-text">Question 1 of 8</span>
+            <span class="px-2.5 py-1 bg-paper-50 dark:bg-panel-900 border border-mist-50 dark:border-slate-800 rounded-[7px] text-xs font-semibold" id="quiz-level-badge">Middle</span>
+          </div>
+          <div class="w-full bg-paper-50 dark:bg-panel-900 border border-mist-50 dark:border-slate-800/60 rounded-full h-2">
+            <div id="quiz-progress-bar" class="bg-pine-500 h-2 rounded-full transition-all" style="width: 10%"></div>
+          </div>
+          
+          <div class="mt-8">
+            <h3 id="quiz-question-text" class="text-xl font-semibold text-slate-900 dark:text-white leading-tight">...</h3>
+            <div id="quiz-options" class="mt-6 space-y-3">
+              <!-- Options injected here -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div id="adaptive-step-3" class="hidden space-y-6 text-center py-6">
+          <div class="w-20 h-20 mx-auto bg-pine-500/10 border border-pine-500/20 text-pine-500 rounded-[14px] flex items-center justify-center text-4xl mb-4">
+            <i aria-hidden="true" class="fa-solid fa-check"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Quiz completed!</h3>
+          <p class="text-slate-600 dark:text-slate-300" id="quiz-results-text">We have analyzed your answers and created a personalized plan.</p>
+          <button id="apply-adaptive-plan" class="mt-6 w-full py-3 bg-ink-900 hover:bg-black text-white font-medium rounded-[10px] shadow-sm transition-all hover:scale-[1.01]">Show my plan</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Adaptive Roadmap Modal -->
+  <dialog id="adaptive-roadmap-modal" class="bg-transparent m-auto p-0 transition-opacity opacity-0">
+    <div class="bg-paper-50/95 dark:bg-ink-950/95 glass-panel rounded-[14px] w-full max-w-4xl max-h-[90vh] flex flex-col shadow-attio-elevated border border-mist-50 dark:border-slate-800 m-4 overflow-hidden">
+      <div class="p-6 border-b border-mist-50 dark:border-slate-800 flex justify-between items-center bg-white dark:bg-panel-900 shrink-0">
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-[10px] bg-pine-500/10 border border-pine-500/20 flex items-center justify-center text-pine-500 text-lg">
+            <i aria-hidden="true" class="fa-solid fa-map"></i>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white">Your Adaptive Roadmap</h2>
+            <p class="text-sm text-slate-500">Master these topics to complete your plan</p>
+          </div>
+        </div>
+        <button id="close-roadmap-modal" aria-label="Close roadmap" class="w-8 h-8 rounded-[10px] border border-mist-50 dark:border-slate-800 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:border-roast-500 flex items-center justify-center transition-colors">
+          <i aria-hidden="true" class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+      
+      <div class="p-6 overflow-y-auto grow" id="roadmap-content">
+        <!-- Grouped cards will be injected here by adaptive.js -->
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Adaptive Success Modal -->
+  <dialog id="adaptive-success-modal" class="bg-transparent m-auto p-0 transition-opacity opacity-0">
+    <div class="bg-white/95 dark:bg-panel-900/95 glass-panel rounded-[14px] w-full max-w-md p-8 text-center shadow-attio-elevated border border-mist-50 dark:border-slate-800 m-4 transform scale-95 transition-transform">
+      <div class="w-20 h-20 mx-auto bg-pine-500/10 border border-pine-500/20 text-pine-500 rounded-[14px] flex items-center justify-center text-4xl mb-6 relative">
+        <i aria-hidden="true" class="fa-solid fa-trophy absolute z-10"></i>
+        <div class="absolute inset-0 bg-pine-500 rounded-[14px] animate-ping opacity-20"></div>
+      </div>
+      <h2 class="text-2xl font-extrabold text-slate-900 dark:text-white mb-2">Plan Completed!</h2>
+      <p class="text-slate-600 dark:text-slate-300 mb-8 text-sm">You have successfully mastered all the topics in your personalized adaptive plan. Great job!</p>
+      <button id="close-success-modal" class="w-full py-3 bg-ink-900 hover:bg-black text-white font-medium rounded-[10px] shadow-sm transition-all hover:scale-[1.01]">Awesome!</button>
+    </div>
+  </dialog>
+
+  <!-- Statistics Dashboard Modal -->
+  <dialog id="stats-dashboard-modal" class="bg-transparent m-auto p-0 transition-opacity opacity-0">
+    <div class="bg-white/95 dark:bg-panel-900/95 glass-panel rounded-[14px] w-full max-w-3xl max-h-[90vh] flex flex-col shadow-attio-elevated border border-mist-50 dark:border-slate-800 m-4 overflow-hidden">
+      <div class="p-6 border-b border-mist-50 dark:border-slate-800 flex justify-between items-center bg-paper-50/60 dark:bg-ink-950/50 shrink-0">
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 rounded-[10px] bg-roast-500/10 border border-roast-500/20 flex items-center justify-center text-roast-500 text-lg">
+            <i aria-hidden="true" class="fa-solid fa-chart-pie"></i>
+          </div>
+          <div>
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white">My Statistics</h2>
+            <p class="text-sm text-slate-500">Track your interview preparation progress</p>
+          </div>
+        </div>
+        <button id="close-stats-modal" aria-label="Close statistics" class="w-8 h-8 rounded-[10px] border border-mist-50 dark:border-slate-800 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:border-roast-500 flex items-center justify-center transition-colors">
+          <i aria-hidden="true" class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+      
+      <div class="p-6 overflow-y-auto grow">
+        <div id="stats-summary-cards" class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+          <!-- Global summary injected here -->
+        </div>
+        
+        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center space-x-2">
+          <i aria-hidden="true" class="fa-solid fa-layer-group text-slate-400"></i>
+          <span>Topic Mastery Breakdown</span>
+        </h3>
+        <div id="stats-topics-container" class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-6">
+          <!-- Progress bars injected here -->
+        </div>
+      </div>
+      
+      <div class="p-4 border-t border-mist-50 dark:border-slate-800 bg-paper-50/60 dark:bg-ink-950/50 flex flex-wrap justify-between items-center gap-3">
+        <div class="flex items-center space-x-2">
+          <button id="export-progress-btn" title="Export progress to JSON" class="px-3.5 py-2 text-xs font-medium border border-mist-50 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-roast-500 hover:text-roast-500 bg-white dark:bg-panel-900 rounded-[10px] shadow-xs transition-colors flex items-center space-x-1.5">
+            <i aria-hidden="true" class="fa-solid fa-download text-roast-500"></i>
+            <span>Export Progress</span>
+          </button>
+          <label for="import-progress-input" title="Import progress from JSON" class="px-3.5 py-2 text-xs font-medium border border-mist-50 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-roast-500 hover:text-roast-500 bg-white dark:bg-panel-900 rounded-[10px] shadow-xs transition-colors flex items-center space-x-1.5 cursor-pointer">
+            <i aria-hidden="true" class="fa-solid fa-upload text-pine-500"></i>
+            <span>Import Progress</span>
+            <input type="file" id="import-progress-input" accept=".json" class="hidden">
+          </label>
+        </div>
+        <button id="reset-progress-btn" class="px-3.5 py-2 text-xs font-medium border border-rose-500/30 text-rose-500 hover:bg-rose-500/10 rounded-[10px] transition-colors flex items-center space-x-1.5">
+          <i aria-hidden="true" class="fa-solid fa-trash-can"></i>
+          <span>Reset Progress</span>
+        </button>
+      </div>
+    </div>
+  </dialog>
 
   <!-- Keyboard Shortcuts Modal -->
   <dialog id="shortcuts-modal" class="bg-transparent m-auto p-0 transition-opacity opacity-0">
-    <div class="bg-white/95 dark:bg-panel-900/95 glass-panel rounded-lg w-full max-w-lg shadow-soft border border-slate-200 dark:border-slate-800 m-4 overflow-hidden">
-      <div class="p-5 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center bg-slate-50 dark:bg-ink-950/50">
+    <div class="bg-white/95 dark:bg-panel-900/95 glass-panel rounded-[10px] w-full max-w-lg shadow-attio-elevated border border-slate-200 dark:border-slate-800 m-4 overflow-hidden">
+      <div class="p-5 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center bg-slate-50/70 dark:bg-ink-950/50">
         <div class="flex items-center space-x-2.5">
-          <div class="w-8 h-8 rounded-md bg-roast-500/10 flex items-center justify-center text-roast-500">
+          <div class="w-8 h-8 rounded-[7px] bg-roast-500/10 border border-roast-500/20 flex items-center justify-center text-roast-500">
             <i aria-hidden="true" class="fa-solid fa-keyboard"></i>
           </div>
-          <h3 class="font-bold text-base text-slate-900 dark:text-white">Keyboard Shortcuts</h3>
+          <h3 class="font-medium text-base text-slate-900 dark:text-white">Keyboard Shortcuts</h3>
         </div>
-        <button id="close-shortcuts-modal" aria-label="Close shortcuts" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 transition-colors">
+        <button id="close-shortcuts-modal" aria-label="Close shortcuts" class="w-8 h-8 rounded-[7px] border border-slate-200 dark:border-slate-800 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:border-roast-500 hover:bg-paper-50 dark:hover:bg-panel-700/60 flex items-center justify-center transition-all">
           <i aria-hidden="true" class="fa-solid fa-xmark text-lg"></i>
         </button>
       </div>
       <div class="p-5 space-y-3 text-xs">
         <div class="flex justify-between items-center py-1.5 border-b border-slate-100 dark:border-slate-800">
-          <span class="text-slate-600 dark:text-slate-300">Next Question</span>
-          <kbd class="px-2 py-1 rounded bg-slate-100 dark:bg-panel-700 font-mono font-bold text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700">→</kbd>
+          <span class="text-slate-600 dark:text-slate-300 font-medium">Next Question</span>
+          <kbd class="px-2 py-1 rounded-[7px] bg-paper-50 dark:bg-ink-950 font-mono font-medium text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-800">→</kbd>
         </div>
         <div class="flex justify-between items-center py-1.5 border-b border-slate-100 dark:border-slate-800">
-          <span class="text-slate-600 dark:text-slate-300">Previous Question</span>
-          <kbd class="px-2 py-1 rounded bg-slate-100 dark:bg-panel-700 font-mono font-bold text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700">←</kbd>
+          <span class="text-slate-600 dark:text-slate-300 font-medium">Previous Question</span>
+          <kbd class="px-2 py-1 rounded-[7px] bg-paper-50 dark:bg-ink-950 font-mono font-medium text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-800">←</kbd>
         </div>
         <div class="flex justify-between items-center py-1.5 border-b border-slate-100 dark:border-slate-800">
-          <span class="text-slate-600 dark:text-slate-300">Show / Hide Answer</span>
-          <kbd class="px-2 py-1 rounded bg-slate-100 dark:bg-panel-700 font-mono font-bold text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700">Space</kbd>
+          <span class="text-slate-600 dark:text-slate-300 font-medium">Show / Hide Answer</span>
+          <kbd class="px-2 py-1 rounded-[7px] bg-paper-50 dark:bg-ink-950 font-mono font-medium text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-800">Space</kbd>
         </div>
         <div class="flex justify-between items-center py-1.5 border-b border-slate-100 dark:border-slate-800">
-          <span class="text-slate-600 dark:text-slate-300">Toggle Mastered (Earn XP)</span>
-          <kbd class="px-2 py-1 rounded bg-slate-100 dark:bg-panel-700 font-mono font-bold text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700">M</kbd>
+          <span class="text-slate-600 dark:text-slate-300 font-medium">Toggle Mastered (Earn XP)</span>
+          <kbd class="px-2 py-1 rounded-[7px] bg-paper-50 dark:bg-ink-950 font-mono font-medium text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-800">M</kbd>
         </div>
         <div class="flex justify-between items-center py-1.5 border-b border-slate-100 dark:border-slate-800">
-          <span class="text-slate-600 dark:text-slate-300">Bookmark / Favorite</span>
-          <kbd class="px-2 py-1 rounded bg-slate-100 dark:bg-panel-700 font-mono font-bold text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700">F</kbd>
+          <span class="text-slate-600 dark:text-slate-300 font-medium">Bookmark / Favorite</span>
+          <kbd class="px-2 py-1 rounded-[7px] bg-paper-50 dark:bg-ink-950 font-mono font-medium text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-800">F</kbd>
         </div>
         <div class="flex justify-between items-center py-1.5 border-b border-slate-100 dark:border-slate-800">
-          <span class="text-slate-600 dark:text-slate-300">Spaced Repetition (Hard / Good / Easy)</span>
+          <span class="text-slate-600 dark:text-slate-300 font-medium">Spaced Repetition (Hard / Good / Easy)</span>
           <div class="space-x-1">
-            <kbd class="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-panel-700 font-mono font-bold">1</kbd>
-            <kbd class="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-panel-700 font-mono font-bold">2</kbd>
-            <kbd class="px-1.5 py-0.5 rounded bg-slate-100 dark:bg-panel-700 font-mono font-bold">3</kbd>
+            <kbd class="px-2 py-0.5 rounded-[7px] bg-paper-50 dark:bg-ink-950 font-mono font-medium border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-200">1</kbd>
+            <kbd class="px-2 py-0.5 rounded-[7px] bg-paper-50 dark:bg-ink-950 font-mono font-medium border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-200">2</kbd>
+            <kbd class="px-2 py-0.5 rounded-[7px] bg-paper-50 dark:bg-ink-950 font-mono font-medium border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-200">3</kbd>
           </div>
         </div>
         <div class="flex justify-between items-center py-1.5 border-b border-slate-100 dark:border-slate-800">
-          <span class="text-slate-600 dark:text-slate-300">Focus Search Input</span>
-          <kbd class="px-2 py-1 rounded bg-slate-100 dark:bg-panel-700 font-mono font-bold text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700">/</kbd>
+          <span class="text-slate-600 dark:text-slate-300 font-medium">Focus Search Input</span>
+          <kbd class="px-2 py-1 rounded-[7px] bg-paper-50 dark:bg-ink-950 font-mono font-medium text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-800">/</kbd>
         </div>
         <div class="flex justify-between items-center py-1.5">
-          <span class="text-slate-600 dark:text-slate-300">Open Shortcuts Cheat Sheet</span>
-          <kbd class="px-2 py-1 rounded bg-slate-100 dark:bg-panel-700 font-mono font-bold text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700">?</kbd>
+          <span class="text-slate-600 dark:text-slate-300 font-medium">Open Shortcuts Cheat Sheet</span>
+          <kbd class="px-2 py-1 rounded-[7px] bg-paper-50 dark:bg-ink-950 font-mono font-medium text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-800">?</kbd>
         </div>
       </div>
     </div>

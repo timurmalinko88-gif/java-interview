@@ -8,7 +8,10 @@ test.describe('Java Interview Hub - Comprehensive E2E Tests', () => {
     page.on('pageerror', (err) => {
       errors.push(err.message);
     });
-    await page.goto('/');
+    await page.addInitScript(() => {
+      window.localStorage.clear();
+    });
+    await page.goto('./');
     await page.waitForLoadState('networkidle');
   });
 
@@ -85,10 +88,11 @@ test.describe('Java Interview Hub - Comprehensive E2E Tests', () => {
 
     // Answer questions by clicking 'Nailed It'
     for (let i = 0; i < 10; i++) {
+      await expect(page.locator('#btn-answer')).toBeVisible();
       await page.locator('#btn-answer').click();
       await expect(page.locator('#mock-eval-bar')).toBeVisible();
       await page.locator('#eval-nailed-btn').click();
-      await page.waitForTimeout(100);
+      await page.waitForTimeout(150);
     }
 
     // Results modal must be visible with 100% score
@@ -141,9 +145,9 @@ test.describe('Java Interview Hub - Comprehensive E2E Tests', () => {
     await page.locator('.level-select-btn[data-level="Junior"]').click();
     await expect(page.locator('#adaptive-step-2')).toBeVisible();
 
-    // Answer quiz options until all questions are answered
-    for (let i = 0; i < 15; i++) {
-      const step3Visible = await page.locator('#adaptive-step-3:not(.hidden)').isVisible();
+    // Answer quiz options until step 3 is reached
+    for (let i = 0; i < 20; i++) {
+      const step3Visible = await page.locator('#adaptive-step-3').isVisible();
       if (step3Visible) break;
       const firstOption = page.locator('#quiz-options button').first();
       if (await firstOption.isVisible()) {
@@ -162,6 +166,9 @@ test.describe('Java Interview Hub - Comprehensive E2E Tests', () => {
   });
 
   test('Quick Status Filter chips toggle and filter questions list', async ({ page }) => {
+    // Wait for questions to load
+    await expect(page.locator('#question-list-count')).not.toHaveText('0');
+
     // Mark first question as mastered
     await page.locator('#mastered-btn').click();
     await page.waitForTimeout(200);
@@ -188,7 +195,7 @@ test.describe('Java Interview Hub - Comprehensive E2E Tests', () => {
 
     // Close via close button
     await page.locator('#close-shortcuts-modal').click();
-    await page.waitForTimeout(350);
+    await page.waitForTimeout(300);
     await expect(page.locator('#shortcuts-modal')).toBeHidden();
 
     // Open via '?' key
@@ -197,9 +204,8 @@ test.describe('Java Interview Hub - Comprehensive E2E Tests', () => {
 
     // Close via Escape key
     await page.keyboard.press('Escape');
-    await page.waitForTimeout(350);
+    await page.waitForTimeout(300);
     await expect(page.locator('#shortcuts-modal')).toBeHidden();
     expect(errors.length).toBe(0);
   });
 });
-

@@ -327,18 +327,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function openDialogModal(modal) {
     if (!modal) return;
-    modal.showModal();
+    modal.classList.remove('opacity-0');
     modal.style.display = 'flex';
-    setTimeout(() => modal.classList.remove('opacity-0'), 10);
+    modal.showModal();
   }
 
   function closeDialogModal(modal) {
     if (!modal) return;
     modal.classList.add('opacity-0');
-    setTimeout(() => {
-      modal.close();
-      modal.style.display = '';
-    }, 300);
+    modal.close();
+    modal.style.display = '';
   }
 
   if (statsBtn && statsModal) {
@@ -391,9 +389,9 @@ document.addEventListener('DOMContentLoaded', () => {
       state.statusFilter = status;
       document.querySelectorAll('.status-chip').forEach(b => {
         if (b === btn) {
-          b.className = 'status-chip active px-2.5 py-1 rounded-md font-bold bg-roast-500 text-white transition-all shrink-0';
+          b.className = 'status-chip active px-2.5 py-1 rounded-[7px] font-medium bg-roast-500 text-white transition-all shrink-0';
         } else {
-          b.className = 'status-chip px-2.5 py-1 rounded-md font-bold text-slate-500 bg-slate-100 dark:bg-panel-900 hover:text-roast-500 transition-all flex items-center gap-1 shrink-0';
+          b.className = 'status-chip px-2.5 py-1 rounded-[7px] font-medium text-slate-600 dark:text-slate-400 bg-paper-50 dark:bg-panel-900 border border-slate-200 dark:border-slate-800 hover:text-roast-500 hover:border-roast-500/50 transition-all flex items-center gap-1 shrink-0';
         }
       });
       playSound('click');

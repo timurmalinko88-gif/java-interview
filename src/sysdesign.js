@@ -82,7 +82,7 @@ export function renderSysDesignList(searchQuery = '') {
         if (s.difficulty === 'Architect') diffClass = 'bg-purple-50 text-purple-700 border-purple-200 dark:bg-purple-950/40 dark:text-purple-300 dark:border-purple-800/40';
 
         const tagBadges = s.tags.slice(0, 3).map(t => `
-            <span class="px-2 py-0.5 rounded-[6px] text-[10px] font-mono bg-paper-50 dark:bg-panel-700 text-slate-600 dark:text-slate-300 font-medium border border-mist-50 dark:border-slate-800">
+            <span class="px-2 py-0.5 rounded-[7px] text-[11px] font-mono bg-paper-50 dark:bg-panel-700 text-slate-600 dark:text-slate-300 font-medium border border-mist-50 dark:border-slate-800">
                 ${t}
             </span>
         `).join('');
@@ -118,11 +118,11 @@ export function renderSysDesignList(searchQuery = '') {
 
                 <!-- Action Button -->
                 <div class="pt-4 border-t border-mist-50 dark:border-slate-800/80 flex items-center justify-between">
-                    <span class="text-xs text-slate-400 font-mono flex items-center space-x-1">
+                    <span class="text-[11px] text-slate-500 dark:text-slate-400 font-mono font-medium flex items-center space-x-1.5">
                         <i class="fa-solid fa-diagram-project text-roast-500 text-xs"></i>
                         <span>${s.steps.length} Simulation Steps</span>
                     </span>
-                    <button class="open-sysdesign-btn bg-ink-800 dark:bg-panel-700 text-white hover:bg-roast-500 dark:hover:bg-roast-500 px-4 py-2 rounded-[10px] text-xs font-semibold transition-all flex items-center space-x-2 shadow-sm" data-id="${s.id}">
+                    <button class="open-sysdesign-btn bg-ink-800 dark:bg-panel-700 text-white hover:bg-roast-500 dark:hover:bg-roast-500 px-4 py-2 rounded-[7px] text-xs font-semibold transition-all flex items-center space-x-2 shadow-sm" data-id="${s.id}">
                         <i class="fa-solid fa-play text-[10px]"></i>
                         <span>Explore & Simulate</span>
                     </button>
@@ -195,15 +195,15 @@ function renderSimulationStep() {
     if (detailsContainer) {
         const componentsHtml = currentScenario.components.map(c => `
             <tr class="border-b border-slate-100 dark:border-slate-800 text-xs">
-                <td class="py-2.5 px-3 font-bold text-slate-800 dark:text-slate-200 whitespace-nowrap">${c.name}</td>
-                <td class="py-2.5 px-3 text-slate-600 dark:text-slate-400">${c.role}</td>
+                <td class="py-2.5 px-3 font-bold text-slate-900 dark:text-white whitespace-nowrap font-mono text-[11px]">${c.name}</td>
+                <td class="py-2.5 px-3 text-slate-600 dark:text-slate-300 leading-relaxed">${c.role}</td>
             </tr>
         `).join('');
 
         const pitfallsHtml = currentScenario.interviewPitfalls.map(p => `
-            <li class="flex items-start space-x-2 text-xs text-amber-700 dark:text-amber-400">
+            <li class="flex items-start space-x-2 text-xs text-amber-700 dark:text-amber-300">
                 <i class="fa-solid fa-triangle-exclamation mt-0.5 flex-shrink-0 text-amber-500"></i>
-                <span>${p}</span>
+                <span class="leading-relaxed">${p}</span>
             </li>
         `).join('');
 
@@ -214,8 +214,8 @@ function renderSimulationStep() {
         detailsContainer.innerHTML = `
             <div class="space-y-4">
                 <!-- Components Table -->
-                <div class="bg-slate-50 dark:bg-ink-950 p-4 rounded-xl border border-slate-200 dark:border-slate-800">
-                    <h5 class="font-bold text-xs uppercase tracking-wider text-slate-500 mb-2 flex items-center space-x-1.5">
+                <div class="bg-white dark:bg-panel-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-attio-subtle">
+                    <h5 class="font-bold text-xs uppercase tracking-wider text-slate-500 mb-2.5 flex items-center space-x-1.5">
                         <i class="fa-solid fa-cubes text-roast-500"></i>
                         <span>Component Roles</span>
                     </h5>
@@ -225,8 +225,8 @@ function renderSimulationStep() {
                 </div>
 
                 <!-- Interview Pitfalls -->
-                <div class="bg-amber-500/10 p-4 rounded-xl border border-amber-500/20">
-                    <h5 class="font-bold text-xs uppercase tracking-wider text-amber-500 mb-2 flex items-center space-x-1.5">
+                <div class="bg-amber-500/5 dark:bg-amber-500/10 p-4 rounded-xl border border-amber-500/20 shadow-attio-subtle">
+                    <h5 class="font-bold text-xs uppercase tracking-wider text-amber-600 dark:text-amber-400 mb-2.5 flex items-center space-x-1.5">
                         <i class="fa-solid fa-shield-cat text-amber-500"></i>
                         <span>Interview Trade-offs & Pitfalls</span>
                     </h5>
@@ -234,14 +234,14 @@ function renderSimulationStep() {
                 </div>
 
                 <!-- Java Code -->
-                <div class="bg-slate-900 rounded-xl border border-slate-800 p-4 overflow-x-auto text-xs">
-                    <div class="flex items-center justify-between mb-2 pb-2 border-b border-slate-800 text-slate-400 font-mono">
+                <div class="bg-white dark:bg-panel-900 rounded-xl border border-slate-200 dark:border-slate-800 p-4 overflow-x-auto text-xs shadow-attio-subtle">
+                    <div class="flex items-center justify-between mb-2 pb-2 border-b border-slate-100 dark:border-slate-800 text-slate-500 dark:text-slate-400 font-mono text-[11px]">
                         <span class="flex items-center space-x-1.5">
                             <i class="fa-brands fa-java text-roast-500"></i>
-                            <span>Production Java Implementation</span>
+                            <span class="font-bold text-slate-800 dark:text-slate-200">Production Java Implementation</span>
                         </span>
                     </div>
-                    <pre class="font-mono text-slate-200 leading-relaxed"><code>${codeHtml}</code></pre>
+                    <pre class="font-mono text-slate-800 dark:text-slate-200 leading-relaxed font-normal"><code>${codeHtml}</code></pre>
                 </div>
             </div>
         `;
@@ -337,9 +337,9 @@ function renderSvgCanvas(scenario, activeStep) {
 
         if (isActive) {
             activePathD = pathD;
-            connectionsSvg += `<path d="${pathD}" fill="none" stroke="#f97316" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arr-on)" opacity="1" />`;
+            connectionsSvg += `<path d="${pathD}" fill="none" stroke="#266df0" stroke-width="2.5" stroke-linecap="round" marker-end="url(#arr-on)" opacity="1" />`;
         } else {
-            connectionsSvg += `<path d="${pathD}" fill="none" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round" marker-end="url(#arr-off)" opacity="0.6" />`;
+            connectionsSvg += `<path d="${pathD}" fill="none" stroke="#cad0d9" stroke-width="1.5" stroke-dasharray="6 4" stroke-linecap="round" marker-end="url(#arr-off)" opacity="0.6" />`;
         }
     });
 
@@ -348,12 +348,12 @@ function renderSvgCanvas(scenario, activeStep) {
     if (activePathD) {
         particleSvg = `
             <path id="sd-motion-path" d="${activePathD}" fill="none" stroke="none" />
-            <circle r="4.5" fill="#f97316" opacity="0.95">
+            <circle r="4.5" fill="#266df0" opacity="0.95">
                 <animateMotion dur="1.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.42 0 0.58 1">
                     <mpath href="#sd-motion-path" />
                 </animateMotion>
             </circle>
-            <circle r="10" fill="#f97316" opacity="0.15">
+            <circle r="10" fill="#266df0" opacity="0.2">
                 <animateMotion dur="1.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.42 0 0.58 1">
                     <mpath href="#sd-motion-path" />
                 </animateMotion>
@@ -367,23 +367,23 @@ function renderSvgCanvas(scenario, activeStep) {
         const isDark = document.documentElement.classList.contains('dark');
 
         // Node box styles
-        const bg = isActive ? (isDark ? '#3b1a04' : '#fff7ed') : (isDark ? '#1e293b' : '#ffffff');
-        const borderColor = isActive ? '#f97316' : (isDark ? '#334155' : '#e2e8f0');
-        const borderWidth = isActive ? 2.5 : 1;
-        const iconBg = isActive ? '#f97316' : (isDark ? '#1e293b' : '#f1f5f9');
-        const iconColor = isActive ? '#2B1904' : (isDark ? '#94a3b8' : '#64748b');
-        const textColor = isDark ? '#f8fafc' : '#0f172a';
+        const bg = isActive ? (isDark ? '#14254a' : '#f0f5ff') : (isDark ? '#16191f' : '#ffffff');
+        const borderColor = isActive ? '#266df0' : (isDark ? '#2e3238' : '#e4e7ec');
+        const borderWidth = isActive ? 2 : 1;
+        const iconBg = isActive ? '#266df0' : (isDark ? '#232529' : '#f4f5f6');
+        const iconColor = isActive ? '#ffffff' : (isDark ? '#9fa1a7' : '#505967');
+        const textColor = isDark ? '#f4f5f6' : '#1c1d1f';
         const shadowFilter = isActive ? 'url(#glow)' : '';
 
         // Active glow ring
         if (isActive) {
-            nodesSvg += `<rect x="${n.x - 3}" y="${n.y - 3}" width="${NW + 6}" height="${NH + 6}" rx="18" fill="none" stroke="#f97316" stroke-width="1.5" opacity="0.35">
-                <animate attributeName="opacity" values="0.35;0.15;0.35" dur="1.5s" repeatCount="indefinite" />
+            nodesSvg += `<rect x="${n.x - 3}" y="${n.y - 3}" width="${NW + 6}" height="${NH + 6}" rx="14" fill="none" stroke="#266df0" stroke-width="1.5" opacity="0.4">
+                <animate attributeName="opacity" values="0.4;0.15;0.4" dur="1.5s" repeatCount="indefinite" />
             </rect>`;
         }
 
         // Node rectangle
-        nodesSvg += `<rect x="${n.x}" y="${n.y}" width="${NW}" height="${NH}" rx="16" fill="${bg}" stroke="${borderColor}" stroke-width="${borderWidth}" filter="${shadowFilter}" />`;
+        nodesSvg += `<rect x="${n.x}" y="${n.y}" width="${NW}" height="${NH}" rx="12" fill="${bg}" stroke="${borderColor}" stroke-width="${borderWidth}" filter="${shadowFilter}" />`;
 
         // Badge (above node)
         if (isActive && activeStep.badge) {
@@ -391,14 +391,14 @@ function renderSvgCanvas(scenario, activeStep) {
             const badgeW = Math.min(badgeText.length * 5.5 + 16, 180);
             const badgeX = n.x + NW / 2 - badgeW / 2;
             const badgeY = n.y - 16;
-            nodesSvg += `<rect x="${badgeX}" y="${badgeY}" width="${badgeW}" height="16" rx="8" fill="#f97316" />`;
-            nodesSvg += `<text x="${n.x + NW / 2}" y="${badgeY + 11.5}" text-anchor="middle" font-size="8" font-weight="800" fill="#2B1904" font-family="ui-monospace, monospace">${badgeText}</text>`;
+            nodesSvg += `<rect x="${badgeX}" y="${badgeY}" width="${badgeW}" height="16" rx="8" fill="#266df0" />`;
+            nodesSvg += `<text x="${n.x + NW / 2}" y="${badgeY + 11.5}" text-anchor="middle" font-size="8" font-weight="800" fill="#ffffff" font-family="JetBrains Mono, ui-monospace, monospace">${badgeText}</text>`;
         }
 
         // Icon circle
         const iconCx = n.x + NW / 2;
         const iconCy = n.y + 26;
-        nodesSvg += `<rect x="${iconCx - 15}" y="${iconCy - 15}" width="30" height="30" rx="8" fill="${iconBg}" />`;
+        nodesSvg += `<rect x="${iconCx - 15}" y="${iconCy - 15}" width="30" height="30" rx="7" fill="${iconBg}" />`;
 
         // Use foreignObject for FA icon
         nodesSvg += `<foreignObject x="${iconCx - 10}" y="${iconCy - 10}" width="20" height="20">
@@ -408,7 +408,7 @@ function renderSvgCanvas(scenario, activeStep) {
         </foreignObject>`;
 
         // Label text
-        nodesSvg += `<text x="${n.x + NW / 2}" y="${n.y + NH - 10}" text-anchor="middle" font-size="10" font-weight="700" fill="${textColor}" font-family="Inter, system-ui, sans-serif">${n.label}</text>`;
+        nodesSvg += `<text x="${n.x + NW / 2}" y="${n.y + NH - 12}" text-anchor="middle" font-size="11" font-weight="600" fill="${textColor}" font-family="Inter, system-ui, sans-serif">${n.label}</text>`;
     });
 
     // --- Assemble Full SVG ---
@@ -417,13 +417,13 @@ function renderSvgCanvas(scenario, activeStep) {
             <svg viewBox="0 0 ${W} ${H}" class="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                     <marker id="arr-off" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto">
-                        <path d="M 0 1 L 8 5 L 0 9 z" fill="#cbd5e1" />
+                        <path d="M 0 1 L 8 5 L 0 9 z" fill="#cad0d9" />
                     </marker>
                     <marker id="arr-on" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-                        <path d="M 0 1 L 8 5 L 0 9 z" fill="#f97316" />
+                        <path d="M 0 1 L 8 5 L 0 9 z" fill="#266df0" />
                     </marker>
                     <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-                        <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#f97316" flood-opacity="0.3" />
+                        <feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#266df0" flood-opacity="0.35" />
                     </filter>
                 </defs>
                 ${connectionsSvg}

@@ -92,13 +92,14 @@ export async function loadMockQuestion(idx) {
   if (idx < 0 || idx >= state.mockQuestions.length) return;
   state.mockCurrentIdx = idx;
   const q = state.mockQuestions[idx];
-  await loadQuestion(q);
 
-  // Adjust UI for mock
+  // Adjust UI for mock immediately before async fetch
   document.getElementById('counter').textContent = `Mock: ${idx + 1} / ${state.mockQuestions.length}`;
   document.getElementById('mock-eval-bar').classList.add('hidden');
   document.getElementById('mock-eval-bar').classList.remove('flex');
   document.getElementById('btn-answer').classList.remove('hidden');
+
+  await loadQuestion(q);
 }
 export function revealMockAnswer() {
   renderAnswerContent();
@@ -155,7 +156,7 @@ export function finishMockInterview() {
   document.getElementById('mock-result-verdict').textContent = verdict;
   document.getElementById('mock-result-verdict').className = `text-xs font-bold ${verdictColor} block mt-1`;
   const badgeEl = document.getElementById('mock-result-badge-icon');
-  badgeEl.className = `w-16 h-16 rounded-2xl ${badgeBg} flex items-center justify-center text-3xl mx-auto`;
+  badgeEl.className = `w-16 h-16 rounded-[12px] border border-current/20 ${badgeBg} flex items-center justify-center text-3xl mx-auto`;
   badgeEl.innerHTML = badgeIcon;
 
   // Topic Breakdown
@@ -175,7 +176,7 @@ export function finishMockInterview() {
     const stat = topicStats[topic];
     const pct = Math.round(stat.earned / stat.total * 100);
     const row = document.createElement('div');
-    row.className = "flex items-center justify-between p-2 rounded-lg bg-slate-50 dark:bg-ink-950 text-xs";
+    row.className = "flex items-center justify-between p-2.5 rounded-[7px] bg-paper-50 dark:bg-ink-950 border border-mist-50 dark:border-slate-800 text-xs";
     row.innerHTML = `
             <span class="font-semibold text-slate-700 dark:text-slate-300">${topic}</span>
             <span class="font-bold ${pct >= 70 ? 'text-emerald-500' : 'text-amber-500'}">${pct}% (${stat.earned}/${stat.total} XP)</span>

@@ -57,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let failedTags = new Set();
 
   // Load quiz data
+  // Load quiz data
   async function loadQuizData() {
     try {
       const res = await fetch('quiz.json?t=' + new Date().getTime());
@@ -66,10 +67,13 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error("Failed to load quiz.json", e);
     }
   }
+  // Prefetch immediately
+  loadQuizData();
+
   if (adaptiveBtn) {
     adaptiveBtn.addEventListener('click', async () => {
       modal.showModal();
-      setTimeout(() => modal.classList.remove('opacity-0'), 10);
+      modal.classList.remove('opacity-0');
       step1.classList.remove('hidden');
       step2.classList.add('hidden');
       step3.classList.add('hidden');
@@ -112,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (roadmapModal) {
           roadmapModal.showModal();
           roadmapModal.style.display = 'flex'; // Ensure it's treated as flex
-          setTimeout(() => roadmapModal.classList.remove('opacity-0'), 10);
+          roadmapModal.classList.remove('opacity-0');
         } else {
           console.error("roadmapModal not found!");
         }
@@ -122,9 +126,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
   levelBtns.forEach(btn => {
-    btn.addEventListener('click', e => {
+    btn.addEventListener('click', async e => {
       selectedLevel = e.target.getAttribute('data-level');
       document.getElementById('quiz-level-badge').innerText = selectedLevel;
+      if (quizData.length === 0) {
+        await loadQuizData();
+      }
       step1.classList.add('hidden');
       step2.classList.remove('hidden');
       renderQuizQuestion();
@@ -143,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
     optionsContainer.innerHTML = '';
     q.options.forEach((opt, idx) => {
       const btn = document.createElement('button');
-      btn.className = "w-full text-left p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-panel-900 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors font-medium text-slate-700 dark:text-slate-300";
+      btn.className = "w-full text-left p-4 rounded-[10px] border border-mist-50 dark:border-slate-800 bg-white dark:bg-panel-900 hover:border-roast-500 hover:bg-paper-50 dark:hover:bg-panel-700 transition-all font-medium text-slate-700 dark:text-slate-300 shadow-xs";
       btn.innerText = opt;
       btn.addEventListener('click', () => {
         if (idx !== q.correctIndex) q.testedTags.forEach(tag => failedTags.add(tag));
@@ -186,31 +193,31 @@ document.addEventListener('DOMContentLoaded', () => {
         const groupDiv = document.createElement('div');
         groupDiv.className = 'mb-8';
         const groupTitle = document.createElement('h3');
-        groupTitle.className = 'text-lg font-bold text-slate-800 dark:text-slate-200 mb-4 flex items-center space-x-2';
-        groupTitle.innerHTML = `<i class="fa-solid fa-folder-open text-amber-500"></i><span>${topic}</span><span class="text-sm font-normal text-slate-400 bg-slate-100 dark:bg-panel-900 px-2 py-0.5 rounded-full">${qList.length}</span>`;
+        groupTitle.className = 'text-base font-bold text-slate-800 dark:text-slate-200 mb-4 flex items-center space-x-2';
+        groupTitle.innerHTML = `<i class="fa-solid fa-folder-open text-roast-500"></i><span>${topic}</span><span class="text-xs font-semibold text-slate-500 dark:text-slate-400 bg-paper-50 dark:bg-panel-900 border border-mist-50 dark:border-slate-800 px-2.5 py-0.5 rounded-[7px]">${qList.length}</span>`;
         groupDiv.appendChild(groupTitle);
         const listDiv = document.createElement('div');
         listDiv.className = 'space-y-3';
         qList.forEach(q => {
           const isMastered = mArray.includes(q.id);
           const qDiv = document.createElement('div');
-          qDiv.className = `p-4 rounded-xl border flex justify-between items-center transition-all ${isMastered ? 'border-emerald-500/30 bg-emerald-500/5' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-panel-900 hover:border-roast-500/30 hover:shadow-md'}`;
+          qDiv.className = `p-4 rounded-[10px] border flex justify-between items-center transition-all ${isMastered ? 'border-emerald-500/30 bg-emerald-500/5' : 'border-mist-50 dark:border-slate-800 bg-white dark:bg-panel-900 hover:border-roast-500 hover:shadow-sm'}`;
           const left = document.createElement('div');
           left.className = 'flex items-center space-x-3';
           if (isMastered) {
-            left.innerHTML = `<div class="w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center shrink-0"><i class="fa-solid fa-check"></i></div>`;
+            left.innerHTML = `<div class="w-8 h-8 rounded-[7px] bg-emerald-500 text-white flex items-center justify-center shrink-0 text-xs shadow-xs"><i class="fa-solid fa-check"></i></div>`;
           } else {
-            left.innerHTML = `<div class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-400 flex items-center justify-center shrink-0"><i class="fa-solid fa-book"></i></div>`;
+            left.innerHTML = `<div class="w-8 h-8 rounded-[7px] bg-paper-50 dark:bg-panel-700 border border-mist-50 dark:border-slate-800 text-slate-400 flex items-center justify-center shrink-0 text-xs"><i class="fa-solid fa-book"></i></div>`;
           }
           const title = document.createElement('div');
-          title.className = `font-semibold ${isMastered ? 'text-emerald-700 dark:text-emerald-400 line-through opacity-70' : 'text-slate-800 dark:text-slate-200'}`;
+          title.className = `font-semibold text-sm ${isMastered ? 'text-emerald-700 dark:text-emerald-400 line-through opacity-70' : 'text-slate-800 dark:text-slate-200'}`;
           const qText = q.title || q.question || 'Question';
           title.innerText = q.id + ': ' + (qText.length > 60 ? qText.substring(0, 60) + '...' : qText);
           left.appendChild(title);
           const right = document.createElement('div');
           if (!isMastered) {
             const studyBtn = document.createElement('button');
-            studyBtn.className = 'px-4 py-2 bg-roast-500 hover:bg-roast-600 text-white text-sm font-bold rounded-lg shadow-sm transition-colors';
+            studyBtn.className = 'px-4 py-2 bg-roast-500 hover:bg-roast-600 text-white text-xs font-medium rounded-[10px] shadow-sm transition-colors';
             studyBtn.innerText = 'Study Now';
             studyBtn.addEventListener("click", () => {
               if (roadmapModal) {
@@ -234,7 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
             right.appendChild(studyBtn);
           } else {
             const doneSpan = document.createElement('span');
-            doneSpan.className = 'text-emerald-500 font-bold text-sm px-4 py-2';
+            doneSpan.className = 'text-emerald-500 font-bold text-xs px-4 py-2';
             doneSpan.innerText = 'Done';
             right.appendChild(doneSpan);
           }

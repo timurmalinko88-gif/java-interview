@@ -126,7 +126,7 @@ export function renderAlgoList(store) {
         let pillsHtml = `
             <button class="algo-pill-btn active px-3.5 py-1.5 rounded-[7px] text-xs font-semibold whitespace-nowrap border transition-all shadow-sm bg-roast-500 text-white border-roast-500 hover:opacity-95 flex items-center" data-pattern="all">
                 <span>All Patterns</span>
-                <span class="ml-1.5 px-1.5 py-0.5 rounded-[5px] bg-white/20 text-white text-[10px] font-bold">${algoQuestions.length}</span>
+                <span class="ml-1.5 px-1.5 py-0.5 rounded-[5px] bg-white/20 text-white text-[10px] font-mono font-bold">${algoQuestions.length}</span>
             </button>
         `;
 
@@ -135,7 +135,7 @@ export function renderAlgoList(store) {
             pillsHtml += `
                 <button class="algo-pill-btn px-3.5 py-1.5 rounded-[7px] text-xs font-semibold whitespace-nowrap border transition-all shadow-sm border-mist-50 dark:border-slate-800 text-slate-600 dark:text-slate-300 bg-white dark:bg-panel-900 hover:border-roast-500 hover:text-roast-500 flex items-center" data-pattern="${p}">
                     <span>${p}</span>
-                    <span class="pill-badge ml-1.5 px-1.5 py-0.5 rounded-[5px] bg-paper-50 dark:bg-panel-700 text-slate-500 dark:text-slate-400 text-[10px] font-bold">${count}</span>
+                    <span class="pill-badge ml-1.5 px-1.5 py-0.5 rounded-[5px] bg-paper-50 dark:bg-panel-700 text-slate-500 dark:text-slate-400 text-[10px] font-mono font-bold">${count}</span>
                 </button>
             `;
         });
@@ -150,7 +150,7 @@ export function renderAlgoList(store) {
                     b.classList.add('border-mist-50', 'dark:border-slate-800', 'text-slate-600', 'dark:text-slate-300', 'bg-white', 'dark:bg-panel-900');
                     const badge = b.querySelector('.pill-badge');
                     if (badge) {
-                        badge.className = 'pill-badge ml-2 px-1.5 py-0.5 rounded-[5px] bg-paper-50 dark:bg-panel-700 text-slate-500 dark:text-slate-400 text-[10px] font-bold';
+                        badge.className = 'pill-badge ml-1.5 px-1.5 py-0.5 rounded-[5px] bg-paper-50 dark:bg-panel-700 text-slate-500 dark:text-slate-400 text-[10px] font-mono font-bold';
                     }
                 });
                 
@@ -159,7 +159,7 @@ export function renderAlgoList(store) {
                 target.classList.add('bg-roast-500', 'text-white', 'border-roast-500');
                 const activeBadge = target.querySelector('.pill-badge');
                 if (activeBadge) {
-                    activeBadge.className = 'pill-badge ml-2 px-1.5 py-0.5 rounded-[5px] bg-white/20 text-white text-[10px] font-bold';
+                    activeBadge.className = 'pill-badge ml-1.5 px-1.5 py-0.5 rounded-[5px] bg-white/20 text-white text-[10px] font-mono font-bold';
                 }
 
                 currentPatternFilter = target.dataset.pattern;
@@ -238,7 +238,7 @@ export function renderAlgoList(store) {
                             </span>
                         </div>
                         <div class="flex items-center space-x-1.5 text-xs text-slate-400">
-                            ${q.leetcode_id ? `<span class="font-mono text-[10px] bg-paper-50 dark:bg-panel-700 border border-mist-50 dark:border-slate-800 px-1.5 py-0.5 rounded-[5px] font-semibold text-slate-600 dark:text-slate-300">LC #${q.leetcode_id}</span>` : ''}
+                            ${q.leetcode_id ? `<span class="font-mono text-[11px] bg-paper-50 dark:bg-panel-700 border border-mist-50 dark:border-slate-800 px-2 py-0.5 rounded-[7px] font-semibold text-slate-600 dark:text-slate-300">LC #${q.leetcode_id}</span>` : ''}
                             <button class="flag-algo-btn ${flagged ? 'text-roast-500' : 'text-slate-300 hover:text-roast-500'} transition-colors p-1" data-id="${q.id}" title="Bookmark">
                                 <i class="fa-solid fa-bookmark"></i>
                             </button>
@@ -251,25 +251,25 @@ export function renderAlgoList(store) {
                     </h3>
 
                     <!-- Complexity Badges -->
-                    <div class="flex items-center space-x-3 mb-4 text-xs font-mono text-slate-500 dark:text-slate-400">
-                        <span class="flex items-center space-x-1" title="Time Complexity">
-                            <i class="fa-regular fa-clock text-roast-500"></i>
-                            <span>Time: <strong class="text-slate-700 dark:text-slate-200">${q.time_complexity || 'O(N)'}</strong></span>
+                    <div class="flex flex-wrap items-center gap-2 mb-4">
+                        <span class="inline-flex items-center space-x-1.5 px-2 py-0.5 rounded-[7px] border border-mist-50 dark:border-slate-800 bg-paper-50 dark:bg-panel-700/50 text-[11px] font-mono text-slate-600 dark:text-slate-300" title="Time Complexity">
+                            <i class="fa-regular fa-clock text-roast-500 text-[10px]"></i>
+                            <span>Time: <strong class="text-slate-900 dark:text-white font-semibold">${q.time_complexity || 'O(N)'}</strong></span>
                         </span>
-                        <span class="flex items-center space-x-1" title="Space Complexity">
-                            <i class="fa-solid fa-microchip text-slate-400"></i>
-                            <span>Space: <strong class="text-slate-700 dark:text-slate-200">${q.space_complexity || 'O(1)'}</strong></span>
+                        <span class="inline-flex items-center space-x-1.5 px-2 py-0.5 rounded-[7px] border border-mist-50 dark:border-slate-800 bg-paper-50 dark:bg-panel-700/50 text-[11px] font-mono text-slate-600 dark:text-slate-300" title="Space Complexity">
+                            <i class="fa-solid fa-microchip text-slate-400 text-[10px]"></i>
+                            <span>Space: <strong class="text-slate-900 dark:text-white font-semibold">${q.space_complexity || 'O(1)'}</strong></span>
                         </span>
                     </div>
                 </div>
 
                 <!-- Footer Action -->
                 <div class="pt-3 border-t border-mist-50 dark:border-slate-800/80 flex items-center justify-between">
-                    <span class="text-xs text-slate-400 font-semibold flex items-center space-x-1">
+                    <span class="text-[11px] text-slate-500 dark:text-slate-400 font-mono font-medium flex items-center space-x-1">
                         <i class="fa-solid fa-fire text-amber-500 text-[10px]"></i>
                         <span>Freq: ${q.frequency || 'High'}</span>
                     </span>
-                    <button class="open-algo-breakdown-btn bg-ink-800 dark:bg-panel-700 text-white hover:bg-roast-500 dark:hover:bg-roast-500 px-3.5 py-1.5 rounded-[10px] text-xs font-semibold transition-colors flex items-center space-x-1.5" data-id="${q.id}" data-path="${q.path}">
+                    <button class="open-algo-breakdown-btn bg-ink-800 dark:bg-panel-700 text-white hover:bg-roast-500 dark:hover:bg-roast-500 px-3.5 py-1.5 rounded-[7px] text-xs font-semibold transition-colors flex items-center space-x-1.5 shadow-sm" data-id="${q.id}" data-path="${q.path}">
                         <span>Breakdown</span>
                         <i class="fa-solid fa-arrow-right text-[10px]"></i>
                     </button>
@@ -396,18 +396,18 @@ export async function openAlgoModal(question, path, store) {
                 const isOpen = '';
 
                 return `
-                    <details class="algo-step-details group bg-white dark:bg-panel-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-sm transition-all" ${isOpen}>
-                        <summary class="flex items-center justify-between p-4 cursor-pointer font-bold text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-ink-950 transition-colors select-none">
-                            <span class="flex items-center space-x-2 text-sm sm:text-base">
-                                <span class="w-6 h-6 rounded-full bg-roast-500/10 text-roast-500 text-xs flex items-center justify-center font-mono font-bold">${idx + 1}</span>
-                                <span>${sec.title}</span>
+                    <details class="algo-step-details group bg-white dark:bg-panel-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden shadow-attio-subtle transition-all" ${isOpen}>
+                        <summary class="flex items-center justify-between p-4 cursor-pointer font-bold text-slate-900 dark:text-white hover:bg-slate-50/80 dark:hover:bg-ink-950/80 transition-colors select-none">
+                            <span class="flex items-center space-x-2.5 text-sm sm:text-base">
+                                <span class="w-6 h-6 rounded-[7px] bg-roast-500/10 text-roast-500 border border-roast-500/20 text-xs flex items-center justify-center font-mono font-bold">${idx + 1}</span>
+                                <span class="font-bold text-slate-900 dark:text-white">${sec.title}</span>
                             </span>
                             <div class="flex items-center space-x-2">
                                 <span class="text-[11px] font-semibold text-slate-400 group-open:hidden">Click to reveal</span>
                                 <i class="fa-solid fa-chevron-down text-slate-400 text-xs group-open:rotate-180 transition-transform duration-300"></i>
                             </div>
                         </summary>
-                        <div class="p-5 border-t border-slate-100 dark:border-slate-800 text-sm leading-relaxed text-slate-700 dark:text-slate-300 markdown-body">
+                        <div class="p-5 border-t border-slate-100 dark:border-slate-800 text-sm leading-relaxed text-slate-700 dark:text-slate-300 markdown-body bg-white dark:bg-panel-900">
                             ${secHtml}
                         </div>
                     </details>
@@ -415,13 +415,13 @@ export async function openAlgoModal(question, path, store) {
             }).join('');
         } else {
             const answerHtml = typeof marked !== 'undefined' ? marked.parse(answerBody) : answerBody;
-            sectionsHtml = `<div class="bg-white dark:bg-panel-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 markdown-body">${answerHtml}</div>`;
+            sectionsHtml = `<div class="bg-white dark:bg-panel-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 markdown-body shadow-attio-subtle">${answerHtml}</div>`;
         }
 
         modalBody.innerHTML = `
             <div class="space-y-6">
                 <!-- Problem Statement Card (Always Visible) -->
-                <div class="bg-slate-50 dark:bg-ink-950 p-5 rounded-xl border border-slate-200 dark:border-slate-800 text-sm leading-relaxed text-slate-700 dark:text-slate-300 markdown-body">
+                <div class="bg-white dark:bg-panel-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 text-sm leading-relaxed text-slate-700 dark:text-slate-300 markdown-body shadow-attio-subtle">
                     <h4 class="font-bold text-slate-900 dark:text-white text-base mb-2 flex items-center space-x-2">
                         <i class="fa-solid fa-file-lines text-roast-500"></i>
                         <span>Problem Statement & Constraints</span>
