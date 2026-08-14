@@ -316,7 +316,7 @@ async function loadQuestion(indexOrQuestion) {
   // Update Header Meta Immediately for maximum responsiveness
   const diffEl = document.getElementById('active-difficulty');
   diffEl.textContent = q.difficulty;
-  diffEl.className = 'px-2.5 py-0.5 rounded-[7px] text-[11px] font-medium uppercase tracking-wider border ';
+  diffEl.className = 'px-2.5 py-1 rounded-[7px] text-[11px] font-semibold uppercase tracking-wider border ';
   if (q.difficulty === 'Junior') {
     diffEl.classList.add('bg-emerald-50', 'text-emerald-700', 'border-emerald-200', 'dark:bg-emerald-950/40', 'dark:text-emerald-300', 'dark:border-emerald-800/40');
   } else if (q.difficulty === 'Middle') {

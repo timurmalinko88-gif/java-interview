@@ -24,7 +24,6 @@ html {
     color-scheme: light;
     max-width: 100vw;
     overflow-x: hidden;
-    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11', 'ss01', 'ss03';
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }

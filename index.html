@@ -323,36 +323,29 @@
   </div>
 
   <!-- Active Question Header Metadata -->
-                 <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-slate-100 dark:border-slate-800/80 min-w-0">
-                     <div class="flex flex-wrap items-center gap-2 text-[13px] text-slate-500 dark:text-slate-400">
-                         <span id="active-difficulty" class="px-2.5 py-0.5 rounded-[7px] text-[11px] font-medium uppercase tracking-wider border bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:border-emerald-800/40">
-                             Junior
-                         </span>
-                         <span>·</span>
-                         <span id="active-id" class="font-mono text-xs text-slate-400">#ID</span>
-                         <span>·</span>
-                         <span id="active-topic" class="text-xs font-medium text-slate-600 dark:text-slate-300 bg-paper-50 dark:bg-panel-900 border border-slate-200 dark:border-slate-800 px-2 py-0.5 rounded-[7px]">JVM & Memory</span>
-                         <span>·</span>
-                         <span id="active-format" class="font-mono text-xs text-slate-500">Open Answer</span>
-                     </div>
-
-                     <!-- Extra Metadata Badges (Hidden by default, shown if exists) -->
-                     <div id="extra-metadata" class="flex flex-wrap items-center gap-2 text-xs font-medium text-slate-500 dark:text-slate-400">
-                         <!-- Injected dynamically -->
-                     </div>
+                  <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-3 pb-4 border-b border-slate-100 dark:border-slate-800/80 min-w-0">
+                      <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
+                          <span id="active-difficulty" class="px-2.5 py-1 rounded-[7px] text-[11px] font-semibold uppercase tracking-wider border bg-emerald-50 text-emerald-700 border-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:border-emerald-800/40">
+                              Junior
+                          </span>
+                          <span id="active-id" class="font-mono text-xs text-slate-500 dark:text-slate-400 bg-paper-50 dark:bg-panel-900 border border-slate-200 dark:border-slate-800 px-2.5 py-1 rounded-[7px] font-medium">#ID</span>
+                          <span id="active-topic" class="text-xs font-medium text-slate-700 dark:text-slate-300 bg-paper-50 dark:bg-panel-900 border border-slate-200 dark:border-slate-800 px-2.5 py-1 rounded-[7px]">JVM & Memory</span>
+                          <span id="active-format" class="text-xs font-medium text-slate-500 dark:text-slate-400 bg-paper-50 dark:bg-panel-900 border border-slate-200 dark:border-slate-800 px-2.5 py-1 rounded-[7px]">Open Answer</span>
+                          <div id="extra-metadata" class="inline-flex flex-wrap items-center gap-1.5 sm:gap-2"></div>
+                      </div>
 
                      <!-- Bookmark, Mastery & Share Controls -->
-                     <div class="flex items-center space-x-1.5 sm:space-x-2 shrink-0">
+                     <div class="flex items-center space-x-1.5 sm:space-x-2 shrink-0 self-end xl:self-auto">
                          <!-- Share Question Link -->
-                         <button id="share-link-btn" aria-label="Copy direct question link" title="Copy Question Link" class="w-9 h-9 rounded-[10px] border border-slate-200 dark:border-slate-800 bg-white dark:bg-panel-900 hover:bg-paper-50 dark:hover:bg-panel-700/60 hover:border-roast-500 hover:text-roast-500 flex items-center justify-center text-slate-500 dark:text-slate-400 transition-all">
+                         <button id="share-link-btn" aria-label="Copy direct question link" title="Copy Question Link" class="w-8 h-8 sm:w-9 sm:h-9 rounded-[10px] border border-slate-200 dark:border-slate-800 bg-white dark:bg-panel-900 hover:bg-paper-50 dark:hover:bg-panel-700/60 hover:border-roast-500 hover:text-roast-500 flex items-center justify-center text-slate-500 dark:text-slate-400 transition-all shadow-xs">
                              <i aria-hidden="true" class="fa-solid fa-link text-sm"></i>
                          </button>
                          <!-- Bookmark flag -->
-                         <button id="flag-btn" aria-label="Bookmark" title="Bookmark" class="w-9 h-9 rounded-[10px] border border-slate-200 dark:border-slate-800 bg-white dark:bg-panel-900 hover:bg-paper-50 dark:hover:bg-panel-700/60 hover:border-roast-500 hover:text-roast-500 flex items-center justify-center text-slate-500 dark:text-slate-400 transition-all">
+                         <button id="flag-btn" aria-label="Bookmark" title="Bookmark" class="w-8 h-8 sm:w-9 sm:h-9 rounded-[10px] border border-slate-200 dark:border-slate-800 bg-white dark:bg-panel-900 hover:bg-paper-50 dark:hover:bg-panel-700/60 hover:border-roast-500 hover:text-roast-500 flex items-center justify-center text-slate-500 dark:text-slate-400 transition-all shadow-xs">
                              <i aria-hidden="true" class="fa-solid fa-bookmark text-sm"></i>
                          </button>
                          <!-- Mastered checkbox indicator -->
-                         <button id="mastered-btn" title="Mark as Mastered" class="h-9 px-2.5 sm:px-3 rounded-[10px] border border-slate-200 dark:border-slate-800 bg-white dark:bg-panel-900 hover:bg-paper-50 dark:hover:bg-panel-700/60 hover:border-pine-500 hover:text-pine-500 flex items-center space-x-1.5 text-slate-500 dark:text-slate-400 font-medium transition-all shrink-0">
+                         <button id="mastered-btn" title="Mark as Mastered" class="h-8 sm:h-9 px-2.5 sm:px-3 rounded-[10px] border border-slate-200 dark:border-slate-800 bg-white dark:bg-panel-900 hover:bg-paper-50 dark:hover:bg-panel-700/60 hover:border-pine-500 hover:text-pine-500 flex items-center space-x-1.5 text-slate-500 dark:text-slate-400 font-medium transition-all shadow-xs shrink-0">
                              <i aria-hidden="true" class="fa-solid fa-circle-check text-sm"></i>
                              <span class="text-xs font-medium">Mastered</span>
                          </button>
