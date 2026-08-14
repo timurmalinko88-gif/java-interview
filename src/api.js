@@ -25,7 +25,17 @@ export async function fetchQuestions() {
     if (typeof window.renderAlgoListGlobal === 'function') {
         window.renderAlgoListGlobal();
     }
-    await loadQuestion(0);
+    let initialIndex = 0;
+    const hash = window.location.hash;
+    if (hash && hash.startsWith('#q=')) {
+        const targetId = hash.replace('#q=', '').trim();
+        const foundIndex = state.filteredQuestions.findIndex(q => q.id === targetId);
+        if (foundIndex !== -1) {
+            initialIndex = foundIndex;
+        }
+    }
+    state.currentIndex = initialIndex;
+    await loadQuestion(initialIndex);
 }
 
 export async function fetchQuestionContent(path) {

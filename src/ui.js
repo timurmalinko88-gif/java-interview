@@ -1,6 +1,7 @@
-import { setDifficultyChipInactive } from './utils.js';
+import { setDifficultyChipInactive, playSound } from './utils.js';
 import { state } from './state.js';
 import { isFlagged } from './collections.js';
+import { isDueForReview } from './spacedRepetition.js';
 import { ROADMAPS } from './roadmaps.js';
 
 export // --- ui.js ---
@@ -115,7 +116,13 @@ function triggerFilterAction() {
 
   state.filteredQuestions = baseQuestions.filter(q => {
     // Search Matches
-    const searchMatches = q.question && q.question.toLowerCase().includes(searchValue) || q.id && q.id.toLowerCase().includes(searchValue) || q.loadedQuestion && q.loadedQuestion.toLowerCase().includes(searchValue) || q.loadedAnswer && q.loadedAnswer.toLowerCase().includes(searchValue);
+    const searchMatches = !searchValue ||
+      (q.title && q.title.toLowerCase().includes(searchValue)) ||
+      (q.question && q.question.toLowerCase().includes(searchValue)) ||
+      (q.id && q.id.toLowerCase().includes(searchValue)) ||
+      (q.tags && Array.isArray(q.tags) && q.tags.some(t => t.toLowerCase().includes(searchValue))) ||
+      (q.loadedQuestion && q.loadedQuestion.toLowerCase().includes(searchValue)) ||
+      (q.loadedAnswer && q.loadedAnswer.toLowerCase().includes(searchValue));
 
     // Topic Matches
     const topicMatches = topicValue === 'all' || q.topic === topicValue;
@@ -126,7 +133,18 @@ function triggerFilterAction() {
     // Format Matches
     const formatMatches = checkedFormats.length === 0 || checkedFormats.includes(q.format);
 
-    return searchMatches && topicMatches && diffMatches && formatMatches;
+    // Quick Status Filter Matches (all, flagged, mastered, due)
+    const statusFilter = state.statusFilter || 'all';
+    let statusMatches = true;
+    if (statusFilter === 'flagged') {
+      statusMatches = isFlagged(q.id);
+    } else if (statusFilter === 'mastered') {
+      statusMatches = state.masteredIds.includes(q.id);
+    } else if (statusFilter === 'due') {
+      statusMatches = isDueForReview(q.id);
+    }
+
+    return searchMatches && topicMatches && diffMatches && formatMatches && statusMatches;
   });
 
   // Reset cursor if out of bounds
@@ -135,8 +153,11 @@ function triggerFilterAction() {
   }
 
   // Toggle "Clear" filters indicator link
-  const hasActiveFilters = searchValue !== '' || topicValue !== 'all' || state.selectedDiffFilters.length > 0 || checkedFormats.length > 0;
-  document.getElementById('clear-filters').style.display = hasActiveFilters ? 'inline' : 'none';
+  const hasActiveFilters = searchValue !== '' || topicValue !== 'all' || state.selectedDiffFilters.length > 0 || checkedFormats.length > 0 || state.statusFilter !== 'all';
+  const clearFiltersBtn = document.getElementById('clear-filters');
+  if (clearFiltersBtn) {
+    clearFiltersBtn.style.display = hasActiveFilters ? 'inline' : 'none';
+  }
   buildSidebarList();
   if (state.filteredQuestions.length > 0) {
     loadQuestion(state.currentIndex);
@@ -144,14 +165,23 @@ function triggerFilterAction() {
 }
 
 // Reset global filter selections
-export // Reset global filter selections
-function clearAllFilters() {
-  document.getElementById('search-input').value = '';
-  document.getElementById('topic-filter').value = 'all';
-  if (document.getElementById('roadmap-filter')) {
-      document.getElementById('roadmap-filter').value = 'none';
-  }
+export function clearAllFilters() {
+  const searchInput = document.getElementById('search-input');
+  if (searchInput) searchInput.value = '';
+  const topicFilter = document.getElementById('topic-filter');
+  if (topicFilter) topicFilter.value = 'all';
+  const roadmapFilter = document.getElementById('roadmap-filter');
+  if (roadmapFilter) roadmapFilter.value = 'none';
+  
   state.selectedDiffFilters = [];
+  state.statusFilter = 'all';
+  document.querySelectorAll('.status-chip').forEach(btn => {
+    if (btn.getAttribute('data-status') === 'all') {
+      btn.className = 'status-chip active px-2.5 py-1 rounded-md font-bold bg-roast-500 text-white transition-all';
+    } else {
+      btn.className = 'status-chip px-2.5 py-1 rounded-md font-bold text-slate-500 bg-slate-100 dark:bg-panel-900 hover:text-roast-500 transition-all flex items-center gap-1';
+    }
+  });
   document.querySelectorAll('.diff-chip').forEach(el => {
     const diff = el.getAttribute('data-diff');
     setDifficultyChipInactive(el, diff);
@@ -314,7 +344,8 @@ async function loadQuestion(indexOrQuestion) {
   // Set YouTube Video Link dynamically
   const youtubeBtn = document.getElementById('btn-youtube');
   if (youtubeBtn) {
-    const query = encodeURIComponent(`Java Interview ${q.title || q.id} explanation`);
+    const cleanTitle = (q.title || q.id || '').replace(/[#*`]/g, '').trim();
+    const query = encodeURIComponent(`Java Interview ${cleanTitle} explanation`);
     youtubeBtn.href = `https://www.youtube.com/results?search_query=${query}`;
   }
 
@@ -394,6 +425,11 @@ async function loadQuestion(indexOrQuestion) {
     codeSec.classList.add('hidden');
   }
 
+  // Sync URL hash for deep linking (without causing scroll jumps)
+  if (q && q.id && !state.isMockMode) {
+    history.replaceState(null, '', '#q=' + q.id);
+  }
+
   // Manage navigation boundaries
   if (state.isMockMode) {
     document.getElementById('btn-prev').disabled = true; // disable prev in mock
@@ -438,8 +474,8 @@ function renderNoQuestionsFoundState() {
             </div>
             <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Nothing Found</h3>
             <p class="text-sm text-slate-400 max-w-sm">Reset filters to see the full list of preparation questions.</p>
-            <button id="btn-empty-reset"  class="mt-4 bg-roast-500 hover:bg-roast-600 text-white font-bold text-xs px-4 py-2 rounded-md transition-all">
-                Reset фильтры
+            <button id="btn-empty-reset" class="mt-4 bg-roast-500 hover:bg-roast-600 text-white font-bold text-xs px-4 py-2 rounded-md transition-all">
+                Reset Filters
             </button>
         </div>
     `;
@@ -481,6 +517,7 @@ export function renderAnswerContent() {
     q = state.filteredQuestions[state.currentIndex];
   }
   state.isAnswerVisible = true;
+  playSound('flip');
   const answerSection = document.getElementById('answer-section');
   const ansBtnText = document.getElementById('btn-answer-text');
   const ansBtnIcon = document.getElementById('btn-answer-icon');

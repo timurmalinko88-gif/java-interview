@@ -184,4 +184,54 @@ export function updateStatsDashboard() {
   }
 }
 
-// --- adaptive.js ---
+export function exportProgress() {
+  const backup = {
+    version: "1.0",
+    exportDate: new Date().toISOString(),
+    masteredIds: state.masteredIds || [],
+    flaggedIds: state.flaggedIds || { "Favorites": [] },
+    srData: state.srData || {},
+    xp: (state.masteredIds ? state.masteredIds.length : 0) * 10
+  };
+  
+  const blob = new Blob([JSON.stringify(backup, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  const dateStr = new Date().toISOString().split("T")[0];
+  a.href = url;
+  a.download = `java-prep-progress-${dateStr}.json`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+export function importProgress(jsonString) {
+  try {
+    const data = JSON.parse(jsonString);
+    if (!data || typeof data !== 'object') throw new Error("Invalid backup JSON file");
+    
+    if (Array.isArray(data.masteredIds)) {
+      state.masteredIds = data.masteredIds;
+    }
+    if (data.flaggedIds && typeof data.flaggedIds === 'object') {
+      let flagged = data.flaggedIds;
+      if (Array.isArray(flagged)) {
+        flagged = { "Favorites": flagged };
+      }
+      state.flaggedIds = flagged;
+    }
+    if (data.srData && typeof data.srData === 'object') {
+      state.srData = data.srData;
+    }
+    
+    localStorage.setItem('java_trainer_mastered', JSON.stringify(state.masteredIds));
+    localStorage.setItem('java_trainer_flagged', JSON.stringify(state.flaggedIds));
+    localStorage.setItem('java_trainer_sr', JSON.stringify(state.srData));
+    
+    return { success: true, count: state.masteredIds.length };
+  } catch (err) {
+    console.error("Failed to import progress backup", err);
+    return { success: false, error: err.message };
+  }
+}

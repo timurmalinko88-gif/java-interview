@@ -204,7 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
           }
           const title = document.createElement('div');
           title.className = `font-semibold ${isMastered ? 'text-emerald-700 dark:text-emerald-400 line-through opacity-70' : 'text-slate-800 dark:text-slate-200'}`;
-          const qText = q.question || 'Question';
+          const qText = q.title || q.question || 'Question';
           title.innerText = q.id + ': ' + (qText.length > 60 ? qText.substring(0, 60) + '...' : qText);
           left.appendChild(title);
           const right = document.createElement('div');
@@ -220,13 +220,15 @@ document.addEventListener('DOMContentLoaded', () => {
                   roadmapModal.style.display = ''; // Clear inline style
                 }, 300);
               }
-              if (typeof loadQuestion === 'function') {
-                const idx = window.filteredQuestions ? window.filteredQuestions.indexOf(q) : typeof state.filteredQuestions !== 'undefined' ? state.filteredQuestions.indexOf(q) : -1;
-                if (idx !== -1) {
-                  if (typeof state.currentIndex !== 'undefined') state.currentIndex = idx;
-                  loadQuestion(idx);
-                }
-                if (typeof buildSidebarList === 'function') buildSidebarList();
+              let idx = state.filteredQuestions.findIndex(item => item.id === q.id);
+              if (idx === -1) {
+                state.filteredQuestions = [...state.questionsList];
+                idx = state.filteredQuestions.findIndex(item => item.id === q.id);
+              }
+              if (idx !== -1) {
+                state.currentIndex = idx;
+                loadQuestion(idx);
+                buildSidebarList();
               }
             });
             right.appendChild(studyBtn);

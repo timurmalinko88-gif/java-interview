@@ -1,6 +1,16 @@
 import { state, savePersistence } from './state.js';
 import { syncActionButtons, buildSidebarList, showToast } from './ui.js';
 
+function ensureFlaggedObject() {
+    if (!state.flaggedIds || Array.isArray(state.flaggedIds) || typeof state.flaggedIds !== 'object') {
+        const initialFavs = Array.isArray(state.flaggedIds) ? state.flaggedIds : [];
+        state.flaggedIds = { "Favorites": initialFavs };
+    }
+    if (!Array.isArray(state.flaggedIds["Favorites"])) {
+        state.flaggedIds["Favorites"] = [];
+    }
+}
+
 export function isFlagged(questionId) {
     if (!state.flaggedIds) return false;
     if (Array.isArray(state.flaggedIds)) {
@@ -15,18 +25,20 @@ export function isFlagged(questionId) {
 }
 
 export function toggleFlag(questionId, folderName = "Favorites") {
-    if (!state.flaggedIds) state.flaggedIds = {};
-    if (!state.flaggedIds[folderName]) {
+    ensureFlaggedObject();
+    if (!Array.isArray(state.flaggedIds[folderName])) {
         state.flaggedIds[folderName] = [];
     }
 
     let isRemoved = false;
     // Check if it exists anywhere and remove it if it does
     for (const folder in state.flaggedIds) {
-        const index = state.flaggedIds[folder].indexOf(questionId);
-        if (index > -1) {
-            state.flaggedIds[folder].splice(index, 1);
-            isRemoved = true;
+        if (Array.isArray(state.flaggedIds[folder])) {
+            const index = state.flaggedIds[folder].indexOf(questionId);
+            if (index > -1) {
+                state.flaggedIds[folder].splice(index, 1);
+                isRemoved = true;
+            }
         }
     }
 
@@ -43,17 +55,19 @@ export function toggleFlag(questionId, folderName = "Favorites") {
 }
 
 export function getFolders() {
-    if (!state.flaggedIds) return ["Favorites"];
+    ensureFlaggedObject();
     return Object.keys(state.flaggedIds);
 }
 
 export function getFlaggedFoldersForQuestion(questionId) {
     const folders = [];
     if (!state.flaggedIds) return folders;
+    ensureFlaggedObject();
     for (const folder in state.flaggedIds) {
-        if (state.flaggedIds[folder].includes(questionId)) {
+        if (Array.isArray(state.flaggedIds[folder]) && state.flaggedIds[folder].includes(questionId)) {
             folders.push(folder);
         }
     }
     return folders;
 }
+

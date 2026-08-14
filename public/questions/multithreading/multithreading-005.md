@@ -11,7 +11,7 @@ prerequisites: [Distributed transactions, Database locks, Message queues]
 tags: ['multithreading']
 ---
 
-# Design a Distributed Task Scheduler for a microservice architecture. The system must execute millions of delayed tasks (for example, send a push notification exactly 24 hours after an event).
+# System Design: Distributed Task Scheduler
 
 Design a Distributed Task Scheduler for a microservice architecture. The system must execute millions of delayed tasks (for example, send a push notification exactly 24 hours after an event).
 

@@ -11,7 +11,7 @@ prerequisites: [Thread class, Runnable interface]
 tags: ['multithreading']
 ---
 
-# On a project, a developer implemented asynchronous email notifications: for every user registration, they create a new thread:
+# Asynchronous Processing vs Thread Pools
 
 On a project, a developer implemented asynchronous email notifications: for every user registration, they create a new thread:
 

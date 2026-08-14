@@ -34,4 +34,5 @@ Both annotations are used to create mock objects for testing, but they operate i
 ### Key Points
 - `@Mock` is pure Mockito; used for fast unit tests without Spring.
 - `@MockBean` is Spring Boot; replaces a real bean in the Spring ApplicationContext with a mock.
-- Use `@Mock` whenever possible for speed. Use `@MockBean` when you must test integration but need to stub out a specific external layer (like a database or 3rd party API).
+- *(Spring Boot 3.4+ Note)*: `@MockBean` has been deprecated in favor of the framework-native `@MockitoBean` (and `@MockitoSpyBean`) from Spring Framework 6.2+.
+- Use `@Mock` whenever possible for speed. Use `@MockBean` / `@MockitoBean` when you must test integration but need to stub out a specific external layer (like a database or 3rd party API).

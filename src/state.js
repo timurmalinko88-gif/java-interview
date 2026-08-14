@@ -1,12 +1,28 @@
 export const state = {
     questionsList: [], filteredQuestions: [], currentIndex: 0, isAnswerVisible: false,
-    masteredIds: [], flaggedIds: [], selectedDiffFilters: [],
+    masteredIds: [], flaggedIds: { "Favorites": [] }, selectedDiffFilters: [],
+    statusFilter: 'all',
     isMockMode: false, mockQuestions: [], mockCurrentIdx: 0, mockTimerInterval: null,
     mockTimeRemaining: 0, mockScores: [], mockSelectedGrade: 'Junior', mockSelectedCompany: 'Any',
     fallbackDatabase: [], quizData: [], currentQuizIndex: 0, selectedLevel: 'Middle', failedTags: new Set(),
     isAdaptivePlanActive: false,
     srData: {}
 };
+
+const listeners = new Set();
+export function onStateChange(fn) {
+    listeners.add(fn);
+    return () => listeners.delete(fn);
+}
+export function notifyStateChange() {
+    listeners.forEach(fn => {
+        try {
+            fn(state);
+        } catch (err) {
+            console.error("Error in state change listener:", err);
+        }
+    });
+}
 // --- state.js ---
 const fallbackDatabase = [{
   "id": "jvm-001",
@@ -75,8 +91,9 @@ const fallbackDatabase = [{
 
 // Global State variables
 state.fallbackDatabase = fallbackDatabase;
-export // Loading states from LocalStorage for persistence
-function loadPersistence() {
+
+// Loading states from LocalStorage for persistence
+export function loadPersistence() {
   try {
     const storedMastered = localStorage.getItem('java_trainer_mastered');
     const storedFlagged = localStorage.getItem('java_trainer_flagged');
@@ -85,29 +102,38 @@ function loadPersistence() {
     
     let parsedFlagged = storedFlagged ? JSON.parse(storedFlagged) : { "Favorites": [] };
     if (Array.isArray(parsedFlagged)) {
-        // Migrate old array format to object format
+        // Migrate legacy array format to object format
         parsedFlagged = { "Favorites": parsedFlagged };
+    } else if (!parsedFlagged || typeof parsedFlagged !== 'object') {
+        parsedFlagged = { "Favorites": [] };
+    }
+    if (!Array.isArray(parsedFlagged["Favorites"])) {
+        parsedFlagged["Favorites"] = [];
     }
     state.flaggedIds = parsedFlagged;
     
     state.srData = storedSr ? JSON.parse(storedSr) : {};
-    import('./ui.js').then(m => m.updateStatsUI && m.updateStatsUI());
-    import('./stats.js').then(m => m.updateStatsDashboard && m.updateStatsDashboard());
+    notifyStateChange();
   } catch (err) {
     console.error("Failed to read localStorage persistence states", err);
   }
 }
+
 export function savePersistence() {
   try {
     localStorage.setItem('java_trainer_mastered', JSON.stringify(state.masteredIds));
-    localStorage.setItem('java_trainer_flagged', JSON.stringify(state.flaggedIds));
+    
+    // Ensure state.flaggedIds is clean plain object
+    let flaggedToSave = state.flaggedIds;
+    if (Array.isArray(flaggedToSave) || !flaggedToSave || typeof flaggedToSave !== 'object') {
+      flaggedToSave = { "Favorites": Array.isArray(flaggedToSave) ? flaggedToSave : [] };
+    }
+    state.flaggedIds = flaggedToSave;
+    
+    localStorage.setItem('java_trainer_flagged', JSON.stringify(flaggedToSave));
     localStorage.setItem('java_trainer_sr', JSON.stringify(state.srData));
-    import('./ui.js').then(m => m.updateStatsUI && m.updateStatsUI());
-    import('./stats.js').then(m => m.updateStatsDashboard && m.updateStatsDashboard());
+    notifyStateChange();
   } catch (err) {
     console.error("Failed to write to localStorage", err);
   }
 }
-
-// --- ui.js ---
-// Build the left sidebar navigation items

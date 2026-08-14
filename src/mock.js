@@ -1,5 +1,5 @@
-import { loadQuestion, showToast, renderAnswerContent } from './ui.js';
-import { state } from './state.js';
+import { loadQuestion, showToast, renderAnswerContent, triggerFilterAction } from './ui.js';
+import { state, savePersistence } from './state.js';
 export function openMockSetup() {
   document.getElementById('mock-setup-modal').showModal();
 }
@@ -33,7 +33,8 @@ export function startMockInterview() {
     // Fallback: If strict company filter produces too few questions, pad with general pool
     if (filteredByCompany.length < targetCount) {
       const needed = targetCount - filteredByCompany.length;
-      const remaining = candidatePool.filter(q => !filteredByCompany.includes(q));
+      const chosenIds = new Set(filteredByCompany.map(q => q.id));
+      const remaining = candidatePool.filter(q => !chosenIds.has(q.id));
       // Simple shuffle for remaining
       for (let i = remaining.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));

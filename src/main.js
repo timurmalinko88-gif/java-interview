@@ -1,15 +1,21 @@
 import "./style.css";
-import { debounce, setDifficultyChipInactive, setDifficultyChipActive } from './utils.js';
-import { state, savePersistence } from './state.js';
-import { buildSidebarList, triggerFilterAction, clearAllFilters, loadQuestion, syncActionButtons, showToast, renderAnswerContent, hideAnswerSection } from './ui.js';
+import { debounce, setDifficultyChipInactive, setDifficultyChipActive, playSound } from './utils.js';
+import { state, savePersistence, onStateChange } from './state.js';
+import { buildSidebarList, triggerFilterAction, clearAllFilters, loadQuestion, syncActionButtons, showToast, renderAnswerContent, hideAnswerSection, updateStatsUI } from './ui.js';
 import { openMockSetup, closeMockSetup, startMockInterview, exitMockInterview, evaluateMockQuestion, revealMockAnswer } from './mock.js';
-import { updateStatsDashboard } from './stats.js';
+import { updateStatsDashboard, exportProgress, importProgress } from './stats.js';
 import { checkAdaptiveProgression } from './adaptive.js';
 import { evaluateSR } from './spacedRepetition.js';
 import { toggleFlag } from './collections.js';
 import { fetchQuestions } from './api.js';
 import { initAlgoView, renderAlgoList, switchView } from './algorithms.js';
 import { initSysDesignView } from './sysdesign.js';
+
+// Auto-sync UI when state changes
+onStateChange(() => {
+  updateStatsUI();
+  updateStatsDashboard();
+});
 
 // --- app.js ---
 // Initialize and load dynamic questions indexes
@@ -91,16 +97,19 @@ document.addEventListener('DOMContentLoaded', () => {
   // Spaced Repetition Evaluation buttons
   const srHardBtn = document.getElementById('sr-hard-btn');
   if (srHardBtn) srHardBtn.addEventListener("click", () => {
+      if (state.filteredQuestions.length === 0) return;
       const activeId = state.filteredQuestions[state.currentIndex].id;
       evaluateSR(activeId, 1);
   });
   const srMediumBtn = document.getElementById('sr-medium-btn');
   if (srMediumBtn) srMediumBtn.addEventListener("click", () => {
+      if (state.filteredQuestions.length === 0) return;
       const activeId = state.filteredQuestions[state.currentIndex].id;
       evaluateSR(activeId, 2);
   });
   const srEasyBtn = document.getElementById('sr-easy-btn');
   if (srEasyBtn) srEasyBtn.addEventListener("click", () => {
+      if (state.filteredQuestions.length === 0) return;
       const activeId = state.filteredQuestions[state.currentIndex].id;
       evaluateSR(activeId, 3);
   });
@@ -151,8 +160,6 @@ document.addEventListener('DOMContentLoaded', () => {
     flagBtn.addEventListener("click", () => {
       if (state.filteredQuestions.length === 0) return;
       const activeId = state.filteredQuestions[state.currentIndex].id;
-      
-      // Basic toggle (always adds to Favorites for now; could be expanded to a UI selector)
       toggleFlag(activeId, "Favorites");
     });
   }
@@ -166,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const idx = state.masteredIds.indexOf(activeId);
       if (idx > -1) {
         state.masteredIds.splice(idx, 1);
-        showToast("Question возвращен к изучению", "info");
+        showToast("Question returned to review list", "info");
       } else {
         state.masteredIds.push(activeId);
         showToast("Congratulations! Marked as mastered 👍", "success");
@@ -247,7 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
       state.isAnswerVisible = false;
       await loadQuestion(state.currentIndex);
       buildSidebarList();
-      showToast("Режим блиц: Выбран случайный вопрос!", "info");
+      showToast("Blitz Mode: Random question selected!", "info");
     });
   }
 
@@ -255,16 +262,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const copyCodeBtn = document.getElementById('copy-code-btn');
   if (copyCodeBtn) {
     copyCodeBtn.addEventListener("click", () => {
-      const codeText = document.getElementById('code-content').textContent;
-      // Workaround context boundary copy restriction fallback
+      const codeContentEl = document.getElementById('code-content');
+      const codeText = codeContentEl ? codeContentEl.textContent : '';
+      if (!codeText) return;
+      
       const textarea = document.createElement('textarea');
       textarea.value = codeText;
       document.body.appendChild(textarea);
       textarea.select();
       navigator.clipboard.writeText(codeText).then(() => {
-        showToast("Код успешно скопирован!", "success");
-      }).catch(err => {
-        showToast("Не удалось скопировать код", "info");
+        showToast("Code copied to clipboard!", "success");
+      }).catch(() => {
+        showToast("Failed to copy code", "info");
       });
       document.body.removeChild(textarea);
     });
@@ -307,23 +316,112 @@ document.addEventListener('DOMContentLoaded', () => {
   const statsBtn = document.getElementById('my-stats-btn');
   const statsModal = document.getElementById('stats-dashboard-modal');
   const closeStatsBtn = document.getElementById('close-stats-modal');
+
+  function openDialogModal(modal) {
+    if (!modal) return;
+    modal.showModal();
+    modal.style.display = 'flex';
+    setTimeout(() => modal.classList.remove('opacity-0'), 10);
+  }
+
+  function closeDialogModal(modal) {
+    if (!modal) return;
+    modal.classList.add('opacity-0');
+    setTimeout(() => {
+      modal.close();
+      modal.style.display = '';
+    }, 300);
+  }
+
   if (statsBtn && statsModal) {
     statsBtn.addEventListener("click", () => {
       if (typeof updateStatsDashboard === 'function') {
         updateStatsDashboard();
       }
-      statsModal.showModal();
-      statsModal.style.display = 'flex';
-      setTimeout(() => statsModal.classList.remove('opacity-0'), 10);
+      openDialogModal(statsModal);
     });
   }
   if (closeStatsBtn && statsModal) {
-    closeStatsBtn.addEventListener("click", () => {
-      statsModal.classList.add('opacity-0');
-      setTimeout(() => {
-        statsModal.close();
-        statsModal.style.display = '';
-      }, 300);
+    closeStatsBtn.addEventListener("click", () => closeDialogModal(statsModal));
+  }
+
+  // Setup Keyboard Shortcuts Modal
+  const shortcutsBtn = document.getElementById('shortcuts-btn');
+  const shortcutsModal = document.getElementById('shortcuts-modal');
+  const closeShortcutsBtn = document.getElementById('close-shortcuts-modal');
+  if (shortcutsBtn && shortcutsModal) {
+    shortcutsBtn.addEventListener("click", () => openDialogModal(shortcutsModal));
+  }
+  if (closeShortcutsBtn && shortcutsModal) {
+    closeShortcutsBtn.addEventListener("click", () => closeDialogModal(shortcutsModal));
+  }
+
+  // Direct Share Link Button
+  const shareLinkBtn = document.getElementById('share-link-btn');
+  if (shareLinkBtn) {
+    shareLinkBtn.addEventListener("click", () => {
+      if (state.filteredQuestions.length === 0) return;
+      const q = state.filteredQuestions[state.currentIndex];
+      if (!q) return;
+      const url = `${window.location.origin}${window.location.pathname}#q=${q.id}`;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(() => {
+          showToast("Direct question link copied!", "bookmark");
+        }).catch(() => {
+          showToast(`Link: ${url}`, "bookmark");
+        });
+      } else {
+        showToast(`Link: ${url}`, "bookmark");
+      }
+    });
+  }
+
+  // Quick Status Filter Chips
+  document.querySelectorAll('.status-chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const status = btn.getAttribute('data-status');
+      state.statusFilter = status;
+      document.querySelectorAll('.status-chip').forEach(b => {
+        if (b === btn) {
+          b.className = 'status-chip active px-2.5 py-1 rounded-md font-bold bg-roast-500 text-white transition-all shrink-0';
+        } else {
+          b.className = 'status-chip px-2.5 py-1 rounded-md font-bold text-slate-500 bg-slate-100 dark:bg-panel-900 hover:text-roast-500 transition-all flex items-center gap-1 shrink-0';
+        }
+      });
+      playSound('click');
+      triggerFilterAction();
+    });
+  });
+
+  // Export Progress Backup
+  const exportProgBtn = document.getElementById('export-progress-btn');
+  if (exportProgBtn) {
+    exportProgBtn.addEventListener("click", () => {
+      exportProgress();
+      showToast("Progress exported successfully!", "success");
+    });
+  }
+
+  // Import Progress Backup
+  const importProgInput = document.getElementById('import-progress-input');
+  if (importProgInput) {
+    importProgInput.addEventListener("change", (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        const result = importProgress(event.target.result);
+        if (result.success) {
+          showToast(`Restored ${result.count} mastered questions!`, "success");
+          updateStatsUI();
+          updateStatsDashboard();
+          buildSidebarList();
+        } else {
+          showToast(`Import failed: ${result.error}`, "info");
+        }
+      };
+      reader.readAsText(file);
+      e.target.value = '';
     });
   }
   
@@ -331,7 +429,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const resetProgBtn = document.getElementById('reset-progress-btn');
   if (resetProgBtn) {
     resetProgBtn.addEventListener("click", () => {
-        if (confirm("Вы уверены, что хотите сбросить весь прогресс (XP, ранги, оценки вопросов и закладки)? Это действие необратимо.")) {
+        if (confirm("Are you sure you want to reset all progress (XP, ranks, question ratings, and bookmarks)? This cannot be undone.")) {
             // Clear local storage keys
             localStorage.removeItem('java_trainer_mastered');
             localStorage.removeItem('java_trainer_flagged');
@@ -343,15 +441,64 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Deep Link URL Hash handler
+  function handleUrlHash() {
+    const hash = window.location.hash;
+    if (hash && hash.startsWith('#q=')) {
+      const targetId = hash.replace('#q=', '').trim();
+      if (targetId) {
+        let idx = state.filteredQuestions.findIndex(q => q.id === targetId);
+        if (idx !== -1) {
+          state.currentIndex = idx;
+          loadQuestion(idx);
+        } else {
+          const allIdx = state.questionsList.findIndex(q => q.id === targetId);
+          if (allIdx !== -1) {
+            clearAllFilters();
+            idx = state.filteredQuestions.findIndex(q => q.id === targetId);
+            if (idx !== -1) {
+              state.currentIndex = idx;
+              loadQuestion(idx);
+            }
+          }
+        }
+      }
+    }
+  }
+  window.addEventListener('hashchange', handleUrlHash);
+
   // Hotkeys Feature
   document.addEventListener('keydown', async e => {
-    // Do not trigger hotkeys if user is typing in the search input
+    // Escape closes open modals
+    if (e.key === 'Escape') {
+      const openDialog = Array.from(document.querySelectorAll('dialog')).find(d => d.open);
+      if (openDialog) {
+        closeDialogModal(openDialog);
+        return;
+      }
+    }
+
+    // Do not trigger hotkeys if user is typing in input or textarea
     if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
 
-    // Skip hotkeys if any modal is open
-    if (!document.getElementById('adaptive-modal').classList.contains('hidden') || !document.getElementById('adaptive-roadmap-modal').classList.contains('hidden') || statsModal && !statsModal.classList.contains('hidden') || !document.getElementById('mock-setup-modal').classList.contains('hidden') || !document.getElementById('mock-results-modal').classList.contains('hidden')) {
+    // Skip hotkeys if any dialog modal is currently open
+    const isAnyModalOpen = Array.from(document.querySelectorAll('dialog')).some(d => d.open);
+    if (isAnyModalOpen) {
       return;
     }
+
+    if (e.key === '?' || (e.shiftKey && e.key === '/')) {
+      e.preventDefault();
+      if (shortcutsModal) openDialogModal(shortcutsModal);
+      return;
+    }
+
+    if (e.key === '/') {
+      e.preventDefault();
+      if (searchInput) searchInput.focus();
+      return;
+    }
+
     switch (e.key) {
       case 'ArrowRight':
         e.preventDefault();
@@ -380,9 +527,28 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         if (flagBtn) flagBtn.click();
         break;
+      case '1':
+        if (state.isAnswerVisible && !state.isMockMode && srHardBtn) {
+          e.preventDefault();
+          srHardBtn.click();
+        }
+        break;
+      case '2':
+        if (state.isAnswerVisible && !state.isMockMode && srMediumBtn) {
+          e.preventDefault();
+          srMediumBtn.click();
+        }
+        break;
+      case '3':
+        if (state.isAnswerVisible && !state.isMockMode && srEasyBtn) {
+          e.preventDefault();
+          srEasyBtn.click();
+        }
+        break;
     }
   });
 });
 
 import { registerSW } from 'virtual:pwa-register';
 registerSW({ immediate: true });
+

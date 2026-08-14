@@ -1,12 +1,12 @@
 ---
 id: general-001
 topic: General
+difficulty: Middle
 format: Code Review
-level: Middle
-tags: []
+tags: ['concurrency', 'multithreading']
 ---
 
-# Find the bug in the following code and explain how to fix it:
+# Code Review: Non-Atomic Counter Race Condition
 
 Find the bug in the following code and explain how to fix it:
 

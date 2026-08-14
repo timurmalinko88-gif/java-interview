@@ -1,6 +1,5 @@
-import { state } from './state.js';
-import { savePersistence } from './state.js';
-import { syncActionButtons, buildSidebarList, showToast } from './ui.js';
+import { state, savePersistence } from './state.js';
+import { syncActionButtons, buildSidebarList, showToast, updateStatsUI, loadQuestion } from './ui.js';
 
 // SuperMemo-2 inspired SR algorithm
 export function evaluateSR(questionId, grade) {
@@ -42,18 +41,11 @@ export function evaluateSR(questionId, grade) {
   // XP Logic: Add to masteredIds if grade is Good (2) or Easy (3)
   if (grade >= 2 && !state.masteredIds.includes(questionId)) {
       state.masteredIds.push(questionId);
-  } else if (grade < 2 && state.masteredIds.includes(questionId)) {
-      // Optional: if they answered Hard/Again, maybe don't remove from Mastered 
-      // but let's keep it forgiving and not remove XP.
   }
   
   savePersistence();
   syncActionButtons(questionId);
-  
-  // Ensure we update XP and rank
-  import('./ui.js').then(module => {
-      module.updateStatsUI();
-  });
+  updateStatsUI();
   
   showToast(`Next review in ${data.interval} day(s)`, "success");
 
@@ -62,10 +54,8 @@ export function evaluateSR(questionId, grade) {
       state.currentIndex++;
       // Wait for toast, then load next
       setTimeout(() => {
-          import('./ui.js').then(module => {
-              module.loadQuestion(state.currentIndex);
-              module.buildSidebarList();
-          });
+          loadQuestion(state.currentIndex);
+          buildSidebarList();
       }, 500);
   } else {
       buildSidebarList();
@@ -81,3 +71,4 @@ export function isDueForReview(questionId) {
 export function getSRStatus(questionId) {
     return state.srData[questionId] || null;
 }
+
