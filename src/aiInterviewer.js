@@ -2,7 +2,7 @@
  * In-Browser WebLLM AI Technical Interviewer
  * Powered by @mlc-ai/web-llm & WebGPU
  */
-import { CreateWebWorkerMLCEngine } from '@mlc-ai/web-llm';
+import { CreateMLCEngine, CreateWebWorkerMLCEngine } from '@mlc-ai/web-llm';
 
 export const AVAILABLE_MODELS = [
   { id: 'Qwen2.5-Coder-0.5B-Instruct-q4f16_1-MLC', name: '⚡ Ultra-Fast Coder 0.5B (~350MB, мгновенно)' },
@@ -96,26 +96,47 @@ export async function initAIEngine(modelId = currentModelId, onProgress = null) 
   currentModelId = modelId;
   isInitializing = true;
   initPromise = (async () => {
-    try {
-      const worker = new Worker(new URL('./aiInterviewer.worker.js', import.meta.url), {
-        type: 'module',
+    const withTimeout = (promise, ms, errorMsg) => {
+      let timeoutId;
+      const timeoutPromise = new Promise((_, reject) => {
+        timeoutId = setTimeout(() => reject(new Error(errorMsg)), ms);
       });
+      return Promise.race([promise, timeoutPromise]).finally(() => clearTimeout(timeoutId));
+    };
 
-      engine = await CreateWebWorkerMLCEngine(worker, modelId, {
-        initProgressCallback: (report) => {
-          const formatted = formatProgressReport(report);
-          for (const listener of progressListeners) {
-            try { listener(report, formatted); } catch (e) { console.error(e); }
-          }
-        },
-      });
+    try {
+      // 1. Try WebWorker first with 12s timeout
+      const createWorkerEngine = async () => {
+        const worker = new Worker(new URL('./aiInterviewer.worker.js', import.meta.url), {
+          type: 'module',
+        });
+        return await CreateWebWorkerMLCEngine(worker, modelId, {
+          initProgressCallback: (report) => {
+            const formatted = formatProgressReport(report);
+            for (const listener of progressListeners) {
+              try { listener(report, formatted); } catch (e) { console.error(e); }
+            }
+          },
+        });
+      };
+
+      try {
+        engine = await withTimeout(createWorkerEngine(), 12000, 'WebWorker WebGPU shader compilation timed out');
+      } catch (workerErr) {
+        console.warn('[WebLLM] WebWorker failed or timed out, trying direct in-thread engine...', workerErr);
+        engine = await withTimeout(CreateMLCEngine(modelId, {
+          initProgressCallback: (report) => {
+            const formatted = formatProgressReport(report);
+            for (const listener of progressListeners) {
+              try { listener(report, formatted); } catch (e) { console.error(e); }
+            }
+          },
+        }), 12000, 'Direct WebGPU shader compilation timed out');
+      }
 
       return engine;
     } catch (err) {
-      console.warn(`[WebLLM] Failed with model ${modelId}, trying fallback...`, err);
-      if (modelId !== FALLBACK_MODEL) {
-        return initAIEngine(FALLBACK_MODEL, onProgress);
-      }
+      console.warn(`[WebLLM] Failed with model ${modelId}:`, err);
       throw err;
     } finally {
       isInitializing = false;

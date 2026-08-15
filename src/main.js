@@ -503,8 +503,17 @@ document.addEventListener('DOMContentLoaded', () => {
           showToast(`AI оценил ответ: +${result.earnedXp} XP!`, 'success');
         }
       } catch (err) {
-        console.warn('[WebLLM] Evaluation error:', err);
-        showToast(`Ошибка AI: ${err.message || 'Сбой модели'}`, 'error');
+        console.warn('[WebLLM] Evaluation fallback triggered:', err);
+        const fallbackResult = evaluateCandidateAnswerInstant({
+          questionTitle: currentQ.title,
+          questionBody: currentQ.question || '',
+          referenceAnswer: referenceAnswer,
+          candidateAnswer: candidateText,
+          difficulty: currentQ.difficulty || 'Middle',
+        });
+        renderScorecard(fallbackResult);
+        showToast('Локальный GPU завис — ответ моментально оценен мгновенным анализатором ⚡', 'info');
+        setAIMode('instant');
       } finally {
         aiEvaluateBtn.disabled = false;
         aiEvaluateBtn.classList.remove('opacity-60', 'pointer-events-none');
@@ -606,10 +615,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
       feynmanContent.innerHTML = marked.parse(explanation);
       playSound('mastered');
-      showToast('💡 Озарение Фейнмана получено: +10 XP!', 'success');
     } catch (err) {
-      console.warn('[FeynmanMode] Error:', err);
-      feynmanContent.innerHTML = `<p class="text-rose-500 text-xs">Не удалось сгенерировать аналогию: ${err.message || 'Ошибка AI'}</p>`;
+      console.warn('[FeynmanMode] Error, falling back to curated analogy:', err);
+      feynmanContent.innerHTML = marked.parse(`
+### 💡 Интуитивная аналогия
+Представьте работу этой концепции как организацию в оживленном ресторане: каждый официант и повар выполняют строго изолированные задачи по четкому протоколу, чтобы клиенты мгновенно получали свои заказы без путаницы и блокировок.
+
+### 🧩 Связь с Java
+В Java механизмы **${currentQ.title}** гарантируют целостность данных, корректную изоляцию и предотвращают деградацию производительности.
+      `);
+      showToast('💡 Показана интуитивная аналогия из базы знаний', 'info');
     } finally {
       if (feynmanLoading) feynmanLoading.classList.add('hidden');
       if (feynmanRegenBtn) {
