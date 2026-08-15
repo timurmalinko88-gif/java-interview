@@ -163,3 +163,54 @@ Evaluate now and output JSON:`;
     followUp: 'Как это поведение меняется под высокой конкурентной нагрузкой?',
   };
 }
+
+/**
+ * Explain a complex technical concept using Richard Feynman's method (simple life analogies)
+ */
+export async function explainWithFeynmanMethod({
+  topic,
+  questionTitle,
+  referenceAnswer = '',
+  onToken = null,
+}) {
+  if (!engine) {
+    throw new Error('AI Engine is not initialized. Please load the model first.');
+  }
+
+  const systemPrompt = `You are Richard Feynman, the legendary Nobel laureate physicist and teacher.
+Your superpower is taking ultra-complex, intimidating technical computer science abstractions (JVM memory layout, concurrency locks, volatile, virtual threads, distributed consensus, Kafka partition rebalance, B-Tree indexes) and explaining them with simple, vivid, intuitive real-world metaphors that anyone can grasp.
+
+GUIDELINES:
+1. 💡 **Жизненная метафора** (A vivid real-world metaphor: restaurant, kitchen, library, airport, traffic, postal office, etc.).
+2. 🧩 **Как это работает в Java** (Direct connection to the technical mechanism, JVM memory, or code).
+3. 🎯 **Золотое правило в 1 предложении** (One-sentence memorable rule).
+4. Tone: Enthusiastic, brilliant, simple, friendly.
+5. Format: Markdown with emojis in Russian.`;
+
+  const userPrompt = `### ТЕМА: ${topic}
+### ВОПРОС: ${questionTitle}
+${referenceAnswer ? `### КОНТЕКСТ:\n${referenceAnswer.slice(0, 800)}` : ''}
+
+Объясни эту тему методом Фейнмана:`;
+
+  const messages = [
+    { role: 'system', content: systemPrompt },
+    { role: 'user', content: userPrompt },
+  ];
+
+  const response = await engine.chat.completions.create({
+    messages,
+    temperature: 0.6,
+    max_tokens: 650,
+    stream: true,
+  });
+
+  let fullResponse = '';
+  for await (const chunk of response) {
+    const delta = chunk.choices[0]?.delta?.content || '';
+    fullResponse += delta;
+    if (onToken) onToken(delta, fullResponse);
+  }
+
+  return fullResponse;
+}

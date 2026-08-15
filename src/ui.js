@@ -417,14 +417,20 @@ async function loadQuestion(indexOrQuestion) {
     youtubeBtn.href = `https://www.youtube.com/results?search_query=${query}`;
   }
 
-  // Hide the answer sections
+  // Hide the answer, Feynman, and AI sections
   const answerSection = document.getElementById('answer-section');
-  answerSection.classList.add('hidden');
+  if (answerSection) answerSection.classList.add('hidden');
+  const feynmanSection = document.getElementById('feynman-section');
+  if (feynmanSection) feynmanSection.classList.add('hidden');
+  const aiInterviewerPanel = document.getElementById('ai-interviewer-panel');
+  if (aiInterviewerPanel) aiInterviewerPanel.classList.add('hidden');
+
   const ansBtnText = document.getElementById('btn-answer-text');
   const ansBtnIcon = document.getElementById('btn-answer-icon');
-  ansBtnText.textContent = "Show Answer";
-  ansBtnIcon.className = "fa-solid fa-eye";
-  document.getElementById('btn-answer').classList.remove('hidden');
+  if (ansBtnText) ansBtnText.textContent = "Show Answer";
+  if (ansBtnIcon) ansBtnIcon.className = "fa-solid fa-eye";
+  const btnAnswer = document.getElementById('btn-answer');
+  if (btnAnswer) btnAnswer.classList.remove('hidden');
   
   const srEvalBar = document.getElementById('sr-eval-bar');
   if (srEvalBar) srEvalBar.classList.add('hidden');

@@ -416,6 +416,35 @@
                     </div>
                 </div>
 
+                <!-- Feynman Mode Explainer Panel (Standalone) -->
+                <div id="feynman-section" class="hidden space-y-3 pt-4 border-t border-slate-100 dark:border-slate-800/80 min-w-0 transition-all">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <span class="w-1.5 h-4 bg-purple-500 rounded-full"></span>
+                            <span class="text-[13px] font-semibold text-purple-700 dark:text-purple-300 flex items-center gap-1.5">
+                                <i class="fa-solid fa-wand-magic-sparkles text-purple-500"></i> Метод Фейнмана (Просто о сложном)
+                            </span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <button id="feynman-regenerate-btn" class="text-[11px] font-medium text-purple-600 dark:text-purple-300 hover:text-purple-800 dark:hover:text-purple-100 bg-purple-100/50 dark:bg-purple-900/40 px-2 py-1 rounded-[7px] border border-purple-200 dark:border-purple-800/40 transition-all flex items-center gap-1">
+                                <i class="fa-solid fa-rotate text-[10px]"></i> Сгенерировать AI-аналогию
+                            </button>
+                            <button id="feynman-close-btn" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bg-purple-50/50 dark:bg-purple-950/20 border-l-[3px] border-l-purple-500 border border-purple-200 dark:border-purple-900/40 rounded-[10px] p-5 text-slate-700 dark:text-slate-200 text-sm sm:text-base leading-relaxed min-w-0 shadow-sm space-y-2">
+                        <div id="feynman-loading" class="hidden flex items-center space-x-2 text-purple-600 dark:text-purple-300 text-xs font-medium">
+                            <i class="fa-solid fa-circle-notch fa-spin"></i>
+                            <span id="feynman-loading-text">Генерирую жизненную аналогию через локальную LLM...</span>
+                        </div>
+                        <div id="feynman-content" class="prose prose-purple dark:prose-invert max-w-none text-sm sm:text-base leading-relaxed break-words">
+                            <!-- Injected by Feynman Engine -->
+                        </div>
+                    </div>
+                </div>
+
                 <!-- AI Examiner Panel -->
                 <div id="ai-interviewer-panel" class="hidden space-y-4 pt-4 border-t border-slate-100 dark:border-slate-800/80 min-w-0">
                     <div class="flex items-center justify-between">
@@ -527,6 +556,10 @@
 
  <!-- Toggle Answer / Learn State -->
   <div class="flex flex-wrap items-center gap-2 sm:gap-3 w-full sm:w-auto justify-end max-w-full">
+  <button id="btn-feynman" class="flex-1 sm:flex-initial flex items-center justify-center space-x-1.5 sm:space-x-2 bg-purple-50 hover:bg-purple-100 dark:bg-purple-950/40 dark:hover:bg-purple-900/60 border border-purple-200 dark:border-purple-800/40 text-purple-700 dark:text-purple-300 font-medium px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-[10px] shadow-sm transition-all text-sm sm:text-base whitespace-nowrap" title="Объяснить методом Фейнмана (простые жизненные аналогии)">
+  <i aria-hidden="true" class="fa-solid fa-wand-magic-sparkles text-purple-500"></i>
+  <span>👶 Feynman Mode</span>
+  </button>
   <button id="btn-ai-interview" class="flex-1 sm:flex-initial flex items-center justify-center space-x-1.5 sm:space-x-2 bg-ink-900 hover:bg-black dark:bg-panel-700 dark:hover:bg-panel-800 border border-slate-200 dark:border-slate-700 text-white font-medium px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-[10px] shadow-sm transition-all text-sm sm:text-base whitespace-nowrap" title="Сдать ответ AI-интервьюеру">
   <i aria-hidden="true" class="fa-solid fa-robot text-cobalt-core"></i>
   <span>AI Examiner</span>

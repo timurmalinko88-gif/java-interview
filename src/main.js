@@ -10,7 +10,7 @@ import { toggleFlag } from './collections.js';
 import { fetchQuestions } from './api.js';
 import { initAlgoView, renderAlgoList, switchView } from './algorithms.js';
 import { initSysDesignView } from './sysdesign.js';
-import { initAIEngine, evaluateCandidateAnswer, isWebGPUSupported } from './aiInterviewer.js';
+import { initAIEngine, evaluateCandidateAnswer, explainWithFeynmanMethod, isWebGPUSupported } from './aiInterviewer.js';
 import { SpeechRecognizer } from './speechRecognition.js';
 
 // Auto-sync UI when state changes
@@ -443,6 +443,129 @@ document.addEventListener('DOMContentLoaded', () => {
         if (aiLoadingIndicator) aiLoadingIndicator.classList.add('hidden');
         if (aiStatusBadge) aiStatusBadge.textContent = 'Ready';
       }
+    });
+  }
+
+  // Setup Feynman Mode (In-Browser WebLLM & Metaphor Coach)
+  const feynmanBtn = document.getElementById('btn-feynman');
+  const feynmanSection = document.getElementById('feynman-section');
+  const feynmanCloseBtn = document.getElementById('feynman-close-btn');
+  const feynmanRegenBtn = document.getElementById('feynman-regenerate-btn');
+  const feynmanContent = document.getElementById('feynman-content');
+  const feynmanLoading = document.getElementById('feynman-loading');
+  const feynmanLoadingText = document.getElementById('feynman-loading-text');
+
+  async function triggerFeynmanExplanation(forceRegenerate = false) {
+    if (!feynmanSection || !feynmanContent) return;
+    feynmanSection.classList.remove('hidden');
+    feynmanSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+    if (state.filteredQuestions.length === 0) return;
+    const currentQ = state.filteredQuestions[state.currentIndex];
+
+    // Ensure question content is loaded
+    if (!currentQ.loadedAnswer && !currentQ.answer) {
+      await loadQuestion(state.currentIndex);
+    }
+
+    // If pre-indexed analogy is available and not force-regenerating, show it
+    if (currentQ.loadedAnalogy && currentQ.loadedAnalogy.trim() !== '' && !forceRegenerate) {
+      feynmanContent.innerHTML = `
+        <div class="space-y-3">
+          <div class="p-3 bg-white/60 dark:bg-panel-900/40 rounded-[8px] border border-purple-200/50 dark:border-purple-800/30">
+            <p class="text-sm sm:text-base text-slate-800 dark:text-slate-200 leading-relaxed">
+              ${currentQ.loadedAnalogy}
+            </p>
+          </div>
+          <div class="pt-2 border-t border-purple-200/60 dark:border-purple-800/40 flex flex-wrap items-center justify-between gap-2 text-xs text-purple-700 dark:text-purple-300">
+            <span class="flex items-center gap-1.5"><i class="fa-solid fa-lightbulb text-purple-500"></i> Базовая интуитивная метафора</span>
+            <button id="feynman-inline-ai-btn" class="font-semibold underline hover:text-purple-900 dark:hover:text-purple-100 flex items-center gap-1">
+              <i class="fa-solid fa-wand-magic-sparkles"></i> Сгенерировать глубокую AI-аналогию ✨
+            </button>
+          </div>
+        </div>
+      `;
+      const inlineAiBtn = document.getElementById('feynman-inline-ai-btn');
+      if (inlineAiBtn) inlineAiBtn.onclick = () => triggerFeynmanExplanation(true);
+      return;
+    }
+
+    // Generate via WebLLM
+    if (feynmanLoading) feynmanLoading.classList.remove('hidden');
+    if (feynmanRegenBtn) {
+      feynmanRegenBtn.disabled = true;
+      feynmanRegenBtn.classList.add('opacity-50', 'pointer-events-none');
+    }
+    feynmanContent.innerHTML = '';
+
+    try {
+      const hasWebGPU = await isWebGPUSupported();
+      if (!hasWebGPU) {
+        // Fallback intuitive analogy if WebGPU not available
+        feynmanContent.innerHTML = marked.parse(`
+### 💡 Интуитивная аналогия
+Представьте работу этой концепции как организацию в оживленном ресторане: каждый официант и повар выполняют строго изолированные задачи по четкому протоколу, чтобы клиенты мгновенно получали свои заказы без путаницы и блокировок.
+
+### 🧩 Связь с Java
+В Java архитектурные механизмы **${currentQ.title}** гарантируют изоляцию состояния, корректную синхронизацию в памяти и предотвращают деградацию производительности.
+        `);
+        return;
+      }
+
+      await initAIEngine(undefined, (report) => {
+        if (feynmanLoadingText) {
+          const pct = Math.round((report.progress || 0) * 100);
+          feynmanLoadingText.textContent = `Загрузка AI-модели (${pct}%)...`;
+        }
+      });
+
+      if (feynmanLoadingText) {
+        feynmanLoadingText.textContent = 'Фейнман формулирует жизненную аналогию...';
+      }
+
+      const explanation = await explainWithFeynmanMethod({
+        topic: currentQ.topic,
+        questionTitle: currentQ.title,
+        referenceAnswer: currentQ.loadedAnswer || currentQ.answer || '',
+        onToken: (_delta, fullText) => {
+          feynmanContent.innerHTML = marked.parse(fullText);
+        },
+      });
+
+      feynmanContent.innerHTML = marked.parse(explanation);
+      playSound('mastered');
+      showToast('💡 Озарение Фейнмана получено: +10 XP!', 'success');
+    } catch (err) {
+      console.warn('[FeynmanMode] Error:', err);
+      feynmanContent.innerHTML = `<p class="text-rose-500 text-xs">Не удалось сгенерировать аналогию: ${err.message || 'Ошибка AI'}</p>`;
+    } finally {
+      if (feynmanLoading) feynmanLoading.classList.add('hidden');
+      if (feynmanRegenBtn) {
+        feynmanRegenBtn.disabled = false;
+        feynmanRegenBtn.classList.remove('opacity-50', 'pointer-events-none');
+      }
+    }
+  }
+
+  if (feynmanBtn) {
+    feynmanBtn.addEventListener('click', () => {
+      if (feynmanSection.classList.contains('hidden')) {
+        triggerFeynmanExplanation(false);
+      } else {
+        feynmanSection.classList.add('hidden');
+      }
+    });
+  }
+
+  if (feynmanCloseBtn) {
+    feynmanCloseBtn.addEventListener('click', () => {
+      feynmanSection.classList.add('hidden');
+    });
+  }
+
+  if (feynmanRegenBtn) {
+    feynmanRegenBtn.addEventListener('click', () => {
+      triggerFeynmanExplanation(true);
     });
   }
 
