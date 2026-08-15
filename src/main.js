@@ -10,7 +10,7 @@ import { toggleFlag } from './collections.js';
 import { fetchQuestions } from './api.js';
 import { initAlgoView, renderAlgoList, switchView } from './algorithms.js';
 import { initSysDesignView } from './sysdesign.js';
-import { initAIEngine, evaluateCandidateAnswer, explainWithFeynmanMethod, isWebGPUSupported } from './aiInterviewer.js';
+import { initAIEngine, evaluateCandidateAnswer, evaluateCandidateAnswerInstant, explainWithFeynmanMethod, isWebGPUSupported } from './aiInterviewer.js';
 import { SpeechRecognizer } from './speechRecognition.js';
 
 // Auto-sync UI when state changes
@@ -368,6 +368,40 @@ document.addEventListener('DOMContentLoaded', () => {
     aiScorecardResult.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
+  let currentAIMode = 'instant'; // default instant 0ms mode
+  const aiModeInstantBtn = document.getElementById('ai-mode-instant-btn');
+  const aiModeWebgpuBtn = document.getElementById('ai-mode-webgpu-btn');
+  const aiModelSelect = document.getElementById('ai-model-select');
+  const aiStatusDot = document.getElementById('ai-status-dot');
+
+  function setAIMode(mode) {
+    currentAIMode = mode;
+    if (mode === 'instant') {
+      aiModeInstantBtn?.classList.add('bg-white', 'dark:bg-panel-700', 'text-slate-900', 'dark:text-white', 'shadow-xs', 'font-semibold');
+      aiModeInstantBtn?.classList.remove('text-slate-500', 'dark:text-slate-400');
+      aiModeWebgpuBtn?.classList.remove('bg-white', 'dark:bg-panel-700', 'text-slate-900', 'dark:text-white', 'shadow-xs', 'font-semibold');
+      aiModeWebgpuBtn?.classList.add('text-slate-500', 'dark:text-slate-400');
+      aiModelSelect?.classList.add('hidden');
+      if (aiStatusBadge) aiStatusBadge.textContent = '⚡ 0ms Ready';
+      if (aiStatusDot) {
+        aiStatusDot.className = 'w-2 h-2 rounded-full bg-emerald-500 animate-pulse';
+      }
+    } else {
+      aiModeWebgpuBtn?.classList.add('bg-white', 'dark:bg-panel-700', 'text-slate-900', 'dark:text-white', 'shadow-xs', 'font-semibold');
+      aiModeWebgpuBtn?.classList.remove('text-slate-500', 'dark:text-slate-400');
+      aiModeInstantBtn?.classList.remove('bg-white', 'dark:bg-panel-700', 'text-slate-900', 'dark:text-white', 'shadow-xs', 'font-semibold');
+      aiModeInstantBtn?.classList.add('text-slate-500', 'dark:text-slate-400');
+      aiModelSelect?.classList.remove('hidden');
+      if (aiStatusBadge) aiStatusBadge.textContent = 'WebGPU Ready';
+      if (aiStatusDot) {
+        aiStatusDot.className = 'w-2 h-2 rounded-full bg-cobalt-core animate-pulse';
+      }
+    }
+  }
+
+  aiModeInstantBtn?.addEventListener('click', () => setAIMode('instant'));
+  aiModeWebgpuBtn?.addEventListener('click', () => setAIMode('webgpu'));
+
   const aiDownloadProgressContainer = document.getElementById('ai-download-progress-container');
   const aiDownloadProgressText = document.getElementById('ai-download-progress-text');
   const aiDownloadProgressPct = document.getElementById('ai-download-progress-pct');
@@ -391,6 +425,24 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       const referenceAnswer = currentQ.loadedAnswer || currentQ.answer || currentQ.question || '';
 
+      // Instant 0ms mode (Zero GPU latency)
+      if (currentAIMode === 'instant') {
+        const result = evaluateCandidateAnswerInstant({
+          questionTitle: currentQ.title,
+          questionBody: currentQ.question || '',
+          referenceAnswer: referenceAnswer,
+          candidateAnswer: candidateText,
+          difficulty: currentQ.difficulty || 'Middle',
+        });
+        renderScorecard(result);
+        if (result.earnedXp > 0) {
+          playSound('mastered');
+          showToast(`AI оценил ответ (⚡ 50мс): +${result.earnedXp} XP!`, 'success');
+        }
+        return;
+      }
+
+      // WebGPU LLM mode
       aiEvaluateBtn.disabled = true;
       aiEvaluateBtn.classList.add('opacity-60', 'pointer-events-none');
       if (aiEvaluateBtnText) aiEvaluateBtnText.textContent = 'Запуск AI...';

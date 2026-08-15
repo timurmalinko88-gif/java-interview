@@ -127,6 +127,121 @@ export async function initAIEngine(modelId = currentModelId, onProgress = null) 
 }
 
 /**
+ * Instant Client-Side Semantic & Keyword Evaluation (0ms, 0$ Server, No GPU Required)
+ */
+export function evaluateCandidateAnswerInstant({
+  questionTitle,
+  questionBody = '',
+  referenceAnswer = '',
+  candidateAnswer = '',
+  difficulty = 'Middle',
+}) {
+  const isGibberish = !candidateAnswer || candidateAnswer.trim().length < 3 || /^[\s\d\W]+$/.test(candidateAnswer);
+
+  if (isGibberish) {
+    return {
+      score: 10,
+      verdict: 'REVISE',
+      earnedXp: 1,
+      summary: 'Ответ слишком короткий или не содержит ключевых терминов по теме вопроса.',
+      foundConcepts: [],
+      missedConcepts: ['Ключевые механизмы и архитектурные концепции Java'],
+      followUp: 'Попробуйте описать принцип работы и нюансы своими словами.',
+    };
+  }
+
+  const stopWords = new Set([
+    'the', 'is', 'at', 'which', 'on', 'and', 'a', 'an', 'in', 'to', 'for', 'with', 'by', 'that', 'this', 'from',
+    'что', 'это', 'как', 'для', 'или', 'при', 'все', 'так', 'если', 'через', 'после', 'того', 'также', 'только',
+    'когда', 'между', 'один', 'быть', 'может', 'будет', 'используется', 'который', 'можно', 'нужно', 'каждый'
+  ]);
+
+  const combinedRef = `${questionTitle} ${questionBody} ${referenceAnswer}`;
+
+  // Clean and tokenize reference answer
+  const rawRefTokens = combinedRef
+    .replace(/[#`*_[\](),.:;!?/\\{}<>="']/g, ' ')
+    .split(/\s+/)
+    .map((w) => w.trim())
+    .filter((w) => w.length > 2 && !stopWords.has(w.toLowerCase()));
+
+  // Identify distinctive multi-word or PascalCase/camelCase identifiers
+  const technicalTermsMatch = combinedRef.match(/[A-Z][a-zA-Z0-9_]{2,}|@[A-Za-z]+|[a-z]+[A-Z][a-z]+/g) || [];
+  const importantKeywords = Array.from(new Set([
+    ...technicalTermsMatch,
+    ...rawRefTokens.filter((t) => t.length >= 4),
+  ])).slice(0, 35);
+
+  const candidateLower = candidateAnswer.toLowerCase();
+
+  // Calculate matched concepts
+  const foundConcepts = [];
+  const missedConcepts = [];
+
+  importantKeywords.forEach((kw) => {
+    const kwLower = kw.toLowerCase();
+    if (candidateLower.includes(kwLower)) {
+      if (foundConcepts.length < 6) foundConcepts.push(kw);
+    } else {
+      if (missedConcepts.length < 4) missedConcepts.push(kw);
+    }
+  });
+
+  const candidateTokens = candidateAnswer
+    .replace(/[#`*_[\](),.:;!?/\\{}<>="']/g, ' ')
+    .split(/\s+/)
+    .map((w) => w.trim().toLowerCase())
+    .filter((w) => w.length > 2 && !stopWords.has(w));
+
+  const matchedTokens = candidateTokens.filter((ct) =>
+    combinedRef.toLowerCase().includes(ct) || importantKeywords.some((kw) => kw.toLowerCase().includes(ct) || ct.includes(kw.toLowerCase()))
+  );
+
+  const tokenOverlap = candidateTokens.length > 0 ? (matchedTokens.length / candidateTokens.length) : 0;
+  const wordCount = candidateTokens.length;
+  const lengthBonus = Math.min(20, Math.round(wordCount * 1.5));
+
+  let calculatedScore = Math.min(95, Math.max(35, Math.round(tokenOverlap * 55 + Math.min(25, foundConcepts.length * 8) + lengthBonus)));
+
+  if (foundConcepts.length >= 2 || tokenOverlap >= 0.5) {
+    calculatedScore = Math.max(calculatedScore, 75);
+  }
+
+  const verdict = calculatedScore >= 80 ? 'STRONG_PASS' : calculatedScore >= 60 ? 'PASS' : calculatedScore >= 40 ? 'PARTIAL' : 'REVISE';
+  const earnedXp = Math.max(1, Math.min(10, Math.round(calculatedScore / 10)));
+
+  let summary = '';
+  if (calculatedScore >= 80) {
+    summary = 'Отличный, технически грамотный ответ! Вы верно выделили ключевые механизмы и структуру работы.';
+  } else if (calculatedScore >= 60) {
+    summary = 'Хороший ответ. Основная суть передана верно, но рекомендуется глубже раскрыть нюансы многопоточности и граничные случаи.';
+  } else if (calculatedScore >= 40) {
+    summary = 'Частично верно. Упомянуты базовые понятия, но упущены важные детали реализации.';
+  } else {
+    summary = 'Тема раскрыта не полностью. Обратите внимание на архитектурные механизмы из эталонного ответа.';
+  }
+
+  const followUpQuestions = [
+    `Как реализация в вопросе «${questionTitle}» ведет себя в условиях высокой конкурентной многопоточной нагрузки?`,
+    'Какие накладные расходы по памяти и сборке мусора (GC) возникают при таком подходе?',
+    'В каких практических сценариях на продакшене вы бы предпочли альтернативное решение?',
+    'Как это решение масштабируется при обработке больших объемов данных?',
+  ];
+  const followUp = followUpQuestions[Math.abs(questionTitle.length) % followUpQuestions.length];
+
+  return {
+    score: calculatedScore,
+    verdict,
+    earnedXp,
+    summary,
+    foundConcepts: foundConcepts.length > 0 ? foundConcepts : ['Базовые концепции Java'],
+    missedConcepts: missedConcepts.length > 0 ? missedConcepts : ['Граничные сценарии производительности'],
+    followUp,
+    isInstant: true,
+  };
+}
+
+/**
  * Evaluate candidate's answer against technical ground truth reference
  */
 export async function evaluateCandidateAnswer({

@@ -19,11 +19,19 @@ test.describe('In-Browser LLM Engine & Examiner Diagnostic Suite', () => {
     await expect(page.locator('#active-difficulty')).toBeVisible({ timeout: 15000 });
   });
 
-  test('Scenario 1: Model Selector contains all 4 speed/size options with Qwen 0.5B default', async ({ page }) => {
+  test('Scenario 1: Mode Switcher toggles Instant (0ms) and WebGPU LLM models', async ({ page }) => {
     const aiBtn = page.locator('#btn-ai-interview');
     await aiBtn.click();
     await expect(page.locator('#ai-interviewer-panel')).toBeVisible();
 
+    // Verify instant mode default
+    const instantBtn = page.locator('#ai-mode-instant-btn');
+    const webgpuBtn = page.locator('#ai-mode-webgpu-btn');
+    await expect(instantBtn).toBeVisible();
+    await expect(webgpuBtn).toBeVisible();
+
+    // Toggle to WebGPU mode
+    await webgpuBtn.click();
     const modelSelect = page.locator('#ai-model-select');
     await expect(modelSelect).toBeVisible();
 
