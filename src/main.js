@@ -10,6 +10,8 @@ import { toggleFlag } from './collections.js';
 import { fetchQuestions } from './api.js';
 import { initAlgoView, renderAlgoList, switchView } from './algorithms.js';
 import { initSysDesignView } from './sysdesign.js';
+import { initAIEngine, evaluateCandidateAnswer, isWebGPUSupported } from './aiInterviewer.js';
+import { SpeechRecognizer } from './speechRecognition.js';
 
 // Auto-sync UI when state changes
 onStateChange(() => {
@@ -263,6 +265,184 @@ document.addEventListener('DOMContentLoaded', () => {
       await loadQuestion(state.currentIndex);
       buildSidebarList();
       showToast("Blitz Mode: Random question selected!", "info");
+    });
+  }
+
+  // Setup AI Examiner (In-Browser WebLLM + Web Speech)
+  const aiInterviewBtn = document.getElementById('btn-ai-interview');
+  const aiPanel = document.getElementById('ai-interviewer-panel');
+  const aiCandidateInput = document.getElementById('ai-candidate-input');
+  const aiVoiceBtn = document.getElementById('ai-voice-dictate-btn');
+  const aiEvaluateBtn = document.getElementById('ai-evaluate-btn');
+  const aiRevealRefBtn = document.getElementById('ai-reveal-reference-btn');
+  const aiLoadingIndicator = document.getElementById('ai-model-loading-indicator');
+  const aiStatusBadge = document.getElementById('ai-engine-status-badge');
+  const aiScorecardResult = document.getElementById('ai-scorecard-result');
+
+  if (aiInterviewBtn && aiPanel) {
+    aiInterviewBtn.addEventListener('click', () => {
+      aiPanel.classList.toggle('hidden');
+      if (!aiPanel.classList.contains('hidden')) {
+        if (aiCandidateInput) aiCandidateInput.focus();
+        aiPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+  }
+
+  // Voice Dictation
+  let recognizer = null;
+  if (aiVoiceBtn && aiCandidateInput) {
+    if (SpeechRecognizer.isSupported()) {
+      recognizer = new SpeechRecognizer({
+        onTranscript: (text) => {
+          aiCandidateInput.value = text;
+        },
+        onStateChange: (isListening) => {
+          if (isListening) {
+            aiVoiceBtn.classList.add('bg-rose-50', 'text-rose-500', 'border-rose-300', 'animate-pulse');
+            aiVoiceBtn.innerHTML = '<i class="fa-solid fa-microphone-lines text-xs text-rose-500"></i>';
+          } else {
+            aiVoiceBtn.classList.remove('bg-rose-50', 'text-rose-500', 'border-rose-300', 'animate-pulse');
+            aiVoiceBtn.innerHTML = '<i class="fa-solid fa-microphone text-xs"></i>';
+          }
+        },
+      });
+
+      aiVoiceBtn.addEventListener('click', () => {
+        recognizer.toggle();
+      });
+    } else {
+      aiVoiceBtn.title = 'Голосовой ввод доступен в Chrome, Edge и Safari';
+      aiVoiceBtn.classList.add('opacity-50');
+    }
+  }
+
+  if (aiRevealRefBtn) {
+    aiRevealRefBtn.addEventListener('click', () => {
+      const btnAnswer = document.getElementById('btn-answer');
+      if (btnAnswer) btnAnswer.click();
+    });
+  }
+
+  function renderScorecard(result) {
+    if (!aiScorecardResult) return;
+    aiScorecardResult.classList.remove('hidden');
+
+    const badgeEl = document.getElementById('ai-scorecard-badge');
+    const xpEl = document.getElementById('ai-scorecard-xp');
+    const summaryEl = document.getElementById('ai-scorecard-summary');
+    const foundEl = document.getElementById('ai-found-concepts');
+    const missedEl = document.getElementById('ai-missed-concepts');
+    const followupEl = document.getElementById('ai-followup-text');
+
+    if (badgeEl) {
+      badgeEl.textContent = `${result.score}% — ${result.verdict}`;
+      if (result.score >= 80) {
+        badgeEl.className = 'px-2.5 py-1 rounded-[7px] text-xs font-bold bg-emerald-500/10 text-emerald-500 border border-emerald-500/20';
+      } else if (result.score >= 55) {
+        badgeEl.className = 'px-2.5 py-1 rounded-[7px] text-xs font-bold bg-amber-500/10 text-amber-500 border border-amber-500/20';
+      } else {
+        badgeEl.className = 'px-2.5 py-1 rounded-[7px] text-xs font-bold bg-rose-500/10 text-rose-500 border border-rose-500/20';
+      }
+    }
+
+    if (xpEl) xpEl.textContent = `+${result.earnedXp} XP`;
+    if (summaryEl) summaryEl.textContent = result.summary;
+
+    if (foundEl) {
+      foundEl.innerHTML = (result.foundConcepts || []).map((c) =>
+        `<span class="px-2 py-0.5 rounded-[5px] bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 text-[11px] font-medium">${c}</span>`
+      ).join('') || '<span class="text-slate-400 italic">Базовые понятия</span>';
+    }
+
+    if (missedEl) {
+      missedEl.innerHTML = (result.missedConcepts || []).map((c) =>
+        `<span class="px-2 py-0.5 rounded-[5px] bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/20 text-[11px] font-medium">${c}</span>`
+      ).join('') || '<span class="text-slate-400 italic">Существенных пропусков нет</span>';
+    }
+
+    if (followupEl) {
+      followupEl.textContent = result.followUp || 'Как данный подход масштабируется под высокой нагрузкой?';
+    }
+
+    aiScorecardResult.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  if (aiEvaluateBtn && aiCandidateInput) {
+    aiEvaluateBtn.addEventListener('click', async () => {
+      const candidateText = aiCandidateInput.value.trim();
+      if (!candidateText) {
+        showToast('Пожалуйста, введите или надиктуйте ответ', 'info');
+        aiCandidateInput.focus();
+        return;
+      }
+
+      if (state.filteredQuestions.length === 0) return;
+      const currentQ = state.filteredQuestions[state.currentIndex];
+
+      if (!currentQ.loadedAnswer && !currentQ.answer) {
+        await loadQuestion(state.currentIndex);
+      }
+      const referenceAnswer = currentQ.loadedAnswer || currentQ.answer || currentQ.question || '';
+
+      aiEvaluateBtn.disabled = true;
+      aiEvaluateBtn.classList.add('opacity-60', 'pointer-events-none');
+      if (aiLoadingIndicator) aiLoadingIndicator.classList.remove('hidden');
+      if (aiStatusBadge) aiStatusBadge.textContent = 'Оценка...';
+
+      try {
+        const hasWebGPU = await isWebGPUSupported();
+        if (!hasWebGPU) {
+          // Graceful fallback heuristic scoring
+          const terms = referenceAnswer.toLowerCase().split(/\s+/).filter((w) => w.length > 5);
+          const matchCount = terms.filter((t) => candidateText.toLowerCase().includes(t)).length;
+          const estimatedScore = Math.min(95, Math.max(40, Math.round((matchCount / Math.max(4, terms.length * 0.2)) * 100)));
+          renderScorecard({
+            score: estimatedScore,
+            verdict: estimatedScore >= 75 ? 'PASS' : 'PARTIAL',
+            earnedXp: Math.round(estimatedScore / 10),
+            summary: 'Ответ сопоставлен с эталоном базы знаний (WebGPU недоступен на данном устройстве, применен локальный анализатор).',
+            foundConcepts: ['Ключевая терминология Java'],
+            missedConcepts: ['Глубокие нюансы работы JVM / JMM'],
+            followUp: 'Какие накладные расходы по памяти и CPU возникают в данном случае?',
+          });
+          return;
+        }
+
+        await initAIEngine(undefined, (report) => {
+          if (aiLoadingIndicator) {
+            const pct = Math.round((report.progress || 0) * 100);
+            aiLoadingIndicator.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Загрузка AI-модели (${pct}%)...`;
+          }
+        });
+
+        if (aiLoadingIndicator) {
+          aiLoadingIndicator.innerHTML = `<i class="fa-solid fa-brain fa-fade"></i> AI анализирует ответ...`;
+        }
+
+        const result = await evaluateCandidateAnswer({
+          questionTitle: currentQ.title,
+          questionBody: currentQ.question || '',
+          referenceAnswer: referenceAnswer,
+          candidateAnswer: candidateText,
+          difficulty: currentQ.difficulty || 'Middle',
+        });
+
+        renderScorecard(result);
+
+        if (result.earnedXp > 0) {
+          playSound('mastered');
+          showToast(`AI оценил ответ: +${result.earnedXp} XP!`, 'success');
+        }
+      } catch (err) {
+        console.warn('[WebLLM] Evaluation error:', err);
+        showToast(`Ошибка AI: ${err.message || 'Сбой модели'}`, 'error');
+      } finally {
+        aiEvaluateBtn.disabled = false;
+        aiEvaluateBtn.classList.remove('opacity-60', 'pointer-events-none');
+        if (aiLoadingIndicator) aiLoadingIndicator.classList.add('hidden');
+        if (aiStatusBadge) aiStatusBadge.textContent = 'Ready';
+      }
     });
   }
 

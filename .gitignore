@@ -28,6 +28,7 @@ Thumbs.db
 
 # AntiGravity / Agent scratch
 .gemini/
+scratch/
 *.tmp
 
 # Playwright

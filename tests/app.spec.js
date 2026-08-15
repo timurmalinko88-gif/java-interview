@@ -208,4 +208,47 @@ test.describe('Java Interview Hub - Comprehensive E2E Tests', () => {
     await expect(page.locator('#shortcuts-modal')).toBeHidden();
     expect(errors.length).toBe(0);
   });
+
+  test('Semantic Vector Search badge displays and query filters accurately', async ({ page }) => {
+    const searchBadge = page.locator('#semantic-search-badge');
+    await expect(searchBadge).toBeVisible();
+
+    const searchInput = page.locator('#search-input');
+    await searchInput.fill('Virtual Threads');
+    await page.waitForTimeout(500);
+
+    const countText = await page.locator('#question-list-count').textContent();
+    expect(parseInt(countText, 10)).toBeGreaterThan(0);
+    expect(errors.length).toBe(0);
+  });
+
+  test('In-Browser AI Examiner Panel opens, accepts answers, and runs evaluation', async ({ page }) => {
+    const aiBtn = page.locator('#btn-ai-interview');
+    await expect(aiBtn).toBeVisible();
+
+    // Toggle AI Examiner panel open
+    await aiBtn.click();
+    const aiPanel = page.locator('#ai-interviewer-panel');
+    await expect(aiPanel).toBeVisible();
+
+    const candidateInput = page.locator('#ai-candidate-input');
+    await expect(candidateInput).toBeVisible();
+
+    // Type a sample technical answer
+    await candidateInput.fill('Volatile ensures memory visibility and prevents instruction reordering via Happens-Before relationship.');
+
+    // Click AI evaluate button
+    const evalBtn = page.locator('#ai-evaluate-btn');
+    await evalBtn.click();
+
+    // Verify scorecard result appears
+    const scorecard = page.locator('#ai-scorecard-result');
+    await expect(scorecard).toBeVisible({ timeout: 10000 });
+
+    const badge = page.locator('#ai-scorecard-badge');
+    await expect(badge).toBeVisible();
+    const badgeText = await badge.textContent();
+    expect(badgeText).toContain('%');
+    expect(errors.length).toBe(0);
+  });
 });

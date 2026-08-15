@@ -100,6 +100,7 @@ export async function loadMockQuestion(idx) {
   document.getElementById('btn-answer').classList.remove('hidden');
 
   await loadQuestion(q);
+  document.getElementById('btn-answer').classList.remove('hidden');
 }
 export function revealMockAnswer() {
   renderAnswerContent();

@@ -8,6 +8,9 @@ export default defineConfig({
     outDir: 'dist',
     emptyOutDir: true,
   },
+  worker: {
+    format: 'es',
+  },
   server: {
     open: true,
   },
@@ -16,6 +19,9 @@ export default defineConfig({
       registerType: 'autoUpdate',
       devOptions: {
         enabled: false
+      },
+      workbox: {
+        maximumFileSizeToCacheInBytes: 15 * 1024 * 1024,
       },
       manifest: {
         name: 'Java Interview Prep Hub',

@@ -3,10 +3,29 @@ import { state } from './state.js';
 import { isFlagged } from './collections.js';
 import { isDueForReview } from './spacedRepetition.js';
 import { ROADMAPS } from './roadmaps.js';
+import { semanticSearch } from './semanticSearch.js';
 
-export // --- ui.js ---
+let activeSearchQuery = '';
+
+// Update status badge when semantic search is initialized
+semanticSearch.onStatusChange((status, message) => {
+  const badge = document.getElementById('semantic-search-badge');
+  const statusEl = document.getElementById('semantic-search-status');
+  if (badge && statusEl) {
+    if (status === 'ready') {
+      badge.classList.remove('opacity-0');
+      badge.classList.add('opacity-100');
+      statusEl.textContent = 'Active ✨';
+    } else if (status === 'loading') {
+      statusEl.textContent = 'Loading...';
+    } else if (status === 'error') {
+      statusEl.textContent = 'Keyword only';
+    }
+  }
+});
+
 // Build the left sidebar navigation items
-function buildSidebarList() {
+export function buildSidebarList() {
   const container = document.getElementById('questions-container');
   const countLabel = document.getElementById('question-list-count');
   container.innerHTML = '';
@@ -165,6 +184,49 @@ function triggerFilterAction() {
   buildSidebarList();
   if (state.filteredQuestions.length > 0) {
     loadQuestion(state.currentIndex);
+  }
+
+  // Parallel Semantic Ranking (if query >= 3 chars and semantic search is ready)
+  if (searchValue.length >= 3 && semanticSearch.isReady) {
+    const queryToSearch = searchValue;
+    semanticSearch.search(queryToSearch).then((semanticResults) => {
+      if (activeSearchQuery !== queryToSearch || !semanticResults || semanticResults.length === 0) return;
+
+      const scoreMap = new Map();
+      semanticResults.forEach((r) => scoreMap.set(r.id, r.score));
+
+      const validPool = baseQuestions.filter((q) => {
+        const topicMatches = topicValue === 'all' || q.topic === topicValue;
+        const diffMatches = state.selectedDiffFilters.length === 0 || state.selectedDiffFilters.includes(q.difficulty);
+        const formatMatches = checkedFormats.length === 0 || checkedFormats.includes(q.format);
+        const statusFilter = state.statusFilter || 'all';
+        let statusMatches = true;
+        if (statusFilter === 'flagged') statusMatches = isFlagged(q.id);
+        else if (statusFilter === 'mastered') statusMatches = state.masteredIds.includes(q.id);
+        else if (statusFilter === 'due') statusMatches = isDueForReview(q.id);
+        return topicMatches && diffMatches && formatMatches && statusMatches;
+      });
+
+      const matched = validPool.filter((q) => {
+        const hasSemantic = scoreMap.has(q.id);
+        const hasKeyword = (q.title && q.title.toLowerCase().includes(queryToSearch)) ||
+          (q.tags && Array.isArray(q.tags) && q.tags.some((t) => t.toLowerCase().includes(queryToSearch)));
+        return hasSemantic || hasKeyword;
+      });
+
+      if (matched.length > 0) {
+        matched.sort((a, b) => {
+          const scoreA = (scoreMap.get(a.id) || 0) + (a.title && a.title.toLowerCase().includes(queryToSearch) ? 0.3 : 0);
+          const scoreB = (scoreMap.get(b.id) || 0) + (b.title && b.title.toLowerCase().includes(queryToSearch) ? 0.3 : 0);
+          return scoreB - scoreA;
+        });
+
+        state.filteredQuestions = matched;
+        state.currentIndex = 0;
+        buildSidebarList();
+        loadQuestion(0);
+      }
+    });
   }
 }
 

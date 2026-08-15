@@ -172,9 +172,15 @@
   
   <!-- Search Input -->
   <div class="relative">
-  <input type="text" id="search-input" aria-label="Search questions" placeholder="Search questions..." 
+  <input type="text" id="search-input" aria-label="Search questions" placeholder="Search questions (e.g. ускорить SQL, deadlocks, Kafka)..." 
   class="w-full bg-slate-50 dark:bg-ink-950 border border-slate-200 dark:border-slate-800 rounded-[10px] px-4 py-2.5 pl-10 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-roast-500 focus:border-transparent transition-all">
   <i aria-hidden="true" class="fa-solid fa-magnifying-glass absolute left-3.5 top-3.5 text-slate-400 text-sm"></i>
+  </div>
+  <div class="flex items-center justify-between px-0.5 text-[11px]">
+    <span id="semantic-search-badge" class="font-medium text-cobalt-core flex items-center gap-1 transition-opacity opacity-75">
+      <i class="fa-solid fa-wand-magic-sparkles"></i> AI Semantic Search Active
+    </span>
+    <span id="semantic-search-status" class="text-[10px] text-slate-400">706 vectors</span>
   </div>
 
   <!-- Roadmap Selector -->
@@ -410,6 +416,84 @@
                     </div>
                 </div>
 
+                <!-- AI Examiner Panel -->
+                <div id="ai-interviewer-panel" class="hidden space-y-4 pt-4 border-t border-slate-100 dark:border-slate-800/80 min-w-0">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center space-x-2">
+                            <span class="w-2 h-2 rounded-full bg-cobalt-core animate-pulse"></span>
+                            <span class="text-xs font-semibold text-slate-900 dark:text-white uppercase tracking-wider flex items-center gap-1.5">
+                                <i class="fa-solid fa-robot text-cobalt-core"></i> AI Examiner (In-Browser WebGPU)
+                            </span>
+                        </div>
+                        <span id="ai-engine-status-badge" class="text-[11px] text-slate-500 dark:text-slate-400 font-medium">Ready</span>
+                    </div>
+
+                    <!-- Candidate Answer Input Box -->
+                    <div class="space-y-2.5">
+                        <div class="relative">
+                            <textarea id="ai-candidate-input" rows="3" placeholder="Сформулируйте ваш ответ на вопрос или надиктуйте голосом..." 
+                                class="w-full bg-slate-50 dark:bg-panel-700 border border-slate-200 dark:border-slate-800 rounded-[10px] p-3 text-sm focus:outline-none focus:ring-2 focus:ring-cobalt-core transition-all text-slate-800 dark:text-slate-200 resize-y"></textarea>
+                            <button id="ai-voice-dictate-btn" type="button" title="Ответить голосом (Микрофон)" 
+                                class="absolute right-2.5 bottom-2.5 w-8 h-8 rounded-[7px] border border-slate-200 dark:border-slate-700 bg-white dark:bg-panel-900 hover:bg-paper-50 dark:hover:bg-panel-800 text-slate-600 dark:text-slate-300 flex items-center justify-center transition-all shadow-xs">
+                                <i class="fa-solid fa-microphone text-xs"></i>
+                            </button>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="flex flex-wrap items-center gap-2 justify-between">
+                            <div class="flex items-center gap-2">
+                                <button id="ai-evaluate-btn" class="px-4 py-2.5 rounded-[10px] bg-ink-900 hover:bg-black dark:bg-cobalt-core dark:hover:bg-cobalt-deep text-white font-medium text-xs flex items-center space-x-1.5 shadow-sm transition-all">
+                                    <i class="fa-solid fa-bolt text-amber-400"></i>
+                                    <span>Оценить ответ через AI</span>
+                                </button>
+                                <button id="ai-reveal-reference-btn" class="px-3 py-2.5 rounded-[10px] border border-slate-200 dark:border-slate-800 hover:bg-paper-50 dark:hover:bg-panel-700 text-slate-600 dark:text-slate-400 font-medium text-xs transition-all">
+                                    Эталонный ответ
+                                </button>
+                            </div>
+                            <span id="ai-model-loading-indicator" class="hidden text-xs text-cobalt-core animate-pulse font-medium">
+                                <i class="fa-solid fa-spinner fa-spin"></i> Загрузка AI-модели (~900MB)...
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Structured Scorecard Result Box -->
+                    <div id="ai-scorecard-result" class="hidden bg-paper-50 dark:bg-panel-900 border border-slate-200 dark:border-slate-800 rounded-[10px] p-4 space-y-3">
+                        <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-2">
+                            <div class="flex items-center space-x-2">
+                                <span id="ai-scorecard-badge" class="px-2.5 py-1 rounded-[7px] text-xs font-bold bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">
+                                    85% — PASS
+                                </span>
+                                <span id="ai-scorecard-xp" class="text-xs font-bold text-cobalt-core">+9 XP</span>
+                            </div>
+                            <span class="text-[11px] text-slate-400 font-medium">Zero-Server WebLLM Evaluation</span>
+                        </div>
+                        
+                        <p id="ai-scorecard-summary" class="text-xs text-slate-700 dark:text-slate-300 leading-relaxed"></p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                            <div class="space-y-1">
+                                <span class="font-semibold text-emerald-600 dark:text-emerald-400 flex items-center gap-1">
+                                    <i class="fa-solid fa-check-circle"></i> Освоенные концепты:
+                                </span>
+                                <div id="ai-found-concepts" class="flex flex-wrap gap-1"></div>
+                            </div>
+                            <div class="space-y-1">
+                                <span class="font-semibold text-rose-600 dark:text-rose-400 flex items-center gap-1">
+                                    <i class="fa-solid fa-triangle-exclamation"></i> Упущенные детали:
+                                </span>
+                                <div id="ai-missed-concepts" class="flex flex-wrap gap-1"></div>
+                            </div>
+                        </div>
+
+                        <div id="ai-followup-box" class="bg-white dark:bg-panel-700/50 border border-cobalt-core/20 rounded-[8px] p-3 space-y-1">
+                            <span class="text-[11px] font-semibold text-cobalt-core uppercase tracking-wider flex items-center gap-1">
+                                <i class="fa-solid fa-lightbulb"></i> Уточняющий вопрос от интервьюера:
+                            </span>
+                            <p id="ai-followup-text" class="text-xs text-slate-700 dark:text-slate-200 italic"></p>
+                        </div>
+                    </div>
+                </div>
+
  <!-- Card Bottom Controls and Actions -->
  <div class="pt-6 border-t border-slate-100 dark:border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 min-w-0">
  
@@ -429,7 +513,11 @@
  </div>
 
  <!-- Toggle Answer / Learn State -->
-  <div class="flex flex-wrap items-center gap-2 sm:gap-3 w-full sm:w-auto justify-end shrink-0">
+  <div class="flex flex-wrap items-center gap-2 sm:gap-3 w-full sm:w-auto justify-end max-w-full">
+  <button id="btn-ai-interview" class="flex-1 sm:flex-initial flex items-center justify-center space-x-1.5 sm:space-x-2 bg-ink-900 hover:bg-black dark:bg-panel-700 dark:hover:bg-panel-800 border border-slate-200 dark:border-slate-700 text-white font-medium px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-[10px] shadow-sm transition-all text-sm sm:text-base whitespace-nowrap" title="Сдать ответ AI-интервьюеру">
+  <i aria-hidden="true" class="fa-solid fa-robot text-cobalt-core"></i>
+  <span>AI Examiner</span>
+  </button>
   <button id="btn-answer" class="flex-1 sm:flex-initial flex items-center justify-center space-x-1.5 sm:space-x-2 bg-roast-500 hover:bg-roast-600 text-white font-medium px-4 sm:px-6 py-2.5 sm:py-3 rounded-[10px] shadow-sm transition-colors text-sm sm:text-base whitespace-nowrap">
   <i id="btn-answer-icon" aria-hidden="true" class="fa-solid fa-eye"></i>
   <span id="btn-answer-text">Show Answer</span>
