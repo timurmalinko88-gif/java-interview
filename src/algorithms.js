@@ -118,11 +118,12 @@ export function renderAlgoList(store) {
     );
 
     // Populate Pattern Pills if not already populated
-    if (patternFilterContainer && patternFilterContainer.children.length <= 1) {
-        const patternsSet = new Set();
-        algoQuestions.forEach(q => { if (q.pattern) patternsSet.add(q.pattern); });
-        
-        const patterns = Array.from(patternsSet).sort();
+    const patternsSet = new Set();
+    algoQuestions.forEach(q => { if (q.pattern) patternsSet.add(q.pattern); });
+    const patterns = Array.from(patternsSet).sort();
+
+    if (patternFilterContainer && (patternFilterContainer.children.length <= 1 || patternFilterContainer.dataset.renderedCount !== String(patterns.length))) {
+        patternFilterContainer.dataset.renderedCount = String(patterns.length);
         let pillsHtml = `
             <button class="algo-pill-btn active px-3.5 py-1.5 rounded-[7px] text-xs font-semibold whitespace-nowrap border transition-all shadow-sm bg-roast-500 text-white border-roast-500 hover:opacity-95 flex items-center" data-pattern="all">
                 <span>All Patterns</span>

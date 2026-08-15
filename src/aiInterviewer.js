@@ -9,6 +9,16 @@ export const FALLBACK_MODEL = 'Llama-3.2-1B-Instruct-q4f16_1-MLC';
 
 let engine = null;
 let isInitializing = false;
+let initPromise = null;
+const progressListeners = new Set();
+
+/**
+ * Register a listener for model download progress
+ */
+export function onModelDownloadProgress(callback) {
+  progressListeners.add(callback);
+  return () => progressListeners.delete(callback);
+}
 
 /**
  * Check if WebGPU is available and working on the current device
@@ -30,39 +40,46 @@ export async function isWebGPUSupported() {
  * Initialize WebLLM engine with weight download progress tracking (0-100%)
  */
 export async function initAIEngine(modelId = DEFAULT_MODEL, onProgress = null) {
+  if (onProgress) progressListeners.add(onProgress);
   if (engine) return engine;
-  if (isInitializing) {
-    throw new Error('AI Engine is currently downloading/initializing...');
+  if (initPromise) {
+    return initPromise;
   }
 
   const supported = await isWebGPUSupported();
   if (!supported) {
-    throw new Error('WebGPU is not supported in this browser or GPU. Please use Chrome/Edge 113+ or macOS Metal.');
+    throw new Error('WebGPU is not supported in this browser or GPU.');
   }
 
   isInitializing = true;
-  try {
-    const worker = new Worker(new URL('./aiInterviewer.worker.js', import.meta.url), {
-      type: 'module',
-    });
+  initPromise = (async () => {
+    try {
+      const worker = new Worker(new URL('./aiInterviewer.worker.js', import.meta.url), {
+        type: 'module',
+      });
 
-    engine = await CreateWebWorkerMLCEngine(worker, modelId, {
-      initProgressCallback: (report) => {
-        // report.progress: 0.0 -> 1.0, report.text: "Loading model weights..."
-        if (onProgress) onProgress(report);
-      },
-    });
+      engine = await CreateWebWorkerMLCEngine(worker, modelId, {
+        initProgressCallback: (report) => {
+          for (const listener of progressListeners) {
+            try { listener(report); } catch (e) { console.error(e); }
+          }
+        },
+      });
 
-    return engine;
-  } catch (err) {
-    console.warn(`[WebLLM] Failed with model ${modelId}, trying fallback...`, err);
-    if (modelId !== FALLBACK_MODEL) {
-      return initAIEngine(FALLBACK_MODEL, onProgress);
+      return engine;
+    } catch (err) {
+      console.warn(`[WebLLM] Failed with model ${modelId}, trying fallback...`, err);
+      if (modelId !== FALLBACK_MODEL) {
+        return initAIEngine(FALLBACK_MODEL, onProgress);
+      }
+      throw err;
+    } finally {
+      isInitializing = false;
+      initPromise = null;
     }
-    throw err;
-  } finally {
-    isInitializing = false;
-  }
+  })();
+
+  return initPromise;
 }
 
 /**

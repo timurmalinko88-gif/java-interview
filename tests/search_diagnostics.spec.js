@@ -15,10 +15,9 @@ test.describe('Search Functionality Diagnostics & Multi-Scenario Tests', () => {
       }
     });
 
-    await page.goto('./');
-    await page.waitForLoadState('networkidle');
+    await page.goto('./', { waitUntil: 'domcontentloaded' });
     // Ensure questions are loaded
-    await expect(page.locator('#active-difficulty')).toBeVisible();
+    await expect(page.locator('#active-difficulty')).toBeVisible({ timeout: 15000 });
   });
 
   test('Scenario 1: Exact English keyword search ("ArrayList")', async ({ page }) => {

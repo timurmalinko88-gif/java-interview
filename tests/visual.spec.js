@@ -32,7 +32,8 @@ test.describe('Visual and UI/UX Inspection Suite', () => {
   test('Desktop (1440x900) - Questions View, Answer Reveal, Modals and Dark Mode', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto('./');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
+    await expect(page.locator('#active-difficulty')).toBeVisible({ timeout: 15000 });
 
     // Screenshot: Main Questions Light Mode
     await saveScreenshot(page, 'desktop_light_main.png');
@@ -102,7 +103,8 @@ test.describe('Visual and UI/UX Inspection Suite', () => {
   test('Laptop (1180x820) - Attio Design System, Prose Table & Code Highlighting Integrity', async ({ page }) => {
     await page.setViewportSize({ width: 1180, height: 820 });
     await page.goto('./');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
+    await expect(page.locator('#active-difficulty')).toBeVisible({ timeout: 15000 });
 
     // Reveal answer to inspect code blocks and prose elements
     await page.locator('#btn-answer').click();
@@ -128,7 +130,8 @@ test.describe('Visual and UI/UX Inspection Suite', () => {
   test('Mobile (390x844) - Responsiveness, touch targets, and drawer/sidebar', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto('./');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
+    await expect(page.locator('#active-difficulty')).toBeVisible({ timeout: 15000 });
 
     // Screenshot: Mobile Main
     await saveScreenshot(page, 'mobile_light_main.png');
@@ -155,7 +158,8 @@ test.describe('Visual and UI/UX Inspection Suite', () => {
   test('Tablet / Laptop (1024x768) - Question ai-020 with long code lines does not clip right edge', async ({ page }) => {
     await page.setViewportSize({ width: 1024, height: 768 });
     await page.goto('./#q=ai-020');
-    await page.waitForLoadState('networkidle');
+    await page.waitForLoadState('domcontentloaded');
+    await expect(page.locator('#active-difficulty')).toBeVisible({ timeout: 15000 });
     await page.waitForTimeout(500);
 
     // Verify card is within viewport width

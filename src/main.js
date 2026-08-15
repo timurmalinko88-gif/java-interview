@@ -368,6 +368,12 @@ document.addEventListener('DOMContentLoaded', () => {
     aiScorecardResult.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
+  const aiDownloadProgressContainer = document.getElementById('ai-download-progress-container');
+  const aiDownloadProgressText = document.getElementById('ai-download-progress-text');
+  const aiDownloadProgressPct = document.getElementById('ai-download-progress-pct');
+  const aiDownloadProgressBar = document.getElementById('ai-download-progress-bar');
+  const aiEvaluateBtnText = document.getElementById('ai-evaluate-btn-text');
+
   if (aiEvaluateBtn && aiCandidateInput) {
     aiEvaluateBtn.addEventListener('click', async () => {
       const candidateText = aiCandidateInput.value.trim();
@@ -387,13 +393,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       aiEvaluateBtn.disabled = true;
       aiEvaluateBtn.classList.add('opacity-60', 'pointer-events-none');
-      if (aiLoadingIndicator) aiLoadingIndicator.classList.remove('hidden');
-      if (aiStatusBadge) aiStatusBadge.textContent = 'Оценка...';
+      if (aiEvaluateBtnText) aiEvaluateBtnText.textContent = 'Запуск AI...';
+      if (aiStatusBadge) aiStatusBadge.textContent = 'Запуск...';
 
       try {
         const hasWebGPU = await isWebGPUSupported();
         if (!hasWebGPU) {
-          // Graceful fallback heuristic scoring
+          // Graceful fallback heuristic scoring if WebGPU is not supported
           const terms = referenceAnswer.toLowerCase().split(/\s+/).filter((w) => w.length > 5);
           const matchCount = terms.filter((t) => candidateText.toLowerCase().includes(t)).length;
           const estimatedScore = Math.min(95, Math.max(40, Math.round((matchCount / Math.max(4, terms.length * 0.2)) * 100)));
@@ -401,7 +407,7 @@ document.addEventListener('DOMContentLoaded', () => {
             score: estimatedScore,
             verdict: estimatedScore >= 75 ? 'PASS' : 'PARTIAL',
             earnedXp: Math.round(estimatedScore / 10),
-            summary: 'Ответ сопоставлен с эталоном базы знаний (WebGPU недоступен на данном устройстве, применен локальный анализатор).',
+            summary: 'Ответ сопоставлен с базой знаний (WebGPU недоступен на данном устройстве, применен локальный анализатор).',
             foundConcepts: ['Ключевая терминология Java'],
             missedConcepts: ['Глубокие нюансы работы JVM / JMM'],
             followUp: 'Какие накладные расходы по памяти и CPU возникают в данном случае?',
@@ -409,16 +415,22 @@ document.addEventListener('DOMContentLoaded', () => {
           return;
         }
 
+        if (aiDownloadProgressContainer) aiDownloadProgressContainer.classList.remove('hidden');
+
         await initAIEngine(undefined, (report) => {
-          if (aiLoadingIndicator) {
-            const pct = Math.round((report.progress || 0) * 100);
-            aiLoadingIndicator.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Загрузка AI-модели (${pct}%)...`;
+          const pct = Math.round((report.progress || 0) * 100);
+          if (aiDownloadProgressPct) aiDownloadProgressPct.textContent = `${pct}%`;
+          if (aiDownloadProgressBar) aiDownloadProgressBar.style.width = `${pct}%`;
+          if (aiDownloadProgressText) {
+            aiDownloadProgressText.innerHTML = `<i class="fa-solid fa-cloud-arrow-down text-cobalt-core animate-bounce"></i> ${report.text || 'Загрузка AI-модели в кэш браузера...'}`;
           }
+          if (aiEvaluateBtnText) aiEvaluateBtnText.textContent = `Загрузка (${pct}%)...`;
+          if (aiStatusBadge) aiStatusBadge.textContent = `${pct}%`;
         });
 
-        if (aiLoadingIndicator) {
-          aiLoadingIndicator.innerHTML = `<i class="fa-solid fa-brain fa-fade"></i> AI анализирует ответ...`;
-        }
+        if (aiDownloadProgressContainer) aiDownloadProgressContainer.classList.add('hidden');
+        if (aiEvaluateBtnText) aiEvaluateBtnText.textContent = 'Анализирую ответ...';
+        if (aiStatusBadge) aiStatusBadge.textContent = 'Анализ...';
 
         const result = await evaluateCandidateAnswer({
           questionTitle: currentQ.title,
@@ -440,6 +452,8 @@ document.addEventListener('DOMContentLoaded', () => {
       } finally {
         aiEvaluateBtn.disabled = false;
         aiEvaluateBtn.classList.remove('opacity-60', 'pointer-events-none');
+        if (aiEvaluateBtnText) aiEvaluateBtnText.textContent = 'Оценить ответ через AI';
+        if (aiDownloadProgressContainer) aiDownloadProgressContainer.classList.add('hidden');
         if (aiLoadingIndicator) aiLoadingIndicator.classList.add('hidden');
         if (aiStatusBadge) aiStatusBadge.textContent = 'Ready';
       }

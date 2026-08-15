@@ -11,8 +11,8 @@ test.describe('Java Interview Hub - Comprehensive E2E Tests', () => {
     await page.addInitScript(() => {
       window.localStorage.clear();
     });
-    await page.goto('./');
-    await page.waitForLoadState('networkidle');
+    await page.goto('./', { waitUntil: 'domcontentloaded' });
+    await expect(page.locator('#active-difficulty')).toBeVisible({ timeout: 15000 });
   });
 
   test('Page loads correctly with questions and sidebar count without JS errors', async ({ page }) => {

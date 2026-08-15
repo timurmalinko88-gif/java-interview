@@ -473,15 +473,29 @@
                             <div class="flex items-center gap-2">
                                 <button id="ai-evaluate-btn" class="px-4 py-2.5 rounded-[10px] bg-ink-900 hover:bg-black dark:bg-cobalt-core dark:hover:bg-cobalt-deep text-white font-medium text-xs flex items-center space-x-1.5 shadow-sm transition-all">
                                     <i class="fa-solid fa-bolt text-amber-400"></i>
-                                    <span>Оценить ответ через AI</span>
+                                    <span id="ai-evaluate-btn-text">Оценить ответ через AI</span>
                                 </button>
                                 <button id="ai-reveal-reference-btn" class="px-3 py-2.5 rounded-[10px] border border-slate-200 dark:border-slate-800 hover:bg-paper-50 dark:hover:bg-panel-700 text-slate-600 dark:text-slate-400 font-medium text-xs transition-all">
                                     Эталонный ответ
                                 </button>
                             </div>
                             <span id="ai-model-loading-indicator" class="hidden text-xs text-cobalt-core animate-pulse font-medium">
-                                <i class="fa-solid fa-spinner fa-spin"></i> Загрузка AI-модели (~900MB)...
+                                <i class="fa-solid fa-spinner fa-spin"></i> Загрузка AI-модели...
                             </span>
+                        </div>
+
+                        <!-- Dedicated Model Download Progress Bar (0-100%) -->
+                        <div id="ai-download-progress-container" class="hidden space-y-1.5 p-3 rounded-[10px] bg-cobalt-core/5 dark:bg-cobalt-core/10 border border-cobalt-core/20">
+                            <div class="flex items-center justify-between text-xs text-slate-700 dark:text-slate-200">
+                                <span id="ai-download-progress-text" class="flex items-center gap-1.5 font-medium">
+                                    <i class="fa-solid fa-cloud-arrow-down text-cobalt-core animate-bounce"></i> Загрузка AI-модели в кэш браузера...
+                                </span>
+                                <span id="ai-download-progress-pct" class="font-mono font-bold text-cobalt-core">0%</span>
+                            </div>
+                            <div class="w-full bg-slate-200 dark:bg-panel-900 rounded-full h-2 overflow-hidden">
+                                <div id="ai-download-progress-bar" class="bg-gradient-to-r from-cobalt-core to-purple-600 h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+                            </div>
+                            <p class="text-[11px] text-slate-500 dark:text-slate-400">Веса модели загружаются один раз (~800 МБ) и сохраняются в кэше браузера для работы $0 офлайн.</p>
                         </div>
                     </div>
 

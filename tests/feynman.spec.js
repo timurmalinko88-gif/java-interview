@@ -2,9 +2,8 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Feynman Mode - In-Browser AI Metaphor Coach', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('./');
-    await page.waitForLoadState('networkidle');
-    await expect(page.locator('#active-difficulty')).toBeVisible();
+    await page.goto('./', { waitUntil: 'domcontentloaded' });
+    await expect(page.locator('#active-difficulty')).toBeVisible({ timeout: 15000 });
   });
 
   test('Feynman button is visible and toggles Feynman explanation panel', async ({ page }) => {
