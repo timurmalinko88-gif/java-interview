@@ -16,11 +16,27 @@ async function init(baseUrl = './') {
   try {
     self.postMessage({ status: 'loading', message: 'Загрузка векторов семантического поиска...' });
 
-    // 1. Load precomputed vector catalog
-    const embeddingsUrl = `${baseUrl.replace(/\/+$/, '')}/embeddings.json`;
-    const res = await fetch(embeddingsUrl);
-    if (!res.ok) {
-      throw new Error(`Failed to load embeddings.json (HTTP ${res.status})`);
+    // 1. Load precomputed vector catalog with resilient URL fallback
+    let res = null;
+    const cleanBase = (baseUrl || './').replace(/\/+$/, '');
+    const candidateUrls = [
+      `${cleanBase}/embeddings.json`,
+      './embeddings.json',
+      '/java-interview/embeddings.json',
+      '/embeddings.json'
+    ];
+    for (const url of candidateUrls) {
+      try {
+        const attempt = await fetch(url);
+        if (attempt.ok) {
+          res = attempt;
+          break;
+        }
+      } catch (_) {}
+    }
+
+    if (!res) {
+      throw new Error('Failed to load embeddings.json');
     }
     const data = await res.json();
     
@@ -32,11 +48,15 @@ async function init(baseUrl = './') {
     self.postMessage({ status: 'loading', message: 'Инициализация AI-модели all-MiniLM-L6-v2...' });
 
     // 2. Load quantized ONNX feature-extraction pipeline
-    extractor = await pipeline('feature-extraction', 'Xenova/all-MiniLM-L6-v2', {
-      quantized: true,
-    });
-
-    self.postMessage({ status: 'ready', count: indexData.ids.length });
+    try {
+      extractor = await pipeline('feature-extraction', 'Xenova/all-MiniLM-L6-v2', {
+        quantized: true,
+      });
+      self.postMessage({ status: 'ready', count: indexData.ids.length });
+    } catch (modelErr) {
+      // If HuggingFace CDN is offline or blocked, gracefully notify keyword fallback
+      self.postMessage({ status: 'error', error: 'AI Vector Model offline (using Smart Token Engine)' });
+    }
   } catch (err) {
     self.postMessage({ status: 'error', error: err.message });
   } finally {

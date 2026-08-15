@@ -4,6 +4,7 @@ import { isFlagged } from './collections.js';
 import { isDueForReview } from './spacedRepetition.js';
 import { ROADMAPS } from './roadmaps.js';
 import { semanticSearch } from './semanticSearch.js';
+import { filterAndRankQuestions, processQueryTokens, scoreQuestion } from './searchEngine.js';
 
 let activeSearchQuery = '';
 
@@ -114,11 +115,16 @@ export function buildSidebarList() {
 }
 
 // Filter actions triggered on inputs change
-export // Filter actions triggered on inputs change
-function triggerFilterAction() {
-  const searchValue = document.getElementById('search-input').value.toLowerCase().trim();
-  const topicValue = document.getElementById('topic-filter').value;
-  const roadmapValue = document.getElementById('roadmap-filter') ? document.getElementById('roadmap-filter').value : 'none';
+// Filter actions triggered on inputs change
+export function triggerFilterAction() {
+  const searchInput = document.getElementById('search-input');
+  const searchValue = searchInput ? searchInput.value.trim() : '';
+  activeSearchQuery = searchValue;
+
+  const topicFilter = document.getElementById('topic-filter');
+  const topicValue = topicFilter ? topicFilter.value : 'all';
+  const roadmapFilter = document.getElementById('roadmap-filter');
+  const roadmapValue = roadmapFilter ? roadmapFilter.value : 'none';
 
   // Checkboxes for format
   const checkedFormats = Array.from(document.querySelectorAll('.format-checkbox:checked')).map(el => el.value);
@@ -137,26 +143,11 @@ function triggerFilterAction() {
     }
   }
 
-  state.filteredQuestions = baseQuestions.filter(q => {
-    // Search Matches
-    const searchMatches = !searchValue ||
-      (q.title && q.title.toLowerCase().includes(searchValue)) ||
-      (q.question && q.question.toLowerCase().includes(searchValue)) ||
-      (q.id && q.id.toLowerCase().includes(searchValue)) ||
-      (q.tags && Array.isArray(q.tags) && q.tags.some(t => t.toLowerCase().includes(searchValue))) ||
-      (q.loadedQuestion && q.loadedQuestion.toLowerCase().includes(searchValue)) ||
-      (q.loadedAnswer && q.loadedAnswer.toLowerCase().includes(searchValue));
-
-    // Topic Matches
+  // 1. Filter by Topic, Difficulty, Format, and Status
+  const pool = baseQuestions.filter(q => {
     const topicMatches = topicValue === 'all' || q.topic === topicValue;
-
-    // Difficulty Matches
     const diffMatches = state.selectedDiffFilters.length === 0 || state.selectedDiffFilters.includes(q.difficulty);
-
-    // Format Matches
     const formatMatches = checkedFormats.length === 0 || checkedFormats.includes(q.format);
-
-    // Quick Status Filter Matches (all, flagged, mastered, due)
     const statusFilter = state.statusFilter || 'all';
     let statusMatches = true;
     if (statusFilter === 'flagged') {
@@ -166,9 +157,15 @@ function triggerFilterAction() {
     } else if (statusFilter === 'due') {
       statusMatches = isDueForReview(q.id);
     }
-
-    return searchMatches && topicMatches && diffMatches && formatMatches && statusMatches;
+    return topicMatches && diffMatches && formatMatches && statusMatches;
   });
+
+  // 2. High-Performance Multi-Token & Russian-English Synonym Smart Search
+  if (searchValue) {
+    state.filteredQuestions = filterAndRankQuestions(pool, searchValue);
+  } else {
+    state.filteredQuestions = pool;
+  }
 
   // Reset cursor if out of bounds
   if (state.currentIndex >= state.filteredQuestions.length) {
@@ -176,14 +173,17 @@ function triggerFilterAction() {
   }
 
   // Toggle "Clear" filters indicator link
-  const hasActiveFilters = searchValue !== '' || topicValue !== 'all' || state.selectedDiffFilters.length > 0 || checkedFormats.length > 0 || state.statusFilter !== 'all';
+  const hasActiveFilters = searchValue !== '' || topicValue !== 'all' || state.selectedDiffFilters.length > 0 || checkedFormats.length > 0 || state.statusFilter !== 'all' || roadmapValue !== 'none';
   const clearFiltersBtn = document.getElementById('clear-filters');
   if (clearFiltersBtn) {
     clearFiltersBtn.style.display = hasActiveFilters ? 'inline' : 'none';
   }
+
   buildSidebarList();
   if (state.filteredQuestions.length > 0) {
     loadQuestion(state.currentIndex);
+  } else {
+    renderNoQuestionsFoundState();
   }
 
   // Parallel Semantic Ranking (if query >= 3 chars and semantic search is ready)
@@ -193,40 +193,37 @@ function triggerFilterAction() {
       if (activeSearchQuery !== queryToSearch || !semanticResults || semanticResults.length === 0) return;
 
       const scoreMap = new Map();
-      semanticResults.forEach((r) => scoreMap.set(r.id, r.score));
-
-      const validPool = baseQuestions.filter((q) => {
-        const topicMatches = topicValue === 'all' || q.topic === topicValue;
-        const diffMatches = state.selectedDiffFilters.length === 0 || state.selectedDiffFilters.includes(q.difficulty);
-        const formatMatches = checkedFormats.length === 0 || checkedFormats.includes(q.format);
-        const statusFilter = state.statusFilter || 'all';
-        let statusMatches = true;
-        if (statusFilter === 'flagged') statusMatches = isFlagged(q.id);
-        else if (statusFilter === 'mastered') statusMatches = state.masteredIds.includes(q.id);
-        else if (statusFilter === 'due') statusMatches = isDueForReview(q.id);
-        return topicMatches && diffMatches && formatMatches && statusMatches;
+      semanticResults.forEach((r) => {
+        if (r.score >= 0.36) {
+          scoreMap.set(r.id, r.score);
+        }
       });
 
-      const matched = validPool.filter((q) => {
-        const hasSemantic = scoreMap.has(q.id);
-        const hasKeyword = (q.title && q.title.toLowerCase().includes(queryToSearch)) ||
-          (q.tags && Array.isArray(q.tags) && q.tags.some((t) => t.toLowerCase().includes(queryToSearch)));
-        return hasSemantic || hasKeyword;
-      });
+      if (scoreMap.size === 0) return;
 
-      if (matched.length > 0) {
-        matched.sort((a, b) => {
-          const scoreA = (scoreMap.get(a.id) || 0) + (a.title && a.title.toLowerCase().includes(queryToSearch) ? 0.3 : 0);
-          const scoreB = (scoreMap.get(b.id) || 0) + (b.title && b.title.toLowerCase().includes(queryToSearch) ? 0.3 : 0);
-          return scoreB - scoreA;
-        });
+      const queryData = processQueryTokens(queryToSearch);
+      const scored = [];
 
-        state.filteredQuestions = matched;
+      for (let i = 0; i < pool.length; i++) {
+        const q = pool[i];
+        const kwScore = scoreQuestion(q, queryData);
+        const semScore = scoreMap.get(q.id) || 0;
+        
+        // High confidence threshold (>= 0.48) if pure semantic without keyword match
+        if (kwScore > 0 || semScore >= 0.48) {
+          const totalScore = kwScore + (semScore * 80);
+          scored.push({ question: q, score: totalScore });
+        }
+      }
+
+      if (scored.length > 0) {
+        scored.sort((a, b) => b.score - a.score);
+        state.filteredQuestions = scored.map((item) => item.question);
         state.currentIndex = 0;
         buildSidebarList();
         loadQuestion(0);
       }
-    });
+    }).catch(() => {});
   }
 }
 
@@ -374,6 +371,11 @@ async function loadQuestion(indexOrQuestion) {
     }
     q = state.filteredQuestions[index];
   }
+
+  const emptyState = document.getElementById('empty-questions-state');
+  const renderers = document.getElementById('main-content-renderers');
+  if (emptyState) emptyState.classList.add('hidden');
+  if (renderers) renderers.classList.remove('hidden');
 
   // Update Header Meta Immediately for maximum responsiveness
   const diffEl = document.getElementById('active-difficulty');
@@ -535,25 +537,18 @@ function syncActionButtons(activeId) {
 }
 
 // Render empty layout inside questions wrapper
-export // Render empty layout inside questions wrapper
-function renderNoQuestionsFoundState() {
-  const card = document.getElementById('main-content-card');
-  card.innerHTML = `
-        <div class="flex-1 flex flex-col items-center justify-center text-center p-8">
-            <div class="w-16 h-16 rounded-full bg-slate-100 dark:bg-panel-900 flex items-center justify-center text-slate-400 mb-4 text-2xl">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
-            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">Nothing Found</h3>
-            <p class="text-sm text-slate-400 max-w-sm">Reset filters to see the full list of preparation questions.</p>
-            <button id="btn-empty-reset" class="mt-4 bg-roast-500 hover:bg-roast-600 text-white font-medium text-xs px-4 py-2 rounded-[10px] shadow-sm transition-all">
-                Reset Filters
-            </button>
-        </div>
-    `;
-  setTimeout(() => {
-    const resetBtn = document.getElementById('btn-empty-reset');
-    if (resetBtn) resetBtn.addEventListener('click', clearAllFilters);
-  }, 0);
+export function renderNoQuestionsFoundState() {
+  const emptyState = document.getElementById('empty-questions-state');
+  const renderers = document.getElementById('main-content-renderers');
+  const counter = document.getElementById('counter');
+  if (emptyState) emptyState.classList.remove('hidden');
+  if (renderers) renderers.classList.add('hidden');
+  if (counter) counter.textContent = '0 / 0';
+
+  const resetBtn = document.getElementById('btn-empty-reset');
+  if (resetBtn) {
+    resetBtn.onclick = clearAllFilters;
+  }
 }
 
 // Trigger non-intrusive beautiful toast notification message
