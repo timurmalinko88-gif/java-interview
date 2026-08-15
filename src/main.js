@@ -417,15 +417,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (aiDownloadProgressContainer) aiDownloadProgressContainer.classList.remove('hidden');
 
-        await initAIEngine(undefined, (report) => {
-          const pct = Math.round((report.progress || 0) * 100);
-          if (aiDownloadProgressPct) aiDownloadProgressPct.textContent = `${pct}%`;
-          if (aiDownloadProgressBar) aiDownloadProgressBar.style.width = `${pct}%`;
+        const selectedModel = document.getElementById('ai-model-select')?.value || undefined;
+
+        await initAIEngine(selectedModel, (report, formatted) => {
+          const status = formatted || { pct: Math.round((report.progress || 0) * 100), text: report.text || 'Загрузка...' };
+          if (aiDownloadProgressPct) aiDownloadProgressPct.textContent = `${status.pct}%`;
+          if (aiDownloadProgressBar) aiDownloadProgressBar.style.width = `${status.pct}%`;
           if (aiDownloadProgressText) {
-            aiDownloadProgressText.innerHTML = `<i class="fa-solid fa-cloud-arrow-down text-cobalt-core animate-bounce"></i> ${report.text || 'Загрузка AI-модели в кэш браузера...'}`;
+            aiDownloadProgressText.innerHTML = `<i class="fa-solid fa-cloud-arrow-down text-cobalt-core animate-bounce"></i> ${status.text}`;
           }
-          if (aiEvaluateBtnText) aiEvaluateBtnText.textContent = `Загрузка (${pct}%)...`;
-          if (aiStatusBadge) aiStatusBadge.textContent = `${pct}%`;
+          if (aiEvaluateBtnText) {
+            aiEvaluateBtnText.textContent = status.pct < 100 ? `Загрузка (${status.pct}%)...` : 'Компиляция GPU...';
+          }
+          if (aiStatusBadge) aiStatusBadge.textContent = status.pct < 100 ? `${status.pct}%` : 'GPU Init';
         });
 
         if (aiDownloadProgressContainer) aiDownloadProgressContainer.classList.add('hidden');
@@ -526,10 +530,12 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      await initAIEngine(undefined, (report) => {
+      const selectedModel = document.getElementById('ai-model-select')?.value || undefined;
+
+      await initAIEngine(selectedModel, (report, formatted) => {
         if (feynmanLoadingText) {
-          const pct = Math.round((report.progress || 0) * 100);
-          feynmanLoadingText.textContent = `Загрузка AI-модели (${pct}%)...`;
+          const status = formatted || { pct: Math.round((report.progress || 0) * 100), text: report.text || 'Загрузка...' };
+          feynmanLoadingText.textContent = status.pct < 100 ? `${status.text}` : '⚡ Компиляция WebGPU шейдеров...';
         }
       });
 

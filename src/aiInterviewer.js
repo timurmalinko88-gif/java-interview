@@ -4,13 +4,44 @@
  */
 import { CreateWebWorkerMLCEngine } from '@mlc-ai/web-llm';
 
-export const DEFAULT_MODEL = 'Qwen2.5-Coder-1.5B-Instruct-q4f16_1-MLC';
+export const AVAILABLE_MODELS = [
+  { id: 'SmolLM2-360M-Instruct-q4f16_1-MLC', name: '⚡ Ultra-Fast 360M (~190MB, мгновенный запуск)' },
+  { id: 'Llama-3.2-1B-Instruct-q4f16_1-MLC', name: '🚀 Balanced Llama 1B (~600MB, быстро)' },
+  { id: 'Qwen2.5-Coder-1.5B-Instruct-q4f16_1-MLC', name: '🧠 Deep Qwen Coder 1.5B (~830MB, глубокий анализ)' },
+];
+
+export const DEFAULT_MODEL = 'SmolLM2-360M-Instruct-q4f16_1-MLC';
 export const FALLBACK_MODEL = 'Llama-3.2-1B-Instruct-q4f16_1-MLC';
 
 let engine = null;
+let currentModelId = DEFAULT_MODEL;
 let isInitializing = false;
 let initPromise = null;
 const progressListeners = new Set();
+
+/**
+ * Format raw WebLLM progress reports into user-friendly Russian status messages
+ */
+export function formatProgressReport(report) {
+  if (!report) return { pct: 0, text: 'Инициализация...' };
+  const rawText = report.text || '';
+  const pct = Math.min(100, Math.max(0, Math.round((report.progress || 0) * 100)));
+
+  let friendlyText = 'Загрузка AI-модели...';
+  if (rawText.toLowerCase().includes('from cache')) {
+    friendlyText = `Чтение весов из кэша (${pct}%)...`;
+  } else if (rawText.toLowerCase().includes('fetch') || rawText.toLowerCase().includes('download')) {
+    friendlyText = `Скачивание весов модели (${pct}%)...`;
+  } else if (rawText.toLowerCase().includes('compil') || rawText.toLowerCase().includes('shader')) {
+    friendlyText = '⚡ Компиляция WebGPU шейдеров...';
+  } else if (pct === 100 || rawText.toLowerCase().includes('finish')) {
+    friendlyText = '⚡ Финальная инициализация GPU...';
+  } else if (rawText) {
+    friendlyText = rawText;
+  }
+
+  return { pct, text: friendlyText };
+}
 
 /**
  * Register a listener for model download progress
@@ -39,9 +70,9 @@ export async function isWebGPUSupported() {
 /**
  * Initialize WebLLM engine with weight download progress tracking (0-100%)
  */
-export async function initAIEngine(modelId = DEFAULT_MODEL, onProgress = null) {
+export async function initAIEngine(modelId = currentModelId, onProgress = null) {
   if (onProgress) progressListeners.add(onProgress);
-  if (engine) return engine;
+  if (engine && currentModelId === modelId) return engine;
   if (initPromise) {
     return initPromise;
   }
@@ -51,6 +82,7 @@ export async function initAIEngine(modelId = DEFAULT_MODEL, onProgress = null) {
     throw new Error('WebGPU is not supported in this browser or GPU.');
   }
 
+  currentModelId = modelId;
   isInitializing = true;
   initPromise = (async () => {
     try {
@@ -60,8 +92,9 @@ export async function initAIEngine(modelId = DEFAULT_MODEL, onProgress = null) {
 
       engine = await CreateWebWorkerMLCEngine(worker, modelId, {
         initProgressCallback: (report) => {
+          const formatted = formatProgressReport(report);
           for (const listener of progressListeners) {
-            try { listener(report); } catch (e) { console.error(e); }
+            try { listener(report, formatted); } catch (e) { console.error(e); }
           }
         },
       });
