@@ -133,6 +133,11 @@
           <span class="hidden xl:inline">Stats</span>
         </button>
 
+        <button id="btn-platform-guide" aria-label="Platform Guide" title="Гид по платформе и подсказки (Onboarding Guide)" class="flex items-center space-x-1 sm:space-x-1.5 border border-mist-50 dark:border-slate-800 hover:border-roast-500 hover:text-roast-500 px-2 sm:px-3 py-1.5 rounded-[10px] text-xs font-medium whitespace-nowrap transition-all text-slate-600 dark:text-slate-300 bg-white dark:bg-panel-900 shadow-xs">
+          <i aria-hidden="true" class="fa-solid fa-compass text-cobalt-core"></i>
+          <span class="hidden sm:inline">Гид</span>
+        </button>
+
         <button id="shortcuts-btn" aria-label="Keyboard shortcuts" title="Keyboard Shortcuts (?)" class="hidden sm:flex w-9 h-9 rounded-[10px] border border-mist-50 dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:border-roast-500 hover:text-roast-500 items-center justify-center transition-colors shrink-0 bg-white dark:bg-panel-900 shadow-xs">
           <i aria-hidden="true" class="fa-solid fa-keyboard"></i>
         </button>
@@ -1165,6 +1170,107 @@
           <span class="text-slate-600 dark:text-slate-300 font-medium">Open Shortcuts Cheat Sheet</span>
           <kbd class="px-2 py-1 rounded-[7px] bg-paper-50 dark:bg-ink-950 font-mono font-medium text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-800">?</kbd>
         </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Platform Guide & Knowledge Base Modal -->
+  <dialog id="platform-guide-modal" class="backdrop:bg-black/60 backdrop:backdrop-blur-sm bg-transparent p-0 rounded-[14px] max-w-2xl w-full mx-auto my-auto shadow-2xl border-0 overflow-hidden">
+    <div class="bg-white dark:bg-panel-900 border border-slate-200 dark:border-slate-800 rounded-[14px] overflow-hidden flex flex-col max-h-[85vh]">
+      <!-- Header -->
+      <div class="p-4 sm:p-5 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between bg-slate-50/50 dark:bg-panel-800/40">
+        <div class="flex items-center space-x-2.5">
+          <div class="w-8 h-8 rounded-[8px] bg-cobalt-core/10 text-cobalt-core flex items-center justify-center font-bold text-sm">
+            <i class="fa-solid fa-compass"></i>
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-slate-900 dark:text-white leading-tight">Гид по платформе и архитектуре</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Как устроена база из 706 вопросов и как подготовиться за 7 дней</p>
+          </div>
+        </div>
+        <div class="flex items-center space-x-2">
+          <button id="btn-restart-tour" class="px-2.5 py-1.5 rounded-[8px] border border-cobalt-core/30 bg-cobalt-core/5 text-cobalt-core hover:bg-cobalt-core hover:text-white text-xs font-medium transition-all flex items-center space-x-1">
+            <i class="fa-solid fa-play text-[10px]"></i>
+            <span>Тур</span>
+          </button>
+          <button id="close-guide-modal-btn" class="w-7 h-7 rounded-[8px] border border-slate-200 dark:border-slate-700 text-slate-400 hover:text-slate-700 dark:hover:text-white flex items-center justify-center transition-colors">
+            <i class="fa-solid fa-xmark text-sm"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Scrollable Body -->
+      <div class="p-4 sm:p-6 overflow-y-auto space-y-6 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+        <!-- 4 Key Pillars -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="p-3.5 rounded-[10px] bg-paper-50 dark:bg-panel-800/60 border border-slate-200 dark:border-slate-800 space-y-1.5">
+            <div class="flex items-center space-x-2 text-cobalt-core font-bold text-xs">
+              <i class="fa-solid fa-layer-group"></i>
+              <span>706 Вопросов • 18 Доменов</span>
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-400">От базового синтаксиса до Virtual Threads Java 21+, Spring AI, PgVector и Highload System Design.</p>
+          </div>
+
+          <div class="p-3.5 rounded-[10px] bg-paper-50 dark:bg-panel-800/60 border border-slate-200 dark:border-slate-800 space-y-1.5">
+            <div class="flex items-center space-x-2 text-emerald-600 dark:text-emerald-400 font-bold text-xs">
+              <i class="fa-solid fa-bolt"></i>
+              <span>0ms Мгновенный AI-Анализатор</span>
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-400">Надиктуйте или напишите ответ — анализатор за 50мс проверит точность и покажет упущенные детали.</p>
+          </div>
+
+          <div class="p-3.5 rounded-[10px] bg-paper-50 dark:bg-panel-800/60 border border-slate-200 dark:border-slate-800 space-y-1.5">
+            <div class="flex items-center space-x-2 text-purple-600 dark:text-purple-400 font-bold text-xs">
+              <i class="fa-solid fa-brain"></i>
+              <span>Метод Фейнмана</span>
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-400">Объяснение сложнейших механизмов JVM, GC и Concurrency через простые жизненные аналогии.</p>
+          </div>
+
+          <div class="p-3.5 rounded-[10px] bg-paper-50 dark:bg-panel-800/60 border border-slate-200 dark:border-slate-800 space-y-1.5">
+            <div class="flex items-center space-x-2 text-amber-600 dark:text-amber-400 font-bold text-xs">
+              <i class="fa-solid fa-box-archive"></i>
+              <span>Leitner SRS (Повторения)</span>
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-400">Интервалы 1, 3 и 7 дней по кривой забывания Эббингауза для 100% закрепления в долговременной памяти.</p>
+          </div>
+        </div>
+
+        <!-- 7-Day Interview Prep Timeline -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white flex items-center gap-1.5">
+            <i class="fa-solid fa-calendar-check text-cobalt-core"></i> Рекомендуемый 7-дневный спринт подготовки
+          </h4>
+          <div class="space-y-2 text-xs border-l-2 border-slate-200 dark:border-slate-700 pl-3">
+            <div>
+              <span class="font-bold text-slate-900 dark:text-white">День 1–2: Core Java & Collections</span>
+              <p class="text-slate-500 dark:text-slate-400">HashMap под капотом, ConcurrentHashMap, Generics, Stream API и Exceptions.</p>
+            </div>
+            <div>
+              <span class="font-bold text-slate-900 dark:text-white">День 3–4: Concurrency & JVM Internals</span>
+              <p class="text-slate-500 dark:text-slate-400">Java Memory Model, volatile, synchronized, GC (G1/ZGC), ClassLoaders и Virtual Threads Java 21.</p>
+            </div>
+            <div>
+              <span class="font-bold text-slate-900 dark:text-white">День 5: Spring Ecosystem & Databases</span>
+              <p class="text-slate-500 dark:text-slate-400">Bean Lifecycle, Spring Security, @Transactional, Hibernate N+1, B-Tree индексы и ACID.</p>
+            </div>
+            <div>
+              <span class="font-bold text-slate-900 dark:text-white">День 6: System Design & Messaging</span>
+              <p class="text-slate-500 dark:text-slate-400">Партиционирование Kafka, Outbox Pattern, Caching (Redis), CAP-теорема и интерактивный холст.</p>
+            </div>
+            <div>
+              <span class="font-bold text-slate-900 dark:text-white">День 7: Симуляция собеседования (Blitz Mock)</span>
+              <p class="text-slate-500 dark:text-slate-400">Прохождение 5-10 вопросов на таймере со скоркардом от AI-экзаменатора.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="p-4 border-t border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-panel-800/40 flex justify-end">
+        <button onclick="document.getElementById('platform-guide-modal').close()" class="px-4 py-2 rounded-[10px] bg-ink-900 hover:bg-black dark:bg-cobalt-core dark:hover:bg-cobalt-deep text-white text-xs font-medium transition-all shadow-sm">
+          Понятно, к вопросам!
+        </button>
       </div>
     </div>
   </dialog>

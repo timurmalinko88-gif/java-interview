@@ -12,6 +12,7 @@ import { initAlgoView, renderAlgoList, switchView } from './algorithms.js';
 import { initSysDesignView } from './sysdesign.js';
 import { initAIEngine, evaluateCandidateAnswer, evaluateCandidateAnswerInstant, explainWithFeynmanMethod, isWebGPUSupported } from './aiInterviewer.js';
 import { SpeechRecognizer } from './speechRecognition.js';
+import { initOnboarding, startTour } from './onboarding.js';
 
 // Auto-sync UI when state changes
 onStateChange(() => {
@@ -47,6 +48,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Load and initialize core engine
   fetchQuestions();
+
+  // Initialize interactive onboarding & platform guide
+  initOnboarding();
 
   // Mock Interview listeners
   const mockInterviewBtn = document.getElementById('mock-interview-btn');

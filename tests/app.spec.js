@@ -10,6 +10,7 @@ test.describe('Java Interview Hub - Comprehensive E2E Tests', () => {
     });
     await page.addInitScript(() => {
       window.localStorage.clear();
+      window.localStorage.setItem('java_trainer_tour_completed', 'true');
     });
     await page.goto('./', { waitUntil: 'domcontentloaded' });
     await expect(page.locator('#active-difficulty')).toBeVisible({ timeout: 15000 });
@@ -111,6 +112,7 @@ test.describe('Java Interview Hub - Comprehensive E2E Tests', () => {
     await expect(page.locator('#questions-view')).toBeHidden();
 
     // Check pattern pills
+    await expect(page.locator('.algo-pill-btn').first()).toBeVisible({ timeout: 5000 });
     const pills = page.locator('.algo-pill-btn');
     expect(await pills.count()).toBeGreaterThan(1);
 

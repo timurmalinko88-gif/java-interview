@@ -15,6 +15,10 @@ test.describe('Search Functionality Diagnostics & Multi-Scenario Tests', () => {
       }
     });
 
+    await page.addInitScript(() => {
+      window.localStorage.setItem('java_trainer_tour_completed', 'true');
+    });
+
     await page.goto('./', { waitUntil: 'domcontentloaded' });
     // Ensure questions are loaded
     await expect(page.locator('#active-difficulty')).toBeVisible({ timeout: 15000 });

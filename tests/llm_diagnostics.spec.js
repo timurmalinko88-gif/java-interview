@@ -15,6 +15,10 @@ test.describe('In-Browser LLM Engine & Examiner Diagnostic Suite', () => {
       }
     });
 
+    await page.addInitScript(() => {
+      window.localStorage.setItem('java_trainer_tour_completed', 'true');
+    });
+
     await page.goto('./', { waitUntil: 'domcontentloaded' });
     await expect(page.locator('#active-difficulty')).toBeVisible({ timeout: 15000 });
   });
