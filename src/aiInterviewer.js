@@ -5,12 +5,13 @@
 import { CreateWebWorkerMLCEngine } from '@mlc-ai/web-llm';
 
 export const AVAILABLE_MODELS = [
-  { id: 'SmolLM2-360M-Instruct-q4f16_1-MLC', name: '⚡ Ultra-Fast 360M (~190MB, мгновенный запуск)' },
-  { id: 'Llama-3.2-1B-Instruct-q4f16_1-MLC', name: '🚀 Balanced Llama 1B (~600MB, быстро)' },
-  { id: 'Qwen2.5-Coder-1.5B-Instruct-q4f16_1-MLC', name: '🧠 Deep Qwen Coder 1.5B (~830MB, глубокий анализ)' },
+  { id: 'Qwen2.5-Coder-0.5B-Instruct-q4f16_1-MLC', name: '⚡ Ultra-Fast Coder 0.5B (~350MB, мгновенно)' },
+  { id: 'SmolLM2-360M-Instruct-q4f16_1-MLC', name: '🚀 Ultra-Light 360M (~190MB)' },
+  { id: 'Llama-3.2-1B-Instruct-q4f16_1-MLC', name: '🌟 Balanced Llama 1B (~600MB)' },
+  { id: 'Qwen2.5-Coder-1.5B-Instruct-q4f16_1-MLC', name: '🧠 Deep Coder 1.5B (~830MB)' },
 ];
 
-export const DEFAULT_MODEL = 'SmolLM2-360M-Instruct-q4f16_1-MLC';
+export const DEFAULT_MODEL = 'Qwen2.5-Coder-0.5B-Instruct-q4f16_1-MLC';
 export const FALLBACK_MODEL = 'Llama-3.2-1B-Instruct-q4f16_1-MLC';
 
 let engine = null;
@@ -18,6 +19,16 @@ let currentModelId = DEFAULT_MODEL;
 let isInitializing = false;
 let initPromise = null;
 const progressListeners = new Set();
+let activeGenerationPromise = Promise.resolve();
+
+/**
+ * Sequential task queue to prevent concurrent generation race conditions in Web Worker
+ */
+export function queueLLMTask(taskFn) {
+  const next = activeGenerationPromise.then(taskFn, taskFn);
+  activeGenerationPromise = next.catch(() => {});
+  return next;
+}
 
 /**
  * Format raw WebLLM progress reports into user-friendly Russian status messages
@@ -130,11 +141,14 @@ export async function evaluateCandidateAnswer({
     throw new Error('AI Interviewer engine is not initialized. Please load the model first.');
   }
 
-  const systemPrompt = `You are a Principal Java Technical Interviewer.
+  return queueLLMTask(async () => {
+    const isGibberish = !candidateAnswer || candidateAnswer.trim().length < 3 || /^[\s\d\W]+$/.test(candidateAnswer);
+
+    const systemPrompt = `You are a Principal Java Technical Interviewer.
 Your role is to strictly and objectively evaluate the Candidate's Answer against the Ground Truth Reference Answer.
 
 EVALUATION CRITERIA:
-1. Technical Correctness (0-100%): Are facts accurate according to the reference?
+1. Technical Correctness (0-100%): Are facts accurate according to the reference? If candidate answer is nonsense/gibberish, unrelated words, or empty, give score 0-10 and verdict "REVISE".
 2. Found Concepts: Key terms, APIs, or mechanisms explicitly mentioned correctly.
 3. Missed Concepts: Crucial mechanisms, caveats, or trade-offs omitted by candidate.
 4. Nuances: Did the candidate mention memory layout, thread safety, or performance trade-offs?
@@ -153,7 +167,7 @@ JSON Schema:
   "followUp": "<1 technical follow-up question in Russian>"
 }`;
 
-  const userPrompt = `### QUESTION (${difficulty}):
+    const userPrompt = `### QUESTION (${difficulty}):
 ${questionTitle}
 ${questionBody ? questionBody.slice(0, 500) : ''}
 
@@ -165,53 +179,54 @@ ${candidateAnswer}
 
 Evaluate now and output JSON:`;
 
-  const messages = [
-    { role: 'system', content: systemPrompt },
-    { role: 'user', content: userPrompt },
-  ];
+    const messages = [
+      { role: 'system', content: systemPrompt },
+      { role: 'user', content: userPrompt },
+    ];
 
-  const response = await engine.chat.completions.create({
-    messages,
-    temperature: 0.1, // low temperature for consistent, strict grading
-    max_tokens: 500,
-    stream: true,
-  });
+    const response = await engine.chat.completions.create({
+      messages,
+      temperature: 0.1,
+      max_tokens: 500,
+      stream: true,
+    });
 
-  let fullResponse = '';
-  for await (const chunk of response) {
-    const delta = chunk.choices[0]?.delta?.content || '';
-    fullResponse += delta;
-    if (onToken) onToken(delta, fullResponse);
-  }
-
-  // Robust JSON extraction
-  try {
-    const jsonMatch = fullResponse.match(/\{[\s\S]*\}/);
-    if (jsonMatch) {
-      const parsed = JSON.parse(jsonMatch[0]);
-      return {
-        score: Math.min(100, Math.max(0, parseInt(parsed.score, 10) || 70)),
-        verdict: parsed.verdict || (parsed.score >= 80 ? 'PASS' : 'PARTIAL'),
-        earnedXp: Math.min(10, Math.max(0, parseInt(parsed.earnedXp, 10) || Math.round((parsed.score || 70) / 10))),
-        summary: parsed.summary || 'Ответ проанализирован.',
-        foundConcepts: Array.isArray(parsed.foundConcepts) ? parsed.foundConcepts : [],
-        missedConcepts: Array.isArray(parsed.missedConcepts) ? parsed.missedConcepts : [],
-        followUp: parsed.followUp || 'Можете подробнее раскрыть нюансы многопоточности?',
-      };
+    let fullResponse = '';
+    for await (const chunk of response) {
+      const delta = chunk.choices[0]?.delta?.content || '';
+      fullResponse += delta;
+      if (onToken) onToken(delta, fullResponse);
     }
-  } catch (err) {
-    console.warn('[WebLLM] JSON parse error, generating structured fallback:', err);
-  }
 
-  return {
-    score: 75,
-    verdict: 'PASS',
-    earnedXp: 8,
-    summary: fullResponse.slice(0, 200),
-    foundConcepts: ['Ключевые принципы Java'],
-    missedConcepts: [],
-    followUp: 'Как это поведение меняется под высокой конкурентной нагрузкой?',
-  };
+    // Robust JSON extraction
+    try {
+      const jsonMatch = fullResponse.match(/\{[\s\S]*\}/);
+      if (jsonMatch) {
+        const parsed = JSON.parse(jsonMatch[0]);
+        return {
+          score: Math.min(100, Math.max(0, parseInt(parsed.score, 10) || (isGibberish ? 10 : 70))),
+          verdict: parsed.verdict || (isGibberish ? 'REVISE' : (parsed.score >= 80 ? 'PASS' : 'PARTIAL')),
+          earnedXp: Math.min(10, Math.max(0, parseInt(parsed.earnedXp, 10) || (isGibberish ? 0 : 7))),
+          summary: parsed.summary || (isGibberish ? 'Ответ не содержит технической информации по вопросу.' : 'Ответ проанализирован.'),
+          foundConcepts: Array.isArray(parsed.foundConcepts) ? parsed.foundConcepts : [],
+          missedConcepts: Array.isArray(parsed.missedConcepts) ? parsed.missedConcepts : [],
+          followUp: parsed.followUp || 'Можете подробнее раскрыть нюансы многопоточности?',
+        };
+      }
+    } catch (err) {
+      console.warn('[WebLLM] JSON parse error, generating structured fallback:', err);
+    }
+
+    return {
+      score: isGibberish ? 10 : 75,
+      verdict: isGibberish ? 'REVISE' : 'PASS',
+      earnedXp: isGibberish ? 0 : 8,
+      summary: fullResponse.slice(0, 200) || (isGibberish ? 'Ответ не относится к теме вопроса.' : 'Ответ обработан.'),
+      foundConcepts: isGibberish ? [] : ['Ключевые принципы Java'],
+      missedConcepts: [],
+      followUp: 'Как это поведение меняется под высокой конкурентной нагрузкой?',
+    };
+  });
 }
 
 /**
@@ -227,7 +242,8 @@ export async function explainWithFeynmanMethod({
     throw new Error('AI Engine is not initialized. Please load the model first.');
   }
 
-  const systemPrompt = `You are Richard Feynman, the legendary Nobel laureate physicist and teacher.
+  return queueLLMTask(async () => {
+    const systemPrompt = `You are Richard Feynman, the legendary Nobel laureate physicist and teacher.
 Your superpower is taking ultra-complex, intimidating technical computer science abstractions (JVM memory layout, concurrency locks, volatile, virtual threads, distributed consensus, Kafka partition rebalance, B-Tree indexes) and explaining them with simple, vivid, intuitive real-world metaphors that anyone can grasp.
 
 GUIDELINES:
@@ -237,30 +253,31 @@ GUIDELINES:
 4. Tone: Enthusiastic, brilliant, simple, friendly.
 5. Format: Markdown with emojis in Russian.`;
 
-  const userPrompt = `### ТЕМА: ${topic}
+    const userPrompt = `### ТЕМА: ${topic}
 ### ВОПРОС: ${questionTitle}
 ${referenceAnswer ? `### КОНТЕКСТ:\n${referenceAnswer.slice(0, 800)}` : ''}
 
 Объясни эту тему методом Фейнмана:`;
 
-  const messages = [
-    { role: 'system', content: systemPrompt },
-    { role: 'user', content: userPrompt },
-  ];
+    const messages = [
+      { role: 'system', content: systemPrompt },
+      { role: 'user', content: userPrompt },
+    ];
 
-  const response = await engine.chat.completions.create({
-    messages,
-    temperature: 0.6,
-    max_tokens: 650,
-    stream: true,
+    const response = await engine.chat.completions.create({
+      messages,
+      temperature: 0.6,
+      max_tokens: 650,
+      stream: true,
+    });
+
+    let fullResponse = '';
+    for await (const chunk of response) {
+      const delta = chunk.choices[0]?.delta?.content || '';
+      fullResponse += delta;
+      if (onToken) onToken(delta, fullResponse);
+    }
+
+    return fullResponse;
   });
-
-  let fullResponse = '';
-  for await (const chunk of response) {
-    const delta = chunk.choices[0]?.delta?.content || '';
-    fullResponse += delta;
-    if (onToken) onToken(delta, fullResponse);
-  }
-
-  return fullResponse;
 }
