@@ -115,7 +115,6 @@ export function buildSidebarList() {
 }
 
 // Filter actions triggered on inputs change
-// Filter actions triggered on inputs change
 export function triggerFilterAction() {
   const searchInput = document.getElementById('search-input');
   const searchValue = searchInput ? searchInput.value.trim() : '';
@@ -145,7 +144,7 @@ export function triggerFilterAction() {
 
   // 1. Filter by Topic, Difficulty, Format, and Status
   const pool = baseQuestions.filter(q => {
-    const topicMatches = topicValue === 'all' || q.topic === topicValue;
+    const topicMatches = topicValue === 'all' || q.topic === topicValue || (topicValue === 'Live Coding' && q.topic.startsWith('Live Coding')) || (topicValue === 'Behavioral' && q.topic.startsWith('Behavioral'));
     const diffMatches = state.selectedDiffFilters.length === 0 || state.selectedDiffFilters.includes(q.difficulty);
     const formatMatches = checkedFormats.length === 0 || checkedFormats.includes(q.format);
     const statusFilter = state.statusFilter || 'all';
@@ -254,8 +253,7 @@ export function clearAllFilters() {
 }
 
 // Sync UI global stats metrics
-export // Sync UI global stats metrics
-function updateStatsUI() {
+export function updateStatsUI() {
   const total = state.questionsList.length;
   if (total === 0) return;
   const masteredCount = state.masteredIds.length;
@@ -323,8 +321,7 @@ function updateStatsUI() {
 }
 
 // Parse the canonical Markdown format
-export // Parse the canonical Markdown format
-function parseMarkdown(text) {
+export function parseMarkdown(text) {
   const result = {
     question: '',
     answer: '',
@@ -357,8 +354,7 @@ function parseMarkdown(text) {
 }
 
 // Handle dynamically loading file content or pulling from fallbacks
-export // Handle dynamically loading file content or pulling from fallbacks
-async function loadQuestion(indexOrQuestion) {
+export async function loadQuestion(indexOrQuestion) {
   let q;
   let index = 0;
   if (typeof indexOrQuestion === 'object') {
@@ -403,7 +399,40 @@ async function loadQuestion(indexOrQuestion) {
     extraMetaContainer.innerHTML += `<span class="bg-paper-50 dark:bg-panel-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 text-xs px-2.5 py-1 rounded-[7px] flex items-center gap-1.5 font-medium"><i class="fa-solid fa-circle text-roast-500 text-[8px]"></i> Frequency: ${q.frequency}</span>`;
   }
   if (q.related && q.related.length > 0) {
-    extraMetaContainer.innerHTML += `<span class="bg-paper-50 dark:bg-panel-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 text-xs px-2.5 py-1 rounded-[7px] flex items-center gap-1.5 font-medium"><i class="fa-solid fa-link text-slate-400"></i> ${Array.isArray(q.related) ? q.related.join(', ') : q.related}</span>`;
+    const relItems = Array.isArray(q.related) ? q.related : [q.related];
+    const relContainer = document.createElement('div');
+    relContainer.className = 'flex flex-wrap items-center gap-1.5';
+    relItems.forEach(item => {
+      const btn = document.createElement('button');
+      btn.className = 'related-question-chip bg-paper-50 dark:bg-panel-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 text-xs px-2.5 py-1 rounded-[7px] flex items-center gap-1.5 font-medium hover:border-roast-500 hover:text-roast-500 transition-all cursor-pointer';
+      btn.innerHTML = `<i class="fa-solid fa-link text-slate-400"></i> ${item}`;
+      btn.title = `Go to question: ${item}`;
+      btn.addEventListener('click', () => {
+        const query = item.toLowerCase().trim();
+        let targetIdx = state.filteredQuestions.findIndex(x => x.id.toLowerCase() === query || (x.title && x.title.toLowerCase().includes(query)));
+        if (targetIdx === -1) {
+          clearAllFilters();
+          targetIdx = state.filteredQuestions.findIndex(x => x.id.toLowerCase() === query || (x.title && x.title.toLowerCase().includes(query)));
+        }
+        if (targetIdx !== -1) {
+          state.currentIndex = targetIdx;
+          state.isAnswerVisible = false;
+          loadQuestion(targetIdx);
+          buildSidebarList();
+          showToast(`Navigated to ${item}`, 'info');
+        } else {
+          clearAllFilters();
+          const searchInput = document.getElementById('search-input');
+          if (searchInput) {
+            searchInput.value = item;
+            triggerFilterAction();
+            showToast(`Searched for "${item}"`, 'info');
+          }
+        }
+      });
+      relContainer.appendChild(btn);
+    });
+    extraMetaContainer.appendChild(relContainer);
   }
 
   // Reset action bookmark/completed status indicators
@@ -520,8 +549,7 @@ async function loadQuestion(indexOrQuestion) {
 }
 
 // Synch flag/mastered active buttons styling state
-export // Synch flag/mastered active buttons styling state
-function syncActionButtons(activeId) {
+export function syncActionButtons(activeId) {
   const flagged = isFlagged(activeId);
   const flagBtn = document.getElementById('flag-btn');
   if (flagged) {
@@ -558,8 +586,7 @@ export function renderNoQuestionsFoundState() {
 }
 
 // Trigger non-intrusive beautiful toast notification message
-export // Trigger non-intrusive beautiful toast notification message
-function showToast(message, type = 'success') {
+export function showToast(message, type = 'success') {
   const toast = document.getElementById('toast');
   const icon = document.getElementById('toast-icon');
   const msgSpan = document.getElementById('toast-message');

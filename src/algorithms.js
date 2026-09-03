@@ -201,7 +201,6 @@ export function renderAlgoList(store) {
             </div>
         `;
         const resetBtn = document.getElementById('reset-algo-filters');
-        if (resetBtn) {
             resetBtn.addEventListener('click', () => {
                 currentPatternFilter = 'all';
                 currentDifficultyFilter = 'all';
@@ -210,9 +209,20 @@ export function renderAlgoList(store) {
                 if (searchInput) searchInput.value = '';
                 const diffFilter = document.getElementById('algo-diff-filter');
                 if (diffFilter) diffFilter.value = 'all';
+                if (patternFilterContainer) {
+                    patternFilterContainer.querySelectorAll('.algo-pill-btn').forEach(b => {
+                        const isAll = b.dataset.pattern === 'all';
+                        if (isAll) {
+                            b.classList.remove('border-mist-50', 'dark:border-slate-800', 'text-slate-600', 'dark:text-slate-300', 'bg-white', 'dark:bg-panel-900');
+                            b.classList.add('bg-roast-500', 'text-white', 'border-roast-500');
+                        } else {
+                            b.classList.remove('bg-roast-500', 'text-white', 'border-roast-500');
+                            b.classList.add('border-mist-50', 'dark:border-slate-800', 'text-slate-600', 'dark:text-slate-300', 'bg-white', 'dark:bg-panel-900');
+                        }
+                    });
+                }
                 renderAlgoList(store);
             });
-        }
         return;
     }
 

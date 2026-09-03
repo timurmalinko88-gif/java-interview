@@ -4571,7 +4571,7 @@
       "leetcode_id": "",
       "related": [
         "jvm-012",
-        "core-004"
+        "general-004"
       ],
       "tags": [
         "jvm",
@@ -4613,7 +4613,7 @@
       "space_complexity": "",
       "leetcode_id": "",
       "related": [
-        "core-010"
+        "general-010"
       ],
       "tags": [
         "jvm",
@@ -4655,7 +4655,7 @@
       "space_complexity": "",
       "leetcode_id": "",
       "related": [
-        "sys-002",
+        "system-patterns-002",
         "jvm-012"
       ],
       "tags": [
@@ -4678,7 +4678,7 @@
       "leetcode_id": "",
       "related": [
         "jvm-017",
-        "core-005"
+        "general-005"
       ],
       "tags": [
         "jvm",
@@ -4700,7 +4700,7 @@
       "leetcode_id": "",
       "related": [
         "jvm-016",
-        "io-002"
+        "general-002"
       ],
       "tags": [
         "jvm",
@@ -4743,7 +4743,7 @@
       "leetcode_id": "",
       "related": [
         "jvm-016",
-        "conc-003"
+        "multithreading-003"
       ],
       "tags": [
         "jvm",
@@ -4765,7 +4765,7 @@
       "leetcode_id": "",
       "related": [
         "jvm-018",
-        "sys-011"
+        "system-design-011"
       ],
       "tags": [
         "jvm",
@@ -7590,7 +7590,7 @@
       "space_complexity": "",
       "leetcode_id": "",
       "related": [
-        "core-005"
+        "general-005"
       ],
       "tags": [
         "oop"
@@ -7610,7 +7610,7 @@
       "space_complexity": "",
       "leetcode_id": "",
       "related": [
-        "design-012"
+        "patterns-012"
       ],
       "tags": [
         "oop"
@@ -7630,7 +7630,7 @@
       "space_complexity": "",
       "leetcode_id": "",
       "related": [
-        "arch-005"
+        "system-design-005"
       ],
       "tags": [
         "oop"
@@ -7730,7 +7730,7 @@
       "space_complexity": "",
       "leetcode_id": "",
       "related": [
-        "sys-010"
+        "system-design-010"
       ],
       "tags": [
         "oop"
@@ -7751,7 +7751,7 @@
       "leetcode_id": "",
       "related": [
         "oop-001",
-        "core-012"
+        "general-012"
       ],
       "tags": [
         "oop"
@@ -7811,7 +7811,7 @@
       "space_complexity": "",
       "leetcode_id": "",
       "related": [
-        "core-041"
+        "general-041"
       ],
       "tags": [
         "oop"
@@ -7831,8 +7831,8 @@
       "space_complexity": "",
       "leetcode_id": "",
       "related": [
-        "sys-014",
-        "arch-005"
+        "system-design-014",
+        "system-design-005"
       ],
       "tags": [
         "oop"
@@ -8034,7 +8034,7 @@
       "space_complexity": "",
       "leetcode_id": "",
       "related": [
-        "sys-014"
+        "system-design-014"
       ],
       "tags": [
         "oop"
@@ -8145,7 +8145,7 @@
       "leetcode_id": "",
       "related": [
         "oop-012",
-        "core-045"
+        "general-045"
       ],
       "tags": [
         "oop"
@@ -8187,7 +8187,7 @@
       "leetcode_id": "",
       "related": [
         "oop-015",
-        "core-088"
+        "oop-001"
       ],
       "tags": [
         "oop"
@@ -8208,7 +8208,7 @@
       "leetcode_id": "",
       "related": [
         "oop-029",
-        "design-004"
+        "patterns-004"
       ],
       "tags": [
         "oop"
@@ -8228,8 +8228,8 @@
       "space_complexity": "",
       "leetcode_id": "",
       "related": [
-        "sys-014",
-        "arch-007"
+        "system-design-014",
+        "system-design-007"
       ],
       "tags": [
         "oop"
@@ -8330,7 +8330,7 @@
       "space_complexity": "",
       "leetcode_id": "",
       "related": [
-        "sys-015"
+        "system-patterns-015"
       ],
       "tags": [
         "oop"
@@ -8351,7 +8351,7 @@
       "leetcode_id": "",
       "related": [
         "oop-023",
-        "core-012"
+        "general-012"
       ],
       "tags": [
         "oop"
@@ -8392,7 +8392,7 @@
       "space_complexity": "",
       "leetcode_id": "",
       "related": [
-        "design-002",
+        "patterns-002",
         "oop-033"
       ],
       "tags": [
@@ -8413,7 +8413,7 @@
       "space_complexity": "",
       "leetcode_id": "",
       "related": [
-        "solid-003",
+        "oop-003",
         "oop-044"
       ],
       "tags": [
@@ -8434,8 +8434,8 @@
       "space_complexity": "",
       "leetcode_id": "",
       "related": [
-        "design-015",
-        "arch-008"
+        "patterns-015",
+        "system-design-008"
       ],
       "tags": [
         "oop"
@@ -11539,7 +11539,7 @@
       ]
     },
     {
-      "id": "system-design-002",
+      "id": "system-patterns-002",
       "path": "questions/system-design/system-design-002.md",
       "topic": "System Design",
       "difficulty": "Senior",
@@ -11575,7 +11575,7 @@
       ]
     },
     {
-      "id": "system-design-004",
+      "id": "system-patterns-004",
       "path": "questions/system-design/system-design-004.md",
       "topic": "System Design",
       "difficulty": "Senior",
@@ -11719,7 +11719,7 @@
       ]
     },
     {
-      "id": "system-design-012",
+      "id": "system-patterns-012",
       "path": "questions/system-design/system-design-012.md",
       "topic": "System Design",
       "difficulty": "Middle",
@@ -11773,7 +11773,7 @@
       ]
     },
     {
-      "id": "system-design-015",
+      "id": "system-patterns-015",
       "path": "questions/system-design/system-design-015.md",
       "topic": "System Design",
       "difficulty": "Middle",

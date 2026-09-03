@@ -198,6 +198,3 @@ export function exitMockInterview() {
     showToast("Mock Interview cancelled", "info");
   }
 }
-
-// --- stats.js ---
-// Helper function to map topics to icons and gradients

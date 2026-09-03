@@ -4,10 +4,14 @@
 как с использованием разделителей '---', так и без них (напрямую с первой строки).
 """
 
+import sys
 import os
 import json
 import glob
 import re
+
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
 
 def build_index():
     """Сканирует папку questions/ и создаёт index.json"""
@@ -110,34 +114,30 @@ def build_index():
                     break
 
         question_id = metadata.get('id', os.path.splitext(os.path.basename(filepath))[0])
-        topic = metadata.get('topic', 'General')
         folder_name = os.path.basename(os.path.dirname(filepath))
-        if folder_name.startswith('general-'):
-            topic = folder_name.replace('general-', '').replace('-', ' ').title()
-        elif question_id.startswith('algo-') or folder_name == 'algorithms':
-            topic = 'Algorithm Breakdown'
-        elif question_id.startswith('general-'):
-            topic = 'General'
-        elif question_id.startswith('jvm-'):
-            topic = 'JVM & Memory Management'
-        elif question_id.startswith('oop-') or question_id in {'q1'}:
-            topic = 'OOP'
-        elif question_id.startswith('multithreading-') or question_id in {'q2'}:
-            topic = 'Multithreading'
-        elif question_id.startswith('collections-'):
-            topic = 'Collections'
-        elif question_id.startswith('stream-'):
-            topic = 'Stream API'
-        elif question_id.startswith('spring-'):
-            topic = 'Spring'
-        elif question_id.startswith('databases-'):
-            topic = 'Databases'
-        elif question_id.startswith('system-design-') or question_id in {'q3'}:
-            topic = 'System Design'
-        elif question_id.startswith('patterns-'):
-            topic = 'Patterns'
-        elif question_id.startswith('testing-'):
-            topic = 'Testing'
+
+        FOLDER_TO_TOPIC = {
+            'ai-integration': 'AI & LLM Integration',
+            'algorithms': 'Algorithm Breakdown',
+            'behavioral': 'Behavioral & STAR',
+            'collections': 'Collections',
+            'databases': 'Databases',
+            'exceptions': 'Exceptions',
+            'general': 'General',
+            'jvm': 'JVM & Memory Management',
+            'live-coding': 'Live Coding & Refactoring',
+            'messaging': 'Kafka & Messaging',
+            'modern-java': 'Modern Java 21+',
+            'multithreading': 'Multithreading',
+            'oop': 'OOP',
+            'patterns': 'Patterns',
+            'spring': 'Spring',
+            'stream': 'Stream API',
+            'system-design': 'System Design',
+            'testing': 'Testing'
+        }
+
+        topic = FOLDER_TO_TOPIC.get(folder_name) or metadata.get('topic', 'General')
 
         # Time parsing
         time_val = metadata.get('estimated_time_minutes', metadata.get('time', ''))

@@ -57,7 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let failedTags = new Set();
 
   // Load quiz data
-  // Load quiz data
   async function loadQuizData() {
     try {
       const res = await fetch('quiz.json?t=' + new Date().getTime());

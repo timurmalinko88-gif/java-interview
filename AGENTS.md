@@ -10,7 +10,7 @@ Welcome, AI Agent! This document is the single source of truth for the **Java In
 - **Live Site (GitHub Pages)**: `https://timurmalinko88-gif.github.io/java-interview/`
 - **Purpose**: High-performance Single Page Application (SPA), mock interview simulator, and knowledge hub for Java developer technical interviews (from Junior to Senior & Architect levels).
 - **Core Metrics**:
-  - **671 Questions** across **18 Domains** (Core Java, JVM, Multithreading, Spring Boot, System Design, Kafka, Java 21+, AI/LLM Integration, Algorithm Breakdown, etc.).
+  - **706 Questions** across **18 Domains** (Core Java, JVM, Multithreading, Spring Boot, System Design, Kafka, Java 21+, AI/LLM Integration, Algorithm Breakdown, etc.).
   - **4 Curated Learning Tracks (Roadmaps)**: Junior Express, Middle Spring & Microservices, Senior Architect, AI & Modern Java 21+.
   - **Interactive Features**: Mock Interview Simulator (with timed evaluation & Scorecards), Spaced Repetition System (Leitner box), XP & 7-tier Rank Gamification, YouTube search integration, Interactive System Architecture SVG Canvas, Algorithm Breakdown module, and Dark/Light UI themes.
 
@@ -47,9 +47,9 @@ Welcome, AI Agent! This document is the single source of truth for the **Java In
 ```text
 java-interview/
 ├── public/                     # Static assets served as-is by Vite & GitHub Pages
-│   ├── questions/              # 671 Markdown question files organized in 18 subfolders
+│   ├── questions/              # 706 Markdown question files organized in 18 subfolders
 │   │   ├── ai-integration/     # Spring AI, RAG, PgVector, Prompt Engineering (20 files)
-│   │   ├── algorithms/         # Algorithm Breakdown: sorting, graphs, DP (15 files)
+│   │   ├── algorithms/         # Algorithm Breakdown: sorting, graphs, DP (50 files)
 │   │   ├── behavioral/         # HR & STAR methodology (10 files)
 │   │   ├── collections/        # Java Collections & Data Structures (52 files)
 │   │   ├── databases/          # SQL, Transactions, JPA, Hibernate (52 files)
@@ -66,7 +66,7 @@ java-interview/
 │   │   ├── stream/             # Stream API & Functional Interfaces (52 files)
 │   │   ├── system-design/      # Microservices, Caching, Scaling (58 files)
 │   │   └── testing/            # JUnit 5, Mockito, Integration Testing (50 files)
-│   ├── index.json              # Auto-generated catalog of all 671 questions
+│   ├── index.json              # Auto-generated catalog of all 706 questions
 │   ├── quiz.json               # Diagnostic questions for adaptive learning quiz
 │   └── og-image.png            # Open Graph preview image (1200x630) for link sharing
 ├── src/                        # Modular JavaScript source files

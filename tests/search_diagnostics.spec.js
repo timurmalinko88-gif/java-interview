@@ -185,4 +185,45 @@ test.describe('Search Functionality Diagnostics & Multi-Scenario Tests', () => {
     expect(resetCount).toBe(706);
     expect(errors.length).toBe(0);
   });
+
+  test('Scenario 11: Topic filter for "Live Coding & Refactoring" displays all 15 questions without empty state', async ({ page }) => {
+    const topicFilter = page.locator('#topic-filter');
+    await topicFilter.selectOption('Live Coding & Refactoring');
+    await page.waitForTimeout(400);
+
+    const count = parseInt(await page.locator('#question-list-count').textContent(), 10);
+    console.log(`[Test] Live Coding questions found: ${count}`);
+    expect(count).toBe(15);
+    expect(errors.length).toBe(0);
+  });
+
+  test('Scenario 12: Topic filter for "Behavioral & STAR" displays all 10 questions without empty state', async ({ page }) => {
+    const topicFilter = page.locator('#topic-filter');
+    await topicFilter.selectOption('Behavioral & STAR');
+    await page.waitForTimeout(400);
+
+    const count = parseInt(await page.locator('#question-list-count').textContent(), 10);
+    console.log(`[Test] Behavioral questions found: ${count}`);
+    expect(count).toBe(10);
+    expect(errors.length).toBe(0);
+  });
+
+  test('Scenario 13: Interactive related question chip navigates on click', async ({ page }) => {
+    // Navigate to jvm-011 which has related questions (e.g. jvm-012, general-004)
+    await page.evaluate(() => {
+      window.location.hash = '#q=jvm-011';
+    });
+    await page.waitForTimeout(600);
+
+    const relatedChip = page.locator('.related-question-chip').first();
+    await expect(relatedChip).toBeVisible();
+
+    const chipText = (await relatedChip.textContent()).trim();
+    await relatedChip.click();
+    await page.waitForTimeout(500);
+
+    // Toast notification confirms navigation
+    await expect(page.locator('#toast')).toBeVisible();
+    expect(errors.length).toBe(0);
+  });
 });
