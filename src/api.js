@@ -13,6 +13,20 @@ export async function fetchQuestions() {
         } else {
             state.questionsList = [...state.fallbackDatabase];
         }
+
+        // Merge custom questions from localStorage if present
+        try {
+            const customQuestions = JSON.parse(localStorage.getItem('java_trainer_custom_questions') || '[]');
+            if (Array.isArray(customQuestions) && customQuestions.length > 0) {
+                customQuestions.forEach(cq => {
+                    if (!state.questionsList.some(q => q.id === cq.id)) {
+                        state.questionsList.push(cq);
+                    }
+                });
+            }
+        } catch (e) {
+            console.warn('Failed to load custom questions from localStorage', e);
+        }
     } catch (err) {
         console.log("Using rich embedded fallback database.");
         state.questionsList = [...state.fallbackDatabase];

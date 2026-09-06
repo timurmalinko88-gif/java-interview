@@ -756,6 +756,90 @@ document.addEventListener('DOMContentLoaded', () => {
     closeShortcutsBtn.addEventListener("click", () => closeDialogModal(shortcutsModal));
   }
 
+  // Setup Backup & Custom Questions Modal
+  const backupBtn = document.getElementById('btn-backup-modal');
+  const backupModal = document.getElementById('backup-modal');
+  const closeBackupBtn = document.getElementById('close-backup-modal-btn');
+  const closeBackupFooter = document.getElementById('btn-close-backup-footer');
+  const exportBtn = document.getElementById('btn-export-backup');
+  const importBtn = document.getElementById('btn-import-backup');
+  const fileInput = document.getElementById('backup-file-input');
+  const customQuestionsInput = document.getElementById('custom-questions-input');
+  const importCustomBtn = document.getElementById('btn-import-custom-questions');
+
+  if (backupBtn && backupModal) {
+    backupBtn.addEventListener("click", () => openDialogModal(backupModal));
+  }
+  if (closeBackupBtn && backupModal) {
+    closeBackupBtn.addEventListener("click", () => closeDialogModal(backupModal));
+  }
+  if (closeBackupFooter && backupModal) {
+    closeBackupFooter.addEventListener("click", () => closeDialogModal(backupModal));
+  }
+  if (exportBtn) {
+    exportBtn.addEventListener("click", () => {
+      exportProgress();
+      showToast("Резервная копия скачана!", "success");
+    });
+  }
+  if (importBtn && fileInput) {
+    importBtn.addEventListener("click", () => {
+      const file = fileInput.files[0];
+      if (!file) {
+        showToast("Выберите .json файл бэкапа", "error");
+        return;
+      }
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const res = importProgress(e.target.result);
+        if (res.success) {
+          triggerFilterAction();
+          updateStatsUI();
+          showToast("Прогресс успешно восстановлен!", "success");
+          closeDialogModal(backupModal);
+        } else {
+          showToast("Ошибка импорта: " + res.error, "error");
+        }
+      };
+      reader.readAsText(file);
+    });
+  }
+  if (importCustomBtn && customQuestionsInput) {
+    importCustomBtn.addEventListener("click", () => {
+      const raw = customQuestionsInput.value.trim();
+      if (!raw) {
+        showToast("Вставьте JSON с вопросами", "error");
+        return;
+      }
+      try {
+        const parsed = JSON.parse(raw);
+        const list = Array.isArray(parsed) ? parsed : [parsed];
+        const existing = JSON.parse(localStorage.getItem('java_trainer_custom_questions') || '[]');
+        let count = 0;
+        list.forEach(q => {
+          if (!q.id) q.id = 'custom-' + Date.now() + '-' + Math.floor(Math.random() * 1000);
+          if (!q.tags) q.tags = ['custom'];
+          if (!q.tags.includes('custom')) q.tags.push('custom');
+          if (!existing.some(x => x.id === q.id)) {
+            existing.push(q);
+            count++;
+          }
+          if (!state.questionsList.some(x => x.id === q.id)) {
+            state.questionsList.push(q);
+          }
+        });
+        localStorage.setItem('java_trainer_custom_questions', JSON.stringify(existing));
+        triggerFilterAction();
+        updateStatsUI();
+        showToast(`Добавлено ${count} вопросов в базу!`, "success");
+        customQuestionsInput.value = '';
+        closeDialogModal(backupModal);
+      } catch (err) {
+        showToast("Неверный формат JSON", "error");
+      }
+    });
+  }
+
   // Direct Share Link Button
   const shareLinkBtn = document.getElementById('share-link-btn');
   if (shareLinkBtn) {

@@ -158,7 +158,7 @@ test.describe('Search Functionality Diagnostics & Multi-Scenario Tests', () => {
 
     const restoredCount = parseInt(await page.locator('#question-list-count').textContent(), 10);
     console.log(`[Test] Restored count after clearing search: ${restoredCount}`);
-    expect(restoredCount).toBe(706);
+    expect(restoredCount).toBe(716);
     expect(errors.length).toBe(0);
   });
 
@@ -182,7 +182,7 @@ test.describe('Search Functionality Diagnostics & Multi-Scenario Tests', () => {
     await page.waitForTimeout(400);
 
     const resetCount = parseInt(await page.locator('#question-list-count').textContent(), 10);
-    expect(resetCount).toBe(706);
+    expect(resetCount).toBe(716);
     expect(errors.length).toBe(0);
   });
 
@@ -209,7 +209,6 @@ test.describe('Search Functionality Diagnostics & Multi-Scenario Tests', () => {
   });
 
   test('Scenario 13: Interactive related question chip navigates on click', async ({ page }) => {
-    // Navigate to jvm-011 which has related questions (e.g. jvm-012, general-004)
     await page.evaluate(() => {
       window.location.hash = '#q=jvm-011';
     });
@@ -222,8 +221,58 @@ test.describe('Search Functionality Diagnostics & Multi-Scenario Tests', () => {
     await relatedChip.click();
     await page.waitForTimeout(500);
 
-    // Toast notification confirms navigation
     await expect(page.locator('#toast')).toBeVisible();
+    expect(errors.length).toBe(0);
+  });
+
+  test('Scenario 14: Transition Track selects 162 targeted questions with 80% pass criterion and sequential stages', async ({ page }) => {
+    const roadmapFilter = page.locator('#roadmap-filter');
+    await roadmapFilter.selectOption('transition');
+    await page.waitForTimeout(500);
+
+    const count = parseInt(await page.locator('#question-list-count').textContent(), 10);
+    console.log(`[Test] Transition Track questions count: ${count}`);
+    expect(count).toBe(162);
+
+    // Verify track mastery indicator displays 80% pass criterion
+    const microTitle = page.locator('#topic-micro-title');
+    await expect(microTitle).toBeVisible();
+    const titleText = await microTitle.textContent();
+    expect(titleText).toContain('Переход в Java');
+
+    const microPercent = page.locator('#topic-micro-percent');
+    const percentText = await microPercent.textContent();
+    expect(percentText).toContain('Допуск: 80%');
+
+    // Verify verdict review badge is present on first question
+    const verdictBadge = page.locator('text="Verdict Review"').first();
+    await expect(verdictBadge).toBeVisible();
+    expect(errors.length).toBe(0);
+  });
+
+  test('Scenario 15: Backup modal opens and contains Export, Import, and Custom Questions controls', async ({ page }) => {
+    const backupBtn = page.locator('#btn-backup-modal');
+    await expect(backupBtn).toBeVisible();
+    await backupBtn.click();
+    await page.waitForTimeout(400);
+
+    const backupModal = page.locator('#backup-modal');
+    await expect(backupModal).toBeVisible();
+
+    const exportBtn = page.locator('#btn-export-backup');
+    await expect(exportBtn).toBeVisible();
+
+    const importBtn = page.locator('#btn-import-backup');
+    await expect(importBtn).toBeVisible();
+
+    const customInput = page.locator('#custom-questions-input');
+    await expect(customInput).toBeVisible();
+
+    // Close backup modal
+    const closeBtn = page.locator('#close-backup-modal-btn');
+    await closeBtn.click();
+    await page.waitForTimeout(300);
+    await expect(backupModal).not.toBeVisible();
     expect(errors.length).toBe(0);
   });
 });

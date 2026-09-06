@@ -1,7 +1,7 @@
 {
   "name": "java-prep",
   "version": "1.0.0",
-  "description": "Interactive Java Interview Prep Hub, Mock Simulator & Leitner Spaced Repetition Platform (706 Questions, 18 Topics)",
+  "description": "Interactive Java Interview Prep Hub, Mock Simulator & Leitner Spaced Repetition Platform (716 Questions, 18 Topics)",
   "main": "src/main.js",
   "directories": {
     "doc": "docs"

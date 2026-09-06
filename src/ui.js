@@ -49,26 +49,74 @@ export function buildSidebarList() {
   const topicMicroProgEl = document.getElementById('topic-micro-progress');
   const topicFilter = document.getElementById('topic-filter');
   const selectedTopicName = topicFilter ? topicFilter.options[topicFilter.selectedIndex].text : "All Topics";
+  const roadmapFilter = document.getElementById('roadmap-filter');
+  const roadmapValue = roadmapFilter ? roadmapFilter.value : 'none';
+  const rm = roadmapValue !== 'none' ? ROADMAPS[roadmapValue] : null;
   
   if (topicMicroProgEl) {
       topicMicroProgEl.classList.remove('hidden');
       topicMicroProgEl.classList.add('flex');
       
       const titleEl = document.getElementById('topic-micro-title');
-      if (titleEl) titleEl.textContent = `${selectedTopicName} Mastery`;
-      
       const percentEl = document.getElementById('topic-micro-percent');
-      if (percentEl) percentEl.textContent = `${microPercent}%`;
-      
       const barEl = document.getElementById('topic-micro-bar');
-      if (barEl) barEl.style.width = `${microPercent}%`;
+      
+      if (rm && rm.targetPassRate) {
+        const isPassed = microPercent >= rm.targetPassRate;
+        if (titleEl) {
+          titleEl.innerHTML = `<span class="flex items-center gap-1 font-bold text-slate-700 dark:text-slate-200"><i class="fa-solid fa-bullseye text-roast-500"></i> ${rm.name}</span>`;
+        }
+        if (percentEl) {
+          percentEl.innerHTML = `<span class="${isPassed ? 'text-pine-500 font-bold' : 'text-slate-600 dark:text-slate-400'}">${masteredFiltered} / ${totalFiltered} (${microPercent}%) • Допуск: ${rm.targetPassRate}%</span>`;
+        }
+        if (barEl) {
+          barEl.style.width = `${microPercent}%`;
+          barEl.className = isPassed
+            ? 'bg-pine-500 h-full transition-all duration-500'
+            : 'bg-roast-500 h-full transition-all duration-500';
+        }
+      } else {
+        if (titleEl) titleEl.textContent = `${selectedTopicName} Mastery`;
+        if (percentEl) percentEl.textContent = `${microPercent}% (${masteredFiltered}/${totalFiltered})`;
+        if (barEl) {
+          barEl.style.width = `${microPercent}%`;
+          barEl.className = 'bg-roast-500 h-full transition-all duration-500';
+        }
+      }
   }
   
   const fragment = document.createDocumentFragment();
+
+  // Stage mapping for ordered roadmaps
+  let currentStageId = null;
+  const stageByTopic = {};
+  if (rm && rm.isOrdered && rm.stages) {
+    rm.stages.forEach(s => {
+      s.topics.forEach(t => {
+        stageByTopic[t] = s;
+      });
+    });
+  }
+
   state.filteredQuestions.forEach((q, idx) => {
+    // Insert stage header if stage transitions in an ordered roadmap
+    if (rm && rm.isOrdered && rm.stages) {
+      const qStage = stageByTopic[q.topic];
+      if (qStage && qStage.id !== currentStageId) {
+        currentStageId = qStage.id;
+        const divider = document.createElement('div');
+        divider.className = 'px-3.5 py-2.5 bg-slate-100 dark:bg-panel-800 text-[11px] font-bold text-slate-800 dark:text-slate-200 border-y border-slate-200 dark:border-slate-700 flex items-center justify-between sticky top-0 z-10 backdrop-blur-sm shadow-xs';
+        divider.innerHTML = `
+          <span class="flex items-center gap-1.5"><i class="fa-solid fa-layer-group text-roast-500 text-xs"></i> ${qStage.title}</span>
+        `;
+        fragment.appendChild(divider);
+      }
+    }
+
     const isMastered = state.masteredIds.includes(q.id);
     const flagged = isFlagged(q.id);
     const isActive = idx === state.currentIndex;
+    const isVerdict = (q.tags || []).includes('verdict-review');
 
     // Attio difficulty badge styling
     let diffStyle = 'bg-emerald-50 text-emerald-700 border border-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:border-emerald-800/40';
@@ -81,13 +129,14 @@ export function buildSidebarList() {
     const shortQuestionText = q.title || q.question || q.id;
     button.innerHTML = `
             <div class="flex items-center justify-between w-full">
-                <div class="flex items-center space-x-1.5">
+                <div class="flex items-center space-x-1.5 flex-wrap gap-y-1">
                     <span class="text-[10px] font-medium px-2 py-0.5 rounded-[7px] uppercase tracking-wider ${diffStyle}">
                         ${q.difficulty}
                     </span>
                     <span class="text-[10px] font-medium text-slate-500 dark:text-slate-400 bg-paper-50 dark:bg-panel-900 border border-slate-200 dark:border-slate-800 px-2 py-0.5 rounded-[7px]">
                         ${q.topic}
                     </span>
+                    ${isVerdict ? '<span class="text-[9px] font-bold px-1.5 py-0.5 rounded-[5px] bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/30">Verdict Review</span>' : ''}
                 </div>
                 <div class="flex items-center space-x-1.5">
                     ${isMastered ? '<i class="fa-solid fa-circle-check text-pine-500 text-xs"></i>' : ''}
@@ -132,11 +181,33 @@ export function triggerFilterAction() {
 
   if (roadmapValue !== 'none' && ROADMAPS[roadmapValue]) {
     const rm = ROADMAPS[roadmapValue];
-    baseQuestions = baseQuestions.filter(q => {
-      const matchDiff = rm.filters.difficulties.includes(q.difficulty);
-      const matchTag = rm.filters.tags.some(tag => (q.tags || []).includes(tag)) || rm.filters.tags.some(tag => (q.topic || '').toLowerCase().includes(tag));
-      return matchDiff && matchTag;
-    });
+    if (rm.filter) {
+      baseQuestions = baseQuestions.filter(rm.filter);
+    } else if (rm.filters) {
+      baseQuestions = baseQuestions.filter(q => {
+        const matchDiff = rm.filters.difficulties.includes(q.difficulty);
+        const matchTag = rm.filters.tags.some(tag => (q.tags || []).includes(tag)) || rm.filters.tags.some(tag => (q.topic || '').toLowerCase().includes(tag));
+        return matchDiff && matchTag;
+      });
+    }
+
+    if (rm.isOrdered && rm.stages) {
+      const stageTopicOrder = {};
+      rm.stages.forEach((stage, sIdx) => {
+        stage.topics.forEach(t => {
+          stageTopicOrder[t] = sIdx;
+        });
+      });
+      baseQuestions.sort((a, b) => {
+        const orderA = stageTopicOrder[a.topic] ?? 999;
+        const orderB = stageTopicOrder[b.topic] ?? 999;
+        if (orderA !== orderB) return orderA - orderB;
+        const aVerdict = (a.tags || []).includes('verdict-review') ? -1 : 0;
+        const bVerdict = (b.tags || []).includes('verdict-review') ? -1 : 0;
+        return aVerdict - bVerdict;
+      });
+    }
+
     if (rm.limit && baseQuestions.length > rm.limit) {
       baseQuestions = baseQuestions.slice(0, rm.limit);
     }
@@ -312,10 +383,29 @@ export function updateStatsUI() {
       if (rankProgressBarEl) rankProgressBarEl.style.width = `${progressPercent}%`;
   }
 
-  // Calculate percentage progress for globally tracked completion progress bar
-  const percent = Math.min(100, Math.round(masteredCount / total * 100));
+  // Calculate percentage progress (scoped to active roadmap if selected)
+  const roadmapFilter = document.getElementById('roadmap-filter');
+  const roadmapValue = roadmapFilter ? roadmapFilter.value : 'none';
+  const rm = roadmapValue !== 'none' ? ROADMAPS[roadmapValue] : null;
+
+  let displayTotal = total;
+  let displayMastered = masteredCount;
+
+  if (rm) {
+    const trackQuestions = state.filteredQuestions;
+    displayTotal = trackQuestions.length;
+    displayMastered = trackQuestions.filter(q => state.masteredIds.includes(q.id)).length;
+  }
+
+  const percent = displayTotal > 0 ? Math.min(100, Math.round(displayMastered / displayTotal * 100)) : 0;
   const statsProgEl = document.getElementById('stats-progress');
-  if (statsProgEl) statsProgEl.textContent = `${percent}% (${masteredCount}/${total})`;
+  if (statsProgEl) {
+    if (rm && rm.targetPassRate) {
+      statsProgEl.textContent = `${percent}% (${displayMastered}/${displayTotal}) [Цель: ${rm.targetPassRate}%]`;
+    } else {
+      statsProgEl.textContent = `${percent}% (${displayMastered}/${displayTotal})`;
+    }
+  }
   const globalProgEl = document.getElementById('global-progress');
   if (globalProgEl) globalProgEl.style.width = `${percent}%`;
 }
@@ -487,6 +577,16 @@ export async function loadQuestion(indexOrQuestion) {
       } catch (err) {
         console.warn(`Dynamic fetch failed for ${q.path}, loading fallback item.`, err);
       }
+    }
+
+    if (!parsedContent && (q.question || q.loadedQuestion)) {
+      parsedContent = {
+        question: q.loadedQuestion || q.question || '',
+        answer: q.loadedAnswer || q.answer || '',
+        code: q.code || '',
+        analogy: q.analogy || '',
+        keyPoints: q.keyPoints || ''
+      };
     }
 
     // Match with embedded static database

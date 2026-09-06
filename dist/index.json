@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "total": 706,
+  "total": 716,
   "questions": [
     {
       "id": "ai-001",
@@ -2571,6 +2571,26 @@
       ]
     },
     {
+      "id": "collections-051",
+      "path": "questions/collections/collections-051.md",
+      "topic": "Collections",
+      "difficulty": "Middle",
+      "format": "Code Review",
+      "title": "equals and hashCode Contract with Mutable Keys in HashSet",
+      "time": "8 min",
+      "frequency": "High",
+      "pattern": "",
+      "time_complexity": "",
+      "space_complexity": "",
+      "leetcode_id": "",
+      "related": [],
+      "tags": [
+        "core-middle",
+        "collections",
+        "hashcode"
+      ]
+    },
+    {
       "id": "mcq-col-001",
       "path": "questions/collections/mcq-col-001.md",
       "topic": "Collections",
@@ -3499,6 +3519,48 @@
       "tags": []
     },
     {
+      "id": "databases-053",
+      "path": "questions/databases/databases-053.md",
+      "topic": "Databases",
+      "difficulty": "Middle",
+      "format": "Code Review",
+      "title": "External HTTP Calls inside @Transactional: HikariCP Pool Starvation",
+      "time": "10 min",
+      "frequency": "High",
+      "pattern": "",
+      "time_complexity": "",
+      "space_complexity": "",
+      "leetcode_id": "",
+      "related": [],
+      "tags": [
+        "verdict-review",
+        "databases",
+        "transactions",
+        "spring"
+      ]
+    },
+    {
+      "id": "databases-054",
+      "path": "questions/databases/databases-054.md",
+      "topic": "Databases",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Optimistic vs Pessimistic Locking in JPA and Hibernate",
+      "time": "8 min",
+      "frequency": "High",
+      "pattern": "",
+      "time_complexity": "",
+      "space_complexity": "",
+      "leetcode_id": "",
+      "related": [],
+      "tags": [
+        "core-middle",
+        "databases",
+        "jpa",
+        "locking"
+      ]
+    },
+    {
       "id": "mcq-db-001",
       "path": "questions/databases/mcq-db-001.md",
       "topic": "Databases",
@@ -4300,6 +4362,26 @@
       "related": [],
       "tags": [
         "general"
+      ]
+    },
+    {
+      "id": "general-050",
+      "path": "questions/general/general-050.md",
+      "topic": "General",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Generics and Generic Response Wrapper `Resource<T>`",
+      "time": "8 min",
+      "frequency": "High",
+      "pattern": "",
+      "time_complexity": "",
+      "space_complexity": "",
+      "leetcode_id": "",
+      "related": [],
+      "tags": [
+        "verdict-review",
+        "generics",
+        "core"
       ]
     },
     {
@@ -6134,6 +6216,26 @@
         "operations",
         "debugging",
         "troubleshooting"
+      ]
+    },
+    {
+      "id": "kafka-021",
+      "path": "questions/messaging/kafka-021.md",
+      "topic": "Kafka & Messaging",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Kafka Offsets, Consumer Groups, and Delivery Semantics",
+      "time": "10 min",
+      "frequency": "High",
+      "pattern": "",
+      "time_complexity": "",
+      "space_complexity": "",
+      "leetcode_id": "",
+      "related": [],
+      "tags": [
+        "verdict-review",
+        "messaging",
+        "kafka"
       ]
     },
     {
@@ -8442,6 +8544,27 @@
       ]
     },
     {
+      "id": "oop-051",
+      "path": "questions/oop/oop-051.md",
+      "topic": "OOP",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "Static Utility Methods vs Spring Dependency Injection",
+      "time": "8 min",
+      "frequency": "High",
+      "pattern": "",
+      "time_complexity": "",
+      "space_complexity": "",
+      "leetcode_id": "",
+      "related": [],
+      "tags": [
+        "verdict-review",
+        "oop",
+        "spring",
+        "di"
+      ]
+    },
+    {
       "id": "patterns-001",
       "path": "questions/patterns/patterns-001.md",
       "topic": "Patterns",
@@ -10439,6 +10562,66 @@
       ]
     },
     {
+      "id": "spring-059",
+      "path": "questions/spring/spring-059.md",
+      "topic": "Spring",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "JWT Lifecycle: Generation, Stateless Validation, and Refresh Token Rotation",
+      "time": "10 min",
+      "frequency": "High",
+      "pattern": "",
+      "time_complexity": "",
+      "space_complexity": "",
+      "leetcode_id": "",
+      "related": [],
+      "tags": [
+        "verdict-review",
+        "security",
+        "jwt"
+      ]
+    },
+    {
+      "id": "spring-060",
+      "path": "questions/spring/spring-060.md",
+      "topic": "Spring",
+      "difficulty": "Middle",
+      "format": "Open Answer",
+      "title": "CORS Configuration in Spring Security: Preflight OPTIONS and Filter Order",
+      "time": "8 min",
+      "frequency": "High",
+      "pattern": "",
+      "time_complexity": "",
+      "space_complexity": "",
+      "leetcode_id": "",
+      "related": [],
+      "tags": [
+        "verdict-review",
+        "security",
+        "cors"
+      ]
+    },
+    {
+      "id": "spring-061",
+      "path": "questions/spring/spring-061.md",
+      "topic": "Spring",
+      "difficulty": "Middle",
+      "format": "Code Review",
+      "title": "Code Review: Request DTO Validation with @Valid and Global Exception Handler",
+      "time": "10 min",
+      "frequency": "High",
+      "pattern": "",
+      "time_complexity": "",
+      "space_complexity": "",
+      "leetcode_id": "",
+      "related": [],
+      "tags": [
+        "verdict-review",
+        "spring",
+        "validation"
+      ]
+    },
+    {
       "id": "mcq-stream-001",
       "path": "questions/stream/mcq-stream-001.md",
       "topic": "Stream API",
@@ -12418,6 +12601,26 @@
       "related": [],
       "tags": [
         "system-design"
+      ]
+    },
+    {
+      "id": "system-design-059",
+      "path": "questions/system-design/system-design-059.md",
+      "topic": "System Design",
+      "difficulty": "Middle",
+      "format": "System Design",
+      "title": "Transactional Outbox Pattern in Distributed Microservices",
+      "time": "10 min",
+      "frequency": "High",
+      "pattern": "",
+      "time_complexity": "",
+      "space_complexity": "",
+      "leetcode_id": "",
+      "related": [],
+      "tags": [
+        "core-middle",
+        "system-design",
+        "messaging"
       ]
     },
     {

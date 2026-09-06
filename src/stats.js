@@ -185,12 +185,14 @@ export function updateStatsDashboard() {
 }
 
 export function exportProgress() {
+  const customQuestions = JSON.parse(localStorage.getItem('java_trainer_custom_questions') || '[]');
   const backup = {
     version: "1.0",
     exportDate: new Date().toISOString(),
     masteredIds: state.masteredIds || [],
     flaggedIds: state.flaggedIds || { "Favorites": [] },
     srData: state.srData || {},
+    customQuestions: customQuestions,
     xp: (state.masteredIds ? state.masteredIds.length : 0) * 10
   };
   
@@ -223,6 +225,14 @@ export function importProgress(jsonString) {
     }
     if (data.srData && typeof data.srData === 'object') {
       state.srData = data.srData;
+    }
+    if (Array.isArray(data.customQuestions)) {
+      localStorage.setItem('java_trainer_custom_questions', JSON.stringify(data.customQuestions));
+      data.customQuestions.forEach(cq => {
+        if (!state.questionsList.some(q => q.id === cq.id)) {
+          state.questionsList.push(cq);
+        }
+      });
     }
     
     localStorage.setItem('java_trainer_mastered', JSON.stringify(state.masteredIds));

@@ -133,6 +133,11 @@
           <span class="hidden xl:inline">Stats</span>
         </button>
 
+        <button id="btn-backup-modal" aria-label="Backup and Import" title="Резервная копия прогресса и импорт вопросов" class="flex items-center space-x-1 sm:space-x-1.5 border border-mist-50 dark:border-slate-800 hover:border-amber-500 hover:text-amber-600 px-2 sm:px-3 py-1.5 rounded-[10px] text-xs font-medium whitespace-nowrap transition-all text-slate-600 dark:text-slate-300 bg-white dark:bg-panel-900 shadow-xs">
+          <i aria-hidden="true" class="fa-solid fa-cloud-arrow-down text-amber-500"></i>
+          <span class="hidden sm:inline">Бэкап</span>
+        </button>
+
         <button id="btn-platform-guide" aria-label="Platform Guide" title="Гид по платформе и подсказки (Onboarding Guide)" class="flex items-center space-x-1 sm:space-x-1.5 border border-mist-50 dark:border-slate-800 hover:border-roast-500 hover:text-roast-500 px-2 sm:px-3 py-1.5 rounded-[10px] text-xs font-medium whitespace-nowrap transition-all text-slate-600 dark:text-slate-300 bg-white dark:bg-panel-900 shadow-xs">
           <i aria-hidden="true" class="fa-solid fa-compass text-cobalt-core"></i>
           <span class="hidden sm:inline">Гид</span>
@@ -193,6 +198,7 @@
                  <label for="roadmap-filter" class="text-[13px] font-medium text-slate-500 dark:text-slate-400">Learning Tracks (Roadmaps)</label>
                  <select id="roadmap-filter" class="w-full bg-white dark:bg-panel-900 text-slate-800 dark:text-slate-200 border border-mist-50 dark:border-slate-800 rounded-[10px] px-3 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-roast-500 transition-colors">
                      <option value="none">--- Select a Learning Track ---</option>
+                      <option value="transition">🚀 Переход в Java: 6–8 недель (Target ~160)</option>
                      <option value="junior">Junior Express</option>
                      <option value="middle">Middle Spring & Microservices</option>
                      <option value="senior">Senior Architect Track</option>
@@ -1236,32 +1242,49 @@
           </div>
         </div>
 
-        <!-- 7-Day Interview Prep Timeline -->
-        <div class="space-y-3">
-          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-900 dark:text-white flex items-center gap-1.5">
-            <i class="fa-solid fa-calendar-check text-cobalt-core"></i> Рекомендуемый 7-дневный спринт подготовки
-          </h4>
-          <div class="space-y-2 text-xs border-l-2 border-slate-200 dark:border-slate-700 pl-3">
-            <div>
-              <span class="font-bold text-slate-900 dark:text-white">День 1–2: Core Java & Collections</span>
-              <p class="text-slate-500 dark:text-slate-400">HashMap под капотом, ConcurrentHashMap, Generics, Stream API и Exceptions.</p>
+        <!-- Preparation Timelines: 6-8 Weeks vs 7-Day -->
+        <div class="space-y-4">
+          <!-- 6-8 Weeks Transition Track -->
+          <div class="p-3.5 rounded-[10px] bg-paper-50 dark:bg-panel-800/60 border-l-4 border-roast-500 border border-slate-200 dark:border-slate-800 space-y-2">
+            <div class="flex items-center justify-between">
+              <h4 class="text-xs font-bold uppercase tracking-wider text-roast-500 flex items-center gap-1.5">
+                <i class="fa-solid fa-road"></i> Трек «Переход в Java (6–8 недель)» — свитчеры и Анастасия
+              </h4>
+              <span class="text-[10px] bg-roast-500/10 text-roast-500 px-2 py-0.5 rounded-[5px] font-bold">Цель: ~160 вопросов</span>
             </div>
-            <div>
-              <span class="font-bold text-slate-900 dark:text-white">День 3–4: Concurrency & JVM Internals</span>
-              <p class="text-slate-500 dark:text-slate-400">Java Memory Model, volatile, synchronized, GC (G1/ZGC), ClassLoaders и Virtual Threads Java 21.</p>
+            <p class="text-[11px] text-slate-600 dark:text-slate-400">
+              Поэтапный переход из другого языка (Haxe/JS/C#). Вопросы выстроены в строгой последовательности с критерием допуска <strong>≥ 80% Mastery</strong>.
+            </p>
+            <div class="space-y-2 text-xs border-l-2 border-roast-500/40 pl-3">
+              <div>
+                <span class="font-bold text-slate-900 dark:text-white">Недели 1–2: Core Java & Collections (77 вопр.)</span>
+                <p class="text-slate-500 dark:text-slate-400">Метод Фейнмана, неверный ответ → в Review. Параллельно фиксы пет-проектов (Generics, equals/hashCode контракт).</p>
+              </div>
+              <div>
+                <span class="font-bold text-slate-900 dark:text-white">Неделя 3: Spring Ecosystem & Databases (29 вопр.)</span>
+                <p class="text-slate-500 dark:text-slate-400">Bean Lifecycle, @Transactional (без внешних HTTP-вызовов!), Spring Security & JWT, CORS, @Valid, N+1 и индексы.</p>
+              </div>
+              <div>
+                <span class="font-bold text-slate-900 dark:text-white">Неделя 4: Concurrency & JVM Essentials (21 вопр.)</span>
+                <p class="text-slate-500 dark:text-slate-400">База: JMM, volatile/synchronized. GC и classloaders концептуально. Virtual Threads (тренд Java 21).</p>
+              </div>
+              <div>
+                <span class="font-bold text-slate-900 dark:text-white">Неделя 5: System Design & Messaging (35 вопр.)</span>
+                <p class="text-slate-500 dark:text-slate-400">Kafka offsets, consumer groups, delivery semantics, Outbox Pattern, кеширование, CAP. Одновременно старт откликов.</p>
+              </div>
+              <div>
+                <span class="font-bold text-slate-900 dark:text-white">Недели 6–7: Полировка + 2–3 полных мока вслух с таймером</span>
+                <p class="text-slate-500 dark:text-slate-400">Ответы только вслух. Допуск к собеседованиям открывается при достижении 80% Mastery по треку.</p>
+              </div>
             </div>
-            <div>
-              <span class="font-bold text-slate-900 dark:text-white">День 5: Spring Ecosystem & Databases</span>
-              <p class="text-slate-500 dark:text-slate-400">Bean Lifecycle, Spring Security, @Transactional, Hibernate N+1, B-Tree индексы и ACID.</p>
-            </div>
-            <div>
-              <span class="font-bold text-slate-900 dark:text-white">День 6: System Design & Messaging</span>
-              <p class="text-slate-500 dark:text-slate-400">Партиционирование Kafka, Outbox Pattern, Caching (Redis), CAP-теорема и интерактивный холст.</p>
-            </div>
-            <div>
-              <span class="font-bold text-slate-900 dark:text-white">День 7: Симуляция собеседования (Blitz Mock)</span>
-              <p class="text-slate-500 dark:text-slate-400">Прохождение 5-10 вопросов на таймере со скоркардом от AI-экзаменатора.</p>
-            </div>
+          </div>
+
+          <!-- 7-Day Express Sprint -->
+          <div class="p-3.5 rounded-[10px] bg-paper-50 dark:bg-panel-800/40 border border-slate-200 dark:border-slate-800 space-y-2">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
+              <i class="fa-solid fa-bolt text-amber-500"></i> Экспресс-спринт 7 дней (для действующих Java Middle)
+            </h4>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400">Экспресс-освежение перед интервью через неделю (Core → Concurrency → Spring → Kafka → Мок).</p>
           </div>
         </div>
       </div>
@@ -1274,6 +1297,76 @@
       </div>
     </div>
   </dialog>
+
+  <!-- Backup & Custom Questions Modal Dialog -->
+  <dialog id="backup-modal" class="modal rounded-[10px] p-0 backdrop:bg-black/60 backdrop:backdrop-blur-sm max-w-xl w-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-panel-900 text-slate-900 dark:text-slate-100 shadow-2xl overflow-hidden m-auto">
+    <div class="flex flex-col max-h-[85vh]">
+      <!-- Header -->
+      <div class="p-4 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between bg-slate-50/50 dark:bg-panel-800/40">
+        <div class="flex items-center space-x-2.5">
+          <div class="w-8 h-8 rounded-[8px] bg-amber-500/10 text-amber-500 flex items-center justify-center">
+            <i class="fa-solid fa-cloud-arrow-down text-sm"></i>
+          </div>
+          <div>
+            <h3 class="font-bold text-sm text-slate-900 dark:text-white">Бэкап прогресса и импорт вопросов</h3>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400">Экспорт в JSON, восстановление прогресса и добавление кастомных вопросов</p>
+          </div>
+        </div>
+        <button id="close-backup-modal-btn" class="w-7 h-7 rounded-[7px] text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-panel-700/60 flex items-center justify-center transition-colors">
+          <i class="fa-solid fa-xmark text-xs"></i>
+        </button>
+      </div>
+
+      <!-- Body -->
+      <div class="p-5 overflow-y-auto space-y-4 text-xs leading-relaxed">
+        <!-- Section 1: Export Backup -->
+        <div class="p-4 rounded-[10px] bg-paper-50 dark:bg-panel-800/40 border border-slate-200 dark:border-slate-800 space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
+              <i class="fa-solid fa-download text-emerald-500"></i> Резервное копирование (Экспорт)
+            </span>
+            <button id="btn-export-backup" class="px-3 py-1.5 rounded-[7px] bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-xs flex items-center gap-1.5 transition-all shadow-xs cursor-pointer">
+              <i class="fa-solid fa-file-export text-[11px]"></i> Скачать бэкап (.json)
+            </button>
+          </div>
+          <p class="text-slate-500 dark:text-slate-400 text-[11px]">Выгрузит ваши изученные вопросы (Mastered), сохраненные (Saved), интервалы повторений Leitner SRS и XP в один файл.</p>
+        </div>
+
+        <!-- Section 2: Import Backup -->
+        <div class="p-4 rounded-[10px] bg-paper-50 dark:bg-panel-800/40 border border-slate-200 dark:border-slate-800 space-y-3">
+          <span class="font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
+            <i class="fa-solid fa-upload text-blue-500"></i> Восстановление прогресса (Импорт)
+          </span>
+          <div class="flex items-center gap-2">
+            <input type="file" id="backup-file-input" accept=".json" class="block w-full text-xs text-slate-500 file:mr-3 file:py-1.5 file:px-3 file:rounded-[7px] file:border-0 file:text-xs file:font-medium file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 dark:file:bg-blue-950 dark:file:text-blue-300 cursor-pointer">
+            <button id="btn-import-backup" class="px-3 py-1.5 rounded-[7px] bg-blue-600 hover:bg-blue-700 text-white font-medium text-xs flex items-center gap-1.5 transition-all shrink-0 shadow-xs cursor-pointer">
+              <i class="fa-solid fa-rotate-right text-[11px]"></i> Восстановить
+            </button>
+          </div>
+        </div>
+
+        <!-- Section 3: Custom Questions -->
+        <div class="p-4 rounded-[10px] bg-paper-50 dark:bg-panel-800/40 border border-slate-200 dark:border-slate-800 space-y-2.5">
+          <span class="font-bold text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
+            <i class="fa-solid fa-plus-circle text-amber-500"></i> Добавить свои вопросы (JSON)
+          </span>
+          <p class="text-slate-500 dark:text-slate-400 text-[11px]">Вставьте массив объектов с полями <code>id</code>, <code>title</code>, <code>topic</code>, <code>difficulty</code>, <code>question</code>, <code>answer</code>:</p>
+          <textarea id="custom-questions-input" rows="4" placeholder='[{"id":"custom-001","title":"Мой вопрос","topic":"Spring","difficulty":"Middle","question":"...","answer":"..."}]' class="w-full font-mono text-[11px] p-2.5 rounded-[7px] border border-slate-200 dark:border-slate-700 bg-white dark:bg-ink-950 text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-1 focus:ring-roast-500"></textarea>
+          <button id="btn-import-custom-questions" class="px-3 py-1.5 rounded-[7px] bg-amber-600 hover:bg-amber-700 text-white font-medium text-xs flex items-center gap-1.5 transition-all shadow-xs cursor-pointer">
+            <i class="fa-solid fa-file-import text-[11px]"></i> Добавить вопросы в базу
+          </button>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="p-3 border-t border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-panel-800/40 flex justify-end">
+        <button id="btn-close-backup-footer" class="px-4 py-1.5 rounded-[7px] bg-slate-200 dark:bg-panel-700 text-slate-700 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-panel-600 text-xs font-medium transition-all cursor-pointer">
+          Закрыть
+        </button>
+      </div>
+    </div>
+  </dialog>
+
 
  <!-- Main Script Dependencies -->
  <script type="module" src="/src/main.js"></script>
