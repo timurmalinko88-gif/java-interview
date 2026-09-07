@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:index": "python build.py",
     "embeddings": "node tools/build_embeddings.mjs",
     "preview": "vite preview",
     "test": "playwright test",
