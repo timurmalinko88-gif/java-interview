@@ -10,9 +10,9 @@ Welcome, AI Agent! This document is the single source of truth for the **Java In
 - **Live Site (GitHub Pages)**: `https://timurmalinko88-gif.github.io/java-interview/`
 - **Purpose**: High-performance Single Page Application (SPA), mock interview simulator, and knowledge hub for Java developer technical interviews (from Junior to Senior & Architect levels).
 - **Core Metrics**:
-  - **716 Questions** across **18 Domains** (Core Java, JVM, Multithreading, Spring Boot, System Design, Kafka, Java 21+, AI/LLM Integration, Algorithm Breakdown, etc.).
-  - **5 Curated Learning Tracks (Roadmaps)**: Transition to Java (6–8 Weeks, Target 162), Junior Express, Middle Spring & Microservices, Senior Architect, AI & Modern Java 21+.
-  - **Interactive Features**: Mock Interview Simulator (with timed evaluation & Scorecards), Spaced Repetition System (Leitner box), XP & 7-tier Rank Gamification, Backup/Export & Custom Questions Import, YouTube search integration, Interactive System Architecture SVG Canvas, Algorithm Breakdown module, and Dark/Light UI themes.
+  - **748 Questions** across **18 Domains** (Core Java, JVM, Multithreading, Spring Boot, System Design, Kafka, Java 21+, AI & LLM Integration, Algorithm Breakdown, etc.).
+  - **6 Curated Learning Tracks (Roadmaps)**: Transition to Java (6–8 Weeks, Target 162), Junior Express, Middle Spring & Microservices, Senior Architect, AI & Modern Java 21+, and LLM Integration with Java (8 Modules).
+  - **Interactive Features**: Mock Interview Simulator (with timed evaluation & Scorecards), Spaced Repetition System (Leitner box), XP & 7-tier Rank Gamification, Interactive Tool Calling Simulator, Reference Spring Boot 3 Assistant, Backup/Export & Custom Questions Import, YouTube search integration, Interactive System Architecture SVG Canvas, Algorithm Breakdown module, and Dark/Light UI themes.
 
 ---
 

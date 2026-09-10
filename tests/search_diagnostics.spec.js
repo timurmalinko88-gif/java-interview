@@ -20,8 +20,8 @@ test.describe('Search Functionality Diagnostics & Multi-Scenario Tests', () => {
     });
 
     await page.goto('./', { waitUntil: 'domcontentloaded' });
-    // Ensure questions are loaded
-    await expect(page.locator('#active-difficulty')).toBeVisible({ timeout: 15000 });
+    // Ensure questions are actually fetched and rendered
+    await expect(page.locator('#questions-container button').first()).toBeVisible({ timeout: 15000 });
   });
 
   test('Scenario 1: Exact English keyword search ("ArrayList")', async ({ page }) => {
@@ -158,7 +158,7 @@ test.describe('Search Functionality Diagnostics & Multi-Scenario Tests', () => {
 
     const restoredCount = parseInt(await page.locator('#question-list-count').textContent(), 10);
     console.log(`[Test] Restored count after clearing search: ${restoredCount}`);
-    expect(restoredCount).toBe(716);
+    expect(restoredCount).toBe(748);
     expect(errors.length).toBe(0);
   });
 
@@ -182,7 +182,7 @@ test.describe('Search Functionality Diagnostics & Multi-Scenario Tests', () => {
     await page.waitForTimeout(400);
 
     const resetCount = parseInt(await page.locator('#question-list-count').textContent(), 10);
-    expect(resetCount).toBe(716);
+    expect(resetCount).toBe(748);
     expect(errors.length).toBe(0);
   });
 
@@ -212,16 +212,13 @@ test.describe('Search Functionality Diagnostics & Multi-Scenario Tests', () => {
     await page.evaluate(() => {
       window.location.hash = '#q=jvm-011';
     });
-    await page.waitForTimeout(600);
 
     const relatedChip = page.locator('.related-question-chip').first();
-    await expect(relatedChip).toBeVisible();
+    await expect(relatedChip).toBeVisible({ timeout: 10000 });
 
     const chipText = (await relatedChip.textContent()).trim();
     await relatedChip.click();
-    await page.waitForTimeout(500);
-
-    await expect(page.locator('#toast')).toBeVisible();
+    await expect(page.locator('#toast')).toBeVisible({ timeout: 5000 });
     expect(errors.length).toBe(0);
   });
 

@@ -13,6 +13,7 @@ import { initSysDesignView } from './sysdesign.js';
 import { initAIEngine, evaluateCandidateAnswer, evaluateCandidateAnswerInstant, explainWithFeynmanMethod, isWebGPUSupported } from './aiInterviewer.js';
 import { SpeechRecognizer } from './speechRecognition.js';
 import { initOnboarding, startTour } from './onboarding.js';
+import { initLlmTrackView } from './llmTrack.js';
 
 // Auto-sync UI when state changes
 onStateChange(() => {
@@ -45,6 +46,13 @@ document.addEventListener('DOMContentLoaded', () => {
   if (sysdesignTabBtn) {
     sysdesignTabBtn.addEventListener('click', () => switchView('sysdesign'));
   }
+  const llmTabBtn = document.getElementById('llm-tab-btn');
+  if (llmTabBtn) {
+    llmTabBtn.addEventListener('click', () => switchView('llm'));
+  }
+
+  // Initialize LLM Integration & Google Antigravity Track View
+  initLlmTrackView();
 
   // Load and initialize core engine
   fetchQuestions();

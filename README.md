@@ -4,7 +4,7 @@
 **The Ultimate Software 3.0 Platform for Acing Java Engineering Interviews**
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Questions-706-brightgreen.svg?style=for-the-badge&logo=java" alt="Total Questions">
+  <img src="https://img.shields.io/badge/Questions-748-brightgreen.svg?style=for-the-badge&logo=java" alt="Total Questions">
   <img src="https://img.shields.io/badge/Domains-18-blue.svg?style=for-the-badge&logo=codeforces" alt="Total Topics">
   <img src="https://img.shields.io/badge/AI_Interviewer-WebGPU_WebLLM-purple.svg?style=for-the-badge&logo=openai" alt="In-Browser WebGPU AI Interviewer">
   <img src="https://img.shields.io/badge/Search-Client--Side_Vector-orange.svg?style=for-the-badge&logo=algolia" alt="Client-Side Vector Search">
@@ -33,7 +33,7 @@ An interactive, hyper-optimized Single Page Web Application (SPA), mock intervie
 
 | 🧠 **In-Browser AI Examiner** | 🔍 **Client-Side RAG Search** |
 | :--- | :--- |
-| Real-time Web Speech dictation with quantized LLMs (`Qwen2.5-Coder` / `Llama-3.2`) running via WebGPU directly in your browser. Complete with ground-truth scorecard evaluation. | Instant $< 0.5$ ms cosine similarity search across 706 questions via `all-MiniLM-L6-v2` and Web Workers. No backend required. |
+| Real-time Web Speech dictation with quantized LLMs (`Qwen2.5-Coder` / `Llama-3.2`) running via WebGPU directly in your browser. Complete with ground-truth scorecard evaluation. | Instant $< 0.5$ ms cosine similarity search across 748 questions via `all-MiniLM-L6-v2` and Web Workers. No backend required. |
 
 | 🏗️ **Interactive Architecture Flow** | 🧮 **Algorithm Breakdown Engine** |
 | :--- | :--- |
@@ -43,9 +43,10 @@ An interactive, hyper-optimized Single Page Web Application (SPA), mock intervie
 
 ## 🚀 Core Breakthrough Features
 
-- 🧠 **Zero-Server Semantic Vector Search (Client-Side RAG)**: On-the-fly cosine similarity via `all-MiniLM-L6-v2` & Web Workers ($< 0.5$ ms search across 706 questions).
+- 🧠 **Zero-Server Semantic Vector Search (Client-Side RAG)**: On-the-fly cosine similarity via `all-MiniLM-L6-v2` & Web Workers ($< 0.5$ ms search across 748 questions).
 - 🎙️ **In-Browser WebLLM AI Examiner**: WebGPU hardware acceleration running quantized LLMs (`Qwen2.5-Coder` / `Llama-3.2`) directly in the candidate's browser with real-time Web Speech dictation and ground-truth scorecard evaluation.
-- 🗺️ **4 Curated Roadmaps & Adaptive Diagnostic Engine**: Junior Express, Middle Spring, Senior Architect, AI & Modern Java 21+.
+- 🤖 **LLM Integration Track & Spring Boot Support Assistant**: Dedicated 8-module curriculum, in-browser zero-server tool calling simulator, and full reference backend (`projects/java-llm-support-assistant`) with server-side RBAC, error taxonomy, WireMock tests, and 15 eval benchmarks.
+- 🗺️ **5 Curated Roadmaps & Adaptive Diagnostic Engine**: Junior Express, Middle Spring, Senior Architect, AI & Modern Java 21+, LLM Integration.
 - 🏗️ **Interactive System Architecture SVG Flow Simulator**: Visual data flow across microservices layers with production code snippets.
 - 🧮 **Algorithm Breakdown Engine**: Step-by-step interactive breakdowns for classic sorting, DP, and graphs.
 - ⚡ **Spaced Repetition (SRS Leitner Box) & 7-Tier Rank Gamification**: Optimize your memory retention and track your progress from *Junior Trainee* to *Java Architect*.

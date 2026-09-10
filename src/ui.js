@@ -92,16 +92,18 @@ export function buildSidebarList() {
   const stageByTopic = {};
   if (rm && rm.isOrdered && rm.stages) {
     rm.stages.forEach(s => {
-      s.topics.forEach(t => {
-        stageByTopic[t] = s;
-      });
+      if (s.topics) {
+        s.topics.forEach(t => {
+          stageByTopic[t] = s;
+        });
+      }
     });
   }
 
   state.filteredQuestions.forEach((q, idx) => {
     // Insert stage header if stage transitions in an ordered roadmap
     if (rm && rm.isOrdered && rm.stages) {
-      const qStage = stageByTopic[q.topic];
+      const qStage = rm.stages.find(s => s.tag ? (q.tags || []).includes(s.tag) : (s.topics && s.topics.includes(q.topic))) || stageByTopic[q.topic];
       if (qStage && qStage.id !== currentStageId) {
         currentStageId = qStage.id;
         const divider = document.createElement('div');
@@ -194,17 +196,25 @@ export function triggerFilterAction() {
     if (rm.isOrdered && rm.stages) {
       const stageTopicOrder = {};
       rm.stages.forEach((stage, sIdx) => {
-        stage.topics.forEach(t => {
-          stageTopicOrder[t] = sIdx;
-        });
+        if (stage.topics) {
+          stage.topics.forEach(t => {
+            stageTopicOrder[t] = sIdx;
+          });
+        }
       });
       baseQuestions.sort((a, b) => {
-        const orderA = stageTopicOrder[a.topic] ?? 999;
-        const orderB = stageTopicOrder[b.topic] ?? 999;
+        const getStageIdx = (item) => {
+          const idx = rm.stages.findIndex(s => s.tag ? (item.tags || []).includes(s.tag) : (s.topics && s.topics.includes(item.topic)));
+          if (idx !== -1) return idx;
+          return stageTopicOrder[item.topic] ?? 999;
+        };
+        const orderA = getStageIdx(a);
+        const orderB = getStageIdx(b);
         if (orderA !== orderB) return orderA - orderB;
         const aVerdict = (a.tags || []).includes('verdict-review') ? -1 : 0;
         const bVerdict = (b.tags || []).includes('verdict-review') ? -1 : 0;
-        return aVerdict - bVerdict;
+        if (aVerdict !== bVerdict) return aVerdict - bVerdict;
+        return (a.id || '').localeCompare(b.id || '');
       });
     }
 

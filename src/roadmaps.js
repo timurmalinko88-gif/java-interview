@@ -83,5 +83,24 @@ export const ROADMAPS = {
       difficulties: ["Middle", "Senior"],
       tags: ["ai", "llm", "spring-ai", "java21", "virtual-threads"]
     }
+  },
+  llmTrack: {
+    name: "LLM Integration with Java (7 модулей + проект)",
+    isOrdered: true,
+    stages: [
+      { id: "mod1", title: "Модуль 1: Основы LLM API", tag: "module-1" },
+      { id: "mod2", title: "Модуль 2: Интеграция со Spring Boot", tag: "module-2" },
+      { id: "mod3", title: "Модуль 3: Tool / Function Calling", tag: "module-3" },
+      { id: "mod4", title: "Модуль 4: Безопасность и надёжность", tag: "module-4" },
+      { id: "mod5", title: "Модуль 5: Контекст и prompts", tag: "module-5" },
+      { id: "mod6", title: "Модуль 6: Тестирование и evaluations", tag: "module-6" },
+      { id: "mod7", title: "Модуль 7: Production basics", tag: "module-7" },
+      { id: "mod8", title: "Модуль 8: Google Antigravity & Agentic Dev", tag: "module-antigravity" }
+    ],
+    filter: (q) => {
+      const tags = q.tags || [];
+      return tags.includes('llm-track');
+    }
   }
 };
+

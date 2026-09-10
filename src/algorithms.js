@@ -51,10 +51,12 @@ export function switchView(viewName) {
     const algoView = document.getElementById('algo-view');
     const questionsView = document.getElementById('questions-view');
     const sysdesignView = document.getElementById('sysdesign-view');
+    const llmView = document.getElementById('llm-view');
 
     const algoTabBtn = document.getElementById('algo-tab-btn');
     const questionsTabBtn = document.getElementById('questions-tab-btn');
     const sysdesignTabBtn = document.getElementById('sysdesign-tab-btn');
+    const llmTabBtn = document.getElementById('llm-tab-btn');
 
     if (!algoView || !questionsView || !sysdesignView) return;
 
@@ -65,9 +67,13 @@ export function switchView(viewName) {
     algoView.style.display = 'none';
     sysdesignView.classList.add('hidden');
     sysdesignView.style.display = 'none';
+    if (llmView) {
+        llmView.classList.add('hidden');
+        llmView.style.display = 'none';
+    }
 
     // Reset all tab buttons
-    [questionsTabBtn, algoTabBtn, sysdesignTabBtn].forEach(btn => {
+    [questionsTabBtn, algoTabBtn, sysdesignTabBtn, llmTabBtn].forEach(btn => {
         if (btn) {
             btn.classList.remove('border-roast-500', 'text-roast-500', 'bg-roast-500/10');
             btn.classList.add('border-transparent', 'text-slate-400');
@@ -88,6 +94,15 @@ export function switchView(viewName) {
         if (sysdesignTabBtn) {
             sysdesignTabBtn.classList.add('border-roast-500', 'text-roast-500', 'bg-roast-500/10');
             sysdesignTabBtn.classList.remove('border-transparent', 'text-slate-400');
+        }
+    } else if (viewName === 'llm') {
+        if (llmView) {
+            llmView.classList.remove('hidden');
+            llmView.style.display = 'block';
+        }
+        if (llmTabBtn) {
+            llmTabBtn.classList.add('border-roast-500', 'text-roast-500', 'bg-roast-500/10');
+            llmTabBtn.classList.remove('border-transparent', 'text-slate-400');
         }
     } else {
         questionsView.classList.remove('hidden');
