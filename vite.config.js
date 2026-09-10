@@ -22,6 +22,16 @@ export default defineConfig({
       },
       workbox: {
         maximumFileSizeToCacheInBytes: 15 * 1024 * 1024,
+        runtimeCaching: [
+          {
+            urlPattern: /index\.json/,
+            handler: 'NetworkFirst',
+            options: {
+              cacheName: 'catalog-cache',
+              networkTimeoutSeconds: 3
+            }
+          }
+        ]
       },
       manifest: {
         name: 'Java Interview Prep Hub',

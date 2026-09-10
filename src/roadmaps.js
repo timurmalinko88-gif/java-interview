@@ -87,6 +87,7 @@ export const ROADMAPS = {
   llmTrack: {
     name: "LLM Integration with Java (7 модулей + проект)",
     isOrdered: true,
+    targetPassRate: 80,
     stages: [
       { id: "mod1", title: "Модуль 1: Основы LLM API", tag: "module-1" },
       { id: "mod2", title: "Модуль 2: Интеграция со Spring Boot", tag: "module-2" },
@@ -99,8 +100,10 @@ export const ROADMAPS = {
     ],
     filter: (q) => {
       const tags = q.tags || [];
-      return tags.includes('llm-track');
+      return tags.includes('llm-track') || (q.id && q.id.startsWith('llm-'));
     }
   }
 };
+
+ROADMAPS.llm = ROADMAPS.llmTrack;
 

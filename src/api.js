@@ -3,8 +3,26 @@ import { buildSidebarList, loadQuestion, updateStatsUI } from './ui.js';
 
 export async function fetchQuestions() {
     try {
-        // Try fetching index.json dynamically.
-        const response = await fetch('index.json');
+        const base = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.BASE_URL)
+            ? import.meta.env.BASE_URL
+            : './';
+        const normalizedBase = base.endsWith('/') ? base : `${base}/`;
+        const cacheBuster = `v=${Date.now()}`;
+        
+        let response = null;
+        try {
+            response = await fetch(`${normalizedBase}index.json?${cacheBuster}`, {
+                cache: 'no-store',
+                headers: { 'Cache-Control': 'no-cache, no-store, must-revalidate', 'Pragma': 'no-cache' }
+            });
+        } catch (e) {
+            // Network fallback to relative fetch
+            response = await fetch(`index.json?${cacheBuster}`, { cache: 'no-store' });
+        }
+
+        if (!response || !response.ok) {
+            response = await fetch('index.json');
+        }
         if (!response.ok) throw new Error("Index file not found");
         const data = await response.json();
         
@@ -53,8 +71,22 @@ export async function fetchQuestions() {
 }
 
 export async function fetchQuestionContent(path) {
-    const response = await fetch(path);
-    if (!response.ok) {
+    const base = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.BASE_URL)
+        ? import.meta.env.BASE_URL
+        : './';
+    const normalizedBase = base.endsWith('/') ? base : `${base}/`;
+    const cleanPath = path.startsWith('/') ? path.slice(1) : path;
+
+    let response = null;
+    try {
+        response = await fetch(`${normalizedBase}${cleanPath}`);
+    } catch (e) {
+        response = await fetch(cleanPath);
+    }
+    if (!response || !response.ok) {
+        response = await fetch(cleanPath);
+    }
+    if (!response || !response.ok) {
         throw new Error(`Failed to fetch question at ${path}`);
     }
     return await response.text();

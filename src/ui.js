@@ -31,11 +31,7 @@ export function buildSidebarList() {
   const countLabel = document.getElementById('question-list-count');
   container.innerHTML = '';
   countLabel.textContent = state.filteredQuestions.length;
-  if (state.filteredQuestions.length === 0) {
-    renderNoQuestionsFoundState();
-    return;
-  }
-  
+
   // Calculate micro progress
   const totalFiltered = state.filteredQuestions.length;
   let masteredFiltered = 0;
@@ -61,13 +57,14 @@ export function buildSidebarList() {
       const percentEl = document.getElementById('topic-micro-percent');
       const barEl = document.getElementById('topic-micro-bar');
       
-      if (rm && rm.targetPassRate) {
-        const isPassed = microPercent >= rm.targetPassRate;
+      if (rm) {
+        const passRate = rm.targetPassRate || 80;
+        const isPassed = microPercent >= passRate;
         if (titleEl) {
           titleEl.innerHTML = `<span class="flex items-center gap-1 font-bold text-slate-700 dark:text-slate-200"><i class="fa-solid fa-bullseye text-roast-500"></i> ${rm.name}</span>`;
         }
         if (percentEl) {
-          percentEl.innerHTML = `<span class="${isPassed ? 'text-pine-500 font-bold' : 'text-slate-600 dark:text-slate-400'}">${masteredFiltered} / ${totalFiltered} (${microPercent}%) • Допуск: ${rm.targetPassRate}%</span>`;
+          percentEl.innerHTML = `<span class="${isPassed ? 'text-pine-500 font-bold' : 'text-slate-600 dark:text-slate-400'}">${masteredFiltered} / ${totalFiltered} (${microPercent}%) • Допуск: ${passRate}%</span>`;
         }
         if (barEl) {
           barEl.style.width = `${microPercent}%`;
@@ -83,6 +80,11 @@ export function buildSidebarList() {
           barEl.className = 'bg-roast-500 h-full transition-all duration-500';
         }
       }
+  }
+
+  if (state.filteredQuestions.length === 0) {
+    renderNoQuestionsFoundState();
+    return;
   }
   
   const fragment = document.createDocumentFragment();
@@ -580,7 +582,20 @@ export async function loadQuestion(indexOrQuestion) {
     let parsedContent = null;
     if (q.path) {
       try {
-        const response = await fetch(q.path);
+        const base = (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.BASE_URL)
+          ? import.meta.env.BASE_URL
+          : './';
+        const normalizedBase = base.endsWith('/') ? base : `${base}/`;
+        const cleanPath = q.path.startsWith('/') ? q.path.slice(1) : q.path;
+        let response;
+        try {
+          response = await fetch(`${normalizedBase}${cleanPath}`);
+        } catch (e) {
+          response = await fetch(q.path);
+        }
+        if (!response || !response.ok) {
+          response = await fetch(q.path);
+        }
         if (!response.ok) throw new Error("File fetch failed");
         const markdownText = await response.text();
         parsedContent = parseMarkdown(markdownText);
