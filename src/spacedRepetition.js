@@ -10,7 +10,9 @@ export function evaluateSR(questionId, grade) {
     data = {
       interval: 0,
       repetition: 0,
+      repetitions: 0,
       efactor: 2.5,
+      easeFactor: 2.5,
       nextReviewDate: new Date().toISOString()
     };
   }
@@ -29,8 +31,10 @@ export function evaluateSR(questionId, grade) {
     data.interval = 1;
   }
 
+  data.repetitions = data.repetition;
   data.efactor = data.efactor + (0.1 - (3 - grade) * (0.08 + (3 - grade) * 0.02));
   if (data.efactor < 1.3) data.efactor = 1.3;
+  data.easeFactor = data.efactor;
 
   const now = new Date();
   now.setDate(now.getDate() + data.interval);
@@ -63,6 +67,15 @@ export function evaluateSR(questionId, grade) {
 }
 
 export function isDueForReview(questionId) {
+  try {
+    const stored = localStorage.getItem('java_trainer_sr');
+    if (stored) {
+      const parsed = JSON.parse(stored);
+      if (parsed && typeof parsed === 'object') {
+        state.srData = parsed;
+      }
+    }
+  } catch (e) {}
   const data = state.srData[questionId];
   if (!data) return false;
   return new Date(data.nextReviewDate) <= new Date();

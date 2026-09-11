@@ -1,4 +1,4 @@
-import { state, savePersistence } from './state.js';
+import { state, savePersistence, loadPersistence } from './state.js';
 import { debounce, setDifficultyChipInactive, setDifficultyChipActive, playSound } from './utils.js';
 import {
   buildSidebarList,
@@ -255,6 +255,7 @@ export function initQuestionNavigation() {
     btn.addEventListener('click', () => {
       const status = btn.getAttribute('data-status');
       state.statusFilter = status;
+      loadPersistence();
       document.querySelectorAll('.status-chip').forEach((b) => {
         if (b === btn) {
           b.className =

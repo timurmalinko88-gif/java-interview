@@ -1,5 +1,5 @@
 import './style.css';
-import { onStateChange, state } from './state.js';
+import { onStateChange, state, loadPersistence } from './state.js';
 import { updateStatsUI } from './ui.js';
 import { updateStatsDashboard } from './stats.js';
 import { fetchQuestions } from './api.js';
@@ -30,6 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initSysDesignView();
   window.renderAlgoListGlobal = () => renderAlgoList({ state });
   window.switchViewGlobal = switchView;
+  window.state = state;
+  window.loadPersistence = loadPersistence;
 
   // View Tab Listeners
   const questionsTabBtn = document.getElementById('questions-tab-btn');
