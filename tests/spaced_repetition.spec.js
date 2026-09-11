@@ -56,8 +56,9 @@ test.describe('Spaced Repetition (Leitner Box) & Status Filters E2E Suite', () =
     const srData1 = JSON.parse(await page.evaluate(() => localStorage.getItem('java_trainer_sr')));
     const q1Entry = srData1[q1Id];
     expect(q1Entry.interval).toBe(1);
-    const efactor1 = q1Entry.easeFactor ?? q1Entry.efactor;
-    expect(efactor1).toBeLessThan(2.5);
+    expect(q1Entry.easeFactor).toBeDefined();
+    expect(q1Entry.easeFactor).toBeLessThan(2.5);
+    expect(q1Entry.repetitions).toBe(0);
 
     // 5. Auto-advance to next question
     await expect.poll(async () => {
@@ -89,10 +90,10 @@ test.describe('Spaced Repetition (Leitner Box) & Status Filters E2E Suite', () =
     const srData2 = JSON.parse(await page.evaluate(() => localStorage.getItem('java_trainer_sr')));
     const q2Entry = srData2[q2Id];
     expect(q2Entry.interval).toBe(1);
-    const efactor2 = q2Entry.easeFactor ?? q2Entry.efactor;
-    const repetitions2 = q2Entry.repetitions ?? q2Entry.repetition;
-    expect(efactor2).toBeGreaterThan(2.5);
-    expect(repetitions2).toBeGreaterThan(0);
+    expect(q2Entry.easeFactor).toBeDefined();
+    expect(q2Entry.easeFactor).toBeGreaterThan(2.5);
+    expect(q2Entry.repetitions).toBeDefined();
+    expect(q2Entry.repetitions).toBeGreaterThan(0);
 
     expect(errors.length).toBe(0);
   });
@@ -131,7 +132,8 @@ test.describe('Spaced Repetition (Leitner Box) & Status Filters E2E Suite', () =
     await expect(page.locator('#active-id')).toContainText(activeQId);
     await expect(page.locator('#questions-container button')).toHaveCount(1);
 
-    // 5. Set an item\'s nextReviewDate in java_trainer_sr to past timestamp (yesterday)
+    // 5. Set an item's nextReviewDate in java_trainer_sr to past timestamp (yesterday)
+    // Note: Do NOT mutate window.state.srData directly; verify loadPersistence loads from localStorage on chip click
     const pastTimestamp = new Date(Date.now() - 86400000).toISOString();
     await page.evaluate(({ id, pastDate }) => {
       let sr = {};
@@ -147,9 +149,6 @@ test.describe('Spaced Repetition (Leitner Box) & Status Filters E2E Suite', () =
         nextReviewDate: pastDate
       };
       localStorage.setItem('java_trainer_sr', JSON.stringify(sr));
-      if (window.state) {
-        window.state.srData = sr;
-      }
     }, { id: activeQId, pastDate: pastTimestamp });
 
     // 6. Click [data-status="due"] status chip, verify the due question appears in the list with Due badge
@@ -191,8 +190,8 @@ test.describe('Spaced Repetition (Leitner Box) & Status Filters E2E Suite', () =
     }).toBeTruthy();
 
     const srData1 = JSON.parse(await page.evaluate(() => localStorage.getItem('java_trainer_sr')));
-    const efactor1 = srData1[q1Id].easeFactor ?? srData1[q1Id].efactor;
-    expect(efactor1).toBeLessThan(2.5);
+    expect(srData1[q1Id].easeFactor).toBeDefined();
+    expect(srData1[q1Id].easeFactor).toBeLessThan(2.5);
 
     // Wait for auto-advance to next question
     await expect.poll(async () => {
@@ -215,6 +214,7 @@ test.describe('Spaced Repetition (Leitner Box) & Status Filters E2E Suite', () =
 
     const srData2 = JSON.parse(await page.evaluate(() => localStorage.getItem('java_trainer_sr')));
     expect(srData2[q2Id].interval).toBe(1);
+    expect(srData2[q2Id].repetitions).toBe(1);
 
     // Wait for auto-advance to next question
     await expect.poll(async () => {
@@ -236,8 +236,9 @@ test.describe('Spaced Repetition (Leitner Box) & Status Filters E2E Suite', () =
     }).toBeTruthy();
 
     const srData3 = JSON.parse(await page.evaluate(() => localStorage.getItem('java_trainer_sr')));
-    const efactor3 = srData3[q3Id].easeFactor ?? srData3[q3Id].efactor;
-    expect(efactor3).toBeGreaterThan(2.5);
+    expect(srData3[q3Id].easeFactor).toBeDefined();
+    expect(srData3[q3Id].easeFactor).toBeGreaterThan(2.5);
+    expect(srData3[q3Id].repetitions).toBeGreaterThan(0);
 
     expect(errors.length).toBe(0);
   });
@@ -245,42 +246,80 @@ test.describe('Spaced Repetition (Leitner Box) & Status Filters E2E Suite', () =
   test('4. Keyboard Shortcuts: "m" / "M" toggles mastered status, "f" / "F" toggles bookmark status', async ({ page }) => {
     const masteredBtn = page.locator('#mastered-btn');
     const flagBtn = page.locator('#flag-btn');
+    const activeQId = (await page.locator('#active-id').textContent()).replace('#', '').trim();
 
     // Initially neither is active
     await expect(masteredBtn).not.toHaveClass(/bg-pine-500\/10/);
     await expect(flagBtn).not.toHaveClass(/bg-roast-500\/10/);
 
-    // 1. Press 'm' -> marks as mastered
+    // 1. Press 'm' -> marks as mastered and saves to localStorage
     await page.keyboard.press('m');
     await expect(masteredBtn).toHaveClass(/bg-pine-500\/10/);
+    const mastered1 = JSON.parse(await page.evaluate(() => localStorage.getItem('java_trainer_mastered') || '[]'));
+    expect(mastered1).toContain(activeQId);
 
     // 2. Press 'm' again -> unmarks mastered
     await page.keyboard.press('m');
     await expect(masteredBtn).not.toHaveClass(/bg-pine-500\/10/);
+    const mastered2 = JSON.parse(await page.evaluate(() => localStorage.getItem('java_trainer_mastered') || '[]'));
+    expect(mastered2).not.toContain(activeQId);
 
     // 3. Press 'M' (uppercase) -> marks as mastered
     await page.keyboard.press('M');
     await expect(masteredBtn).toHaveClass(/bg-pine-500\/10/);
+    const mastered3 = JSON.parse(await page.evaluate(() => localStorage.getItem('java_trainer_mastered') || '[]'));
+    expect(mastered3).toContain(activeQId);
 
     // 4. Press 'M' (uppercase) again -> unmarks mastered
     await page.keyboard.press('M');
     await expect(masteredBtn).not.toHaveClass(/bg-pine-500\/10/);
+    const mastered4 = JSON.parse(await page.evaluate(() => localStorage.getItem('java_trainer_mastered') || '[]'));
+    expect(mastered4).not.toContain(activeQId);
 
-    // 5. Press 'f' -> bookmarks question
+    // 5. Press 'f' -> bookmarks question and saves to localStorage
     await page.keyboard.press('f');
     await expect(flagBtn).toHaveClass(/bg-roast-500\/10/);
+    const flagged1 = JSON.parse(await page.evaluate(() => localStorage.getItem('java_trainer_flagged') || '{}'));
+    expect(flagged1.Favorites).toContain(activeQId);
 
     // 6. Press 'f' again -> removes bookmark
     await page.keyboard.press('f');
     await expect(flagBtn).not.toHaveClass(/bg-roast-500\/10/);
+    const flagged2 = JSON.parse(await page.evaluate(() => localStorage.getItem('java_trainer_flagged') || '{}'));
+    expect(flagged2.Favorites).not.toContain(activeQId);
 
     // 7. Press 'F' (uppercase) -> bookmarks question
     await page.keyboard.press('F');
     await expect(flagBtn).toHaveClass(/bg-roast-500\/10/);
+    const flagged3 = JSON.parse(await page.evaluate(() => localStorage.getItem('java_trainer_flagged') || '{}'));
+    expect(flagged3.Favorites).toContain(activeQId);
 
     // 8. Press 'F' (uppercase) again -> removes bookmark
     await page.keyboard.press('F');
     await expect(flagBtn).not.toHaveClass(/bg-roast-500\/10/);
+    const flagged4 = JSON.parse(await page.evaluate(() => localStorage.getItem('java_trainer_flagged') || '{}'));
+    expect(flagged4.Favorites).not.toContain(activeQId);
+
+    expect(errors.length).toBe(0);
+  });
+
+  test('5. Keyboard Shortcuts edge case: Ignored when focus is inside text input', async ({ page }) => {
+    const searchInput = page.locator('#search-input');
+    await searchInput.focus();
+
+    // Type shortcut characters inside search input
+    await page.keyboard.type('123mf');
+
+    await expect(searchInput).toHaveValue('123mf');
+
+    // Verify mastered, flagged, and SR data were NOT triggered by input typing
+    const masteredBtn = page.locator('#mastered-btn');
+    const flagBtn = page.locator('#flag-btn');
+    await expect(masteredBtn).not.toHaveClass(/bg-pine-500\/10/);
+    await expect(flagBtn).not.toHaveClass(/bg-roast-500\/10/);
+
+    const srData = await page.evaluate(() => localStorage.getItem('java_trainer_sr'));
+    expect(srData === null || srData === '{}').toBe(true);
 
     expect(errors.length).toBe(0);
   });

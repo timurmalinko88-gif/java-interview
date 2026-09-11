@@ -67,18 +67,11 @@ export function evaluateSR(questionId, grade) {
 }
 
 export function isDueForReview(questionId) {
-  try {
-    const stored = localStorage.getItem('java_trainer_sr');
-    if (stored) {
-      const parsed = JSON.parse(stored);
-      if (parsed && typeof parsed === 'object') {
-        state.srData = parsed;
-      }
-    }
-  } catch (e) {}
   const data = state.srData[questionId];
-  if (!data) return false;
-  return new Date(data.nextReviewDate) <= new Date();
+  if (!data || !data.nextReviewDate) return false;
+  const reviewTime = new Date(data.nextReviewDate).getTime();
+  if (isNaN(reviewTime)) return false;
+  return reviewTime <= Date.now();
 }
 
 export function getSRStatus(questionId) {
