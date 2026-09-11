@@ -72,19 +72,31 @@ java-interview/
 ├── src/                        # Modular JavaScript source files
 │   ├── adaptive.js             # Diagnostic quiz & personalized roadmap modal logic
 │   ├── aiExaminerView.js       # AI Examiner & Feynman Mode controller
+│   ├── aiInterviewer.js        # AI Interviewer voice/chat controller
+│   ├── algorithms.js           # Algorithm Breakdown interactive module
 │   ├── api.js                  # Dynamic question content fetching helper
 │   ├── collections.js          # Helper utilities for question sorting & grouping
+│   ├── filterEngine.js         # Search ranking, topic/roadmap filtering & reset logic
 │   ├── hotkeys.js              # Keyboard shortcuts & navigation event listeners
+│   ├── llmTrack.js             # LLM Integration track module
 │   ├── main.js                 # App entry point & modular orchestrator
+│   ├── markdownParser.js       # Canonical question markdown parser (QA, code, analogy, key points)
 │   ├── mock.js                 # Mock interview simulator engine (timer, evaluation, scorecard)
 │   ├── modals.js               # Dialog modals (Stats, Shortcuts, Backup, Theme)
+│   ├── onboarding.js           # Interactive platform onboarding & guide
+│   ├── progress.js             # XP gamification, ranks, level-up animations & progress bars
 │   ├── questionNavigation.js   # Question cards navigation, filters & action listeners
 │   ├── roadmaps.js             # Learning track filtering logic
+│   ├── searchEngine.js         # Multi-token & RU/EN synonym smart search engine
+│   ├── semanticSearch.js       # Vector-based client semantic search controller
 │   ├── spacedRepetition.js     # Leitner box spaced repetition algorithm
+│   ├── speechRecognition.js    # Speech-to-text Web Speech API helper
 │   ├── state.js                # Global state store, LocalStorage sync, filtering
-│   ├── stats.js                # XP calculation, 7 rank tiers, statistics modal UI
+│   ├── stats.js                # Statistics dashboard modal UI & export/import
 │   ├── style.css               # Tailwind directives & glassmorphic custom CSS
-│   ├── ui.js                   # DOM rendering (sidebar, cards, toast, theme toggle)
+│   ├── sysdesign.js            # System Architecture SVG Canvas view
+│   ├── sysdesignData.js        # Architecture scenarios and SVG diagram definitions
+│   ├── ui.js                   # Core DOM rendering (sidebar, cards, toast, theme toggle)
 │   └── utils.js                # Debounce, formatting, string helpers
 ├── .github/
 │   └── workflows/
