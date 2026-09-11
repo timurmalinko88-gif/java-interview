@@ -8,6 +8,7 @@ import { filterAndRankQuestions, processQueryTokens, scoreQuestion } from './sea
 import { buildSidebarList, loadQuestion, renderNoQuestionsFoundState } from './ui.js';
 
 let activeSearchQuery = '';
+let currentFilterActionId = 0;
 
 /**
  * Filter actions triggered on inputs change.
@@ -15,6 +16,7 @@ let activeSearchQuery = '';
  * and parallel semantic search ranking.
  */
 export function triggerFilterAction() {
+  const thisActionId = ++currentFilterActionId;
   const searchInput = document.getElementById('search-input');
   const searchValue = searchInput ? searchInput.value.trim() : '';
   activeSearchQuery = searchValue;
@@ -46,6 +48,7 @@ export function triggerFilterAction() {
     }
 
     if (rm.isOrdered && rm.stages) {
+      baseQuestions = [...baseQuestions];
       const stageTopicOrder = {};
       rm.stages.forEach((stage, sIdx) => {
         if (stage.topics) {
@@ -107,7 +110,7 @@ export function triggerFilterAction() {
   }
 
   // Reset cursor if out of bounds
-  if (state.currentIndex >= state.filteredQuestions.length) {
+  if (state.currentIndex >= state.filteredQuestions.length || state.currentIndex < 0) {
     state.currentIndex = 0;
   }
 
@@ -138,7 +141,7 @@ export function triggerFilterAction() {
       .search(queryToSearch)
       .then((semanticResults) => {
         if (
-          activeSearchQuery !== queryToSearch ||
+          thisActionId !== currentFilterActionId ||
           !semanticResults ||
           semanticResults.length === 0
         )

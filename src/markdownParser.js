@@ -10,7 +10,10 @@ export function parseMarkdown(text) {
     analogy: '',
     keyPoints: ''
   };
-  const cleanText = text.replace(/^---[\s\S]*?---\s*/m, '').trim();
+  if (!text || typeof text !== 'string') return result;
+
+  const normalizedText = text.replace(/\r\n/g, '\n');
+  const cleanText = normalizedText.replace(/^---[\s\S]*?---\s*/m, '').trim();
   const parts = cleanText.split('---ANSWER---');
   result.question = parts[0] ? parts[0].trim() : '';
   let rawAnswer = parts[1] ? parts[1].trim() : '';

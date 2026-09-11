@@ -137,7 +137,10 @@ export function updateMicroProgressUI() {
   const microPercent = totalFiltered > 0 ? Math.round((masteredFiltered / totalFiltered) * 100) : 0;
   const topicMicroProgEl = document.getElementById('topic-micro-progress');
   const topicFilter = document.getElementById('topic-filter');
-  const selectedTopicName = topicFilter ? topicFilter.options[topicFilter.selectedIndex].text : 'All Topics';
+  const selectedTopicName =
+    topicFilter && topicFilter.selectedIndex >= 0 && topicFilter.options[topicFilter.selectedIndex]
+      ? topicFilter.options[topicFilter.selectedIndex].text
+      : 'All Topics';
   const roadmapFilter = document.getElementById('roadmap-filter');
   const roadmapValue = roadmapFilter ? roadmapFilter.value : 'none';
   const rm = roadmapValue !== 'none' ? ROADMAPS[roadmapValue] : null;

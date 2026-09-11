@@ -8,9 +8,15 @@ import { updateStatsUI, updateMicroProgressUI, showLevelUpAnimation, RANKS } fro
 import { triggerFilterAction, clearAllFilters } from './filterEngine.js';
 
 // Re-export decomposed modules for 100% backward compatibility
-export { parseMarkdown } from './markdownParser.js';
-export { updateStatsUI, updateMicroProgressUI, showLevelUpAnimation, RANKS } from './progress.js';
-export { triggerFilterAction, clearAllFilters } from './filterEngine.js';
+export {
+  parseMarkdown,
+  updateStatsUI,
+  updateMicroProgressUI,
+  showLevelUpAnimation,
+  RANKS,
+  triggerFilterAction,
+  clearAllFilters
+};
 
 // Update status badge when semantic search is initialized
 semanticSearch.onStatusChange((status, message) => {
