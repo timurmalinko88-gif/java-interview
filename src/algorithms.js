@@ -10,6 +10,29 @@ import { state } from './state.js';
 let currentPatternFilter = 'all';
 let currentDifficultyFilter = 'all';
 let currentSearchQuery = '';
+let currentActiveView = 'questions';
+
+/**
+ * Synchronizes pill buttons in #algo-pattern-filters with the active pattern filter
+ */
+export function syncPatternPills(filterVal) {
+    const patternFilterContainer = document.getElementById('algo-pattern-filters');
+    if (!patternFilterContainer) return;
+    patternFilterContainer.querySelectorAll('.algo-pill-btn').forEach(b => {
+        const isMatch = b.dataset.pattern === filterVal || (filterVal === 'all' && b.dataset.pattern === 'all');
+        if (isMatch) {
+            b.classList.remove('border-mist-50', 'dark:border-slate-800', 'text-slate-600', 'dark:text-slate-300', 'bg-white', 'dark:bg-panel-900');
+            b.classList.add('bg-roast-500', 'text-white', 'border-roast-500');
+            const badge = b.querySelector('.pill-badge');
+            if (badge) badge.className = 'pill-badge ml-1.5 px-1.5 py-0.5 rounded-[5px] bg-white/20 text-white text-[10px] font-mono font-bold';
+        } else {
+            b.classList.remove('bg-roast-500', 'text-white', 'border-roast-500');
+            b.classList.add('border-mist-50', 'dark:border-slate-800', 'text-slate-600', 'dark:text-slate-300', 'bg-white', 'dark:bg-panel-900');
+            const badge = b.querySelector('.pill-badge');
+            if (badge) badge.className = 'pill-badge ml-1.5 px-1.5 py-0.5 rounded-[5px] bg-paper-50 dark:bg-panel-700 text-slate-500 dark:text-slate-400 text-[10px] font-mono font-bold';
+        }
+    });
+}
 
 /**
  * Initializes the Algorithms & LeetCode Breakdown section
@@ -31,6 +54,15 @@ export function initAlgoView(store, renderCardCallback) {
     if (searchInput) {
         searchInput.addEventListener('input', (e) => {
             currentSearchQuery = e.target.value.toLowerCase().trim();
+            renderAlgoList(store);
+        });
+    }
+
+    const catFilter = document.getElementById('algo-cat-filter');
+    if (catFilter) {
+        catFilter.addEventListener('change', (e) => {
+            currentPatternFilter = e.target.value;
+            syncPatternPills(currentPatternFilter);
             renderAlgoList(store);
         });
     }
@@ -59,6 +91,8 @@ export function switchView(viewName) {
     const llmTabBtn = document.getElementById('llm-tab-btn');
 
     if (!algoView || !questionsView || !sysdesignView) return;
+    if (currentActiveView === viewName) return;
+    currentActiveView = viewName;
 
     // Reset all views
     questionsView.classList.add('hidden');
@@ -179,6 +213,11 @@ export function renderAlgoList(store) {
                 }
 
                 currentPatternFilter = target.dataset.pattern;
+                const catFilter = document.getElementById('algo-cat-filter');
+                if (catFilter) {
+                    const hasOption = Array.from(catFilter.options).some(opt => opt.value === currentPatternFilter);
+                    catFilter.value = hasOption ? currentPatternFilter : 'all';
+                }
                 renderAlgoList(store);
             });
         });
@@ -186,8 +225,14 @@ export function renderAlgoList(store) {
 
     // Apply filtering
     let filtered = algoQuestions.filter(q => {
-        // Pattern filter
-        if (currentPatternFilter !== 'all' && q.pattern !== currentPatternFilter) return false;
+        // Pattern / Category filter
+        if (currentPatternFilter !== 'all') {
+            const p = currentPatternFilter.toLowerCase();
+            const matchPattern = (q.pattern || '').toLowerCase().includes(p);
+            const matchTag = (q.tags || []).some(t => t.toLowerCase().includes(p));
+            const matchTitle = (q.title || '').toLowerCase().includes(p);
+            if (!matchPattern && !matchTag && !matchTitle) return false;
+        }
         
         // Difficulty filter
         if (currentDifficultyFilter !== 'all' && q.difficulty !== currentDifficultyFilter) return false;
@@ -216,28 +261,21 @@ export function renderAlgoList(store) {
             </div>
         `;
         const resetBtn = document.getElementById('reset-algo-filters');
+        if (resetBtn) {
             resetBtn.addEventListener('click', () => {
                 currentPatternFilter = 'all';
                 currentDifficultyFilter = 'all';
                 currentSearchQuery = '';
                 const searchInput = document.getElementById('algo-search-input');
                 if (searchInput) searchInput.value = '';
+                const catFilter = document.getElementById('algo-cat-filter');
+                if (catFilter) catFilter.value = 'all';
                 const diffFilter = document.getElementById('algo-diff-filter');
                 if (diffFilter) diffFilter.value = 'all';
-                if (patternFilterContainer) {
-                    patternFilterContainer.querySelectorAll('.algo-pill-btn').forEach(b => {
-                        const isAll = b.dataset.pattern === 'all';
-                        if (isAll) {
-                            b.classList.remove('border-mist-50', 'dark:border-slate-800', 'text-slate-600', 'dark:text-slate-300', 'bg-white', 'dark:bg-panel-900');
-                            b.classList.add('bg-roast-500', 'text-white', 'border-roast-500');
-                        } else {
-                            b.classList.remove('bg-roast-500', 'text-white', 'border-roast-500');
-                            b.classList.add('border-mist-50', 'dark:border-slate-800', 'text-slate-600', 'dark:text-slate-300', 'bg-white', 'dark:bg-panel-900');
-                        }
-                    });
-                }
+                syncPatternPills('all');
                 renderAlgoList(store);
             });
+        }
         return;
     }
 
@@ -251,7 +289,7 @@ export function renderAlgoList(store) {
         if (q.difficulty === 'Senior') diffClass = 'bg-purple-50 text-purple-700 border-purple-200 dark:bg-purple-950/40 dark:text-purple-300 dark:border-purple-800/40';
 
         return `
-            <div class="bg-white dark:bg-panel-900 border ${isMastered ? 'border-emerald-500/50 dark:border-emerald-500/30' : 'border-mist-50 dark:border-slate-800'} rounded-[12px] p-5 shadow-soft hover:shadow-attio transition-all flex flex-col justify-between relative group">
+            <div class="algo-card bg-white dark:bg-panel-900 border ${isMastered ? 'border-emerald-500/50 dark:border-emerald-500/30' : 'border-mist-50 dark:border-slate-800'} rounded-[12px] p-5 shadow-soft hover:shadow-attio transition-all flex flex-col justify-between relative group cursor-pointer" data-id="${q.id}" data-path="${q.path}">
                 <div>
                     <!-- Header Badges -->
                     <div class="flex items-center justify-between gap-2 mb-3">
@@ -303,6 +341,17 @@ export function renderAlgoList(store) {
             </div>
         `;
     }).join('');
+
+    // Attach Event Listeners to Cards
+    gridContainer.querySelectorAll('.algo-card').forEach(card => {
+        card.addEventListener('click', (e) => {
+            if (e.target.closest('.flag-algo-btn') || e.target.closest('.open-algo-breakdown-btn')) return;
+            const questionId = card.dataset.id;
+            const path = card.dataset.path;
+            const questionObj = questionsList.find(q => q.id === questionId);
+            openAlgoModal(questionObj, path, store);
+        });
+    });
 
     // Attach Event Listeners to Breakdown Buttons
     gridContainer.querySelectorAll('.open-algo-breakdown-btn').forEach(btn => {
@@ -379,7 +428,7 @@ export async function openAlgoModal(question, path, store) {
     const modalTimeComp = document.getElementById('algo-modal-time-comp');
     const modalSpaceComp = document.getElementById('algo-modal-space-comp');
 
-    if (!modal || !modalBody) return;
+    if (!modal || !modalBody || !question) return;
 
     modalTitle.textContent = question.title;
     modalPattern.textContent = question.pattern || 'Algorithmic Pattern';

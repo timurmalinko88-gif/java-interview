@@ -167,7 +167,11 @@ export async function loadQuestion(indexOrQuestion) {
   document.getElementById('active-topic').textContent = q.topic;
   document.getElementById('active-id').textContent = '#' + q.id;
   document.getElementById('active-format').textContent = q.format;
-  document.getElementById('counter').textContent = `${index + 1} / ${state.filteredQuestions.length}`;
+  if (state.isMockMode) {
+    document.getElementById('counter').textContent = `Mock: ${state.mockCurrentIdx + 1} / ${state.mockQuestions.length}`;
+  } else {
+    document.getElementById('counter').textContent = `${index + 1} / ${state.filteredQuestions.length}`;
+  }
 
   // Render Extra Metadata
   const extraMetaContainer = document.getElementById('extra-metadata');

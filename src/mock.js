@@ -20,6 +20,7 @@ export function startMockInterview() {
   if (state.mockSelectedCompany !== 'Any') {
     const companyProfiles = {
       'Bank': ['multithreading', 'memory', 'databases', 'jvm', 'spring-core'],
+      'sber': ['multithreading', 'memory', 'databases', 'jvm', 'spring-core'],
       'Outsource': ['oop', 'patterns', 'stream-api', 'collections', 'solid', 'exceptions', 'spring-mvc'],
       'BigTech': ['system-design', 'jvm', 'memory', 'multithreading', 'collections', 'high-load'],
       'Startup': ['spring-boot', 'stream-api', 'databases', 'collections', 'patterns', 'rest']
@@ -100,6 +101,7 @@ export async function loadMockQuestion(idx) {
   document.getElementById('btn-answer').classList.remove('hidden');
 
   await loadQuestion(q);
+  document.getElementById('counter').textContent = `Mock: ${idx + 1} / ${state.mockQuestions.length}`;
   document.getElementById('btn-answer').classList.remove('hidden');
 }
 export function revealMockAnswer() {

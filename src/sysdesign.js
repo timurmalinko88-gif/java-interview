@@ -88,7 +88,7 @@ export function renderSysDesignList(searchQuery = '') {
         `).join('');
 
         return `
-            <div class="bg-white dark:bg-panel-900 border border-mist-50 dark:border-slate-800 rounded-[12px] p-6 shadow-soft hover:shadow-attio transition-all flex flex-col justify-between group">
+            <div class="sysdesign-card bg-white dark:bg-panel-900 border border-mist-50 dark:border-slate-800 rounded-[12px] p-6 shadow-soft hover:shadow-attio transition-all flex flex-col justify-between group cursor-pointer" data-id="${s.id}">
                 <div>
                     <!-- Badges -->
                     <div class="flex items-center justify-between gap-2 mb-3">
@@ -131,8 +131,16 @@ export function renderSysDesignList(searchQuery = '') {
         `;
     }).join('');
 
+    gridContainer.querySelectorAll('.sysdesign-card').forEach(card => {
+        card.addEventListener('click', () => {
+            const id = card.dataset.id;
+            openSysDesignModal(id);
+        });
+    });
+
     gridContainer.querySelectorAll('.open-sysdesign-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
             const id = btn.dataset.id;
             openSysDesignModal(id);
         });
