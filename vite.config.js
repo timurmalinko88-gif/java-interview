@@ -7,6 +7,19 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     emptyOutDir: true,
+    chunkSizeWarningLimit: 6500,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules/@mlc-ai/web-llm')) {
+            return 'vendor-webllm';
+          }
+          if (id.includes('node_modules/@xenova/transformers') || id.includes('node_modules/onnxruntime-web')) {
+            return 'vendor-transformers';
+          }
+        }
+      }
+    }
   },
   worker: {
     format: 'es',

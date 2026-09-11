@@ -2,7 +2,13 @@
  * In-Browser WebLLM AI Technical Interviewer
  * Powered by @mlc-ai/web-llm & WebGPU
  */
-import { CreateMLCEngine, CreateWebWorkerMLCEngine } from '@mlc-ai/web-llm';
+let mlcModule = null;
+async function getMLC() {
+  if (!mlcModule) {
+    mlcModule = await import('@mlc-ai/web-llm');
+  }
+  return mlcModule;
+}
 
 export const AVAILABLE_MODELS = [
   { id: 'Qwen2.5-Coder-0.5B-Instruct-q4f16_1-MLC', name: '⚡ Ultra-Fast Coder 0.5B (~350MB, мгновенно)' },
@@ -110,6 +116,7 @@ export async function initAIEngine(modelId = currentModelId, onProgress = null) 
         const worker = new Worker(new URL('./aiInterviewer.worker.js', import.meta.url), {
           type: 'module',
         });
+        const { CreateWebWorkerMLCEngine } = await getMLC();
         return await CreateWebWorkerMLCEngine(worker, modelId, {
           initProgressCallback: (report) => {
             const formatted = formatProgressReport(report);
@@ -124,6 +131,7 @@ export async function initAIEngine(modelId = currentModelId, onProgress = null) 
         engine = await withTimeout(createWorkerEngine(), 12000, 'WebWorker WebGPU shader compilation timed out');
       } catch (workerErr) {
         console.warn('[WebLLM] WebWorker failed or timed out, trying direct in-thread engine...', workerErr);
+        const { CreateMLCEngine } = await getMLC();
         engine = await withTimeout(CreateMLCEngine(modelId, {
           initProgressCallback: (report) => {
             const formatted = formatProgressReport(report);
