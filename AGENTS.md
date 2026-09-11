@@ -71,10 +71,14 @@ java-interview/
 │   └── og-image.png            # Open Graph preview image (1200x630) for link sharing
 ├── src/                        # Modular JavaScript source files
 │   ├── adaptive.js             # Diagnostic quiz & personalized roadmap modal logic
+│   ├── aiExaminerView.js       # AI Examiner & Feynman Mode controller
 │   ├── api.js                  # Dynamic question content fetching helper
 │   ├── collections.js          # Helper utilities for question sorting & grouping
-│   ├── main.js                 # App entry point, global event listeners, hotkeys
+│   ├── hotkeys.js              # Keyboard shortcuts & navigation event listeners
+│   ├── main.js                 # App entry point & modular orchestrator
 │   ├── mock.js                 # Mock interview simulator engine (timer, evaluation, scorecard)
+│   ├── modals.js               # Dialog modals (Stats, Shortcuts, Backup, Theme)
+│   ├── questionNavigation.js   # Question cards navigation, filters & action listeners
 │   ├── roadmaps.js             # Learning track filtering logic
 │   ├── spacedRepetition.js     # Leitner box spaced repetition algorithm
 │   ├── state.js                # Global state store, LocalStorage sync, filtering
