@@ -195,7 +195,7 @@
     <span id="semantic-search-badge" class="font-medium text-cobalt-core flex items-center gap-1 transition-opacity opacity-75">
       <i class="fa-solid fa-wand-magic-sparkles"></i> AI Semantic Search Active
     </span>
-    <span id="semantic-search-status" class="text-[10px] text-slate-400">706 vectors</span>
+    <span id="semantic-search-status" class="text-[10px] text-slate-400">748 vectors</span>
   </div>
 
   <!-- Roadmap Selector -->
@@ -208,7 +208,7 @@
                      <option value="middle">Middle Spring & Microservices</option>
                      <option value="senior">Senior Architect Track</option>
                      <option value="ai">AI & Modern Java 21 Track</option>
-                      <option value="llmTrack">🤖 LLM Integration & Antigravity (7 модулей + проект)</option>
+                      <option value="llmTrack">🤖 LLM Integration & Antigravity (8 модулей + проект)</option>
                  </select>
              </div>
 
@@ -1151,6 +1151,35 @@
 
   </main>
 
+  <!-- Platform Project Overview Footer -->
+  <footer class="border-t border-slate-200 dark:border-slate-800/80 bg-white/70 dark:bg-panel-900/70 glass-panel mt-auto transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
+      <div class="space-y-1.5 max-w-2xl">
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="font-mono font-bold text-slate-900 dark:text-white text-sm flex items-center gap-1.5">
+            <i aria-hidden="true" class="fa-solid fa-mug-hot text-roast-500"></i>
+            Java Interview Prep Hub &amp; AI Simulator
+          </span>
+          <span class="px-2 py-0.5 rounded-[6px] bg-roast-500/10 text-roast-500 border border-roast-500/20 font-mono text-[10px] font-semibold">748 Вопросов • 18 Доменов</span>
+          <span class="px-2 py-0.5 rounded-[6px] bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 font-mono text-[10px] font-semibold">Offline PWA</span>
+        </div>
+        <p class="leading-relaxed text-[11px] sm:text-xs text-slate-600 dark:text-slate-400">
+          Интерактивная платформа подготовки к техническим собеседованиям Java (Junior → Senior / Architect): клиентский семантический поиск RAG (&lt;0.5 мс), локальный WebGPU AI-экзаменатор, метод Фейнмана, интервальное повторение Leitner SRS, 50 разборов алгоритмов и симулятор архитектуры System Design.
+        </p>
+      </div>
+      <div class="flex flex-wrap items-center gap-2 shrink-0">
+        <button type="button" onclick="document.getElementById('platform-guide-modal')?.showModal()" class="px-3 py-1.5 rounded-[8px] border border-slate-200 dark:border-slate-800 bg-paper-50 dark:bg-ink-950 hover:border-roast-500 hover:text-roast-500 text-slate-700 dark:text-slate-300 font-medium transition-all flex items-center gap-1.5">
+          <i aria-hidden="true" class="fa-solid fa-compass text-cobalt-core"></i>
+          <span>О проекте и треках</span>
+        </button>
+        <a href="https://github.com/timurmalinko88-gif/java-interview" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-[8px] border border-slate-200 dark:border-slate-800 bg-paper-50 dark:bg-ink-950 hover:border-roast-500 hover:text-roast-500 text-slate-700 dark:text-slate-300 font-medium transition-all flex items-center gap-1.5">
+          <i aria-hidden="true" class="fa-brands fa-github"></i>
+          <span>GitHub</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
   <!-- System Architecture Interactive Simulation Modal -->
   <dialog id="sysdesign-modal" class="bg-white/95 dark:bg-panel-900/95 glass-panel text-slate-800 dark:text-slate-200 rounded-[14px] border border-mist-50 dark:border-slate-800 p-0 shadow-attio-elevated max-w-5xl w-full backdrop:bg-slate-950/70">
     <div class="flex flex-col max-h-[92vh]">
@@ -1618,7 +1647,7 @@
           </div>
           <div>
             <h3 class="text-base font-bold text-slate-900 dark:text-white leading-tight">Гид по платформе и архитектуре</h3>
-            <p class="text-xs text-slate-500 dark:text-slate-400">Как устроена база из 706 вопросов и как подготовиться за 7 дней</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400">748 вопросов • 18 доменов • 6 дорожных карт • AI-экзаменатор и Leitner SRS</p>
           </div>
         </div>
         <div class="flex items-center space-x-2">
@@ -1634,38 +1663,38 @@
 
       <!-- Scrollable Body -->
       <div class="p-4 sm:p-6 overflow-y-auto space-y-6 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
-        <!-- 4 Key Pillars -->
+        <!-- 6 Key Pillars -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div class="p-3.5 rounded-[10px] bg-paper-50 dark:bg-panel-800/60 border border-slate-200 dark:border-slate-800 space-y-1.5">
             <div class="flex items-center space-x-2 text-cobalt-core font-bold text-xs">
               <i class="fa-solid fa-layer-group"></i>
-              <span>706 Вопросов • 18 Доменов</span>
+              <span>748 Вопросов • 18 Доменов</span>
             </div>
-            <p class="text-xs text-slate-600 dark:text-slate-400">От базового синтаксиса до Virtual Threads Java 21+, Spring AI, PgVector и Highload System Design.</p>
+            <p class="text-xs text-slate-600 dark:text-slate-400">От базового синтаксиса и коллекций до Virtual Threads Java 21+, Spring AI, PgVector и Highload System Design.</p>
           </div>
 
           <div class="p-3.5 rounded-[10px] bg-paper-50 dark:bg-panel-800/60 border border-slate-200 dark:border-slate-800 space-y-1.5">
             <div class="flex items-center space-x-2 text-emerald-600 dark:text-emerald-400 font-bold text-xs">
               <i class="fa-solid fa-bolt"></i>
-              <span>0ms Мгновенный AI-Анализатор</span>
+              <span>AI Examiner (0ms + WebGPU)</span>
             </div>
-            <p class="text-xs text-slate-600 dark:text-slate-400">Надиктуйте или напишите ответ — анализатор за 50мс проверит точность и покажет упущенные детали.</p>
+            <p class="text-xs text-slate-600 dark:text-slate-400">Надиктуйте или напишите ответ — анализатор проверит точность, выделит упущенные концепты и задаст follow-up вопрос.</p>
           </div>
 
           <div class="p-3.5 rounded-[10px] bg-paper-50 dark:bg-panel-800/60 border border-slate-200 dark:border-slate-800 space-y-1.5">
             <div class="flex items-center space-x-2 text-purple-600 dark:text-purple-400 font-bold text-xs">
               <i class="fa-solid fa-brain"></i>
-              <span>Метод Фейнмана</span>
+              <span>Метод Фейнмана и RAG-поиск</span>
             </div>
-            <p class="text-xs text-slate-600 dark:text-slate-400">Объяснение сложнейших механизмов JVM, GC и Concurrency через простые жизненные аналогии.</p>
+            <p class="text-xs text-slate-600 dark:text-slate-400">Жизненные аналогии для сложных тем JVM/Concurrency и векторный поиск по смыслу на RU/EN за &lt;0.5 мс.</p>
           </div>
 
           <div class="p-3.5 rounded-[10px] bg-paper-50 dark:bg-panel-800/60 border border-slate-200 dark:border-slate-800 space-y-1.5">
             <div class="flex items-center space-x-2 text-amber-600 dark:text-amber-400 font-bold text-xs">
               <i class="fa-solid fa-box-archive"></i>
-              <span>Leitner SRS (Повторения)</span>
+              <span>Leitner SRS • Алгоритмы • System Design</span>
             </div>
-            <p class="text-xs text-slate-600 dark:text-slate-400">Интервалы 1, 3 и 7 дней по кривой забывания Эббингауза для 100% закрепления в долговременной памяти.</p>
+            <p class="text-xs text-slate-600 dark:text-slate-400">Интервальное повторение по кривой Эббингауза, 50 разборов алгоритмов и интерактивный SVG-симулятор архитектур.</p>
           </div>
         </div>
 

@@ -8,20 +8,20 @@ const TOUR_STORAGE_KEY = 'java_trainer_tour_completed';
 export const TOUR_STEPS = [
   {
     target: '#questions-tab-btn',
-    title: '🧭 Навигация и Режимы подготовки',
-    desc: 'Переключайтесь между базой из 706 вопросов, пошаговыми разборами алгоритмов (LeetCode) и интерактивным холстом System Design.',
+    title: '🧭 4 Интерактивных Режима Подготовки',
+    desc: 'Переключайтесь между базой из 748 вопросов, разборами 50 алгоритмов (LeetCode), интерактивными схемами System Design и треком LLM & Spring AI.',
     placement: 'bottom',
   },
   {
     target: '#search-input',
-    title: '🧠 Векторный семантический поиск (RAG)',
-    desc: 'Ищите вопросы не только по точным словам, но и по смыслу на русском или английском (например: «как ускорить тяжелые SQL запросы»).',
+    title: '🧠 Векторный семантический поиск (Client-Side RAG)',
+    desc: 'Ищите вопросы по смыслу на русском или английском за < 0.5 мс (например: «как ускорить тяжелые SQL запросы» или «виртуальные потоки»).',
     placement: 'bottom',
   },
   {
-    target: '#diff-filter-container',
-    title: '🎯 Фильтры по грейдам и 18 темам',
-    desc: 'Фильтруйте вопросы для Junior, Middle или Senior / Architect, а также выбирайте один из 4 треков развития.',
+    target: '#roadmap-filter',
+    title: '🎯 6 Дорожных Карт и 18 Доменов',
+    desc: 'Выбирайте готовый трек (включая «Переход в Java за 6–8 недель» на 162 вопроса с порогом 80% Mastery) или фильтруйте по грейдам Junior / Middle / Senior.',
     placement: 'bottom',
   },
   {
