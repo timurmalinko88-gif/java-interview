@@ -101,6 +101,7 @@ export function updateStatsDashboard() {
 
   // Group questions by topic
   const topicStats = {};
+  const masteredSet = new Set(state.masteredIds);
   state.questionsList.forEach(q => {
     const topic = q.topic || "Остальное";
     if (!topicStats[topic]) {
@@ -110,7 +111,7 @@ export function updateStatsDashboard() {
       };
     }
     topicStats[topic].total++;
-    if (state.masteredIds.includes(q.id)) {
+    if (masteredSet.has(q.id)) {
       topicStats[topic].mastered++;
     }
   });

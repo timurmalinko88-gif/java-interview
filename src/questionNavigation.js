@@ -2,6 +2,7 @@ import { state, savePersistence, loadPersistence } from './state.js';
 import { debounce, setDifficultyChipInactive, setDifficultyChipActive, playSound } from './utils.js';
 import {
   buildSidebarList,
+  updateActiveSidebarButton,
   triggerFilterAction,
   clearAllFilters,
   loadQuestion,
@@ -120,8 +121,8 @@ export function initQuestionNavigation() {
       if (state.currentIndex > 0) {
         state.currentIndex--;
         state.isAnswerVisible = false;
+        updateActiveSidebarButton(state.currentIndex);
         await loadQuestion(state.currentIndex);
-        buildSidebarList();
         if (window.innerWidth < 1024) {
           const card = document.getElementById('main-content-card');
           if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -135,8 +136,8 @@ export function initQuestionNavigation() {
       if (state.currentIndex < state.filteredQuestions.length - 1) {
         state.currentIndex++;
         state.isAnswerVisible = false;
+        updateActiveSidebarButton(state.currentIndex);
         await loadQuestion(state.currentIndex);
-        buildSidebarList();
         if (window.innerWidth < 1024) {
           const card = document.getElementById('main-content-card');
           if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });

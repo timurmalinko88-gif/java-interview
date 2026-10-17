@@ -16,7 +16,10 @@ import { registerSW } from 'virtual:pwa-register';
 // Auto-sync UI when state changes
 onStateChange(() => {
   updateStatsUI();
-  updateStatsDashboard();
+  const statsModal = document.getElementById('stats-dashboard-modal');
+  if (statsModal && statsModal.open) {
+    updateStatsDashboard();
+  }
 });
 
 // App Initialization

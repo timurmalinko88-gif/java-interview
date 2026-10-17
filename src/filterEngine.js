@@ -81,6 +81,8 @@ export function triggerFilterAction() {
   }
 
   // 1. Filter by Topic, Difficulty, Format, and Status
+  const statusFilter = state.statusFilter || 'all';
+  const masteredSet = statusFilter === 'mastered' ? new Set(state.masteredIds) : null;
   const pool = baseQuestions.filter((q) => {
     const topicMatches =
       topicValue === 'all' ||
@@ -90,12 +92,11 @@ export function triggerFilterAction() {
     const diffMatches =
       state.selectedDiffFilters.length === 0 || state.selectedDiffFilters.includes(q.difficulty);
     const formatMatches = checkedFormats.length === 0 || checkedFormats.includes(q.format);
-    const statusFilter = state.statusFilter || 'all';
     let statusMatches = true;
     if (statusFilter === 'flagged') {
       statusMatches = isFlagged(q.id);
     } else if (statusFilter === 'mastered') {
-      statusMatches = state.masteredIds.includes(q.id);
+      statusMatches = masteredSet.has(q.id);
     } else if (statusFilter === 'due') {
       statusMatches = isDueForReview(q.id);
     }

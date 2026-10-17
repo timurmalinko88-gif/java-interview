@@ -13,10 +13,18 @@ class SemanticSearchEngine {
     this.statusListeners = new Set();
     this.cache = new Map();
 
-    this.initWorker();
+    const startWorker = () => {
+      if (!this.worker) this.initWorker();
+    };
+    if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
+      window.requestIdleCallback(startWorker, { timeout: 300 });
+    } else {
+      setTimeout(startWorker, 100);
+    }
   }
 
   initWorker() {
+    if (this.worker) return;
     try {
       this.worker = new Worker(new URL('./vectorSearch.worker.js', import.meta.url), {
         type: 'module',

@@ -1,40 +1,34 @@
 import { SYS_DESIGN_SCENARIOS } from './sysdesignData.js';
-import { switchView } from './algorithms.js';
+import { debounce } from './utils.js';
 
 let currentScenario = null;
 let currentStepIndex = 0;
 let simulationInterval = null;
 let isPlaying = false;
 let currentCategoryFilter = 'all';
+let currentSysSearchQuery = '';
 
 /**
  * Initializes System Design Architecture View
  */
 export function initSysDesignView() {
-    const sysBtn = document.getElementById('sysdesign-tab-btn');
     const searchInput = document.getElementById('sysdesign-search-input');
     const catFilter = document.getElementById('sysdesign-cat-filter');
 
-    if (sysBtn) {
-        sysBtn.addEventListener('click', () => {
-            if (typeof window.switchViewGlobal === 'function') {
-                window.switchViewGlobal('sysdesign');
-            } else {
-                switchView('sysdesign');
-            }
-        });
-    }
-
     if (searchInput) {
+        const debouncedRender = debounce((val) => {
+            currentSysSearchQuery = val;
+            renderSysDesignList(currentSysSearchQuery);
+        }, 150);
         searchInput.addEventListener('input', (e) => {
-            renderSysDesignList(e.target.value.toLowerCase().trim());
+            debouncedRender(e.target.value.toLowerCase().trim());
         });
     }
 
     if (catFilter) {
         catFilter.addEventListener('change', (e) => {
             currentCategoryFilter = e.target.value;
-            renderSysDesignList();
+            renderSysDesignList(currentSysSearchQuery);
         });
     }
 
@@ -45,7 +39,7 @@ export function initSysDesignView() {
 /**
  * Renders System Design Scenario Grid Cards
  */
-export function renderSysDesignList(searchQuery = '') {
+export function renderSysDesignList(searchQuery = currentSysSearchQuery) {
     const gridContainer = document.getElementById('sysdesign-grid');
     const totalCountEl = document.getElementById('sysdesign-total-count');
 

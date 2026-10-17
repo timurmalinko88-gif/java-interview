@@ -95,6 +95,8 @@ export function buildSidebarList() {
     });
   }
 
+  const masteredSet = new Set(state.masteredIds);
+
   state.filteredQuestions.forEach((q, idx) => {
     // Insert stage header if stage transitions in an ordered roadmap
     if (rm && rm.isOrdered && rm.stages) {
@@ -110,7 +112,7 @@ export function buildSidebarList() {
       }
     }
 
-    const isMastered = state.masteredIds.includes(q.id);
+    const isMastered = masteredSet.has(q.id);
     const flagged = isFlagged(q.id);
     const isActive = idx === state.currentIndex;
     const isVerdict = (q.tags || []).includes('verdict-review');

@@ -106,9 +106,10 @@ export function updateStatsUI() {
   let displayMastered = masteredCount;
 
   if (rm) {
+    const masteredSet = new Set(state.masteredIds);
     const trackQuestions = state.filteredQuestions;
     displayTotal = trackQuestions.length;
-    displayMastered = trackQuestions.filter((q) => state.masteredIds.includes(q.id)).length;
+    displayMastered = trackQuestions.filter((q) => masteredSet.has(q.id)).length;
   }
 
   const percent = displayTotal > 0 ? Math.min(100, Math.round((displayMastered / displayTotal) * 100)) : 0;
@@ -127,9 +128,10 @@ export function updateStatsUI() {
 // Update micro-progress bar in the sidebar for current topic or roadmap
 export function updateMicroProgressUI() {
   const totalFiltered = state.filteredQuestions.length;
+  const masteredSet = new Set(state.masteredIds);
   let masteredFiltered = 0;
   state.filteredQuestions.forEach((q) => {
-    if (state.masteredIds.includes(q.id)) {
+    if (masteredSet.has(q.id)) {
       masteredFiltered++;
     }
   });
