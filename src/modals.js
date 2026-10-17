@@ -139,9 +139,22 @@ export function initModals() {
         const list = Array.isArray(parsed) ? parsed : [parsed];
         const existing = JSON.parse(localStorage.getItem('java_trainer_custom_questions') || '[]');
         let count = 0;
-        list.forEach((q) => {
-          if (!q.id) q.id = 'custom-' + Date.now() + '-' + Math.floor(Math.random() * 1000);
-          if (!q.tags) q.tags = ['custom'];
+        list.forEach((rawQ) => {
+          if (!rawQ || typeof rawQ !== 'object' || Array.isArray(rawQ)) return;
+          const q = {
+            id: typeof rawQ.id === 'string' && rawQ.id.trim()
+              ? rawQ.id.trim().slice(0, 100)
+              : 'custom-' + Date.now() + '-' + Math.floor(Math.random() * 1000),
+            title: typeof rawQ.title === 'string' ? rawQ.title.slice(0, 300) : (typeof rawQ.question === 'string' ? rawQ.question.slice(0, 120) : 'Custom Question'),
+            topic: typeof rawQ.topic === 'string' ? rawQ.topic.slice(0, 80) : 'General',
+            difficulty: ['Junior', 'Middle', 'Senior'].includes(rawQ.difficulty) ? rawQ.difficulty : 'Middle',
+            format: typeof rawQ.format === 'string' ? rawQ.format.slice(0, 50) : 'Open Answer',
+            question: typeof rawQ.question === 'string' ? rawQ.question : '',
+            answer: typeof rawQ.answer === 'string' ? rawQ.answer : '',
+            code: typeof rawQ.code === 'string' ? rawQ.code : '',
+            analogy: typeof rawQ.analogy === 'string' ? rawQ.analogy : '',
+            tags: Array.isArray(rawQ.tags) ? rawQ.tags.filter((t) => typeof t === 'string').slice(0, 15) : ['custom'],
+          };
           if (!q.tags.includes('custom')) q.tags.push('custom');
           if (!existing.some((x) => x.id === q.id)) {
             existing.push(q);
@@ -171,19 +184,16 @@ export function initModals() {
       const codeText = codeContentEl ? codeContentEl.textContent : '';
       if (!codeText) return;
 
-      const textarea = document.createElement('textarea');
-      textarea.value = codeText;
-      document.body.appendChild(textarea);
-      textarea.select();
-      navigator.clipboard
-        .writeText(codeText)
-        .then(() => {
-          showToast('Code copied to clipboard!', 'success');
-        })
-        .catch(() => {
-          showToast('Failed to copy code', 'info');
-        });
-      document.body.removeChild(textarea);
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard
+          .writeText(codeText)
+          .then(() => {
+            showToast('Code copied to clipboard!', 'success');
+          })
+          .catch(() => {
+            showToast('Failed to copy code', 'info');
+          });
+      }
     });
   }
 

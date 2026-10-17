@@ -7,17 +7,13 @@ export async function fetchQuestions() {
             ? import.meta.env.BASE_URL
             : './';
         const normalizedBase = base.endsWith('/') ? base : `${base}/`;
-        const cacheBuster = `v=${Date.now()}`;
         
         let response = null;
         try {
-            response = await fetch(`${normalizedBase}index.json?${cacheBuster}`, {
-                cache: 'no-store',
-                headers: { 'Cache-Control': 'no-cache, no-store, must-revalidate', 'Pragma': 'no-cache' }
-            });
+            response = await fetch(`${normalizedBase}index.json`);
         } catch (e) {
             // Network fallback to relative fetch
-            response = await fetch(`index.json?${cacheBuster}`, { cache: 'no-store' });
+            response = await fetch('index.json');
         }
 
         if (!response || !response.ok) {

@@ -1,4 +1,5 @@
 import { state } from './state.js';
+import { escapeHtml } from './utils.js';
 export // --- stats.js ---
 // Helper function to map topics to icons and gradients
 function getTopicStyles(topic) {
@@ -123,6 +124,7 @@ export function updateStatsDashboard() {
     totalMastered += stats.mastered;
     const percent = Math.round(stats.mastered / stats.total * 100);
     const styles = getTopicStyles(topic);
+    const safeTopic = escapeHtml(topic);
 
     // Define card structure (Neutral styling without random colorful gradients)
     const card = document.createElement('div');
@@ -133,7 +135,7 @@ export function updateStatsDashboard() {
                     <i class="fa-solid ${styles.icon}"></i>
                 </div>
                 <div class="flex-1 min-w-0">
-                    <h4 class="font-bold text-sm text-slate-800 dark:text-slate-200 truncate" title="${topic}">${topic}</h4>
+                    <h4 class="font-bold text-sm text-slate-800 dark:text-slate-200 truncate" title="${safeTopic}">${safeTopic}</h4>
                     <p class="text-xs font-medium text-slate-500 dark:text-slate-400 mt-0.5">
                         <span class="text-slate-700 dark:text-slate-300 font-semibold">${stats.mastered}</span> / ${stats.total} Mastered
                     </p>
@@ -208,27 +210,64 @@ export function exportProgress() {
   URL.revokeObjectURL(url);
 }
 
+const FORBIDDEN_KEYS = new Set(['__proto__', 'constructor', 'prototype']);
+
 export function importProgress(jsonString) {
   try {
     const data = JSON.parse(jsonString);
-    if (!data || typeof data !== 'object') throw new Error("Invalid backup JSON file");
+    if (!data || typeof data !== 'object' || Array.isArray(data)) {
+      throw new Error("Invalid backup JSON file");
+    }
     
     if (Array.isArray(data.masteredIds)) {
-      state.masteredIds = data.masteredIds;
+      state.masteredIds = data.masteredIds
+        .filter(id => typeof id === 'string' && id.length > 0 && id.length <= 120);
     }
     if (data.flaggedIds && typeof data.flaggedIds === 'object') {
-      let flagged = data.flaggedIds;
-      if (Array.isArray(flagged)) {
-        flagged = { "Favorites": flagged };
+      const cleanFlagged = { "Favorites": [] };
+      if (Array.isArray(data.flaggedIds)) {
+        cleanFlagged["Favorites"] = data.flaggedIds.filter(id => typeof id === 'string' && id.length <= 120);
+      } else {
+        for (const [folder, list] of Object.entries(data.flaggedIds)) {
+          if (FORBIDDEN_KEYS.has(folder) || typeof folder !== 'string' || folder.length > 80) continue;
+          if (Array.isArray(list)) {
+            cleanFlagged[folder] = list.filter(id => typeof id === 'string' && id.length <= 120);
+          }
+        }
       }
-      state.flaggedIds = flagged;
+      state.flaggedIds = cleanFlagged;
     }
-    if (data.srData && typeof data.srData === 'object') {
-      state.srData = data.srData;
+    if (data.srData && typeof data.srData === 'object' && !Array.isArray(data.srData)) {
+      const cleanSr = {};
+      for (const [qid, entry] of Object.entries(data.srData)) {
+        if (FORBIDDEN_KEYS.has(qid) || typeof qid !== 'string' || qid.length > 120) continue;
+        if (entry && typeof entry === 'object' && !Array.isArray(entry)) {
+          cleanSr[qid] = {
+            box: typeof entry.box === 'number' ? Math.min(5, Math.max(1, Math.floor(entry.box))) : 1,
+            nextReviewDate: typeof entry.nextReviewDate === 'string' ? entry.nextReviewDate : new Date().toISOString(),
+            lastReviewed: typeof entry.lastReviewed === 'string' ? entry.lastReviewed : new Date().toISOString()
+          };
+        }
+      }
+      state.srData = cleanSr;
     }
     if (Array.isArray(data.customQuestions)) {
-      localStorage.setItem('java_trainer_custom_questions', JSON.stringify(data.customQuestions));
-      data.customQuestions.forEach(cq => {
+      const safeCustom = data.customQuestions
+        .filter(cq => cq && typeof cq === 'object' && !Array.isArray(cq))
+        .map(cq => ({
+          id: typeof cq.id === 'string' && cq.id.trim() ? cq.id.trim().slice(0, 100) : `custom-${Date.now()}`,
+          title: typeof cq.title === 'string' ? cq.title.slice(0, 300) : 'Custom Question',
+          topic: typeof cq.topic === 'string' ? cq.topic.slice(0, 80) : 'General',
+          difficulty: ['Junior', 'Middle', 'Senior'].includes(cq.difficulty) ? cq.difficulty : 'Middle',
+          format: typeof cq.format === 'string' ? cq.format.slice(0, 50) : 'Open Answer',
+          question: typeof cq.question === 'string' ? cq.question : '',
+          answer: typeof cq.answer === 'string' ? cq.answer : '',
+          code: typeof cq.code === 'string' ? cq.code : '',
+          analogy: typeof cq.analogy === 'string' ? cq.analogy : '',
+          tags: Array.isArray(cq.tags) ? cq.tags.filter(t => typeof t === 'string').slice(0, 15) : ['custom']
+        }));
+      localStorage.setItem('java_trainer_custom_questions', JSON.stringify(safeCustom));
+      safeCustom.forEach(cq => {
         if (!state.questionsList.some(q => q.id === cq.id)) {
           state.questionsList.push(cq);
         }

@@ -1,6 +1,6 @@
 import { state } from './state.js';
 import { loadQuestion, showToast } from './ui.js';
-import { playSound } from './utils.js';
+import { playSound, escapeHtml, renderMarkdownSafe } from './utils.js';
 import {
   initAIEngine,
   evaluateCandidateAnswer,
@@ -99,7 +99,7 @@ export function initAIExaminerView() {
         (result.foundConcepts || [])
           .map(
             (c) =>
-              `<span class="px-2 py-0.5 rounded-[5px] bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 text-[11px] font-medium">${c}</span>`
+              `<span class="px-2 py-0.5 rounded-[5px] bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 text-[11px] font-medium">${escapeHtml(c)}</span>`
           )
           .join('') || '<span class="text-slate-400 italic">Базовые понятия</span>';
     }
@@ -109,7 +109,7 @@ export function initAIExaminerView() {
         (result.missedConcepts || [])
           .map(
             (c) =>
-              `<span class="px-2 py-0.5 rounded-[5px] bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/20 text-[11px] font-medium">${c}</span>`
+              `<span class="px-2 py-0.5 rounded-[5px] bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/20 text-[11px] font-medium">${escapeHtml(c)}</span>`
           )
           .join('') || '<span class="text-slate-400 italic">Существенных пропусков нет</span>';
     }
@@ -340,7 +340,7 @@ export function initAIExaminerView() {
         <div class="space-y-3">
           <div class="p-3 bg-white/60 dark:bg-panel-900/40 rounded-[8px] border border-purple-200/50 dark:border-purple-800/30">
             <p class="text-sm sm:text-base text-slate-800 dark:text-slate-200 leading-relaxed">
-              ${currentQ.loadedAnalogy}
+              ${escapeHtml(currentQ.loadedAnalogy)}
             </p>
           </div>
           <div class="pt-2 border-t border-purple-200/60 dark:border-purple-800/40 flex flex-wrap items-center justify-between gap-2 text-xs text-purple-700 dark:text-purple-300">
@@ -367,12 +367,12 @@ export function initAIExaminerView() {
     try {
       const hasWebGPU = await isWebGPUSupported();
       if (!hasWebGPU) {
-        feynmanContent.innerHTML = marked.parse(`
+        feynmanContent.innerHTML = renderMarkdownSafe(`
 ### 💡 Интуитивная аналогия
 Представьте работу этой концепции как организацию в оживленном ресторане: каждый официант и повар выполняют строго изолированные задачи по четкому протоколу, чтобы клиенты мгновенно получали свои заказы без путаницы и блокировок.
 
 ### 🧩 Связь с Java
-В Java архитектурные механизмы **${currentQ.title}** гарантируют изоляцию состояния, корректную синхронизацию в памяти и предотвращают деградацию производительности.
+В Java архитектурные механизмы **${escapeHtml(currentQ.title)}** гарантируют изоляцию состояния, корректную синхронизацию в памяти и предотвращают деградацию производительности.
         `);
         return;
       }
@@ -398,20 +398,20 @@ export function initAIExaminerView() {
         questionTitle: currentQ.title,
         referenceAnswer: currentQ.loadedAnswer || currentQ.answer || '',
         onToken: (_delta, fullText) => {
-          feynmanContent.innerHTML = marked.parse(fullText);
+          feynmanContent.innerHTML = renderMarkdownSafe(fullText);
         },
       });
 
-      feynmanContent.innerHTML = marked.parse(explanation);
+      feynmanContent.innerHTML = renderMarkdownSafe(explanation);
       playSound('mastered');
     } catch (err) {
       console.warn('[FeynmanMode] Error, falling back to curated analogy:', err);
-      feynmanContent.innerHTML = marked.parse(`
+      feynmanContent.innerHTML = renderMarkdownSafe(`
 ### 💡 Интуитивная аналогия
 Представьте работу этой концепции как организацию в оживленном ресторане: каждый официант и повар выполняют строго изолированные задачи по четкому протоколу, чтобы клиенты мгновенно получали свои заказы без путаницы и блокировок.
 
 ### 🧩 Связь с Java
-В Java механизмы **${currentQ.title}** гарантируют целостность данных, корректную изоляцию и предотвращают деградацию производительности.
+В Java механизмы **${escapeHtml(currentQ.title)}** гарантируют целостность данных, корректную изоляцию и предотвращают деградацию производительности.
       `);
       showToast('💡 Показана интуитивная аналогия из базы знаний', 'info');
     } finally {

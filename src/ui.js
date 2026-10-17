@@ -1,4 +1,4 @@
-import { playSound } from './utils.js';
+import { playSound, escapeHtml, renderMarkdownSafe } from './utils.js';
 import { state } from './state.js';
 import { isFlagged } from './collections.js';
 import { ROADMAPS } from './roadmaps.js';
@@ -34,6 +34,33 @@ semanticSearch.onStatusChange((status, message) => {
     }
   }
 });
+
+export function updateActiveSidebarButton(activeIndex) {
+  const container = document.getElementById('questions-container');
+  if (!container) return false;
+  const buttons = container.querySelectorAll('button[data-q-index]');
+  if (buttons.length === 0) return false;
+
+  buttons.forEach((btn) => {
+    const idx = parseInt(btn.getAttribute('data-q-index'), 10);
+    const isActive = idx === activeIndex;
+    const h4 = btn.querySelector('h4');
+    if (isActive) {
+      btn.className = 'w-full text-left p-3.5 transition-all duration-200 border-l-[3px] flex flex-col space-y-1.5 rounded-r-[7px] bg-white dark:bg-panel-900 border-l-roast-500 shadow-attio-subtle font-medium';
+      if (h4) {
+        h4.classList.add('text-roast-500');
+        h4.classList.remove('text-slate-900', 'dark:text-slate-200');
+      }
+    } else {
+      btn.className = 'w-full text-left p-3.5 transition-all duration-200 border-l-[3px] flex flex-col space-y-1.5 rounded-r-[7px] border-transparent hover:bg-paper-50/80 dark:hover:bg-panel-700/40';
+      if (h4) {
+        h4.classList.remove('text-roast-500');
+        h4.classList.add('text-slate-900', 'dark:text-slate-200');
+      }
+    }
+  });
+  return true;
+}
 
 // Build the left sidebar navigation items
 export function buildSidebarList() {
@@ -77,7 +104,7 @@ export function buildSidebarList() {
         const divider = document.createElement('div');
         divider.className = 'px-3.5 py-2.5 bg-slate-100 dark:bg-panel-800 text-[11px] font-bold text-slate-800 dark:text-slate-200 border-y border-slate-200 dark:border-slate-700 flex items-center justify-between sticky top-0 z-10 backdrop-blur-sm shadow-xs';
         divider.innerHTML = `
-          <span class="flex items-center gap-1.5"><i class="fa-solid fa-layer-group text-roast-500 text-xs"></i> ${qStage.title}</span>
+          <span class="flex items-center gap-1.5"><i class="fa-solid fa-layer-group text-roast-500 text-xs"></i> ${escapeHtml(qStage.title)}</span>
         `;
         fragment.appendChild(divider);
       }
@@ -93,18 +120,19 @@ export function buildSidebarList() {
     if (q.difficulty === 'Middle') diffStyle = 'bg-blue-50 text-blue-700 border border-blue-200 dark:bg-blue-950/40 dark:text-blue-300 dark:border-blue-800/40';
     if (q.difficulty === 'Senior') diffStyle = 'bg-purple-50 text-purple-700 border border-purple-200 dark:bg-purple-950/40 dark:text-purple-300 dark:border-purple-800/40';
     const button = document.createElement('button');
+    button.setAttribute('data-q-index', String(idx));
     button.className = `w-full text-left p-3.5 transition-all duration-200 border-l-[3px] flex flex-col space-y-1.5 rounded-r-[7px] ${isActive ? 'bg-white dark:bg-panel-900 border-l-roast-500 shadow-attio-subtle font-medium' : 'border-transparent hover:bg-paper-50/80 dark:hover:bg-panel-700/40'}`;
 
     // Extract short question label
-    const shortQuestionText = q.title || q.question || q.id;
+    const shortQuestionText = escapeHtml(q.title || q.question || q.id);
     button.innerHTML = `
             <div class="flex items-center justify-between w-full">
                 <div class="flex items-center space-x-1.5 flex-wrap gap-y-1">
                     <span class="text-[10px] font-medium px-2 py-0.5 rounded-[7px] uppercase tracking-wider ${diffStyle}">
-                        ${q.difficulty}
+                        ${escapeHtml(q.difficulty)}
                     </span>
                     <span class="text-[10px] font-medium text-slate-500 dark:text-slate-400 bg-paper-50 dark:bg-panel-900 border border-slate-200 dark:border-slate-800 px-2 py-0.5 rounded-[7px]">
-                        ${q.topic}
+                        ${escapeHtml(q.topic)}
                     </span>
                     ${isVerdict ? '<span class="text-[9px] font-bold px-1.5 py-0.5 rounded-[5px] bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/30">Verdict Review</span>' : ''}
                 </div>
@@ -121,8 +149,8 @@ export function buildSidebarList() {
     button.addEventListener("click", async () => {
       state.currentIndex = idx;
       state.isAnswerVisible = false;
+      updateActiveSidebarButton(idx);
       await loadQuestion(idx);
-      buildSidebarList();
       if (window.innerWidth < 1024) {
         const card = document.getElementById('main-content-card');
         if (card) card.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -177,10 +205,10 @@ export async function loadQuestion(indexOrQuestion) {
   const extraMetaContainer = document.getElementById('extra-metadata');
   extraMetaContainer.innerHTML = '';
   if (q.time) {
-    extraMetaContainer.innerHTML += `<span class="bg-paper-50 dark:bg-panel-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 text-xs px-2.5 py-1 rounded-[7px] flex items-center gap-1.5 font-medium"><i class="fa-regular fa-clock text-slate-400"></i> ${q.time}</span>`;
+    extraMetaContainer.innerHTML += `<span class="bg-paper-50 dark:bg-panel-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 text-xs px-2.5 py-1 rounded-[7px] flex items-center gap-1.5 font-medium"><i class="fa-regular fa-clock text-slate-400"></i> ${escapeHtml(q.time)}</span>`;
   }
   if (q.frequency) {
-    extraMetaContainer.innerHTML += `<span class="bg-paper-50 dark:bg-panel-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 text-xs px-2.5 py-1 rounded-[7px] flex items-center gap-1.5 font-medium"><i class="fa-solid fa-circle text-roast-500 text-[8px]"></i> Frequency: ${q.frequency}</span>`;
+    extraMetaContainer.innerHTML += `<span class="bg-paper-50 dark:bg-panel-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 text-xs px-2.5 py-1 rounded-[7px] flex items-center gap-1.5 font-medium"><i class="fa-solid fa-circle text-roast-500 text-[8px]"></i> Frequency: ${escapeHtml(q.frequency)}</span>`;
   }
   if (q.related && q.related.length > 0) {
     const relItems = Array.isArray(q.related) ? q.related : [q.related];
@@ -189,7 +217,7 @@ export async function loadQuestion(indexOrQuestion) {
     relItems.forEach(item => {
       const btn = document.createElement('button');
       btn.className = 'related-question-chip bg-paper-50 dark:bg-panel-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-400 text-xs px-2.5 py-1 rounded-[7px] flex items-center gap-1.5 font-medium hover:border-roast-500 hover:text-roast-500 transition-all cursor-pointer';
-      btn.innerHTML = `<i class="fa-solid fa-link text-slate-400"></i> ${item}`;
+      btn.innerHTML = `<i class="fa-solid fa-link text-slate-400"></i> ${escapeHtml(item)}`;
       btn.title = `Go to question: ${item}`;
       btn.addEventListener('click', () => {
         const query = item.toLowerCase().trim();
@@ -321,7 +349,7 @@ export async function loadQuestion(indexOrQuestion) {
   }
 
   // Render Markdown Question Content
-  questionTextEl.innerHTML = marked.parse(q.loadedQuestion || "No question content.");
+  questionTextEl.innerHTML = renderMarkdownSafe(q.loadedQuestion || "No question content.");
   if (typeof hljs !== 'undefined') {
     questionTextEl.querySelectorAll('pre code').forEach((block) => {
       hljs.highlightElement(block);
@@ -429,7 +457,7 @@ export function renderAnswerContent() {
   const ansBtnIcon = document.getElementById('btn-answer-icon');
   answerSection.classList.remove('hidden');
   const answerContentEl = document.getElementById('answer-content');
-  answerContentEl.innerHTML = marked.parse(q.loadedAnswer || "No answer content.");
+  answerContentEl.innerHTML = renderMarkdownSafe(q.loadedAnswer || "No answer content.");
   if (typeof hljs !== 'undefined') {
     answerContentEl.querySelectorAll('pre code').forEach((block) => {
       hljs.highlightElement(block);

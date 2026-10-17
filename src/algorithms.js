@@ -6,6 +6,7 @@
 import { fetchQuestionContent } from './api.js';
 import { isFlagged, toggleFlag } from './collections.js';
 import { state } from './state.js';
+import { debounce, escapeHtml, renderMarkdownSafe } from './utils.js';
 
 let currentPatternFilter = 'all';
 let currentDifficultyFilter = 'all';
@@ -40,21 +41,18 @@ export function syncPatternPills(filterVal) {
 export function initAlgoView(store, renderCardCallback) {
     const algoBtn = document.getElementById('algo-tab-btn');
     const algoView = document.getElementById('algo-view');
-    const questionsView = document.getElementById('questions-view');
     
     if (!algoBtn || !algoView) return;
-
-    // Tab Navigation
-    algoBtn.addEventListener('click', () => {
-        switchView('algo');
-    });
 
     // Pattern & Search Event Listeners
     const searchInput = document.getElementById('algo-search-input');
     if (searchInput) {
-        searchInput.addEventListener('input', (e) => {
-            currentSearchQuery = e.target.value.toLowerCase().trim();
+        const debouncedRender = debounce((val) => {
+            currentSearchQuery = val;
             renderAlgoList(store);
+        }, 150);
+        searchInput.addEventListener('input', (e) => {
+            debouncedRender(e.target.value.toLowerCase().trim());
         });
     }
 
@@ -458,7 +456,7 @@ export async function openAlgoModal(question, path, store) {
 
         // Render Markdown for Prompt
         const cleanedPrompt = cleanMarkdownText(questionPrompt);
-        const promptHtml = typeof marked !== 'undefined' ? marked.parse(cleanedPrompt) : cleanedPrompt;
+        const promptHtml = renderMarkdownSafe(cleanedPrompt);
 
         // Parse Answer into Steps
         const sections = parseAnswerSections(answerBody);
@@ -466,7 +464,7 @@ export async function openAlgoModal(question, path, store) {
         let sectionsHtml = '';
         if (sections.length > 0) {
             sectionsHtml = sections.map((sec, idx) => {
-                const secHtml = typeof marked !== 'undefined' ? marked.parse(sec.content) : sec.content;
+                const secHtml = renderMarkdownSafe(sec.content);
                 // All steps closed by default for self-evaluation
                 const isOpen = '';
 
@@ -475,7 +473,7 @@ export async function openAlgoModal(question, path, store) {
                         <summary class="flex items-center justify-between p-4 cursor-pointer font-bold text-slate-900 dark:text-white hover:bg-slate-50/80 dark:hover:bg-ink-950/80 transition-colors select-none">
                             <span class="flex items-center space-x-2.5 text-sm sm:text-base">
                                 <span class="w-6 h-6 rounded-[7px] bg-roast-500/10 text-roast-500 border border-roast-500/20 text-xs flex items-center justify-center font-mono font-bold">${idx + 1}</span>
-                                <span class="font-bold text-slate-900 dark:text-white">${sec.title}</span>
+                                <span class="font-bold text-slate-900 dark:text-white">${escapeHtml(sec.title)}</span>
                             </span>
                             <div class="flex items-center space-x-2">
                                 <span class="text-[11px] font-semibold text-slate-400 group-open:hidden">Click to reveal</span>
@@ -489,7 +487,7 @@ export async function openAlgoModal(question, path, store) {
                 `;
             }).join('');
         } else {
-            const answerHtml = typeof marked !== 'undefined' ? marked.parse(answerBody) : answerBody;
+            const answerHtml = renderMarkdownSafe(answerBody);
             sectionsHtml = `<div class="bg-white dark:bg-panel-900 p-5 rounded-xl border border-slate-200 dark:border-slate-800 markdown-body shadow-attio-subtle">${answerHtml}</div>`;
         }
 

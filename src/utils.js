@@ -51,7 +51,7 @@ export function playSound(type) {
       gain.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
       osc.start(now);
       osc.stop(now + 0.08);
-    } else if (type === 'master') {
+    } else if (type === 'master' || type === 'mastered') {
       osc.type = 'triangle';
       osc.frequency.setValueAtTime(523.25, now); // C5
       osc.frequency.setValueAtTime(659.25, now + 0.07); // E5
@@ -71,5 +71,51 @@ export function playSound(type) {
   } catch {
     // Ignore audio context initialization failures
   }
+}
+
+export function escapeHtml(str) {
+  if (str === null || str === undefined) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+export function sanitizeHtml(dirtyHtml) {
+  if (!dirtyHtml || typeof dirtyHtml !== 'string') return '';
+  if (typeof DOMParser === 'undefined') return dirtyHtml;
+
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(dirtyHtml, 'text/html');
+  const blockedTags = ['script', 'iframe', 'object', 'embed', 'form', 'meta', 'base', 'link', 'style'];
+  blockedTags.forEach((tag) => {
+    doc.body.querySelectorAll(tag).forEach((el) => el.remove());
+  });
+
+  const allElements = doc.body.querySelectorAll('*');
+  allElements.forEach((el) => {
+    Array.from(el.attributes).forEach((attr) => {
+      const name = attr.name.toLowerCase();
+      const val = attr.value.trim().toLowerCase();
+      if (name.startsWith('on') || name === 'srcdoc') {
+        el.removeAttribute(attr.name);
+      } else if (
+        (name === 'href' || name === 'src' || name === 'xlink:href' || name === 'action') &&
+        (val.startsWith('javascript:') || val.startsWith('vbscript:') || val.startsWith('data:text/html'))
+      ) {
+        el.removeAttribute(attr.name);
+      }
+    });
+  });
+
+  return doc.body.innerHTML;
+}
+
+export function renderMarkdownSafe(markdownText) {
+  if (!markdownText) return '';
+  const rawHtml = typeof marked !== 'undefined' ? marked.parse(String(markdownText)) : escapeHtml(markdownText);
+  return sanitizeHtml(rawHtml);
 }
 

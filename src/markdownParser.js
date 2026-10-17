@@ -31,8 +31,8 @@ export function parseMarkdown(text) {
     rawAnswer = rawAnswer.replace(analogyMatch[0], '');
   }
 
-  // Extract Key Points
-  const keyPointsMatch = rawAnswer.match(/###\s*Key Points\s*\n([\s\S]*?)(?=###|$)/i);
+  // Extract Key Points / Key Takeaways
+  const keyPointsMatch = rawAnswer.match(/###?\s*Key\s+(?:Points|Takeaways)[^\n]*\n([\s\S]*?)(?=###?|$)/i);
   if (keyPointsMatch) {
     result.keyPoints = keyPointsMatch[1].trim();
     rawAnswer = rawAnswer.replace(keyPointsMatch[0], '');
